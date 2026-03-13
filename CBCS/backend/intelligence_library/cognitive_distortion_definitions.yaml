@@ -1,0 +1,286 @@
+# ─────────────────────────────────────────────────────────────────────
+# Cognitive Distortion Definitions
+# Burns' Consolidated 10-Type Taxonomy
+#
+# Architecture: Identity Engine Layer 2D
+# Consumed by: identity_scorers.py → classify_cognitive_distortions()
+#
+# Source: Paper 7 (A Survey of Cognitive Distortion Detection and
+# Classification in NLP), Table 1 — the 10 "Widely Adopted" types
+# that appear in ≥48% of NLP studies.
+#
+# Structure per distortion:
+#   definition: Academic definition
+#   journal_example: How this shows up in CBCS voice journals
+#   detection_heuristics: Keyword + structural patterns
+#   identity_signal: Which identity dimension this distortion affects
+#   intervention_pointer: What intervention type is appropriate
+# ─────────────────────────────────────────────────────────────────────
+
+distortions:
+  all_or_nothing:
+    type: "ALL_OR_NOTHING"
+    definition: "Viewing situations in only two categories rather than on a continuum. Events are evaluated as completely good or completely bad with no middle ground."
+    journal_example: "If I don't do this perfectly, I'm a complete failure. Either I stick to the routine 100% or there's no point."
+    detection_heuristics:
+      keywords:
+        - "always"
+        - "never"
+        - "completely"
+        - "either...or"
+        - "all or nothing"
+        - "100%"
+        - "zero"
+        - "total"
+        - "entirely"
+        - "perfectly or not at all"
+        - "tout ou rien"           # French
+        - "toujours"               # French: always
+        - "jamais"                 # French: never
+      structural:
+        - "binary framing: [positive absolute] OR [negative absolute]"
+        - "perfectionistic conditional: if not [perfect], then [catastrophe]"
+        - "absence of hedging/qualifying language in evaluative statements"
+    identity_signal: "self_esteem + competence"
+    identity_impact: "Destroys incremental progress recognition. The user cannot see partial wins, making change feel impossible."
+    intervention_pointer: "CONTINUUM_THINKING"
+
+  overgeneralization:
+    type: "OVERGENERALIZATION"
+    definition: "Drawing a broad conclusion from a single incident. One negative event is treated as a never-ending pattern."
+    journal_example: "I missed one day and now the whole habit is broken. I always quit. This is just who I am."
+    detection_heuristics:
+      keywords:
+        - "always"
+        - "never"
+        - "every time"
+        - "nothing ever"
+        - "everyone"
+        - "nobody"
+        - "this is just who I am"
+        - "I always"
+        - "it's a pattern"
+        - "ce qui arrive toujours"  # French
+        - "à chaque fois"          # French: every time
+      structural:
+        - "single event → universal rule (I [did X once] so I [always/never Y])"
+        - "temporal universalizer + negative outcome"
+        - "identity generalization from behavior (I did X → I AM X)"
+    identity_signal: "continuity + self_efficacy"
+    identity_impact: "Converts single setbacks into identity-level conclusions. Blocks the redemption arc."
+    intervention_pointer: "EVIDENCE_EXAMINATION"
+
+  mental_filter:
+    type: "MENTAL_FILTER"
+    definition: "Focusing exclusively on the negative detail while filtering out all positive aspects of a situation."
+    journal_example: "The session went fine but I stumbled on one question and that's all I can think about."
+    detection_heuristics:
+      keywords:
+        - "but"
+        - "however"
+        - "the only thing"
+        - "all I can think about"
+        - "can't stop thinking"
+        - "ruined"
+        - "the one thing"
+        - "except"
+        - "la seule chose"         # French: the only thing
+      structural:
+        - "positive context + adversative conjunction (but/however/except) + negative focus"
+        - "negative detail elaborated (>2 sentences) while positive mentioned briefly"
+        - "rumination markers (keep thinking/can't let go/won't leave my mind)"
+    identity_signal: "self_esteem"
+    identity_impact: "Prevents integration of positive identity evidence. The user's self-concept only absorbs negative data."
+    intervention_pointer: "FULL_PICTURE_REFRAME"
+
+  disqualifying_positive:
+    type: "DISQUALIFYING_POSITIVE"
+    definition: "Acknowledging positive experiences but dismissing them as not counting. Transforms neutral or positive facts into negative ones."
+    journal_example: "I did hit my goal this week but that was just luck. It doesn't count because the conditions were easier."
+    detection_heuristics:
+      keywords:
+        - "doesn't count"
+        - "just luck"
+        - "anyone could have"
+        - "it was easy"
+        - "not a real achievement"
+        - "they were just being nice"
+        - "fluke"
+        - "c'est pas vraiment"      # French: it's not really
+        - "c'est de la chance"      # French: it's just luck
+      structural:
+        - "achievement statement + dismissal qualifier (but it was easy/just luck/doesn't mean anything)"
+        - "external attribution for positive outcomes + internal attribution for negative ones"
+        - "conditional acceptance (it only counts if [impossible standard])"
+    identity_signal: "self_esteem + competence"
+    identity_impact: "Creates an asymmetric identity filter: failures are proof, successes are exceptions. Identity can only move in one direction."
+    intervention_pointer: "EVIDENCE_EXAMINATION"
+
+  jumping_to_conclusions:
+    type: "JUMPING_TO_CONCLUSIONS"
+    definition: "Drawing negative conclusions without supporting evidence. Includes mind-reading (assuming others' thoughts) and fortune-telling (predicting negative outcomes)."
+    journal_example: "They didn't reply to my message — they must think I'm annoying. This whole thing is going to fall apart."
+    detection_heuristics:
+      keywords:
+        - "they must think"
+        - "they probably"
+        - "I know they"
+        - "it's going to fail"
+        - "I can tell"
+        - "I just know"
+        - "it won't work"
+        - "this will end badly"
+        - "ils doivent penser"     # French: they must think
+        - "ça va mal finir"        # French: it will end badly
+      structural:
+        - "mind-reading: other + mental state verb without evidence (they think/feel/believe + negative)"
+        - "fortune-telling: future tense + negative prediction without evidence"
+        - "certainty language about unverifiable assumptions"
+    identity_signal: "relatedness + self_efficacy"
+    identity_impact: "Erodes trust in relationships (mind-reading) and blocks future-oriented identity (fortune-telling)."
+    intervention_pointer: "EVIDENCE_EXAMINATION"
+
+  magnification:
+    type: "MAGNIFICATION"
+    definition: "Exaggerating the importance of negative events or minimizing the importance of positive events. Also called catastrophizing."
+    journal_example: "I made one mistake in the presentation and my entire career reputation is destroyed."
+    detection_heuristics:
+      keywords:
+        - "catastrophe"
+        - "disaster"
+        - "the worst"
+        - "destroyed"
+        - "ruined"
+        - "end of the world"
+        - "everything is"
+        - "nothing will ever"
+        - "horrible"
+        - "catastrophique"         # French
+        - "c'est la fin"           # French: it's the end
+      structural:
+        - "minor event + catastrophic consequence (one mistake → career destroyed)"
+        - "escalation chain: event → worst-case → absolute conclusion"
+        - "superlative language for ordinary events (worst/best/most terrible + mundane event)"
+    identity_signal: "self_efficacy + self_esteem"
+    identity_impact: "Makes every setback feel identity-defining. Small failures become evidence of fundamental inadequacy."
+    intervention_pointer: "PROPORTIONALITY_CHECK"
+
+  emotional_reasoning:
+    type: "EMOTIONAL_REASONING"
+    definition: "Treating feelings as evidence of truth. 'I feel it, therefore it must be true.'"
+    journal_example: "I feel like a fraud, so I must be one. I feel like nobody cares so it must be true."
+    detection_heuristics:
+      keywords:
+        - "I feel like"
+        - "it feels like"
+        - "I just feel"
+        - "I feel that I am"
+        - "feels true"
+        - "j'ai l'impression"      # French: I have the impression
+        - "je sens que"            # French: I feel that
+      structural:
+        - "feeling verb → identity conclusion (I feel [X] → I am [X])"
+        - "emotional state used as evidence (because I feel anxious, the threat must be real)"
+        - "absence of behavioral/factual evidence alongside emotional claims"
+    identity_signal: "self_esteem + self_efficacy"
+    identity_impact: "Collapses the distinction between emotional state and identity state. Temporary feelings become permanent self-assessments."
+    intervention_pointer: "FEELING_VS_FACT_SEPARATION"
+
+  should_statements:
+    type: "SHOULD_STATEMENTS"
+    definition: "Rigid rules about how one should, must, or ought to behave. Creates an impossible standard that generates guilt when unmet."
+    journal_example: "I should be further along by now. I should have this figured out. I shouldn't need help."
+    detection_heuristics:
+      keywords:
+        - "I should"
+        - "I shouldn't"
+        - "I must"
+        - "I have to"
+        - "I ought to"
+        - "I need to be"
+        - "by now"
+        - "supposed to"
+        - "je devrais"             # French: I should
+        - "il faut que je"         # French: I must
+        - "j'aurais dû"           # French: I should have
+      structural:
+        - "obligation modal + self-reference (I should/must/ought to + be/do/have)"
+        - "temporal comparison: self vs. expected timeline (by now/at this point/already)"
+        - "self-directed imperative without compassion qualifier"
+    identity_signal: "actual_ought_gap"
+    identity_impact: "Directly widens the Actual-Ought self-discrepancy gap. Creates agitation (Higgins' prediction) and undermines autonomous motivation."
+    intervention_pointer: "WANT_VS_SHOULD_REFRAME"
+
+  labelling:
+    type: "LABELLING"
+    definition: "Attaching a fixed label to oneself based on behavior. An extreme form of overgeneralization where the person assigns a global identity conclusion from a specific action."
+    journal_example: "I'm just a lazy person. I'm a quitter. I'm not a morning person and I never will be."
+    detection_heuristics:
+      keywords:
+        - "I'm a"
+        - "I am just"
+        - "I'm not a"
+        - "I'm the type of person who"
+        - "that's just who I am"
+        - "I'll always be"
+        - "born this way"
+        - "je suis quelqu'un de"    # French: I'm someone who
+        - "c'est comme ça"         # French: that's how it is
+        - "je suis nul"            # French: I'm useless
+      structural:
+        - "I am + fixed trait label (lazy/stupid/weak/quitter/fraud)"
+        - "identity statement with permanence marker (always/never/just)"
+        - "behavior → identity leap (I did X → I AM [label])"
+    identity_signal: "ALL DIMENSIONS — labelling is the most identity-destructive distortion"
+    identity_impact: "Directly writes identity conclusions. This distortion IS identity threat — it creates the static label the Identity Engine is designed to dissolve."
+    intervention_pointer: "BEHAVIOR_IDENTITY_SEPARATION"
+
+  personalization:
+    type: "PERSONALIZATION"
+    definition: "Taking excessive personal responsibility for events outside one's control, or interpreting neutral events as personally directed."
+    journal_example: "The group was quiet today — it must be because I said something wrong yesterday."
+    detection_heuristics:
+      keywords:
+        - "because of me"
+        - "my fault"
+        - "I caused"
+        - "if only I had"
+        - "they're upset because I"
+        - "I ruined"
+        - "I made everyone"
+        - "c'est ma faute"         # French: it's my fault
+        - "à cause de moi"        # French: because of me
+      structural:
+        - "external event + self-causal attribution (group was quiet → because of me)"
+        - "counterfactual self-blame (if only I had/hadn't)"
+        - "responsibility claim for others' emotional states"
+    identity_signal: "relatedness + self_esteem"
+    identity_impact: "Overloads relational identity with guilt. The user takes responsibility for others' states, creating unsustainable emotional labor."
+    intervention_pointer: "RESPONSIBILITY_BOUNDARY"
+
+
+# ─── DoT (Diagnosis of Thought) Framework ───────────────────────────
+# Used by classify_cognitive_distortions() in identity_scorers.py
+# Structures the LLM's reasoning for reliable classification.
+
+dot_framework:
+  description: "Diagnosis of Thought — structured reasoning protocol for distortion classification. Each suspected distortion must pass through this reasoning chain before being classified."
+  steps:
+    - step: 1
+      name: "Identify the Thought"
+      instruction: "Extract the exact sentence or phrase that may contain a distortion. Quote it verbatim."
+    - step: 2
+      name: "Identify the Situation"
+      instruction: "What external event or internal experience triggered this thought? Separate the situation from the interpretation."
+    - step: 3
+      name: "Classify the Pattern"
+      instruction: "Match the thought to one or more distortion types using the detection heuristics above. A thought can match multiple types."
+    - step: 4
+      name: "Evaluate the Evidence"
+      instruction: "What evidence supports this thought being a distortion rather than an accurate assessment? If the thought could be factually true, classify with LOW confidence."
+    - step: 5
+      name: "Map to Identity Signal"
+      instruction: "Which identity dimension does this distortion most directly affect? Use the identity_signal field from the matching distortion type."
+    - step: 6
+      name: "Assess Confidence"
+      instruction: "HIGH if ≥2 detection heuristics match AND situational context confirms distortion. MEDIUM if 1 heuristic matches clearly. LOW if pattern is ambiguous or could be accurate."

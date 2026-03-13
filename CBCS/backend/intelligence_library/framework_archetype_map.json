@@ -1,0 +1,1108 @@
+{
+    "version": "1.0",
+    "description": "Framework × Archetype cross-mapping with stable IDs, visual categories, and persuasive angles. Source: 🟨 Archetype JSON.md + prompts_archetypes (1).md",
+    "frameworks": {
+        "fw_01": "Relevance & Timeliness",
+        "fw_02": "Practical Value",
+        "fw_03": "Top Reliable List",
+        "fw_04": "Target Curiosity",
+        "fw_05": "Combinations",
+        "fw_06": "Comparison & Contrast",
+        "fw_07": "Relatable Concerns",
+        "fw_08": "Descriptive/Explanatory",
+        "fw_09": "Reflective/Insightful",
+        "fw_10": "Would You Rather",
+        "fw_11": "Then-to-Now Timeline",
+        "fw_12": "Emotional Triggers",
+        "fw_13": "Controversial & Comparative",
+        "fw_14": "Broad Appeal",
+        "fw_15": "Fear/Insecurity Angle",
+        "fw_16": "Aspirational Data or Envy",
+        "fw_17": "Controversial & Surprising",
+        "fw_18": "Cautionary Tales",
+        "fw_19": "Conceptual Contrasts",
+        "fw_20": "Instructional/Advisory",
+        "fw_21": "Relief Peak",
+        "fw_22": "Dopamine Cliff"
+    },
+    "entries": [
+        {
+            "id": 1,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_listicle",
+            "archetype_name": "Listicles",
+            "priority_level": 9,
+            "usage_notes": "Highly engaging for actionable investing tips or health hacks.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "instructional"
+        },
+        {
+            "id": 2,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_comparison",
+            "archetype_name": "Comparisons",
+            "priority_level": 8,
+            "usage_notes": "Effective for financial product comparisons and holistic remedies.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 3,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 7,
+            "usage_notes": "Demonstrates success stories for parenting, health, or investing strategies.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 4,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_debunking_myth",
+            "archetype_name": "Debunking Myths",
+            "priority_level": 6,
+            "usage_notes": "Breaks misconceptions, especially in health and personal finance.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 5,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_dopamine_cliff",
+            "archetype_name": "Dopamine Cliff Carousel",
+            "priority_level": 5,
+            "usage_notes": "Great for emotional investment hooks.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 6,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_relief_peak",
+            "archetype_name": "Relief Peak Carousel",
+            "priority_level": 6,
+            "usage_notes": "Use to provide solutions and a sense of accomplishment.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 7,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 6,
+            "usage_notes": "Adds relatability to financial and personal growth struggles.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 8,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 10,
+            "usage_notes": "Essential for concise, actionable tweets in any niche.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 9,
+            "framework_id": "fw_02",
+            "framework_name": "Practical Value",
+            "archetype_id": "arch_conceptual_contrast",
+            "archetype_name": "Conceptual Contrast Visuals",
+            "priority_level": 7,
+            "usage_notes": "Engages audiences with 'then vs. now' concepts, especially in health niches.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "favorable_evidence"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 10,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_listicle",
+            "archetype_name": "Listicles",
+            "priority_level": 9,
+            "usage_notes": "Sparks interest for exploring finance hacks or relationship tips.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "instructional"
+        },
+        {
+            "id": 11,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_comparison",
+            "archetype_name": "Comparisons",
+            "priority_level": 8,
+            "usage_notes": "Highlights differences in approaches or strategies (e.g., diet types).",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 12,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_visual_timeline",
+            "archetype_name": "Visual Timelines",
+            "priority_level": 6,
+            "usage_notes": "Captures transitions over time in health or parenting.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 13,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 7,
+            "usage_notes": "Builds curiosity with relatable or aspirational stories.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 14,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_poll",
+            "archetype_name": "Polls",
+            "priority_level": 5,
+            "usage_notes": "Engages audiences with provocative or reflective questions.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 15,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_conceptual_contrast",
+            "archetype_name": "Conceptual Contrast Visuals",
+            "priority_level": 6,
+            "usage_notes": "Highlights contrasts, especially in personal growth or spiritual journeys.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 16,
+            "framework_id": "fw_04",
+            "framework_name": "Target Curiosity",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Excellent for curiosity-piquing short-form content.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "confirm_suspicions"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 17,
+            "framework_id": "fw_06",
+            "framework_name": "Comparison & Contrast",
+            "archetype_id": "arch_comparison",
+            "archetype_name": "Comparisons",
+            "priority_level": 10,
+            "usage_notes": "Core to this framework; great for financial products and parenting styles.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "black_and_white"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 18,
+            "framework_id": "fw_06",
+            "framework_name": "Comparison & Contrast",
+            "archetype_id": "arch_visual_timeline",
+            "archetype_name": "Visual Timelines",
+            "priority_level": 7,
+            "usage_notes": "Use to show evolving strategies in health or personal growth.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "black_and_white"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 19,
+            "framework_id": "fw_06",
+            "framework_name": "Comparison & Contrast",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Highlights successes in contrasting scenarios (e.g., 'before vs. after').",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "black_and_white"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 20,
+            "framework_id": "fw_12",
+            "framework_name": "Emotional Triggers",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 10,
+            "usage_notes": "Drives emotional engagement in relationships or spirituality.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "the_challenger"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 21,
+            "framework_id": "fw_12",
+            "framework_name": "Emotional Triggers",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Perfect for short bursts of emotional resonance in any niche.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "the_challenger"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 22,
+            "framework_id": "fw_12",
+            "framework_name": "Emotional Triggers",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 7,
+            "usage_notes": "Lightens up serious topics in parenting or personal finance.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "the_challenger"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 23,
+            "framework_id": "fw_15",
+            "framework_name": "Fear/Insecurity Angle",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Reassures audiences by addressing fears (e.g., financial insecurity).",
+            "persuasive_angles": [
+                "allay_fears",
+                "the_challenger"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 24,
+            "framework_id": "fw_15",
+            "framework_name": "Fear/Insecurity Angle",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Shows how others have overcome challenges in health or relationships.",
+            "persuasive_angles": [
+                "allay_fears",
+                "the_challenger"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 25,
+            "framework_id": "fw_15",
+            "framework_name": "Fear/Insecurity Angle",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Addresses fears succinctly with actionable advice.",
+            "persuasive_angles": [
+                "allay_fears",
+                "the_challenger"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 26,
+            "framework_id": "fw_15",
+            "framework_name": "Fear/Insecurity Angle",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 5,
+            "usage_notes": "Adds relatability and levity to insecurity-based topics.",
+            "persuasive_angles": [
+                "allay_fears",
+                "the_challenger"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 27,
+            "framework_id": "fw_16",
+            "framework_name": "Aspirational Data or Envy",
+            "archetype_id": "arch_listicle",
+            "archetype_name": "Listicles",
+            "priority_level": 8,
+            "usage_notes": "Inspires envy through 'top 10 success habits' or similar ideas.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "instructional"
+        },
+        {
+            "id": 28,
+            "framework_id": "fw_16",
+            "framework_name": "Aspirational Data or Envy",
+            "archetype_id": "arch_visual_timeline",
+            "archetype_name": "Visual Timelines",
+            "priority_level": 7,
+            "usage_notes": "Shows progress toward aspirational goals in health or personal growth.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 29,
+            "framework_id": "fw_16",
+            "framework_name": "Aspirational Data or Envy",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Engages through success-driven narratives in spirituality or personal growth.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 30,
+            "framework_id": "fw_16",
+            "framework_name": "Aspirational Data or Envy",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Inspires through concise, envy-driven ideas.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 31,
+            "framework_id": "fw_16",
+            "framework_name": "Aspirational Data or Envy",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 4,
+            "usage_notes": "Adds relatability to aspirational struggles.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 32,
+            "framework_id": "fw_18",
+            "framework_name": "Cautionary Tales",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 8,
+            "usage_notes": "Warns audiences through relatable cautionary stories.",
+            "persuasive_angles": [
+                "allay_fears",
+                "justify_failures"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 33,
+            "framework_id": "fw_18",
+            "framework_name": "Cautionary Tales",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Demonstrates real-world consequences to inspire action.",
+            "persuasive_angles": [
+                "allay_fears",
+                "justify_failures"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 34,
+            "framework_id": "fw_18",
+            "framework_name": "Cautionary Tales",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Warns succinctly, perfect for tweets targeting fears or failures.",
+            "persuasive_angles": [
+                "allay_fears",
+                "justify_failures"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 35,
+            "framework_id": "fw_18",
+            "framework_name": "Cautionary Tales",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 5,
+            "usage_notes": "Adds humor to lighten cautionary messages.",
+            "persuasive_angles": [
+                "allay_fears",
+                "justify_failures"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 36,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_listicle",
+            "archetype_name": "Listicles",
+            "priority_level": 9,
+            "usage_notes": "Captures attention with universally engaging content like top tips.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "instructional"
+        },
+        {
+            "id": 37,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_comparison",
+            "archetype_name": "Comparisons",
+            "priority_level": 8,
+            "usage_notes": "Shows contrasts that appeal to a wide audience, e.g., product comparisons.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 38,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_visual_timeline",
+            "archetype_name": "Visual Timelines",
+            "priority_level": 7,
+            "usage_notes": "Use for generalized progress-based storytelling.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 39,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 7,
+            "usage_notes": "General success stories for a variety of topics.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 40,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Relatable stories for universal resonance across niches.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 41,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_poll",
+            "archetype_name": "Polls",
+            "priority_level": 6,
+            "usage_notes": "Engages audiences through interactive questions.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 42,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 10,
+            "usage_notes": "Always relevant for short-form engagement in any niche.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 43,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 6,
+            "usage_notes": "Adds relatability and a personal touch to universal topics.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 44,
+            "framework_id": "fw_14",
+            "framework_name": "Broad Appeal",
+            "archetype_id": "arch_conceptual_contrast",
+            "archetype_name": "Conceptual Contrast Visuals",
+            "priority_level": 8,
+            "usage_notes": "Effective for creating universally relatable contrasts.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "encourage_dreams"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 45,
+            "framework_id": "fw_07",
+            "framework_name": "Relatable Concerns",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Resonates deeply by addressing everyday struggles in parenting or health.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 46,
+            "framework_id": "fw_07",
+            "framework_name": "Relatable Concerns",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Examples of overcoming common challenges in relationships or wellbeing.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 47,
+            "framework_id": "fw_07",
+            "framework_name": "Relatable Concerns",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 10,
+            "usage_notes": "Uses humor to connect with relatable challenges in any niche.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 48,
+            "framework_id": "fw_07",
+            "framework_name": "Relatable Concerns",
+            "archetype_id": "arch_relief_peak",
+            "archetype_name": "Relief Peak Carousel",
+            "priority_level": 6,
+            "usage_notes": "Highlights solutions to relatable problems in a visual sequence.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 49,
+            "framework_id": "fw_07",
+            "framework_name": "Relatable Concerns",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Short, impactful messages addressing everyday issues.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 50,
+            "framework_id": "fw_07",
+            "framework_name": "Relatable Concerns",
+            "archetype_id": "arch_conceptual_contrast",
+            "archetype_name": "Conceptual Contrast Visuals",
+            "priority_level": 7,
+            "usage_notes": "Contrasts challenges and solutions visually for impact.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 51,
+            "framework_id": "fw_03",
+            "framework_name": "Top Reliable List",
+            "archetype_id": "arch_listicle",
+            "archetype_name": "Listicles",
+            "priority_level": 10,
+            "usage_notes": "Provides trusted advice in financial or health-related topics.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "problem_amplification"
+            ],
+            "visual_category": "instructional"
+        },
+        {
+            "id": 52,
+            "framework_id": "fw_03",
+            "framework_name": "Top Reliable List",
+            "archetype_id": "arch_comparison",
+            "archetype_name": "Comparisons",
+            "priority_level": 9,
+            "usage_notes": "Showcases reliable options or solutions.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "problem_amplification"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 53,
+            "framework_id": "fw_03",
+            "framework_name": "Top Reliable List",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Demonstrates reliability through real-world examples.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "problem_amplification"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 54,
+            "framework_id": "fw_03",
+            "framework_name": "Top Reliable List",
+            "archetype_id": "arch_relief_peak",
+            "archetype_name": "Relief Peak Carousel",
+            "priority_level": 7,
+            "usage_notes": "Conveys credibility through visual storytelling.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "problem_amplification"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 55,
+            "framework_id": "fw_03",
+            "framework_name": "Top Reliable List",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 6,
+            "usage_notes": "Condenses reliable advice into shareable short-form content.",
+            "persuasive_angles": [
+                "favorable_evidence",
+                "problem_amplification"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 56,
+            "framework_id": "fw_11",
+            "framework_name": "Then-to-Now Timeline",
+            "archetype_id": "arch_visual_timeline",
+            "archetype_name": "Visual Timelines",
+            "priority_level": 10,
+            "usage_notes": "Core archetype for showcasing transformations in health or finances.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 57,
+            "framework_id": "fw_11",
+            "framework_name": "Then-to-Now Timeline",
+            "archetype_id": "arch_conceptual_contrast",
+            "archetype_name": "Conceptual Contrast Visuals",
+            "priority_level": 8,
+            "usage_notes": "Highlights significant contrasts over time.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 58,
+            "framework_id": "fw_11",
+            "framework_name": "Then-to-Now Timeline",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Summarizes transformational insights in concise tweets.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 59,
+            "framework_id": "fw_11",
+            "framework_name": "Then-to-Now Timeline",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 6,
+            "usage_notes": "Adds humor to 'before-and-after' narratives for relatability.",
+            "persuasive_angles": [
+                "encourage_dreams",
+                "favorable_evidence"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 60,
+            "framework_id": "fw_09",
+            "framework_name": "Reflective/Insightful",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Explores deep insights and reflections for parenting or spirituality.",
+            "persuasive_angles": [
+                "the_challenger",
+                "justify_failures"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 61,
+            "framework_id": "fw_09",
+            "framework_name": "Reflective/Insightful",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Showcases real-world reflective success stories.",
+            "persuasive_angles": [
+                "the_challenger",
+                "justify_failures"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 62,
+            "framework_id": "fw_09",
+            "framework_name": "Reflective/Insightful",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 8,
+            "usage_notes": "Adds lightness to deeper, reflective narratives.",
+            "persuasive_angles": [
+                "the_challenger",
+                "justify_failures"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 63,
+            "framework_id": "fw_09",
+            "framework_name": "Reflective/Insightful",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 8,
+            "usage_notes": "Reflective, concise tweets to provoke thought and engagement.",
+            "persuasive_angles": [
+                "the_challenger",
+                "justify_failures"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 64,
+            "framework_id": "fw_19",
+            "framework_name": "Conceptual Contrasts",
+            "archetype_id": "arch_comparison",
+            "archetype_name": "Comparisons",
+            "priority_level": 9,
+            "usage_notes": "Contrasts opposing ideas for maximum clarity in finances or wellbeing.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "confirm_suspicions"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 65,
+            "framework_id": "fw_19",
+            "framework_name": "Conceptual Contrasts",
+            "archetype_id": "arch_visual_timeline",
+            "archetype_name": "Visual Timelines",
+            "priority_level": 8,
+            "usage_notes": "Adds sequential depth to contrasts over time.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 66,
+            "framework_id": "fw_19",
+            "framework_name": "Conceptual Contrasts",
+            "archetype_id": "arch_debunking_myth",
+            "archetype_name": "Debunking Myths",
+            "priority_level": 7,
+            "usage_notes": "Challenges preconceived notions visually or textually.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 67,
+            "framework_id": "fw_19",
+            "framework_name": "Conceptual Contrasts",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Engages through stark conceptual contrasts in short form.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "confirm_suspicions"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 68,
+            "framework_id": "fw_19",
+            "framework_name": "Conceptual Contrasts",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 7,
+            "usage_notes": "Injects humor into contrasting ideas.",
+            "persuasive_angles": [
+                "throw_rocks_at_enemies",
+                "confirm_suspicions"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 69,
+            "framework_id": "fw_22",
+            "framework_name": "Dopamine Cliff",
+            "archetype_id": "arch_dopamine_cliff",
+            "archetype_name": "Dopamine Cliff Carousel",
+            "priority_level": 10,
+            "usage_notes": "Core archetype for attention-grabbing emotional shifts.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 70,
+            "framework_id": "fw_22",
+            "framework_name": "Dopamine Cliff",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Reinforces emotional shifts through engaging stories.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 71,
+            "framework_id": "fw_22",
+            "framework_name": "Dopamine Cliff",
+            "archetype_id": "arch_conceptual_contrast",
+            "archetype_name": "Conceptual Contrast Visuals",
+            "priority_level": 8,
+            "usage_notes": "Highlights extremes visually for impactful messaging.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "confirm_suspicions"
+            ],
+            "visual_category": "comparison"
+        },
+        {
+            "id": 72,
+            "framework_id": "fw_22",
+            "framework_name": "Dopamine Cliff",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 7,
+            "usage_notes": "Builds narrative depth to emotional highs and lows.",
+            "persuasive_angles": [
+                "problem_amplification",
+                "confirm_suspicions"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 73,
+            "framework_id": "fw_21",
+            "framework_name": "Relief Peak",
+            "archetype_id": "arch_relief_peak",
+            "archetype_name": "Relief Peak Carousel",
+            "priority_level": 10,
+            "usage_notes": "Focuses on resolution and satisfaction after challenges.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 74,
+            "framework_id": "fw_21",
+            "framework_name": "Relief Peak",
+            "archetype_id": "arch_storytelling",
+            "archetype_name": "Storytelling",
+            "priority_level": 9,
+            "usage_notes": "Strengthens resolution through emotional engagement.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 75,
+            "framework_id": "fw_21",
+            "framework_name": "Relief Peak",
+            "archetype_id": "arch_case_study",
+            "archetype_name": "Case Studies",
+            "priority_level": 8,
+            "usage_notes": "Demonstrates real-world problem resolution.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "sequential"
+        },
+        {
+            "id": 76,
+            "framework_id": "fw_21",
+            "framework_name": "Relief Peak",
+            "archetype_id": "arch_observational_humor",
+            "archetype_name": "Observational Humor",
+            "priority_level": 6,
+            "usage_notes": "Adds levity to the resolution process.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "single_frame"
+        },
+        {
+            "id": 77,
+            "framework_id": "fw_21",
+            "framework_name": "Relief Peak",
+            "archetype_id": "arch_persuasive_tweet",
+            "archetype_name": "Persuasive Tweets",
+            "priority_level": 9,
+            "usage_notes": "Provides quick, satisfying solutions in short form.",
+            "persuasive_angles": [
+                "justify_failures",
+                "allay_fears"
+            ],
+            "visual_category": "single_frame"
+        }
+    ]
+}

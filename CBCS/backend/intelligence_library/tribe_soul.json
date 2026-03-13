@@ -1,0 +1,43 @@
+{
+  "_schema_version": "3.0",
+  "_ccp_layer": "Memory (L2)",
+  "_pi_extensions": [
+    "InteractComp",
+    "MemoryFolder"
+  ],
+  "_description": "Tribe Soul Profile — audience intelligence reference. Extended with RTTR fields per CCP PRD.",
+  "tribe_name": "The Driftless Men",
+  "core_fears": [
+    "Being Average",
+    "Failure",
+    "Irrelevance"
+  ],
+  "core_desires": [
+    "Legacy",
+    "Uniqueness",
+    "Success"
+  ],
+  "language_patterns": [
+    "grind",
+    "locked in",
+    "zero compromise",
+    "forge",
+    "steel",
+    "mountain"
+  ],
+  "rttr": {
+    "_description": "Real-Time Tribe Relevance — populated by Tshala (Sentinel) + intelligence-radar sweeps",
+    "velocity_score": null,
+    "freshness_score": null,
+    "shift_flag": false,
+    "last_sweep_timestamp": null,
+    "trending_topics": [],
+    "sentiment_trend": null
+  },
+  "insider_objects": {
+    "_description": "Visual recognition codes for H9 tribal semiotic checks",
+    "sacred_objects": [],
+    "rejection_triggers": [],
+    "aesthetic_preferences": []
+  }
+}

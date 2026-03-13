@@ -1,0 +1,29 @@
+{
+    "mode": "rating",
+    "title": "Face Rating Analysis",
+    "rating_subject": "Clavicular",
+    "criteria": [
+        "Jawline definition",
+        "Facial symmetry",
+        "Eye area",
+        "Skin quality",
+        "Overall harmony"
+    ],
+    "pros": [
+        "Strong jawline definition",
+        "Good facial symmetry",
+        "Clear skin texture"
+    ],
+    "cons": [
+        "Narrow eye area",
+        "Weak cheekbone projection"
+    ],
+    "tiers": {},
+    "unassigned_items": [],
+    "reaction_video": "",
+    "commentary_bullets": [
+        "Facial thirds proportion matters more than individual features",
+        "Lighting and angle can shift perception by ±1 point",
+        "Side profile reveals bone structure the front view hides"
+    ]
+}

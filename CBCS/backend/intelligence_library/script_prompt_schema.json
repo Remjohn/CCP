@@ -1,0 +1,183 @@
+{
+    "version": "1.0",
+    "description": "Standardized input schema for all Script Prompt SKILL.md files. Replaces legacy {content_idea} + {Conscious_Soul_Values} with 8 mandatory structured inputs and 3 optional enrichment inputs gated by data phase.",
+    "mandatory_inputs": {
+        "structural_congruence_point": {
+            "type": "object",
+            "source": "activation_seeds.json → blueprint orchestrator",
+            "replaces": "{content_idea}",
+            "description": "The seed — where coach and audience maps overlap. Contains the exact coordinates of structural resonance.",
+            "schema": {
+                "trigger_id": "string — ID from trigger_map.json",
+                "trigger_expression_angle": "string — which facet of the coach's activated position this blueprint expresses",
+                "audience_foundation_violated": "string — MFT foundation the audience resonates with",
+                "congruence_description": "string — human-readable description of the overlap",
+                "seed_esk_anchors": "list[string] — Emotionally Significant Keywords from the coach's authenticated material",
+                "data_phase": "string — COLD | WARM | HOT"
+            }
+        },
+        "voice_dna_spr": {
+            "type": "object",
+            "source": "voice_dna_spr.json (3 layers)",
+            "replaces": "{Conscious_Soul_Values} (flat dump)",
+            "description": "3-layer Sparse Priming Representation of the coach's voice. L1 = construction mechanics (sentence skeletons, discourse marker positions, rhythm patterns). L2 = emotional path (how the coach travels from activation to expression). L3 = leadership elevation (peak expression of specific Attractive Leader Traits).",
+            "schema": {
+                "layer_1_construction": {
+                    "sentence_skeletons": "list[string] — characteristic sentence patterns",
+                    "discourse_markers": "dict — position → marker mapping",
+                    "rhythm_patterns": "string — compression/expansion rhythm description",
+                    "default_sentence_length_range": "list[int] — [min_words, max_words]"
+                },
+                "layer_2_emotional_path": {
+                    "activation_to_expression_sequence": "list[string] — ordered steps the coach takes",
+                    "peak_expression_markers": "list[string] — words/constructions at emotional peak",
+                    "recovery_pattern": "string — how the coach returns from peak"
+                },
+                "layer_3_leadership_elevation": {
+                    "primary_trait": "string — Attractive Leader Trait ID",
+                    "ttt_ceiling": "string — maximum TTT level this coach can authentically reach",
+                    "elevation_trigger": "string — what activates the peak expression"
+                }
+            }
+        },
+        "emotional_dna": {
+            "type": "object",
+            "source": "emotional_dna.json",
+            "replaces": "Not present in any legacy prompt",
+            "description": "10-variable Emotional DNA profile. The appraisal mechanics that differentiate THIS coach from EVERY OTHER coach in the same domain.",
+            "schema": {
+                "appraisal_sequence": "list[string] — ordered appraisal variables",
+                "coping_potential_pattern": "string — how the coach processes threat to resolution",
+                "norm_compatibility_threshold": "float — how far from norm before activation",
+                "trigger_specificity_threshold": "float — how specific vs. broad the coach's triggers are",
+                "emotional_recovery_speed": "string — FAST | MODERATE | SLOW",
+                "dominant_moral_position": "string — the coach's default moral stance",
+                "activation_intensity": "float — 0-1 scale of emotional intensity when triggered",
+                "expression_style": "string — DIRECT | COMPRESSED | EXPANSIVE | CYCLIC",
+                "vulnerability_window": "string — when the coach's guard drops",
+                "dual_layer_frequency": "float — how often both encoding + PTG activate simultaneously"
+            }
+        },
+        "negative_space": {
+            "type": "object",
+            "source": "coach_soul.json → negative_space field",
+            "replaces": "Not present in any legacy prompt",
+            "description": "What the coach must NOT produce. Loaded BEFORE positive DNA in every prompt. Contains vocabulary, tonal registers, rhetorical moves, and identity edges this coach would never cross.",
+            "loading_order": "FIRST — before any positive DNA injection",
+            "schema": {
+                "forbidden_vocabulary": "list[string] — words this coach never uses",
+                "forbidden_tones": "list[string] — tonal registers to avoid",
+                "forbidden_rhetorical_moves": "list[string] — persuasion patterns that violate the coach's identity",
+                "identity_edges": "list[string] — boundaries the coach's content must never cross",
+                "anti_patterns": "list[string] — content structures that feel inauthentic to this coach"
+            }
+        },
+        "audience_tribal_terms": {
+            "type": "object",
+            "source": "tribe_soul.json → activated terms from seed",
+            "replaces": "Not present in any legacy prompt",
+            "description": "The audience's exact in-group vocabulary. Minimum 3 verified terms per content piece. These carry the sub-cortical recognition signal (Clark & Brennan, 1991).",
+            "schema": {
+                "verified_terms": "list[string] — minimum 3, audience-validated in-group words",
+                "term_contexts": "dict[string, string] — term → usage context mapping",
+                "generation_markers": "list[string] — generational/cultural markers specific to this tribe",
+                "enemy_labels": "list[string] — what the tribe calls their adversaries"
+            }
+        },
+        "authentication_certificate": {
+            "type": "object",
+            "source": "coach_soc_batch.md → per-segment certificates",
+            "replaces": "Not present in any legacy prompt",
+            "description": "LIWC composite score + per-marker breakdown + dual-layer activation flag. Gates generation fidelity: high-scoring material gets maximum preservation; low-scoring material gets standard voice replication.",
+            "schema": {
+                "composite_liwc_score": "float — 0-1 composite authentication score",
+                "per_marker_scores": {
+                    "sentence_compression": "float",
+                    "first_person_singular": "float",
+                    "hedging_absence": "float",
+                    "verb_tense_present": "float",
+                    "exclusive_words": "float"
+                },
+                "dual_layer_activation_detected": "boolean — both original encoding + PTG path active",
+                "trigger_id": "string — which trigger was activated in this segment"
+            },
+            "fidelity_gates": {
+                "high_fidelity": "composite > 0.7 AND dual_layer = true → preserve ≥80% verbatim construction",
+                "standard_fidelity": "composite 0.4-0.7 → standard voice replication",
+                "re_elicitation": "composite < 0.4 → flag for re-elicitation, do not force generation"
+            }
+        },
+        "archetype_metadata": {
+            "type": "object",
+            "source": "archetype_registry.resolve_archetype() → joins framework_archetype_map.json + archetype_palettes.json + persuasive_angles.json",
+            "replaces": "content_archetype (ghost variable)",
+            "description": "Fully resolved archetype metadata including framework binding, visual category, persuasive angles, and TTT gravity palette.",
+            "schema": {
+                "archetype_id": "string — stable ID (e.g., arch_disgusting_myth)",
+                "archetype_name": "string — human-readable name",
+                "framework_id": "string — parent framework (e.g., fw_11)",
+                "framework_name": "string — parent framework name",
+                "priority_level": "int — 1-10 priority within framework",
+                "visual_category": "string — single_frame | comparison | sequential | instructional",
+                "persuasive_angles": "list[object] — resolved angle objects with operational_instruction + construction_constraint",
+                "ttt_palette": {
+                    "base_gravity": "object — {ttt_level, ttt_name, focus}",
+                    "accent_layer": "object | null — {ttt_level, ttt_name, focus}",
+                    "intuitive_layer": "object | null — {ttt_level, ttt_name, focus}"
+                },
+                "usage_notes": "string — archetype-specific guidance",
+                "format_compatibility": "list[string] — which output formats this archetype supports (video_note, carousel, thread)"
+            }
+        },
+        "context_premise_summary": {
+            "type": "object",
+            "source": "CohortContextPremise from Context Premise Engine",
+            "replaces": "Not present in any legacy prompt",
+            "description": "Aggregated audience profile from the Context Premise Engine. Contains the audience's psychological coordinates that the content must address.",
+            "schema": {
+                "dominant_regulatory_focus": "string — PROMOTION | PREVENTION | DUAL_DOMINANT",
+                "dominant_moral_foundation": "string — MFT foundation with highest activation",
+                "mft_vector": "dict[string, float] — all 6 foundations with weights",
+                "coping_phase": "string — PRE_CONTEMPLATION | SEARCH_PHASE | ACTIVE_COPING | MAINTENANCE",
+                "hermeneutical_gap_score": "float — 0-1, how much unarticulated experience exists",
+                "data_phase": "string — COLD | WARM | HOT",
+                "sample_size": "int — number of audience texts analyzed",
+                "confidence": "string — LOW | MEDIUM | HIGH"
+            }
+        }
+    },
+    "optional_enrichment_inputs": {
+        "_gate": "Only populated in HOT data phase (>50 audience texts). COLD and WARM phases receive null.",
+        "audience_reconsolidation_sensitivity": {
+            "type": "float",
+            "source": "CohortContextPremise.reconsolidation_sensitivity",
+            "description": "Average prediction error sensitivity across the audience cohort. High values = audience is primed for schema challenges."
+        },
+        "audience_authenticity_distribution": {
+            "type": "object",
+            "source": "AudienceAggregator.authenticity_distribution",
+            "description": "Distribution of L-depth classifications across the cohort (% L1, % L2, % L3). Informs whether content should target performative or authentic registers."
+        },
+        "intersection_score": {
+            "type": "float",
+            "source": "IntersectionResult.composite_score",
+            "description": "Overall structural congruence between coach and audience. Higher = more confidence in the content direction."
+        }
+    },
+    "loading_sequence": [
+        "1. negative_space (ALWAYS FIRST — boundaries before content)",
+        "2. authentication_certificate (gates fidelity level for remaining inputs)",
+        "3. structural_congruence_point (the seed — what we're building from)",
+        "4. voice_dna_spr (the soil — how we're building)",
+        "5. emotional_dna (the root system — why we're building this way)",
+        "6. audience_tribal_terms (the language we're building in)",
+        "7. archetype_metadata (the container we're building into)",
+        "8. context_premise_summary (the audience we're building for)"
+    ],
+    "deprecated_inputs": {
+        "{content_idea}": "Replaced by structural_congruence_point.trigger_expression_angle",
+        "{Conscious_Soul_Values}": "Replaced by voice_dna_spr (3-layer) + emotional_dna + negative_space",
+        "{character_lexicon}": "Consumed only by Art Director, not Script Prompts",
+        "{content_archetype}": "Replaced by archetype_metadata (fully resolved)"
+    }
+}

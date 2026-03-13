@@ -1,0 +1,294 @@
+{
+    "_schema_version": "4.1",
+    "_ccp_layer": "Memory (L2)",
+    "_pi_extensions": [
+        "SoulResonance",
+        "EmotionalDNA",
+        "TriggerFirst",
+        "VoiceDNATeam",
+        "CSIPv3"
+    ],
+    "_description": "Coach Soul Profile v4.1 — CSIP v3.0 aligned. 3-Dimension architecture enforced (WHAT/HOW/PATH). TTT-stratified skeletons, clause depth per arousal, pragmatic discourse functions, Voice Delta, dimension index. Canonical identity reference for all pipeline skills.",
+    "_dimension_index": {
+        "_description": "Architectural contract mapping each field to its CSIP v3.0 dimension. Downstream skills MUST load dimensions separately — never collapse WHAT, HOW, and PATH into one prompt block.",
+        "dimension_1_soul_alignment": [
+            "collision_dna",
+            "negative_space",
+            "_legacy_descriptive"
+        ],
+        "dimension_2_construction_mechanics": [
+            "voice_dna.layer_1_construction_mechanics",
+            "invariance_layer",
+            "transition_grammar",
+            "pronoun_shift_map",
+            "epistemic_signature"
+        ],
+        "dimension_3_emotional_path": [
+            "voice_dna.layer_2_emotional_path_mechanics",
+            "voice_dna.layer_3_leadership_elevation"
+        ]
+    },
+    "_spr_vs_priming_index": {
+        "_description": "Distinguishes SPR infrastructure (loaded once, persists across all 92 prompts) from priming data (selected per-prompt based on target emotional register and leadership trait).",
+        "spr_infrastructure": [
+            "voice_dna.layer_1_construction_mechanics",
+            "voice_dna.layer_2_emotional_path_mechanics",
+            "voice_dna.layer_3_leadership_elevation",
+            "invariance_layer",
+            "transition_grammar",
+            "pronoun_shift_map",
+            "epistemic_signature"
+        ],
+        "priming_part_a_source": "Per-archetype aesthetic word cluster (lives in each archetype prompt, NOT in this file)",
+        "priming_part_b_source": "voice_dna.layer_2_emotional_path_mechanics — subset selected by target emotional register",
+        "priming_part_c_source": "voice_dna.layer_3_leadership_elevation — subset selected by target leadership trait"
+    },
+    "name": null,
+    "unique_mechanism": null,
+    "promise": null,
+    "_legacy_descriptive": {
+        "_deprecated": true,
+        "_migration_note": "These fields are Vocabulary Costume artifacts (Failure 3). No downstream skill may read from this namespace. Use voice_dna.layer_1_construction_mechanics instead.",
+        "voice_tone": "drill sergeant with a heart of gold",
+        "metaphors": [
+            "war",
+            "forging steel",
+            "climbing mountains"
+        ],
+        "humor_style": null,
+        "storytelling_mode": null,
+        "confrontation_level": null,
+        "vulnerability_depth": null
+    },
+    "ttt_baseline": null,
+    "emotional_dna_ref": {
+        "_description": "Pointer to the coach's Emotional DNA profile — the root system from which Voice DNA grows.",
+        "path": "intelligence_library/emotional_dna.json",
+        "extraction_complete": false
+    },
+    "trigger_map_ref": {
+        "_description": "Pointer to the coach's permanent trigger architecture.",
+        "path": "intelligence_library/trigger_map.json",
+        "mapping_complete": false
+    },
+    "sacred_audio": {
+        "_description": "Metadata pointers for voice-extracted identity traits (populated by coach-elicitation via Groq Whisper)",
+        "audio_source_path": null,
+        "emotional_tone": null,
+        "energy_level": null,
+        "pause_pattern": null,
+        "speech_cadence": null,
+        "extraction_timestamp": null
+    },
+    "invariance_layer": {
+        "_description": "Top-level separation between DNA-level invariants (patterns surviving 4+/5 topics) and topic-specific modulations (patterns in ≤2 topics). Addresses Failure 5 (Topic-Locked Transfer) and Principle 1 (Invariance).",
+        "_research": "Voice DNA Framework Principle 1 — identity is what survives radical topic change. Step 4 — Cross-Topic Invariance Test.",
+        "dna_invariants": [],
+        "topic_modulations": [],
+        "invariance_test_metadata": {
+            "topic_clusters_used": [],
+            "overlap_threshold": 4,
+            "test_date": null,
+            "convergence_status": null
+        }
+    },
+    "epistemic_signature": {
+        "_description": "Structured profile of how this coach holds certainty and doubt. More invariant than any word choice (Principle 3). Extracted per emotional register.",
+        "_research": "Voice DNA Framework Principle 3 — Epistemic Signature. Pennebaker LIWC-22 function words, Barrett Constructionism emotional granularity.",
+        "certainty_triggers": [],
+        "qualification_triggers": [],
+        "contradiction_response": null,
+        "contradiction_response_options": [
+            "concede",
+            "redirect",
+            "double_down",
+            "reframe"
+        ],
+        "knowledge_edge_signals": [],
+        "hedging_construction_template": null,
+        "per_ttt_band": {
+            "ttt_01_03": {
+                "certainty_frequency": null,
+                "hedge_frequency": null
+            },
+            "ttt_04_06": {
+                "certainty_frequency": null,
+                "hedge_frequency": null
+            },
+            "ttt_07_09": {
+                "certainty_frequency": null,
+                "hedge_frequency": null
+            }
+        }
+    },
+    "pronoun_shift_map": {
+        "_description": "Complete trigger map of pronoun shifts. Each shift logged with topic, emotional moment, and TTT level. Becomes a generative rule in the production layer (Principle 5, Step 5).",
+        "_research": "Voice DNA Framework Principle 5 — Pronoun Logic. Pennebaker pronoun research — first-person singular correlates with emotional processing depth.",
+        "shifts": []
+    },
+    "transition_grammar": {
+        "_description": "Inter-idea movement patterns — how the coach travels between thought units. Distinct from discourse markers (intra-sentence) and sentence skeletons (intra-sentence structure). Principle 9.",
+        "_research": "Voice DNA Framework Principle 9 — Transition Grammar. Halliday & Hasan cohesion theory.",
+        "patterns": [],
+        "taxonomy": [
+            "contrast",
+            "build",
+            "pivot_via_example",
+            "zoom_out",
+            "self_interrupt",
+            "return_to_prior"
+        ]
+    },
+    "collision_dna": {
+        "_description": "5-7 pre-encoded core tensions between coach worldview and tribe reality. THE generative engine of every authentic piece (Principle 12, Step 9). NOT discovered fresh each time.",
+        "_research": "Voice DNA Framework Principle 12 — Collision DNA. Festinger Cognitive Dissonance (1957), Haidt MFT.",
+        "collisions": [],
+        "extraction_metadata": {
+            "candidates_before_funnel": null,
+            "funnel_layer_1_frequency_filter": null,
+            "funnel_layer_2_uniqueness_filter": null,
+            "funnel_layer_3_intensity_rank": null,
+            "final_count": null
+        }
+    },
+    "voice_dna": {
+        "_description": "3-Layer Voice DNA SPR — Mandate 5 separation. Layer 1 = mechanics. Layer 2 = emotional path. Layer 3 = leadership elevation.",
+        "_research_basis": "CCF Bible Critique v2 Mandates 2+5, Computational Stylometry 60-var discriminator, Pennebaker LIWC-22",
+        "layer_1_construction_mechanics": {
+            "_description": "How this coach constructs sentences — the mechanical DNA. CSIP v3.0 Component A.",
+            "sentence_skeletons_by_ttt": {
+                "_description": "CSIP v3.0: sentence skeleton templates for EACH TTT level. The coach writes differently at TTT-03 than TTT-08.",
+                "ttt_01_03": [],
+                "ttt_04_06": [],
+                "ttt_07_09": []
+            },
+            "discourse_marker_rules": [],
+            "discourse_marker_positions": {
+                "_research": "Schiffrin discourse marker analysis — positional signatures AND pragmatic functions under emotional load",
+                "_description": "CSIP v3.0: each marker mapped by position AND pragmatic function (what it DOES, not just where it sits).",
+                "neutral_position": null,
+                "activated_position": null,
+                "pragmatic_functions": {
+                    "_description": "Per-marker function classification. What does this marker DO at this position?",
+                    "_function_options": [
+                        "pivot",
+                        "summarize",
+                        "escalate",
+                        "redirect",
+                        "qualify",
+                        "transition_to_example",
+                        "signal_conviction",
+                        "soften"
+                    ],
+                    "markers": []
+                }
+            },
+            "clause_depth_by_arousal": {
+                "_description": "CSIP v3.0: clause subordination depth per arousal level. How many dependent clauses does the coach embed per sentence at each TTT band?",
+                "_research": "CSIP v3.0 Part Three: Component A — clause depth at each arousal level.",
+                "ttt_01_03": {
+                    "avg_clauses_per_sentence": null,
+                    "max_subordination_depth": null
+                },
+                "ttt_04_06": {
+                    "avg_clauses_per_sentence": null,
+                    "max_subordination_depth": null
+                },
+                "ttt_07_09": {
+                    "avg_clauses_per_sentence": null,
+                    "max_subordination_depth": null
+                }
+            },
+            "rhythm_signature_by_ttt": {
+                "_description": "TTT-stratified rhythm profile. NOT a single average (Principle 10).",
+                "_research": "Voice DNA Framework Principle 10 — sentence length under emotional load is a fingerprint.",
+                "ttt_01_03": {
+                    "avg_sentence_length": null,
+                    "compression_ratio": null,
+                    "clause_multiplication_rate": null,
+                    "fragment_cluster_density": null
+                },
+                "ttt_04_06": {
+                    "avg_sentence_length": null,
+                    "compression_ratio": null,
+                    "clause_multiplication_rate": null,
+                    "fragment_cluster_density": null
+                },
+                "ttt_07_09": {
+                    "avg_sentence_length": null,
+                    "compression_ratio": null,
+                    "clause_multiplication_rate": null,
+                    "fragment_cluster_density": null
+                }
+            },
+            "metaphor_deployment_rules": {
+                "_description": "Full What/Why/How/When/Where deployment logic per metaphor domain (Principle 11, Step 10). NOT just content.",
+                "_research": "Voice DNA Framework Principle 11 — deployment logic is more replicable than metaphor content.",
+                "domains": []
+            },
+            "stylometric_lr_score": {
+                "_description": "Likelihood Ratio from forensic stylometry — quantitative voice match confidence",
+                "_research": "Computational Stylometry for Authorship Attribution — LR forensic validation",
+                "value": null,
+                "threshold": 0.85
+            }
+        },
+        "layer_2_emotional_path_mechanics": {
+            "_description": "How this coach travels from emotional activation to expression. Derived from Emotional DNA V1-V5.",
+            "_research": "CCF Bible Critique v2 Mandate 5",
+            "conversion_mechanism": null,
+            "conversion_options": [
+                "mechanism_first",
+                "narrative_first",
+                "verdict_first",
+                "evidence_first"
+            ],
+            "mechanism_trigger_condition": null,
+            "emotion_residency_time": null,
+            "escalation_triggers": [],
+            "ttt_transition_markers": []
+        },
+        "layer_3_leadership_elevation": {
+            "_description": "Which of the 12 Attractive Leader Traits this coach expresses at peak. CSIP v3.0: includes Voice Delta (peak vs average differential).",
+            "_research": "Normative Voice Profile — peak expression signature per trait. CSIP v3.0 Part Six.",
+            "primary_trait": null,
+            "secondary_trait": null,
+            "peak_expression_markers": [],
+            "trait_format_affinity": {},
+            "voice_delta": {
+                "_description": "CSIP v3.0: The differential between peak and average expression. Elevation moves = present in peak, absent in average. Suppression moves = present in average, absent in peak.",
+                "_research": "CSIP v3.0 Part Six: Stage 0.5 Trait Gap Analysis + Stage 0.6 Normative Profile Construction.",
+                "elevation_moves": [],
+                "suppression_moves": [],
+                "blocking_patterns": []
+            }
+        }
+    },
+    "negative_space": {
+        "_description": "Mandate 4 — what this coach CANNOT produce without breaking character. Consulted BEFORE positive DNA is loaded.",
+        "_research": "CCF Bible Critique v2 Principle 11 + Mandate 4. Voice DNA Framework Principle 7, Step 7.",
+        "forbidden_tonal_registers": [],
+        "forbidden_vocabulary_classes": [],
+        "forbidden_rhetorical_moves": [],
+        "forbidden_structural_patterns": [],
+        "identity_edge_markers": []
+    },
+    "extraction_pipeline_status": {
+        "soul_extraction_complete": false,
+        "emotional_dna_complete": false,
+        "csip_v3_extensions_complete": false,
+        "trigger_map_complete": false,
+        "voice_dna_3layer_complete": false,
+        "negative_space_complete": false,
+        "invariance_test_complete": false,
+        "epistemic_signature_complete": false,
+        "pronoun_map_complete": false,
+        "transition_grammar_complete": false,
+        "collision_dna_complete": false,
+        "voice_delta_complete": false,
+        "adversarial_validation_complete": false,
+        "normative_fidelity_validated": false,
+        "pipeline_ready": false,
+        "last_updated": null
+    }
+}

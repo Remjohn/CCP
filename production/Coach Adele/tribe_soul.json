@@ -1,0 +1,281 @@
+# **🟨 Tribe Soul Profile 🟨**
+
+{  
+  "cultural\_artifacts": {  
+    "tribe\_slang": \[
+      {
+        "term": "S'enjailler",  
+        "example\_quote": "Un impératif de résilience. 'S'enjailler' malgré le froid, le racisme ou la fatigue. C'est l'acte de résistance par la joie, souvent lié à la nourriture et à la fête."
+      },
+      {
+        "term": "La Go",  
+        "example\_quote": "C'est une go sûre \- Désigne une femme de la communauté avec affection et solidarité immédiate."
+      },
+      {
+        "term": "Ventre gonflé",  
+        "example\_quote": "Depuis que je suis en France, mon ventre ne fait que gonfler. Je ressemble à une femme enceinte de 6 mois alors que je ne mange que de la salade comme eux."
+      },
+      {
+        "term": "Nettoyer le ventre",  
+        "example\_quote": "L'usage de plantes comme le Kinkeliba, le Desmodium ou le Djeka pour éliminer les impuretés, les 'saletés' accumulées par l'alimentation européenne jugée toxique."
+      },
+      {
+        "term": "Y'a pas drap",  
+        "example\_quote": "Utilisé pour rassurer, pour minimiser un souci de santé ou social. Une forme de stoïcisme verbal face à l'adversité."
+      },
+      {
+        "term": "Tu te fais yèrè",  
+        "example\_quote": "Mise en garde cruciale entre femmes concernant les arnaques, les mauvais médecins, les produits éclaircissants dangereux ou les relations toxiques."
+      },
+      {
+        "term": "C'est gâté",  
+        "example\_quote": "Mon ventre est gâté \- Peut décrire une situation sanitaire qui dérape ou une ambiance festive incroyable, selon l'intonation."
+      },
+      {
+        "term": "Diongoma",  
+        "example\_quote": "Terme laudatif pour une femme avec des courbes, élégante. Valorise le poids comme signe de santé et de richesse."
+      },
+      {
+        "term": "Pain Choco",  
+        "example\_quote": "Un 'pain choco' est un petit ami doux, mignon. Montre la capacité de la diaspora à remixer les symboles français."
+      },
+      {
+        "term": "Bledard",  
+        "example\_quote": "Le nouvel arrivant qui garde ses réflexes du pays \- accent fort, codes vestimentaires décalés."
+      },
+      {
+        "term": "Bounty",  
+        "example\_quote": "L'assimilé \- noir dehors, blanc dedans. Utilisé pour réguler les normes sociales du groupe."
+      },
+      {
+        "term": "Le froid est entré dans mes os",  
+        "example\_quote": "C'est une fatigue de l'âme autant que du corps, souvent ignorée par les médecins généralistes qui prescrivent des vitamines sans comprendre la racine sociologique de l'épuisement."
+      }  
+    \
+    ],  
+    "inside\_jokes": \[
+      {
+        "joke": "La nourriture 'blanche' fade",
+        "description": "Les blagues sur le riz non lavé, les pâtes sans épices, le poulet bouilli sont omniprésentes. L'humour repose sur l'exagération.",  
+        "example\_quote": "Les blancs mangent de l'herbe (salade) et pensent que le poivre noir est 'trop épicé'."
+      },
+      {
+        "joke": "La Maman Africaine qui guérit tout",
+        "description": "Sketchs mettant en scène une mère qui prétend guérir toutes les maladies avec du beurre de karité, du Vicks VapoRub ou de l'eau chaude.",  
+        "example\_quote": "Maman dit 'Tu n'es pas fou, c'est les démons' \- permet d'ouvrir la discussion sur le déni de la santé mentale dans la communauté."
+      },
+      {
+        "joke": "Le régime impossible avec une mère africaine",
+        "description": "Scénario TikTok viral où une fille présente sa salade quinoa et sa mère répond avec horreur.",  
+        "example\_quote": "C'est quoi ça? C'est la nourriture des chèvres? Tu n'as pas d'argent pour acheter de la viande? Tiens, prends ce riz sauce graine, tu vas disparaître tellement tu es maigre."
+      },
+      {
+        "joke": "L'hiver qui rétrécit les vêtements",
+        "description": "Blagues pour gérer la dissonance cognitive sur le poids sans s'effondrer.",  
+        "example\_quote": "L'hiver a rétréci mes jeans \- ou la tante qui dit 'Tu as grossi, ça te va bien' alors que le médecin vient de diagnostiquer une obésité morbide."
+      },
+      {
+        "joke": "Le 'Syndrome Méditerranéen'",
+        "description": "Référence ironique au biais racial médical qui minimise la douleur des patients non-blancs.",  
+        "example\_quote": "J'ai l'impression qu'ils pensent que j'exagère ma douleur à cause de mes origines, le fameux syndrome méditerranéen."
+      }  
+    \
+    ],  
+    "shared\_heroes": \[
+      {
+        "hero": "La Maman Africaine",
+        "evidence": "Elle est la gardienne du temple, qu'elle soit physiquement présente dans le foyer ou virtuellement via des appels WhatsApp quotidiens. Sa voix porte une autorité quasi-divine sur l'alimentation et les soins pédiatriques."
+      },
+      {
+        "hero": "La Naturopathe 'Afro-Holistique' (Tatiane Van Laethem, Jessica Brail)",
+        "evidence": "Elles sont perçues comme des héroïnes modernes car elles réalisent la synthèse impossible : elles écoutent et valident les symptômes sans jugement racial, tout en possédant une légitimité scientifique."
+      },
+      {
+        "hero": "L'Influenceuse 'Grande Sœur' (Crazy Sally, Fatou Guinea, Mrs Roots)",
+        "evidence": "Elles brisent les tabous (santé mentale, règles douloureuses, fibromes) que la pudeur traditionnelle interdirait d'aborder avec la mère. Elles valident l'expérience de la double culture."
+      },
+      {
+        "hero": "Les Grand-Mères et le Savoir Ancestral",
+        "evidence": "Nos grands-mères avaient raison, la science vient juste de le confirmer. La biochimie africaine est la réponse à tes maux modernes."
+      },
+      {
+        "hero": "La 'Strong Black Woman' (archétype ambivalent)",
+        "evidence": "L'aspiration à être infatigable, à tout gérer (carrière, famille, soutien à la communauté, envois d'argent au pays) sans jamais se plaindre \- même si c'est un piège."
+      }  
+    \
+    ],  
+    "common\_enemies": \[
+      {
+        "enemy": "Le Médecin 'Pressé et Distant'",
+        "evidence": "Les docteurs ici, ils te parlent avec des mots compliqués, mais ils ne te regardent même pas dans les yeux. Chez nous, on te touche, on te demande comment va la famille. Ici, c'est l'usine."
+      },
+      {
+        "enemy": "L'Alimentation 'Blanche' (Le Poison Fade)",
+        "evidence": "La nourriture européenne standard (pâtes à l'eau, riz sans sauce, légumes vapeur) est personnifiée comme une entité hostile. Elle est perçue comme 'morte', sans âme, et surtout 'fade'."
+      },
+      {
+        "enemy": "Les Produits Chimiques et Toxiques",
+        "evidence": "Une méfiance croissante envers les produits transformés, les hormones supposées dans la viande industrielle européenne, et les perturbateurs endocriniens \- liés à l'explosion épidémique des cas de fibromes."
+      },
+      {
+        "enemy": "L'Hystérectomie Rapide",
+        "evidence": "La peur de l'hystérectomie proposée trop rapidement pour des fibromes est une terreur sourde, vécue comme une mutilation de la féminité par un corps médical indifférent."
+      },
+      {
+        "enemy": "Le Climat Européen",
+        "evidence": "L'hiver européen, le manque de lumière et la grisaille urbaine sont vécus comme des agressions physiques directes. Le froid est entré dans mes os."
+      }  
+    \
+    ]
+  },  
+  "humor\_profile": {  
+    "dominant\_style": "Supériorité Ironique Culturelle",  
+    "secondary\_style": "Auto-Dérision Défensive",  
+    "style\_examples": \[
+      {
+        "style": "Supériorité Ironique Culturelle",
+        "example": "Les blancs mangent de l'herbe et pensent que le poivre noir est 'trop épicé' \- Se moquer de la nourriture du pays d'accueil est une façon de résister à l'assimilation."
+      },
+      {
+        "style": "Supériorité Ironique Culturelle",
+        "example": "Je suis peut-être immigrée, mais au moins, je sais ce qu'est le vrai goût \- Affirmation de supériorité sensorielle pour transformer l'exclusion culinaire en fierté gastronomique."
+      },
+      {
+        "style": "Auto-Dérision Défensive",
+        "example": "POV : Essayer de faire un régime quand ta mère est congolaise/ivoirienne. \#AfricanMom \#DietFail \#YaudiLife"
+      },
+      {
+        "style": "Auto-Dérision Défensive",
+        "example": "L'hiver a rétréci mes jeans \- permet de gérer la dissonance cognitive intense sur l'image corporelle sans s'effondrer."
+      },
+      {
+        "style": "Satire Intergénérationnelle",
+        "example": "Maman qui crie 'Tu n'es pas fou, c'est les démons' \- valide la souffrance d'être coincée entre deux modèles éducatifs tout en réaffirmant l'amour filial."
+      }  
+    \
+    ],  
+    "humor\_targets": \[
+      {
+        "target": "La nourriture européenne fade",
+        "example": "C'est quoi ça? C'est la nourriture des chèvres? \- Les pâtes à l'eau, riz sans sauce, légumes vapeur sont des sujets inépuisables de moquerie."
+      },
+      {
+        "target": "Le médecin occidental insensible",
+        "example": "Le fameux syndrome méditerranéen \- où ils pensent que j'exagère ma douleur à cause de mes origines."
+      },
+      {
+        "target": "L'assimilé 'Bounty'",
+        "example": "Noir dehors, blanc dedans \- Les blagues servent à réguler les normes sociales du groupe et à explorer l'angoisse de la perte d'identité."
+      },
+      {
+        "target": "Les régimes occidentaux hypocaloriques",
+        "example": "Tu veux mourir? Tu es trop maigre\! \- Manger sainement au sens occidental est perçu par l'entourage comme une trahison sociale, une pauvreté, ou une maladie."
+      },
+      {
+        "target": "La mère tyrannique mais aimante",
+        "example": "Les blancs te donnent trop de cachets, ça va t'empoisonner \- permet de rire de la pression de l'excellence et de l'ingérence maternelle."
+      }  
+    \
+    ],  
+    "taboos\_and\_no\_go\_zones": \[
+      {
+        "taboo": "L'infertilité et les 'problèmes de femmes'",
+        "evidence": "On ne parle pas ouvertement de fausses couches, de FIV ou de difficulté à concevoir en public. C'est vécu comme un échec personnel, une honte, voire une punition divine."
+      },
+      {
+        "taboo": "La dépression et le mal-être psychique",
+        "evidence": "La dépression est souvent qualifiée de 'maladie de blancs' ou de 'caprice de riche'. On ne dit pas 'je suis déprimée', on dit 'je suis fatiguée', 'j'ai le corps lourd'."
+      },
+      {
+        "taboo": "Les produits éclaircissants (Tchatcho/Xessal)",
+        "evidence": "C'est un sujet de honte mais aussi une pratique répandue pour répondre au colorisme ambiant. Associer une marque de santé à l'esthétique de la peau claire est suicidaire."
+      },
+      {
+        "taboo": "L'horloge biologique et les femmes sans enfants",
+        "evidence": "L'humour sur l'horloge biologique ou les femmes sans enfants est perçu comme une violence inouïe. La femme 'complète' est celle qui enfante."
+      },
+      {
+        "taboo": "La perte de clés privées culturelles",
+        "evidence": "Critiquer ouvertement quelqu'un qui a 'perdu' sa culture ou ne parle plus sa langue maternelle peut briser la solidarité communautaire."
+      }  
+    \
+    ]
+  },  
+  "emotional\_resonance": {  
+    "primary\_aspirations": \[
+      {  
+        "aspiration\_quote": "Je veux réconcilier mes deux cultures : Manger sainement pour soigner mes fibromes et ma digestion, mais 'avec du goût' (épices, textures, chaleur). Je veux une santé qui a de la saveur."
+      },
+      {  
+        "aspiration\_quote": "Comprendre mes cycles, gérer ma fertilité naturellement, et refuser de subir la violence chirurgicale comme seule option. Je veux être actrice de ma guérison."
+      },
+      {  
+        "aspiration\_quote": "Trouver une communauté qui comprend que mon mal de ventre est aussi un mal du pays, et que ma fatigue est politique autant que biologique."
+      },
+      {  
+        "aspiration\_quote": "Arrête de compter les calories, commence à écouter tes ancêtres. Ton corps n'est pas le problème, c'est ce qu'on lui donne qui l'est."
+      },
+      {  
+        "aspiration\_quote": "Nos grands-mères avaient raison, la science vient juste de le confirmer. La biochimie africaine est la réponse à tes maux modernes."
+      },
+      {  
+        "aspiration\_quote": "Rejoins la tribu de celles qui ont décidé de reprendre le pouvoir sur leur corps. On se soigne, on s'enjaille, on brille."
+      },
+      {  
+        "aspiration\_quote": "Je ne suis pas folle, c'est le système qui est dur \- validation de l'expérience de la double culture et du racisme ordinaire."
+      }  
+    \
+    ],  
+    "core\_anxieties": \[
+      {  
+        "anxiety\_quote": "Mon ventre ne fait que gonfler. C'est pas de la graisse, c'est comme si mon corps rejetait l'air d'ici. C'est lourd, mais les médecins me disent juste de perdre du poids."
+      },
+      {  
+        "anxiety\_quote": "Ma mère au téléphone me dit 'Tu as maigri, tu es malade?' alors que mon IMC est déjà en surpoids pour la médecine du travail. Je suis coincée entre être une 'Diongoma' pour mon mari et une 'obèse' pour mon médecin."
+      },
+      {  
+        "anxiety\_quote": "Les fibromes sont vécus comme une malédiction, des 'pierres' qui occupent l'espace de la vie. L'infertilité n'est pas juste un problème médical, c'est une faillite sociale et ontologique."
+      },
+      {  
+        "anxiety\_quote": "Si j'avais écouté le médecin, je n'aurais plus d'utérus aujourd'hui. Ils voulaient tout enlever sans considérer que je voulais encore des enfants."
+      },
+      {  
+        "anxiety\_quote": "Manger culturellement me rend malade (car les ingrédients en Europe sont différents), manger occidental me rend triste. Je suis piégée."
+      },
+      {  
+        "anxiety\_quote": "Le froid est entré dans mes os. La nostalgie de la chaleur du pays est une douleur sourde qui se somatise par une baisse d'énergie vitale."
+      },
+      {  
+        "anxiety\_quote": "Pour ne pas offenser la tante ou la mère, je mange par devoir social des plats que je sais trop riches, aggravant mes troubles digestifs, puis je culpabilise seule chez moi."
+      }  
+    \
+    ],  
+    "high\_arousal\_triggers": \[
+      {
+        "trigger": "Validation Médicale Afro-Centrée (Positif)",  
+        "example\_quote": "Elle m'écoute et valide mes symptômes sans jugement racial, elle possède une légitimité scientifique mais intègre la dimension émotionnelle et l'impact du stress de l'exil."
+      },
+      {
+        "trigger": "Diagnostic de Fibromes ou Difficulté de Conception (Négatif)",  
+        "example\_quote": "On a découvert des fibromes de la taille d'un pamplemousse. La colère froide contre le système médical qui m'a ignorée pendant des années \- le biais racial du 'Syndrome Méditerranéen'."
+      },
+      {
+        "trigger": "Retour au Pays et Révélation Digestive (Positif)",  
+        "example\_quote": "Manger local au pays et se sentir soudainement mieux (ventre plat, digestion facile, énergie retrouvée) fait réaliser que c'est l'environnement alimentaire européen qui est le poison."
+      },
+      {
+        "trigger": "Commentaires Familiaux sur le Physique (Négatif)",  
+        "example\_quote": "Ah mais l'Europe te réussit, tu as bien pris\! \- ou \- Tu es sèche, on ne te nourrit pas là-bas? La femme réalise que son corps ne correspond plus aux normes ni d'ici, ni de là-bas."
+      },
+      {
+        "trigger": "Validation Communautaire sur les Réseaux (Positif)",  
+        "example\_quote": "Si 'les autres ont ça aussi', c'est rassurant. La sorité en ligne offre validation et expérience partagée face aux troubles que les médecins minimisent."
+      },
+      {
+        "trigger": "Pression Sociale à la Table Familiale (Négatif)",  
+        "example\_quote": "Tu fais la difficile? Tu es devenue blanche? C'est la nourriture de chez nous, c'est bon pour la santé, mange\! \- Alimentation sous contrainte affective."
+      }  
+    \
+    ]
+  }
+}

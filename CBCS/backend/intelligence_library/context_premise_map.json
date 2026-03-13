@@ -1,0 +1,215 @@
+{
+  "dimensions": {
+    "frustrations": {
+      "description": "Things they're fed up with or tired of dealing with.",
+      "examples": [
+        "Sick of busting my butt and still feeling broke."
+      ]
+    },
+    "wants": {
+      "description": "What they really want in life — stuff that keeps them going.",
+      "examples": [
+        "I just want to have enough so I don't stress every month."
+      ]
+    },
+    "dreams": {
+      "description": "Big picture, what they hope their life looks like in the future.",
+      "examples": [
+        "Owning a few properties and chilling on a beach somewhere."
+      ]
+    },
+    "fears": {
+      "description": "What freaks them out or keeps them up at night.",
+      "examples": [
+        "What if I lose everything? Like, what if the market crashes tomorrow?"
+      ]
+    },
+    "suspicions": {
+      "description": "What they're skeptical or unsure about.",
+      "examples": [
+        "Is my real estate agent really looking out for me, or just making a sale?"
+      ]
+    },
+    "insecurities": {
+      "description": "Their inner doubts, stuff they might not admit.",
+      "examples": [
+        "What if I'm just not cut out for this investing stuff?"
+      ]
+    },
+    "envy_feelings": {
+      "description": "What makes them jealous of others.",
+      "examples": [
+        "Man, seeing people my age already retired and living it up kinda stings."
+      ]
+    },
+    "enemies": {
+      "description": "The people, things, or situations holding them back.",
+      "examples": [
+        "The constant rise in property prices makes it feel like I'll never catch up."
+      ]
+    },
+    "coping_mechanism": {
+      "description": "How they cope with their frustrations, fears, and insecurities — what they do to avoid the pain.",
+      "examples": [
+        "I just binge-watch Netflix to escape the stress, or hit the bars with friends to forget about money worries."
+      ]
+    },
+    "hidden_beliefs": {
+      "description": "What they think is true but might be surprised to learn otherwise — commonly held assumptions that could be challenged.",
+      "examples": [
+        "You need a ton of money to start investing in real estate",
+        "Only rich people can make it in this game."
+      ]
+    },
+    "emotional_triggers": {
+      "description": "The most emotionally charged words, phrases, or concepts that instantly grab their attention and create strong reactions.",
+      "examples": [
+        "Financial freedom",
+        "passive income",
+        "being broke",
+        "missing out",
+        "too late to start"
+      ]
+    },
+    "success_markers": {
+      "description": "What they consider proof that they're 'making it' — the visible signs of progress or achievement they desperately want to show others.",
+      "examples": [
+        "Having my first rental property",
+        "Getting that first $1K passive income month",
+        "Quitting my day job"
+      ]
+    },
+    "regulatory_focus_orientation": {
+      "description": "Whether the audience is promotion-focused (seeking gains, growth, ideals) or prevention-focused (avoiding losses, fulfilling duties, seeking safety).",
+      "examples": [
+        "PROMOTION: 'I want to build something incredible'",
+        "PREVENTION: 'I need to protect what I have'"
+      ],
+      "_research": "Higgins Regulatory Focus Theory (1997)"
+    },
+    "moral_foundation_violated": {
+      "description": "Which of Haidt's 6 Moral Foundations is activated — reverse-engineered from moral emotion linguistic signatures.",
+      "examples": [
+        "FAIRNESS: 'This system is rigged'",
+        "CARE: 'These kids deserve better'"
+      ],
+      "_research": "Haidt MFT (2012), Scherer CPM"
+    },
+    "coping_trajectory_position": {
+      "description": "Current phase in the Lazarus & Folkman stress-coping cycle. SEARCH_PHASE = peak intervention receptivity.",
+      "examples": [
+        "SEARCH: 'Has anyone tried this?'",
+        "ACTIVE: 'I've been working on it step by step'"
+      ],
+      "_research": "Lazarus & Folkman (1984)"
+    },
+    "hermeneutical_gap_markers": {
+      "description": "Evidence of unarticulated experience — discourse truncation, affective parabola, metaphor novelty.",
+      "examples": [
+        "TRUNCATION: 'It's like... I don't know...'",
+        "NOVELTY: 'It felt like being underwater but I could still breathe'"
+      ],
+      "_research": "Fricker (2007), Dotson (2011)"
+    },
+    "reconsolidation_sensitivity": {
+      "description": "Readiness for memory reconsolidation — prediction error sensitivity and engagement depth.",
+      "examples": [
+        "HIGH PE: 'I never thought of it that way'",
+        "SAVE: 'Bookmarking this'"
+      ],
+      "_research": "Nader reconsolidation (2000)"
+    }
+  },
+  "example_segments": [
+    {
+      "id": "aspiring_investor",
+      "dhd": "Feeling Successful and Admired",
+      "wants": [
+        "Securing Exclusive Investment Deals",
+        "Financial Freedom"
+      ],
+      "frustrations": [
+        "High Competition",
+        "Market Instability"
+      ],
+      "dreams": [
+        "Owning the Most Luxurious Home in the Neighborhood",
+        "Becoming the Leading Real Estate Investor"
+      ],
+      "fears": [
+        "Market Crash",
+        "Losing Everything"
+      ],
+      "suspicions": [
+        "Distrust of Business Partners",
+        "Market Sabotage"
+      ],
+      "insecurities": [
+        "Self-Doubt",
+        "Not being cut out for this"
+      ],
+      "envy_feelings": [
+        "Envy of neighbor's success",
+        "Envy of competitor's influence"
+      ],
+      "enemies": [
+        "Market Manipulation",
+        "Unfair Deals"
+      ],
+      "coping_mechanism": [
+        "Binge-watching Netflix",
+        "Ignoring problems"
+      ],
+      "hidden_beliefs": [
+        "You need a ton of money to start",
+        "It's too late for me"
+      ],
+      "emotional_triggers": [
+        "Passive Income",
+        "Wealth",
+        "Freedom"
+      ],
+      "success_markers": [
+        "First Deal Closed",
+        "Passive Income Stream"
+      ]
+    }
+  ],
+  "_ccp_metadata": {
+    "schema_version": "3.0",
+    "ccp_layer": "Deep Reasoning (L3)",
+    "pi_extensions": [
+      "GhostContext",
+      "SoulResonance"
+    ],
+    "description": "Context-to-premise mapping. Extended for V²WS webinar contexts."
+  },
+  "v2ws_contexts": {
+    "_description": "V²WS Webinar-specific context mapping — used by Alessandro (Webinar Architect) to map webinar segments to emotional premises",
+    "intro_hook": {
+      "mode": "TENSION",
+      "premise_type": "pattern_interrupt",
+      "emotional_target": "curiosity + discomfort"
+    },
+    "authority_positioning": {
+      "mode": "RECOGNITION",
+      "premise_type": "credibility_proof",
+      "emotional_target": "trust + aspiration"
+    },
+    "content_delivery": {
+      "mode": "VULNERABILITY",
+      "premise_type": "transformation_reveal",
+      "emotional_target": "hope + learning"
+    },
+    "transition_bridge": {
+      "mode": "TENSION",
+      "premise_type": "gap_amplification",
+      "emotional_target": "urgency + desire"
+    },
+    "close_sequence": {
+      "mode": "RECOGNITION",
+      "premise_type": "decision_catalyst",
+      "emotional_target": "commitment + relief"
+    }
+  }
+}

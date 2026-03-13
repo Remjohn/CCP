@@ -1,0 +1,152 @@
+{
+    "_schema_version": "1.0",
+    "_ccp_layer": "Memory (L2)",
+    "_pi_extensions": [
+        "SoulResonance",
+        "TriggerFirst"
+    ],
+    "_description": "Trigger Map — the coach's permanent trigger architecture. Contains primary triggers with MFT foundation mapping, PTG status, ESK anchors, archetype mappings, and activation history. Populated by the Trigger Map Builder during Genesis.",
+    "_research_basis": "Haidt MFQ-2 (2023), Tedeschi & Calhoun PTG (2004), Conway Self-Memory System/AKB (2005), Nader Reconsolidation (2000), McAdams Narrative Identity (2001), Tulving Episodic-Semantic Taxonomy (1972)",
+    "coach_id": null,
+    "map_status": {
+        "last_built": null,
+        "last_recalibrated": null,
+        "total_triggers_mapped": 0,
+        "confidence": null
+    },
+    "triggers": [
+        {
+            "_template": true,
+            "_description": "Each trigger represents a permanent fire — something this coach cannot stop responding to. Not a topic, but a violation-mechanism pair.",
+            "trigger_id": "trig_001",
+            "label": null,
+            "description": null,
+            "moral_foundation": {
+                "_research": "Haidt MFQ-2 (2023) — which of the 6 foundations is violated",
+                "primary": null,
+                "secondary": null,
+                "options": [
+                    "care_harm",
+                    "fairness_cheating",
+                    "loyalty_betrayal",
+                    "authority_subversion",
+                    "sanctity_degradation",
+                    "liberty_oppression"
+                ]
+            },
+            "originating_experience": {
+                "_research": "Conway AKB hierarchy (2005) — classified by memory level",
+                "akb_level": null,
+                "akb_options": [
+                    "lifetime_period",
+                    "general_event",
+                    "event_specific_knowledge"
+                ],
+                "narrative_summary": null,
+                "sensory_anchors": [],
+                "temporal_context": null
+            },
+            "ptg_status": {
+                "_research": "Tedeschi & Calhoun PTG framework (2004) — has the coach resolved this trigger?",
+                "status": null,
+                "options": [
+                    "resolved_dual_layer",
+                    "active_processing",
+                    "raw_unresolved"
+                ],
+                "resolution_signal": null,
+                "_note": "resolved_dual_layer = path out fully encoded, can access both original pain AND resolution simultaneously. active_processing = partial resolution, still developing. raw_unresolved = live trauma, NOT suitable for content activation."
+            },
+            "narrative_identity": {
+                "_research": "McAdams Narrative Identity (2001) — redemption vs contamination sequences",
+                "sequence_type": null,
+                "options": [
+                    "redemption",
+                    "contamination",
+                    "agency",
+                    "communion"
+                ],
+                "positioning": null,
+                "positioning_options": [
+                    "reluctant_hero",
+                    "whistleblower",
+                    "reformed_insider",
+                    "outsider_witness",
+                    "survivor_guide"
+                ]
+            },
+            "reconsolidation_sensitivity": {
+                "_research": "Nader et al. (2000) — prediction error required to labilize this trigger's episodic trace",
+                "prediction_error_threshold": null,
+                "scale": "1-10 (1=easily labilized, 10=requires high specificity)",
+                "last_labilized": null
+            },
+            "activation_keywords": [],
+            "activation_mechanisms": [],
+            "evidence_passages": []
+        }
+    ],
+    "trigger_archetype_map": {
+        "_description": "Stage 5 of Trigger-First Engine — maps emotional state produced by trigger activation to archetype match.",
+        "_research": "Trigger-First Engine Architecture v3.0, Stage 5 specification",
+        "mappings": [
+            {
+                "emotional_state": "disgust_protective_fury",
+                "moral_foundation": "sanctity_degradation",
+                "primary_archetype": "myth_indignation",
+                "secondary_archetype": "reaction_outrage",
+                "ttt_minimum": "TTT-07",
+                "coach_eligible": null
+            },
+            {
+                "emotional_state": "betrayal_anger",
+                "moral_foundation": "loyalty_betrayal",
+                "primary_archetype": "myth_indignation",
+                "secondary_archetype": "comparison_outrageous",
+                "ttt_minimum": "TTT-07",
+                "coach_eligible": null
+            },
+            {
+                "emotional_state": "outrage_mechanism_opacity",
+                "moral_foundation": "fairness_cheating",
+                "primary_archetype": "listicle_shocking",
+                "secondary_archetype": "comparison_shocking",
+                "ttt_minimum": "TTT-05",
+                "coach_eligible": null
+            },
+            {
+                "emotional_state": "protective_urgency",
+                "moral_foundation": "care_harm_liberty_oppression",
+                "primary_archetype": "myth_fear_anxiety",
+                "secondary_archetype": "tweet_warning",
+                "ttt_minimum": "TTT-05",
+                "coach_eligible": null
+            },
+            {
+                "emotional_state": "righteous_authority",
+                "moral_foundation": "fairness_authority",
+                "primary_archetype": "tier_list_controversial",
+                "secondary_archetype": "myth_empowering",
+                "ttt_minimum": "TTT-05",
+                "coach_eligible": null
+            },
+            {
+                "emotional_state": "grief_tinged_outrage",
+                "moral_foundation": "care_harm",
+                "primary_archetype": "story_transformation",
+                "secondary_archetype": "story_recognition",
+                "ttt_minimum": "TTT-03",
+                "coach_eligible": null
+            }
+        ]
+    },
+    "activation_history": [],
+    "staleness_tracking": {
+        "_description": "Monitors whether life events have shifted MFT weightings. Triggers recalibration when drift detected.",
+        "_research": "Haidt MFT foundation stability research — foundations shift with major life events",
+        "last_drift_check": null,
+        "drift_detected": false,
+        "recalibration_recommended": false,
+        "weeks_since_last_recalibration": null
+    }
+}

@@ -1,0 +1,550 @@
+{
+    "version": "1.0",
+    "description": "TTT gravity tables per archetype. Maps each archetype to Base Gravity, Accent Layer, and Intuitive Layer with specific TTT levels. Source: prompts_archetypes (1).md, Section IV.",
+    "palettes": {
+        "arch_achievement_story": {
+            "family": "storytelling",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Strategy & Results"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Celebration & Hype"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "The Internal Shift"
+            }
+        },
+        "arch_transformation_story": {
+            "family": "storytelling",
+            "base_gravity": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Journey & Struggle"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "The Method"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-09",
+                "ttt_name": "Truth Bomb",
+                "focus": "Death of Old Self"
+            }
+        },
+        "arch_inspiration_story": {
+            "family": "storytelling",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Possibility"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Challenge"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Universal Potential"
+            }
+        },
+        "arch_relief_story": {
+            "family": "storytelling",
+            "base_gravity": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Validation"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Self-Deprecation"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Reframing Failure"
+            }
+        },
+        "arch_surprise_story": {
+            "family": "storytelling",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "The Plot Twist"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "System Shock"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Hidden Connection"
+            }
+        },
+        "arch_shocking_listicle": {
+            "family": "listicle",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Stop doing this."
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "They are lying."
+            },
+            "intuitive_layer": null
+        },
+        "arch_nostalgia_listicle": {
+            "family": "listicle",
+            "base_gravity": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Remember when?"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "We were so cringe."
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Time moves fast."
+            }
+        },
+        "arch_funny_relatable_listicle": {
+            "family": "listicle",
+            "base_gravity": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "We've all been there."
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Call yourself out."
+            },
+            "intuitive_layer": null
+        },
+        "arch_fear_anxiety_listicle": {
+            "family": "listicle",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Prevention"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Urgent Warning"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Reassurance"
+            }
+        },
+        "arch_surprising_case_study": {
+            "family": "case_study",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "The Logic Gap"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "The Disruption"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Paradigm Shift"
+            }
+        },
+        "arch_inspirational_case_study": {
+            "family": "case_study",
+            "base_gravity": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Human Struggle"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "The Win"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "The Lesson"
+            }
+        },
+        "arch_fomo_case_study": {
+            "family": "case_study",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Missing out."
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Window closing."
+            },
+            "intuitive_layer": null
+        },
+        "arch_social_proof_case_study": {
+            "family": "case_study",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Facts & Data"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "The 'No-Brainer'"
+            },
+            "intuitive_layer": null
+        },
+        "arch_shocking_comparison": {
+            "family": "comparison",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Reality Check"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Injustice"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-09",
+                "ttt_name": "Truth Bomb",
+                "focus": "Cost of Life"
+            }
+        },
+        "arch_funny_comparison": {
+            "family": "comparison",
+            "base_gravity": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Expectation vs Reality"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Pivot to Teaching"
+            },
+            "intuitive_layer": null
+        },
+        "arch_surprising_comparison": {
+            "family": "comparison",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Hidden Link"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Wake-Up Call"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Universal Law"
+            }
+        },
+        "arch_outrageous_comparison": {
+            "family": "comparison",
+            "base_gravity": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Righteous Anger"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-08",
+                "ttt_name": "Confrontation",
+                "focus": "Aggression"
+            },
+            "intuitive_layer": null
+        },
+        "arch_indignation_myth": {
+            "family": "myth",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Calling BS"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Protecting Tribe"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-08",
+                "ttt_name": "Confrontation",
+                "focus": "Calling out User"
+            }
+        },
+        "arch_curiosity_myth": {
+            "family": "myth",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Investigation"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Can you believe?"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Deeper Truth"
+            }
+        },
+        "arch_empowering_myth": {
+            "family": "myth",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Permission Slip"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Relief"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Self-Acceptance"
+            }
+        },
+        "arch_dopamine_cliff": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-03/TTT-05",
+                "ttt_name": "Advocate→Truth-Teller",
+                "focus": "Aspiration → Reality"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04/TTT-07",
+                "ttt_name": "Ally→Warrior",
+                "focus": "Hype → System Shock"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-03/TTT-09",
+                "ttt_name": "Advocate→Truth Bomb",
+                "focus": "Desire → Existential Dread"
+            }
+        },
+        "arch_relief_peak": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-02/TTT-03",
+                "ttt_name": "Companion→Advocate",
+                "focus": "Empathy → Solution"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-02/TTT-04",
+                "ttt_name": "Companion→Ally",
+                "focus": "Empathy → Playful"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06/TTT-03",
+                "ttt_name": "Guide→Advocate",
+                "focus": "Philosophy → Practice"
+            }
+        },
+        "arch_persuasive_tweet": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Punchy Statement"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Tribal Signal"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "The Aphorism"
+            }
+        },
+        "arch_listicle": {
+            "family": "listicle",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Structured Authority"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Hard Truth Items"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Wisdom Summary"
+            }
+        },
+        "arch_comparison": {
+            "family": "comparison",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Clear Contrast"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Winner Declared"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Deeper Pattern"
+            }
+        },
+        "arch_case_study": {
+            "family": "case_study",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Evidence Presentation"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "The Revelation"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Universal Lesson"
+            }
+        },
+        "arch_storytelling": {
+            "family": "storytelling",
+            "base_gravity": {
+                "ttt_level": "TTT-02",
+                "ttt_name": "Companion",
+                "focus": "Shared Experience"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Emotional Peak"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "The Meaning"
+            }
+        },
+        "arch_visual_timeline": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-03",
+                "ttt_name": "Advocate",
+                "focus": "Chronological Authority"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Turning Point"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Evolution Pattern"
+            }
+        },
+        "arch_poll": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Inclusive Question"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Provocative Choice"
+            },
+            "intuitive_layer": null
+        },
+        "arch_observational_humor": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-04",
+                "ttt_name": "Ally",
+                "focus": "Shared Absurdity"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Uncomfortable Truth"
+            },
+            "intuitive_layer": null
+        },
+        "arch_conceptual_contrast": {
+            "family": "core_format",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Stark Opposition"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Moral Judgment"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Deeper Duality"
+            }
+        },
+        "arch_debunking_myth": {
+            "family": "myth",
+            "base_gravity": {
+                "ttt_level": "TTT-05",
+                "ttt_name": "Truth-Teller",
+                "focus": "Exposing Falsehood"
+            },
+            "accent_layer": {
+                "ttt_level": "TTT-07",
+                "ttt_name": "Warrior",
+                "focus": "Protecting Audience"
+            },
+            "intuitive_layer": {
+                "ttt_level": "TTT-06",
+                "ttt_name": "Guide",
+                "focus": "Correct Framework"
+            }
+        }
+    }
+}

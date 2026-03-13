@@ -1,0 +1,65 @@
+{
+    "mode": "tier-list",
+    "title": "Best Dating Apps Ranked (TIER LIST)",
+    "criteria": [
+        "User base quality",
+        "Algorithm fairness",
+        "Cost vs value",
+        "Success rate for serious relationships"
+    ],
+    "tiers": {
+        "S": {
+            "label": "Non-Negotiable",
+            "color": "#FFD700",
+            "items": [
+                "Hinge"
+            ]
+        },
+        "A": {
+            "label": "Excellent Choice",
+            "color": "#C0C0C0",
+            "items": [
+                "Bumble"
+            ]
+        },
+        "B": {
+            "label": "Solid Option",
+            "color": "#CD7F32",
+            "items": [
+                "Coffee Meets Bagel"
+            ]
+        },
+        "C": {
+            "label": "Proceed With Caution",
+            "color": "#FFEB3B",
+            "items": [
+                "Tinder"
+            ]
+        },
+        "D": {
+            "label": "Usually Not Worth It",
+            "color": "#FF9800",
+            "items": [
+                "Plenty of Fish"
+            ]
+        },
+        "F": {
+            "label": "Avoid Completely",
+            "color": "#F44336",
+            "items": [
+                "Zoosk"
+            ]
+        }
+    },
+    "unassigned_items": [
+        "Match.com",
+        "eHarmony"
+    ],
+    "reaction_video": "",
+    "commentary_bullets": [
+        "Algorithm quality matters more than user count",
+        "Free vs paid feature gap is the real differentiator",
+        "Swipe fatigue is a real phenomenon — design matters",
+        "Serious intent filters separate the best from the rest"
+    ]
+}

@@ -1,0 +1,230 @@
+{
+    "_schema_version": "2.0",
+    "_ccp_layer": "Memory (L2)",
+    "_pi_extensions": [
+        "SoulResonance",
+        "EmotionalDNA",
+        "CSIPv3"
+    ],
+    "_description": "Emotional DNA Profile v2.0 — CSIP v3.0 aligned. Root system from which Voice DNA grows. Contains Scherer CPM appraisal variables (V1-V5) plus CSIP v3.0 behavioral extensions (Residency, Ceiling/Floor, Suppression, Resolution, Bleed). Populated by the Emotional DNA Extraction Agent during Genesis.",
+    "_research_basis": "Scherer CPM (2009), Lazarus Transactional Model (1991), Haidt MFT/MFQ-2 (2012/2023), Barrett Constructionism (2017), Pennebaker LIWC-22 (2022), Computational Stylometry 60-var discriminator, CSIP v3.0 Voice DNA Framework v2.0",
+    "coach_id": null,
+    "extraction_status": {
+        "triage_tier": null,
+        "confidence": null,
+        "corpus_word_count": null,
+        "minimum_threshold": 3000,
+        "last_extracted": null,
+        "extraction_sources": []
+    },
+    "appraisal_variables": {
+        "_description": "V1-V5: Cognitive Appraisal Theory extraction (Lazarus/Scherer). The 5 stable variables that constitute this coach's individual trigger architecture.",
+        "v1_trigger_specificity_threshold": {
+            "_description": "How specific an input must be to activate a genuine response. High = requires precise sensory detail (ESK-level). Low = activates on category-level prompts.",
+            "_research": "Scherer CPM (2009) — Stimulus Evaluation Check 1: Relevance detection threshold",
+            "value": null,
+            "scale": "1-10 (1=generic activates, 10=requires extreme specificity)",
+            "evidence_passages": []
+        },
+        "v2_appraisal_sequence_ordering": {
+            "_description": "Which Stimulus Evaluation Check fires first in this coach's appraisal cascade. Determines whether they lead with mechanism, moral verdict, personal narrative, or coping response.",
+            "_research": "Scherer CPM (2009) — 4 SECs: relevance → implication → coping potential → norm compatibility. Individual ordering varies.",
+            "primary_sec": null,
+            "secondary_sec": null,
+            "sequence": [],
+            "evidence_passages": []
+        },
+        "v3_coping_potential_pattern": {
+            "_description": "Whether this coach's content is fundamentally action-oriented (high coping potential) or reflective/analytical (low coping potential). Determines content archetype affinity.",
+            "_research": "Lazarus Transactional Model (1991) — Primary vs secondary appraisal. Coping potential assessment determines fight/flight/freeze linguistic signature.",
+            "orientation": null,
+            "action_vs_reflection_ratio": null,
+            "evidence_passages": []
+        },
+        "v4_norm_compatibility_threshold": {
+            "_description": "What level of norm violation is required to shift this coach from intellectual concern to authentic outrage. The threshold where the mask drops.",
+            "_research": "Scherer CPM SEC 4 — Norm/self compatibility. Kahan IPC (2017) — identity-protective cognition threshold.",
+            "threshold_level": null,
+            "scale": "1-10 (1=easily outraged, 10=requires extreme violation)",
+            "primary_norm_domains": [],
+            "evidence_passages": []
+        },
+        "v5_agency_attribution_bias": {
+            "_description": "Tendency to assign blame/agency to self, individuals, institutions, or systems. Determines who the 'enemy' is in their content.",
+            "_research": "Kahan IPC (2017) — Cultural cognition and agency attribution. Festinger cognitive dissonance (1957).",
+            "primary_attribution": null,
+            "options": [
+                "self",
+                "individual",
+                "institutional",
+                "systemic"
+            ],
+            "evidence_passages": []
+        }
+    },
+    "moral_foundations_profile": {
+        "_description": "V6: Haidt's 6 moral taste receptors with individual weightings. Predicts which categories of current events will produce strongest authentic activation.",
+        "_research": "Haidt MFT (2012), Graham MFQ-2 (2023). Each foundation weighted 0.0-1.0 from corpus analysis.",
+        "care_harm": {
+            "weight": null,
+            "evidence_passages": []
+        },
+        "fairness_cheating": {
+            "weight": null,
+            "evidence_passages": []
+        },
+        "loyalty_betrayal": {
+            "weight": null,
+            "evidence_passages": []
+        },
+        "authority_subversion": {
+            "weight": null,
+            "evidence_passages": []
+        },
+        "sanctity_degradation": {
+            "weight": null,
+            "evidence_passages": []
+        },
+        "liberty_oppression": {
+            "weight": null,
+            "evidence_passages": []
+        },
+        "primary_foundation": null,
+        "secondary_foundation": null
+    },
+    "linguistic_signature": {
+        "_description": "V7-V8: Emotional granularity and vocabulary breadth measurements.",
+        "v7_emotional_granularity_score": {
+            "_description": "Barrett's constructionist measure — how many distinct emotional categories this coach uses vs broad-category defaults. Determines extraction depth potential.",
+            "_research": "Barrett Constructionism (2017), HEXACO emotional breadth, Millon adaptive inflexibility index.",
+            "granularity_tier": null,
+            "tiers": {
+                "high": "25+ distinct emotional terms → deep extraction viable",
+                "medium": "12-24 distinct emotional terms → standard extraction",
+                "low": "<12 distinct emotional terms → surface extraction only"
+            },
+            "distinct_emotion_count": null,
+            "evidence_passages": []
+        },
+        "v8_dominant_emotional_vocabulary_breadth": {
+            "_description": "LIWC-22 function word distribution analysis — the subconscious linguistic fingerprint.",
+            "_research": "Pennebaker LIWC-22 (2022). Function words = 55-60% of all words but virtually invisible to conscious control.",
+            "function_word_baseline": null,
+            "hedging_frequency": null,
+            "exclusive_word_frequency": null,
+            "pronoun_ratio_i_vs_we": null,
+            "evidence_passages": []
+        }
+    },
+    "acoustic_signature": {
+        "_description": "V9: Emotional register range from voice analysis. TTT floor-to-ceiling.",
+        "_research": "Whisper transcription + openSMILE acoustic analysis. SpeechBrain ECAPA-TDNN speaker verification.",
+        "v9_emotional_register_range": {
+            "ttt_floor": null,
+            "ttt_ceiling": null,
+            "comfortable_range": [],
+            "peak_activation_register": null,
+            "evidence_passages": []
+        }
+    },
+    "extraction_prediction": {
+        "_description": "V10: Predicted hours to stable extraction based on granularity tier.",
+        "_research": "Derived from Barrett granularity tiers + stylometric convergence research.",
+        "v10_predicted_saturation_time_hours": null,
+        "confidence_trajectory": []
+    },
+    "emotional_path_mechanics": {
+        "_description": "The Three-Layer SPR Layer 2 data — how this coach travels from emotional activation to expression. Derived from V1-V5 cross-referenced with corpus patterns.",
+        "_research": "CCF Bible Critique v2 Mandate 5 — emotional path mechanics layer.",
+        "trigger_to_expression_pathway": {
+            "conversion_mechanism": null,
+            "options": [
+                "mechanism_first",
+                "narrative_first",
+                "verdict_first",
+                "evidence_first"
+            ],
+            "emotion_residency_time": null,
+            "escalation_triggers": [],
+            "evidence_passages": []
+        }
+    },
+    "csip_v3_extensions": {
+        "_description": "CSIP v3.0 behaviorally granular Emotional DNA extensions. These variables are distinct from the Scherer CPM appraisal variables above — they capture the downstream behavioral expression of emotional architecture.",
+        "_research": "CSIP v3.0 / Voice DNA Framework v2.0 — Part Two: The Ten Core Variables.",
+        "emotion_residency_time": {
+            "_csip_variable": "V3",
+            "_description": "How long this coach remains in each emotional state before converting to content, insight, or action. Controls the rhythm profile of output more than any other single factor. Short residency = rapid mechanism delivery. Long residency = narrative buildup.",
+            "per_register": {
+                "disgust": null,
+                "outrage": null,
+                "grief": null,
+                "tenderness": null,
+                "conviction": null,
+                "urgency": null
+            },
+            "residency_options": [
+                "short",
+                "medium",
+                "long"
+            ],
+            "evidence_passages": []
+        },
+        "emotional_ceiling_per_topic": {
+            "_csip_variable": "V5",
+            "_description": "Which topics produce maximum emotional intensity and what that construction signature looks like. Determines the maximum compression available per content format.",
+            "topic_ceilings": [],
+            "_topic_ceiling_schema": {
+                "topic": "string",
+                "max_ttt": "01-09",
+                "construction_signature_at_ceiling": "string — sentence length, clause depth, marker behavior at peak",
+                "evidence_passages": []
+            }
+        },
+        "emotional_floor_per_topic": {
+            "_csip_variable": "V6",
+            "_description": "Baseline emotional register per subject area. Minimum TTT state regardless of specific content. Defines the lower boundary of the priming target.",
+            "topic_floors": [],
+            "_topic_floor_schema": {
+                "topic": "string",
+                "min_ttt": "01-09",
+                "evidence_passages": []
+            }
+        },
+        "suppression_patterns": {
+            "_csip_variable": "V7",
+            "_description": "Which emotions this coach minimizes publicly. NOT the same as Negative Space (what they refuse). Suppression = what they FEEL but compress. Visible as compression artifacts: sudden brevity, topic pivots, unanswered rhetorical questions. The gap between felt and expressed is the negative space of Emotional DNA.",
+            "suppressed_registers": [],
+            "_suppressed_register_schema": {
+                "emotion": "string",
+                "compression_artifact": "string — how suppression manifests structurally",
+                "triggering_context": "string — what topic/situation triggers suppression",
+                "evidence_passages": []
+            }
+        },
+        "resolution_pattern": {
+            "_csip_variable": "V9",
+            "_description": "Does this coach resolve emotions, leave them open, or convert them at the close? Controls ending energy. A coach who converts grief to action and one who leaves grief open are not interchangeable.",
+            "dominant_pattern": null,
+            "options": [
+                "resolve",
+                "leave_open",
+                "convert_to_action"
+            ],
+            "per_register_overrides": {},
+            "evidence_passages": []
+        },
+        "emotional_bleed_signature": {
+            "_csip_variable": "V10",
+            "_description": "Which emotions cannot be fully separated. Where grief bleeds into anger. Where passion bleeds into urgency. These blends are the most distinctive markers in the corpus — immediately recognizable once encoded.",
+            "bleeds": [],
+            "_bleed_schema": {
+                "primary_emotion": "string",
+                "bleeds_into": "string",
+                "trigger_context": "string — when does this bleed occur?",
+                "construction_marker": "string — how is the bleed visible in text?",
+                "evidence_passages": []
+            }
+        }
+    }
+}

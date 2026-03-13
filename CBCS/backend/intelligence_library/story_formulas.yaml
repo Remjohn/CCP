@@ -1,0 +1,365 @@
+# CCP Story Formulas — Deployment Tracking + Staleness Detection
+# Schema: v3.0 | CCP Layer: Expression (L7)
+# Pi Extensions: [MemoryFolder, ContrastiveAnchor]
+# PRD Mandate: Add deployment_count + staleness_flag per H10 fix
+#
+# Each formula now tracks usage frequency via MemoryFolder:
+#   deployment_count: int — how many times this formula was used in last 8 weeks
+#   staleness_flag: bool — true if deployment_count > 3 (triggers Boredom Ban)
+#   last_deployed: timestamp — when this formula was last used
+#
+# Boredom Ban Rule: If staleness_flag == true, the formula is EXCLUDED from
+# dynamic-theme-generator and blueprint-orchestrator selection pools.
+
+formulas:
+  - id: 1
+    components: ["DHD", "Dreams", "Fears", "Insecurities"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their dreams are achievable despite their fears and insecurities."
+      - angle: "Encourage Dreams"
+        description: "Emphasize the value and potential of their dreams, encouraging them to move past their fears and insecurities."
+      - angle: "Justify Failures"
+        description: "Explain that facing fears and insecurities is a common part of pursuing dreams and that setbacks are just learning experiences."
+      - angle: "Confirm Suspicions"
+        description: "Validate their fears and insecurities as legitimate but show how they can still overcome them to achieve their dreams."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify sources of fear and insecurity as external obstacles, encouraging the audience to confront and overcome them."
+      - angle: "Problem Amplification"
+        description: "Highlight the consequences of letting fears and insecurities prevent them from pursuing their dreams, creating a sense of urgency."
+      - angle: "Favorable Evidence"
+        description: "Present stories of people who have achieved their dreams despite similar fears and insecurities."
+      - angle: "Black and White Philosophy"
+        description: "Frame the choice as either succumbing to fears and insecurities or striving for their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view their fears and insecurities as barriers they can overcome on the way to achieving their dreams."
+
+  - id: 2
+    components: ["DHD", "Dreams", "Fears", "Suspicions"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their dreams can still be pursued even with fears and suspicions."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience by focusing on the fulfillment of their dreams despite their fears and suspicions."
+      - angle: "Justify Failures"
+        description: "Frame fears and suspicions as natural obstacles that do not define their ability to achieve their dreams."
+      - angle: "Confirm Suspicions"
+        description: "Validate their suspicions about the difficulties they face but show how overcoming them is key to achieving their dreams."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Position their fears and suspicions as obstacles created by external adversaries, encouraging them to fight against these challenges."
+      - angle: "Problem Amplification"
+        description: "Stress the risks of letting fears and suspicions hold them back, highlighting the need to overcome these barriers."
+      - angle: "Favorable Evidence"
+        description: "Share examples of individuals who have successfully navigated fears and suspicions to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present a clear choice between letting fears and suspicions obstruct their path or pursuing their dreams regardless of these obstacles."
+      - angle: "The Challenger"
+        description: "Challenge the audience to address and overcome their fears and suspicions, showing how this will lead to achieving their dreams."
+
+  - id: 3
+    components: ["DHD", "Dreams", "Fears", "Envy"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their fears and feelings of envy are manageable and that their dreams are still within reach."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to use their feelings of envy as a driving force to achieve their own dreams."
+      - angle: "Justify Failures"
+        description: "Explain that experiencing envy and fears is normal and part of the process of achieving their dreams."
+      - angle: "Confirm Suspicions"
+        description: "Validate their fears and envy as real but show how these emotions can be managed and used to fuel their dreams."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify sources of their envy as obstacles created by others and encourage overcoming them to achieve their dreams."
+      - angle: "Problem Amplification"
+        description: "Highlight the dangers of letting envy and fears prevent them from pursuing their dreams, creating a sense of urgency."
+      - angle: "Favorable Evidence"
+        description: "Provide stories of people who transformed their envy and fears into motivation to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Frame the situation as a choice between being hindered by envy and fears or using these emotions to propel them towards their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to use their envy as a source of motivation and confront their fears in pursuit of their dreams."
+
+  - id: 4
+    components: ["DHD", "Dreams", "Frustrations", "Insecurities"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their frustrations and insecurities are part of the journey and that their dreams are achievable."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience by focusing on the positive outcomes of pushing through frustrations and insecurities."
+      - angle: "Justify Failures"
+        description: "Explain that frustrations and insecurities are normal challenges and that overcoming them is a step towards achieving their dreams."
+      - angle: "Confirm Suspicions"
+        description: "Validate their frustrations and insecurities, showing that these are common hurdles that can be overcome."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify external factors causing frustrations and insecurities as barriers to be defeated in the pursuit of their dreams."
+      - angle: "Problem Amplification"
+        description: "Emphasize the risks of allowing frustrations and insecurities to derail their progress towards their dreams."
+      - angle: "Favorable Evidence"
+        description: "Share stories of individuals who successfully navigated similar frustrations and insecurities to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the situation as a choice between giving in to frustrations and insecurities or pushing forward to achieve their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view their frustrations and insecurities as obstacles that they can overcome on the path to their dreams."
+
+  - id: 5
+    components: ["DHD", "Dreams", "Frustrations", "Fears"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their frustrations and fears are temporary and that their dreams are still within reach."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to remain focused on their dreams despite the frustrations and fears they encounter."
+      - angle: "Justify Failures"
+        description: "Explain that frustrations and fears are part of the process and that overcoming them is essential to achieving their dreams."
+      - angle: "Confirm Suspicions"
+        description: "Validate their fears and frustrations as real and significant but emphasize that they can be overcome."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the sources of their frustrations and fears as adversaries, encouraging the audience to overcome these challenges."
+      - angle: "Problem Amplification"
+        description: "Stress the consequences of letting frustrations and fears hinder their progress, creating a sense of urgency."
+      - angle: "Favorable Evidence"
+        description: "Provide examples of people who have faced similar frustrations and fears but achieved their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Frame the situation as a choice between letting frustrations and fears stop them or pushing through to achieve their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront and overcome their frustrations and fears as necessary steps toward achieving their dreams."
+
+  - id: 6
+    components: ["DHD", "Dreams", "Enemies", "Fears"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their fears about enemies are manageable and that their dreams are still attainable."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience to focus on their dreams despite the presence of enemies and fears."
+      - angle: "Justify Failures"
+        description: "Explain that dealing with enemies and fears is part of the journey and that overcoming these challenges is crucial for success."
+      - angle: "Confirm Suspicions"
+        description: "Validate their fears about enemies, showing that these are common issues and that they can still achieve their dreams."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the enemies as obstacles that must be overcome, encouraging the audience to fight back."
+      - angle: "Problem Amplification"
+        description: "Highlight the risks of letting enemies and fears prevent them from pursuing their dreams, emphasizing the need for action."
+      - angle: "Favorable Evidence"
+        description: "Provide stories of individuals who have successfully navigated enemies and fears to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the situation as a choice between succumbing to enemies and fears or fighting through them to achieve their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view enemies and fears as obstacles they can conquer to achieve their dreams."
+
+  - id: 7
+    components: ["DHD", "Dreams", "Enemies", "Insecurities"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their insecurities and enemies are obstacles they can overcome, and their dreams are still achievable."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to continue pursuing their dreams despite their insecurities and enemies."
+      - angle: "Justify Failures"
+        description: "Frame insecurities and enemies as natural challenges in the pursuit of dreams, explaining that overcoming them is part of the process."
+      - angle: "Confirm Suspicions"
+        description: "Validate their insecurities and concerns about enemies, showing that these are common issues that can be managed."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the enemies as the main obstacles to their dreams and encourage the audience to confront and defeat them."
+      - angle: "Problem Amplification"
+        description: "Emphasize the negative impact of letting insecurities and enemies hinder their progress towards their dreams."
+      - angle: "Favorable Evidence"
+        description: "Share examples of people who have overcome insecurities and enemies to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the choice as either allowing insecurities and enemies to prevent them from achieving their dreams or overcoming these obstacles."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront their insecurities and enemies as necessary steps toward achieving their dreams."
+
+  - id: 8
+    components: ["DHD", "Dreams", "Enemies", "Suspicions"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their suspicions about enemies are manageable and that their dreams can still be achieved."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience to keep pursuing their dreams despite their suspicions and enemies."
+      - angle: "Justify Failures"
+        description: "Explain that suspicions and enemies are normal challenges in pursuing dreams and that overcoming them is key to success."
+      - angle: "Confirm Suspicions"
+        description: "Validate their suspicions about enemies, emphasizing that these concerns are valid but can be addressed to achieve their dreams."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the enemies as the source of their suspicions and obstacles to their dreams, encouraging them to fight against these barriers."
+      - angle: "Problem Amplification"
+        description: "Highlight the risks of letting suspicions and enemies obstruct their path to their dreams, creating a sense of urgency."
+      - angle: "Favorable Evidence"
+        description: "Provide examples of people who have managed suspicions and adversaries to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the situation as a choice between letting suspicions and enemies stop them or pursuing their dreams regardless."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view their suspicions and enemies as challenges to overcome on the path to their dreams."
+
+  - id: 9
+    components: ["DHD", "Dreams", "Enemies", "Envy"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their envy and the presence of enemies are manageable and that their dreams are still attainable."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience to channel their envy into motivation to achieve their own dreams despite the obstacles posed by enemies."
+      - angle: "Justify Failures"
+        description: "Explain that experiencing envy and dealing with enemies are part of the journey and that overcoming these challenges is necessary for success."
+      - angle: "Confirm Suspicions"
+        description: "Validate their feelings of envy and concerns about enemies, showing that these are normal but manageable."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the enemies as obstacles fueling their envy, and encourage the audience to overcome these adversaries to achieve their dreams."
+      - angle: "Problem Amplification"
+        description: "Emphasize the negative effects of letting envy and enemies obstruct their pursuit of dreams, urging decisive action."
+      - angle: "Favorable Evidence"
+        description: "Provide stories of individuals who turned their envy and challenges with enemies into a drive for achieving their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the choice as either being held back by envy and enemies or using these factors as motivation to pursue their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront their envy and enemies as obstacles that they can overcome on the path to achieving their dreams."
+
+  - id: 10
+    components: ["DHD", "Dreams", "Enemies", "Frustrations"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their frustrations and enemies are obstacles they can overcome and that their dreams remain achievable."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to keep pursuing their dreams despite their frustrations and enemies."
+      - angle: "Justify Failures"
+        description: "Frame frustrations and enemies as normal obstacles in the pursuit of dreams, explaining that overcoming these challenges is part of the process."
+      - angle: "Confirm Suspicions"
+        description: "Validate their frustrations and concerns about enemies, showing that these are common but manageable obstacles."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the enemies as the main sources of frustration, encouraging the audience to overcome these adversaries to achieve their dreams."
+      - angle: "Problem Amplification"
+        description: "Highlight the risks of allowing frustrations and enemies to derail their pursuit of dreams, creating a sense of urgency to act."
+      - angle: "Favorable Evidence"
+        description: "Share examples of people who have successfully navigated frustrations and enemies to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the choice as either succumbing to frustrations and enemies or fighting through them to achieve their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront and overcome their frustrations and enemies as necessary steps to achieving their dreams."
+
+  - id: 11
+    components: ["DHD", "Dreams", "Suspicions", "Insecurities"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their suspicions and insecurities are normal and that their dreams are still attainable."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience to push past their suspicions and insecurities to focus on achieving their dreams."
+      - angle: "Justify Failures"
+        description: "Explain that suspicions and insecurities are common challenges and that overcoming them is part of the journey to success."
+      - angle: "Confirm Suspicions"
+        description: "Validate their suspicions and insecurities as real, but emphasize that these challenges can be managed to achieve their dreams."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the sources of their suspicions and insecurities as external obstacles and encourage the audience to overcome them."
+      - angle: "Problem Amplification"
+        description: "Stress the risks of letting suspicions and insecurities prevent them from pursuing their dreams, creating a sense of urgency to act."
+      - angle: "Favorable Evidence"
+        description: "Provide stories of individuals who successfully dealt with similar suspicions and insecurities to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Frame the situation as a choice between allowing suspicions and insecurities to hinder their progress or overcoming these obstacles to achieve their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view their suspicions and insecurities as barriers that can be overcome on the path to their dreams."
+
+  - id: 12
+    components: ["DHD", "Dreams", "Envy", "Frustrations"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their feelings of envy and frustrations are manageable, and their dreams are still within reach."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to use their feelings of envy and frustration as catalysts to pursue their dreams with determination."
+      - angle: "Justify Failures"
+        description: "Frame envy and frustrations as normal responses to setbacks and part of the process of achieving their dreams."
+      - angle: "Confirm Suspicions"
+        description: "Validate their feelings of envy and frustration, showing that these emotions are common and can be overcome."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify sources of envy and frustration as obstacles to their dreams, encouraging the audience to confront and overcome them."
+      - angle: "Problem Amplification"
+        description: "Highlight the negative impact of letting envy and frustrations prevent them from pursuing their dreams, urging decisive action."
+      - angle: "Favorable Evidence"
+        description: "Share examples of individuals who have successfully turned envy and frustration into motivation to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the choice as either being hindered by envy and frustrations or using these emotions to drive them towards their dreams."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront their envy and frustrations as necessary steps towards achieving their dreams."
+
+  - id: 13
+    components: ["DHD", "Wants", "Envy", "Frustrations"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their wants, envy, and frustrations are manageable and that their dreams are still achievable."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience to use their wants and feelings of envy as motivation to overcome frustrations and achieve their dreams."
+      - angle: "Justify Failures"
+        description: "Explain that feeling envy and frustration is a normal part of pursuing their wants and achieving their dreams."
+      - angle: "Confirm Suspicions"
+        description: "Validate their desires and feelings of envy and frustration, showing that these emotions are common but manageable."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify the sources of their envy and frustration as barriers created by external forces, encouraging them to overcome these obstacles."
+      - angle: "Problem Amplification"
+        description: "Highlight the risks of letting envy and frustrations prevent them from achieving their wants, creating urgency to act."
+      - angle: "Favorable Evidence"
+        description: "Provide stories of individuals who successfully managed their wants, envy, and frustrations to achieve their dreams."
+      - angle: "Black and White Philosophy"
+        description: "Present the choice as either being overwhelmed by envy and frustrations or using these feelings as motivation to achieve their wants."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view their wants, envy, and frustrations as opportunities for growth and motivation to pursue their dreams."
+
+  - id: 14
+    components: ["DHD", "Wants", "Fears", "Suspicions"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their fears and suspicions about achieving their wants are manageable and that their goals are within reach."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to stay focused on their wants despite their fears and suspicions."
+      - angle: "Justify Failures"
+        description: "Frame fears and suspicions as part of the process of pursuing their wants, explaining that overcoming these challenges is crucial."
+      - angle: "Confirm Suspicions"
+        description: "Validate their fears and suspicions about pursuing their wants, showing that these are common challenges but can be overcome."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify sources of their fears and suspicions as external obstacles and encourage the audience to confront and overcome them."
+      - angle: "Problem Amplification"
+        description: "Emphasize the negative impact of letting fears and suspicions prevent them from pursuing their wants, urging action."
+      - angle: "Favorable Evidence"
+        description: "Share examples of people who successfully navigated fears and suspicions to achieve their wants."
+      - angle: "Black and White Philosophy"
+        description: "Frame the situation as a choice between succumbing to fears and suspicions or pursuing their wants regardless of these obstacles."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront their fears and suspicions as necessary steps to achieve their wants."
+
+  - id: 15
+    components: ["DHD", "Wants", "Enemies", "Fears"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their fears and the presence of enemies are manageable, and their wants are still attainable."
+      - angle: "Encourage Dreams"
+        description: "Motivate the audience to pursue their wants despite the presence of enemies and fears."
+      - angle: "Justify Failures"
+        description: "Explain that dealing with enemies and fears is part of the journey to fulfilling their wants, and overcoming these obstacles is essential."
+      - angle: "Confirm Suspicions"
+        description: "Validate their fears and concerns about enemies, showing that these are real but manageable challenges."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify enemies as the main obstacles to achieving their wants and encourage the audience to fight against these adversaries."
+      - angle: "Problem Amplification"
+        description: "Highlight the risks of letting fears and enemies obstruct their pursuit of their wants, creating urgency to act."
+      - angle: "Favorable Evidence"
+        description: "Provide examples of people who successfully navigated enemies and fears to achieve their wants."
+      - angle: "Black and White Philosophy"
+        description: "Present the choice as either succumbing to fears and enemies or overcoming these challenges to achieve their wants."
+      - angle: "The Challenger"
+        description: "Challenge the audience to view their fears and enemies as obstacles they can overcome in pursuit of their wants."
+
+  - id: 16
+    components: ["DHD", "Wants", "Envy", "Insecurities"]
+    persuasion_angles:
+      - angle: "Allay Fears"
+        description: "Reassure the audience that their insecurities and feelings of envy are manageable and that their wants are achievable."
+      - angle: "Encourage Dreams"
+        description: "Inspire the audience to channel their insecurities and envy into motivation to achieve their wants."
+      - angle: "Justify Failures"
+        description: "Explain that feeling envy and insecurity is normal and part of the process of achieving their wants."
+      - angle: "Confirm Suspicions"
+        description: "Validate their insecurities and feelings of envy, showing that these emotions are common but can be managed."
+      - angle: "Throw Rocks at Their Enemies"
+        description: "Identify sources of their insecurity and envy as external obstacles, encouraging them to overcome these barriers."
+      - angle: "Problem Amplification"
+        description: "Emphasize the negative impact of letting insecurity and envy prevent them from pursuing their wants, creating urgency."
+      - angle: "Favorable Evidence"
+        description: "Share examples of people who turned their insecurities and envy into motivation to achieve their wants."
+      - angle: "Black and White Philosophy"
+        description: "Frame the situation as a choice between being held back by insecurities and envy or using these emotions to drive them towards their wants."
+      - angle: "The Challenger"
+        description: "Challenge the audience to confront and overcome their insecurities and envy as necessary steps to achieving their wants."

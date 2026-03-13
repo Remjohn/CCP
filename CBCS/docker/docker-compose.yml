@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Base Service Template (extended by clone scripts)
+  cbcs-core:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: cbcs-backend:latest
+    ports:
+      - "${PORT:-8000}:8000"
+    env_file:
+      - .env
+    environment:
+      - COACH_ID=${COACH_ID:-default}
+      - PROJECT_ROOT=${PROJECT_ROOT:-/app/projects}
+    volumes:
+      # Mount intelligence library for hot-reloading protocols without rebuild
+      - ../backend/intelligence_library:/app/backend/intelligence_library
+      # Mount projects directory for read/write access to coach files
+      - ../../production:/app/projects
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  # Optional: Dedicated Redis for this stack
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"

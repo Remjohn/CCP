@@ -1,0 +1,197 @@
+# ─────────────────────────────────────────────────────────────────────
+# SDT Linguistic Marker Dictionary
+# Self-Determination Theory (Deci & Ryan, 2000)
+# Basic Psychological Needs: Autonomy, Competence, Relatedness
+#
+# Architecture: Identity Engine Layer 2C
+# Consumed by: identity_scorers.py → score_sdt_needs()
+#
+# Structure per need:
+#   satisfaction: markers indicating the need IS being met
+#   frustration:  markers indicating the need is NOT being met
+#
+# Marker types:
+#   explicit:    keyword phrases (highest confidence, direct match)
+#   structural:  syntactic patterns (medium confidence, spaCy dep parse)
+#   liwc_proxy:  LIWC-22 dimension thresholds (lower confidence, fallback)
+#
+# Academic basis: BPNS (Basic Psychological Needs Scale) item-level
+# analysis mapped to linguistic constructs. Expanded with markers
+# from SDT coaching/education literature.
+# ─────────────────────────────────────────────────────────────────────
+
+autonomy:
+  description: "The need to feel volitional and self-endorsed in one's actions"
+  satisfaction:
+    explicit:
+      - "I chose to"
+      - "I decided"
+      - "my decision"
+      - "I want to try"
+      - "my way"
+      - "it was my call"
+      - "I picked"
+      - "I opted"
+      - "I felt free to"
+      - "on my own terms"
+      - "I initiated"
+      - "because I wanted to"
+      - "it felt right to me"
+      - "I followed my instinct"
+      - "I set my own"
+      - "j'ai choisi"         # French: I chose
+      - "c'est mon choix"     # French: it's my choice
+      - "j'ai décidé"         # French: I decided
+    structural:
+      - "active voice + first person singular + volitional verb (chose/decided/picked/opted/initiated)"
+      - "first person + present tense + desire verb (want/wish/intend/plan)"
+      - "possessive pronoun + goal noun (my goal/my plan/my routine/my path)"
+    liwc_proxy:
+      - "drives.achievement > 0.5 AND function.i_pronoun > baseline"
+      - "cognition.certainty > 0.4 AND affect.positive > 0.3"
+
+  frustration:
+    explicit:
+      - "I had to"
+      - "no choice"
+      - "forced"
+      - "they made me"
+      - "obligated"
+      - "I was told to"
+      - "I have to"
+      - "I must"
+      - "there's no other way"
+      - "I'm supposed to"
+      - "expected of me"
+      - "I can't say no"
+      - "pressure"
+      - "pushed into"
+      - "stuck doing"
+      - "je suis obligé"       # French: I'm forced
+      - "je n'ai pas le choix" # French: I have no choice
+      - "il faut que"          # French: I have to
+    structural:
+      - "passive voice + obligation modal (must/should/have to/need to)"
+      - "first person + negation + autonomy verb (can't choose/can't decide)"
+      - "external agent + causative verb + first person object (they forced me/made me)"
+    liwc_proxy:
+      - "drives.affiliation > 0.7 AND function.pronoun_they > baseline"
+      - "affect.anger > 0.3 OR affect.anxiety > 0.4"
+
+
+competence:
+  description: "The need to feel effective and capable in one's interactions"
+  satisfaction:
+    explicit:
+      - "I figured it out"
+      - "I can handle"
+      - "I managed"
+      - "got it right"
+      - "I'm learning"
+      - "I nailed it"
+      - "I'm getting better"
+      - "I can do this"
+      - "I succeeded"
+      - "I accomplished"
+      - "it clicked"
+      - "I understand now"
+      - "making progress"
+      - "I pulled it off"
+      - "I mastered"
+      - "j'ai réussi"         # French: I succeeded
+      - "j'y arrive"          # French: I'm managing
+      - "je comprends"        # French: I understand
+    structural:
+      - "past tense + achievement verb + positive outcome"
+      - "first person + ability verb (can/able to/know how to) + positive context"
+      - "comparative construction showing improvement (better than before/more than last time)"
+    liwc_proxy:
+      - "cognition.insight > 0.5 AND affect.positive > 0.4"
+      - "drives.achievement > 0.6"
+
+  frustration:
+    explicit:
+      - "I can't"
+      - "too hard"
+      - "I'm lost"
+      - "don't understand"
+      - "failing"
+      - "I suck at"
+      - "not smart enough"
+      - "out of my depth"
+      - "overwhelmed"
+      - "I keep messing up"
+      - "I don't know how"
+      - "impossible"
+      - "I'll never get it"
+      - "over my head"
+      - "completely stuck"
+      - "je n'y arrive pas"   # French: I can't manage
+      - "c'est trop dur"      # French: it's too hard
+      - "je suis perdu"       # French: I'm lost
+    structural:
+      - "negation + ability verb (can't do/won't work/unable to)"
+      - "first person + failure verb (failed/messed up/blew it)"
+      - "superlative negation (never/impossible/worst)"
+    liwc_proxy:
+      - "affect.anxiety > 0.4 AND cognition.certainty < 0.3"
+      - "affect.sadness > 0.3 AND drives.achievement < 0.2"
+
+
+relatedness:
+  description: "The need to feel connected to and cared for by others"
+  satisfaction:
+    explicit:
+      - "we connected"
+      - "they understand"
+      - "I belong"
+      - "together"
+      - "support"
+      - "we're in this together"
+      - "they get me"
+      - "family"
+      - "my people"
+      - "community"
+      - "trusted"
+      - "loved"
+      - "she listened"
+      - "he was there for me"
+      - "we talked"
+      - "on est ensemble"     # French: we're together
+      - "ils me comprennent"  # French: they understand me
+      - "ma famille"          # French: my family
+    structural:
+      - "first person plural + positive social verb (we shared/we built/we decided)"
+      - "third person + supportive verb + first person (they helped me/she encouraged me)"
+      - "relational noun + positive adjective (close friend/loving family/trusted partner)"
+    liwc_proxy:
+      - "social.family > baseline OR social.friend > baseline"
+      - "social.all > 0.5 AND affect.positive > 0.3"
+
+  frustration:
+    explicit:
+      - "nobody gets it"
+      - "alone"
+      - "isolated"
+      - "disconnected"
+      - "misunderstood"
+      - "no one to talk to"
+      - "they don't care"
+      - "invisible"
+      - "left out"
+      - "abandoned"
+      - "on my own"
+      - "nobody listens"
+      - "can't trust anyone"
+      - "they judged me"
+      - "rejected"
+      - "tout seul"           # French: all alone
+      - "personne ne comprend" # French: nobody understands
+      - "je me sens seul"     # French: I feel alone
+    structural:
+      - "first person singular + negation + social verb (nobody listens/no one cares)"
+      - "first person singular + isolation adjective (alone/isolated/disconnected)"
+      - "negation + relational noun (no friends/no support/no connection)"
+    liwc_proxy:
+      - "social.all < 0.2 AND affect.sadness > 0.3"
+      - "function.i_pronoun > 0.7 AND social.all < 0.15"

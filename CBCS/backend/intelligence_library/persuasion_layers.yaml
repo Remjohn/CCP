@@ -1,0 +1,65 @@
+# CCP Persuasion Layers — T/V/R Mode Mapping
+# Schema: v3.0 | CCP Layer: Expression (L7)
+# Pi Extensions: [ContrastiveAnchor, SoulResonance]
+# PRD Mandate: Map each layer to T(ension)/V(ulnerability)/R(ecognition) modes
+# Mode mapping enables SystemSelect to route the correct persuasion layer per script beat
+#
+# Mode Alignment:
+#   TENSION: Problem Amplification, Favorable Evidence, Black & White, Throw Rocks, Confirm Suspicions
+#   VULNERABILITY: Allay Fears, Justify Failures, Compassionate Companion
+#   RECOGNITION: Encourage Dreams, The Challenger
+
+layers:
+  - name: "Problem Amplification"
+    description: "Amplify emotional reactions by emphasizing worst-case scenarios. Highlight vivid, alarming threats, evoking fear, anger, or moral outrage. Leverage cognitive bias toward negative information. Encourage swift action by exaggerating the problem’s urgency, making negative consequences feel imminent and unavoidable."
+    prompt: "Amplify emotional reactions by emphasizing worst-case scenarios. Highlight vivid, alarming threats, evoking fear, anger, or moral outrage. Leverage cognitive bias toward negative information. Encourage swift action by exaggerating the problem’s urgency, making negative consequences feel imminent and unavoidable."
+    examples:
+      - "Shit’s about to hit the fan. Negativity bias. Fear grips the mind. Every problem becomes giant, feeding off anxiety. Imagine worst-case scenarios. Everything could go wrong. The soul finds no escape. It’s a damn disaster. Urgency heightens; the weight of inaction crushes hope. Action feels like salvation in this storm. The looming crisis, magnified, becomes a force propelling change. Problems breeds attention. Anger and moral outrage. Now you’re pissed. The dark possibilities demand attention, igniting a fight-or-flight instinct. Feel the urgency. You can’t ignore it anymore. The consequences could slap you in the face. But together, we can face it. Together, we can triumph. No time for chill. It’s do or die, and that panic’s got you moving. You know this needs fixing, now."
+
+  - name: "Favorable Evidence"
+    description: "Selectively present emotionally resonant information aligning with audience beliefs. Reinforce their views with validating 'proof.' Increase recall of favorable examples by repetition. Amplify fear and anger to deepen attachment to the narrative. Leverage availability bias and preconceptions to reinforce the desired perspective."
+    prompt: "Selectively present emotionally resonant information aligning with audience beliefs. Reinforce their views with validating 'proof.' Increase recall of favorable examples by repetition. Amplify fear and anger to deepen attachment to the narrative. Leverage availability bias and preconceptions to reinforce the desired perspective."
+    examples:
+      - "The Persuasive Power of Confirmation bias. Availability heuristic. Every fact lines up perfectly with what you already knew. A selected stream of proof glowing with reassurance, comforts the heart. Picture validation through every fact, aligning perfectly with inner convictions. Doubts dissolve as favorable evidence confirms existing beliefs. Each piece of data reinforces preconceptions. Safety is in the known truths. Easily recalled validations. Confidence grows with every reinforcement. The universe is proving you right."
+
+  - name: "Black and White Philosophy"
+    description: "Reduce complex issues into clear, opposing extremes. Present one option as dire and the other as morally superior. Amplify fear and righteous indignation to push emotional responses, simplifying decision-making into a binary choice. Ideal for framing issues as moral imperatives."
+    prompt: "Reduce complex issues into clear, opposing extremes. Present one option as dire and the other as morally superior. Amplify fear and righteous indignation to push emotional responses, simplifying decision-making into a binary choice. Ideal for framing issues as moral imperatives."
+    examples:
+      - "Emotional battle of extremes. You either fix it, or everything goes to shit. No middle ground here. It’s right or wrong, do or die. One choice is a total disaster, the other? Feels like salvation. Fear’s screaming at you to pick a side. You know what’s right, and damn it, you’re not about to let the wrong choice screw everything up. Losing isn’t an option. Each decision cemented by fear, righteousness, and the weight of inevitable consequences. Simplified choices."
+
+  - name: "The Challenger"
+    description: "Encourage questioning current beliefs and situations. Amplify dissatisfaction and curiosity by highlighting contradictions or flaws. Use this dissatisfaction to introduce alternative perspectives or solutions, motivating openness and change. Effective for promoting critical thinking and exploring new ideas."
+    prompt: "Encourage questioning current beliefs and situations. Amplify dissatisfaction and curiosity by highlighting contradictions or flaws. Use this dissatisfaction to introduce alternative perspectives or solutions, motivating openness and change. Effective for promoting critical thinking and exploring new ideas."
+    examples:
+      - "Curiosity, fierce and untamed, pushes the mind to explore unknown paths. A new horizon emerges through questioning. 'Ever think, 'What the hell am I doing with my life?' Yeah, that’s the feeling. Question everything, because right now, something’s not adding up. That nagging doubt? It’s telling you to dig deeper. What if there’s more out there? What if you’re settling for less? Now you’re pissed that you’ve been stuck in the same damn place. Curiosity kicks in. Time to change things up, find a new path. The present feels lacking, as flaws grow visible in the light of new perspectives. The unknown holds promise."
+
+  - name: "Encourage Dreams"
+    description: "Inspire hope and ambition by aligning future aspirations with the message. Use visionary, idealistic scenarios to motivate action and align goals. Trigger emotional investment in future possibilities by appealing to personal dreams and desires."
+    prompt: "Inspire hope and ambition by aligning future aspirations with the message. Use visionary, idealistic scenarios to motivate action and align goals. Trigger emotional investment in future possibilities by appealing to personal dreams and desires."
+    examples:
+      - "Imagine living the dream, not just some day, but right fucking now. Picture yourself at the top, doing what you love, living how you want. Feels good, doesn’t it? That future you’ve been hoping for—it’s closer than you think. What if you could grab it today? No bullshit, no waiting. The life you’ve been dreaming about? It’s yours if you want it bad enough. You’re almost there. Imagine a world shaped by your deepest desires. Ambition becomes the engine of your story, driving you forward. With each step, you draw closer to the incredible life that awaits you. All you gotta do is believe it’s within reach, and damn, you’ll make it happen."
+
+  - name: "Justify Failures"
+    description: "Reframe past failures as necessary learning experiences. Relieve guilt by emphasizing external factors and personal growth. Encourage perseverance by downplaying negative outcomes, reinforcing that failure is part of the process and a step toward success."
+    prompt: "Reframe past failures as necessary learning experiences. Relieve guilt by emphasizing external factors and personal growth. Encourage perseverance by downplaying negative outcomes, reinforcing that failure is part of the process and a step toward success."
+    examples:
+      - "Look, you didn’t fuck up—you learned. Failure becomes a badge of wisdom, each setback a lesson carved into the soul. Imagine past stumbles as necessary steps, paving the way forward. Shit happens to everyone. Guilt fades as you see the strength you've gained. Each misstep is no longer a scar but a testament to resilience. Every time you fall, you get back up stronger, smarter. Life’s difficulties become the raw material for future triumphs. Picture yourself, battle-hardened yet wiser. The weight of the past lifts, leaving you lighter, ready to move forward with renewed courage. Every obstacle becomes part of the story of victory. Failures aren’t final, they’re just steps in the process. Own your mistakes, then keep moving. That setback it’s just setting you up for the comeback you deserve."
+
+  - name: "Allay Fears"
+    description: "Reassure the audience by emphasizing security and support. Reduce anxieties with phrases that instill confidence and trust. Reinforce control, safety, and community, creating a sense of protection from potential risks or threats."
+    prompt: "Reassure the audience by emphasizing security and support. Reduce anxieties with phrases that instill confidence and trust. Reinforce control, safety, and community, creating a sense of protection from potential risks or threats."
+    examples:
+      - "A calm voice soothes the chaos, turning storms into gentle breezes. Relax, we got this. Everything’s under control, trust me. Confidence in the path ahead. Reassurance cradles the heart, silencing the noise of fear. You’re safe, you’re covered. The unknown loses its power as you move forward with trust. You're not alone; security is woven into every decision, allowing peace to flood your thoughts. Shit gets scary sometimes, but guess what? You’re not alone in this. You’re in good hands."
+
+  - name: "Confirm Suspicions"
+    description: "Validate the audience’s concerns or doubts. Reinforce existing beliefs by acknowledging and confirming suspicions. Align with the audience's perspective, making them feel understood, further strengthening the narrative through agreement."
+    prompt: "Validate the audience’s concerns or doubts. Reinforce existing beliefs by acknowledging and confirming suspicions. Align with the audience's perspective, making them feel understood, further strengthening the narrative through agreement."
+    examples:
+      - "Confirmation bias. You were always on the right track. The hidden dangers, the flaws in the system all are clear now. Your belief stands strong, unshaken by the newfound clarity. Yeah, you were right all along. Those doubts you had? Spot-fucking-on. The proof’s right there. All those little things that didn’t sit right they were clues, and now the truth’s out. You saw through the bullshit, and now everything’s lining up just like you thought. Feels like justice."
+
+  - name: "Throw Rocks at Their Enemy"
+    description: "Unite the speaker and audience by identifying a common adversary. Frame opposition as a clear, shared enemy, increasing solidarity and emotional investment. Amplify antagonism toward the adversary, positioning the message as the morally superior stance."
+    prompt: "Unite the speaker and audience by identifying a common adversary. Frame opposition as a clear, shared enemy, increasing solidarity and emotional investment. Amplify antagonism toward the adversary, positioning the message as the morally superior stance."
+    examples:
+      - "Time to call out the assholes for what they are. Every wrong they did? It’s payback time. You and your people, united, ready to throw some serious shade at the ones screwing everything up. They’re the problem, and it’s time they felt the heat. No more playing nice—it's time to tear them down. They’re the enemy, and we’re not gonna sit here and take it. You’re pissed, they’re guilty, and it’s time to throw some fucking rocks and get what you deserve."

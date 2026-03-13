@@ -1,0 +1,1056 @@
+# ═══════════════════════════════════════════════════════════
+# ARCHETYPE DESIGN BRIEF TEMPLATE
+# Archetype: Achievement Story
+# Template Version: 1.2  |  Status: draft
+# Registry: skills/ccf/archetypes/achievement-story/
+#
+# MIGRATION LOG — v1.1 → v1.2
+# ─────────────────────────────────────────────────────────
+# [ADDED]    meta.cral_integration: true
+# [ADDED]    meta.migration_from: "1.1"
+# [ADDED]    meta.migration_delta_ref: see end of file
+#
+# [UPGRADED] block_a.field_7_method — each arc phase now
+#            references the specific CRAL moment finding
+#            that pre-addresses intelligence for that phase.
+#            Research no longer happens inside generation.
+#
+# [UPGRADED] block_a.field_8_structural_modules — Distillation
+#            Funnel Cross-Input Collision updated to receive
+#            pre-processed CRAL signals instead of raw DEP-ENG-006.
+#            cral-finding-router-adapter added as mandatory.
+#
+# [UPGRADED] block_b.field_5_inputs — DEP-ENG-021 (CRAL Finding
+#            Index) registered as CRITICAL tier_2 input.
+#            DEP-ENG-022 (CRAL Session Research Plan) added as
+#            tier_3 archive input.
+#
+# [ADDED]    block_b.field_5b_cral_finding_map — explicit
+#            use_at address for each of the 7 CRAL moments
+#            mapped to the 5 arc phases of this archetype.
+#
+# [UPGRADED] block_b.field_8_psychological_modules — three
+#            adapters promoted from PROPOSED to REGISTERED.
+#            Status aligned with Adapter Registry v2.0.
+#
+# [UPGRADED] block_c.compilation_validation — two new gates:
+#            C-09 CRAL Finding Index Present
+#            C-10 CRAL Moment Coverage Sufficient
+#            Builder Engine Step 3.5 conflict detection
+#            reference added.
+#
+# [UPGRADED] block_c.proposed_registrations_reminder —
+#            DEP-ENG-021 and DEP-ENG-022 added.
+#            All three psychological adapters marked REGISTERED.
+# ═══════════════════════════════════════════════════════════
+
+meta:
+  archetype_id: "ARCH-STORY-01"
+  archetype_name: "Achievement Story"
+  archetype_family: "Storytelling"
+  template_version: "1.2"
+  migration_from: "1.1"
+  cral_integration: true
+  maturity: "draft"
+  authored_by: ""
+  last_validated: ""
+  migration_delta_ref: "See MIGRATION LOG header above for complete v1.1→v1.2 change index."
+
+# ═══════════════════════════════════════════════════════════
+# BLOCK A — STRUCTURAL INVARIANTS
+# Pre-filled. Archetype-invariant. Never changes per compilation.
+# References: Reasoning Module Taxonomy + Adapter Registry v2.0
+# ═══════════════════════════════════════════════════════════
+
+block_a:
+
+  field_1_intent: >
+    Surfaces the coach's authenticated triumph-over-adversity narrative
+    to demonstrate that a specific result is achievable through a specific
+    mechanism — producing evidence-based aspiration rather than
+    instructional advice. Exists because social proof delivered through
+    embodied experience bypasses the skepticism that data alone cannot move.
+    Orchestrator routing value: load when batch strategy signals
+    authority-building, aspiration, or social proof function AND
+    the coach's authenticated emotional state registers pride,
+    vindication, or earned certainty.
+
+  field_4_trigger: >
+    Orchestrator archetype selection resolves to ARCH-STORY-01
+    following Trigger-First activation (DEP-ENG-005 Authentication
+    Certificate passes) when authenticated emotional state tags read
+    TTT-03 to TTT-06 range AND batch strategy function = authority
+    or aspiration. Flag for human review if TTT-07 or above.
+
+  field_6_action: >
+    Compress authenticated triumph experience into a 5-phase narrative
+    arc that makes the result feel inevitable in retrospect and
+    replicable in prospect. Each phase draws from its pre-addressed
+    CRAL moment finding via DEP-ENG-021. Research is resolved upstream.
+    Generation is execution, not processing.
+
+  field_7_method:
+    # ── v1.2 CHANGE ─────────────────────────────────────────
+    # Each arc phase now carries a cral_source field identifying
+    # which CRAL moment finding pre-addresses intelligence for it.
+    # The use_at mapping is formally specified in
+    # block_b.field_5b_cral_finding_map.
+    # The Assembler calls DEP-ENG-021[moment_id] at the phase
+    # where use_at = this phase, not at general generation time.
+    # ─────────────────────────────────────────────────────────
+    arc_phases:
+      - phase: "1 — Stakes"
+        cral_source: "M2_BELIEVABLE + M3_UNDENIABLE"
+        rule: >
+          Name the specific cost of failure before any result is
+          mentioned. Audience must feel what losing means before
+          they can feel what winning means. One sentence maximum.
+          In v1.2: Stakes are no longer synthesized or derived
+          solely from DEP-ENG-010 SoC Batch. M2_BELIEVABLE provides
+          the named, verifiable mechanism instance that makes the
+          stakes real. M3_UNDENIABLE provides the audience's
+          specific prediction gap — what they believe about this
+          mechanism that is measurably wrong — so Stakes land at
+          exactly the cognitive register where the audience is
+          currently wrong rather than at a generic difficulty level.
+          Grounded in DEP-LIB-006 Identity Threat Taxonomy.
+        v1_1_source: "DEP-ENG-010 SoC Batch only"
+        v1_2_source: "DEP-ENG-021[M2_BELIEVABLE] + DEP-ENG-021[M3_UNDENIABLE] + DEP-ENG-010 SoC Batch (voice authenticity)"
+
+      - phase: "2 — Mechanism"
+        cral_source: "M4_RESONANT"
+        rule: >
+          Name the single transferable principle the coach understood
+          or did that others weren't. Not effort. Not mindset.
+          A specific lever. Grounded in HOW not THAT.
+          In v1.2: The mechanism is no longer extracted from
+          DEP-ENG-010 candidate passages alone. M4_RESONANT delivers
+          a complete narrative unit — named protagonist, status details,
+          documented moment of contact with the mechanism — built to
+          the exact emotional architecture this archetype requires.
+          The mechanism candidate extracted from SoC is cross-referenced
+          against M4's narrative unit. If they are congruent, M4's
+          structural precision upgrades the SoC material. If they
+          conflict, the conflict is flagged per Builder Engine Step 3.5.
+        v1_1_source: "DEP-ENG-010 SoC Batch candidate passages"
+        v1_2_source: "DEP-ENG-021[M4_RESONANT] cross-referenced with DEP-ENG-010"
+
+      - phase: "3 — Turn"
+        cral_source: "M5_SURPRISING"
+        rule: >
+          The exact frame where the mechanism produced a visible result.
+          Sensory-specific. A date, a conversation, a number on a screen.
+          Not a period of time. One frame.
+          In v1.2: M5_SURPRISING is the pre-researched finding that
+          violates the audience's surface prediction at the exact
+          calibration level of optimal incongruity — enough structure
+          to be taken seriously, enough prediction error to demand
+          revision. The Turn phase is where this finding lands.
+          The counter-intuitive detail that should not have happened
+          according to the audience's prior belief IS the Turn.
+          M5 was specifically researched to produce maximum synaptic
+          plasticity at the moment the mechanism's result becomes
+          visible. The Turn is no longer reconstructed from SoC —
+          it is pre-addressed from the intelligence layer.
+        v1_1_source: "DEP-ENG-010 SoC Batch — reconstructed"
+        v1_2_source: "DEP-ENG-021[M5_SURPRISING]"
+
+      - phase: "4 — Result"
+        cral_source: "M6_IRREFUTABLE"
+        rule: >
+          Hard specificity. Falsifiable. At least one number, timeline,
+          or named observable change. Validated against
+          DEP-ENG-005 Authentication Certificate.
+          In v1.2: M6_IRREFUTABLE operates at maximum source proximity
+          — the enemy's own document, the internal admission, the
+          filing that closes the deniability gap. Where v1.1 required
+          the Result to be validated against DEP-ENG-005, v1.2 requires
+          the Result to carry M6's irrefutable evidence as its
+          evidentiary anchor. The audience does not just believe the
+          Result — they encounter evidence they cannot unknow.
+          If no falsifiable result exists in source material AND
+          M6 cannot produce an irrefutable finding for this mechanism →
+          trigger graceful degradation (see field_9_structural_constraints).
+        v1_1_source: "DEP-ENG-010 + DEP-ENG-005 validation"
+        v1_2_source: "DEP-ENG-021[M6_IRREFUTABLE] + DEP-ENG-005 validation"
+
+      - phase: "5 — Implication"
+        cral_source: "M7_RELATABLE"
+        rule: >
+          Structural parallel to audience's specific situation.
+          In v1.1: Loaded from DEP-ENG-006 Context Premise L3 layer.
+          Not generic inspiration. The parallel must name the
+          audience's exact structural equivalent of the coach's situation.
+          In v1.2: M7_RELATABLE delivers the tribal recognition anchor
+          — the specific named person from inside the tribe whose
+          documented testimony uses the tribe's own vernacular to
+          describe the exact structural position the audience occupies.
+          The Implication no longer constructs a generic parallel from
+          L3 data. It deploys M7's pre-researched, frequency-matched,
+          vernacular-precise human evidence. The audience does not
+          feel described. They feel seen.
+          Portelli quality gate applies: passes only when the finding
+          achieves tribal recognition, not when it achieves factual
+          accuracy. DEP-ENG-006 L3 vocabulary remains the constraint
+          on language register. M7 supplies the human evidence.
+        v1_1_source: "DEP-ENG-006 Context Premise L3 layer"
+        v1_2_source: "DEP-ENG-021[M7_RELATABLE] constrained by DEP-ENG-006 L3 vocabulary"
+
+    structural_laws:
+      - "Mechanism precedes result. ALWAYS."
+      - "Stakes ceiling = emotional ceiling of the Turn phase. Weak stakes = weak Turn."
+      - "Single mechanism per piece. Multiple mechanisms = dilution."
+      - "Implication must use tribal language from DEP-ENG-007."
+      # v1.2 additions:
+      - "CRAL moments are pre-addressed. The Assembler calls DEP-ENG-021[moment_id] at phase entry, not at general generation time."
+      - "M2 and M3 must arrive before Stakes construction begins. Orchestrator enforces this via dependency firing map."
+      - "If DEP-ENG-021 is absent or incomplete, fall back to v1.1 source chain AND flag output as CRAL_DEGRADED."
+
+  field_8_structural_modules:
+    # ── REASONING MODULES ──────────────────────────────────
+    # Core DNA preserved. Ecological adaptation MANDATORY.
+    # v1.2: Distillation Funnel Cross-Input Collision updated
+    # to receive pre-processed CRAL signals. The collision
+    # is now between CRAL-delivered intelligence and SoC voice
+    # authenticity — not between raw research and raw voice.
+
+    - module_species: "Distillation Funnel"
+      adapter: "distillation-funnel-adapter"
+      ecological_adaptation:
+        saturation: >
+          Cross-Input Collision variant — v1.2 update.
+          In v1.1: collision between DEP-ENG-003 Emotional DNA
+          appraisal sequence and DEP-ENG-006 Context Premise L3 pain.
+          In v1.2: collision between DEP-ENG-021 CRAL Finding Index
+          (pre-processed, frequency-matched intelligence) and
+          DEP-ENG-003 Emotional DNA (coach's authentic voice path).
+          The Funnel no longer processes raw research. It receives
+          pre-distilled signal from seven CRAL moments and fuses it
+          with the coach's emotional architecture. Precision doubles.
+          Processing load at generation time drops.
+        classification: >
+          3 signal categories for Achievement Story domain.
+          v1.2 CRAL moment mapping:
+          T = Tension signals (Stakes phase) → M2_BELIEVABLE + M3_UNDENIABLE
+          V = Vulnerability signals (Mechanism phase) → M4_RESONANT narrative unit
+          R = Recognition signals (Implication phase) → M7_RELATABLE tribal anchor
+        compression: >
+          Collapse Test variant — unchanged from v1.1.
+          Test: "If I remove the Mechanism from this narrative, does the
+          Result become unbelievable?" If yes: compressed. If no:
+          mechanism is decorative — restructure.
+          v1.2 addition: Run same Collapse Test against M5_SURPRISING.
+          "If I remove the Turn finding, does the Result feel earned?"
+          If no: M5 finding is not integrated — retrieve and deploy.
+        gate: >
+          First-Party Vulnerability Enforcement — v1.2 update.
+          Stakes phase MUST be derived from DEP-ENG-010 SoC Batch
+          for voice authenticity. M2 and M3 CRAL findings provide
+          the evidentiary layer. Neither substitutes for the other.
+          SoC = the coach's authentic voice about the stakes.
+          CRAL = the verified external reality that makes those stakes
+          undeniable to the audience. Both must be present.
+
+    - module_species: "Contrastive Anchor"
+      adapter: "contrastive-anchor-adapter"
+      ecological_adaptation:
+        archetypal_failure_mode: >
+          Generic AI version of Achievement Story =
+          Effort narrative: "I worked incredibly hard and never gave up.
+          After months of struggle, I finally achieved my goal.
+          You can do it too if you believe in yourself."
+          This fails because: (1) mechanism is non-transferable,
+          (2) result is impressionistic, (3) implication is generic.
+          v1.2 addition: The pre-CRAL failure mode also includes
+          research-rich but frequency-mismatched content — factually
+          accurate findings delivered at the wrong emotional register
+          for the audience's mood state. CRAL's mood-specific
+          research architecture eliminates this failure mode at source.
+        surface_success_failure: >
+          Result + mechanism present but Stakes are generic and Turn
+          is a period. Passes a quick scan but fails falsifiability.
+          v1.2 addition: CRAL-partial failure — M2 present but M3
+          absent means Stakes confirm the mechanism but do not locate
+          the audience's specific prediction error. The Stakes land
+          at a generic level of difficulty, not at the exact cognitive
+          register where the audience is measurably wrong.
+        steering_instruction: >
+          The generated piece must have a mechanism a different person
+          could apply in a different domain. Test: can a stranger read
+          the mechanism and know what to do differently tomorrow?
+          v1.2 addition: The implication must pass the tribal
+          recognition test — not just describe the parallel but
+          deploy M7's vernacular-precise human evidence. If the
+          audience member reads the Implication and thinks "that is
+          how we talk about this" the test passes.
+
+    - module_species: "MCDA"
+      adapter: "deliberation-adapter"
+      ecological_adaptation:
+        evaluation_domain: "Mechanism quality scoring"
+        critic_rules:
+          - "Is the mechanism transferable to someone outside the coach's specific situation?"
+          - "Is the Turn a single identifiable frame or a vague period?"
+          - "Does the Result contain at least one falsifiable data point?"
+          - "Does the Implication use L3 tribal language or generic inspiration?"
+          - "Does the Stakes phase name a cost or just label a difficulty?"
+          # v1.2 additions:
+          - "Does the Stakes phase carry M2's named mechanism instance or is it synthesized?"
+          - "Does the Turn deploy M5_SURPRISING or is it reconstructed from SoC?"
+          - "Does the Implication deploy M7_RELATABLE or is it constructed from L3 data alone?"
+          - "Are all seven CRAL moment findings present in the finding index for this session?"
+        synthesis_mechanism: "REVISE_FLAGGED_ONLY"
+
+    # ── MANDATORY EXECUTION ADAPTERS ──────────────────────
+    - adapter: "irevc-adapter"
+      note: "Mandatory. Maps this brief's 11 fields into I-R-E-V-C execution protocol."
+
+    - adapter: "graceful-degradation-adapter"
+      note: "Mandatory. Defines failure payload and input criticality tiers."
+
+    # v1.2 ADDITION ─────────────────────────────────────────
+    - adapter: "cral-finding-router-adapter"
+      status: "REGISTERED — Adapter Registry v2.0"
+      note: >
+        Mandatory in v1.2. Routes DEP-ENG-021 finding index to the
+        correct arc phase at assembly time. Fires at the start of
+        each phase, retrieves the pre-addressed moment finding, and
+        injects it as a structured constraint before the section
+        assembler runs. Prevents the generation step from processing
+        research — it only executes against pre-addressed signal.
+      routing_map:
+        Stakes_phase: ["M2_BELIEVABLE", "M3_UNDENIABLE"]
+        Mechanism_phase: ["M4_RESONANT"]
+        Turn_phase: ["M5_SURPRISING"]
+        Result_phase: ["M6_IRREFUTABLE"]
+        Implication_phase: ["M7_RELATABLE"]
+      degradation_behavior: >
+        If DEP-ENG-021 is absent or a specific moment finding is
+        missing: flag the phase as CRAL_DEGRADED, fall back to v1.1
+        source chain for that phase only, continue assembly, log
+        degradation in assembly_report.json.
+    # ────────────────────────────────────────────────────────
+
+  field_9_structural_constraints:
+    universal_rules:
+      - "NEVER open with the result. Stakes land before Turn. No exceptions."
+      - "NEVER use effort as the mechanism. Effort is not transferable."
+      - "NEVER generalize the implication. Must name audience's specific parallel."
+      - "NEVER include more than one mechanism. Multiple = dilution."
+      - "NEVER allow Turn to be abstract. One frame only."
+      - "NEVER synthesize Stakes. Must come from DEP-ENG-010 source material."
+      # v1.2 additions:
+      - "NEVER run research inside generation. All research intelligence arrives pre-addressed via DEP-ENG-021."
+      - "NEVER substitute CRAL findings for SoC voice material. CRAL = evidentiary layer. SoC = authentic voice. Both mandatory."
+      - "NEVER deploy M7_RELATABLE without confirming tribal recognition test. Vernacular precision is the quality gate, not factual accuracy."
+    graceful_degradation_map:
+      - input: "DEP-ENG-010 SoC Batch"
+        criticality: "CRITICAL — Halt if absent. No fabrication."
+      - input: "DEP-ENG-003 Emotional DNA"
+        criticality: "CRITICAL — Halt if absent."
+      - input: "DEP-ENG-006 Context Premise"
+        criticality: "CRITICAL — Implication phase vocabulary constraint cannot load without L3 data."
+      - input: "DEP-ENG-007 Tribal Terms"
+        criticality: "IMPORTANT — Degrade to standard language if absent. Flag output."
+      - input: "DEP-ENG-004 Negative Space"
+        criticality: "CRITICAL — Load first before any generation begins."
+      # v1.2 additions:
+      - input: "DEP-ENG-021 CRAL Finding Index"
+        criticality: >
+          CRITICAL for v1.2 architecture. If absent: degrade to v1.1
+          source chain, flag output as CRAL_DEGRADED, log in
+          assembly_report.json. Do not halt — assembly continues
+          with reduced intelligence quality. Operator alert required.
+      - input: "DEP-ENG-021[M2_BELIEVABLE]"
+        criticality: "HIGH — Stakes phase degrades to SoC-only if absent. Flag."
+      - input: "DEP-ENG-021[M3_UNDENIABLE]"
+        criticality: "HIGH — Prediction gap layer absent. Stakes land at generic difficulty level. Flag."
+      - input: "DEP-ENG-021[M4_RESONANT]"
+        criticality: "HIGH — Mechanism phase loses narrative unit. Flag."
+      - input: "DEP-ENG-021[M5_SURPRISING]"
+        criticality: "HIGH — Turn loses counter-intuitive specificity. Flag."
+      - input: "DEP-ENG-021[M6_IRREFUTABLE]"
+        criticality: "HIGH — Result loses irrefutable evidence anchor. Flag."
+      - input: "DEP-ENG-021[M7_RELATABLE]"
+        criticality: "HIGH — Implication loses tribal recognition anchor. Degrades to L3 construction. Flag."
+    failure_payload: >
+      If DEP-ENG-010 contains no falsifiable result metric:
+      {"status": "blocked", "reason": "no_falsifiable_result",
+      "recovery": "return_to_elicitation",
+      "instruction": "Request specific metric from coach via DEP-ENG-013 Provocation Questions"}
+
+  field_11_structural_success_criteria:
+    gates:
+      - id: "SG-01"
+        source: "Distillation Funnel Gate"
+        check: "Stakes derived from authenticated SoC, not synthesized."
+        pass: "Stakes quote traceable to DEP-ENG-010 source."
+        fail: "Stakes are generic description not traceable to source material."
+      - id: "SG-02"
+        source: "Contrastive Anchor test"
+        check: "Mechanism is transferable to a stranger in a different domain."
+        pass: "Mechanism names a principle, approach, or insight applicable outside coach's context."
+        fail: "Mechanism is a personal trait (mindset, determination, belief)."
+      - id: "SG-03"
+        source: "MCDA Critic"
+        check: "Turn is a single identifiable frame."
+        pass: "Turn references date, conversation, decision, specific observation."
+        fail: "Turn described as gradual process or period of time."
+      - id: "SG-04"
+        source: "Authentication Certificate DEP-ENG-005"
+        check: "Result contains at least one falsifiable data point."
+        pass: "Number, timeline, named outcome, observable binary change."
+        fail: "Result impressionistic ('everything changed', 'life was different')."
+      - id: "SG-05"
+        source: "Context Premise DEP-ENG-006 + Tribal Terms DEP-ENG-007"
+        check: "Implication names audience's structural parallel using tribal language."
+        pass: "Parallel is structural and uses L3 vocabulary from tribe_soul.json."
+        fail: "Generic inspiration close without specific parallel."
+      # v1.2 additions:
+      - id: "SG-06"
+        source: "CRAL Finding Router Adapter — v1.2"
+        check: "M2_BELIEVABLE finding present and deployed in Stakes phase."
+        pass: "Stakes phase contains named, verifiable mechanism instance from M2."
+        fail: "Stakes phase synthesized without M2 anchor. CRAL_DEGRADED logged."
+      - id: "SG-07"
+        source: "CRAL Finding Router Adapter — v1.2"
+        check: "M7_RELATABLE finding passes tribal recognition test."
+        pass: >
+          Implication deploys M7 vernacular-precise human evidence.
+          A tribe member reading the Implication would recognize the
+          language as their own internal language about their own life.
+        fail: >
+          Implication constructs a generic parallel without M7 anchor.
+          Factually accurate but does not achieve tribal recognition.
+          Partial — flag, do not block.
+      - id: "SG-08"
+        source: "Builder Engine Step 3.5 — Conflict Detection — v1.2"
+        check: "No unresolved conflicts between CRAL moment findings and SoC source material."
+        pass: "CRAL findings and SoC material are congruent or conflict was resolved per Step 3.5 logic."
+        fail: "Unresolved conflict between M6_IRREFUTABLE and DEP-ENG-005 Authentication Certificate. Block."
+
+# ═══════════════════════════════════════════════════════════
+# BLOCK B — COMPILATION VARIABLES
+# Completed by CCSB compiler per use case.
+# All DEP IDs reference Dependency Registry v4.0
+# All adapters reference Adapter Registry v2.0
+# ═══════════════════════════════════════════════════════════
+
+block_b:
+
+  field_2_target:
+    output_format: ""       # carousel | video_script | long_form_post | tweet_thread
+    platform: ""            # instagram | linkedin | tiktok | youtube
+    slide_count: ""         # if carousel
+    word_count_range: ""    # if long_form
+    output_schema_ref: "DEP-ENG-015"
+
+  field_3_context:
+    # ── Coach Intelligence ──
+    coach_id: ""
+    emotional_dna_ref: "DEP-ENG-003"
+    voice_dna_ref: "DEP-ENG-002"
+    soul_kernel_ref: "DEP-LIB-001"
+
+    # ── Audience Intelligence ──
+    context_premise_ref: "DEP-ENG-006"
+    tribal_terms_ref: "DEP-ENG-007"
+    tribe_soul_ref: "DEP-ENG-008"
+
+    # ── Psychological Routing (from DEP-ENG-016 — REGISTERED v4.0) ──
+    mood_state: ""          # Processing | Escape | Discovery | Status
+    arousal_direction: ""   # raises | lowers | maintains
+    valence_delivery: ""    # positive | negative | mixed | eudaimonic
+    regulatory_frame: ""    # promotion | prevention
+    semantic_affinity_risk: ""  # low | medium | high [→ DEP-PROTO-011]
+    sequencing_dependency: ""   # independent | requires_positive_prime
+    sdt_need_primary: ""    # autonomy | competence | relatedness | relief
+    tmt_function: ""        # insight_delivery | worldview_construction | none
+
+    # ── Audience Maturity (from DEP-ENG-017 — REGISTERED v4.0) ──
+    audience_cohort: ""     # new | developing | loyal
+    depth_permission: ""    # surface | mid | full [derived from cohort]
+
+    # v1.2 ADDITION ───────────────────────────────────────────
+    # ── CRAL Session Context ──
+    cral_session_id: ""     # links to DEP-ENG-022 Session Research Plan
+    cral_finding_index_ref: "DEP-ENG-021"  # mandatory in v1.2
+    cral_coverage_status: ""  # COMPLETE | PARTIAL | ABSENT
+    cral_degraded_phases: []  # populated by cral-finding-router-adapter if any
+                              # phase falls back to v1.1 source chain
+    # ─────────────────────────────────────────────────────────
+
+  field_5_inputs:
+    # All IDs from Dependency Registry v4.0
+    # Build order follows topological sort (Tier 0 → Tier 1 → Tier 2 → Tier 3)
+    tier_0_constants:
+      - id: "DEP-ENG-003"
+        name: "Emotional DNA (10 Variables)"
+        file: "emotional_dna.json"
+        criticality: "CRITICAL"
+      - id: "DEP-ENG-006"
+        name: "Context Premise Summary"
+        file: "context_premise_map.json"
+        criticality: "CRITICAL"
+      - id: "DEP-LIB-002"
+        name: "Trigger Map Architecture"
+        file: "trigger_map.json"
+        criticality: "CRITICAL"
+      - id: "DEP-LIB-003"
+        name: "Story Formulas"
+        file: "story_formulas.yaml"
+        criticality: "IMPORTANT"
+      - id: "DEP-LIB-004"
+        name: "Persuasive Angles"
+        file: "persuasive_angles.json"
+        criticality: "IMPORTANT"
+      - id: "DEP-LIB-005"
+        name: "Cognitive Distortion Definitions"
+        file: "cognitive_distortion_definitions.yaml"
+        criticality: "IMPORTANT"
+      - id: "DEP-LIB-006"
+        name: "Identity Threat Taxonomy"
+        file: "identity_threat_taxonomy.yaml"
+        criticality: "IMPORTANT"
+      - id: "DEP-LIB-007"
+        name: "SDT Markers"
+        file: "sdt_markers.yaml"
+        criticality: "IMPORTANT"
+    tier_1_derived:
+      - id: "DEP-LIB-001"
+        name: "Coach Soul Kernel"
+        file: "coach_soul.json"
+        criticality: "CRITICAL"
+        load_order: "FIRST — Negative Space before positive DNA"
+      - id: "DEP-ENG-002"
+        name: "Voice DNA SPR (3-Layer)"
+        file: "coach_soul.json → voice_dna"
+        criticality: "CRITICAL"
+      - id: "DEP-ENG-004"
+        name: "Negative Space Object"
+        file: "coach_soul.json → negative_space"
+        criticality: "CRITICAL"
+        load_order: "ABSOLUTE FIRST before any generation constraint loads"
+      - id: "DEP-ENG-007"
+        name: "Audience Tribal Terms"
+        file: "tribe_soul.json"
+        criticality: "IMPORTANT"
+      - id: "DEP-ENG-001"
+        name: "Structural Congruence Point"
+        file: "activation_seeds.json"
+        criticality: "CRITICAL"
+    tier_2_orchestration:
+      - id: "DEP-ENG-010"
+        name: "Stream of Consciousness Batch"
+        file: "coach_soc_batch.md"
+        criticality: "CRITICAL — Primary voice source. No SoC = no authentic Stakes."
+      - id: "DEP-ENG-005"
+        name: "Authentication Certificate"
+        file: "Stage 4 Trigger Engine output"
+        criticality: "CRITICAL — Must pass before generation begins."
+      - id: "DEP-ENG-016"
+        name: "Psychological Routing Brief"
+        file: "psych_routing_brief.json"
+        criticality: "CRITICAL — REGISTERED in Dependency Registry v4.0."
+        status: "REGISTERED"
+      - id: "DEP-ENG-017"
+        name: "Audience Maturity Profile"
+        file: "audience_maturity.json"
+        criticality: "IMPORTANT — REGISTERED in Dependency Registry v4.0."
+        status: "REGISTERED"
+      - id: "DEP-ENG-018"
+        name: "Mood Context Map"
+        file: "mood_context_map.json"
+        criticality: "IMPORTANT — REGISTERED in Dependency Registry v4.0."
+        status: "REGISTERED"
+      # v1.2 ADDITION ─────────────────────────────────────────
+      - id: "DEP-ENG-021"
+        name: "CRAL Finding Index"
+        file: "cral_finding_index.json"
+        criticality: "CRITICAL in v1.2 architecture."
+        status: "REGISTERED — Dependency Registry v4.0"
+        structure: >
+          Seven finding objects keyed by moment_id.
+          Each object: { finding, register, use_at, verifiability_citation,
+          human_evidence: { name, source, cultural_proximity } }
+          M1_RELEVANT, M2_BELIEVABLE, M3_UNDENIABLE, M4_RESONANT,
+          M5_SURPRISING, M6_IRREFUTABLE, M7_RELATABLE
+        degradation: >
+          If absent: flag as CRAL_DEGRADED per phase, fall back to v1.1
+          source chain per phase, continue assembly. Do not halt.
+      # ──────────────────────────────────────────────────────
+    tier_3_archive:
+      - id: "DEP-ENG-019"
+        name: "Session Transcript Intelligence"
+        file: "transcript_intel.json"
+        criticality: "IMPORTANT — Context Premise Output 3 (Live Psychometric Feed)."
+        status: "REGISTERED"
+      - id: "DEP-ENG-020"
+        name: "Fingerprint Archive Index"
+        file: "fingerprint_archive.json"
+        criticality: "IMPORTANT — All compiled skills register here."
+        status: "REGISTERED"
+      # v1.2 ADDITION ─────────────────────────────────────────
+      - id: "DEP-ENG-022"
+        name: "CRAL Session Research Plan"
+        file: "cral_session_plan.json"
+        criticality: "IMPORTANT — Audit trail. Links finding index to Orchestrator firing map."
+        status: "REGISTERED — Dependency Registry v4.0"
+        note: >
+          Used by Fingerprint Archive to link every content output to
+          its specific research session. Enables CRAL quality scoring
+          per production cycle. Required for Standing Trigger
+          Intelligence library accumulation.
+      # ──────────────────────────────────────────────────────
+
+  # v1.2 ADDITION ─────────────────────────────────────────────
+  field_5b_cral_finding_map:
+    # Explicit use_at address for each CRAL moment.
+    # The cral-finding-router-adapter reads this map at assembly time
+    # to route each finding to the correct arc phase.
+    # This is the architectural contract between CRAL and the Assembler.
+    description: >
+      Maps seven CRAL moment findings to the five arc phases of
+      Achievement Story. The Assembler calls DEP-ENG-021[moment_id]
+      at phase entry per this map. Research arrives pre-addressed.
+      Generation executes against pre-addressed signal.
+    mapping:
+      - moment_id: "M1_RELEVANT"
+        use_at: "pre_assembly_context"
+        arc_phase: "none — fires at intake, shapes Orchestrator brief quality"
+        function: >
+          Cultural NOW for this coach in this tribal moment.
+          Informs the Telegram bot intake questions before
+          voice note elicitation. Shapes trigger activation quality.
+          Does not map to an arc phase but upgrades all downstream
+          phases by producing a higher-quality trigger profile.
+      - moment_id: "M2_BELIEVABLE"
+        use_at: "Stakes_phase"
+        arc_phase: "1 — Stakes"
+        function: >
+          Named, verifiable, unchallengeable mechanism instance.
+          The external reality that makes the coach's stakes real.
+          The precision journalism finding — specific named entity,
+          documented decision, verifiable date, internal industry term.
+      - moment_id: "M3_UNDENIABLE"
+        use_at: "Stakes_phase"
+        arc_phase: "1 — Stakes"
+        function: >
+          Audience prediction gap at this mood state.
+          What the audience in this specific arousal state currently
+          believes about the mechanism that is measurably wrong.
+          Stakes land at the exact cognitive register of the error.
+      - moment_id: "M4_RESONANT"
+        use_at: "Mechanism_phase"
+        arc_phase: "2 — Mechanism"
+        function: >
+          Complete narrative unit — named protagonist, status details,
+          documented moment of contact with the mechanism, internal
+          shift, outcome. Built to this archetype's emotional structure.
+          The mechanism is not extracted from SoC alone — it is
+          delivered as a pre-structured narrative unit.
+      - moment_id: "M5_SURPRISING"
+        use_at: "Turn_phase"
+        arc_phase: "3 — Turn"
+        function: >
+          Counter-intuitive finding at optimal incongruity level.
+          Violates the audience's specific held belief about the
+          mechanism at calibrated prediction error.
+          This IS the Turn frame — the single moment where the
+          mechanism's result should not have happened according
+          to prior belief, and did.
+      - moment_id: "M6_IRREFUTABLE"
+        use_at: "Result_phase"
+        arc_phase: "4 — Result"
+        function: >
+          Maximum source proximity evidence — enemy's own document,
+          internal admission, or filing that closes deniability gap.
+          The audience does not just believe the Result.
+          They cannot unknow it after M6 lands.
+      - moment_id: "M7_RELATABLE"
+        use_at: "Implication_phase"
+        arc_phase: "5 — Implication"
+        function: >
+          Tribal recognition anchor — named person from inside the
+          tribe, vernacular-precise, whose documented testimony
+          uses the tribe's own internal language.
+          The Implication is no longer constructed — it is deployed.
+          Quality gate: tribal recognition, not factual accuracy.
+  # ────────────────────────────────────────────────────────────
+
+  field_8_psychological_modules:
+    # ── PSYCHOLOGICAL ADAPTERS ──
+    # v1.2: All three adapters REGISTERED in Adapter Registry v2.0.
+    # Status changed from PROPOSED to REGISTERED.
+    # Inline logic encoding in field_9 is now superseded by
+    # formal adapter specifications in the registry.
+
+    - adapter: "psych-routing-adapter"
+      status: "REGISTERED — Adapter Registry v2.0"
+      instantiated_with:
+        mood_state: ""            # from field_3_context
+        arousal_direction: ""
+        regulatory_frame: ""
+        semantic_affinity_risk: ""
+      note: >
+        No longer encoded inline in field_9.
+        Full specification in Adapter Registry v2.0.
+        Loads at Tier 1 Mandatory Adapter execution.
+
+    - adapter: "payload-masking-adapter"
+      status: "REGISTERED — Adapter Registry v2.0"
+      instantiated_with:
+        mood_state: ""
+        archetype_id: "ARCH-STORY-01"
+      masking_instructions_by_mode:
+        Processing: >
+          No masking. Payload IS the content.
+          Achievement Story in Processing Mode delivers mechanism
+          and implication as direct psychological truth.
+          M6_IRREFUTABLE lands as explicit payload anchor.
+        Escape: >
+          Mechanism and implication must arrive through the vehicle's
+          natural comedic or narrative resolution. The L3 truth is
+          subtext. The story opens as entertainment. Truth is the punchline.
+          Semantic Affinity Guard MANDATORY — check against DEP-PROTO-011.
+          M5_SURPRISING operates as the comedic or narrative turn.
+          M6_IRREFUTABLE is embedded in resolution, not stated.
+        Discovery: >
+          Stakes phase opens as counter-intuitive historical or
+          scientific fact. M5_SURPRISING drives the hook.
+          Mechanism and implication embedded in the resolution.
+          Audience feels smart first. M7_RELATABLE lands after
+          intellectual reward — recognition follows competence.
+        Status: >
+          Mechanism encoded as comparison signal — what the winner
+          understood that others didn't. M4_RESONANT protagonist
+          is a status peer or aspirational status reference.
+          Implication framed as identity-defining insight.
+          M7_RELATABLE must be a high-status tribal member.
+          Never stated as lesson.
+
+    - adapter: "audience-maturity-adapter"
+      status: "REGISTERED — Adapter Registry v2.0"
+      instantiated_with:
+        audience_cohort: ""       # from field_3_context
+      depth_permission_map:
+        new: >
+          Surface depth only. Stakes stay relatable not existential.
+          Implication is aspirational not confrontational.
+          CRAL: M3_UNDENIABLE uses heuristic-level prediction gap.
+          M7_RELATABLE uses aspirational tribal figure, not insider.
+        developing: >
+          Mid depth permitted. Mechanism can carry philosophical weight.
+          Implication can include mild confrontation of current approach.
+          CRAL: Full seven-moment finding index deployed.
+        loyal: >
+          Full depth. Achievement Story can activate TMT Worldview
+          Construction function. tmt_function = worldview_construction
+          valid only for loyal cohort.
+          CRAL: M6_IRREFUTABLE may carry maximum source proximity
+          evidence. M3_UNDENIABLE may target System 2 prediction errors.
+
+  field_9_voice_constraints:
+    # ── From Coach Profile (loaded from DEP-ENG-004 Negative Space) ──
+    coach_specific:
+      forbidden_vocabulary: []    # populated from coach_soul.json
+      forbidden_tones: []
+      forbidden_rhetorical_moves: []
+
+    # ── Semantic Affinity Guard (DEP-PROTO-011 — REGISTERED v4.0) ──
+    semantic_affinity_guard:
+      status: "REGISTERED — DEP-PROTO-011"
+      rule: >
+        Cross-reference piece's content domain against
+        active L3 pain domain in DEP-ENG-006 Context Premise.
+      action_by_risk:
+        low: "Proceed."
+        medium: "Flag for review. Human override required for Escape Mode."
+        high: >
+          BLOCK if mood_state = Escape.
+          PERMIT if mood_state = Processing.
+          Achievement Story with high semantic affinity must be routed
+          to Processing Mode only.
+
+    # ── Psychological Routing Constraints ──
+    # v1.2: Formally delegated to psych-routing-adapter (REGISTERED).
+    # Inline encoding below retained as human-readable reference only.
+    # The adapter specification in Adapter Registry v2.0 is authoritative.
+    psychological_routing_constraints:
+      note: >
+        Below is human-readable reference. psych-routing-adapter
+        (REGISTERED) is the authoritative execution specification.
+      regulatory_frame_hook_rule: >
+        IF regulatory_frame = promotion:
+          Hook leads with what becomes possible.
+        IF regulatory_frame = prevention:
+          Hook leads with what was at risk of being lost.
+          Stakes front-loaded. Result arrives as relief not celebration.
+      arousal_pacing_rule: >
+        IF arousal_direction = raises:
+          Sentence rhythm shortens across the arc.
+          Turn phase = maximum compression. One sentence maximum.
+        IF arousal_direction = lowers:
+          Empathy markers open before mechanism.
+          Stakes validated before challenged. Rhythm lengthens.
+      sdt_alignment_rule: >
+        IF sdt_need_primary = relatedness: Implication closes on shared human experience.
+        IF sdt_need_primary = competence: Mechanism is emotional center. Audience leaves with a tool.
+        IF sdt_need_primary = autonomy: Implication frames path as identity signal not instruction.
+
+  field_10_output_artifact:
+    schema_ref: "DEP-ENG-015"
+    file_path_pattern: >
+      outputs/ccf/scripts/{coach_id}/{YYYYMMDD}-achievement-story-
+      {mood_state}-{regulatory_frame}.md
+    failure_path: >
+      outputs/ccf/scripts/{coach_id}/failed/{YYYYMMDD}-achievement-story-BLOCKED.json
+    procedural_log: >
+      Every output must include a structured reasoning log documenting:
+      (1) Which SoC passage the Stakes were derived from
+      (2) What mechanism was identified and why it was selected
+      (3) Which L3 parallel was matched in the Implication phase
+      (4) Semantic affinity risk level and Guard outcome
+      (5) Any Critic Subagent overrides triggered
+      [v1.2 additions:]
+      (6) CRAL session_id and coverage_status (COMPLETE | PARTIAL | ABSENT)
+      (7) Which CRAL moment findings were deployed and which phases
+          fell back to v1.1 source chain (CRAL_DEGRADED phases)
+      (8) Builder Engine Step 3.5 conflict detection result —
+          any CRAL-vs-SoC conflicts found and how resolved
+
+  field_11_psychological_success_criteria:
+    gates:
+      - id: "PG-01"
+        applies_when: "mood_state = Escape"
+        check: "Vehicle works independently of L3 payload."
+        pass: "Piece is entertaining/funny without the mechanism landing."
+        fail: "Vehicle only makes sense as a delivery mechanism."
+      - id: "PG-02"
+        applies_when: "mood_state = Escape"
+        check: "Semantic Affinity Guard cleared."
+        pass: "Content domain not identical to active L3 pain domain."
+        fail: "BLOCKED — mirrors active stress domain."
+      - id: "PG-03"
+        applies_when: "mood_state = Discovery"
+        check: "Hook delivers genuine cognitive reward before payload."
+        pass: "Counter-intuitive entry point is surprising on its own terms."
+        fail: "Entry point is a pretext."
+      - id: "PG-04"
+        applies_when: "audience_cohort = new"
+        check: "Depth stays within surface permission level."
+        pass: "No existential weight in Implication. Aspirational close."
+        fail: "TMT Worldview Construction active for new audience. Block."
+      - id: "PG-05"
+        applies_when: "tmt_function = worldview_construction"
+        check: "Audience cohort is loyal."
+        pass: "Cohort = loyal. Deep depth permitted."
+        fail: "Cohort = new or developing. Downgrade to insight_delivery."
+      - id: "PG-06"
+        check: "SDT need satisfied matches field_3_context.sdt_need_primary."
+        ref: "DEP-LIB-007 SDT Markers"
+        pass: "Dominant SDT signal in output matches declared primary need."
+        fail: "Output satisfies different need than declared."
+    sdt_alignment_gate:
+      ref: "DEP-LIB-007"
+
+# ═══════════════════════════════════════════════════════════
+# BLOCK C — COMPILATION VALIDATION GATE
+# Run by CCSB Skill Assembler Agent before Phase 2 begins.
+# v1.2: Two new gates added. Builder Engine Step 3.5 reference added.
+# ═══════════════════════════════════════════════════════════
+
+compilation_validation:
+
+  required_block_b_fields:
+    - field: "field_2_target.output_format"
+      validation: "must be one of: carousel | video_script | long_form_post | tweet_thread"
+    - field: "field_3_context.coach_id"
+      validation: "must resolve to populated coach_soul.json"
+    - field: "field_3_context.mood_state"
+      validation: "must be one of: Processing | Escape | Discovery | Status"
+    - field: "field_3_context.regulatory_frame"
+      validation: "must be one of: promotion | prevention"
+    - field: "field_3_context.tmt_function"
+      validation: "must be one of: insight_delivery | worldview_construction | none"
+    - field: "field_3_context.audience_cohort"
+      validation: "must be one of: new | developing | loyal"
+    - field: "field_3_context.semantic_affinity_risk"
+      validation: "must be one of: low | medium | high"
+    - field: "field_5_inputs (all CRITICAL tier)"
+      validation: "all CRITICAL DEP IDs must resolve in Dependency Registry v4.0"
+    - field: "field_9_voice_constraints.coach_specific.forbidden_vocabulary"
+      validation: "must be non-empty array loaded from DEP-ENG-004. Reject empty array."
+    # v1.2 additions:
+    - field: "field_3_context.cral_session_id"
+      validation: >
+        Must be populated if DEP-ENG-021 is present. If CRAL session
+        was not run, set cral_coverage_status = ABSENT and proceed
+        with v1.1 source chain. Do not block — flag CRAL_DEGRADED.
+    - field: "field_3_context.cral_coverage_status"
+      validation: "must be one of: COMPLETE | PARTIAL | ABSENT"
+
+  dep_registry_checks:
+    - "DEP-ENG-003 status must be populated (not draft)"
+    - "DEP-ENG-006 must contain L3 layer with minimum 10% of total insights"
+    - "DEP-ENG-010 must contain at least one passage tagged as Achievement Story candidate"
+    - "DEP-ENG-005 Authentication Certificate must exist and pass LIWC-22 gate"
+    - "DEP-ENG-016 must be populated — REGISTERED in v4.0, no longer PROPOSED"
+    # v1.2 additions:
+    - "DEP-ENG-021 should be present and contain ≥5 of 7 moment findings for COMPLETE status"
+    - "DEP-ENG-022 should be present if DEP-ENG-021 is present"
+
+  semantic_affinity_pre_check:
+    rule: >
+      If semantic_affinity_risk = high AND mood_state = Escape:
+      BLOCK compilation.
+      Return: {"status": "blocked", "reason": "affinity_mode_conflict",
+      "instruction": "Reclassify mood_state to Processing or swap content domain."}
+    protocol_ref: "DEP-PROTO-011 — REGISTERED"
+
+  tmt_cohort_check:
+    rule: >
+      If tmt_function = worldview_construction AND audience_cohort != loyal:
+      DOWNGRADE tmt_function to insight_delivery.
+      Log: "worldview_construction downgraded — cohort not loyal."
+
+  # v1.2 ADDITION ─────────────────────────────────────────────
+  builder_engine_step_3_5:
+    description: >
+      Research Synthesis Protocol conflict detection pass.
+      Runs between Builder Engine Step 3 (dependency resolution)
+      and Step 4 (template selection).
+    rule: >
+      When M2_BELIEVABLE and M6_IRREFUTABLE arrive from different
+      source types and produce apparently contradictory mechanism
+      evidence: resolve using source proximity hierarchy.
+      M6 internal institutional evidence outranks M2 external
+      documentary evidence when they conflict.
+      If neither outranks the other by proximity: FLAG for coach
+      review before compilation continues.
+    conflict_types:
+      - "M2 external document vs. M6 internal document — same mechanism, contradictory claims"
+      - "M4 narrative unit mechanism vs. DEP-ENG-010 SoC mechanism — structural mismatch"
+      - "M6 irrefutable evidence vs. DEP-ENG-005 Authentication Certificate — result authenticity conflict"
+    resolution_log: >
+      All Step 3.5 decisions logged in assembly_report.json under
+      key: cral_conflict_resolution[]
+  # ────────────────────────────────────────────────────────────
+
+  # v1.2 ADDITION ─────────────────────────────────────────────
+  cral_coverage_check:
+    id: "C-09"
+    rule: >
+      DEP-ENG-021 must be present with ≥5 of 7 moment findings
+      for cral_coverage_status = COMPLETE.
+      3–4 findings = PARTIAL — assembly proceeds, degraded phases flagged.
+      <3 findings or absent = ABSENT — full v1.1 source chain fallback,
+      CRAL_DEGRADED logged on output, operator alert triggered.
+    critical_moments: >
+      M2_BELIEVABLE and M7_RELATABLE are the highest-impact moments
+      for this archetype. If either is absent, flag at HIGH severity
+      regardless of overall coverage count.
+
+  cral_moment_coverage_check:
+    id: "C-10"
+    rule: >
+      Verify each moment finding in DEP-ENG-021 contains all four
+      required fields: finding, register, use_at, verifiability_citation.
+      A finding object with missing fields is treated as absent for
+      its assigned arc phase.
+  # ────────────────────────────────────────────────────────────
+
+  ttt_enforcement:
+    rule: >
+      TTT is NOT a field in this brief.
+      TTT is populated by DEP-ENG-005 Authentication Certificate
+      at runtime. Any attempt to hardcode TTT = ARCHITECTURAL VIOLATION.
+    natural_affinity_reference:
+      note: "ARCH-STORY-01 natural affinity range: TTT-03 to TTT-06."
+      behavior: "warn_not_block if outside range"
+      ref: "DEP-WS-001 TTT System v3.0"
+
+  proposed_registrations_reminder:
+    # v1.2 update: All v1.1 PROPOSED items now REGISTERED in v4.0.
+    # New v1.2 items listed below.
+    registered_since_v1_1:
+      - "DEP-ENG-016 Psychological Routing Brief — REGISTERED v4.0"
+      - "DEP-ENG-017 Audience Maturity Profile — REGISTERED v4.0"
+      - "DEP-ENG-018 Mood Context Map — REGISTERED v4.0"
+      - "DEP-PROTO-011 Semantic Affinity Guard — REGISTERED v4.0"
+      - "psych-routing-adapter — REGISTERED Adapter Registry v2.0"
+      - "payload-masking-adapter — REGISTERED Adapter Registry v2.0"
+      - "audience-maturity-adapter — REGISTERED Adapter Registry v2.0"
+    registered_new_in_v1_2:
+      - "DEP-ENG-021 CRAL Finding Index — REGISTERED v4.0"
+      - "DEP-ENG-022 CRAL Session Research Plan — REGISTERED v4.0"
+      - "cral-finding-router-adapter — REGISTERED Adapter Registry v2.0"
+    still_pending:
+      - "DEP-LIB-008 Archetype Classification Library — PENDING v4.0 registration"
+      - "DEP-LIB-009 Skill Template Registry — PENDING v4.0 registration"
+      - "Standing Trigger Intelligence library per coach — PENDING Phase 5 build"
+
+# ═══════════════════════════════════════════════════════════
+# MIGRATION REFERENCE — v1.1 → v1.2 COMPLETE DELTA
+# For use when upgrading the remaining 91 archetype templates
+# ═══════════════════════════════════════════════════════════
+
+migration_guide_for_other_archetypes:
+  description: >
+    This section documents the pattern for upgrading any other
+    archetype Design Brief Template from v1.1 to v1.2.
+    The Achievement Story upgrade is the migration standard.
+    Apply this pattern to all 91 remaining archetypes.
+
+  step_1_meta: >
+    Update template_version to "1.2".
+    Add migration_from: "1.1" and cral_integration: true.
+    Add migration_delta_ref pointing to this file.
+
+  step_2_field_7_arc_phases: >
+    For each arc phase: add cral_source field naming which CRAL
+    moment finding(s) pre-address intelligence for that phase.
+    Add v1_1_source (what the phase used before) and
+    v1_2_source (what it uses now) for auditability.
+    Add one universal structural law: "CRAL moments are pre-addressed.
+    The Assembler calls DEP-ENG-021[moment_id] at phase entry."
+
+  step_3_field_8_distillation_funnel: >
+    Update Cross-Input Collision from DEP-ENG-003 ↔ DEP-ENG-006
+    to DEP-ENG-021 (CRAL) ↔ DEP-ENG-003 (Voice).
+    Add cral-finding-router-adapter as mandatory.
+    Add CRAL-specific critic rules to MCDA module.
+
+  step_4_field_9_constraints: >
+    Add three universal CRAL rules to universal_rules list.
+    Add DEP-ENG-021 and each moment finding to
+    graceful_degradation_map with CRITICAL-degraded criticality.
+
+  step_5_field_11_structural_gates: >
+    Add SG-06 (M2 deployed in primary evidence phase).
+    Add SG-07 (M7 passes tribal recognition test).
+    Add SG-08 (Builder Engine Step 3.5 conflict resolved).
+    Adjust phase labels for the specific archetype's arc structure.
+
+  step_6_block_b_inputs: >
+    Add DEP-ENG-021 to tier_2_orchestration as CRITICAL.
+    Add DEP-ENG-022 to tier_3_archive as IMPORTANT.
+    Add cral_session_id, cral_finding_index_ref,
+    cral_coverage_status, cral_degraded_phases to field_3_context.
+
+  step_7_field_5b_cral_finding_map: >
+    Add field_5b with full CRAL finding map for this archetype.
+    Map each of the 7 moments to the archetype's specific arc phases.
+    Moment-to-phase mapping will differ per archetype family:
+    - Storytelling archetypes: map as Achievement Story above
+    - Myth Debunking: M2→Myth establishment, M6→Origin exposure, M7→Tribal belief anchor
+    - Fear-Anxiety: M3→Fear confirmation, M5→Hidden cost reveal, M6→System evidence
+    - Status archetypes: M4→Status peer story, M7→Insider tribal reference
+    Document the archetype-specific logic in field_5b for each template.
+
+  step_8_block_c_gates: >
+    Add Builder Engine Step 3.5 block.
+    Add C-09 CRAL Coverage Check.
+    Add C-10 CRAL Moment Coverage Check.
+    Update proposed_registrations_reminder with registered and pending lists.
+    Promote all three psychological adapters from PROPOSED to REGISTERED.

@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Build and logs
+dist/
+build/
+*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Misc
+.gemini/
+artifacts archive/
+BORED_SPEED (1).png
+stick-figures-collaboration.excalidrawlib
+stick-figures.excalidrawlib

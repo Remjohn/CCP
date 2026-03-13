@@ -1,0 +1,59 @@
+# CCP Identity Pillars — YAML Constitution Integration
+# Schema: v3.0 | CCP Layer: Memory (L2)
+# Pi Extensions: [SoulResonance, MemoryFolder]
+# PRD Mandate: Integrate with YAML Constitution rules
+# Each pillar now carries mode_alignment (T/V/R) for SystemSelect routing
+
+pillars:
+- id: fluid_integrator
+  name: The Fluid Integrator
+  affirmation: I embrace my Emotional Alchemist
+  shadow_distortion:
+    description: Scattered Energy
+    traits:
+    - 'Prescription: Needs structure to contain their flow.'
+  signs_defenses:
+  - Generated from branding
+  maturation_pathway:
+  - Generated from branding
+  practices: []
+  coaching_prompts: []
+- id: grounded_processor
+  name: The Grounded Processor
+  affirmation: I embrace my Unshakeable Presence
+  shadow_distortion:
+    description: Rigid Stagnation
+    traits:
+    - 'Prescription: Needs movement to soften their roots.'
+  signs_defenses:
+  - Generated from branding
+  maturation_pathway:
+  - Generated from branding
+  practices: []
+  coaching_prompts: []
+- id: rhythmic_releaser
+  name: The Rhythmic Releaser
+  affirmation: I embrace my Flow State Master
+  shadow_distortion:
+    description: Repetitive Avoidance
+    traits:
+    - 'Prescription: Needs variation to break loops.'
+  signs_defenses:
+  - Generated from branding
+  maturation_pathway:
+  - Generated from branding
+  practices: []
+  coaching_prompts: []
+- id: intuitive_explorer
+  name: The Intuitive Explorer
+  affirmation: I embrace my Somatic Wisdom
+  shadow_distortion:
+    description: Inconsistent Drifting
+    traits:
+    - 'Prescription: Needs anchors to ground their exploration.'
+  signs_defenses:
+  - Generated from branding
+  maturation_pathway:
+  - Generated from branding
+  practices: []
+  coaching_prompts: []

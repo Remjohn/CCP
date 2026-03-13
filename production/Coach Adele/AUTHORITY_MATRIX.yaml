@@ -1,0 +1,81 @@
+# Coach Adele - Authority Matrix
+# This file grows over time as E-Roll research discovers quotable authorities
+# Target: 40+ quotes from authorities that resonate with Coach Adele's tribe
+
+authority_matrix:
+  meta:
+    coach: "Coach Adele"
+    description: "Database of Coach-Adjacent Authorities for E-Roll content"
+    version: "1.0"
+    last_updated: "2026-01-19"
+    target_quotes: 40
+
+  # Instructions for E-Roll Commander:
+  # After each E-Roll research session, approved Authority Candidates should be
+  # appended to this file. Over time, this builds a rich library of quotable
+  # figures that resonate with this Coach's specific tribe.
+
+  authorities:
+    # --- TEMPLATE ENTRY ---
+    # Copy this structure for each new authority:
+    #
+    # - id: "authority_id"
+    #   name: "Full Name"
+    #   archetype: "The Healer/Philosopher/Elder/Fighter/etc."
+    #   tribes: ["Tribe 1", "Tribe 2"]
+    #   core_themes: ["Theme 1", "Theme 2", "Theme 3"]
+    #   source_url: "https://source.com"
+    #   clips:
+    #     - id: "authority_quote_01"
+    #       transcript: "Exact quote text here."
+    #       duration_sec: null  # Only if from video
+    #       tags: ["W2_PROBLEM", "Theme"]
+    #       viral_score: 85
+    #     - id: "authority_quote_02"
+    #       transcript: "Another quote."
+    #       ...
+
+    # --- EXAMPLE ENTRIES (from legacy AUTHORITY_MATRIX) ---
+    
+    - id: "mate"
+      name: "Dr. Gabor Maté"
+      archetype: "The Scientist"
+      tribes: ["Gen X", "Millennial", "Holistic Health"]
+      core_themes: ["Anxiety", "Chronic Fatigue", "Autoimmune", "Trauma", "Attachment"]
+      source_url: "https://drgabormate.com"
+      clips:
+        - id: "mate_body_no"
+          transcript: "When the body says no, anxiety becomes chronic fatigue."
+          duration_sec: 3.2
+          tags: ["W2_PROBLEM", "Validation", "Somatic"]
+          viral_score: 95
+        - id: "mate_attachment"
+          transcript: "We sacrifice authenticity for attachment."
+          duration_sec: 4.1
+          tags: ["W2_PROBLEM", "Identity", "Family"]
+          viral_score: 88
+
+    - id: "brown"
+      name: "Brené Brown"
+      archetype: "The Sociologist"
+      tribes: ["Millennial", "Corporate", "Women"]
+      core_themes: ["Shame", "Vulnerability", "Courage", "Empathy"]
+      source_url: "https://brenebrown.com"
+      clips:
+        - id: "brown_arena"
+          transcript: "If you're not in the arena getting your ass kicked, I'm not interested in your feedback."
+          duration_sec: 5.0
+          tags: ["W4_PROOF", "Confrontation", "Courage"]
+          viral_score: 92
+        - id: "brown_weakness"
+          transcript: "Vulnerability is not weakness. It's our greatest measure of courage."
+          duration_sec: 4.2
+          tags: ["W3_MECHANISM", "Reframing", "Emotions"]
+          viral_score: 90
+
+    # --- ADD NEW AUTHORITIES BELOW ---
+    # E-Roll Commander will append approved candidates here after each project
+
+# Current Quote Count: 4
+# Target: 40+
+# Progress: 10%

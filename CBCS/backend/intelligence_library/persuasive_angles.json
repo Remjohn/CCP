@@ -1,0 +1,69 @@
+{
+    "version": "1.0",
+    "description": "The 9 Persuasive Angles — the psychological lens applied to content. Each angle includes an operational instruction (what the model DOES differently) and a construction constraint (how it shapes output structure). Source: prompts_archetypes (1).md, Section II.",
+    "angles": {
+        "allay_fears": {
+            "id": "allay_fears",
+            "name": "Allay Fears",
+            "psychological_trigger": "Activates loss aversion and safety-seeking behavior. The audience needs to feel the threat is real but manageable.",
+            "operational_instruction": "Emphasize security, support, and control. Validate the audience's concern AS legitimate before redirecting to the solution. Never dismiss the fear — name it, hold it, then demonstrate it is structurally addressable. The coach's authority comes from having BEEN in the feared state, not from being above it.",
+            "construction_constraint": "Opening must name the specific fear using tribal language. Middle must demonstrate the fear is structurally addressable (mechanism, not reassurance). Close must provide the specific protection mechanism the audience can act on immediately."
+        },
+        "encourage_dreams": {
+            "id": "encourage_dreams",
+            "name": "Encourage Dreams",
+            "psychological_trigger": "Leverages aspiration psychology and hope activation. The audience needs to see the desired state as real and achievable.",
+            "operational_instruction": "Inspire hope and ambition by aligning the message with the audience's future aspirations and personal goals. Show the bridge between current position and desired state. The proof must be specific enough to be believable — vague aspiration triggers skepticism, not hope.",
+            "construction_constraint": "Opening must establish the desired state in sensory terms (what it looks, feels, sounds like). Middle must show the specific bridge — the mechanism, habit, or shift that connects here to there. Close must create forward pull, not backward push."
+        },
+        "justify_failures": {
+            "id": "justify_failures",
+            "name": "Justify Failures",
+            "psychological_trigger": "Reduces cognitive dissonance from past mistakes. The audience needs permission to release guilt before they can move forward.",
+            "operational_instruction": "Reframe past failures as necessary learning experiences or systemic results rather than personal deficiencies. The goal is guilt relief — but structured relief, not dismissal. Show that the failure had a cause external to the person's worth, then show what that cause teaches.",
+            "construction_constraint": "Opening must name the specific failure or struggle the audience carries. Middle must externalize the cause (system, timing, information asymmetry — not the person). Close must extract the specific lesson that makes the failure structural preparation for what comes next."
+        },
+        "confirm_suspicions": {
+            "id": "confirm_suspicions",
+            "name": "Confirm Suspicions",
+            "psychological_trigger": "Validates pre-existing doubts and concerns. The audience feels they already know something is wrong but lacked the evidence or authority to say it.",
+            "operational_instruction": "Validate the audience's pre-existing concerns or doubts, making them feel understood and strengthening the narrative's credibility. The power comes from naming what they already sense. Do not introduce new suspicions — surface the ones that are already there and provide the framework they lacked.",
+            "construction_constraint": "Opening must articulate the suspicion the audience already holds but hasn't been able to express. Middle must provide the evidence or structural explanation that confirms it. Close must name what this confirmation means for their next decision."
+        },
+        "throw_rocks_at_enemies": {
+            "id": "throw_rocks_at_enemies",
+            "name": "Throw Rocks at Enemies",
+            "psychological_trigger": "Activates in-group/out-group bonding through shared adversary identification. The audience bonds with the coach through mutual opposition.",
+            "operational_instruction": "Unite the coach and audience by identifying a common adversary — a system, a belief, a practice, an institution. The enemy must be structural, not personal. Increase solidarity and emotional investment through shared opposition. The coach's authority comes from having fought this enemy and understanding its architecture.",
+            "construction_constraint": "Opening must identify the shared enemy in terms the audience already uses (tribal language). Middle must expose the enemy's mechanism — HOW it operates, not just THAT it's bad. Close must provide the specific counter-strategy that the audience can deploy."
+        },
+        "problem_amplification": {
+            "id": "problem_amplification",
+            "name": "Problem Amplification",
+            "psychological_trigger": "Heightens perceived urgency through worst-case visualization. The audience needs to feel the cost of inaction is higher than the cost of change.",
+            "operational_instruction": "Emphasize worst-case scenarios and alarming consequences to evoke urgency and encourage swift action. The amplification must be truthful — exaggeration triggers distrust. Show the trajectory: if the current path continues, WHERE does it lead? Use specific numbers, timeframes, and consequences.",
+            "construction_constraint": "Opening must establish the current trajectory using concrete evidence. Middle must project forward — what happens at 6 months, 2 years, 5 years if nothing changes. Close must create the pivot point: the specific action that breaks the trajectory."
+        },
+        "favorable_evidence": {
+            "id": "favorable_evidence",
+            "name": "Favorable Evidence",
+            "psychological_trigger": "Leverages confirmation bias through selective but truthful evidence presentation. The audience needs proof that reinforces their existing direction.",
+            "operational_instruction": "Selectively present emotionally resonant information and proof that aligns with and reinforces the audience's existing beliefs. This is not deception — it is strategic emphasis. The evidence must be real. Choose the data points, stories, and research that most powerfully support the case the audience is already disposed to accept.",
+            "construction_constraint": "Opening must establish the audience's existing belief position (what they already want to be true). Middle must deploy 2-3 pieces of evidence that confirm it — each escalating in authority (anecdote → data → expert). Close must lock the belief with a tribal-language summary statement."
+        },
+        "black_and_white": {
+            "id": "black_and_white",
+            "name": "Black & White Philosophy",
+            "psychological_trigger": "Simplifies complex decisions through clear dichotomy. The audience is overwhelmed by nuance and needs a binary frame to act.",
+            "operational_instruction": "Reduce complex issues into clear, opposing extremes. Frame one option as clearly inferior and the other as morally or strategically superior. This simplification is a tool, not a worldview — it enables decision-making for an audience paralyzed by complexity. Use it when the audience needs permission to choose.",
+            "construction_constraint": "Opening must present the two paths in stark contrast — use visual language, not abstract description. Middle must show the consequences of each path with specific examples. Close must make the 'right' choice feel obvious and inevitable."
+        },
+        "the_challenger": {
+            "id": "the_challenger",
+            "name": "The Challenger",
+            "psychological_trigger": "Activates dissatisfaction with status quo and curiosity about alternatives. The audience is comfortable but unfulfilled — they need to be disturbed into motion.",
+            "operational_instruction": "Encourage the audience to question their current beliefs, habits, and situation by amplifying the gap between where they are and where they could be. Motivate openness to change by making the current state feel insufficient, not wrong. The distinction matters: insufficient creates pull, wrong creates shame.",
+            "construction_constraint": "Opening must describe the audience's current state with enough accuracy that they feel seen. Middle must introduce the gap — what they're missing, what's possible, what others in their position have discovered. Close must invite the first step, not demand transformation."
+        }
+    }
+}

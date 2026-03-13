@@ -1,0 +1,272 @@
+# ─────────────────────────────────────────────────────────────────────
+# Identity Threat Taxonomy
+# Breakwell's Identity Process Theory (1986, 2015 update)
+#
+# Architecture: Identity Engine Layer 4A (Sentinel Agent)
+# Consumed by: sentinel.py → detect_identity_threat()
+#
+# Structure:
+#   threats: 4 threat types with markers + patterns
+#   defenses: Defense mechanisms linked to threats
+#   defense_intervention_matrix: Threat × Defense → Intervention
+#   escalation_timeline: 3-phase escalation trajectory
+#
+# Academic basis: Breakwell (1986) Identity Process Theory,
+# Jaspal & Breakwell (2014), Paper 4 (Identity Threat in 
+# Behavioral Change)
+# ─────────────────────────────────────────────────────────────────────
+
+threats:
+  continuity:
+    description: "Perception that one's identity narrative has been broken — the past self and current self are disconnected"
+    identity_principle: "Continuity"
+    linguistic_markers:
+      explicit:
+        - "I used to be"
+        - "I'm not the same"
+        - "I don't recognize myself"
+        - "I've lost who I was"
+        - "that person is gone"
+        - "I don't know who I am anymore"
+        - "everything changed"
+        - "I was someone else"
+        - "the old me"
+        - "before all this"
+        - "je ne me reconnais plus"    # French
+        - "j'étais quelqu'un d'autre"  # French
+      structural:
+        - "past tense self-reference + negation of present self"
+        - "temporal contrast (used to / now) with identity verb"
+        - "progressive loss language (losing/fading/disappearing + self-reference)"
+      discourse_patterns:
+        - "increase in past tense usage (>40% past tense in entry)"
+        - "temporal adverb clustering (before/then/used to/once)"
+        - "self-referential negation increase"
+    typical_defense: "DEFLECTION"
+    emotional_signature: "grief, confusion, nostalgia"
+
+  distinctiveness:
+    description: "Perception of losing uniqueness — becoming indistinguishable from a category or group"
+    identity_principle: "Distinctiveness"
+    linguistic_markers:
+      explicit:
+        - "I'm just like everyone else"
+        - "nothing special"
+        - "I'm just another"
+        - "anyone could do this"
+        - "what makes me different"
+        - "losing myself"
+        - "becoming someone I'm not"
+        - "cookie cutter"
+        - "blending in"
+        - "generic"
+        - "je suis comme tout le monde"  # French
+        - "rien de spécial"              # French
+      structural:
+        - "self-comparison + universalizing quantifier (like everyone/just another)"
+        - "identity verb + negation + uniqueness adjective (not unique/not different)"
+        - "modal verb + generic role noun (just a mom/just a number)"
+      discourse_patterns:
+        - "category language increase (people like me/we all)"
+        - "absence of specific self-descriptors"
+        - "passive voice increase (things are done TO me)"
+    typical_defense: "WITHDRAWAL"
+    emotional_signature: "emptiness, insignificance, invisibility"
+
+  self_esteem:
+    description: "Perception of diminished personal worth — not good enough for the challenge"
+    identity_principle: "Self-Esteem"
+    linguistic_markers:
+      explicit:
+        - "I'm not good enough"
+        - "I don't deserve"
+        - "who am I to"
+        - "I'm a fraud"
+        - "they'll find out"
+        - "I'm a failure"
+        - "worthless"
+        - "I'm nothing"
+        - "I don't matter"
+        - "I'm pathetic"
+        - "I should be better"
+        - "je ne suis pas assez bien"  # French
+        - "je ne mérite pas"            # French
+        - "je suis nul"                 # French
+      structural:
+        - "negation + worth/value adjective (not enough/not worthy)"
+        - "self + pejorative label (I'm a failure/fraud/loser)"
+        - "rhetorical question + self-doubt (who am I to/what right do I have)"
+      discourse_patterns:
+        - "downward social comparison increase"
+        - "qualification language (but/however/although) after positive self-statement"
+        - "achievement minimization (just lucky/it was nothing/anyone could have)"
+    typical_defense: "EXTERNALIZATION"
+    emotional_signature: "shame, inadequacy, impostor syndrome"
+
+  self_efficacy:
+    description: "Perception of inability to execute — the challenge exceeds capacity"
+    identity_principle: "Self-Efficacy"
+    linguistic_markers:
+      explicit:
+        - "I can't do this"
+        - "it's too much"
+        - "I'm not capable"
+        - "I don't have what it takes"
+        - "I'll never be able to"
+        - "beyond me"
+        - "out of my league"
+        - "I give up"
+        - "what's the point"
+        - "impossible for me"
+        - "je n'y arriverai jamais"  # French
+        - "c'est au-dessus de moi"   # French
+        - "je suis incapable"        # French
+      structural:
+        - "negation + ability verb (can't/won't/unable + action)"
+        - "futility construction (what's the point/why bother/no use)"
+        - "absolutist language (never/always/impossible + self-reference)"
+      discourse_patterns:
+        - "decrease in future-oriented language"
+        - "increase in hedging/uncertainty markers"
+        - "shorter entries over consecutive days (word count decline >30%)"
+    typical_defense: "INTELLECTUALIZATION"
+    emotional_signature: "helplessness, overwhelm, resignation"
+
+
+# ─── Defense-Intervention Matching Matrix ────────────────────────────
+# Architecture Layer 4B
+# Each threat × defense combination maps to a specific intervention
+
+defense_intervention_matrix:
+  DEFLECTION:
+    description: "Redirecting attention from threatening self-knowledge using humor, topic change, or minimization"
+    detection_markers:
+      - "sudden humor in serious context"
+      - "topic change mid-reflection"
+      - "minimization language (it's not that bad/I'm fine/whatever)"
+    matches:
+      - threat: "continuity"
+        intervention: "NARRATIVE_REMOORING"
+        intervention_description: "Re-anchor the user's identity narrative by connecting current challenges to their origin story. Surface the continuity that exists beneath the perceived break."
+      - threat: "self_esteem"
+        intervention: "SELF_AFFIRMATION"
+        intervention_description: "Activate alternative self-worth domains. 'You may not feel competent in X, but your value in Y is documented and real.'"
+
+  INTELLECTUALIZATION:
+    description: "Converting emotional material into abstract analysis to avoid feeling the threat"
+    detection_markers:
+      - "analytical language in emotional context"
+      - "third-person self-reference (one might/a person would)"
+      - "academic/clinical vocabulary about personal experience"
+    matches:
+      - threat: "self_efficacy"
+        intervention: "SOMATIC_GROUNDING"
+        intervention_description: "Guide the user from abstract analysis back into embodied experience. The intellectualization blocks the felt-sense of capability that comes from somatic memory."
+      - threat: "continuity"
+        intervention: "NARRATIVE_REMOORING"
+        intervention_description: "Connect the intellectual analysis to the emotional story underneath. Ask: when you analyze this, what are you trying to understand?"
+
+  EXTERNALIZATION:
+    description: "Attributing the threat source to external factors to preserve self-concept"
+    detection_markers:
+      - "blame language (they/them/the system)"
+      - "victim positioning without agency"
+      - "external attribution for internal states"
+    matches:
+      - threat: "self_esteem"
+        intervention: "SELF_AFFIRMATION"
+        intervention_description: "Validate the external difficulty while reintroducing internal resource inventory. 'The obstacle is real AND you have navigated obstacles before.'"
+      - threat: "self_efficacy"
+        intervention: "MICRO_MASTERY"
+        intervention_description: "Reduce the perceived challenge size. One completable sub-task that produces evidence of capability within 24 hours."
+
+  WITHDRAWAL:
+    description: "Reducing engagement with the threatening domain — shorter entries, skipped days, generic responses"
+    detection_markers:
+      - "word count decline >30% over 3 consecutive entries"
+      - "generic/surface-level responses to deep prompts"
+      - "skipped journal days (gap in entry sequence)"
+      - "reduced emotional vocabulary"
+    matches:
+      - threat: "distinctiveness"
+        intervention: "RADICAL_INDIVIDUALIZATION"
+        intervention_description: "Surface what is genuinely unique about this user's journey. Use their own words from earlier entries to mirror back their distinctiveness."
+      - threat: "self_efficacy"
+        intervention: "ENVIRONMENTAL_RESTRUCTURE"
+        intervention_description: "Reduce friction. The withdrawal is energy conservation. Make the next step require less activation energy than staying withdrawn."
+
+  MINIMIZATION:
+    description: "Acknowledging the threatening information but reducing its significance"
+    detection_markers:
+      - "it's not a big deal"
+      - "it doesn't really matter"
+      - "there are worse problems"
+      - "downward comparison with worse scenarios"
+    matches:
+      - threat: "self_esteem"
+        intervention: "SELF_AFFIRMATION"
+        intervention_description: "The minimization reveals the threat is felt. Acknowledge the feeling without enforcing its importance. Let the user regulate their own exposure."
+      - threat: "continuity"
+        intervention: "TEMPORAL_BRIDGING"
+        intervention_description: "Connect the minimized experience to the user's longer narrative arc. What they minimize today may be what they integrate tomorrow."
+
+  PROJECTION:
+    description: "Attributing one's own threatening qualities to others"
+    detection_markers:
+      - "strong other-criticism using language that mirrors self-criticism from earlier entries"
+      - "projective identification markers"
+    matches:
+      - threat: "self_esteem"
+        intervention: "MIRROR_RECOGNITION"
+        intervention_description: "Gently reflect the projection without confrontation. Surface the connection between external criticism and internal experience."
+
+
+# ─── 3-Phase Escalation Timeline ────────────────────────────────────
+# Architecture Layer 4C
+# Derived from Paper 4 (Identity Threat in Behavioral Change)
+
+escalation_timeline:
+  phase_1:
+    name: "Surface Defense"
+    typical_weeks: "1-2"
+    entry_range: "1-14"
+    description: "Flexible, surface-level defense mechanisms. User is testing the challenge's threat level."
+    signals:
+      - "deflection: humor, topic changes"
+      - "minimization: it's not that bad"
+      - "intermittent engagement (some deep entries mixed with surface ones)"
+    intervention_stance: "observe, don't intervene. Defenses are adaptive at this stage."
+    risk_level: "LOW"
+
+  phase_2:
+    name: "Deep Resistance"
+    typical_weeks: "3-4"
+    entry_range: "15-28"
+    description: "Rigid, entrenched defense mechanisms. The threat has been confirmed in the user's appraisal system."
+    signals:
+      - "withdrawal: shorter entries, word count decline"
+      - "intellectualization: analyzing instead of feeling"
+      - "externalization: increased blame language"
+      - "journal gap: ≥3 consecutive skipped days"
+    intervention_stance: "targeted intervention using defense-intervention matrix. Coach alert required."
+    risk_level: "HIGH"
+    escalation_trigger: "Phase 2 signals appearing before Day 14 = accelerated escalation. Trigger immediate coach alert."
+
+  phase_3:
+    name: "Decision Junction"
+    typical_weeks: "5-6"
+    entry_range: "29-42"
+    description: "Binary outcome phase. User either breaks through or drops out. No middle ground."
+    signals:
+      breakthrough:
+        - "sudden increase in agency language"
+        - "redemption arc markers"
+        - "self-discrepancy gap narrowing"
+        - "future-oriented language increase"
+      dropout:
+        - "entry cessation (>5 consecutive missed days)"
+        - "formulaic/minimal responses (5-10 words)"
+        - "complete absence of emotional language"
+        - "disengagement language (I'm done/this isn't for me)"
+    intervention_stance: "highest-priority intervention. If still engaged, the intervention window is narrow (48-72 hours)."
+    risk_level: "CRITICAL"
