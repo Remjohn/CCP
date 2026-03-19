@@ -58,6 +58,7 @@ FR19 implements the **Semantic Affinity Guard Protocol (DEP-PROTO-011)**. Operat
 ### Technical Decisions
 1. **Escape Mode Exclusivity:** This protocol is purely targeted at Escape Mode. Processing Mode demands `HIGH` affinity (facing the pain directly). Status Mode and Discovery Mode can tolerate `MEDIUM`. Only Escape Mode collapses under `HIGH` affinity.
 2. **Terminal C-06 Gate:** The C-06 gate physically halts the compiler if a HIGH affinity Escape slot is detected. Bypassing this block is intentionally unsupported. The System Operator must select a domain swap or reclassify the content entirely.
+3. **Ghost Variable Prevention Gate:** All input sources [DEP-ID] must be verified cryptographically prior to payload unpacking. Any field resolving to NULL or UNDEFINED triggers a hard compiler pipeline halt. The error schema emitted is: `{ "error": "DAG_VIOLATION", "missing_dep": "[DEP-ID]" }`
 
 ---
 
@@ -116,6 +117,12 @@ FR19 implements the **Semantic Affinity Guard Protocol (DEP-PROTO-011)**. Operat
   stage_name: 'STAGE-3-ENFORCE',
   agent_name: 'Batch-Finalization-Core',
   timestamp }
+
+### Stage 4: Post-Assembly Re-Evaluation
+**Dual-Stage Evaluation Protocol:**
+The Semantic Affinity Guard MUST execute twice for all content mapped to Target Mood: ESCAPE.
+1. **Pre-Flight (Tier 0):** Evaluates baseline topic affinity against Neo4j L3 Context Premises.
+2. **Post-Assembly (Tier 3 Post-Flight):** Evaluates the fully compiled output string, accounting for any newly injected `DEP-ENG-021` (CRAL) findings or real-time Neo4j shifts that occurred during batch processing. If Stage 2 trips the guard, the script is quarantined.
 
 ---
 

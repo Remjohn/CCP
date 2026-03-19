@@ -63,6 +63,8 @@ FR21 defines DEP-PROTO-010 — the Receipt Chain Guard Protocol. This is the rul
 1. **Pessimistic Locking:** The system defaults to `REJECTED/HALTED`. A node cannot proceed unless it actively holds the valid `receipt_hash` from the direct upstream provider.
 2. **Immutable Ledgers:** Once a receipt is generated and passed, it cannot be edited. It is hashed into the `assembly_report.json`.
 3. **Quarantine Without Deletion:** A broken chain quarantines the batch, sending it to `PARTIAL_MANUAL` status for the System Operator. It does not delete the work done up to the failure point (to save token/compute costs during recovery).
+**GDPR Ecosystem Purge Rules:** If a coach engagement terminates and they request a full GDPR system purge, the `Person ID` and `Universal Asset ID` links are irreversibly salted and hashed. Once the tenant's primary Supabase tables are dropped, the Monthly Cross-Ecosystem pipeline fundamentally loses all tracing ability to the original IP. Only the anonymous, disembodied aggregate mechanics trends persist for systemic machine learning.
+4. **Ghost Variable Prevention Gate:** All input sources [DEP-ID] must be verified cryptographically prior to payload unpacking. Any field resolving to NULL or UNDEFINED triggers a hard compiler pipeline halt. The error schema emitted is: `{ "error": "DAG_VIOLATION", "missing_dep": "[DEP-ID]" }`
 
 ---
 
@@ -92,6 +94,7 @@ FR21 defines DEP-PROTO-010 — the Receipt Chain Guard Protocol. This is the rul
 *Inputs:* Incoming Payload containing `receipt_chain_hash`.
 *Outputs:* `chain_verified_boolean`
 *Failure Condition:* Missing, empty, or statistically invalid hash structure.
+**Strict Success Requirement:** The receipt parser evaluates boolean states. If a receipt carries `status: PARTIAL` (as in a CRAL execution completing 7 of 9 skills), it is mathematically evaluated as `FALSE`. The Receipt Chain Guard provides no cryptographic warnings; a PARTIAL status instantly breaks the chain and quarantines the batch.
 *Receipt Write:* Per FR47 DEP-ENG-041 schema — # REVISED: Standardized receipt format.
 { receipt_id, previous_receipt_hash,
   input_payload_hash, output_payload_hash,
@@ -122,15 +125,19 @@ FR21 defines DEP-PROTO-010 — the Receipt Chain Guard Protocol. This is the rul
 1. Catch the invalid/missing receipt exception.
 2. Immediately force a `<HALT>` signal to the JIT Compiler array.
 3. Wrap the active state of the current compiling batch into a quarantine object.
-4. Set `assembly_status: REJECTED_BROKEN_CHAIN`.
-5. Push the exact node failure point (e.g., `Failed at: Builder Engine Step 3.5 -> Assembler Tier 1 Handoff`) to the System Operator queue.
-6. Kill the current orchestration instance.
+4. **Valid Sub-Operation Caching:** If Gate C-09 fails the VCB *after* Gate V-00 (Image Validation) has passed, the pipeline caches the expensive Aurore API image searches in temporary Redis tied to the `Slide_Hash` instead of discarding them. During the `TillDone` rewrite cycle, the pipeline pulls the cached valid images.
+5. Set `assembly_status: REJECTED_BROKEN_CHAIN`.
+6. Push the exact node failure point (e.g., `Failed at: Builder Engine Step 3.5 -> Assembler Tier 1 Handoff`) to the System Operator queue.
+7. Kill the current orchestration instance.
 
 ---
 
 ## 5. Primary Output Schema (assembly_report.json subset)
 
 While the Receipt Guard operates universally, it logs its chain into the final assembly report for archiving.
+
+**Archive Version Constraints:**
+The Fingerprint Archive records performance outcomes tied to exact variables. Because structural updates shift the fundamental playing field, the Data Analyst Agent is explicitly barred from drawing continuous performance vectors across divergent template versions (e.g. `Design_Brief_v1.1` to `v1.2`). All comparative outcome analysis must execute strictly *intra-version* to prevent false causality mapping.
 
 **Schema Name:** `assembly_report_chain_ledger.json`
 

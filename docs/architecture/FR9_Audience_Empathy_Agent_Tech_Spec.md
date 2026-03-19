@@ -131,7 +131,16 @@ The Audience Empathy Agent is the system's runtime intelligence function for the
    - Current events / news affecting the audience's reality on this theme
    - Weekly voice note context from DEP-ENG-019 (if available)
 6. **PRE-FLIGHT:** Verify standing Context Premise Map (DEP-ENG-006) exists. If missing → HALT with error: "Cannot run Audience Empathy Agent. Standing Context Premise Map (DEP-ENG-006) not found. Complete FR6 Tribe Profile extraction first."
-7. Write `receipt` → Receipt Chain Guard (Audience Empathy Agent — Phase 1 Ingest)
+7. **Receipt Write (Phase 1):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-AUDIENCE-EMPATHY-INGEST",
+  "previous_receipt_hash": "{FR6_CONTEXT_PREMISE_HASH}",
+  "input_payload_hash": "{THEME_AND_FRESH_INTELLIGENCE_HASH}",
+  "output_payload_hash": "{NULL_EMPATHY_TEMPLATE_HASH}",
+  "stage_name": "AUDIENCE-EMPATHY-INGEST",
+  "agent_name": "Audience Empathy Agent",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -336,7 +345,16 @@ IF l3_percentage < 0.10 → DEPTH-INSUFFICIENT (L3)
 - 3 Laws PASS → **PROVISIONAL** — usable with flags, operator warned
 - ≤2 Laws PASS → **FAILED** — cannot feed downstream stages, return to operator for deeper research
 
-**Write receipt** → Receipt Chain Guard (Audience Empathy Agent — Phase 5 Emit)
+**Receipt Write (Phase 5):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-AUDIENCE-EMPATHY-EMIT",
+  "previous_receipt_hash": "{PHASE_1_RECEIPT_HASH}",
+  "input_payload_hash": "{VERIFIED_INSIGHTS_MATRIX_HASH}",
+  "output_payload_hash": "{THEME_CONTEXT_PREMISE_JSON_HASH}",
+  "stage_name": "AUDIENCE-EMPATHY-EMIT",
+  "agent_name": "Audience Empathy Agent",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 

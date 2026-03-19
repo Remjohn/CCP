@@ -60,7 +60,10 @@ FR24 formalizes the **Autonomous Weekly CCF Pipeline v3.1 (DEP-PROTO-014)**. Thi
 
 ### Technical Decisions
 1. **The v3.1 Inversion (Trigger-First):** The orchestrator no longer gathers trending internet topics and asks the coach to respond. Phase B now executes `ccf-trigger-match` first—mapping audience L3 pain to the coach's `trigger_map.json` to find structural overlaps. Topical trends are subordinated to authentic triggers.
-2. **Pessimistic Halts (TillDone Extension):** If any intermediate command (e.g., `ccf-eroll-plan`) throws an exception or fails validation, Alex triggers the `TillDone` extension for a maximum of 3 programmatic retries before halting the entire production queue and alerting Liliane (Guardian).
+2. **DamageControl Infinite Loop Breaker:** The `DamageControl` Pi Extension operates inside the Async Batch window. To prevent infinite internal retry loops blocking the scheduled chron job, the maximum retry depth for `DamageControl` is capped at `max_retry_depth=3`. If CRAL logic or gate failure forces a fourth retry, the job is killed, marked `FAILED_UNRECOVERABLE`, and escalated to the System Operator.
+3. **Ghost Variable Prevention Gate:** All input sources [DEP-ID] must be verified cryptographically prior to payload unpacking. Any field resolving to NULL or UNDEFINED triggers a hard compiler pipeline halt. The error schema emitted is: `{ "error": "DAG_VIOLATION", "missing_dep": "[DEP-ID]" }`
+4. **JSON Contract Absolute Boundary:** Cross-department communication relies strictly on JSON payloads. To prevent parser ambiguities, the `TeamOrchestrator` implements `pydantic`/`zod` strict schema validation at the memory bus boundary. If a generated mapping field contains an ambiguous array struct or violates the type schema, the bus throws an instantaneous `SCHEMA_TYPE_ERROR` before the downstream agent receives the message.
+5. **Rolling Deployment Patch Mutex:** The Pi Coding Agent manages deployments across the fleet of single-tenant instances. When an architectural core patch is deployed, the `Global_Write_Mutex` locks new weekly batch invocations. The maximum safe deployment window for a rolling pipeline patch is strictly 2 hours. Unpatched instances attempting to process `ccf-weekly` are held in `PENDING_UPGRADE` until the mutex unlocks.
 
 ---
 
@@ -123,10 +126,11 @@ FR24 formalizes the **Autonomous Weekly CCF Pipeline v3.1 (DEP-PROTO-014)**. Thi
   timestamp }
 
 **Steps:**
-1. Alex invokes `ccf-analyze` (Emilio) yielding exactly 12 Core Ideas mapped through `PatternWeaver`.
+1. Alex invokes `ccf-analyze` (Emilio) yielding exactly 12 Core Ideas mapped through `PatternWeaver`. **(Epsilon-Greedy Routing Floor: The weighting algorithm enforces a hard `<0.05>` probability floor. This guarantees a 5% random-chance selection rate for testing underperforming structural mechanisms against future audience drift.)**
 2. Alex invokes `ccf-eroll-plan` delegating format assignments.
 3. Alex hands the orchestration loop to the `TeamOrchestrator` extension, fanning out horizontally. It invokes `ccf-soc` (Charlotte) and `ccf-generate` (Script Artisan) to execute the JIT compilation rules across all 36 slots in parallel.
-4. Validates all Anti-Draft constraints (FR22).
+4. **C-11 Persona Masking Gate:** Before the TeamOrchestrator dispatches any JSON payload to the API executing layer, the payload must pass through Gate C-11. This gate executes an aggressive regex scrub across all prompt fields, stripping the 65 agent names (e.g., `Emilio`, `Charlotte`) and roleplay instructions (e.g., `Act as`, `You are an expert`). Any hit results in an orchestration HALT. The API receives ONLY the unadorned JSON state array to permanently prevent centroid architectural drift.
+5. Validates all Anti-Draft constraints (FR22).
 
 ### Stage 3B: Novelty Validation (Agent Grâce) # REVISED: Inserted Agent Grace Novelty check
 *Agent:* Grâce (Boredom Ban Enforcer)
@@ -168,17 +172,21 @@ FR24 formalizes the **Autonomous Weekly CCF Pipeline v3.1 (DEP-PROTO-014)**. Thi
   timestamp }
 
 **Steps:**
-1. Alex invokes `ccf-visual-assets` (Aurore + Paradoxe) generating specific DALL-E / Excalidraw JSON payloads mapped to the script beats.
+1. Alex invokes `ccf-visual-assets` (Aurore + Paradoxe) generating specific DALL-E / Excalidraw JSON payloads mapped to the script beats. **(Authoritative TIAR Override: Abel's downstream TIAR query is absolute authority. If a tribal noun bleaches mid-flight, Gate V-01 halts Abel, logs `LATE_STAGE_BLEACHING`, and routes only that specific sentence back to Emilio for a micro-replace.)**
 2. Alex invokes `ccf-validate` feeding the batch into the Critic subsystem.
 3. **The Validation Triad:**
    - *Sophia* (Soul Validator): Checks TTT drift against `coach_soul.json` (>85% alignment).
    - *Marcus* (Protocol Validator): Checks compliance with the current 30-Day Movement Season (e.g. *The Forge* vs *The Water*).
    - *Chen* (Mimicry Validator): Employs zero-shot scoring to detect AI template bleed (<5% allowed).
-4. If `<FAIL>`, trigger `TillDone` rewrite. If `<PASS>`, append to the `ccf-batch` archive.
+4. **Gate V-00a (Narrative Arc Conformation):** Sophia maps the iRAV emotional peaks of the generated text to deduce the actual utilized structure. She compares this measured trajectory against the `arc_type` declared by the orchestrator in Block A. If there is a mismatch (e.g., text is *Tension-Release* but declared *Contrast-Resolution*), Abel halts. The script is rejected to `TillDone` for a structural rewrite. Visual production NEVER commences on misaligned arcs.
+5. If `<FAIL>`, trigger `TillDone` rewrite. If `<PASS>`, append to the `ccf-batch` archive.
 
 ---
 
 ## 5. Primary Output Schema (The Final Batch Payload)
+
+**Stewardship Escalation Protocols (Output hooks):**
+1. *Neo4j Conflict Hook:* If PatternWeaver synthesizes a connection that contradicts an existing L3 Context Premise in the Neo4j graph during output packaging, it NEVER overwrites the graph. It generates an `Aria Conflict Hook`, pausing compilation and requiring human arbitration via Telegram.
 
 **Schema Name:** `weekly_production_batch_v3.json`
 

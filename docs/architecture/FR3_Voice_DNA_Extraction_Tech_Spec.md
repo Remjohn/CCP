@@ -13,18 +13,18 @@
 
 Voice DNA extraction is the most critical operation in the entire Genesis Pipeline. Everything downstream — every script generated for every archetype, every CBCS interaction, every webinar slide — is compiled from what this pipeline produces. Failure here produces a platform that generates content that doesn't sound like the coach. Success here produces a platform that generates content the coach reads and says: *"I couldn't have written this better myself."*
 
-The challenge: the voice is not in the words. It's in the syntactic substructure beneath the words — the functional skeleton that remains invariant when the coach discusses maximally different topics. A topic-specific style tic is not Voice DNA. An invariant syntactic fingerprint across 5 different subjects IS Voice DNA. This distinction requires a 12-step extraction pipeline, not a single-pass transcription analysis.
+The challenge: the voice is not in the words. It's in the syntactic substructure beneath the words — the functional skeleton that remains invariant when the coach discusses maximally different topics. A topic-specific style tic is not Voice DNA. An invariant syntactic fingerprint across 5 different subjects IS Voice DNA. This distinction requires a 10-step extraction pipeline, not a single-pass transcription analysis.
 
 ### Solution
 
-A 12-step agentic extraction pipeline that processes the validated Authentic Material Payload (≥3,000 words from FR2) into three dependency objects: the Negative Space Object (DEP-ENG-004), the Positive Space Object (DEP-ENG-003), and the Emotional DNA Object (DEP-LIB-001). The pipeline enforces Mandate 4 (Negative Space before Positive Space), runs adversarial validation, and concludes with a V5.0 extension that seeds the Cultural Memory Map (DEP-ENG-023) and Coach Story Archive (DEP-ENG-024) using the same source material — eliminating a separate onboarding session.
+A 10-step agentic extraction pipeline that processes the validated Authentic Material Payload (≥3,000 words from FR2) into two dependency objects: the Negative Space Object (DEP-ENG-004) and the Positive Space Object (DEP-ENG-003). The pipeline enforces Mandate 4 (Negative Space before Positive Space), runs adversarial validation, and concludes with a V5.0 extension that seeds the Cultural Memory Map (DEP-ENG-023) and Coach Story Archive (DEP-ENG-024) using the same source material — eliminating a separate onboarding session.
 
 ### Scope
 
 **In scope:**
-- Complete 12-step Voice DNA extraction pipeline
-- Three output objects: DEP-ENG-003, DEP-ENG-004, DEP-LIB-001
-- Cross-Topic Invariance Test (Steps 4 & 5)
+- Complete 10-step Voice DNA extraction pipeline
+- Two output objects: DEP-ENG-003, DEP-ENG-004
+- Cross-Topic Invariance Test
 - Mandate 4 enforcement: DEP-ENG-004 extracted before DEP-ENG-003
 - Adversarial Validation (Step 12)
 - V5.0 extension: CMM extraction trigger (Step 0-A) and Story Archive seeding (Step 0-B)
@@ -32,6 +32,7 @@ A 12-step agentic extraction pipeline that processes the validated Authentic Mat
 - Storage to `coach_soul.json` and Supabase
 
 **Out of scope:**
+- Emotional DNA Object extraction (DEP-LIB-001). This is owned exclusively by FR4. FR3 terminates at DEP-ENG-003 and DEP-ENG-004 emission.
 - Sacred Audio ingestion (FR2 Tech Spec — prerequisite)
 - Context Premise extraction (FR4 — separate spec)
 - CMM extraction pipeline (Step 0-A — referenced here but defined in its own spec)
@@ -45,9 +46,8 @@ A 12-step agentic extraction pipeline that processes the validated Authentic Mat
 
 | DEP-ID | Name | Role in This Pipeline |
 |---|---|---|
-| `DEP-ENG-003` | Positive Space (60-Variable Stylometry Profile) | PRIMARY OUTPUT — extracted in Steps 8-10 |
-| `DEP-ENG-004` | Negative Space (Forbidden Vocabulary + Structural Exclusions) | PRIMARY OUTPUT — extracted in Steps 6-7 (BEFORE DEP-ENG-003 per Mandate 4) |
-| `DEP-LIB-001` | Emotional DNA (MFQ-2 moral foundations + appraisal variables) | PRIMARY OUTPUT — extracted in Steps 2-3 |
+| `DEP-ENG-003` | Positive Space (60-Variable Stylometry Profile) | PRIMARY OUTPUT — extracted in FR3 |
+| `DEP-ENG-004` | Negative Space (Forbidden Vocabulary + Structural Exclusions) | PRIMARY OUTPUT — extracted in FR3 (BEFORE DEP-ENG-003 per Mandate 4) |
 | `DEP-ENG-019` | Session Transcript Intelligence | INPUT — the validated Authentic Material Payload from FR2 |
 | `DEP-ENG-023` | Cultural Memory Map | DOWNSTREAM — extraction triggered after Step 12 completes (Step 0-A) |
 | `DEP-ENG-024` | Coach Story Archive | DOWNSTREAM — seeding triggered after Step 12 completes (Step 0-B) |
@@ -65,11 +65,11 @@ A 12-step agentic extraction pipeline that processes the validated Authentic Mat
 
 | File | Purpose |
 |---|---|
-| `coach_soul.json` | Primary output target — all 3 DNA objects written here at completion |
+| `coach_soul.json` | Primary output target — DNA objects written here at completion |
 | `coach_soul.json → extraction_readiness.authenticated_word_count` | Prerequisite gate — must be ≥3,000 before this pipeline starts |
 | `Supabase: coach_soul_json` | Persistent storage backup |
-| `Supabase: cultural_memory_map` | Populated post-Step 12 via Step 0-A |
-| `Supabase: coach_story_archive` | Seeded post-Step 12 via Step 0-B |
+| `Supabase: cultural_memory_map` | Populated post-FR3 via Step 0-A |
+| `Supabase: coach_story_archive` | Seeded post-FR3 via Step 0-B |
 | `ttt_baseline.json` | Secondary output — Sophia's calibration baseline for TTT drift gate |
 
 ### Technical Decisions
@@ -103,58 +103,20 @@ If not met → pipeline does not start. Morgan (Setup Orchestrator) queues a not
 
 **Gate:** Minimum 3,000 unique authenticated words (not total, not with duplicates collapsed). If below threshold after deduplication → halt, request more Sacred Audio.
 
----
-
-### Step 2: MFQ-2 Moral Foundation Scoring
-
-**Agent:** Valeriane
-
-**Instrument:** Moral Foundations Questionnaire-2 (MFQ-2, 6 foundations)
-
-**Action:** Map coach statements across the corpus to 6 moral foundations: Care/Harm, Fairness/Cheating, Loyalty/Betrayal, Authority/Subversion, Sanctity/Purity, Liberty/Oppression.
-
-Scoring method: weighted frequency of foundation-aligned statements relative to corpus size. Output top 2 highest-weighted foundations + their scores.
-
-**DEP-LIB-001 population (partial):**
+**Receipt Write (Stage 1):** Per FR47 DEP-ENG-041 schema —
 ```json
-{
-  "moral_foundations": {
-    "top_1": {"foundation": "Care/Harm", "weight": 0.42},
-    "top_2": {"foundation": "Fairness/Cheating", "weight": 0.38}
-  }
-}
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-1",
+  "previous_receipt_hash": "{FR2_FINAL_RECEIPT}",
+  "input_payload_hash": "{FR2_PAYLOAD_HASH}",
+  "output_payload_hash": "{EXTRACTION_CORPUS_HASH}",
+  "stage_name": "VDNA-CORPUS-ASSEMBLY",
+  "agent_name": "Valeriane",
+  "timestamp": "{ISO8601}" }
 ```
 
 ---
 
-### Step 3: Cognitive Appraisal Variables
-
-**Agent:** Valeriane
-
-**Action:** From corpus, extract 5 Cognitive Appraisal Theory variables:
-1. **Trigger Specificity Threshold** — Does the coach react to institutional/systemic violations or personal/interpersonal ones? (System-level vs interpersonal scale: 1–10)
-2. **Appraisal Sequence Ordering** — Does the coach first appraise relevance or coping potential? (Relevance-first vs Coping-first)
-3. **Coping Potential Pattern** — Does the coach predominantly express internal agency ("I can change this") or external attribution ("The system is wrong")?
-4. **Norm Compatibility Threshold** — How precisely must a violation match their moral framework before they respond? (High precision = reacts to subtle violations; low precision = only reacts to obvious ones)
-5. **Agency Attribution Bias** — Person-focused ("This leader failed") vs System-focused ("This structure failed")
-
-**DEP-LIB-001 population (complete):**
-```json
-{
-  "moral_foundations": {...},
-  "trigger_specificity_threshold": 7.2,
-  "appraisal_sequence": "relevance_first",
-  "coping_potential_pattern": "internal_agency",
-  "norm_compatibility_threshold": 8.1,
-  "agency_attribution_bias": "system_focused"
-}
-```
-
-Write `receipt` → RCG (Steps 2-3 combined)
-
----
-
-### Step 4: Discourse Marker Census
+### Step 2: Discourse Marker Census
 
 **Agent:** Valeriane + spaCy POS tagging
 
@@ -165,9 +127,20 @@ Write `receipt` → RCG (Steps 2-3 combined)
 
 **Output:** `discourse_marker_map.json` — each marker with occurrence count + position distribution
 
+**Receipt Write (Stage 2):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-2",
+  "previous_receipt_hash": "{STEP_1_RECEIPT_HASH}",
+  "input_payload_hash": "{EXTRACTION_CORPUS_HASH}",
+  "output_payload_hash": "{DISCOURSE_MARKER_MAP_HASH}",
+  "stage_name": "DISCOURSE-MARKER-CENSUS",
+  "agent_name": "Valeriane",
+  "timestamp": "{ISO8601}" }
+```
+
 ---
 
-### Step 5: Cross-Topic Invariance Test
+### Step 3: Cross-Topic Invariance Test
 
 **Agent:** Valeriane
 
@@ -175,16 +148,27 @@ Write `receipt` → RCG (Steps 2-3 combined)
 
 **Action:**
 1. From the corpus, identify 5 maximally different subject clusters (e.g., professional development, personal health, relationships, finances, industry critique)
-2. Run Steps 4's discourse marker analysis separately for EACH cluster
+2. Run Step 2's discourse marker analysis separately for EACH cluster
 3. Compare results: a marker's position distribution must remain consistent (within ±15%) across all 5 clusters to qualify as Voice DNA
 4. Markers with >15% variance across clusters → flagged as TOPIC-SPECIFIC, excluded from DEP-ENG-003
 5. Only invariant markers advance to DEP-ENG-003
 
 **Gate:** Minimum 12 invariant markers required to produce a robust DEP-ENG-003. If fewer than 12 invariant markers: expand corpus (more Sacred Audio) or broaden subject clusters.
 
+**Receipt Write (Stage 3):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-3",
+  "previous_receipt_hash": "{STEP_2_RECEIPT_HASH}",
+  "input_payload_hash": "{DISCOURSE_MARKER_MAP_HASH}",
+  "output_payload_hash": "{INVARIANT_MARKERS_HASH}",
+  "stage_name": "CROSS-TOPIC-INVARIANCE",
+  "agent_name": "Valeriane",
+  "timestamp": "{ISO8601}" }
+```
+
 ---
 
-### Step 6: Sentence Skeleton Extraction (Stylometry Profiling)
+### Step 4: Sentence Skeleton Extraction (Stylometry Profiling)
 
 **Agent:** Valeriane + spaCy dependency parser
 
@@ -198,15 +182,26 @@ Write `receipt` → RCG (Steps 2-3 combined)
 
 These 6 cluster groups form the core of the **Positive Space Object (60-variable profile)**.
 
+**Receipt Write (Stage 4):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-4",
+  "previous_receipt_hash": "{STEP_3_RECEIPT_HASH}",
+  "input_payload_hash": "{CORPUS_HASH}",
+  "output_payload_hash": "{STYLOMETRY_PROFILE_HASH}",
+  "stage_name": "SENTENCE-SKELETON-EXTRACT",
+  "agent_name": "Valeriane",
+  "timestamp": "{ISO8601}" }
+```
+
 ---
 
-### Step 7: Negative Space Excavation (MANDATE 4 — First DEP)
+### Step 5: Negative Space Excavation (MANDATE 4 — First DEP)
 
-> **GATE: This step must complete and produce a validated DEP-ENG-004 before Steps 8-10 can execute. This is hardcoded in the pipeline orchestrator — not a prompt instruction.**
+> **GATE: This step must complete and produce a validated DEP-ENG-004 before subsequent steps can execute. This is hardcoded in the pipeline orchestrator — not a prompt instruction.**
 
 **Agent:** Valeriane
 
-**Mechanism:** Mathematical extrapolation of the opposite of the invariant markers from Step 5.
+**Mechanism:** Mathematical extrapolation of the opposite of the invariant markers from Step 3.
 
 **Three components of DEP-ENG-004:**
 
@@ -244,11 +239,20 @@ These 6 cluster groups form the core of the **Positive Space Object (60-variable
 }
 ```
 
-Write `receipt` → RCG (Step 7 — DEP-ENG-004 complete)
+**Receipt Write (Stage 5):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-5",
+  "previous_receipt_hash": "{STEP_4_RECEIPT_HASH}",
+  "input_payload_hash": "{EXTRACTED_PATTERNS_HASH}",
+  "output_payload_hash": "{DEP_ENG_004_HASH}",
+  "stage_name": "NEGATIVE-SPACE-EXCAVATION",
+  "agent_name": "Valeriane",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
-### Steps 8-10: Positive Space Extraction (DEP-ENG-003)
+### Steps 6-8: Positive Space Extraction (DEP-ENG-003)
 
 **Prerequisite gate:** DEP-ENG-004 exists in `coach_soul.json`
 
@@ -258,15 +262,15 @@ Write `receipt` → RCG (Step 7 — DEP-ENG-004 complete)
 
 | Cluster | Variables | Source Data |
 |---|---|---|
-| **Lexical/Morphological** | TTR, hapax legomena frequency, vocabulary density | Step 6 calculations |
-| **Subconscious Syntactic Distributions** | Function word ratios (and/but/so densities), clause connective patterns | Step 5 invariant markers |
-| **Relational WAN Metrics** | Preposition-conjunction transition probabilities, adjacency network map | Step 6 WAN calculations |
-| **Graphical Habits** | Punctuation density (em-dash frequency, ellipsis position, comma load), capitalization anomalies | Step 6 punctuation profiling |
-| **Structural Complexity** | WPS flow pattern (rhythm of sentence length changes across claims), paragraph-to-paragraph length variance | Step 6 WPS tracking |
+| **Lexical/Morphological** | TTR, hapax legomena frequency, vocabulary density | Step 4 calculations |
+| **Subconscious Syntactic Distributions** | Function word ratios (and/but/so densities), clause connective patterns | Step 3 invariant markers |
+| **Relational WAN Metrics** | Preposition-conjunction transition probabilities, adjacency network map | Step 4 WAN calculations |
+| **Graphical Habits** | Punctuation density (em-dash frequency, ellipsis position, comma load), capitalization anomalies | Step 4 punctuation profiling |
+| **Structural Complexity** | WPS flow pattern (rhythm of sentence length changes across claims), paragraph-to-paragraph length variance | Step 4 WPS tracking |
 
 **Construction method:** For each cluster, generate the numerical profile AND a prose description suitable for inclusion in Block A of compiled SKILL.md files. The prose description is what the generation agent reads — it translates the mathematical profile into a voice instruction.
 
-**Step 10-B: Humor Style Classification (Mandate 8 input)**
+**Step 8: Humor Style Classification (Mandate 8 input)**
 
 Post-DEP-ENG-003: analyze the coach's natural expressions in corpus for humor signals:
 - Frequency and position of self-referential humor attempts
@@ -274,11 +278,22 @@ Post-DEP-ENG-003: analyze the coach's natural expressions in corpus for humor si
 - Presence/absence of aggressive humor targeting (classify per Architecture 6 — `affiliative`/`self_enhancing`/`aggressive`/`self_defeating`)
 - Write `humor_style_classification` to `coach_soul.json` → Block A Humor Spec fields
 
-Write `receipt` → RCG (Step 10 — DEP-ENG-003 complete)
+**Receipt Write (Stage 6-8):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-6-8",
+  "previous_receipt_hash": "{STEP_5_RECEIPT_HASH}",
+  "input_payload_hash": "{STYLOMETRY_CLUSTER_HASH}",
+  "output_payload_hash": "{DEP_ENG_003_HASH}",
+  "stage_name": "POSITIVE-SPACE-EXTRACT",
+  "agent_name": "Valeriane",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
-### Step 11: Emotional DNA Integration Test (Mandate 7)
+### Step 9: Emotional DNA Integration Test (Mandate 7)
+
+**Prerequisite gate:** DEP-LIB-001 must exist from FR4 execution.
 
 **Agent:** Valeriane + Charlotte (Stream of Consciousness Generator)
 
@@ -292,9 +307,20 @@ Write `receipt` → RCG (Step 10 — DEP-ENG-003 complete)
 If no → Charlotte rewrites with deeper L3 activation instructions. Cycle repeats up to 3 times.
 If 3 cycles fail and Mandate 7 criterion is not met → flag for operator review (this is a signal of a corpus that doesn't contain enough wound-level material — more Sacred Audio required).
 
+**Receipt Write (Stage 9):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-9",
+  "previous_receipt_hash": "{STEP_8_RECEIPT_HASH}",
+  "input_payload_hash": "{DEP_LIB_001_HASH}_AND_DEP003_DEP004",
+  "output_payload_hash": "{FAILED_OR_PASSED_SAMPLES_HASH}",
+  "stage_name": "EMOTIONAL-DNA-TEST",
+  "agent_name": "Charlotte",
+  "timestamp": "{ISO8601}" }
+```
+
 ---
 
-### Step 12: Adversarial Validation
+### Step 10: Adversarial Validation
 
 **Agent:** Sophia (TTT validator) + Adversarial Validator Agent
 
@@ -303,15 +329,26 @@ If 3 cycles fail and Mandate 7 criterion is not met → flag for operator review
 2. **Sophia:** Measures TTT alignment — drift score < 15% required
 3. **Adversarial Validator:** Independent hostile evaluation. Brief: *"You are trying to find a single phrase or sentence structure that the coach would disown. Scan all 5 samples. If you find one, flag it with the specific structure and why the coach would reject it."*
 4. If Adversary flags nothing → Voice DNA passes. Write to `ttt_baseline.json`.
-5. If Adversary flags a phrase → pipeline rewinds to Step 7 to harden the Negative Space. The flagged structure is added to DEP-ENG-004's `synactic_impossibilities` list.
+5. If Adversary flags a phrase → pipeline rewinds to Step 5 to harden the Negative Space. The flagged structure is added to DEP-ENG-004's `synactic_impossibilities` list.
 6. Maximum 3 rewind cycles. After 3 cycles without passing → operator review required.
 
-**Quality gates applied at Step 12:**
+**Quality gates applied at Step 10:**
 - TTT drift < 15% (Sophia — §11.5)
 - AI detection rate < 5% on all 5 samples (Chen — §11.5)
 - Boredom Ban: each sample ≤0.85 cosine similarity to any existing content in episodic memory (§11.5)
 
-Write final `receipt` → RCG (Step 12 complete). Write DEP-ENG-003 + DEP-ENG-004 + DEP-LIB-001 + `ttt_baseline.json` to `coach_soul.json` and Supabase.
+**Receipt Write (Stage 10):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-VDNA-10",
+  "previous_receipt_hash": "{STEP_9_RECEIPT_HASH}",
+  "input_payload_hash": "{ADVERSARIAL_SAMPLES_HASH}",
+  "output_payload_hash": "{TTT_BASELINE_HASH}",
+  "stage_name": "ADVERSARIAL-VALIDATION",
+  "agent_name": "Adversarial Validator",
+  "timestamp": "{ISO8601}" }
+```
+
+Write DEP-ENG-003 + DEP-ENG-004 + `ttt_baseline.json` to `coach_soul.json` and Supabase.
 
 ---
 
@@ -334,18 +371,16 @@ When Step 12 passes, the extraction pipeline has completed. The V5.0 onboarding 
 ## Tasks
 
 - [ ] **Task 1:** Build corpus assembly and prerequisite gate (authenticated word count check)
-- [ ] **Task 2:** Implement MFQ-2 scoring module with 6-foundation weighted frequency analysis
-- [ ] **Task 3:** Implement Cognitive Appraisal Variable extraction (5 variables → DEP-LIB-001)
-- [ ] **Task 4:** Implement Discourse Marker Census with position mapping
-- [ ] **Task 5:** Implement Cross-Topic Invariance Test (5-cluster comparison, ±15% variance threshold)
-- [ ] **Task 6:** Implement Sentence Skeleton Extraction with spaCy (6 cluster variable groups)
-- [ ] **Task 7:** Implement Negative Space Excavation (DEP-ENG-004) with 3-component structure + pipeline gate enforcing Mandate 4
-- [ ] **Task 8:** Implement Positive Space Extraction (DEP-ENG-003) — 5 clusters → numerical profile + prose description
-- [ ] **Task 9:** Implement Humor Style Classification (Step 10-B) → Block A Humor Spec fields
-- [ ] **Task 10:** Implement Emotional DNA Integration Test (Mandate 7 — 3-cycle limit)
-- [ ] **Task 11:** Implement Adversarial Validation with Sophia + Adversarial Validator + 3-rewind limit
-- [ ] **Task 12:** Implement V5.0 Post-Step-12 onboarding chain trigger (Step 0-A through 0-D) + Minister of Identity scorecard gate
-- [ ] **Task 13:** Integrate Receipt Chain Guard at every step with hash chaining
+- [ ] **Task 2:** Implement Discourse Marker Census with position mapping
+- [ ] **Task 3:** Implement Cross-Topic Invariance Test (5-cluster comparison, ±15% variance threshold)
+- [ ] **Task 4:** Implement Sentence Skeleton Extraction with spaCy (6 cluster variable groups)
+- [ ] **Task 5:** Implement Negative Space Excavation (DEP-ENG-004) with 3-component structure + pipeline gate enforcing Mandate 4
+- [ ] **Task 6-8:** Implement Positive Space Extraction (DEP-ENG-003) — 5 clusters → numerical profile + prose description
+- [ ] **Task 7:** Implement Humor Style Classification (Step 8) → Block A Humor Spec fields
+- [ ] **Task 8:** Implement Emotional DNA Integration Test (Mandate 7 — 3-cycle limit) with prerequisite mapping to FR4
+- [ ] **Task 9:** Implement Adversarial Validation with Sophia + Adversarial Validator + 3-rewind limit
+- [ ] **Task 10:** Implement V5.0 Post-Step-10 onboarding chain trigger (Step 0-A through 0-D) + Minister of Identity scorecard gate
+- [ ] **Task 11:** Integrate Receipt Chain Guard at every step with hash chaining
 
 ---
 

@@ -111,7 +111,16 @@ If not met → pipeline halts. Morgan queues Sacred Audio session requests.
 3. Count total word count across all available transcripts
 4. **Gate:** If total word count < 3,000 → STOP. Report: *"Insufficient corpus. Need {3000 - current} more words. Sources: additional interview transcripts, podcast appearances, long-form social media posts."*
 5. Load `emotional_dna.json` template with all 10 variable slots set to null
-6. Write `receipt` → Receipt Chain Guard (Phase 1 — Ingest)
+6. **Receipt Write (Phase 1):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-EDNA-INGEST",
+  "previous_receipt_hash": "{FR2_FINAL_RECEIPT_HASH}",
+  "input_payload_hash": "{RAW_TRANSCRIPT_DIR_HASH}",
+  "output_payload_hash": "{NULL_TEMPLATE_HASH}",
+  "stage_name": "EDNA-INGEST",
+  "agent_name": "Emotional DNA Extraction Agent",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -454,7 +463,16 @@ On any incoherence: flag for operator review with the conflicting variables and 
 
 **Constraint D — No Fabrication:** Any variable that cannot be supported by corpus evidence stays null. A partial profile with high confidence is infinitely more valuable than a complete profile with low confidence.
 
-Write `receipt` → Receipt Chain Guard (Extraction Complete)
+**Receipt Write (Phase 6):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-EDNA-VALIDATE",
+  "previous_receipt_hash": "{PHASE_1_RECEIPT_HASH}",
+  "input_payload_hash": "{EXTRACTED_VARIABLES_HASH}",
+  "output_payload_hash": "{VALIDATED_EDNA_OUTPUT_HASH}",
+  "stage_name": "EDNA-VALIDATION-COMPLETE",
+  "agent_name": "Emotional DNA Extraction Agent",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 

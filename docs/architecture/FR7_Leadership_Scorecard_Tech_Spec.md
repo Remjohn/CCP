@@ -138,7 +138,16 @@ If any are missing → `CANNOT_SCORE_MISSING_DEPENDENCIES` error with list of mi
 4. Load `cultural_memory_map` (Supabase) — if exists, enriches scoring (optional)
 5. Load `coach_story_archive` (Supabase) — if exists, enriches scoring (optional)
 6. Load Philosophy Brief (if exists) — enriches scoring (optional)
-7. Write `receipt` → Receipt Chain Guard (Leadership Scorecard — Phase 1 Ingest)
+7. **Receipt Write (Phase 1):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-LEADERSHIP-INGEST",
+  "previous_receipt_hash": "{ALL_REQUIRED_DEP_HASHES}",
+  "input_payload_hash": "{COACH_SOUL_TTT_TRIBE_HASH}",
+  "output_payload_hash": "{NULL_SCORECARD_TEMPLATE_HASH}",
+  "stage_name": "LEADERSHIP-SCORECARD-INGEST",
+  "agent_name": "Minister of Identity",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -422,7 +431,16 @@ ELSE:
 **Checkpoint:**
 - Update `config.yaml`: `sessions.setup.leadership_score.status = "complete"`
 - Update `coach_soul.json`: `pipeline_status.leadership_scored = true`
-- Write `receipt` → Receipt Chain Guard (Leadership Scorecard — Complete)
+- **Receipt Write (Phase 6):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-LEADERSHIP-COMPLETE",
+  "previous_receipt_hash": "{PHASE_1_RECEIPT_HASH}",
+  "input_payload_hash": "{SCORED_TRAITS_HASH}",
+  "output_payload_hash": "{FINAL_SCORECARD_JSON_HASH}",
+  "stage_name": "LEADERSHIP-SCORECARD-COMPLETE",
+  "agent_name": "Minister of Identity",
+  "timestamp": "{ISO8601}" }
+```
 - Write format governance to `02_content_strategy.md`
 
 ---

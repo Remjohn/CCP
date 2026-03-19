@@ -58,6 +58,7 @@ A complete 3-phase Genesis architecture:
 | `DEP-ENG-023` | Cultural Memory Map | V5.0 — Initialized in Step 0-A (post-FR3) |
 | `DEP-ENG-024` | Coach Story Archive | V5.0 — Initialized in Step 0-B (post-Step 0-A) |
 | `DEP-ENG-045` | Context Performance Registry | V5.0 — Initialized in Step 0-D |
+| `DEP-ENG-052` | Genesis Clearance Certificate | Prerequisite gate — issued by Guardian Agent after FR0A-FR0E sequence |
 | `DEP-PROTO-014` | CMM Extraction Protocol | Step 0-A execution protocol |
 | `DEP-PROTO-016` | Story Archive Approval Gate | Step 0-B quality gate |
 
@@ -137,13 +138,22 @@ Phase 0 consists of 7 commands + 4 V5.0 initialization steps. All must complete 
 
 ---
 
-#### Phase 0, Step 4: `ccf-tribe-extract`
+#### Phase 0, Step 4: `ccf-tribe-extract` (FR6)
 
 **Agent:** Dilaya (Tribe Soul Extractor)
 **Extensions:** `InteractComp`
 **Action:** Structured tribe analysis across 8 cultural layers. Source: onboarding questionnaire + social listening data + coach's described audience.
 **Output:** `tribe_soul.json` (DEP-ENG-001)
 **Completion gate:** Receipt written. DEP-ENG-001 populated with 8 cultural layers.
+
+---
+
+#### Phase 0, Step 4.5: `ccf-trigger-extract` (FR5)
+
+**Agent:** Trigger Map Builder
+**Action:** Synthesizes FR2/FR3 inputs into 7 primary trigger categories.
+**Output:** `trigger_map.json` (DEP-LIB-002)
+**Completion gate:** Receipt written. Trigger Map populated and validated.
 
 ---
 
@@ -258,9 +268,11 @@ Production unlock criteria (all must be TRUE before Alex can trigger Phase 1):
 
 | Gate | Required | Check |
 |---|---|---|
+| Genesis Clearance Certificate (DEP-ENG-052) | ✅ Required | Guardian Agent issuance proof via DEP-PROTO-019/020 success |
 | `coach_soul.json` with DEP-ENG-003, DEP-ENG-004, DEP-LIB-001 | ✅ Required | FR3 completion receipt |
 | `ttt_baseline.json` | ✅ Required | FR3 Step 12 receipt |
 | `tribe_soul.json` (DEP-ENG-001) | ✅ Required | `ccf-tribe-extract` receipt |
+| `trigger_map.json` (DEP-LIB-002) | ✅ Required | `ccf-trigger-extract` receipt |
 | `02_content_strategy.md` | ✅ Required | `ccf-blueprint` receipt |
 | `leadership_scorecard.json` | ✅ Required | `ccf-leadership-score` receipt |
 | `cultural_memory_map` — ≥4 layers populated | ✅ Required | Step 0-A operator confirmation |
@@ -268,6 +280,18 @@ Production unlock criteria (all must be TRUE before Alex can trigger Phase 1):
 | `humor_mechanism_registry` — initialized | ✅ Required | Step 0-C initialization |
 | `context_performance_registry` — initialized | ✅ Required | Step 0-D initialization |
 | Scheduled Monitor Agent — live | ✅ Required | Step 11-A verification |
+| Genesis Unlock Receipt | ✅ Required | Global Receipt Chain Guard format |
+
+**Receipt Write (Genesis Unlock):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-GENESIS-UNLOCK",
+  "previous_receipt_hash": "{LAST_PHASE_0_RECEIPT}",
+  "input_payload_hash": "{SCORECARD_HASH}",
+  "output_payload_hash": "{CLEARANCE_CERT_HASH}",
+  "stage_name": "GENESIS-UNLOCK",
+  "agent_name": "Guardian Agent",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 

@@ -96,18 +96,16 @@ The following constraints from the CCP Architecture v2.1 §7.6 are **mandatory**
 4. No external API calls at this stage. The audio is not transmitted until Stage B.
 5. Write `receipt` → Receipt Chain Guard (RCG) via Supabase + crypto hash
 
-**Receipt schema for Stage A:**
+**Receipt Write (Stage A):** Per FR47 DEP-ENG-041 schema —
 ```json
 {
   "receipt_id": "RCP-{COACH_ACRONYM}-SACRED-{DATE}-{SEQUENCE}-001",
-  "step": "sacred-audio-ingest",
-  "agent": "TelegramInterceptor",
-  "input_hash": "sha256:{audio_file_hash}",
-  "output_hash": "sha256:{validated_audio_hash}",
-  "predecessor_receipt": null,
-  "timestamp": "{ISO8601}",
-  "status": "pass",
-  "extensions_fired": []
+  "previous_receipt_hash": null,
+  "input_payload_hash": "sha256:{audio_file_hash}",
+  "output_payload_hash": "sha256:{validated_audio_hash}",
+  "stage_name": "SACRED-AUDIO-INGEST",
+  "agent_name": "TelegramInterceptor",
+  "timestamp": "{ISO8601}"
 }
 ```
 
@@ -127,7 +125,16 @@ The following constraints from the CCP Architecture v2.1 §7.6 are **mandatory**
    - Return raw transcript with all non-verbal utterances preserved
 3. Validate API response — if `status != 200` → `DamageControl` extension triggers single retry. If retry fails → halt and alert coach: *"I'm having trouble processing your audio right now. Please try again in a few minutes."*
 4. Write intermediate transcript to Working Memory (LangGraph state dict — volatile, single session)
-5. Write `receipt` → RCG (Step B)
+5. **Receipt Write (Stage B):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-SACRED-{DATE}-{SEQUENCE}-002",
+  "previous_receipt_hash": "{STAGE_A_RECEIPT_HASH}",
+  "input_payload_hash": "{AUDIO_API_PAYLOAD_HASH}",
+  "output_payload_hash": "{RAW_TRANSCRIPT_HASH}",
+  "stage_name": "ASR-TRANSCRIPTION",
+  "agent_name": "Groq Whisper API",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -150,7 +157,16 @@ The following constraints from the CCP Architecture v2.1 §7.6 are **mandatory**
 - Long continuous streams (>500 words without a root return): force-segment at the 300-word mark with a "hard boundary" flag for LIWC-22 scoring adjustment
 - Multilingual code-switching: flag for manual review — do not segment cross-language units
 
-Write `receipt` → RCG (Step C)
+**Receipt Write (Stage C):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-SACRED-{DATE}-{SEQUENCE}-003",
+  "previous_receipt_hash": "{STAGE_B_RECEIPT_HASH}",
+  "input_payload_hash": "{RAW_TRANSCRIPT_HASH}",
+  "output_payload_hash": "{THOUGHT_UNIT_ARRAY_HASH}",
+  "stage_name": "THOUGHT-UNIT-SEGMENTATION",
+  "agent_name": "Pi Coding Agent",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -196,12 +212,33 @@ The system does NOT tell the coach they failed. It deepens the session using a D
 | Low FPS | *"Tell me about a time when this personally affected YOU — not a client, not the industry. You."* |
 | Zero fillers + low WPS (scripted) | *"That came through clearly — but I want the version you'd say to a close friend at 11pm. Less polished, more real."* |
 
+**Receipt Write (Re-Elicitation Event):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-SACRED-{DATE}-{SEQUENCE}-RETRY",
+  "previous_receipt_hash": "{STAGE_C_RECEIPT_HASH}",
+  "input_payload_hash": "{SYNTHETIC_UNIT_HASH}",
+  "output_payload_hash": "{DARN_CAT_PROMPT_HASH}",
+  "stage_name": "AUTH-GATE-REJECTION-RETRY",
+  "agent_name": "LIWC-22 Evaluator",
+  "timestamp": "{ISO8601}" }
+```
+
 **On Persistent Gate Failure (≥2 re-elicitation attempts on same unit):**
 - Unit is permanently dropped from Working Memory per Architecture §10.6 data residency rules
 - Session continues with remaining units — a session with ≥3 AUTHENTIC units proceeds to Stage E
 - If total AUTHENTIC units < 3 → session is marked INSUFFICIENT and coach is notified to continue the conversation over the week
+- **Receipt Write:** Stage fails, immutable rejection log written with `stage_name: "AUTH-GATE-PERSISTENT-FAILURE"`
 
-Write `receipt` → RCG (Step D)
+**Receipt Write (Stage D Success):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-SACRED-{DATE}-{SEQUENCE}-004",
+  "previous_receipt_hash": "{LAST_RETRY_OR_STAGE_C_HASH}",
+  "input_payload_hash": "{THOUGHT_UNIT_ARRAY_HASH}",
+  "output_payload_hash": "{VALIDATED_UNITS_HASH}",
+  "stage_name": "LIWC-AUTHENTICITY-GATE",
+  "agent_name": "LIWC-22 Evaluator",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -223,7 +260,18 @@ Write `receipt` → RCG (Step D)
 - Word count is tracked in `coach_soul.json` → `extraction_readiness.authenticated_word_count`
 - When count crosses 3,000: system notifies Morgan (Setup Orchestrator) to initiate FR3
 
-Write final `receipt` → RCG (Step E). Chain integrity: all receipts A through E must be resolvable. If any predecessor is missing, pipeline halts.
+**Receipt Write (Stage E Final Store):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-SACRED-{DATE}-{SEQUENCE}-005",
+  "previous_receipt_hash": "{STAGE_D_RECEIPT_HASH}",
+  "input_payload_hash": "{VALIDATED_UNITS_HASH}",
+  "output_payload_hash": "{STORAGE_COMMIT_HASH}",
+  "stage_name": "EPISODIC-STORAGE-COMMIT",
+  "agent_name": "ArchitectStorage",
+  "timestamp": "{ISO8601}" }
+```
+
+Chain integrity: all receipts A through E must be resolvable. If any predecessor is missing, pipeline halts.
 
 ---
 

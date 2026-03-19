@@ -120,7 +120,16 @@ If not met → Pipeline runs with WARNING. Trigger map will be partial. If `emot
 3. Load `coach_soul.json` — read existing identity data.
 4. Load all transcripts from `raw/transcripts/`.
 5. Load `trigger_map.json` template with empty arrays.
-6. Write `receipt` → Receipt Chain Guard (Trigger Map — Phase 1 Ingest).
+6. **Receipt Write (Phase 1):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TMAP-INGEST",
+  "previous_receipt_hash": "{EDNA_FINAL_RECEIPT_HASH}",
+  "input_payload_hash": "{EDNA_AND_TRANSCRIPTS_HASH}",
+  "output_payload_hash": "{NULL_TMAP_TEMPLATE_HASH}",
+  "stage_name": "TMAP-INGEST",
+  "agent_name": "Trigger Map Builder",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -329,7 +338,16 @@ Write populated `trigger_map.json` to `intelligence_library/trigger_map.json`:
 - Update `config.yaml`: `sessions.setup.trigger_map.status = "complete"`
 - Update `coach_soul.json`: `extraction_pipeline_status.trigger_map_complete = true`
 - Log: triggers mapped, PTG distribution, ESK/GE/LP counts, archetype eligibility summary
-- Write `receipt` → Receipt Chain Guard (Trigger Map — Complete)
+- **Receipt Write (Phase 9):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TMAP-COMPLETE",
+  "previous_receipt_hash": "{PHASE_1_RECEIPT_HASH}",
+  "input_payload_hash": "{ALL_IDENTIFIED_TRIGGERS_HASH}",
+  "output_payload_hash": "{FINAL_TMAP_JSON_HASH}",
+  "stage_name": "TMAP-COMPLETE",
+  "agent_name": "Trigger Map Builder",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -374,6 +392,17 @@ After ≥3 activation history entries exist for a trigger:
 | `mean_authenticity 5–7/10` AND `trend = stable` | **Hold** — trigger maintains current precedence. No change. |
 | `mean_authenticity < 5/10` OR `trend = declining` | **Fall** — trigger moves DOWN in activation precedence. Intelligence radar deprioritizes. Flag for review: is the activation event design too generic? Does the coach need a deeper interview to surface ESK? |
 | `mean_authenticity < 3/10` across ≥3 sessions | **Dormant** — trigger is marked `dormant`. NOT deleted — it may indicate that the coach's relationship to this trigger has changed (life event, identity shift). Schedule re-interview. |
+
+**Receipt Write (Weekly Map Update):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TMAP-UPDATE-{WEEK}",
+  "previous_receipt_hash": "{LAST_TMAP_UPDATE_HASH}",
+  "input_payload_hash": "{WEEKLY_LIWC_SCORES_HASH}",
+  "output_payload_hash": "{UPDATED_TMAP_HASH}",
+  "stage_name": "TMAP-WEEKLY-UPDATE",
+  "agent_name": "Weekly Pipeline Orchestrator",
+  "timestamp": "{ISO8601}" }
+```
 
 ### Standing Trigger Intelligence Library Integration
 

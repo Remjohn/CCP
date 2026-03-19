@@ -127,11 +127,20 @@ A two-stage extraction pipeline:
 1. Load `config.yaml` for input paths
 2. Load `coach_soul.json` (from soul-extract session) — needed for coach-tribe alignment
 3. Load `coach_philosophy_brief_v{N}.md` (from philosophy-brief session) — which tribe dynamics this coach's philosophy addresses
-4. Load H11 raw target audience research output (if available)
+4. Load H11 Tribe Dossier (produced by FR0B Tribe Soul Research) if available
 5. Load audience raw data: social comments, Reddit threads, forum posts, industry group discussions
 6. Load Tshala SentimentReport JSON (if available) — seeds RTTR fields
 7. **PRE-FLIGHT:** Verify audience raw data exists and is non-empty. If missing → HALT with error: "Cannot extract tribe profile. Audience raw data not found. Conduct audience research first."
-8. Write `receipt` → Receipt Chain Guard (Tribe Soul Extraction — Phase A1 Ingest)
+8. **Receipt Write (Phase A1):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TRIBE-INGEST",
+  "previous_receipt_hash": "{FR0B_FINAL_RECEIPT_HASH}",
+  "input_payload_hash": "{H11_DOSSIER_AND_RAW_DATA_HASH}",
+  "output_payload_hash": "{NULL_TRIBE_TEMPLATE_HASH}",
+  "stage_name": "TRIBE-EXTRACT-INGEST",
+  "agent_name": "Tribe Soul Extraction Engine V2",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -185,7 +194,16 @@ Using the Tribe Dossier, the Cultural Harvester agent systematically extracts:
 Write structured output:
 - `intelligence/tribe/tribe_profile.json` — full schema per SKILL.md
 - `intelligence/tribe/audience_analysis.md` — human-readable analysis narrative
-- Write `receipt` → Receipt Chain Guard (Tribe Soul Extraction — Phase A4 Emit)
+- **Receipt Write (Phase A4):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TRIBE-EMIT",
+  "previous_receipt_hash": "{PHASE_A1_RECEIPT_HASH}",
+  "input_payload_hash": "{TRIBE_DOSSIER_EXTRACTED_DATA_HASH}",
+  "output_payload_hash": "{TRIBE_PROFILE_JSON_HASH}",
+  "stage_name": "TRIBE-EXTRACT-EMIT",
+  "agent_name": "Tribe Soul Extraction Engine V2",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -232,9 +250,18 @@ Schema-validate `tribe_profile.json`:
 2. Load `tribe_profile.json` from Stage A — the raw extraction
 3. Load `coach_soul.json` (H8) — for coach voice cross-reference
 4. Load `coach_philosophy_brief_v{N}.md` (H10) — for coach-tribe alignment analysis
-5. Load H11 raw audience research context premises (if available in `intelligence/context_premises/`)
-6. **PRE-FLIGHT:** Verify `tribe_profile.json` exists and is non-empty. If missing → HALT with error: "Cannot distill tribe profile. H11 audience research not found. Run `/ccf-context-premises` first."
-7. Write `receipt` → Receipt Chain Guard (Context Premise Distillation — Phase B1 Ingest)
+5. Load H11 Tribe Dossier context premises (if available in `intelligence/context_premises/`)
+6. **PRE-FLIGHT:** Verify `tribe_profile.json` exists and is non-empty. If missing → HALT with error: "Cannot distill tribe profile. H11 Tribe Dossier not found. Run `/ccf-context-premises` first."
+7. **Receipt Write (Phase B1):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TRIBE-DISTILL-INGEST",
+  "previous_receipt_hash": "{PHASE_A4_RECEIPT_HASH}",
+  "input_payload_hash": "{TRIBE_PROFILE_RAW_HASH}",
+  "output_payload_hash": "{NULL_DISTILLED_TEMPLATE_HASH}",
+  "stage_name": "TRIBE-DISTILL-INGEST",
+  "agent_name": "Tribe Profile Distiller",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
@@ -382,7 +409,16 @@ Write outputs:
 - `intelligence/tribe/tribe_profile_distilled.json` — full distilled profile
 - `intelligence/tribe/H9_DISTILLATION_RECEIPT.md` — law compliance receipt
 - Neo4j graph populated with all nodes and relationships
-- Write `receipt` → Receipt Chain Guard (Context Premise Distillation — Phase B8 Emit)
+- **Receipt Write (Phase B8):** Per FR47 DEP-ENG-041 schema —
+```json
+{ "receipt_id": "RCP-{COACH_ACRONYM}-TRIBE-DISTILL-EMIT",
+  "previous_receipt_hash": "{PHASE_B1_RECEIPT_HASH}",
+  "input_payload_hash": "{DISTILLED_GRAPH_DATA_HASH}",
+  "output_payload_hash": "{TRIBE_DISTILLED_JSON_HASH}",
+  "stage_name": "TRIBE-DISTILL-EMIT",
+  "agent_name": "Tribe Profile Distiller",
+  "timestamp": "{ISO8601}" }
+```
 
 ---
 
