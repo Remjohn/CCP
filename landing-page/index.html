@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conscious Elite | AI Infrastructure for Coaches</title>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables for Core Brand Colors */
+    :root {
+      --ce-black: #050505;
+      --ce-dark: #121212;
+      --ce-light-dark: #1e1e1e;
+      --ce-white: #ffffff;
+      --ce-gray: #a3a3a3;
+      --ce-yellow: #FFC000;
+      --ce-yellow-hover: #e0a900;
+      
+      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Global Reset & Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--ce-black);
+      color: var(--ce-white);
+      font-family: var(--font-stack);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--ce-yellow);
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--ce-white);
+    }
+
+    /* Layout Classes */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* Header & Navigation */
+    header {
+      padding: 30px 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-accent {
+      color: var(--ce-yellow);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at 50% 120%, rgba(255, 192, 0, 0.05) 0%, var(--ce-black) 70%);
+      padding-top: 100px;
+    }
+
+    .hero-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      color: var(--ce-yellow);
+      font-weight: 600;
+      margin-bottom: 24px;
+      display: inline-block;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 30px;
+      max-width: 900px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards 0.4s;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--ce-yellow) 0%, #ffe373 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--ce-gray);
+      max-width: 700px;
+      margin-bottom: 50px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards 0.6s;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 36px;
+      background-color: var(--ce-yellow);
+      color: var(--ce-black);
+      font-weight: 600;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards 0.8s;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid var(--ce-yellow);
+    }
+
+    .btn:hover {
+      background-color: var(--ce-yellow-hover);
+      box-shadow: 0 0 20px rgba(255, 192, 0, 0.3);
+      color: var(--ce-black);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--ce-white);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: var(--ce-white);
+      box-shadow: none;
+      color: var(--ce-white);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Features/Architecture Section */
+    .architecture {
+      background-color: var(--ce-dark);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .section-header p {
+      color: var(--ce-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--ce-light-dark);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 192, 0, 0.3);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--ce-yellow);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--ce-gray);
+      font-size: 0.95rem;
+    }
+
+    /* Stack Section */
+    .stack {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background-color: var(--ce-black);
+    }
+
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stack-tag {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: var(--ce-gray);
+      transition: all 0.3s ease;
+    }
+
+    .stack-tag:hover {
+      background: rgba(255, 192, 0, 0.1);
+      border-color: var(--ce-yellow);
+      color: var(--ce-yellow);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--ce-dark);
+      padding: 80px 0 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .footer-content h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    .footer-content p {
+      color: var(--ce-gray);
+      margin-bottom: 30px;
+    }
+
+    .contact-email {
+      font-size: 1.2rem;
+      padding: 20px 40px;
+      background: var(--ce-light-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    .contact-email a {
+      color: var(--ce-white);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-email a:hover {
+      color: var(--ce-yellow);
+    }
+
+    .pilot-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255, 192, 0, 0.1);
+      color: var(--ce-yellow);
+      border: 1px solid rgba(255, 192, 0, 0.2);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .copyright {
+      color: #666;
+      font-size: 0.85rem;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .btn-group {
+        flex-direction: column;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .card {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="container">
+    <div class="logo">
+      <span class="logo-accent">C</span>ONSCIOUS ELITE
+    </div>
+    <a href="#contact" class="btn btn-outline" style="padding: 10px 20px; font-size: 12px;">Contact Pilot Access</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">Enterprise Multi-Agent Platform</span>
+      <h1>The AI Operating System for <span>Professional Coaches.</span></h1>
+      <p>Bootstrapped over 3 years of rigorous iteration with holistic coaches by founder <strong>Emmanuel Nyanguila</strong>, Conscious Elite is a self-hosted, autonomous AI agent framework. Built on the same agentic infrastructure paradigms driving OpenClaw, our localized Pi (Personal Intelligence) Agents automate advanced multi-layer visual generation, deep research telemetry, and predictive client conversion.</p>
+      
+      <div class="btn-group">
+        <a href="#architecture" class="btn">View Architecture</a>
+        <a href="#contact" class="btn btn-outline">Apply for Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture / Features -->
+  <section id="architecture" class="architecture">
+    <div class="container">
+      <div class="section-header">
+        <h2>Engineered for Scale</h2>
+        <p>A suite of 6 interconnected AI sub-systems, backed by strict cryptographic receipt chains and proprietary language extraction models.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Feature 1 -->
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Proprietary Voice DNA™</h3>
+          <p>Our extraction pipeline analyzes rhythm, lexicon, and emotional variables to map authentic 'Negative Space' and psychological footprints directly into local LLM inference engines.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Pi (Personal Intelligence) Agents</h3>
+          <p>Powered by our proprietary Pi orchestrators and built on the same self-hosted autonomous agent infrastructure as OpenClaw. These agent swarms execute zero-friction workflows, shell commands, and localized AI tool use.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="card">
+          <div class="card-icon">🎥</div>
+          <h3>Multi-Layer Visual Generation</h3>
+          <p>End-to-end programmatic video and visual assembly via the Conscious Visual Engine. Translates abstract semantic intent into rich, layered visual properties via dynamic GPU rendering.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Predictive Behavioral Engine (CPSC)</h3>
+          <p>The Conscious Persuasion Sales Cycle operates as a background telemetry agent, silently evaluating client relationship depth via graph databases to trigger perfectly-timed conversion events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack (For Reviewers) -->
+  <section class="stack">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 50px;">
+        <h2 style="font-size: 2rem;">Infrastructure Stack</h2>
+      </div>
+      
+      <div class="stack-tags">
+        <div class="stack-tag">Python & FastAPI Node</div>
+        <div class="stack-tag">Neo4j Graph Database</div>
+        <div class="stack-tag">PostgreSQL / Supabase</div>
+        <div class="stack-tag">Redis Remote Caching</div>
+        <div class="stack-tag">NVIDIA GPU Inference</div>
+        <div class="stack-tag">Whisper Speech-to-Text</div>
+        <div class="stack-tag">OpenRouter LLM Aggregation</div>
+        <div class="stack-tag">Next.js Edge Delivery</div>
+        <div class="stack-tag">Docker CI/CD Pipelines</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / CTA -->
+  <section id="contact">
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <span class="pilot-badge">Current Status: Closed Pilot Mode (16 Coaches Active)</span>
+          <h3>Ready to build the future of behavioral change?</h3>
+          <p>We are actively working with tier-1 platforms and cloud partners to scale our infrastructure. For partnership inquiries and enterprise access:</p>
+          
+          <div class="contact-email">
+            <a href="mailto:founder@conscioustrack.my">founder@conscioustrack.my</a>
+          </div>
+        </div>
+        
+        <div class="copyright">
+          Bootstrapped over 3 years by Emmanuel Nyanguila. &copy; 2026 Conscious Elite. All rights reserved. Registered domain: conscioustrack.my.
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Simple smooth scroll script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

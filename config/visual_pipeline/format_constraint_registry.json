@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "spec_reference": "FR-VIS-07_Format_Aspect_Ratio_Enforcement_Tech_Spec.md §5",
+    "description": "Deterministic format constraint registry — maps every approved content format to its locked dimensional specification. No downstream agent may override these values.",
+    "total_formats": 15,
+    "last_updated": "2026-03-20"
+  },
+  "formats": {
+    "carousel_dopamine_cliff":     { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 40 },
+    "carousel_listicle":           { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 40 },
+    "carousel_timeline":           { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 40 },
+    "carousel_comparison":         { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 40 },
+    "single_observational_humor":  { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "single_worst_case":           { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "single_conceptual_contrast":  { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "poll_archetypical":           { "width_px": 1080, "height_px": 1920, "aspect_ratio": "9:16", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "poll_stereotypical":          { "width_px": 1080, "height_px": 1920, "aspect_ratio": "9:16", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "poll_controversial_dilemma":  { "width_px": 1080, "height_px": 1920, "aspect_ratio": "9:16", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "single_tweet_quote":          { "width_px": 1080, "height_px": 1080, "aspect_ratio": "1:1", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "single_supervisual":          { "width_px": 1080, "height_px": 1080, "aspect_ratio": "1:1", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "single_conceptual_contrast_simultaneous": { "width_px": 1080, "height_px": 1080, "aspect_ratio": "1:1", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "single_observational_humor_square": { "width_px": 1080, "height_px": 1080, "aspect_ratio": "1:1", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 },
+    "nine_grid_accumulation":      { "width_px": 1080, "height_px": 1350, "aspect_ratio": "4:5", "dpi": 72, "color_space": "sRGB", "bleed_zone_px": 0 }
+  }
+}

@@ -69,9 +69,40 @@ class GenesisPipeline:
 
         Returns:
             Completed CoachSoul profile
+
+        Raises:
+            GenesisClearanceRequired: If no Genesis Clearance Certificate
+                exists (AC1 — DEP-ENG-052 production lock gate).
         """
+        # ── AC1: Genesis Clearance Certificate Gate (DEP-ENG-052) ──
+        # FR_GA_Guardian_Agent_Tech_Spec.md §AC1:
+        # Without a Genesis Clearance Certificate, triggering FR1's ccf-init
+        # returns GENESIS_CLEARANCE_REQUIRED — code-level gate.
+        from src.ccp.agents.guardian_agent import GuardianAgent
+
+        has_clearance, certificate = GuardianAgent.check_genesis_clearance(
+            coach_acronym=self.acronym,
+            base_dir=str(self.base_dir),
+        )
+        if not has_clearance:
+            self.receipt_chain.log(
+                agent_id="genesis_pipeline",
+                action="genesis_clearance_check",
+                input_summary=f"Checking DEP-ENG-052 for {self.acronym}",
+                output_summary="GENESIS_CLEARANCE_REQUIRED — no valid certificate found",
+                decision="blocked",
+                metadata={"coach_acronym": self.acronym},
+            )
+            raise GenesisClearanceRequired(
+                f"GENESIS_CLEARANCE_REQUIRED: No valid Genesis Clearance Certificate "
+                f"(DEP-ENG-052) found for coach {self.acronym}. "
+                f"Run /ccf-guardian genesis first, or apply a manual operator override."
+            )
+
         print(f"\n{'='*60}")
         print(f"  GENESIS PIPELINE: {self.coach_name} ({self.acronym})")
+        if certificate:
+            print(f"  Certificate: {certificate.certificate_id[:16]}...")
         print(f"{'='*60}\n")
 
         # Step 1: Scaffold
@@ -338,6 +369,17 @@ async def main():
         interview_transcript=interview_text,
         research_brief=research_text,
     )
+
+
+
+class GenesisClearanceRequired(Exception):
+    """Raised when FR1 pipeline is attempted without DEP-ENG-052 certificate.
+
+    AC1: Without a Genesis Clearance Certificate, triggering FR1's ccf-init
+    returns GENESIS_CLEARANCE_REQUIRED — code-level gate.
+    """
+
+    pass
 
 
 if __name__ == "__main__":

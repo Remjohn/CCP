@@ -1,0 +1,8 @@
+{
+  "include": ["src", "tests", "skills"],
+  "extraPaths": ["."],
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Windows",
+  "reportMissingImports": false,
+  "reportMissingModuleSource": false
+}

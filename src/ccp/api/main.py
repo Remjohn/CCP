@@ -43,7 +43,9 @@ async def health_check():
 from src.ccp.api.sacred_audio import router as sacred_audio_router
 from src.ccp.api.telegram_webhook import router as telegram_router
 from src.ccp.api.notion_webhook import router as notion_router
+from src.ccp.api.canvas_api import router as canvas_router
 
 app.include_router(sacred_audio_router, prefix="/api", tags=["Sacred Audio"])
 app.include_router(telegram_router, prefix="/api", tags=["Telegram"])
 app.include_router(notion_router, prefix="/api", tags=["Notion"])
+app.include_router(canvas_router, prefix="/api", tags=["Canvas"])

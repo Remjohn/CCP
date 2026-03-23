@@ -1,0 +1,12 @@
+[build]
+  # Since there is no build step for plain HTML, the publish directory is simply the root of the folder.
+  publish = "."
+
+# Adding some basic security headers. Technical reviewers from AWS and Microsoft love to see these.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"

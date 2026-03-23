@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "spec_reference": "FR-VIS-08_Style_Scoping_Tech_Spec.md §5",
+    "description": "Deterministic style scope matrix — maps every approved content format to its permitted, prohibited, and mandatory visual styles plus grammar system routing.",
+    "total_formats": 15,
+    "last_updated": "2026-03-20"
+  },
+  "formats": {
+    "carousel_dopamine_cliff": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "carousel_listicle": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "carousel_timeline": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "carousel_comparison": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "single_observational_humor": {
+      "permitted_styles": ["real_photography_only"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "cinematic_color_graded", "semi_realistic_digital"],
+      "mandatory_style": "real_photography_only",
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "documentary" }
+    },
+    "single_observational_humor_square": {
+      "permitted_styles": ["real_photography_only"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "cinematic_color_graded", "semi_realistic_digital"],
+      "mandatory_style": "real_photography_only",
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "documentary" }
+    },
+    "single_worst_case": {
+      "permitted_styles": ["cinematic_color_graded"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "real_photography_only", "semi_realistic_digital"],
+      "mandatory_style": "cinematic_color_graded",
+      "style_parameters": { "saturation_ceiling_pct": 35, "saturation_floor_pct": 20, "grammar_system": "cinematic" }
+    },
+    "single_conceptual_contrast": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital", "ghibli_illustration"],
+      "prohibited_styles": ["watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "hybrid" }
+    },
+    "single_conceptual_contrast_simultaneous": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital", "ghibli_illustration"],
+      "prohibited_styles": ["watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "hybrid" }
+    },
+    "single_supervisual": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital", "ghibli_illustration"],
+      "prohibited_styles": ["watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "hybrid" }
+    },
+    "poll_archetypical": {
+      "permitted_styles": ["semi_realistic_digital", "vector_flat"],
+      "prohibited_styles": ["ghibli_illustration", "real_photography_only", "cinematic_color_graded"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "poll_stereotypical": {
+      "permitted_styles": ["semi_realistic_digital", "vector_flat"],
+      "prohibited_styles": ["ghibli_illustration", "real_photography_only", "cinematic_color_graded"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "poll_controversial_dilemma": {
+      "permitted_styles": ["semi_realistic_digital", "vector_flat"],
+      "prohibited_styles": ["ghibli_illustration", "real_photography_only", "cinematic_color_graded"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "single_tweet_quote": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital"],
+      "prohibited_styles": ["ghibli_illustration", "real_photography_only", "watercolor", "vector_flat"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    },
+    "nine_grid_accumulation": {
+      "permitted_styles": ["cinematic_color_graded", "semi_realistic_digital"],
+      "prohibited_styles": ["ghibli_illustration", "watercolor", "vector_flat", "real_photography_only"],
+      "mandatory_style": null,
+      "style_parameters": { "saturation_ceiling_pct": null, "saturation_floor_pct": null, "grammar_system": "cinematic" }
+    }
+  }
+}

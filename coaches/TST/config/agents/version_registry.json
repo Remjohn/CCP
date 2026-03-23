@@ -1,0 +1,40 @@
+{
+  "test_agent": [
+    {
+      "version": 1,
+      "config_path": "coaches\\TST\\config\\agents\\test_agent.json",
+      "snapshot_path": "coaches\\TST\\config\\agents\\_versions\\test_agent_v1_20260320_121926.json",
+      "changed_by": "integration_test",
+      "changed_at": "2026-03-20T12:19:26.673021Z",
+      "change_description": "Initial config",
+      "is_current": false
+    },
+    {
+      "version": 2,
+      "config_path": "coaches\\TST\\config\\agents\\test_agent.json",
+      "snapshot_path": "coaches\\TST\\config\\agents\\_versions\\test_agent_v2_20260320_121926.json",
+      "changed_by": "integration_test",
+      "changed_at": "2026-03-20T12:19:26.697562Z",
+      "change_description": "Upgrade model",
+      "is_current": false
+    },
+    {
+      "version": 3,
+      "config_path": "coaches\\TST\\config\\agents\\test_agent.json",
+      "snapshot_path": "coaches\\TST\\config\\agents\\_versions\\test_agent_v3_20260320_122051.json",
+      "changed_by": "integration_test",
+      "changed_at": "2026-03-20T12:20:51.627068Z",
+      "change_description": "Initial config",
+      "is_current": false
+    },
+    {
+      "version": 4,
+      "config_path": "coaches\\TST\\config\\agents\\test_agent.json",
+      "snapshot_path": "coaches\\TST\\config\\agents\\_versions\\test_agent_v4_20260320_122051.json",
+      "changed_by": "integration_test",
+      "changed_at": "2026-03-20T12:20:51.646211Z",
+      "change_description": "Upgrade model",
+      "is_current": true
+    }
+  ]
+}
