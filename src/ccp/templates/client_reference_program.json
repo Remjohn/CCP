@@ -1,0 +1,95 @@
+{
+  "template_id": "client_reference_program",
+  "template_version": "1.0.0",
+  "program_id": "reference-coaching-program",
+  "program_name": "Reference Coaching Program",
+  "description": "Reference client workspace template for testing and program onboarding.",
+  "sections": [
+    {
+      "section_type": "dashboard",
+      "title": "My Dashboard",
+      "permission": "READ_ONLY",
+      "components": [
+        {"type": "capacity_track", "label": "Current Capacity Track"},
+        {"type": "streak_counter", "label": "Daily Streak"},
+        {"type": "next_ritual", "label": "Next Scheduled Ritual"},
+        {"type": "progress_bar", "label": "Connection Level", "source": "intimacy_index"}
+      ]
+    },
+    {
+      "section_type": "learning_library",
+      "title": "Learning Library",
+      "permission": "READ_ONLY",
+      "content_blocks": [
+        {
+          "block_id": "BLK-W01-INTRO",
+          "title": "Welcome & Foundations",
+          "content_type": "video",
+          "program_tag": "week-1",
+          "unlock_condition": {"min_coping_position": 0, "min_atlas_week": 0}
+        },
+        {
+          "block_id": "BLK-W01-WORKSHEET",
+          "title": "Self-Assessment Worksheet",
+          "content_type": "worksheet",
+          "program_tag": "week-1",
+          "unlock_condition": {"min_coping_position": 0, "min_atlas_week": 0}
+        },
+        {
+          "block_id": "BLK-W01-EXERCISE",
+          "title": "Mirror Exercise",
+          "content_type": "exercise",
+          "program_tag": "week-1",
+          "unlock_condition": {"min_coping_position": 1, "min_atlas_week": 1}
+        },
+        {
+          "block_id": "BLK-W02-IDENTITY",
+          "title": "Identity Mapping",
+          "content_type": "video",
+          "program_tag": "week-2",
+          "unlock_condition": {"min_coping_position": 1, "min_atlas_week": 2}
+        },
+        {
+          "block_id": "BLK-W02-JOURNAL",
+          "title": "Voice DNA Journal Prompts",
+          "content_type": "article",
+          "program_tag": "week-2",
+          "unlock_condition": {"min_coping_position": 2, "min_atlas_week": 2}
+        },
+        {
+          "block_id": "BLK-W03-VULNERABILITY",
+          "title": "Authentic Vulnerability Workshop",
+          "content_type": "video",
+          "program_tag": "week-3",
+          "unlock_condition": {"min_coping_position": 2, "min_atlas_week": 3}
+        },
+        {
+          "block_id": "BLK-W03-CANVAS",
+          "title": "Identity Canvas",
+          "content_type": "excalidraw",
+          "program_tag": "week-3",
+          "unlock_condition": {"min_coping_position": 3, "min_atlas_week": 3}
+        },
+        {
+          "block_id": "BLK-W04-MASTERY",
+          "title": "Leadership Mastery Integration",
+          "content_type": "video",
+          "program_tag": "week-4",
+          "unlock_condition": {"min_coping_position": 3, "min_atlas_week": 4}
+        }
+      ]
+    },
+    {
+      "section_type": "journal",
+      "title": "My Journal",
+      "permission": "READ_WRITE",
+      "description": "Personal journal entries synced from CBCS Telegram interactions."
+    },
+    {
+      "section_type": "resources",
+      "title": "Resources",
+      "permission": "READ_ONLY",
+      "description": "Lead magnets, worksheets, Excalidraw diagrams, and downloadable assets."
+    }
+  ]
+}

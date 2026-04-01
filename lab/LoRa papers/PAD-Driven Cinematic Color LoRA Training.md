@@ -1,0 +1,203 @@
+# **Deterministic Mood State Induction via Pleasure-Arousal-Dominance Driven Cinematographic LoRA Adapters for FLUX 2 Dev**
+
+The evolution of generative media has reached a critical juncture where the focus shifts from the mere synthesis of aesthetically pleasing imagery to the deterministic engineering of psychological affect. Current state-of-the-art models, specifically the FLUX 2 Dev architecture, demonstrate remarkable capabilities in prompt adherence and structural fidelity, yet they frequently fail to provide the granular control required for professional cinematographic applications. Traditional prompting methods for "cinematic color grading" or "warm lighting" rely on the model’s latent representation of broad distribution averages, which results in unpredictable emotional responses and a lack of scientific rigor in mood induction.1 The proposed framework addresses these limitations by implementing a paired system of Low-Rank Adaptation (LoRA) modules designed to map the Pleasure-Arousal-Dominance (PAD) emotional model directly onto specific cinematographic color and lighting parameters. By utilizing the Color-Grammar Correlation System (CGCS), this methodology enables the induction of discrete psychological states—Processing, Escape, Discovery, and Status—through the weighted stacking of specialized adapters.3
+
+## **The PAD Model and the Neurophysiology of Affective Response**
+
+The foundation of this deterministic system lies in the Pleasure-Arousal-Dominance (PAD) model, a psychological framework developed by Albert Mehrabian and James A. Russell to quantify human emotional states.4 Unlike categorical models that treat emotions as distinct labels, the PAD model describes affect along three bipolar dimensions, allowing for a more nuanced and computationally accessible representation of internal states. Pleasure-Displeasure measures the valence of an emotion, Arousal-Nonarousal measures the level of physical and mental activation, and Dominance-Submissiveness measures the degree of control an individual feels over their environment.4
+
+The psychological utility of the PAD model is corroborated by contemporary neurophysiological research, which identifies specific brain activity patterns associated with these dimensions.8 Research utilizing electroencephalography (EEG) indicates that emotional valence is frequently reflected in Frontal Alpha Asymmetry (FAA), where increased activity in the left frontal lobe corresponds to positive pleasure, while right-hemisphere dominance is linked to withdrawal or negative affect.10 Arousal, conversely, is strongly associated with alpha desynchronization, the reduction of power in the 8–13 Hz frequency band, which indicates a state of heightened cortical activation and information processing.11 By aligning cinematographic parameters with these neurophysiological correlates, the CGCS framework provides a bridge between visual stimuli and measurable cognitive responses.8
+
+### **Dimensions of the PAD Model**
+
+| Dimension | Physiological Correlate | Visual Driver | Behavioral Output |
+| :---- | :---- | :---- | :---- |
+| Pleasure | Frontal Alpha Asymmetry (FAA) | Color Temperature, Saturation | Approach / Comfort |
+| Arousal | Alpha Desynchronization | Contrast Ratio, Hue Tension | Alertness / Interest |
+| Dominance | Gamma Wave Modulation | Camera Angle, Chiaroscuro | Empowerment / Submission |
+
+The assessment of these dimensions is traditionally conducted via the Self-Assessment Manikin (SAM), a non-verbal pictorial questionnaire that uses stylized figures to represent the 9-point scales of affect.13 SAM has been validated across cultures and age groups, proving particularly effective in measuring reactions to visual stimuli such as advertising and cinematography.6 In the context of the proposed LoRA pair, SAM provides the ground truth benchmark for evaluating whether the generated imagery successfully targets the intended PAD coordinates.10
+
+## **Cinematographic Emotional Grammar and the CGCS**
+
+The Cinematographic Emotional Grammar Framework (CEGF) posits that the elements of film grammar—including framing, staging, and lighting—constitute a visual language used to convey meaning and evoke impact.16 Central to this framework is the Color-Grammar Correlation System (CGCS), which maps specific technical parameters to four psychological states essential for narrative engagement.3 These states are not merely aesthetic choices but are functional tools for guiding the viewer through the emotional arcs of a story.
+
+### **The Four States of Mood Induction**
+
+The "Processing" state is characterized by low arousal and moderate valence, facilitating the audience’s assimilation of complex narrative information or internal reflection.3 Visually, this is achieved through warm monochromatic palettes and high-angle diffused lighting, which minimizes shadows and presents the subject in a state of vulnerability or openness.17 The high angle makes the subject appear smaller or more dependent, aligning with a low-dominance PAD vector.13
+
+The "Escape" state targets high valence and moderate arousal, evoking feelings of nostalgia, idealism, or profound comfort.19 The visual hallmarks of this state include "Golden Hour" backlighting (2700K–3200K), rim lighting for subject separation, and long, diffuse shadows.19 These parameters create a sense of vibrancy and expansiveness that draws the viewer into a soft, dream-like presence.20
+
+The "Discovery" state requires high arousal and is often implemented through cool-warm tension, where mixed color temperatures are used within the same frame to create visual vibration.7 High saturation and dynamic angles are used to mirror the psychological experience of encountering the unknown, triggering alpha desynchronization and maintaining high physiological alertness.10
+
+The "Status" state maps to high dominance and low-to-moderate valence, representing the domain of authority, cold power, and structural control.21 This state utilizes a desaturated blue-grey-charcoal palette, often limited to two or three dominant hues to reduce sensory distraction and emphasize form.20 The lighting is characterized by low fill ratios (1:6 to 1:8) and overhead top-lighting, which creates deep eye socket shadows—a technique famously employed by cinematographer Gordon Willis in *The Godfather* to project an aura of inscrutable power.21
+
+## **Technical Architecture and LoRA Integration on FLUX 2 Dev**
+
+The implementation of these states requires a deep understanding of the FLUX 2 Dev model, a 32-billion parameter rectified flow transformer.1 FLUX 2 Dev differs from its predecessors by utilizing a fused transformer architecture where attention and MLP projections are integrated into exceptionally wide matrices.2 This capacity allows for the direct processing of HEX color codes and high-fidelity latent representations, making it the ideal foundation for scientific color grading LoRAs.1
+
+### **Low-Rank Adaptation (LoRA) Mechanics**
+
+LoRA works by injecting small, trainable matrices into the attention modules of the transformer without modifying the original weights.1 The adapter learns a visual concept as a "delta" applied at inference.25 For the PAD-driven system, a rank of 16 is selected for each adapter. This rank is intentionally low to prevent cross-contamination and ensure that the LoRAs do not overwrite the model's base semantic understanding or its 24B Mistral text encoder.2
+
+The mathematical formulation for the weight update ![][image1] in a given layer is represented as:
+
+![][image2]  
+where ![][image3] and ![][image4] are low-rank matrices. The selection of rank 16 ensures that the adapter carves out a specific subspace for colorimetric and luminance distributions while maintaining the model’s ability to follow complex prompts.1 Because FLUX 2 Dev is guidance-distilled, training is conducted at a guidance\_scale \= 1 to ensure the LoRA learns base behavior rather than altering the internal guidance mechanism.2
+
+### **Training Protocol for Mood Induction**
+
+| Parameter | Specification | Purpose |
+| :---- | :---- | :---- |
+| Model | FLUX 2 Dev (32B) | High-capacity latent space for color science |
+| LoRA Rank | 16 | Balance between style capture and model stability |
+| Learning Rate | 1e-4 | Stable convergence for subtle color gradients |
+| Steps | 800–1200 | Optimal for 400–600 image datasets |
+| Batch Size | 1 (Effective 8–16) | VRAM efficiency and generalization |
+| Resolution | 1024 x 1024 | Alignment with pretraining window |
+
+Training focuses on the transformer weights, as the text encoders and VAE are typically frozen.25 To manage the significant VRAM requirements of FLUX 2 Dev (approximately 90GB for full precision), QLoRA is employed, quantizing the base model to 4-bit while the adapters train in 16-bit.1
+
+## **The Steel Authority Grade: Engineering Dominance**
+
+The "Steel Authority" LoRA is engineered to implement the "Status" state by prioritizing high-contrast, desaturated palettes and cold correlated color temperatures (CCT).21 The dataset for this adapter consists of 400–600 real-source images exhibiting high-dominance visual parameters. Sources include high-fashion editorial (Vogue), corporate authority photography, and masterwork cinematography, specifically the "dark and tasteful" lighting of Gordon Willis in *The Godfather*.22
+
+### **Visual Parameters of Authority**
+
+The "Steel Authority" grade utilizes a charcoal-blue-grey palette with a maximum of three hues to minimize visual "warmth" and "clutter," thereby focusing the viewer's mind on composition and contrast.20 The target CCT is ![][image5], creating a clinical, raw, and unsettled environment that reinforces the feeling of being in a "determined reality fabricated by humans".20
+
+The lighting architecture is defined by low fill ratios of 1:6 to 1:8, ensuring that the shadows cast by the key light are deep and non-diffused.22 This "Status" domain palette employs overhead top-lighting to obscure the eyes, creating a psychological barrier between the subject and the observer.21 This technique induces a feeling of submissiveness in the viewer (low dominance in the observer's PAD state) while elevating the perceived dominance of the subject.4
+
+### **Dataset Strategy and Color Fidelity**
+
+The dataset strategy is strictly "real-source only" to ensure the LoRA learns from authenticated color science rather than AI approximations \[Proposal Abstract\]. Synthetic data often fails to capture the subtle interactions between light and various surfaces, such as the way skin tones respond to high-CCT environments or the nuances of chiaroscuro shadows.1 By using Vogue editorials and *Godfather*\-style cinematography, the model learns the "scintillating" use of deep browns and engulfing blacks that establish a dark emotional milieu.21
+
+## **The Warm Intimacy Grade: Engineering Valence**
+
+The "Warm Intimacy" LoRA serves as the complement to "Steel Authority," targeting high-valence, high-pleasure states through the simulation of golden-hour light and luminous skin rendering.20 This grade is essential for the "PAIN" arc's vulnerability scenes, where the goal is to create a sense of approachability and comfort.20
+
+### **The Physics of Luminous Comfort**
+
+The visual parameters for "Warm Intimacy" are rooted in the psychological association of warmth with safety and relaxation.20 The grade focuses on:
+
+1. **CCT Range (2700K–3200K)**: Emulating the soft, orange glow of sunset or candlelight, which has been shown to improve mood and reduce anxiety in office and home environments.8  
+2. **Backlighting and Rim Lighting**: Utilizing light to create a thin outline around the subject, which provides separation from the background and adds a sense of three-dimensional depth.19  
+3. **Luminous Skin Rendering**: Leveraging the 32 latent channels of the FLUX 2 Dev VAE to preserve the delicate textures and sub-surface scattering required for realistic human representation.2
+
+The dataset for this LoRA includes Golden Hour editorials, Kodak Portra aesthetic photography, and candlelit portraiture \[Proposal Abstract\]. These sources are selected for their "truthful" yet stylized rendering of skin tones, avoiding the desaturated and clinical look of modern digital sensors in favor of a "hopeful mood" associated with high-key lighting.20
+
+## **Inference and the Weighted Stacking Protocol**
+
+The utility of the dual-LoRA system lies in its modularity. At inference, the two adapters can be loaded, swapped, or stacked to target specific PAD coordinates.2 The "16-LoRA stacking protocol" allows for the precise blending of these color backbones with other character or structural adapters in the pipeline.
+
+### **Blending for Discrete State Induction**
+
+| Target State | Steel Authority Weight | Warm Intimacy Weight | Intended PAD Effect |
+| :---- | :---- | :---- | :---- |
+| Status | 0.8 | 0.0 | High Dominance, Low Valence |
+| Escape | 0.0 | 0.8 | High Valence, Moderate Arousal |
+| Discovery | 0.3 | 0.3 | High Arousal (via Hue Tension) |
+| Processing | 0.1 | 0.6 | Low Arousal, Moderate Valence |
+
+The "Discovery" state is particularly achieved by applying both LoRAs at lower weights (0.3). This creates a "cool-warm tension" where the cool shadows of the Steel Authority grade contrast with the warm highlights of the Warm Intimacy grade, a configuration that tantalizes the viewer and creates a sense of vibrancy and expansiveness.20 This visual complexity triggers alpha desynchronization in the observer, leading to a state of heightened discovery and engagement.11
+
+## **Evaluation Methodologies: Automated Colorimetry**
+
+To validate that the LoRA pair provides deterministic results, an evaluation pipeline using automated colorimetry is implemented.31 This approach transforms subjective visual cues into objective, quantifiable, and reproducible digital outputs.32
+
+### **Histogram Analysis and Fill Ratio Estimation**
+
+Using Python-based libraries such as OpenCV and NumPy, the generated outputs are analyzed for hue range, saturation distribution, and luminance contrast.33 The intensity distribution of an image can be visualized through a histogram, where a left-skewed distribution indicates a dominance of dark pixels, characteristic of the "Status" state.36
+
+The Fill Ratio (![][image6]) can be calculated by segmenting the image into key-lit and fill-lit regions and comparing their average intensities:
+
+![][image7]  
+A target ratio of 1:6 to 1:8 for "Steel Authority" is verified by ensuring that the background and non-key areas of the face fall into the lower bins of the luminance histogram.30
+
+### **CCT and Spectral Analysis**
+
+Estimated CCT is calculated by converting the RGB values to the CIELAB color space and analyzing the blue-yellow (![][image8]) axis.40 The COOLPI (COlour Operations Library for Processing Images) package provides the necessary tools for white-point-preserving camera characterization, ensuring that the estimated CCT aligns with the CGCS ground truth tables (e.g., ![][image5] for Status and ![][image9] for Escape).41
+
+| Metric | Tooling | Status Target | Escape Target |
+| :---- | :---- | :---- | :---- |
+| Mean Brightness | np.mean(hsv\[:,:,2\]) | ![][image10] | ![][image11] |
+| Dominant Hue | cv2.calcHist | Blue / Charcoal | Orange / Gold |
+| Saturation (S) | hsv\[:,:,1\] | Low / Desaturated | High / Vibrant |
+| CCT Estimation | COOLPI | ![][image5] | ![][image12] |
+
+## **Pipeline Integration and Future Outlook**
+
+The Steel Authority and Warm Intimacy LoRAs serve as the color backbone for the entire CMF (Color, Material, Finish) and CCF (Cinematic Color Framework) pipeline \[Proposal Abstract\]. In the "MECHANISM" arc, Steel Authority provides the "Status" domain palette required for scenes of institutional power and cold efficiency.21 In the "PAIN" arc, Warm Intimacy provides the "luminous skin rendering" necessary for scenes of high-valence emotional vulnerability.20
+
+The future of this system lies in its integration with real-time physiological feedback loops. Just as machine learning models can now predict behavioral choices based on the first 10 seconds of exposure to a lighting condition, future iterations of the FLUX pipeline could dynamically adjust LoRA weights based on the viewer's EEG or heart rate variability data.8 This would move the industry toward a truly "emotion-adaptive" lighting system that emulates natural light-human interactions to optimize well-being, cognitive performance, and narrative impact.8
+
+By shifting the training of LoRAs from aesthetic imitation to the implementation of verified psychological models, the CGCS framework establishes a new standard for deterministic mood induction. The result is a system where the "cinematic look" is no longer a random artifact of latent space distribution but a precise, engineered stimulus designed to resonate with the fundamental neurophysiology of the human observer.
+
+#### **Sources des citations**
+
+1. What Is FLUX 2 Dev LoRA? Custom AI Image Styles with Fine-Tuning | MindStudio, consulté le mars 27, 2026, [https://www.mindstudio.ai/blog/what-is-flux-2-dev-lora/](https://www.mindstudio.ai/blog/what-is-flux-2-dev-lora/)  
+2. FLUX.2 \[dev\] LoRA Training Guide with Ostris AI Toolkit | RunComfy, consulté le mars 27, 2026, [https://www.runcomfy.com/trainer/ai-toolkit/flux-2-dev-lora-training](https://www.runcomfy.com/trainer/ai-toolkit/flux-2-dev-lora-training)  
+3. Color and Subjectivity in Film \- Researcher.Life, consulté le mars 27, 2026, [https://artefacts-discovery.researcher.life/full\_text/DA-2/a4/a4382df584b536b7815124f26298ce78/full\_text/adfaef42d33e41d061641f7345dc850d.pdf](https://artefacts-discovery.researcher.life/full_text/DA-2/a4/a4382df584b536b7815124f26298ce78/full_text/adfaef42d33e41d061641f7345dc850d.pdf)  
+4. PAD emotional state model \- Wikipedia, consulté le mars 27, 2026, [https://en.wikipedia.org/wiki/PAD\_emotional\_state\_model](https://en.wikipedia.org/wiki/PAD_emotional_state_model)  
+5. The PAD Model: Reflections \- BWGELA, consulté le mars 27, 2026, [https://www.bwgela.com/blog/pad](https://www.bwgela.com/blog/pad)  
+6. Observations: SAM: The Self-Assessment Manikin An Efficient Cross-Cultural Measurement Of Emotional Response1 \- AdSAM, consulté le mars 27, 2026, [https://www.adsam.com/wp-content/uploads/2020/02/Observations.pdf](https://www.adsam.com/wp-content/uploads/2020/02/Observations.pdf)  
+7. A hybrid color emotional experience approach: Integrating the pleasure-arousal-dominance model with fuzzy grey relational analysis | PLOS One \- Research journals, consulté le mars 27, 2026, [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0341895](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0341895)  
+8. Enhancing lighting design through the investigation of illuminance and correlated color Temperature's effects on brain activity: An EEG-VR approach | Request PDF \- ResearchGate, consulté le mars 27, 2026, [https://www.researchgate.net/publication/371297329\_Enhancing\_lighting\_design\_through\_the\_investigation\_of\_illuminance\_and\_correlated\_color\_Temperature's\_effects\_on\_brain\_activity\_An\_EEG-VR\_approach](https://www.researchgate.net/publication/371297329_Enhancing_lighting_design_through_the_investigation_of_illuminance_and_correlated_color_Temperature's_effects_on_brain_activity_An_EEG-VR_approach)  
+9. Non-visual effects of correlated color temperature and time-of-day on cognitive workload and autonomic regulation in confined spaces \- ResearchGate, consulté le mars 27, 2026, [https://www.researchgate.net/publication/397819693\_Non-visual\_effects\_of\_correlated\_color\_temperature\_and\_time-of-day\_on\_cognitive\_workload\_and\_autonomic\_regulation\_in\_confined\_spaces](https://www.researchgate.net/publication/397819693_Non-visual_effects_of_correlated_color_temperature_and_time-of-day_on_cognitive_workload_and_autonomic_regulation_in_confined_spaces)  
+10. Designing Light for Emotion: A Neurophysiological Approach to ..., consulté le mars 27, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC12562181/](https://pmc.ncbi.nlm.nih.gov/articles/PMC12562181/)  
+11. EEG alpha oscillations during the performance of verbal creativity tasks: Differential effects of sex and verbal intelligence | Request PDF \- ResearchGate, consulté le mars 27, 2026, [https://www.researchgate.net/publication/7274733\_EEG\_alpha\_oscillations\_during\_the\_performance\_of\_verbal\_creativity\_tasks\_Differential\_effects\_of\_sex\_and\_verbal\_intelligence](https://www.researchgate.net/publication/7274733_EEG_alpha_oscillations_during_the_performance_of_verbal_creativity_tasks_Differential_effects_of_sex_and_verbal_intelligence)  
+12. 2nd Annual Conference, consulté le mars 27, 2026, [https://iscrsociety.org/wp-content/uploads/2025/04/ISCR-2024-abstract-book-v202.pdf](https://iscrsociety.org/wp-content/uploads/2025/04/ISCR-2024-abstract-book-v202.pdf)  
+13. Self-Assessment Manikin \- Wikipedia, consulté le mars 27, 2026, [https://en.wikipedia.org/wiki/Self-Assessment\_Manikin](https://en.wikipedia.org/wiki/Self-Assessment_Manikin)  
+14. The Affective Slider: A Digital Self-Assessment Scale for the Measurement of Human Emotions \- PMC, consulté le mars 27, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC4743948/](https://pmc.ncbi.nlm.nih.gov/articles/PMC4743948/)  
+15. The Self-Assessment Manikin (SAM), adapted with permission from Bradley... \- ResearchGate, consulté le mars 27, 2026, [https://www.researchgate.net/figure/The-Self-Assessment-Manikin-SAM-adapted-with-permission-from-Bradley-and-Lang-1994\_fig1\_293120723](https://www.researchgate.net/figure/The-Self-Assessment-Manikin-SAM-adapted-with-permission-from-Bradley-and-Lang-1994_fig1_293120723)  
+16. Introduction to film grammar (video) \- Khan Academy, consulté le mars 27, 2026, [https://www.khanacademy.org/v/film-grammar-overview](https://www.khanacademy.org/v/film-grammar-overview)  
+17. 5\. Film Grammar – ANI 402 \- BMCC OpenLab, consulté le mars 27, 2026, [https://openlab.bmcc.cuny.edu/ani402/5-film-grammar/](https://openlab.bmcc.cuny.edu/ani402/5-film-grammar/)  
+18. (PDF) A psychology of the film \- ResearchGate, consulté le mars 27, 2026, [https://www.researchgate.net/publication/326158556\_A\_psychology\_of\_the\_film](https://www.researchgate.net/publication/326158556_A_psychology_of_the_film)  
+19. Crafting Cinematic Sora Video Prompts: A complete guide \- GitHub Gist, consulté le mars 27, 2026, [https://gist.github.com/ruvnet/e20537eb50866b2d837d4d13b066bd88](https://gist.github.com/ruvnet/e20537eb50866b2d837d4d13b066bd88)  
+20. The Psychology Of Color Grading & Its Emotional Impact \- Noam Kroll, consulté le mars 27, 2026, [https://noamkroll.com/the-psychology-of-color-grading-its-emotional-impact-on-your-audience/](https://noamkroll.com/the-psychology-of-color-grading-its-emotional-impact-on-your-audience/)  
+21. March 2022 \- CineVerse, consulté le mars 27, 2026, [https://www.cineversegroup.com/2022/03/](https://www.cineversegroup.com/2022/03/)  
+22. Film Adapter | Understanding Movies 9th Edition, consulté le mars 27, 2026, [https://filmadapter.files.wordpress.com/2014/10/understanding-movies-9th-edition.pdf](https://filmadapter.files.wordpress.com/2014/10/understanding-movies-9th-edition.pdf)  
+23. A L I N A Editorial Magazine: Exploring the Art of Editorial Photography \- Lemon8, consulté le mars 27, 2026, [https://www.lemon8-app.com/@artketingstudios/7277667099651146246?region=us](https://www.lemon8-app.com/@artketingstudios/7277667099651146246?region=us)  
+24. Digital Visions: Visual Realisations Mediating image fidelity and digital decay in the cinematographer's process. A study interrogating digital \- Bournemouth University, consulté le mars 27, 2026, [https://eprints.bournemouth.ac.uk/41308/1/BOND%2C%20Mark%20Anthony\_Ph.D.\_2023.pdf](https://eprints.bournemouth.ac.uk/41308/1/BOND%2C%20Mark%20Anthony_Ph.D._2023.pdf)  
+25. How to Flux Fine-Tune With LoRA for Custom AI Images \- Automagically by Segmind, consulté le mars 27, 2026, [https://blog.segmind.com/fine-tune-flux-custom-ai-images/](https://blog.segmind.com/fine-tune-flux-custom-ai-images/)  
+26. Diffusion Model Lora Training on Large Datasets \- Hugging Face Forums, consulté le mars 27, 2026, [https://discuss.huggingface.co/t/diffusion-model-lora-training-on-large-datasets/169431](https://discuss.huggingface.co/t/diffusion-model-lora-training-on-large-datasets/169431)  
+27. GENRE ANALYSIS OF IMDB FILM REVIEWS, consulté le mars 27, 2026, [https://epublications.vu.lt/object/elaba:192973742/192973742.pdf](https://epublications.vu.lt/object/elaba:192973742/192973742.pdf)  
+28. The Godfather Legacy: Assessing The Damage \- Italics Magazine, consulté le mars 27, 2026, [https://italicsmag.com/2021/01/21/the-godfather-legacy-assessing-the-damage/](https://italicsmag.com/2021/01/21/the-godfather-legacy-assessing-the-damage/)  
+29. Exploring Upside-Down Realms and Cosmic Superclusters with Multi-Disciplinary Artist Marcus Schaefer \- Coveteur, consulté le mars 27, 2026, [https://coveteur.com/artist-marcus-schaefer](https://coveteur.com/artist-marcus-schaefer)  
+30. Analyzing Mise en Scene in Film | PDF \- Scribd, consulté le mars 27, 2026, [https://www.scribd.com/document/523073027/Pramaggiore-and-Wallis-chapter-on-mise-en-scene-from-Film-A-Critical-Introduction-2008](https://www.scribd.com/document/523073027/Pramaggiore-and-Wallis-chapter-on-mise-en-scene-from-Film-A-Critical-Introduction-2008)  
+31. Real-Time Colorimetric Imaging System for Automated Quality Classification of Natural Rubber Using Yellowness Index Analysis \- MDPI, consulté le mars 27, 2026, [https://www.mdpi.com/2313-433X/11/11/397](https://www.mdpi.com/2313-433X/11/11/397)  
+32. (PDF) Artificial Intelligence and Machine Learning for Colorimetric Detections: Techniques, Applications, and Future Prospects \- ResearchGate, consulté le mars 27, 2026, [https://www.researchgate.net/publication/395331681\_Artificial\_Intelligence\_and\_Machine\_Learning\_for\_Colorimetric\_Detections\_Techniques\_Applications\_and\_Future\_Prospects](https://www.researchgate.net/publication/395331681_Artificial_Intelligence_and_Machine_Learning_for_Colorimetric_Detections_Techniques_Applications_and_Future_Prospects)  
+33. OpenCV Python Program to analyze an image using Histogram \- GeeksforGeeks, consulté le mars 27, 2026, [https://www.geeksforgeeks.org/python/opencv-python-program-analyze-image-using-histogram/](https://www.geeksforgeeks.org/python/opencv-python-program-analyze-image-using-histogram/)  
+34. image histogram \- Python Tutorial \- pythonspot, consulté le mars 27, 2026, [https://pythonspot.com/image-histogram/](https://pythonspot.com/image-histogram/)  
+35. Create Image Histogram Manually and Efficiently in Python \- Stack Overflow, consulté le mars 27, 2026, [https://stackoverflow.com/questions/40073003/create-image-histogram-manually-and-efficiently-in-python](https://stackoverflow.com/questions/40073003/create-image-histogram-manually-and-efficiently-in-python)  
+36. OpenCV: Image Histogram Calculations | by Sasani Perera | Medium, consulté le mars 27, 2026, [https://medium.com/@sasaniperera/opencv-image-histogram-calculations-4c5e736f85e](https://medium.com/@sasaniperera/opencv-image-histogram-calculations-4c5e736f85e)  
+37. Measuring & enhancing image quality attributes \- Towards Data Science, consulté le mars 27, 2026, [https://towardsdatascience.com/measuring-enhancing-image-quality-attributes-234b0f250e10/](https://towardsdatascience.com/measuring-enhancing-image-quality-attributes-234b0f250e10/)  
+38. Image Enhancement Techniques using OpenCV \- Python \- GeeksforGeeks, consulté le mars 27, 2026, [https://www.geeksforgeeks.org/machine-learning/image-enhancement-techniques-using-opencv-python/](https://www.geeksforgeeks.org/machine-learning/image-enhancement-techniques-using-opencv-python/)  
+39. What are some methods to analyze image brightness using Python? \- Stack Overflow, consulté le mars 27, 2026, [https://stackoverflow.com/questions/3490727/what-are-some-methods-to-analyze-image-brightness-using-python](https://stackoverflow.com/questions/3490727/what-are-some-methods-to-analyze-image-brightness-using-python)  
+40. josorio398/PyColorimetry\_Library: Tool for image segmentation and colorimetric analysis, consulté le mars 27, 2026, [https://github.com/josorio398/PyColorimetry\_Library](https://github.com/josorio398/PyColorimetry_Library)  
+41. COOLPI API Doc \- GitHub Pages, consulté le mars 27, 2026, [https://graffitiprojectindigo.github.io/COOLPI/](https://graffitiprojectindigo.github.io/COOLPI/)  
+42. Practical RGB-to-XYZ Color Transformation Matrix Estimation under Different Lighting Conditions for Graffiti Documentation \- MDPI, consulté le mars 27, 2026, [https://www.mdpi.com/1424-8220/24/6/1743](https://www.mdpi.com/1424-8220/24/6/1743)
+
+[image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAYCAYAAAB9ejRwAAAB80lEQVR4Xu2VvUsdQRTFj0QlioUgCEIaxUYUFAQhYErBFIqFhaDYWwnid6lNIqikEsQUSROwtREs9C+wErEVBEGwtBDx4xzvXDKO+3YtDHnFO/CDx8zumzPn3pkFKnoffSQN6eD/VDXZIUfIN9ZEvpPtiFFSF1hM5mZIbfRe/O4cLIiSKktTveSGPJDBZC7WB/KJHJAr0gfbRFVAi2+SOzJEGu215/e6A8dkMpp7JSUkfpBZmLF92K7z9Iuck5Z0glqG/Y82GutLYBq2gZLqCmyRelgJi9KSZOqStCXjzbAkHmFJubRJL5+eKSm5XQtoB9JncovitBbwMg0v3zxs4dTUCBkL5MoTEjVhTKX8Q+7JQBjLUmqqM6DSDcNMjYc59dk3WO/lHaLnXW3AFk4X97T2UDotLehpaCMrgXb8PTQyLk2R/vA7V9qV+sePciyltgsz5mVNJTNuSgtqYSHFpmRSZmW8UGVnSqVTM6ZliyUzMiVzMuk95/oKM6ULcB3WN0LqINfkN6zHFECh5P4nXicUS3PqKRlTj4lYnsYZ7GTF0t2lO0yX6xIK7iRJD6zCPifx5yALPaM0dBpFXAI3lXUY3NQJCu4kVyu5gC32VpSWJ+bSp+YU2T2nY39IJtKJfy2l04Ps0ihRzaV9WFFFFZWVngBuXX9T1A6vnAAAAABJRU5ErkJggg==>
+
+[image2]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmwAAAAiCAYAAADiWIUQAAACdklEQVR4Xu3cP6iNYRwH8EcoQpJBymCw+JNFsbBRDAxSFKtMVkryJwwWSgaJgYVkkUwMN5OYZSYZlCxM8uf363lPnvvei3s5cu/1+dS3c5/nvPfec7Zvv+c9pxQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYsCWRWf3NGWZ2mfnvEQCYoRZGvkYul7GFJp/7ErlYauGZF3kbuR+Z211zMnKvWf+p/DvLIi8j6yPLI5sijyKLm+smY0XkRal/CwBg2tkdeRx5H1nXey59jBxt1q8jN5r1+cjKZj0MiyJ3I3OavSyVO5v1ZBwv9X0obADAtLM9cqLUydWTUktbX066BgVtVanXjXTrnMAt7X4epl2Rzc16Y6nFsC1wE5UTu7Wlls4NvecAAKa866WWsLSv1ClW/1h0UNhy/1ipZe1Z99ze7nE8g6PNnGqNlzxi/ZFLkYORPaUexz4sY1/XRGX5Szmd+90JHQDAPzG/1MlT60DkTBldjka6nC31XrAsb1nijpS/M7FaHXnX28vp2NbeXsq9a/3NRv7elVKL36luDQAwbWwrY6dWebz5pnyfuqW82f95qRO4lNOvvB8sp2393x+GvKfuU29vf+RQby9lgdzR3+zke7hZalnLZFk7N+oKAIApbEupJezqOMmylB8sGMiJ2udmncUnj07/ljxuzQ8cDJwu9TVNphzmtRe6x4E8hn1Q6iddAQCmvFullq6fZSAnaXeadd4H9rRZD8uCyO1S//eHyKsuWbLWNNf9Sh6T5lePZMnMrxxJh5u9PM4FAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgP/MN0dVXQTx4sdPAAAAAElFTkSuQmCC>
+
+[image3]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAXCAYAAADUUxW8AAAAy0lEQVR4XmNgGOyAG4hZoZgkIAzEp4DYF4pJAhlA/J+BDM2yQHwSiP8BcTkUEw3I1swIxJVAHAHEDxlI1KwNxO0MENtBmhdCMUHAwgDRCDKAF4gPM5Cg2ZYB4mSQ03mA+AASBvGxAk4oXgrE+UAcAsQxQHyDgQjNAVDcwwDRCMOHgPguFIvDVSMBUEqaBsUgNjJoZYAEGghLosmB/VYGxJFQjA5AUfQJivWRJfyA+B0DJAnCFDhC5UAu2A3Ev6DyIPwKiEug8qNgaAAA/X8uemhTVPwAAAAASUVORK5CYII=>
+
+[image4]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAYAAAAC9s/ZAAAA/klEQVR4Xu3RoWtCQRwH8N9AwcGUTYQxNFhEBtv+Am2CaQa3IBjNZqPBpEmM9rFitSzIQ6N5UdgWDIOxNpgL+j3u+3x3t2eyiV/4INz37ng/T+TgUqPhDj3K+wfcnFMZfqANV5SBDv3BA8+Epip6U8FZ9y97Bw/OrNbI3hcMYAGXzvoNfcMzROxa36h4MBJ7Q1SCP/MDbo1um2v6gid4pAa8QJcS/gE3FfqFewlmzon+5Clluf9f1Oy75k/DG40hZpYqcZiRO7/KBczpFVJ2HcyutJxOpSh6NKUPJ3YtUhf99mHvfyd6rAklzbIk+llWsKYl15RP/jbhlI45rGwA+kg+YVCA3P0AAAAASUVORK5CYII=>
+
+[image5]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAXCAYAAABOHMIhAAADwElEQVR4Xu2XW6iNaRjHH6EIORONbIQcQjkUJrPTTKhxSIpys1MOF5LaDikXIhdzMzlGaCRJGZIYhNhy41CkGDfmgkTIqIkLSuP/2+/7WO/69rftta3sYq9//Vprve+3vu99n/c5fWYVVVRRK1dfMSN+puol2mfG2or+ok1mvGfkJ8ufR9xrVGSS6FA8/UkTxb4c1lrhP3Ny5n+Jc/VaKlaJTulgmeoqjkaOiEXisIXFuA6J/8XTyGPxTqyzglEwxEZxKsJ9Dojdcc41QlwXtZFl4oaYkFzjwjBDIzfFHTFcdEuuGSzuRn63cG3RIbDAMeKk+C3CqX6p2MwxsSXC/dnUKwuGch0ULywYC86LaVbsRZwum8JL3VM7irNiRfL7tFgZf7tmituiT2YcYRR4JnZk5qosHDBrhlxVjFasKivBaKlwUyCsuNmA4umSxGIJt/ShbGyNmOoXSTvF+OR3VhgPwx4X7SIu1nbJQkrhHs/Fj8k84tkvxazMOGIMSA+Lk/HpYq/okYw1S4PEfvGnBUOWIt/oLQsnDHgPuSWb9N1o5ApIcwrqIq5ZsXe61otHop+YL95awwNgjmu4NqutEbwf47K21Ra8l2JUtnj4LnFGjMzMZeUbvWchWQOb2RDHfyhcWp8GzlmhYHA4V8SwOO+bbsxo/4mx8fvnjEbhSIV34qXA4Q4RJywUocnJdWUJy+O2F8USC96U5p1UvtDXYnQEdRZ1FjbgYVYjpsTvLk4fg+OhTRnNDdWU0bL/91wGHCT5ixDFaDhHY3srSbgsJf5C/MyGV57ove5bOMHuEReL/8ca9mupZlvIM7QmjW0alWM0z2Ww3UK+BQrREwtpqVnyG+BRl8Vca16Mu+vXWfAucLF4EjPh11tsslC1U7nRMMTXymmeyzyfuXAMnp2two2KzdLgYm0gHJtjrFRUNjbLpsGVepobJ1vuU08jTCgqf1mhWLgI8zoLh4Kx/hU/J/OIfEeaSBtqTxOsz9foYl0PLDS8TbZcNRbKOqfOQsuKaQvJ9KEVum7ki91m4f5UY4pE+hbCOMXBcxqifaErZ0Me1h5K7hHZ3670v660N8seGMILOTS8rkXF5mst5DUgyf5hoeHl9cq1PI6xQKAFIR+OS64hj+6xQoWlsGBYvqf3oqX5WyyMVFvwGO/RBlp4rcIjMcqbCK9e3otuFu/j/AdxNUKebjGxGJhnIXfkhTthQEhCXi+HOISqyK/xMy8aCN/qhKJ3xW9F37XRcN0FJUJfxYLzFt2qVDFaRRVV9D3oIzsE7AUnmE0ZAAAAAElFTkSuQmCC>
+
+[image6]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAYCAYAAAALQIb7AAABl0lEQVR4Xu2UPyiGURTGjxgM/iRKishGmRSTMlgUBquyUFIsImU3UFKUwSLKIsViM3xlMBhYZLJIFBkNlD/P891zOe773voGvgzvU796u/e89557znOvSKY/0JiyWQCMKwdzKXOeZdANSiVFRdusBNQq/eAFrIIGQw84V7bNP6PgA0wG8b3gGuyBColoBLyDvnACGlbmzdgieAJtZsyLcUyEB/ghZkq2wC1o1HGWoVK/BxUmRLGURyAn6dmvSWSzGuVM3AJciOoE0/rdofhTMCEmxkVD1YMrcAyqg7n8ouQZLImrOxc9lPSSUhxnyWkY21tyCtZB1Ve00YTCnw/EOeoE3IFWE2e1IM5Mu+Lid8CjMi6uLQn5XoX9YqYb8l1Sq1i/ppSYaYq7WR24VKw5miTeL5b2XpLmmFHYe3ogIW8Mwj4UIibxBobMWBnYV6KbeWPELnOa0i4zy5lTfDuaxT1r+dfgBryKu3zkAVyAdgYE4n0jXIinYjzdOqvz7P2KQpfyKaP9u3T+1+VfohYwIM5kmTL9I30CVSdzXDk2Y90AAAAASUVORK5CYII=>
+
+[image7]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmwAAAArCAYAAADFV9TYAAADRElEQVR4Xu3dTahVVRQH8BVWKBVlihF9CGIDadCgaBA6EBJqIiIVhAMhQSEaCX5gkxpEVETgSErUJjlooAMVjAZKs2ru1EJwINIsqIG2Fvsc7vHwniDvvt7l8vvBn7vPOfe+N12svffZEQAAAAAAAAAAAAAAAAAAAAAAAAAAAADAitmTud6NH8qc7j4BAJgRxzMXu/H6zIHBMwAAZsCtzJvduIq1Z7rxw5mz3RgAgBV0I/N8TKZDq8u2O/Nc5ufB9wAAWAFrM/9kTmVOdJ/fZjZkPst8mdme+SFzOPNp5o3Me5mtmQvRunM6cQDAXKsCaaE8ldk3ulfrzR5pP5uKVzI7Muu66+qy9X//cuanzJPd9bXMd5lXM6syH2U+iVbYWfcGAMy1TZmbo3s1Rfl4N74TkzVm5W7m4OB6KU5mVo9vdqo4LJ9n3o1WoH2YOZR5KXM0Wtftt2jTqAAAc2tntCKsV92rZ6Mt+i/Xo60n602rYKtu2v7xzYH+/z82uNcXkeWtaN23rwb3AADm0pXMr9G6ah/f+yi2ZL6IVsDV9OW5aN8b64u8hVK7Pqc5jdqrdW41bQsAMPduZ37P/Jj5d/SsdmtWkVbr1/6Mtl5sIWsy7yySXWHKEgBgSapgq07ao9EKtF7t4Kz1Yf0as7fj3qnTpXp/GbIxAADmTK0J+yXzxPhBtCKuirleddcWK9iejtaBWyi1u/O1yVcBAHgQVZT1uzHH6ozP2iHa+z7zd7SF/uO1bgAAzIjaQLB5fBMAAAAAAACAxdSLcWuHZ++FwRgAgBlQmx4uduN6X5tzQQEAZky96+1IN66D3bcOnpU6HP7M4LreC1f5Jlo3rl7qu3fwHACAKbsR7birOlv0dLQu2/AFvmdjcq7o0KlovzkfrdADAGCZ/BHtzNHXM39FO9T9g+7ZsczNaB22OoD+65gcAF/viSuXop3KAADAMqgD5WvKc113XR2z4UHxVYjVy317w6nTKtzq+zsnjwEAmLbqklXnbDFVrPXdszph4UK0NW61MWFb5sXuugo/AACmrLpj+8c3B16ONiU6VAfU9+r343sAAPyPrkbbCQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3M9/oVtrepOO1hIAAAAASUVORK5CYII=>
+
+[image8]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAYCAYAAADzoH0MAAABD0lEQVR4Xu3TvWoCQRQF4CsmRTqLgIQIsTWlYpdHSMDCSi0CFpaWdqY1YBEIIY1gH1LkCXwGEcRGQUuFlKnNOTt35O4u0YCV4oGvmZmdufOzIkeTOnzBUN2Gu4MkIaFi2XuCFDzDWF2aPn7AjzuQU2emPwgbPqGv7Cqs5gO68K7a4ibd5Brm0FA2HFiCKfTUVWgEcgdLuFdNKMOFuJLZ9gh5VZHINlqwhld1A0/iyvUDOQlXjq3u9899nivmAb7FVbA1aZhJfO9V+IFCpD2WvSfgAa6gaNp4jbzOubgb2hrudSHhw+FD4oN6kT9eng1LHEHGtNVgIu42doan/ibugfhrHEDWjPlX+D94pxxUfgG0ly7PoB9AFgAAAABJRU5ErkJggg==>
+
+[image9]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAXCAYAAABOHMIhAAADVUlEQVR4Xu2XS6hNYRTHl1CECHlF7iVJhPLIq1yiKEkmlKFCQkpiYCBlYCJEJCUpJijJY6BcmbjIY4ABE6WEEKGQx/q11nI+++5z7s59JHf/69c5e3/fXmev9a1vfeuIlCpVqhOqizLMmaUM8HtZdVfGO9OVHn8O/xbPw1wxm62xNU05msNWqTyzNGd8oY+1i/qK/cgOZ5VyT7nsY6Fxyk1li7NGaVKmJnMIBDbOOyuVY8ohHwsVsRUiMGOcW2LvNlbpl8wZpTxw9orNrbYIbaK1yntltoPmKN+UnX7dU7mgbPDr0CLlrjLIr1ldnBrsIJ69pKxLrovYSkVQ4IVyIDNWp5wUWwjoEHWaoHUVM06KpmmaVbeEalqt/PBPQNSRz2JbC01RXooFMxUv+VpZLFa3jitnpPlv4uhVpZcUs5UV9+CnWPkIzVeOKP2Te7marDxUnov9CJxThqeTXBT1eU414SzOpCILvkulmC5XPok5nGqo8kzZpvRRbign/phhYpx5zC9iK6vdzhux4FIfN4tlLwlUUxRmVi0ChMMwQ7mvbJdKAJhzSql3agkbZC5QvB8p6/0+wpFajpKR8b1a0D4ok/x7S7ZS4Q9ZCreV0cpZ5YsyM5lXVRhuyN50USs2iq3GW+WJ2JFfRGylBof05+Qk2+LEa8lRAtVS0OL5IrZSRS0DMpn6xTsStIOS387kCmcotG1R0/I0QXmn7BN7qSKOVnMatSZoUctgv1hywBWxElVfmVpd9DJMhlgBMiOvprFt01MxT72l0szGqoUD/AZ2i9Sh9qppUcuinoUoIwQyewo3U9S0IX4djk5UrknzmkbTSkZCnrBHkxn1BlA4wIKwPXCQLb/Ax0PMJyPpyHkPTs+LYo1l2lxSpxrFFqiIrRDzG8UWA1iYED49Fmt4WfSqKlLTXomtwFOx1qGWIs3viAU5sjW252mxrR3zsqtKb0UXHouSXse97LPZ61DWFkp7s2x/hshCfCXrOlRs9yZlkxN/ozitIqNjHqfqCqdBbJXTvopae1gs2EDw9/h3sjrUkq2RYu9ERhKUjw67YoTP2aV89XHao+vOQB9vd+EsjsAysS476lsqtlxDQt7/O56rc5b459/a+qdVBq1UqVKlSv2f+gUWdOi3vGPBqQAAAABJRU5ErkJggg==>
+
+[image10]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAWCAYAAACVIF9YAAACn0lEQVR4Xu2WSchNYRjHH6HMFBmizGReEGWIBSKRSAk7C0OmUqQoQ5KkJCRsZGnYIBkW10akxIKdomwoKWVp+P96ntc953zX/b57uYXOr351znvee87zvMPzXrOSkpLfZLC8Gt6QB2X3bIdgZnhMdi48awlDwgPygtwd91kIZFl4Tp6WC6MdushLclsIG+QruUWOlZPNf/csHB79Wso0eTccZx7wfvnJfJSB4E+ZJ45dzQN+bT4g3A+K++UhjJI7ZD/zd02V+wp9Ws4/mWAnOVGuNw+43jrfK7+Hm6JtuvxivuSA5fpWvgwHRPtl+dl8kFKfbPC0HYlrmGeeIPFhwzCSvPyO3Ch75h/XZJg8HHINS80TJnkgGAYryT3vfiDfyKGyr3xs+QTnmu8/4N3MNv0aho/tNE+MIlBvxtqDd90yD75eMHyHZbw608Y1MeAUed68kDDwx6265DsE038ivGa+vpuadtEjPGM+IxU5OvM8MSd8Lt/J7ebBZxkTrrRqJV5jvhehj/nqwnVW4xgZL6+YJ5bK+59mifkezM5OkV7ytrU/05PMB46BoN91qw7UbHnUvIj9hJFtdYLZopIKSi1SgUrFqQiDcNaq590K+VD2DllxVGyqbRuyS5SEqZqNLlECuCffh6wOSAl+lBPMA/sqT4aJlCCHdxFi2SVXZdroXzH/LsJm86pdl2aLDB+pyBdhqqKccR/kTfM9QoLfzANGIAEKB4kvirYss+Qhyw86M12xfIJ7zI+ZDtHMMcHZ9CSkEKw131uPrJowSV40P/eQPhz4zPpWyycxMOTvXHFvsh+fypFhf/M92KbQ/Ir/PsEEH+zoPxlgYJAAKO8jrPZ+JiBcLBfIbrmnDlsFZxQfBPPl/ZCJYI+XlJT8BfwA4QuRnFmBMHoAAAAASUVORK5CYII=>
+
+[image11]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAWCAYAAACVIF9YAAACrElEQVR4Xu2WS6iNURTHlzCQZ5FHEVckbyLKs5RXIpGSDNQtjzxTiAyuJBmYeIeUkSQMlEekg0IpI4+RwS0lA2ZGBvx/rbU733fOx7mOc3XT+devzt7fOvvb67HX/syaaqqpv9RQcSO4JdpEr6xBaFZwXHSveNapGih2i4tis1Vvjs3AHHEqmBDPeojLYkeANop3YpsYKyaZ/+d1MDLsOl2LgudimugtbptnIIm5K8GRGC81d6BFDBEfxMoAjRa7xADzjE0RByts/om6lINshBJpVO2OEu+DZTE3TnwWJ2PczXxj94NUujzHDvthot3ym2fuaPxG883XYT0oFI6tEPdEa0A061WbeeSBLBSJDH0Ue4Mi9RcvLe/gPPPzh4abn23sOiQiQMrhujhhHrE/EYF5JJ4GO8Ul8cK8UaQqWS5+iO3BafN3PjCvgKS15oGHyeKCeSPpab4/yrRujTDvUNfMO9svSyCjdG6+B+tinm76SmyNMVnDQYIBKQubxBsxOMZoTLDaygFnXc4i6mflyttg1Z26plhgn/lZWWC/r/fk4NtgUObZ1cxccnBLkDRDfKuYq9REccY8iwTmppgb0EuOmV8xHVZy8I7VdrCPKGVgnISDn8w7IWcKByu7X3KQTRaJ9c5a+b5bJZ6IvgH7Omz+jpqqp0QR/3kW8NIkHGw3L7Px4otYEyQlBw9k5pJ4/x7L22NXMnc8BZNjwDpVakSTQYvNHQG+NlDK7Hnz8uGcUBG8A1LwyMhXMT3GWc02vy+zgaaUS5Z3cL+YmgxQo68JHDgUPBbrzS/zu5Zv6ThP4wFs+ZTjks9mCNFw4JxVXwmcR/7fEtDMKO9co/nvHaT98jWT7qhGiq5KE+HMFa1PJ4SZYolVO4D4WAdsirRQPAxIEu9qqqmmuoB+At02mIKZLbkFAAAAAElFTkSuQmCC>
+
+[image12]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAAXCAYAAAAr8TBeAAAFN0lEQVR4Xu2ZbcieYxjHDxmRIZExysNYaTQxlpo85SXKS6Fo5MsKW0uYkPZhtbQmymtKYj54CSVpEj5MfGCKVt6y1FZrWkIUWfJy/J7jOFzHdd7X9Tz32zM1179+Pfd9vZ7H/zzO8zjP+xHp1KlTp077iQ5SlijnOXPrp+VQ5RzlwOJ4k7hmgbLMKZ8VOlq50JmvHFA/PSXee5/ydANn+TU8Z2Nxbr1yhJ/vV4coZyun+WcoRRsnlIuUY52mduPnIjEv256FwgPi3yce0MnvKncprzq/Kaukejkd/avydwvvKYcpxymblQ3Kjc4HyjVSCSPWKm8oNzjPKE/6uSzeTyArHN61Upkn1bUk1/3KZ87Vfk+TcW26XHlNrL20/Wcnt/tI5UUxU+En52U/Fzpd+UhZo9yifOzgc6j0gPj78SD8ns4D4m/0gAPvKGf6d04CWfGncokfx4wPpTezNinfiGUw9z2iPOGfQ2coX4hlOuKZNIrGhsjet5Tb0rGsB5wfxMwMEeRq5V6xwEuj+tExyufKc2LtmCPW8bBLOdmve1isfRHbBc5esbg5zv1virUpdJnzqdhMgEoPuK8fD4h/Jg9a1XX2/6izY3qOaThErf1Decy/r/RjpW4Vm/7RCcoOsakwCzPpbK7DEEzFSEzN4l1lOxDfOQ6fKEel49xzhQw2ZZci4bc5MfW94PyiLBZbd2xJ3xHtANpEfMSJn3uk7hUdA9+LDZpRPOBdQ3tAENSom6V+8blidTs6m4eWWcNoJtvjeNxz5b9XmMKo55XDxWo4n0uRmTuV44vjpyjfOdGehWI1bsK/j6qDpYqD0faVwyhlxCGSeKNU9ZlYIp7obGo8g4dODxEPEBsxjuIB8Y/dA6aFPI1nESzQ2FPTcTqZxUNbZ5OZC8SCaQs0j5wQoyEWJjcpV4kZ+pL0joxRxIqZkvOsWMmCE2tX1MW1wCItpnFimK6z6Zz4PIwHxD82Dyac7cpD0juaUbwQUwgwNFNnA8kxXaClUYhaxYwBrIbvVF4RMxmzxyXK0HVi65XXHUZPk/CFqRiYViMpmmLInU3cM3V2eT8KD4h/LB4wWtmCwTpp7miuYVsB1Ous2ejsqFW7naV+nAXPX2LtbNNyqd7bBtsm6nQWCcwiE6izi+qnp87fo7zvsN0MNcUwamdnD4h/EA8aRcc+LjZ9AwGxyqO+ZJ0v1ShjasmajZrdVKtQJB11dV46PoyIk1Uy03iItgDJy/4161qxxVuUM0RcPGc2anb2IGsoD+jYO6RapAGi826Pi1yMZoIpA0KxGi9HPA35ViwQns3Ut1l6f1Winm2R+i9u1CYMx0TIIimjjo0iftTgObw/lDubKTTEovRRqa+W6bwH/S+e/KhcnM5Tf4Epl3hG8aDUQB7wYm7YKr17aPbf5QvIrrbO5lkx/UXCIGrK1/4XMf2wzcnZyIr3banvT1HsLWP7khUZT3bHCBtGtOd3qRI7x7FXbDZD/DTJXnmT1H1ilPOX+5ri4PllzOV37mu6F2UPSg3kARnH6i9Wuxn22cuqS6dE5nF904oRnSS2YME4kgFImvzTKyXjKbGVJAkAbGn4Hg1mVPGDBjsC2hI1+24/v1BsuxNtZTStcAYV7aFjmVYZ5WxF4+fSmO2ibpYeBXn0L1G+VK5XJsUGEuSyV3pA/P14QPwzeTA2sZdkKoM8erMIhIAvdZoyjnsnxH4MAD63PW9fiVHGemNSpv/nRT/i3kmn7VnZA/7Cf+1BTV1n96f9orM7derUqVOnTp06zaL+ASxwqnKcTmY7AAAAAElFTkSuQmCC>

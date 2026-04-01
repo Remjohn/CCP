@@ -1,0 +1,141 @@
+{
+  "template_name": "coach_workspace_master",
+  "template_version": "1.0.0",
+  "description": "CCP Coach AFFiNE Workspace Master Template — 8 mandatory root sections mirroring retired Notion dashboard (Parent PRD §9.8). Provisioned per coach during Genesis Pipeline (Step 2).",
+  "adr_references": ["ADR-01", "ADR-05"],
+  "spec_reference": "FR-CA11-01 §4 Stage 1",
+  "sections": [
+    {
+      "section_id": "command_center",
+      "title": "Command Center",
+      "description": "Pipeline status indicators and task management.",
+      "page_type": "kanban_database",
+      "database_schema": {
+        "columns": [
+          {"name": "Task", "type": "title"},
+          {"name": "Status", "type": "select", "options": ["In Progress", "Review", "Published"]},
+          {"name": "Pipeline", "type": "select", "options": ["CCF", "V2WS", "CBCS", "CPSC", "CVE"]},
+          {"name": "Batch ID", "type": "text"},
+          {"name": "Created", "type": "date"},
+          {"name": "Updated", "type": "date"}
+        ]
+      },
+      "embedded_views": ["batch_status_indicator", "v2ws_status_indicator"]
+    },
+    {
+      "section_id": "content_calendar",
+      "title": "Content Calendar",
+      "description": "Weekly scripts, visual assets, and posting schedule.",
+      "page_type": "database",
+      "database_schema": {
+        "columns": [
+          {"name": "Asset ID", "type": "title"},
+          {"name": "Script Preview", "type": "rich_text"},
+          {"name": "Visual Assets", "type": "files"},
+          {"name": "Posting Notes", "type": "rich_text"},
+          {"name": "Voice Note", "type": "files"},
+          {"name": "Why This Post", "type": "rich_text"},
+          {"name": "Leadership Farming", "type": "rich_text"},
+          {"name": "Fingerprint ID", "type": "text"},
+          {"name": "Status", "type": "select", "options": ["Draft", "Review", "Scheduled", "Published"]}
+        ]
+      }
+    },
+    {
+      "section_id": "client_intelligence_hub",
+      "title": "Client Intelligence Hub",
+      "description": "Aggregated SPT distribution, ICT histograms, Intimacy Index averages, anonymized engagement heatmap.",
+      "page_type": "dashboard",
+      "embedded_views": [
+        "spt_distribution_chart_excalidraw",
+        "tribe_ict_histogram",
+        "intimacy_index_averages",
+        "anonymized_engagement_heatmap"
+      ]
+    },
+    {
+      "section_id": "cpsc_campaign_console",
+      "title": "CPSC Campaign Console",
+      "description": "Campaign performance history, Loom Report archive, client segmentation by coping position.",
+      "page_type": "database",
+      "database_schema": {
+        "columns": [
+          {"name": "Campaign ID", "type": "title"},
+          {"name": "Campaign Type", "type": "select", "options": ["Challenge", "Webinar", "Sequence", "Promotional"]},
+          {"name": "Performance Score", "type": "number"},
+          {"name": "Conversion Rate", "type": "number"},
+          {"name": "Loom Report", "type": "files"},
+          {"name": "Client Segment", "type": "multi_select"},
+          {"name": "Status", "type": "select", "options": ["Active", "Completed", "Archived"]},
+          {"name": "Created", "type": "date"}
+        ]
+      }
+    },
+    {
+      "section_id": "cral_evidence_vault",
+      "title": "CRAL Evidence Vault",
+      "description": "Searchable database of CRAL findings indexed by Moment (M1-M7), coach theme, and usage status.",
+      "page_type": "database",
+      "database_schema": {
+        "columns": [
+          {"name": "Finding ID", "type": "title"},
+          {"name": "Moment", "type": "select", "options": ["M1 RELEVANT", "M2 BELIEVABLE", "M3 UNDENIABLE", "M4 RESONANT", "M5 SURPRISING", "M6 IRREFUTABLE", "M7 RELATABLE"]},
+          {"name": "Theme", "type": "text"},
+          {"name": "Finding Summary", "type": "rich_text"},
+          {"name": "Source URL", "type": "url"},
+          {"name": "Usage Status", "type": "select", "options": ["Available", "Used", "Retired"]},
+          {"name": "Used In", "type": "relation"},
+          {"name": "Created", "type": "date"}
+        ]
+      }
+    },
+    {
+      "section_id": "guardian_agent_console",
+      "title": "Guardian Agent Console",
+      "description": "Genesis Clearance Certificate status, Stewardship Report timeline, Signal Monitoring alerts.",
+      "page_type": "dashboard",
+      "embedded_views": [
+        "genesis_clearance_status_card",
+        "stewardship_report_timeline",
+        "signal_monitoring_alerts"
+      ],
+      "alert_types": ["Lexicon Drift", "Cultural Evolution", "Campaign Fatigue"]
+    },
+    {
+      "section_id": "visual_production_console",
+      "title": "Visual Production Console",
+      "description": "VPO delivery database with slide previews, AGSS scores, TIAR decay audit, Receipt Chain status, Canva App deep links.",
+      "page_type": "database",
+      "database_schema": {
+        "columns": [
+          {"name": "VPO ID", "type": "title"},
+          {"name": "Slide Previews", "type": "files"},
+          {"name": "AGSS Score", "type": "number"},
+          {"name": "TIAR Decay Audit", "type": "rich_text"},
+          {"name": "Receipt Chain Status", "type": "select", "options": ["Valid", "Quarantined", "Pending"]},
+          {"name": "Canva App Link", "type": "url"},
+          {"name": "Fingerprint ID", "type": "text"},
+          {"name": "Created", "type": "date"}
+        ]
+      }
+    },
+    {
+      "section_id": "program_content_library",
+      "title": "Program Content Library",
+      "description": "Hierarchical content library organized by learning journey, with program tags and client visibility rules.",
+      "page_type": "hierarchical_database",
+      "database_schema": {
+        "columns": [
+          {"name": "Content Title", "type": "title"},
+          {"name": "Content Type", "type": "select", "options": ["Video", "Text", "Audio", "Diagram", "Worksheet"]},
+          {"name": "Program Tag", "type": "multi_select"},
+          {"name": "Learning Journey", "type": "relation"},
+          {"name": "Sequence Position", "type": "number"},
+          {"name": "Difficulty Level", "type": "select", "options": ["Beginner", "Intermediate", "Advanced"]},
+          {"name": "Client Visibility", "type": "select", "options": ["All", "Enrolled", "Completed Prerequisites"]},
+          {"name": "Created", "type": "date"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+You are the Principal CCP Implementation Executor. Your operating protocol is defined in the following file — read it completely before producing any output:
+d:\Work\The Conscious Coaching Factory\docs\architecture\PROMPT_Spec_Build.md
+
+After reading the prompt file, produce the Pre-Build Context Confirmation and then immediately proceed to Stage 1 (Spec Decomposition) and Stage 2 (Implementation) without waiting for confirmation. Do not halt between the Pre-Build Context Confirmation and the build. Do not halt after emitting the Build Receipt unless you encounter a BUILD_AMBIGUITY, BUILD_FLAG, or BUILD_BLOCKED condition.
+
+After emitting the Build Receipt, immediately begin the next spec in sequence without waiting for operator confirmation. Continue building specs in dependency order until you encounter a flag condition or complete the current phase.
+
+The current build target is: PHASE 4 (CA11 Quad-Platform Intelligence Layer): FR-CA11-01 through FR-CA11-15

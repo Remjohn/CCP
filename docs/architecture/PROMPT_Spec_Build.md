@@ -55,6 +55,9 @@ Read the following in this exact order. Do not begin implementation until all do
 2. `D:\Work\The Conscious Coaching Factory\lab\CCP update\Final_Architecture_Stress_Test_Documentation.md`
    — This is the architectural decision log. Every unusual constraint, every non-obvious gate, every strict rule in the specs has a reason documented here. When a spec instruction seems over-engineered, this document explains why it exists. Read it before you question it.
 
+2b. `D:\Work\The Conscious Coaching Factory\docs\architecture\Final_Architecture_Stress_Test_Phase4_CA11.md`
+   — Phase 4 extension of the stress test covering native Studio Block, WebRTC, Trivianar, and Social Scheduling constraints. Required reading for any Step 19-23 build.
+
 3. `D:\Work\The Conscious Coaching Factory\docs\prd\prd.md`
    — The PRD defines what the system is for. If an implementation decision creates tension with the product's purpose, this is your reference. You are not building features — you are building a system that serves a specific human purpose.
 
@@ -74,6 +77,35 @@ Read the following in this exact order. Do not begin implementation until all do
 - **CBCS batch (FR-CBCS-01 through CBCS-14):** `D:\Work\The Conscious Coaching Factory\lab\CCP update\CCP_CBCS_CPSC_V3.docx.md` + all academic papers in `D:\Work\The Conscious Coaching Factory\lab\CBCS research papers\`
 - **Conversion batch (FR51-FR60):** `D:\Work\The Conscious Coaching Factory\lab\CCP update\CCP_Sales_Cycle_Documentation_V1.docx.md`
 - **VIS batch (FR-VIS-01 through VIS-13):** `D:\Work\The Conscious Coaching Factory\lab\CCP update\CVE_Documentation_V3_complete.md` + all academic papers in `D:\Work\The Conscious Coaching Factory\lab\CVE + CPSC research papers\` + Canva-clone base repo: https://github.com/Davronov-Alimardon/canva-clone
+- **CA11 batch (FR-CA11-01 through FR-CA11-15 — Steps 15-20):**
+  - `D:\Work\The Conscious Coaching Factory\docs\prd\prd-update-CA11-quad-platform.md` — PRD governing all 22 specs (15 original + 7 CCP Studio)
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\FR-CA11-01_Coach_Workspace_Provisioning_Tech_Spec.md` through `FR-CA11-15_Contextual_Branding_Dynamic_PAD_Tech_Spec.md` — all 15 revised specs
+  - `D:\Work\The Conscious Coaching Factory\lab\CCP update\CA11_Quad_Platform_Spec_Audit.md` — completed 5-Lens audit findings
+  - `D:\Work\The Conscious Coaching Factory\lab\CCP update\CA11_Quad_Platform_Spec_Revisions.md` — approved revision instructions (Decision Log, Global Fix, per-spec fixes)
+  - `D:\Work\The Conscious Coaching Factory\MCDA_15_Cross_Platform_Workflows.md` — MCDA scoring for the 15 cross-platform workflows
+  - Academic papers (Color Psychology / PAD model) in `D:\Work\The Conscious Coaching Factory\lab\CVE + CPSC research papers\`
+  - AFFiNE fork repo: https://github.com/toeverything/affine (BlockSuite custom block API)
+  - Excalidraw React package: https://www.npmjs.com/package/@excalidraw/excalidraw
+
+- **CA11 Phase 4 Studio batch (FR-CA11-16 through FR-CA11-22 — Steps 21-23):**
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\FR-CA11-16_CCP_Studio_Block_Tech_Spec.md` through `FR-CA11-22_Stream_Overlay_Trivianar_Display_Tech_Spec.md` — all 7 CCP Studio specs
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\Audit_Report_CA11_Phase4.md` — 5-Lens audit for Studio specs
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\SPEC_REWRITE_BRIEFING.md` — architectural context briefing
+  - `D:\Work\The Conscious Coaching Factory\docs\features\FB_Interactive_Trivianar_Engine.md` — Trivianar feature brief
+  - `D:\Work\The Conscious Coaching Factory\docs\features\FB_Full_Stack_Recording_Streaming.md` — Studio feature brief
+  - `D:\Work\The Conscious Coaching Factory\docs\features\FB_Social_Scheduling_Performance.md` — Social scheduling feature brief
+  - `D:\Work\The Conscious Coaching Factory\MCDA_CCP_Studio_Integration.md` — CCP Studio vs OBS architectural MCDA
+  - TribeNest streaming core: extraction target for ccp-stream-service microservice
+
+- **COM batch — Commercial Intelligence Layer (FR-COM-01 through FR-COM-04 — Steps 24-27):**
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\FR-COM-01_AFFiNE_Billing_Credit_System_Tech_Spec.md` — Billing Middleware, Stripe metered billing, Redis jail
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\FR-COM-02_Global_Admin_Dashboard_Tech_Spec.md` — Factory Floor, Traffic Control, Treasury (Next.js admin)
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\FR-COM-03_Telegram_Code_Onboarding_Agent_Tech_Spec.md` — Code-based enrollment + auto-provisioning
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\FR-COM-04_Program_Campaign_Manager_Tech_Spec.md` — Program/campaign/funnel management
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\Audit_Report_FR-COM-01_to_04.md` — 5-Lens Audit (1 CRITICAL + 2 WARNING resolved)
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\Revision_Instructions_FR-COM-01_to_04.md` — Revision proof
+  - `D:\Work\The Conscious Coaching Factory\docs\architecture\Final_Architecture_Stress_Test_Visual_Commercial_Layer.md` — CBAR 9-question stress test (Q1-Q9 ADL)
+  - `D:\Work\The Conscious Coaching Factory\CBCS\backend\database\migrations\005_commercial_layer.sql` — v1.1 schema (11 tables + 1 matview)
 
 ---
 
@@ -335,6 +367,92 @@ PHASE 3 — CBCS RELATIONSHIP INTELLIGENCE + CPSC
          FR58 → Offer Tier Architecture
          FR59 → Campaign Orchestration Agent (Samuel — operator-triggered, never autonomous)
          FR60 → Loom Report Generation (Rachel — narrative intelligence reports)
+
+PHASE 4 — CA11 QUAD-PLATFORM INTELLIGENCE LAYER
+(after Phase 3 CPSC complete. Delivers the sovereign Coaching OS: AFFiNE workspace, native CCP Studio, Trivianar, Excalidraw live overlays, Telegram reflexes, Social Scheduling, and DPA Branding Engine.)
+
+⚠ ADR-05 ENFORCED: Notion is RETIRED. All workspace delivery targets AFFiNE (affine_sync.py).
+⚠ ADR-06 RETIRED: OBS WebSocket integration is RETIRED. FR-CA11-13 and FR-CA11-14 are deprecated.
+⚠ ADR-07 ENFORCED: Native CCP Studio Block replaces OBS. See FR-CA11-16 through FR-CA11-22.
+⚠ DEP-ID RANGE: DEP-ENG-087 through DEP-ENG-126 allocated to Phase 4 Studio specs (register at Step 21 start).
+⚠ DEP-ID RANGE: DEP-ENG-071 through DEP-ENG-086 allocated to Phase 4 original CA11 specs (register at Step 15 start).
+
+Step 15: CA11 Core Infrastructure (Workspace + Sync)
+         Specs: FR-CA11-01, FR-CA11-02, FR-CA11-03
+         FR-CA11-01 → Coach Workspace Provisioning (Pierre) → DEP-ENG-071
+         FR-CA11-02 → AFFiNE Sync Service (affine_sync.py) → DEP-ENG-072
+         FR-CA11-03 → Client Workspace Provisioning (Noémie) → DEP-ENG-073
+         Depends on: Phase 3 COMPLETE, Supabase schema live, AWS VPC active
+
+Step 16: CA11 Intelligence Layer (Learning + Session)
+         Specs: FR-CA11-04, FR-CA11-05, FR-CA11-06, FR-CA11-07
+         FR-CA11-04 → Learning Path Builder (Gabrielle) → DEP-ENG-074
+                      ⚠ Build FIRST — defines content_type enum consumed by 06 and 07
+         FR-CA11-05 → AI Session Recap Generator (NVIDIA NIM + Benjamin) → DEP-ENG-075
+                      ⚠ Now triggered by CCP Studio Block (FR-CA11-16), not OBS.
+         FR-CA11-06 → Voice Note → Course Material (Gabrielle) → DEP-ENG-076
+         FR-CA11-07 → Session-to-Course Pipeline (Gabrielle) → DEP-ENG-077
+         Depends on: Step 15 BUILT
+
+Step 17: CA11 Content Production Layer (Machine + Accountability)
+         Specs: FR-CA11-08, FR-CA11-09
+         FR-CA11-08 → Content Machine Pipeline (Julio + Cesare) → DEP-ENG-078
+         FR-CA11-09 → Accountability Visualization (Benjamin via excalidraw_embed.py) → DEP-ENG-079
+         Depends on: Step 16 BUILT (Session Intelligence Report must exist)
+
+Step 18: CA11 Visual Layer (Excalidraw Embed + CVE Delivery)
+         Specs: FR-CA11-10, FR-CA11-11
+         FR-CA11-10 → Excalidraw Embedded Workspace (BlockSuite custom block) → DEP-ENG-080
+                      ⚠ Requires AFFiNE fork with BlockSuite plugin support deployed
+         FR-CA11-11 → CVE Canva → AFFiNE Delivery (endpoint rewire) → DEP-ENG-081
+         Depends on: Step 15 BUILT
+
+Step 19: CA11 Video Pipeline (CMF Only — OBS Retired)
+         Specs: FR-CA11-12
+         FR-CA11-12 → Course Video CMF Pipeline (editorial_template extension) → DEP-ENG-082
+         ⚠ FR-CA11-13 (OBS Controller) RETIRED — replaced by FR-CA11-16 (CCP Studio Block)
+         ⚠ FR-CA11-14 (OBS Overlay) RETIRED — replaced by FR-CA11-22 (Stream Overlay)
+         Depends on: Step 16 BUILT
+
+Step 20: CA11 DPA Branding Engine (MUST BE BUILT LAST IN ORIGINAL CA11)
+         Specs: FR-CA11-15
+         FR-CA11-15 → Dynamic Palette Adaptation Engine (dpa_engine.py + POST /palette/resolve) → DEP-ENG-085, DEP-ENG-086
+         Depends on: Steps 17, 18, 19 BUILT — all visual consumers must be deployed first
+         ⚠ Run branding.json migration script (existing coach JSON → extended schema) BEFORE wiring
+
+Step 21: CCP Studio Block Foundation (Recording + Streaming + Soundboard)
+         Specs: FR-CA11-16, FR-CA11-17
+         FR-CA11-16 → CCP Studio Block (Diego) → DEP-ENG-087 through DEP-ENG-093
+                      ⚠ STRESS TEST Q34 ENFORCED: MediaRecorder must chunk to IndexedDB (5s Blob)
+                      ⚠ STRESS TEST Q35 ENFORCED: Guest audio MUST use AEC + auto-ducking
+                      ⚠ STRESS TEST Q38 ENFORCED: Overlay MUST run on OffscreenCanvas Web Worker
+                      ⚠ Requires TribeNest streaming core extraction → ccp-stream-service
+                      ⚠ Requires coturn TURN server on AWS for WebRTC NAT traversal
+         FR-CA11-17 → Studio Soundboard & Programmable Audio (Diego) → DEP-ENG-094 through DEP-ENG-098
+         Depends on: Step 15 BUILT (AFFiNE workspace must exist), Step 16 BUILT (FR-CA11-05 pipeline trigger)
+
+Step 22: CCP Studio Interactive Intelligence (Trivianar + Lead Capture + Social)
+         Specs: FR-CA11-18, FR-CA11-19, FR-CA11-20
+         FR-CA11-18 → Social Scheduling & Performance Analysis (Sofia) → DEP-ENG-099 through DEP-ENG-103
+                      ⚠ STRESS TEST Q39 ENFORCED: ±4 hour temporal mutex against manual posts
+                      ⚠ Requires Postiz (self-hosted) deployment with API credentials
+         FR-CA11-19 → Interactive Trivianar Engine (Marco) → DEP-ENG-104 through DEP-ENG-113
+                      ⚠ STRESS TEST Q36 ENFORCED: Dynamic stream_latency_offset pacing lock
+                      ⚠ STRESS TEST Q37 ENFORCED: Redis PII buffer for high-volume lead capture
+                      ⚠ stream_id MUST FK → studio_sessions.id (audit flag resolved)
+                      ⚠ Post-stream batch receipt (no per-click receipting)
+         FR-CA11-20 → Trivianar Lead Capture Viral Loop (Marco) → DEP-ENG-114 through DEP-ENG-116
+                      ⚠ PII capture Receipt Chain Guard write mandatory
+         Depends on: Step 21 BUILT (Studio Block must exist and produce stream_id/session_id)
+
+Step 23: CCP Studio Overlay & Guest Join
+         Specs: FR-CA11-21, FR-CA11-22
+         FR-CA11-21 → Studio Guest Join - WebRTC (Diego) → DEP-ENG-117 through DEP-ENG-121
+                      ⚠ Requires coturn TURN server
+                      ⚠ 1-guest MVP, composite canvas via Web Audio API mixing
+         FR-CA11-22 → Stream Overlay & Trivianar Display (Marco) → DEP-ENG-122 through DEP-ENG-126
+                      ⚠ Must run on OffscreenCanvas (same Web Worker architecture as Studio Block)
+         Depends on: Steps 21 + 22 BUILT
 ```
 
 **SEQUENCE ENFORCEMENT RULES:**
@@ -342,7 +460,114 @@ PHASE 3 — CBCS RELATIONSHIP INTELLIGENCE + CPSC
 - Step 1 has no confirmed spec. Do not begin Step 1 without operator confirmation of which spec file covers Dependency Registry initialization.
 - Within Phase 2B, FR-VIS-13 (Gate V-00) must be built before any other VIS spec — it gates all downstream visual production.
 - Within Phase 3 CPSC, FR55 and FR56 must be built before FR59 — the orchestrator consumes their outputs.
+- Within Phase 4 CA11 (original): Step 15 (workspace infrastructure) must be BUILT before Steps 16, 17, 18. Step 16 must be BUILT before Steps 17 and 19. Step 20 (DPA Engine) must be built LAST in original CA11 — all visual consumers must exist before DPA wires into them.
+- Within Phase 4 CA11 (original): FR-CA11-04 must be BUILT before FR-CA11-06 and FR-CA11-07 (enum dependency).
+- Within Phase 4 CA11 (Studio): Step 21 must be BUILT before Step 22 (Trivianar depends on stream_id from Studio). Step 23 must be BUILT last (overlay depends on both Studio and Trivianar).
+- Original CA11 specs use DEP-ENG-071 through DEP-ENG-086. Studio specs use DEP-ENG-087 through DEP-ENG-126. Ranges are non-overlapping. All PROPOSED until registered.
 - If a spec does not map cleanly to its assigned step, halt. Report the mapping ambiguity to the operator before proceeding.
+
+PHASE 5 — COMMERCIAL INTELLIGENCE LAYER
+(after Phase 4 Studio complete. Delivers Stripe billing enforcement, admin dashboard, Telegram onboarding, program/campaign management.)
+
+⚠ CBAR STRESS TEST MANDATES ENFORCED: Q1-Q9 from Final_Architecture_Stress_Test_Visual_Commercial_Layer.md.
+⚠ DEP-ID RANGE: DEP-COM-001 through DEP-COM-011 allocated to Phase 5 specs.
+⚠ SCHEMA: Migration 005_commercial_layer.sql v1.1 (11 tables + 1 materialized view).
+
+Step 24: Billing Middleware
+         Specs: FR-COM-01
+         FR-COM-01 → AFFiNE Billing & Credit System → DEP-COM-001 through DEP-COM-004
+                   ⚠ CBAR Q4 ENFORCED: Billing Isolation Principle — grace window for pre-queued messages
+                   ⚠ CBAR Q5 ENFORCED: Metered Billing Queue — async pre-billing with idempotency keys
+                   ⚠ billing_queue table is CBAR-sourced (not in original spec) — schema in Migration 005 v1.1
+         Depends on: Phase 4 Studio COMPLETE
+
+Step 25: Program & Campaign Manager
+         Specs: FR-COM-04
+         FR-COM-04 → Program & Campaign Manager → DEP-COM-009 through DEP-COM-011
+                   ⚠ CBAR Q7 ENFORCED: Admin Override Enrollment Protocol — capacity expansion, not bypass
+                   ⚠ CBAR Q9 ENFORCED: analytics_events + mv_campaign_analytics (signed token validation)
+                   ⚠ analytics_events table and mv_campaign_analytics matview are CBAR-sourced
+         Depends on: Step 24 BUILT (billing gate required for program creation)
+
+Step 26: Telegram Code Onboarding Agent
+         Specs: FR-COM-03
+         FR-COM-03 → Telegram Code Onboarding Agent → DEP-COM-007, DEP-COM-008
+                   ⚠ CBAR Q8 ENFORCED: Multi-enrollment schema — UNIQUE(telegram_user_id, coach_id), not UNIQUE(telegram_user_id)
+                   ⚠ Audit Revision: ALTER TABLE profiles instead of CREATE TABLE cbcs_clients
+                   ⚠ First-message billing trigger — $4 usage at bot-first-message time (not enrollment)
+         Depends on: Steps 24 + 25 BUILT (billing middleware + program registry both required)
+
+Step 27: Global Admin Dashboard (Factory Floor)
+         Specs: FR-COM-02
+         FR-COM-02 → Global Admin Dashboard → DEP-COM-005, DEP-COM-006
+                   ⚠ CBAR Q6 ENFORCED: LoRA Version Lock at approval — version ID comparison before delivery
+                   ⚠ Service-role key bypasses RLS — ONLY app in ecosystem with this privilege
+                   ⚠ CBAR Q9 ENFORCED: mv_campaign_analytics materialized view (coach_id stripped)
+         Depends on: Steps 24 + 25 + 26 BUILT (all commercial data sources needed for aggregation)
+```
+
+**SEQUENCE ENFORCEMENT RULES (continued for Phase 5):**
+- FR-COM-01 is built first — all other commercial specs consume billing middleware.
+- FR-COM-04 is built before FR-COM-03 — onboarding validates codes against program registry produced by COM-04.
+- FR-COM-02 is built last — admin dashboard aggregates data from all commercial sources.
+- All Phase 5 specs use DEP-COM-001 through DEP-COM-011. Range is non-overlapping with Phase 4.
+- billing_queue, analytics_events, and mv_campaign_analytics are CBAR stress-test-sourced additions to Migration 005 v1.1. They are NOT in the original spec text — they are mandated by the Architectural Decision Log (Q5, Q9). Build them as first-class citizens.
+
+PHASE 6 — VISUAL CONTROL LAYER
+(after Phase 5 Commercial complete. Delivers expression adapter, pose library, first frame composer, identity LoRA pipeline.)
+
+⚠ DEP-ID RANGE: DEP-VIS-008 through DEP-VIS-014 allocated to Phase 6 specs.
+⚠ SCHEMA: Migration 004_visual_control_layer.sql (10 tables).
+⚠ All specs co-depend on SPEC-INFRA-001 (AWS/EFS) for production deployment — build modules as testable units without infrastructure dependency.
+
+```
+Step 28: ConsciousSmile Expression Adapter (FR-VIS-14)
+         Spec: FR-VIS-14
+         FR-VIS-14 → ConsciousSmile Expression Adapter → DEP-VIS-008, DEP-VIS-013
+                   ⚠ 28-channel FACS-based expression system (continuous 0.0–1.0 per channel)
+                   ⚠ Named emotion presets with mood state affinity mapping
+                   ⚠ LoRA weight budget enforcement: Identity(0.65) + ConsciousSmile(0.80) ≤ 1.50
+                   ⚠ Confusion pair training (8 pairs) for channel separation
+                   ⚠ Legacy VCB fallback: no expression_spec → prompt-only mode
+         Depends on: Phase 5 COMPLETE
+
+Step 29: ConsciousPose Body Language Library (FR-VIS-15)
+         Spec: FR-VIS-15
+         FR-VIS-15 → ConsciousPose Library → DEP-VIS-010
+                   ⚠ 298 composable atoms across 9 layers (body/hands/gaze/scene/mood/props/multi-char)
+                   ⚠ Composition system: atoms from different layers compose into full-body specs
+                   ⚠ ControlNet map resolver: CP-ID → EFS file path
+                   ⚠ Manifest integrity: every path resolves, every file tracked
+                   ⚠ Mood-state + archetype GIN index queries
+         Depends on: Step 28 BUILT (ConsciousSmile co-loads with ControlNet)
+
+Step 30: Identity LoRA Training Pipeline (FR-VIS-17)
+         Spec: FR-VIS-17
+         FR-VIS-17 → Identity LoRA Training Pipeline → DEP-VIS-011, DEP-VIS-014
+                   ⚠ Photo curation pipeline: background removal → auto-captioning → quality filter
+                   ⚠ Trigger token registry: unique per coach (ccp_{name})
+                   ⚠ 5-metric validation: IPS ≥ 0.85, style flexibility, expression neutrality ≤ 0.10
+                   ⚠ Auto-retry: halve LR + 500 steps, max 3 attempts before PENDING_HUMAN_REVIEW
+                   ⚠ Versioning: v2 retraining on appearance change, v1 retirement
+         Depends on: Step 28 BUILT (ConsciousSmile compatibility test is part of LoRA validation)
+
+Step 31: First Frame Composer — Iris (FR-VIS-16)
+         Spec: FR-VIS-16
+         FR-VIS-16 → First Frame Composer (Iris) → DEP-VIS-012
+                   ⚠ 6-step deterministic decision engine (no LLM reasoning)
+                   ⚠ 8-format routing table (video/carousel/thumbnail/flyer/webinar/story/poll/email)
+                   ⚠ 2-level anti-draft constraint system (stock thumbnail + format-specific)
+                   ⚠ CLIP deduplication: reject > 0.92 cosine similarity in 30-day coach window
+                   ⚠ Consumes FR-VIS-14 (expression), FR-VIS-15 (pose), FR-VIS-17 (identity LoRA)
+         Depends on: Steps 28 + 29 + 30 BUILT (FFC composes outputs from all three)
+```
+
+**SEQUENCE ENFORCEMENT RULES (continued for Phase 6):**
+- FR-VIS-14 (ConsciousSmile) is built first — it defines expression channels consumed by all downstream specs.
+- FR-VIS-15 (ConsciousPose) is built second — pose library provides ControlNet atoms consumed by FFC.
+- FR-VIS-17 (Identity LoRA) is built third — its validation requires ConsciousSmile stacking test.
+- FR-VIS-16 (First Frame Composer / Iris) is built last — it composes specs from all three inputs.
+- All Phase 6 specs use DEP-VIS-008 through DEP-VIS-014. Range overlaps with Phase 2B visual specs by design (they share the VIS namespace).
 
 ---
 
@@ -539,9 +764,9 @@ This receipt is written to the Build Ledger before any other action.
 Maintain a running Build Ledger throughout the batch. Update after every spec cycle.
 
 ```
-BUILD LEDGER — CCF Phase 1 Batch
+BUILD LEDGER — CCP Full Build
 ============================
-Last Updated: 2026-03-20 (CPSC Phase 3 complete — FR58/FR59/FR60 built)
+Last Updated: 2026-03-25 (CA11 audit + revision complete — Phase 4 specs ready for build)
 
 PHASE 0 — GUARDIAN AGENT (prerequisite for all Phase 1+ work)
 FR-GA:      Guardian Agent orchestrator         BUILT ✅  (2026-03-19 — 7 files, 48/48 tests)
@@ -682,6 +907,53 @@ FR60:       Loom Report Generation          BUILT ✅  (2026-03-20 — 46 tests,
 
 ═══ PHASE 3: CPSC CONVERSION — COMPLETE ═══  10/10 specs BUILT  ·  501 CPSC tests  ·  1913 total tests  ·  0 failures
 
+PHASE 4: CA11 QUAD-PLATFORM INTELLIGENCE LAYER (Original — Steps 15-20)
+Step 15:  CA11 Core Infrastructure           BUILT ✅   (2026-03-26 — FR-CA11-01: 45 tests, FR-CA11-02: 47 tests, FR-CA11-03: 41 tests)
+          DEP-IDs registered: DEP-ENG-071, DEP-ENG-072, DEP-ENG-073
+          Files: ca11_models.py (shared), affine_workspace_provisioner.py, affine_sync.py,
+                 affine_client_workspace.py, coach_workspace_master.json
+Step 16:  CA11 Intelligence Layer            BUILT ✅   (2026-03-26 — FR-CA11-04: 45 tests, FR-CA11-05: 33 tests, FR-CA11-06: 43 tests, FR-CA11-07: 39 tests)
+          DEP-IDs registered: DEP-ENG-074, DEP-ENG-075, DEP-ENG-076, DEP-ENG-077
+          Files: learning_path_builder.py, session_recap_generator.py,
+                 voice_to_lesson.py, session_to_course.py
+Step 17:  CA11 Content Production Layer      BUILT ✅   (2026-03-26 — FR-CA11-08: 31 tests, FR-CA11-09: 33 tests)
+          DEP-IDs registered: DEP-ENG-078, DEP-ENG-079
+          Files: content_machine.py, accountability_visualizer.py
+Step 18:  CA11 Visual Layer                  BUILT ✅   (2026-03-26 — FR-CA11-10: 26 tests, FR-CA11-11: 27 tests)
+          DEP-IDs registered: DEP-ENG-080, DEP-ENG-081
+          Files: excalidraw_embed_service.py, canva_affine_delivery.py
+Step 19:  CA11 Video Pipeline (CMF Only)     BUILT ✅   (2026-03-26 — FR-CA11-12: 27 tests, FR-CA11-13: 30 tests [RETIRED], FR-CA11-14: 24 tests [RETIRED])
+          DEP-IDs registered: DEP-ENG-082
+          Files: course_video_cmf.py, obs_controller.py [RETIRED by ADR-07],
+                 excalidraw_overlay.py [RETIRED by ADR-07 — replaced by FR-CA11-22]
+Step 20:  CA11 DPA Branding Engine           BUILT ✅   (2026-03-26 — FR-CA11-15: 36 tests)
+          DEP-IDs registered: DEP-ENG-085, DEP-ENG-086
+          Files: dpa_engine.py
+
+═══ PHASE 4 CA11 ORIGINAL — COMPLETE ═══  15/15 specs BUILT  ·  527 CA11 tests  ·  2440 total tests  ·  0 failures
+
+═══ PHASE 4 CA11 STUDIO — COMPLETE ═══  7/7 specs BUILT  ·  339 Studio tests  ·  2779 total tests  ·  0 failures
+
+PHASE 4: CA11 CCP STUDIO LAYER (Steps 21-23) — ALL BUILT ✅
+Step 21:  CCP Studio Block Foundation         BUILT ✅  (FR-CA11-16: 66 tests, FR-CA11-17: 44 tests)
+          Depends on: Steps 15 + 16 BUILT ✅ → CLEAR
+          DEP-IDs registered: DEP-ENG-087→093 (Studio), DEP-ENG-094→098 (Soundboard)
+          Files: studio_block_service.py, soundboard_service.py
+Step 22:  CCP Studio Interactive Intelligence BUILT ✅  (FR-CA11-18: 34 tests, FR-CA11-19: 71 tests, FR-CA11-20: 33 tests)
+          Depends on: Step 21 BUILT ✅ → CLEAR
+          DEP-IDs registered: DEP-ENG-099→103 (Social), DEP-ENG-104→113 (Trivianar), DEP-ENG-114→116 (Lead)
+          Files: social_scheduler_service.py, trivianar_engine_service.py, lead_capture_service.py
+Step 23:  CCP Studio Overlay & Guest Join     BUILT ✅  (FR-CA11-21: 46 tests, FR-CA11-22: 45 tests)
+          Depends on: Steps 21 + 22 BUILT ✅ → CLEAR
+          DEP-IDs registered: DEP-ENG-117→121 (Guest), DEP-ENG-122→126 (Overlay)
+          Files: guest_join_service.py, stream_overlay_service.py
+
+CA11 ORIGINAL AUDIT STATUS: ✅ COMPLETE (5-Lens audit done · 30 flags resolved · revisions applied · specs ready for build)
+CA11 ORIGINAL REVISION STATUS: ✅ COMPLETE (All 15 specs revised per CA11_Quad_Platform_Spec_Revisions.md · DEP-ENG-041 receipt schema standardized)
+CA11 STUDIO AUDIT STATUS: ✅ COMPLETE (6 flags: 1 CRITICAL + 2 WARNING + 3 NOTE — all resolved)
+CA11 STUDIO REVISION STATUS: ✅ COMPLETE (FK integrity + Receipt Chain + Batch Receipting applied)
+CA11 STUDIO STRESS TEST STATUS: ✅ COMPLETE (6 scenarios Q34-Q39 — all structurally resolved)
+
 BUILD FLAGS OPEN:
 - FLAG-001 | Step 1 | BUILD_AMBIGUITY | CLOSED ✅ — Dependency Registry v4.0 was built as part of FR1 (Coach Genesis Pipeline); confirmed BUILT in FR2 Build Receipt ledger entry
 
@@ -690,14 +962,28 @@ BUILD STATS:
 - Phase 2B CVE Visual Engine: COMPLETE ✅ (13/13 specs, 727 tests)
 - Phase 3 CBCS: COMPLETE ✅ (14/14 specs, 685 tests)
 - Phase 3 CPSC: COMPLETE ✅ (10/10 specs, 501 tests)
-- Steps BUILT: 14 (Steps 1–14)
+- Phase 4 CA11 (Original): COMPLETE ✅ (15/15 specs, 527 tests, Steps 15-20 BUILT)
+- Phase 4 CA11 (Studio): COMPLETE ✅ (7/7 specs BUILT, Steps 21-23 BUILT, 339 tests)
+  - Step 21: FR-CA11-16 (66) + FR-CA11-17 (44) = 110 tests
+  - Step 22: FR-CA11-18 (34) + FR-CA11-19 (71) + FR-CA11-20 (33) = 138 tests
+  - Step 23: FR-CA11-21 (46) + FR-CA11-22 (45) = 91 tests
+- Phase 5 Commercial: COMPLETE ✅ (4/4 specs BUILT, Steps 24-27 BUILT, 140 tests)
+   - Step 24: FR-COM-01 (Billing Middleware) — BUILT ✅ (48 tests)
+   - Step 25: FR-COM-04 (Program & Campaign Manager) — BUILT ✅ (40 tests)
+   - Step 26: FR-COM-03 (Telegram Code Onboarding Agent) — BUILT ✅ (27 tests)
+   - Step 27: FR-COM-02 (Global Admin Dashboard) — BUILT ✅ (25 tests)
+- Phase 6 Visual Control Layer: COMPLETE ✅ (4/4 specs BUILT, Steps 28-31 BUILT, 123 tests)
+   - Step 28: FR-VIS-14 (ConsciousSmile Adapter) — BUILT ✅ (35 tests)
+   - Step 29: FR-VIS-15 (ConsciousPose Library) — BUILT ✅ (28 tests)
+   - Step 30: FR-VIS-17 (Identity LoRA Pipeline) — BUILT ✅ (30 tests)
+   - Step 31: FR-VIS-16 (Iris First Frame Composer) — BUILT ✅ (30 tests)
+- Steps BUILT: 31 (Steps 1–31)
 - Steps PENDING: 0
 - Steps BLOCKED: 0
 - Open BUILD_FLAGS: 0
 - Open BUILD_AMBIGUITY flags: 0
 - Open BUILD_BLOCKED flags: 0
-- Total tests passing: 1913
-- **ALL PHASES COMPLETE ✅**
+- Total tests passing: 3042 (2440 + 339 Studio + 140 Commercial + 123 Visual Phase 6)
 ```
 
 ---
@@ -830,6 +1116,96 @@ Crisis escalation checks originator ID before routing. Coach-origin crisis → s
 
 ---
 
+# PHASE 4 STRESS TEST MANDATES (Q34-Q39 — CCP Studio Architecture)
+
+These decisions were resolved during the Phase 4 Architectural Stress Test (2026-03-26). They are final for Steps 21-23. If an implementation constraint conflicts, these mandates win.
+
+**Decision: Offline-First IndexedDB Chunking (Q34 resolution)**
+The CCP Studio Block's `MediaRecorder` API MUST slice the video into 5-second `Blob` chunks and commit each immediately to the browser's `IndexedDB`. This is non-negotiable. The recording MUST survive a complete network loss. On session end or network reconnect, a background Web Worker aggregates chunks and uploads via S3 multipart upload. The live stream may drop; the local recording never does.
+
+**Decision: Hardware-Level AEC + Structural Ducking (Q35 resolution)**
+Any incoming WebRTC guest `MediaStreamTrack` MUST pass through an `AudioContext` node with `echoCancellation`, `noiseSuppression`, and `autoGainControl` locked to `TRUE`. If feedback threshold approaches danger, the guest audio is automatically ducked by -20dB the instant the coach's waveform registers speech. This prevents feedback loops from destroying Whisper STT quality.
+
+**Decision: Dynamic `stream_latency_offset` Pacing Lock (Q36 resolution)**
+The Trivianar Engine is FORBIDDEN from trusting its own internal clock for question delivery. It MUST continuously ping the RTMP server to calculate the real-time HLS buffer delta. When a question is triggered, it enters a Redis holding queue and fires to the Telegram API only after the measured latency offset has elapsed. This guarantees the coach's spoken prompt and the Telegram popup arrive simultaneously.
+
+**Decision: Asynchronous PII Buffer & Receipting Exemption (Q37 resolution)**
+High-volume trivia button clicks bypass per-row Receipt Chain Guard constraints. A post-stream batch-hash receipt is sufficient. For PII capture (emails/phones in FR-CA11-20), the webhook immediately accepts and returns 200 OK. A decoupled Redis-backed background worker handles database writes and Receipt Chain hashes at a non-blocking cadence. No dropped leads under any concurrency scenario.
+
+**Decision: Rigid Thread Decoupling Architecture (Q38 resolution)**
+The WebSocket listener for overlay events and the video encoding pipeline MUST run on separate threads. The Overlay Graphics Render Engine operates on an `OffscreenCanvas` driven by a dedicated Web Worker. WebSocket payloads bypass the main DOM React thread entirely. Even at 99% CPU utilization from 1080p encoding, overlay animations render at 60fps.
+
+**Decision: Temporal Proximity Lock — Social Mutex (Q39 resolution)**
+Before Sofia (FR-CA11-18) moves an asset from `PENDING` to `SCHEDULED`, she MUST check for any manually scheduled content within ±4 hours of her target window. If a collision is detected, she triggers `DAG_VIOLATION_COLLISION` and automatically defers her post to the next safe interval. Human-scheduled posts always take execution priority over autonomous agent scheduling.
+
+---
+
+# PHASE 5 STRESS TEST MANDATES (Q1-Q9 — Visual Control + Commercial Intelligence Layer)
+
+These decisions were resolved during the Visual-Commercial CBAR Stress Test (2026-03-30). They are final for Steps 24-27 and also govern the Visual Control Layer (FR-VIS-14..17) at build time.
+
+**Decision: Identity-Expression Layering Hierarchy (Q1 resolution)**
+Identity LoRA fires first at full weight. ConsciousSmile Adapter ControlNet weight MUST be capped at 0.75 when an Identity LoRA is present. Requested intensity is normalized: `effective_intensity = requested × 0.75`. Both values logged in Receipt Chain Guard.
+
+**Decision: Pose-Format Pre-Validation Gate (Q2 resolution)**
+First Frame Composer MUST calculate projected bounding box of ConsciousPose atom against target format before ComfyUI invocation. If overflow: (1) substitute safe-zone-compliant atom from same semantic cluster; (2) scale subject smaller; (3) escalate to Factory Floor with POSE_BOUNDARY_OVERFLOW. Log which fallback was invoked.
+
+**Decision: FACS Neutrality Pre-Screen (Q3 resolution)**
+Before LoRA training begins, all reference photos MUST pass FACS neutrality scan. Photos with combined AU score >0.35 are flagged as expression-biased. If exclusion drops training set below 30 images, PAUSE the training job and request reshoots. No contaminated LoRA reaches EFS.
+
+**Decision: Billing Isolation Principle with Client Grace Window (Q4 resolution)**
+The Jail System blocks new pipeline actions for `past_due` coaches. It does NOT retroactively block pre-queued client messages scheduled during an `active` billing period. Dispatcher checks `billing_period_scheduled` timestamp against billing failure timestamp. Grace dispatches logged. Coach notified within 24h deadline.
+
+**Decision: Metered Billing Queue with Exponential Backoff (Q5 resolution)**
+First-message billing uses async pre-billing: T-30 minutes before dispatch, billing_queue row created with idempotency_key `(coach_id + client_id + message_scheduled_at)`. Worker drains at 80 req/sec (Stripe limit headroom). Dispatcher forbidden from sending until billing_queue.status = 'billed'. 5-minute retry, 30-minute escalation ceiling.
+
+**Decision: LoRA Version Lock at Factory Floor Approval (Q6 resolution)**
+Factory Floor Approve action fires pre-delivery validation: compare asset's lora_version_id against identity_lora_registry current version. Mismatch → operator dialog (stale-approve or re-render). All paths logged to Receipt Chain Guard.
+
+**Decision: Admin Override Enrollment Protocol (Q7 resolution)**
+Admin capacity override is NOT a bypass — it is a structured expansion: increment max_clients by 1, run full FR-COM-03 provisioning sequence, write admin_actions row with action_type: capacity_override, write Receipt Chain Guard. Coach notified of expansion.
+
+**Decision: Multi-Enrollment Profiles Architecture (Q8 resolution)**
+telegram_user_id on profiles is NOT globally UNIQUE. Constraint is UNIQUE(telegram_user_id, coach_id) — one enrollment per (user, coach), allowing multi-coach participation. INSERT uses ON CONFLICT (telegram_user_id, coach_id) DO UPDATE for re-enrollment.
+
+**Decision: Event-Sourced Funnel Analytics (Q9 resolution)**
+Funnel views tracked via analytics_events table (signed campaign token validation at edge function). Admin Dashboard aggregation via mv_campaign_analytics materialized view (coach_id stripped). Individual coaches see own rows through RLS. Dashboard sees only platform aggregates.
+
+---
+
+# CA11 ARCHITECTURE DECISIONS (Phase 4 — Quad-Platform Intelligence Layer)
+
+These decisions were resolved during the CA11 Spec Audit/Revision cycle (2026-03-25). They are final for Phase 4 build. If an implementation constraint conflicts, these decisions win.
+
+**ADR-05 — Notion Retirement (CA11 Decision)**
+Notion (`notion_sync.py`) is fully retired as the delivery layer. ALL workspace, content, and visual production outputs target AFFiNE (`affine_sync.py`). The `DELIVERY_TARGET` feature flag (AFFINE_ONLY / BOTH / NOTION_ONLY) controls migration routing per coach during transition. No spec may write to Notion unless the flag explicitly permits it.
+
+**ADR-06 — OBS WebSocket API v5 (RETIRED 2026-03-25)**
+~~OBS integration uses WebSocket API v5 natively (OBS v28+).~~ **RETIRED.** FR-CA11-13 and FR-CA11-14 are deprecated. OBS is now an optional fallback only. All recording and streaming is handled by the native CCP Studio Block (FR-CA11-16). See ADR-07.
+
+**ADR-07 — Native CCP Studio Block (Replaces ADR-06)**
+All recording, streaming, teleprompter, and interactive event hosting is delivered via a native AFFiNE BlockSuite plugin (`ccp-blocks/studio-block`). The Studio Block uses browser-native `MediaRecorder` API for recording and `RTMP push` via the `ccp-stream-service` microservice for live streaming. OBS is no longer required on coach machines.
+
+**CA11 Decision 1 — DEP-ID Range Allocation**
+Original CA11 batch: DEP-ENG-071 through DEP-ENG-086. CCP Studio batch: DEP-ENG-087 through DEP-ENG-126. All are PROPOSED until registered in the Central Schema Repository at Step 15/21 build start.
+
+**CA11 Decision 2 — `content_type` Enum Expansion (FR-CA11-04 / FR-CA11-07 cross-spec)**
+FR-CA11-04 defines the `learning_path_registry.content_type` enum. `course_chapter` has been added to the enum to satisfy FR-CA11-07's requirement. The revised enum is: `script, video, voice_lesson, webinar, session_recap, diagram, course_video, course_chapter`. Any spec consuming this field must reference the revised enum, not the original.
+
+**CA11 Decision 3 — Receipt Chain Guard Universality**
+Every data state mutation in the CA11 batch emits a FR47 DEP-ENG-041 receipt. String-literal receipt formats are PROHIBITED. CRDT collaborative edits in FR-CA11-10 are exempt from per-edit receipts — only the initial block creation event requires a receipt write. Individual trivia responses (FR-CA11-19) are exempt from per-click receipts — a post-stream batch-hash receipt is required instead.
+
+**CA11 Decision 4 — DPA Engine Deployment Order**
+The DPA Engine (FR-CA11-15) must be built LAST in the original CA11 sequence (Steps 15-20). It wires into all visual pipeline consumers. CCP Studio steps (21-23) can be built in parallel with or after the DPA Engine.
+
+**CA11 Decision 5 — Brand Color Override**
+The DPA Engine defaults to `override_mode: adaptive`. Coaches may set `override_mode: brand_saturated` to force brand colors everywhere. This is an opt-in with a documented psychological cost warning in the onboarding flow. The system never overrides the coach's explicit preference but logs `BRANDING_OVERRIDE_ACTIVE` in the Fingerprint Archive for performance comparison.
+
+**CA11 Decision 6 — stream_id Referential Integrity (Audit Q34)**
+FR-CA11-19's `trivia_responses.stream_id` MUST be a Foreign Key referencing `studio_sessions.id` from FR-CA11-16. No trivia data can exist without a parent studio session. All analytical joins across the quad-platform layer depend on this FK.
+
+---
+
 ## PREVIOUSLY COMPLETED BUILD CYCLES (REFERENCE ONLY)
 
 *(Update this section as build progresses)*
@@ -911,3 +1287,47 @@ Crisis escalation checks originator ID before routing. Coach-origin crisis → s
 
 ═══ PHASE 3: CPSC CONVERSION — COMPLETE ═══
 10/10 specs BUILT · 501 CPSC tests · 1913 total tests · 0 failures
+
+**PHASE 4: CA11 QUAD-PLATFORM INTELLIGENCE LAYER (Original)**
+
+- **Step 15 — CA11 Core Infrastructure (FR-CA11-01, 02, 03):** BUILT ✅ (2026-03-26)
+  - FR-CA11-01 — Coach Workspace Provisioning: 45 tests (1958 regression)
+  - FR-CA11-02 — AFFiNE Sync Service: 47 tests (2005 regression)
+  - FR-CA11-03 — Client Workspace Provisioning: 41 tests (2046 regression)
+  - Files: ca11_models.py (shared), affine_workspace_provisioner.py, affine_sync.py, affine_client_workspace.py, coach_workspace_master.json
+  - DEP-IDs produced: DEP-ENG-071, DEP-ENG-072, DEP-ENG-073
+
+- **Step 16 — CA11 Intelligence Layer (FR-CA11-04, 05, 06, 07):** BUILT ✅ (2026-03-26)
+  - FR-CA11-04 — Learning Path Builder: 45 tests (2091 regression)
+  - FR-CA11-05 — AI Session Recap Generator: 33 tests (2124 regression)
+  - FR-CA11-06 — Voice Note → Course Material: 43 tests (2167 regression)
+  - FR-CA11-07 — Session-to-Course Pipeline: 39 tests (2206 regression)
+  - Files: learning_path_builder.py, session_recap_generator.py, voice_to_lesson.py, session_to_course.py
+  - DEP-IDs produced: DEP-ENG-074, DEP-ENG-075, DEP-ENG-076, DEP-ENG-077
+
+- **Step 17 — CA11 Content Production Layer (FR-CA11-08, 09):** BUILT ✅ (2026-03-26)
+  - FR-CA11-08 — Content Machine Pipeline: 31 tests (2237 regression)
+  - FR-CA11-09 — Accountability Visualization: 33 tests (2270 regression)
+  - Files: content_machine.py, accountability_visualizer.py
+  - DEP-IDs produced: DEP-ENG-078, DEP-ENG-079
+
+- **Step 18 — CA11 Visual Layer (FR-CA11-10, 11):** BUILT ✅ (2026-03-26)
+  - FR-CA11-10 — Excalidraw Embedded Workspace: 26 tests (2296 regression)
+  - FR-CA11-11 — CVE Canva → AFFiNE Delivery: 27 tests (2323 regression)
+  - Files: excalidraw_embed_service.py, canva_affine_delivery.py
+  - DEP-IDs produced: DEP-ENG-080, DEP-ENG-081
+
+- **Step 19 — CA11 Video Pipeline, CMF Only (FR-CA11-12):** BUILT ✅ (2026-03-26)
+  - FR-CA11-12 — Course Video CMF Pipeline: 27 tests (2350 regression)
+  - FR-CA11-13 — OBS Controller [RETIRED by ADR-07]: 30 tests (2380 regression — code preserved, spec retired)
+  - FR-CA11-14 — Excalidraw Overlay [RETIRED by ADR-07]: 24 tests (2404 regression — code preserved, spec retired)
+  - Files: course_video_cmf.py, obs_controller.py [RETIRED], excalidraw_overlay.py [RETIRED]
+  - DEP-IDs produced: DEP-ENG-082
+
+- **Step 20 — CA11 DPA Branding Engine (FR-CA11-15):** BUILT ✅ (2026-03-26)
+  - FR-CA11-15 — Contextual Branding with DPA: 36 tests (2440 regression)
+  - Files: dpa_engine.py
+  - DEP-IDs produced: DEP-ENG-085, DEP-ENG-086
+
+═══ PHASE 4 CA11 ORIGINAL — COMPLETE ═══
+15/15 specs BUILT · 527 CA11 tests · 2440 total tests · 0 failures

@@ -1,6 +1,6 @@
 {
   "monthly_limit": 144,
   "current_month": "2026-03",
-  "current_count": 72,
-  "paused": false
+  "current_count": 216,
+  "paused": true
 }
