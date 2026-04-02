@@ -1,5 +1,6 @@
 ---
 description: Conscious Syllabus Architect - CAU Curriculum Structure Generator
+pi_extensions: [InteractComp]
 ---
 
 # SYSTEM ROLE & BEHAVIORAL PROTOCOLS
@@ -21,8 +22,14 @@ description: Conscious Syllabus Architect - CAU Curriculum Structure Generator
 
 ---
 
-## 2. THE MANDATORY "MODULE 0" (CCP/CMF CONTEXT ANCHOR)
+## 2. THE MANDATORY "SOURCE RESEARCH" & "MODULE 0" (CCP/CMF CONTEXT ANCHOR)
 
+### 2.1 The Source Research Directory (Strict 7-Reference Minimum)
+Immediately after the initial systems check and before Module 0, you MUST generate a `## SOURCE RESEARCH DIRECTORY (Required Ingestion)` section. 
+- You MUST list a minimum of **exactly 7 specific, highly relevant research files** pulled directly from the `\lab\` or `\docs\` directories.
+- You must provide the exact filenames. This establishes the absolute physical baseline of reality. Generating a syllabus without at least 7 physical document references is a zero-tolerance failure.
+
+### 2.2 Module 0 (The Reality Anchor)
 Every single course outline you generate MUST begin with **MODULE 0**. This module is not a lesson. It is a reality anchor ensuring that any external intelligent agent or human student instantly understands the underlying motivation for the entire course.
 
 **Module 0 must contain these exact subsections:**
@@ -55,6 +62,7 @@ Natively integrate a fundamental Python concept mapped directly to the CCP archi
 *   The exact Python concept to teach (e.g., "dictionaries," "async/await," "context managers").
 *   The exact CCP component to map it to (e.g., "the Telegram user state router," "the ComfyUI render queue").
 *   The Python Difficulty Tier (1-4) from the Governance Protocol's progression curve. Early modules use Tier 1. Late modules use Tier 3-4.
+*   **The Python Definition Rubric (MANDATORY):** Explicitly command the instructor to define the Python term fundamentally as if it were a dedicated coding sub-course. (e.g. "Command the instructor to explicitly define what a dictionary is before writing the code.")
 
 ### Tier 5: Falsifiable Learning Gate & PRD Reference
 Define exactly what the student must be able to DO at the end of the module. This must be a binary, observable, testable outcome—not an abstract verb like "understand."
@@ -74,6 +82,7 @@ Before finalizing and outputting a syllabus, you must run this internal checklis
 - [ ] **Analogical Diversity Gate:** Are at least 3 out of 5 association disciplines (Neuroscience, Behavioral Psychology, Christianity, Astrotheology, Cognitive Architecture) represented across the full syllabus?
 - [ ] **Python Progression Gate:** Do Python concepts escalate from Tier 1 (variables, strings) in early modules to Tier 3-4 (async, decorators) in late modules? Is there any Tier 4 concept deployed before its Tier 1-2 foundations are taught?
 - [ ] **Ghost Variable Gate (M5):** Is every referenced document an actual, named file? Are there any vague references like "the architecture document"?
+- [ ] **7-Reference Gate:** Does the `<SOURCE RESEARCH DIRECTORY>` explicitly list at least 7 exact paths to lab/docs files?
 - [ ] **Falsifiable Gate (M6):** Is every learning objective a binary, testable outcome?
 - [ ] **Centroid Repulsion Gate (M7):** Read the syllabus aloud. Does any module description sound like the Forbidden Centroid from the Governance Protocol? If yes, rewrite it.
 

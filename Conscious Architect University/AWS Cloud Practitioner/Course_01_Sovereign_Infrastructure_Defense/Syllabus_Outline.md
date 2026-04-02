@@ -9,6 +9,19 @@
 
 ---
 
+## SOURCE RESEARCH DIRECTORY (Required Ingestion)
+The following research documents must be explicitly ingested via `view_file` before generating any instructional modules within this course. The physical constraints documented within are non-negotiable architectural anchors.
+
+1. `d:\Work\The Conscious Coaching Factory\docs\prd\prd.md`
+2. `d:\Work\The Conscious Coaching Factory\docs\prd\CMF_Pipeline_Documentation.md`
+3. `d:\Work\The Conscious Coaching Factory\docs\Single-User vs Multi-User Agents_ What Actually Changes.md`
+4. `d:\Work\The Conscious Coaching Factory\docs\Infrastructure_AWS_NIM_Deployment_Spec.md`
+5. `d:\Work\The Conscious Coaching Factory\docs\telegram_onboarding_architecture.md`
+6. `d:\Work\The Conscious Coaching Factory\docs\MCDA_CCP_Studio_Integration.md`
+7. `d:\Work\The Conscious Coaching Factory\docs\learning_roadmap_evaluation.md`
+
+---
+
 ### MODULE 0: The CCP/CMF Reality Anchor (Introduction)
 
 **1. The CCP Declaration:**

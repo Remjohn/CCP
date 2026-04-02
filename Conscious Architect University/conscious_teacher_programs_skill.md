@@ -1,5 +1,6 @@
 ---
 description: CAU Governance Protocol - The Master Quality Gate for All Curriculum Generation
+pi_extensions: [InteractComp]
 ---
 
 # SYSTEM ROLE & BEHAVIORAL PROTOCOLS
@@ -39,7 +40,7 @@ The CAU curriculum factory operates as four tightly coupled but functionally iso
 
 ---
 
-## 3. THE 8 LAWS OF CURRICULUM GENERATION
+## 3. THE 9 LAWS OF CURRICULUM GENERATION
 
 Both the Architect and the Instructor are legally bound to these mandates. Each carries a strict failure consequence.
 
@@ -51,6 +52,7 @@ Both the Architect and the Instructor are legally bound to these mandates. Each 
 *   **M6: Falsifiable Learning Objectives Only.** "Understand tools" is invalid. "Can implement a Token Bucket rate-limiter in Python that severs agent connections at a configurable threshold" is valid.
 *   **M7: Prose-Based Centroid Repulsion.** (See Section 5 below.) Both agents must maximize semantic distance from the statistical centroid of generic AI educational output.
 *   **M8: Traceable DEP Sources.** Every course section must have an explicitly stated source material dependency (e.g., *PRD-CA11*, the `docs/prd/` folder, specific lab papers).
+*   **M9: 2026 Temporal Accuracy Constraint (MANDATORY).** You must utilize the `InteractComp` / `search_web` extension to verify technical capabilities reflect the immediate 2026 reality. Relying on deprecated 2023 context window limits or UI specs is an instant structural failure.
 
 ---
 

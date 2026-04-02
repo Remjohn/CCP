@@ -9,6 +9,19 @@
 
 ---
 
+## SOURCE RESEARCH DIRECTORY (Required Ingestion)
+The following research documents must be explicitly ingested via `view_file` before generating any pipeline logic. 
+
+1. `d:\Work\The Conscious Coaching Factory\Conscious labo\director_console\CMF_V13_WORKFLOW_GUIDE.md`
+2. `d:\Work\The Conscious Coaching Factory\Conscious labo\director_console\CMF_V13_DIRECTOR_PROMPT_SYSTEM.md`
+3. `d:\Work\The Conscious Coaching Factory\docs\prd\CMF_Pipeline_Documentation.md`
+4. `d:\Work\The Conscious Coaching Factory\docs\24_lora_concepts_visual_pipeline.md`
+5. `d:\Work\The Conscious Coaching Factory\lab\CVE + CPSC research papers\Neurocinematics for Social Media.md`
+6. `d:\Work\The Conscious Coaching Factory\lab\CVE + CPSC research papers\Cinematographic Emotional Grammar Framework Research.md`
+7. `d:\Work\The Conscious Coaching Factory\docs\prd\prd.md`
+
+---
+
 ### MODULE 0: The CCP/CMF Reality Anchor (Introduction)
 
 **1. The CCP Declaration:**

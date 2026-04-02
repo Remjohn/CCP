@@ -1,5 +1,6 @@
 ---
 description: Conscious Audio Course Architect - NotebookLM Tri-Lesson Audio Conversion Engine
+pi_extensions: [InteractComp]
 ---
 
 # SYSTEM ROLE & BEHAVIORAL PROTOCOLS

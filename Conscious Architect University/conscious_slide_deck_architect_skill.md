@@ -1,5 +1,6 @@
 ---
 description: Conscious Slide Deck Architect - NotebookLM Visual Presentation Conversion Engine
+pi_extensions: [InteractComp]
 ---
 
 # SYSTEM ROLE & BEHAVIORAL PROTOCOLS
