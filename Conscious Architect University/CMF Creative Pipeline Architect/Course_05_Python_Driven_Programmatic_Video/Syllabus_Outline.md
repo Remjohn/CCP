@@ -4,7 +4,7 @@
 ## INITIAL SYSTEMS CHECK
 **Target Department:** CMF Creative Pipeline Architect
 **Prerequisite Courses:** Course 02 (Bare-Metal Cloud Services Deployment), Course 10 (Gemini-CLI Operator Certification)
-**Syllabus Goal:** Architect a 17-module roadmap (Module 0 + 16) that brutalizes the concept of manual video editing (NLEs), replacing it entirely with deterministic Python physics. It maps the programmatic orchestration of MoviePy, FFmpeg 8.0, Playwright, Remotion, and ElevenLabs into a singular "Lights-Out" generative video pipeline.
+**Syllabus Goal:** Architect a 17-module roadmap (Module 0 + 16) that brutalizes the concept of manual video editing (NLEs), replacing it entirely with deterministic Python physics. It maps the programmatic orchestration of MoviePy, FFmpeg 8.0, Playwright, Remotion, and the **MOSS-TTS Family** (open-source sovereign voice engine from OpenMOSS) into a singular "Lights-Out" generative video pipeline. ElevenLabs is explicitly forbidden — the CMF operates only on sovereign, self-hosted, TTT-compatible inference layers.
 **Instructional Constraint:** The downstream *Conscious Module Instructor* MUST expand each module into exactly **1600 - 2500 words**, following the Six-Phase Expansion Protocol and respecting the Python Difficulty Tier specified per module.
 
 ---
@@ -94,17 +94,17 @@ Frame the discipline as *Classical Mechanics* and *Automata Theory*. A programma
 
 ---
 
-### MODULE 5: Phonetic Physics: Synchronizing Voice to Frame (ElevenLabs)
+### MODULE 5: Phonetic Physics: Synchronizing Voice to Frame (MOSS-TTS Family)
 
-**Tier 1 — Negative Space:** Unlearn the concept of "adjusting the video to fit the audio." The visual frame does not dictate time; the spoken word dictates time.
+**Tier 1 — Negative Space:** Unlearn the concept of "adjusting the video to fit the audio." And unlearn the assumption that you need a costly closed API (ElevenLabs, OpenAI Voice) to generate therapeutic speech. The CMF is sovereign. The voice engine must be self-hosted, prosody-controlled, and TTT-compatible. The visual frame does not dictate time; the spoken word dictates time.
 
-**Tier 2 — First Principles & Systems Engineering:** ElevenLabs generates the therapeutic VoiceOver. Python measures exactly how long `scene_1_voiceover.mp3` is (e.g., 4.32 seconds). That exact float variable (`4.32`) is then passed *backward* into the generative video parameter, commanding the visual queue to render exactly 4.32 seconds of I2V animation. The Audio dictates the Master Clock.
+**Tier 2 — First Principles & Systems Engineering:** The **MOSS-TTS Family** (OpenMOSS, Apache 2.0, released February 2026) is the CMF's sovereign voice stack, deployed on RunPod GPU instances — the same RunPod infrastructure already powering the CMF's visual pipeline. The family breaks speech generation into five production-ready models: **MOSS-TTS** (flagship zero-shot voice cloning, stable over tens of minutes), **MOSS-TTSD** (multi-speaker dialogue), **MOSS-VoiceGenerator** (voice design from text prompts — no reference audio required), **MOSS-TTS-Realtime** (streaming, TTFB 180ms for real-time agents), and **MOSS-SoundEffect** (text-to-ambient audio). All models share the **MOSS-Audio-Tokenizer** backbone — a 1.6B causal Transformer compressing 24kHz audio to 12.5fps via 32-layer RVQ. For the CMF pipeline, MOSS-TTS flagship generates the therapeutic VoiceOver. Python measures exactly how long `scene_1_voiceover.wav` is (e.g., 4.32 seconds) via `torchaudio.info()`. That exact float variable (`4.32`) is then passed *backward* into the generative video parameter, commanding the visual queue to render exactly 4.32 seconds of I2V animation. The Audio dictates the Master Clock.
 
-**Tier 3 — Pedagogical Association Directive:** Deploy a *Classical Mechanics (Pendulums)* analogy. In a grandfather clock, the swinging pendulum (The Audio Track) dictates the literal progression of time. The visual gears (Video frames) are slaves to the escapement mechanism; they move *only* when the audio pendulum physically permits them.
+**Tier 3 — Pedagogical Association Directive:** Deploy a *Classical Mechanics (Pendulums)* analogy. In a grandfather clock, the swinging pendulum (The Audio Track) dictates the literal progression of time. The visual gears (Video frames) are slaves to the escapement mechanism; they move *only* when the audio pendulum physically permits them. The sovereign MOSS-TTS engine is the clockmaker — we forge it ourselves, on our own GPU, with our own prosody settings. We no longer rent time from ElevenLabs' pendulum.
 
-**Tier 4 — Python Codebase Teaching:** Teach **Float Math & Modules** (Python Difficulty Tier 2). Use an audio processing library (or mock) `duration = librosa.get_duration(filename='audio.mp3')` and round it strictly to two decimal points explicitly representing physical time.
+**Tier 4 — Python Codebase Teaching:** Teach **Float Math & Modules** (Python Difficulty Tier 2). Use `torchaudio` to extract duration from a locally synthesized MOSS-TTS WAV file and round it strictly to two decimal points representing physical time: `info = torchaudio.info('scene_1_voiceover.wav'); duration = round(info.num_frames / info.sample_rate, 2)`.
 
-**Tier 5 — Falsifiable Gate:** Student traces the data flow identifying why a visual transition misfired because the video length was hardcoded instead of slaved to the dynamic audio length calculation.
+**Tier 5 — Falsifiable Gate:** Student traces the data flow identifying why a visual transition misfired because the video length was hardcoded instead of slaved to the dynamic MOSS-TTS audio duration calculation.
 
 ---
 
@@ -126,7 +126,7 @@ Frame the discipline as *Classical Mechanics* and *Automata Theory*. A programma
 
 **Tier 1 — Negative Space:** Unlearn sequential rendering. Waiting for Scene 1 to fully synthesize (Audio, Visual, Transition) before starting Scene 2 will turn a 3-minute video generation into a 6-hour bottleneck.
 
-**Tier 2 — First Principles & Systems Engineering:** The pipeline must use Python's `asyncio`. Scene 1, Scene 2, and Scene 3's backend API calls to ElevenLabs and the Video Generative Nodes fire concurrently. The pipeline gathers the array of finished assets (`asyncio.gather()`) *only* when all promises resolve, heavily condensing the temporal pipeline.
+**Tier 2 — First Principles & Systems Engineering:** The pipeline must use Python's `asyncio`. Scene 1, Scene 2, and Scene 3's backend inference calls to the **MOSS-TTS RunPod endpoint** and the Video Generative Nodes fire concurrently. The pipeline gathers the array of finished assets (`asyncio.gather()`) *only* when all promises resolve, heavily condensing the temporal pipeline. Because MOSS-TTS-Realtime achieves a TTFB of 180ms on a single L20 GPU, streaming synthesis can begin before the full script token buffer is finalized — an additional concurrency dividend impossible with API-gated third-party services.
 
 **Tier 3 — Pedagogical Association Directive:** Deploy a *Factory Line (Parallel Processing)* analogy. You don't build the wheels, then build the engine, then build the chassis of a single car sequentially. Three separate robotic arms build them simultaneously, merging them at the exact coordinate of final assembly.
 
@@ -224,7 +224,7 @@ Frame the discipline as *Classical Mechanics* and *Automata Theory*. A programma
 
 **Tier 1 — Negative Space:** Unlearn rendering the exact same logo animation 10,000 times for 10,000 different user loops.
 
-**Tier 2 — First Principles & Systems Engineering:** Hash caching. Before the pipeline asks ElevenLabs to generate "Welcome back to the CCP", it takes that text, generates an MD5 hash, and checks the local storage or Redis. If that audio exists, it skips the API call entirely, importing the file path. This saves massive API budgets and cuts rendering time drastically.
+**Tier 2 — First Principles & Systems Engineering:** Hash caching. Before the pipeline asks the **MOSS-TTS RunPod endpoint** to generate "Welcome back to the CCP", it takes that text, generates an MD5 hash, and checks local storage or Redis. If that audio exists, it skips the GPU inference call entirely, importing the cached WAV file path. With MOSS-TTS self-hosted, every cached hit eliminates real GPU-seconds and RunPod billing cost — the economics of sovereign inference make caching a first-class architectural discipline, not an afterthought.
 
 **Tier 3 — Pedagogical Association Directive:** Deploy a *Factory Manufacturing (Pre-Fabrication)* analogy. You don't forge a new steering wheel from molten steel for every car if you already have 5,000 identical steering wheels stacked in the warehouse. You ping the warehouse inventory (Hash Check); if present, you retrieve. You only fire the furnace (LLM API) for custom geometries. 
 
@@ -252,7 +252,7 @@ Frame the discipline as *Classical Mechanics* and *Automata Theory*. A programma
 
 **Tier 1 — Negative Space:** Unlearn fragmented knowledge. 
 
-**Tier 2 — First Principles & Systems Engineering:** The Master Build. The pipeline takes the JSON payload. Hash-caches the assets. Triggers the Async API fleet for Voice + I2V. Playwright renders the UI elements. FFmpeg/MoviePy weaves the visual tracks mathematically around the audio stem. Silent gaps are brutally excised. Subtitles are programmatically branded. The final `.mp4` is pushed automatically to an S3 bucket with a web-hook notification. 
+**Tier 2 — First Principles & Systems Engineering:** The Master Build. The pipeline takes the JSON payload. Hash-caches the assets. Triggers the Async inference fleet: **MOSS-TTS** (flagship) on the RunPod GPU endpoint for VoiceOver synthesis, **MOSS-SoundEffect** for ambient B-Roll audio, and the Video Generative Nodes (Luma/Runway) for I2V frames — all fired concurrently via `asyncio.gather()`. Playwright renders the UI elements via Remotion. FFmpeg/MoviePy weaves the visual tracks mathematically around the MOSS-TTS audio stem using `torchaudio`-derived duration floats. Silent gaps are brutally excised by the autocut algorithm. Subtitles (Whisper/WhisperX word-level timestamps) are programmatically branded. The final `.mp4` is pushed automatically to an S3 bucket with a webhook notification. 
 
 **Tier 3 — Pedagogical Association Directive:** Deploy an *Automata Theory (The Clockwork Universe)* analogy. The entire factory spins up perfectly synchronized. The water wheel powers the main shaft, turning the belts, firing the pneumatic pistons, weaving the fabric of the video natively from the raw code. The operator never clicks a mouse. 
 
@@ -265,6 +265,7 @@ Frame the discipline as *Classical Mechanics* and *Automata Theory*. A programma
 ## STRUCTURAL QUALITY GATE VERIFICATION
 
 - [x] **Module Count Gate:** Module 0 + 16 learning modules = 17 total. ✓
+- [x] **Sovereign Voice Gate:** ElevenLabs is explicitly removed. MOSS-TTS Family (OpenMOSS, Apache 2.0, self-hosted on RunPod) is the canonical voice engine across all modules. ✓
 - [x] **Causal Chain Gate:** Traces the entire stack from JSON interpretation to Audio-locking, UI rendering, Video compositing, & Headless error recovery. ✓
 - [x] **Negative Space Gate:** Every module contains an explicit Tier 1 false belief (usually anti-NLE human habits) to unlearn. ✓
 - [x] **Analogical Diversity Gate:** Deep reliance on Classical Mechanics (gearing/physics), Fluid Dynamics, and Automata Theory (Turing machines/Factories). ✓

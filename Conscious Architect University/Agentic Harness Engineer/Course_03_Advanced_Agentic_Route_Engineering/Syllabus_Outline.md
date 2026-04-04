@@ -1,10 +1,16 @@
 # Course 03: Advanced Agentic Route Engineering & Swarm Dynamics
-*(Generated via Conscious Syllabus Architect v2.0)*
+*(Generated via Conscious Syllabus Architect v2.1)*
+
+## CORE SCIENTIFIC ANCHORS
+1.  **Natural-Language Agent Harnesses (NLAH)** (Pan et al., 2026): Externalizing control logic into portable text artifacts.
+2.  **Intelligent Harness Runtime (IHR)** (Pan et al., 2026): The shared LLM-in-the-loop runtime for mission execution.
+3.  **Claw Code Architectural Autopsy** (ultraworkers, 2026): Production-grade hook and permission patterns.
+4.  **Kuber Studio "Dream System"** (Mehta et al., 2026): Background memory consolidation and proactive monitoring.
 
 ## INITIAL SYSTEMS CHECK
 **Target Department:** Agentic Harness Engineer / Reasoning Philosopher
 **Prerequisite Courses:** Course 01 (Sovereign Infrastructure Defense), Course 10 (Gemini-CLI Operator Certification)
-**Syllabus Goal:** Architect a 17-module roadmap (Module 0 + 16) that teaches the shift from building brittle "API Wrappers" to engineering robust "Natural-Language Harnesses" capable of multi-agent swarm mechanics, utilizing Meta AI doctrine and the 5 distinguishing techniques of elite engineers.
+**Syllabus Goal:** Architect a 17-module roadmap (Module 0 + 16) that teaches the shift from building brittle "API Wrappers" to engineering robust "NLAH-Native Swarm Engines".
 **Instructional Constraint:** The downstream *Conscious Module Instructor* MUST expand each module into exactly **1600 - 2500 words**, following the Six-Phase Expansion Protocol and respecting the Python Difficulty Tier specified per module.
 
 ---
@@ -29,11 +35,11 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 **Tier 1 — Negative Space:** Unlearn the assumption that a Chatbot UI wrapped around an LLM API is an "Agent." A wrapper just pipes text back and forth. It has no goals, no persistence, and no autonomy.
 
-**Tier 2 — First Principles & Systems Engineering:** A wrapper is reactive (input → output). A Harness is proactive and continuous (input → reason → tool → observe → reason → output). The Harness manages state, manages tool access schedules, and enforces constraints independently of user prompts.
+**Tier 2 — First Principles & Systems Engineering:** A wrapper is reactive (input → output). A Harness is proactive and continuous (input → reason → tool → observe → reason → output). In the 2026 landscape, we formalize this as a **Natural-Language Agent Harness (NLAH)** executed via an **Intelligent Harness Runtime (IHR)**. The NLAH externalizes high-level orchestration into a portable, editable natural-language artifact, while the IHR enforces the **Execution Charter** (the "Law") independently of the task-specific **Execution Contract** (the "Mission").
 
-**Tier 3 — Pedagogical Association Directive:** Deploy a *Sociology* analogy. A wrapper is a vending machine—you put in a coin (prompt) and get a soda (completion). A harness is an employee—you give them a mission (prompt), and they independently navigate the building, use tools, ask coworkers for help, and return with a completed project. 
+**Tier 3 — Pedagogical Association Directive:** Deploy a *Sociology* analogy. A wrapper is a vending machine—you put in a coin (prompt) and get a soda (completion). A harness is an employee—you give them a mission (Execution Contract), and the company policy (Runtime Charter) ensures they independently navigate the building, use tools, and return with a completed project.
 
-**Tier 4 — Python Codebase Teaching:** Teach **State Flags** (Python Difficulty Tier 1). Write a `while is_working:` loop representing the proactive nature of a harness versus the `def get_answer()` reactive function of a wrapper.
+**Tier 4 — Python Codebase Teaching:** Teach **State Flags & The Event Loop** (Python Difficulty Tier 1). Write a `while runtime.is_active:` loop representing the proactive nature of an IHR versus the `def get_answer()` reactive function of a wrapper.
 
 **Tier 5 — Falsifiable Gate:** Student dissects a provided 100-line Python script and binary-classifies it as either a Reactive Wrapper or a Proactive Harness based on the presence of an autonomous reasoning loop.
 
@@ -67,15 +73,15 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 ---
 
-### MODULE 4: Natural-Language Tool Defences
+### MODULE 4: Progressive Skills and MCP Defences
 
-**Tier 1 — Negative Space:** Unlearn the assumption that if you give an LLM a tool, it will automatically use it correctly. It will guess parameters, hallucinate syntax, and crash your backend.
+**Tier 1 — Negative Space:** Unlearn the assumption that if you give an LLM a tool, it will automatically use it correctly. Overwhelming an agent with 50 tools leads to parameter hallucination and backend crashes.
 
-**Tier 2 — First Principles & Systems Engineering:** Tools must be defended by schema definitions AND natural language guardrails. You must explicitly teach the agent not just *how* to use the tool mathematically, but *when* and *why* it is forbidden to use it.
+**Tier 2 — First Principles & Systems Engineering:** Tool access must use progressive disclosure via **Skills Systems** (YAML frontmatter) and the **Model Context Protocol (MCP)**. Tools must be defended by schema definitions AND natural-language guardrails that define exact boundaries.
 
-**Tier 3 — Pedagogical Association Directive:** Deploy a *Sociology (Law Enforcement)* analogy. Giving an agent an API tool is like giving a rookie cop a firearm. You don't just teach them how to mathably pull the trigger (JSON schema); the vast majority of the training is the Rules of Engagement—when NOT to draw the weapon (Natural Language bounds).
+**Tier 3 — Pedagogical Association Directive:** Deploy a *Sociology (Law Enforcement)* analogy. Giving an agent raw API access is like giving a rookie cop a firearm. The MCP and YAML definitions are the Rules of Engagement—you mostly teach them when NOT to draw the weapon. 
 
-**Tier 4 — Python Codebase Teaching:** Teach **Type Hinting & Pydantic Basics** (Python Difficulty Tier 2). Define a strict schema for a tool using Python type hints `def use_tool(user_id: int, action: str) -> bool:`.
+**Tier 4 — Python Codebase Teaching:** Teach **Type Hinting & Pydantic Basics** (Python Difficulty Tier 2). Define a strict schema for a tool using Python type hints `def use_tool(user_id: int, action: str) -> bool:` wrapped in an MCP resource.
 
 **Tier 5 — Falsifiable Gate:** Student writes a natural-language description for a "Delete File" tool that explicitly defines the boundary constraints of when it should abort.
 
@@ -95,11 +101,11 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 ---
 
-### MODULE 6: Deterministic Hand-offs and The JSON Bridge
+### MODULE 6: Deterministic Hand-offs and the A2A Protocol
 
-**Tier 1 — Negative Space:** Unlearn the reliance on Markdown or raw text for agent-to-agent communication. "Please summarize this for the next agent" results in massive data loss.
+**Tier 1 — Negative Space:** Unlearn the reliance on raw text for agent-to-agent communication. "Please summarize this for the next agent" results in massive data loss.
 
-**Tier 2 — First Principles & Systems Engineering:** When Agent A finishes, it must output strict, parsable JSON. The Python Orchestrator parses this JSON, validates the schema, and extracts the variables to inject cleanly into Agent B's system prompt. This guarantees deterministic continuity.
+**Tier 2 — First Principles & Systems Engineering:** We utilize the **Agent-to-Agent (A2A) Protocol** and **Agent Cards** for capability discovery. When Agent A finishes, it must output strict JSON enforcing the A2A contract. The Python Orchestrator parses this, validates the schema, and routes it to Agent B, guaranteeing deterministic continuity.
 
 **Tier 3 — Pedagogical Association Directive:** Deploy a *Logistics (Shipping)* analogy. You don't pass raw grain hand-to-hand from the farmer to the baker (Raw Text). The farmer seals the grain in a standard steel shipping container (JSON). The robotic crane (Python Orchestrator) physically lifts the container and drops it perfectly onto the baker's truck.
 
@@ -109,43 +115,43 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 ---
 
-### MODULE 7: Pheromone Trails (Contextual Memory Management)
+### MODULE 7: Pheromone Trails and Hierarchical Context
 
 **Tier 1 — Negative Space:** Unlearn the "infinite scrolling chat" model. Shoving an agent's entire 100-turn history into the context window drowns its Prefrontal Cortex in noise.
 
-**Tier 2 — First Principles & Systems Engineering:** Swarm agents must leave highly compacted, vectorized state markers (Pheromones) describing what was accomplished, completely discarding the sprawling conversational log that led to the accomplishment.
+**Tier 2 — First Principles & Systems Engineering:** Swarm agents must leave compacted state markers (Pheromones) structured through a **4-Level Memory Hierarchy** (CCP Voice DNA → Coach Profile → Client Session → Ephemeral Override). We introduce **Context Forking** as the key engineering lever: `fork_context=true` for deep inheritance across the hierarchy, and `fork_context=false` for clean-room sub-agent isolation.
 
-**Tier 3 — Pedagogical Association Directive:** Deploy an *Entomology (Ant Foraging)* analogy. When an ant finds food, it does not retrace its chaotic, wandering 4-hour search path for the other ants to follow. It lays down a direct, concentrated chemical pheromone line straight back to the hive. The memory is compacted into pure directional value.
+**Tier 3 — Pedagogical Association Directive:** Deploy an *Entomology (Ant Foraging)* analogy. The map is structurally encoded in the chemical signature of the nest (Cache). Agents only receive the context necessary for their immediate task branch, preventing the "Lost in the Middle" syndrome.
 
-**Tier 4 — Python Codebase Teaching:** Teach **List Comprehensions & Slicing** (Python Difficulty Tier 3). Collapse a massive conversational list into a single "Summary State" string, replacing the verbose list.
+**Tier 4 — Python Codebase Teaching:** Teach **Context Managers (`with` blocks)** (Python Difficulty Tier 3). Implement a `with agent.spawn(fork=True):` block that manages the inheritance of parent context vs. starting a fresh session.
 
 **Tier 5 — Falsifiable Gate:** Student identifies the exact token-cost difference between passing a 50-turn raw log vs a 3-paragraph generated summary vector to a subsequent agent.
 
 ---
 
-### MODULE 8: Governing the "Ghost in the Machine" (Temperature & Top-K)
+### MODULE 8: Token Economics & Query Engine Design
 
-**Tier 1 — Negative Space:** Unlearn the assumption that model parameters are set-and-forget. Default parameters are optimized for friendly chatbots, not rigorous mathematical agents.
+**Tier 1 — Negative Space:** Unlearn the assumption that API budgets are an afterthought. Unleashing an agentic swarm without economic governors will bankrupt the system in hours.
 
-**Tier 2 — First Principles & Systems Engineering:** Precise control of `Temperature`, `Top-K`, and `Top-P`. A creative CMF scripting agent needs High Temperature (0.9) to hallucinate brilliant cinematic associations. The Python Orchestrator validating the JSON schema needs Zero Temperature (0.0) to be ruthlessly deterministic.
+**Tier 2 — First Principles & Systems Engineering:** We replace passive settings with proactive **FinOps** and **Token Economics**. The agent is managed by a **Query Engine** that enforces per-turn token budgets, tool-call limits, and performs Bedrock cascade routing (offloading simpler tasks to cheaper models via ULTRAPLAN).
 
-**Tier 3 — Pedagogical Association Directive:** Deploy a *Chemistry (Thermodynamics)* analogy. High temperature means violently moving particles—great for forging new alloys (creative writing). Zero temperature means a frozen, absolute crystalline structure—perfect for load-bearing pillars (code and logic).
+**Tier 3 — Pedagogical Association Directive:** Deploy an *Economics (Central Banking)* analogy. You don't hand an employee a blank corporate card. You issue micro-budgets (Query Engine limits), and if a specific department (Sub-Agent) exceeds its limit, the bank freezes the card immediately.
 
-**Tier 4 — Python Codebase Teaching:** Teach **Function Kwargs** (Python Difficulty Tier 3). Call an API function `generate_response(prompt, temp=0.0)` demonstrating parameter injection based on the agent's persona.
+**Tier 4 — Python Codebase Teaching:** Teach **Resource Counters & Gatekeeping** (Python Difficulty Tier 3). Implement a `QueryEngine` class that tracks `cumulative_tokens` and raises a `BudgetExceededError` preventing further API hits.
 
-**Tier 5 — Falsifiable Gate:** Student correctly assigns the optimal Temperature and Top-P values to three different CCP agents (A formatting parser, a creative ideator, and a data-extraction router).
+**Tier 5 — Falsifiable Gate:** Student architects a Bedrock cascading fallback where an expensive reasoning model is actively swapped for a cheaper extraction model halfway through a budget-constrained task.
 
 ---
 
-### MODULE 9: The "Kill Switch" and Entropy Degradation
+### MODULE 9: Hook Pipelines and Proactive Monitoring loops
 
-**Tier 1 — Negative Space:** Unlearn the trust in infinite loops. If Agent A fails to meet Agent B's standards, allowing them to argue indefinitely will consume the entire API budget in 4 hours.
+**Tier 1 — Negative Space:** Unlearn the trust in purely reactive, infinite loops. Without structured execution gates and continuous observation, agents inevitably hallucinate in the shadows.
 
-**Tier 2 — First Principles & Systems Engineering:** Every autonomous loop must have a hardcoded `max_iterations` kill switch. If the swarm cannot resolve the conflict within 5 turns, the system elegantly degrades, saves the state, and flags a human operator (Human-in-the-Loop fallback).
+**Tier 2 — First Principles & Systems Engineering:** Agent execution must be governed by a **Hook Pipeline** (e.g., `PreToolUse`, `PostToolUse`). We merge **Execution Contracts** (Failure Taxonomy from the NLAH Paper) with **KAIROS proactive monitoring**—a tick-based loop with a 15-second blocking budget that actively observes the agent's behavior instead of just waiting for it to finish.
 
-**Tier 3 — Pedagogical Association Directive:** Deploy a *Biology (Apoptosis)* analogy. Programmed cell death. When a cell detects massive unresolvable DNA damage (infinite looping arguments), it does not keep mutating; it triggers a chemical sequence to cleanly destroy itself, saving the host organism from cancer.
+**Tier 3 — Pedagogical Association Directive:** Deploy a *Biology (Apoptosis)* analogy. Programmed cell death. If the Execution Contract expires without a successful `RESPONSE.md`, the cell destroys itself to save the budget.
 
-**Tier 4 — Python Codebase Teaching:** Teach **Loop Counters & Break Statements** (Python Difficulty Tier 3). Implement `if attempt_count > 5: break` inside the adversarial loop, returning an explicit Error Object.
+**Tier 4 — Python Codebase Teaching:** Teach **Custom Exceptions & Try/Except Blocks** (Python Difficulty Tier 3). Implement `ContractExpiredError` and `VerifierFailure` exceptions that trigger the entropy degradation logic.
 
 **Tier 5 — Falsifiable Gate:** Student traces an adversarial execution loop and correctly identifies the maximum token expenditure before the `max_iterations = 3` kill switch activates.
 
@@ -169,11 +175,11 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 **Tier 1 — Negative Space:** Unlearn sending the same colossal instruction set repeatedly. It is financially devastating and chronometrically slow.
 
-**Tier 2 — First Principles & Systems Engineering:** Token/Prompt Caching allows massive system instructions (like the entire CCP codebase) to remain "warm" on the vendor's servers. The swarm references the Cache ID instead of resending 100,000 tokens per turn, slashing latency by 80%.
+**Tier 2 — First Principles & Systems Engineering:** Token/Prompt Caching physics. We introduce the **Canonical Workspace** as the authoritative carrier of state. By storing `TASK.md` and `RESPONSE.md` in fixed file paths, the swarm can reference the Cache ID of large system prompts while only resending the volatile "Task Delta". We also introduce **autoDream** (Kuber Studio) — the background process that consolidates these file logs during "idle" periods (3-gate trigger).
 
-**Tier 3 — Pedagogical Association Directive:** Deploy an *Entomology (Chemical Signatures)* analogy. The ants do not memorize the geographic map of the entire forest every morning. The map is structurally encoded in the chemical signature of the nest (Cache). They reference the base scent instantly. 
+**Tier 3 — Pedagogical Association Directive:** Deploy an *Entomology (Chemical Signatures)* analogy. The ants do not memorize the geographic map; the map is structurally encoded in the chemical signature of the nest (Cache). The "Dream System" is the hive's maintenance team cleaning the trails.
 
-**Tier 4 — Python Codebase Teaching:** Teach **Class State Variables** (Python Difficulty Tier 4). Store `self.cache_id` in a Harness class so subsequent API calls use the ID rather than the raw text string.
+**Tier 4 — Python Codebase Teaching:** Teach **Decorator Patterns for Caching** (Python Difficulty Tier 4). Write a `@prompt_cache` decorator that manages the `cache_id` state based on file hashes from the `state/` directory.
 
 **Tier 5 — Falsifiable Gate:** Student calculates the latency and cost difference between an uncached 50-turn conversation and a heavily cached 50-turn conversation.
 
@@ -193,17 +199,17 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 ---
 
-### MODULE 13: Mapping the Intelligence Explosion
+### MODULE 13: Permission ACLs & ML Risk Classification
 
-**Tier 1 — Negative Space:** Unlearn the idea that AGI is a single, magical mega-brain. AGI behaves more like a distributed, interacting society of highly specialized micro-intelligences.
+**Tier 1 — Negative Space:** Unlearn the assumption that tool access is a simple binary "on/off" switch. Security breaches in autonomous swarms are catastrophic because they happen at machine speed.
 
-**Tier 2 — First Principles & Systems Engineering:** As Agentic routes become deeply specialized (The CCP architecture), they form a distributed network. As latency approaches zero and cost approaches zero, the swarm iterates its own tool definitions and upgrades its own JSON schemas—creating the mechanics of an intelligence explosion through distributed self-improvement.
+**Tier 2 — First Principles & Systems Engineering:** Implement robust **Permission Access Control Lists (ACLs)** using JSON rulesets alongside **ML Risk Classification** (LOW/MED/HIGH scoring). The CCP must classify every tool call contextually, enforcing hard protections on critical files like `coach_soul.json` using adaptive security boundaries.
 
-**Tier 3 — Pedagogical Association Directive:** Deploy an *Evolutionary Biology / Sociology* analogy. The explosion of human dominance didn't happen because individuals got 100x smarter. It happened when humans developed specialized roles (blacksmith, farmer, soldier) and a loss-less communication mechanism (written language). The LLM is the brain; the Agentic JSON swarm is the written language that allows the civilization to explode.
+**Tier 3 — Pedagogical Association Directive:** Deploy an *Aviation Security* analogy. No passenger can just walk into the cockpit. There are clearance levels, background checks (Risk Classification), and physically locking armor doors (ACLs) that trigger based on current threat conditions.
 
-**Tier 4 — Python Codebase Teaching:** Teach **Recursive Functions** (Python Difficulty Tier 4). Demonstrate a function that calls itself `def optimize(performance): if performance < target: optimize(performance + 1)`, representing self-iteration.
+**Tier 4 — Python Codebase Teaching:** Teach **Decorator-Based Access Control** (Python Difficulty Tier 4). Write a `@requires_clearance(level="HIGH")` decorator that dynamically intercepts tool requests and evaluates them against an ML risk score model.
 
-**Tier 5 — Falsifiable Gate:** Student outlines how a failure in single-agent scaling (massive dense prompt) is explicitly solved by distributed swarm architecture (specialized sub-agents).
+**Tier 5 — Falsifiable Gate:** Student designs an ACL configuration JSON that grants read access to a user file but hard-rejects write access to the foundational coaching DNA files.
 
 ---
 
@@ -239,11 +245,11 @@ Frame the discipline as *Entomology (Hive Minds)* and *Sociology*. The engineer 
 
 **Tier 1 — Negative Space:** Unlearn all disjointed logic. 
 
-**Tier 2 — First Principles & Systems Engineering:** The synthesis of all 5 techniques—State management, Tool constraints, Contrastive debate, Pheromone context, and HitL. The agentic harness is a living, breathing cybernetic organism that scales computational intelligence safely.
+**Tier 2 — First Principles & Systems Engineering:** The synthesis of all 2026 techniques into an **NLAH-Native Swarm Engine**. Integration of the IHR Runtime Charter, Execution Contracts, Canonical Workspaces, and the autoDream consolidation loop.
 
-**Tier 3 — Pedagogical Association Directive:** Deploy a *Sociology (Constitutional Law)* analogy. The CCP is a Digital Republic. The JSON schemas are the Constitution. The orchestrator is the Executive. The CBAR is the Judiciary. The Agents are the citizens executing the labor. If the laws are mathematically sound, the society flourishes indefinitely.
+**Tier 3 — Pedagogical Association Directive:** Deploy a *Sociology (Constitutional Law)* analogy. The IHR Charter is the Constitution. The NLAH Contracts are the Legislative Missions. The autoDream engine is the Census/Archive.
 
-**Tier 4 — Python Codebase Teaching:** Teach **Main Execution Block** (Difficulty Tier 4). Put it all together inside an `if __name__ == "__main__":` block that instantiates the classes, connects the API keys, and triggers the master event loop.
+**Tier 4 — Python Codebase Teaching:** Teach **The Final Harness Loop** (Difficulty Tier 4). Build the master orchestrator that reads an `NLAH.md` artifact and executes it through a series of specialized sub-agents with explicit `fork_context` and `budget` controls.
 
 **Tier 5 — Falsifiable Gate:** Student traces the entire lifecycle of a single user request from the initial NLP input through 4 distinct specialized swarm nodes, ending in successful Human validation.
 

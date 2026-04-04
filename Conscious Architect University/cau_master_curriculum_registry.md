@@ -28,7 +28,7 @@ This document serves as the master syllabus map for the Conscious Architect Univ
 **Target Roles:** Creative Pipeline Architect / Skills Engineer Expert
 
 *   **Course 5: Python-Driven Programmatic Video**
-    *   *Focus:* The anti-NLE architecture. Executing video pipelines deterministically via code. Remotion, Playwright, MoviePy, ElevenLabs, and FFmpeg 8.0 integrations.
+    *   *Focus:* The anti-NLE architecture. Executing video pipelines deterministically via code. Remotion, Playwright, MoviePy, **MOSS-TTS Family** (OpenMOSS sovereign voice engine — self-hosted on RunPod), and FFmpeg 8.0 integrations. ElevenLabs is explicitly prohibited; CMF operates only on TTT-compatible sovereign inference.
     *   *Source Files:* `docs/from cmf/# Automated AI-Driven Short-Form Video Pipeline.md`, `docs/from cmf/Making Automated Instructional Videos...`, `docs/from cmf/I Built a $1m Video Editor SaaS...`, `docs/from cmf/Claude Code is our 10x editor with Remotion.md`, `docs/from cmf/FFmpeg 8.0 + Whisper...`
 *   **Course 6: Spatial Logic & Unreal Engine Orchestration**
     *   *Focus:* MetaHuman generation, facial animation mapping, and programmatic iClone-to-AI Image rendering workflows.
