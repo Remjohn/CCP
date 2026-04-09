@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dep_vid_032_pose_export",
+  "title": "Character Pose Export (DEP-VID-032)",
+  "description": "Static high-res character pose PNG for carousel templates. FR-VID-13 §4 Stage 6 Step 4.",
+  "type": "object",
+  "required": ["job_id", "character_id", "clip_id", "type", "target_format", "width", "height", "status", "total_frames", "frames_rendered", "output_path"],
+  "properties": {
+    "job_id": { "type": "string", "pattern": "^POSE-" },
+    "character_id": { "type": "string", "pattern": "^CHAR-" },
+    "clip_id": { "type": "string" },
+    "type": { "type": "string", "const": "carousel_pose" },
+    "target_format": { "type": "string", "enum": ["9:16", "1:1", "16:9", "4:5"] },
+    "width": { "type": "integer", "minimum": 1024 },
+    "height": { "type": "integer", "minimum": 1024 },
+    "status": { "type": "string", "enum": ["queued", "processing", "completed", "failed"] },
+    "total_frames": { "type": "integer", "const": 1 },
+    "frames_rendered": { "type": "integer", "minimum": 0, "maximum": 1 },
+    "output_path": { "type": "string" }
+  }
+}

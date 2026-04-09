@@ -1,0 +1,67 @@
+version: "3.9"
+
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: ccp-searxng
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./settings.yml:/etc/searxng/settings.yml:ro
+      - ./limiter.toml:/etc/searxng/limiter.toml:ro
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8080/
+      - SEARXNG_SECRET=GENERATE_SECRET_HERE
+    networks:
+      - ccp-internal
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: ccp-searxng-redis
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis-data:/data
+    networks:
+      - ccp-internal
+
+  pinterest-scraper:
+    build:
+      context: ../pinterest_scraper
+      dockerfile: Dockerfile
+    container_name: ccp-pinterest-scraper
+    restart: unless-stopped
+    environment:
+      - PROXY_POOL_URL=http://proxy-mesh:8888
+      - MAX_CONCURRENT_SCRAPES=5
+      - SCROLL_DEPTH=3
+      - RESULT_LIMIT=30
+    ports:
+      - "127.0.0.1:8081:8081"
+    networks:
+      - ccp-internal
+    depends_on:
+      - proxy-mesh
+
+  proxy-mesh:
+    image: serjs/go-socks5-proxy:latest
+    container_name: ccp-proxy-mesh
+    restart: unless-stopped
+    environment:
+      - PROXY_LIST=/etc/proxies/residential.txt
+    volumes:
+      - ./proxies/residential.txt:/etc/proxies/residential.txt:ro
+    ports:
+      - "127.0.0.1:8888:1080"
+    networks:
+      - ccp-internal
+
+volumes:
+  redis-data:
+
+networks:
+  ccp-internal:
+    driver: bridge

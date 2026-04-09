@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dep_vid_035_character_package",
+  "title": "Character Package (DEP-VID-035)",
+  "description": "Character layers + skeleton JSON from See-Through → psd-tools pipeline. FR-VID-13 §5 Schema B.",
+  "type": "object",
+  "required": ["character_id", "display_name", "layers", "skeleton", "skins_available", "render_dimensions"],
+  "properties": {
+    "character_id": { "type": "string", "pattern": "^CHAR-" },
+    "display_name": { "type": "string" },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "png_url", "bone", "z_order"],
+        "properties": {
+          "name": { "type": "string" },
+          "png_url": { "type": "string" },
+          "bone": { "type": "string", "pattern": "^b_" },
+          "z_order": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "skeleton": {
+      "type": "object",
+      "required": ["format", "bone_count", "root_bone", "bones"],
+      "properties": {
+        "format": { "type": "string", "const": "dragonbones" },
+        "bone_count": { "type": "integer", "minimum": 15 },
+        "root_bone": { "type": "string" },
+        "bones": {
+          "type": "array",
+          "minItems": 15,
+          "items": {
+            "type": "object",
+            "required": ["name", "parent", "x", "y", "rotation"],
+            "properties": {
+              "name": { "type": "string", "pattern": "^b_" },
+              "parent": { "type": ["string", "null"] },
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "rotation": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "skins_available": { "type": "array", "items": { "type": "string" } },
+    "render_dimensions": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "integer" },
+        "height": { "type": "integer" }
+      }
+    }
+  }
+}

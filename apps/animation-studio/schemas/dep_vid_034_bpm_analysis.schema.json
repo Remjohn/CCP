@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dep_vid_034_bpm_analysis",
+  "title": "BPM Analysis Result (DEP-VID-034)",
+  "description": "Tempo and beat timestamps from music track analysis. FR-VID-13 §5 Schema C.",
+  "type": "object",
+  "required": ["analysis_id", "music_file", "tempo_bpm", "confidence", "beat_times_sec", "subdivisions", "timestamp"],
+  "properties": {
+    "analysis_id": { "type": "string", "pattern": "^BPM-" },
+    "music_file": { "type": "string" },
+    "tempo_bpm": { "type": "number", "minimum": 20, "maximum": 300 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "beat_times_sec": { "type": "array", "items": { "type": "number", "minimum": 0 } },
+    "subdivisions": {
+      "type": "object",
+      "required": ["quarter", "eighth", "sixteenth"],
+      "properties": {
+        "quarter": { "type": "array", "items": { "type": "number" } },
+        "eighth": { "type": "array", "items": { "type": "number" } },
+        "sixteenth": { "type": "array", "items": { "type": "number" } }
+      }
+    },
+    "timestamp": { "type": "string", "format": "date-time" }
+  }
+}

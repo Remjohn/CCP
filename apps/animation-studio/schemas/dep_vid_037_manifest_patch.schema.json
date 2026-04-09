@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dep_vid_037_manifest_patch",
+  "title": "Animation Manifest Patch (DEP-VID-037)",
+  "description": "RFC 6902 JSON Patch applied to DEP-VID-002 manifest's character_overlay fields. FR-VID-13 §5 Schema A.",
+  "type": "object",
+  "required": ["patch_id", "base_manifest_id", "character_id", "operator", "target_format", "timestamp", "bpm_sync_enabled", "operations", "review_notes"],
+  "properties": {
+    "patch_id": { "type": "string", "pattern": "^PATCH-" },
+    "base_manifest_id": { "type": "string", "pattern": "^MAN-" },
+    "character_id": { "type": "string", "pattern": "^CHAR-" },
+    "operator": { "type": "string" },
+    "target_format": { "type": "string", "enum": ["9:16", "1:1", "16:9", "4:5"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "bpm_sync_enabled": { "type": "boolean" },
+    "bpm_tempo": { "type": ["number", "null"] },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["op", "path"],
+        "properties": {
+          "op": { "type": "string", "enum": ["replace", "add", "remove"] },
+          "path": { "type": "string", "pattern": "^/beats/" },
+          "value": {}
+        }
+      }
+    },
+    "review_notes": { "type": "string" }
+  }
+}

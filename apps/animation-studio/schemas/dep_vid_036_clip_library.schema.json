@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dep_vid_036_clip_library",
+  "title": "Animation Clip Library (DEP-VID-036)",
+  "description": "Catalog of all available animation clips with metadata. FR-VID-13 §5 Schema D.",
+  "type": "object",
+  "required": ["library_id", "version", "character_base", "clips", "last_updated"],
+  "properties": {
+    "library_id": { "type": "string", "pattern": "^LIB-" },
+    "version": { "type": "string" },
+    "character_base": { "type": "string" },
+    "clips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clip_id", "name", "category", "duration_frames", "affected_bones", "thumbnails", "source"],
+        "properties": {
+          "clip_id": { "type": "string" },
+          "name": { "type": "string" },
+          "category": { "type": "string", "enum": ["Emotions", "Gestures", "Loops", "Interactions", "Scenes"] },
+          "duration_frames": { "type": "integer", "minimum": 1 },
+          "affected_bones": { "type": "array", "items": { "type": "string", "pattern": "^b_" } },
+          "thumbnails": {
+            "type": "object",
+            "properties": { "gif": { "type": "string" } }
+          },
+          "source": { "type": "string", "enum": ["native", "imported"] },
+          "original_format": { "type": "string", "enum": ["spine", "lottie", "bvh"] }
+        }
+      }
+    },
+    "last_updated": { "type": "string", "format": "date-time" }
+  }
+}

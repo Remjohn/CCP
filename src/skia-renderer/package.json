@@ -1,0 +1,15 @@
+{
+  "name": "ccp-skia-renderer",
+  "version": "1.0.0",
+  "description": "Headless GPU rendering sidecar for FR-VIS-18 Spatial Composition Engine",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "skia-canvas": "^1.0.1",
+    "@chenglou/pretext": "^1.0.0",
+    "roughjs": "^4.6.6"
+  }
+}

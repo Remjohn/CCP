@@ -320,7 +320,7 @@ Step 14: V²WS + Full Cross-System Integration + Data Intelligence Layer
          Depends on: Steps 11 + 12 + 13
 
 PHASE 2B — CVE VISUAL ENGINE (after Phase 1 stable across 3+ production cycles)
-         Specs: FR-VIS-01 through FR-VIS-13
+         Specs: FR-VIS-01 through FR-VIS-13, and FR-VIS-18
          Build order within Phase 2B:
          FR-VIS-13 → Image Type Validity Gate (Gate V-00) — build first, gates everything else
          FR-VIS-07 → Format & Aspect Ratio Enforcement
@@ -334,6 +334,7 @@ PHASE 2B — CVE VISUAL ENGINE (after Phase 1 stable across 3+ production cycles
          FR-VIS-03 → PSSL Prompt Compilation (Paradoxe, RunningHub payloads)
          FR-VIS-04 → Visual Validation (AGSS scoring, authenticity checks, drift detection)
          FR-VIS-05 → Canvas Composition & Delivery (Conscious Canva App, Next.js + Fabric.js)
+         FR-VIS-18 → Spatial Composition Engine (Geometrics Pipeline) — Upgrades rendering layer of FR-VIS-05
          FR-VIS-06 → Notion Visual Content Card (VPO delivery, Why This Visual rationale)
          Depends on: Phase 1 stable
 
