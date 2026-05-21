@@ -582,6 +582,7 @@ class TestAC7WeeklyEvolution:
                 sophia_alignment=0.91,
                 chen_detection=False,
                 audience_engagement_7d=0.80,
+                assignment_type=FormatAssignmentType.EXERCISE,
             )
             for i in range(MINIMUM_EVOLUTION_SESSIONS)
         ]
@@ -620,6 +621,7 @@ class TestAC7WeeklyEvolution:
                     sophia_alignment=SOPHIA_ALIGNMENT_CLIMB_THRESHOLD,  # exactly 0.85
                     chen_detection=False,
                     audience_engagement_7d=0.85,  # above avg
+                    assignment_type=FormatAssignmentType.EXERCISE,
                 )
             ],
             coach_average_engagement=0.70,  # deep_empathy engagement (0.85) > avg (0.70)
@@ -653,6 +655,7 @@ class TestAC7WeeklyEvolution:
                         sophia_alignment=0.92,
                         chen_detection=False,
                         audience_engagement_7d=0.80,
+                        assignment_type=FormatAssignmentType.EXERCISE,
                     )
                     for i in range(MINIMUM_EVOLUTION_SESSIONS - 1)  # only 2
                 ]
@@ -681,6 +684,7 @@ class TestAC7WeeklyEvolution:
                     sophia_alignment=0.95,
                     chen_detection=False,
                     audience_engagement_7d=0.90,
+                    assignment_type=FormatAssignmentType.EXERCISE,
                 )
             ],
             coach_average_engagement=0.50,
@@ -715,6 +719,7 @@ class TestAC8ScoreClamping:
                 sophia_alignment=0.95,
                 chen_detection=False,
                 audience_engagement_7d=0.90,
+                assignment_type=FormatAssignmentType.EXERCISE,
             )
             for i in range(MINIMUM_EVOLUTION_SESSIONS)
         ]
@@ -748,6 +753,7 @@ class TestAC8ScoreClamping:
                     sophia_alignment=0.95,
                     chen_detection=False,
                     audience_engagement_7d=0.90,
+                    assignment_type=FormatAssignmentType.EXERCISE,
                 )
             ],
             coach_average_engagement=0.50,
@@ -772,6 +778,7 @@ class TestAC8ScoreClamping:
                 sophia_alignment=0.50,  # below climb threshold
                 chen_detection=True,    # chen detected
                 audience_engagement_7d=0.30,
+                assignment_type=FormatAssignmentType.EXERCISE,
             )
             for i in range(MINIMUM_EVOLUTION_SESSIONS)
         ]
@@ -805,6 +812,7 @@ class TestAC8ScoreClamping:
                     sophia_alignment=0.40,  # below threshold
                     chen_detection=True,
                     audience_engagement_7d=0.20,
+                    assignment_type=FormatAssignmentType.EXERCISE,
                 )
             ],
             coach_average_engagement=0.50,

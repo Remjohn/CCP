@@ -94,6 +94,36 @@ async def telegram_webhook(request: Request):
 
     # Parse the update
     body = await request.json()
+    
+    # Handle Callback Queries for Inline Jury Voting (Phase2-M05)
+    if "callback_query" in body:
+        callback = body["callback_query"]
+        callback_data = callback.get("data", "")
+        user_id = str(callback.get("from", {}).get("id", ""))
+        
+        # Call Debate Jury Service
+        from src.ccp.services.debate_with_jury_service import DebateWithJuryService
+        from src.ccp.services.content_machine import ContentMachinePipeline
+        
+        svc = DebateWithJuryService(ContentMachinePipeline())
+        prompt = svc.process_jury_vote(callback_data, user_id)
+        
+        if prompt:
+            # Answer callback and send deep-link message
+            import httpx
+            bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "")
+            if bot_token:
+                async with httpx.AsyncClient() as client:
+                    await client.post(f"https://api.telegram.org/bot{bot_token}/answerCallbackQuery", json={"callback_query_id": callback.get("id")})
+                    await client.post(f"https://api.telegram.org/bot{bot_token}/sendMessage", json={
+                        "chat_id": callback.get("message", {}).get("chat", {}).get("id"),
+                        "text": prompt.prompt_copy,
+                        "reply_markup": {
+                            "inline_keyboard": [[{"text": prompt.cta_label, "url": prompt.deep_link_url}]]
+                        }
+                    })
+        return {"status": "callback_processed"}
+
     message_data = body.get("message", {})
     if not message_data:
         return {"status": "no_message"}

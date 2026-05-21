@@ -31,6 +31,9 @@ The following ADRs mandate the foundational technical decisions across all sub-s
 *   **ADR-04: JIT Skill Compilation over Monolithic Prompts.**
     *   *Constraint:* System Prompts are forbidden. All generative instructions must be dynamically compiled from atomized modular skills via the Dependency Registry and Adapter Registry at runtime.
     *   *Justification:* Eliminates statistical centroid drift and prompt degradation, ensuring outputs structurally match the coach's 3D Voice DNA.
+*   **ADR-05: Mandatory Primitive Loading & Internal Evals.**
+    *   *Constraint:* No technical specification, JIT compilation, or output validation pipeline may rely on LLM intuition for quality control. **Primitive YAMLs MUST be loaded into context** as the deterministic standard of quality.
+    *   *Justification:* Primitives (e.g., `PRM-STR-008.yaml`) contain specific, float-based geometry and dual-source verified knowledge. They are the only acceptable baseline for internal Evals. If an evaluation pipeline evaluates an output without first loading the targeted primitive schema, the evaluation is considered hallucinated and invalid.
 
 ---
 

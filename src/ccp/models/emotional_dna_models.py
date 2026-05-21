@@ -18,7 +18,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -277,11 +277,11 @@ class MoralFoundations(BaseModel):
     """Container for V6-V10 moral foundation weights.
     Spec §Phase 3: 'Sum across V6-V10 = 1.0'."""
     v6_care_harm: MoralFoundationWeight = Field(default_factory=MoralFoundationWeight)
-    v7_fairness_cheating: V7FairnessCheating = Field(default_factory=V7FairnessCheating)
+    v7_fairness_cheating: Union[V7FairnessCheating, MoralFoundationWeight] = Field(default_factory=V7FairnessCheating)
     v8_loyalty_betrayal: MoralFoundationWeight = Field(default_factory=MoralFoundationWeight)
     v9_authority_subversion: MoralFoundationWeight = Field(default_factory=MoralFoundationWeight)
-    v10_sanctity_degradation: V10SanctityDegradation = Field(default_factory=V10SanctityDegradation)
-    v10b_liberty_oppression: V10bLibertyOppression = Field(default_factory=V10bLibertyOppression)
+    v10_sanctity_degradation: Union[V10SanctityDegradation, MoralFoundationWeight] = Field(default_factory=V10SanctityDegradation)
+    v10b_liberty_oppression: Union[V10bLibertyOppression, MoralFoundationWeight] = Field(default_factory=V10bLibertyOppression)
     primary_foundation: Optional[str] = None
     secondary_foundation: Optional[str] = None
     cluster_alignment: Optional[ClusterAlignment] = None

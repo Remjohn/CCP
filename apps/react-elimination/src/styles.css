@@ -1,0 +1,99 @@
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.elimination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.board {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-option {
+  background: #1e293b;
+  color: white;
+  border: 2px solid #334155;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-option:hover {
+  background: #334155;
+}
+
+.survivor-panel {
+  text-align: center;
+}
+
+.survivor-card {
+  background: #10b981;
+  padding: 3rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Timer Aggression CSS */
+.timer-container {
+  height: 20px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+  border: 2px solid transparent;
+}
+
+.timer-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--timer-color, #38bdf8);
+}
+
+.timer-container[data-aggression="calm"] {
+  --timer-color: #38bdf8;
+  animation: pulse-calm 2s infinite;
+}
+
+.timer-container[data-aggression="pressured"] {
+  --timer-color: #f59e0b;
+  animation: pulse-pressured 1s infinite;
+}
+
+.timer-container[data-aggression="intense"] {
+  --timer-color: #ef4444;
+  animation: pulse-intense 0.5s infinite;
+  border-color: #7f1d1d;
+}
+
+.timer-container[data-aggression="final"] {
+  --timer-color: #dc2626;
+  animation: pulse-final 0.2s infinite;
+  border-color: #dc2626;
+}
+
+@keyframes pulse-calm { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.8; transform: scale(0.98); } }
+@keyframes pulse-pressured { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.95); } }
+@keyframes pulse-intense { 0%, 100% { opacity: 1; transform: scale(1.05); } 50% { opacity: 0.4; transform: scale(0.95); } }
+@keyframes pulse-final { 0%, 100% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 10px red; } 50% { opacity: 0.2; transform: scale(0.9); box-shadow: none; } }

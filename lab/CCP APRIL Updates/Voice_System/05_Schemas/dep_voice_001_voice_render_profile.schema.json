@@ -1,0 +1,435 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DEP-VOICE-001",
+  "title": "Voice Render Profile",
+  "description": "Production contract for coach-level voice rendering state. Declares the stable Voice DNA core, current style state, growth delta, model preferences, control guardrails, and evaluation thresholds used by CBCS and the Voice Speaking Program.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "profile_id",
+    "coach_id",
+    "status",
+    "voice_dna_core",
+    "style_state",
+    "growth_delta",
+    "model_strategy",
+    "render_guardrails",
+    "evaluation_thresholds",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.0(\\.\\d+)?$",
+      "description": "Schema version for this contract."
+    },
+    "profile_id": {
+      "type": "string",
+      "pattern": "^VRP-[A-Z0-9_-]{6,64}$",
+      "description": "Unique render profile identifier."
+    },
+    "coach_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64,
+      "description": "Coach identifier aligned to coach_soul / deployment identity."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "shadow", "deprecated", "archived"],
+      "description": "Lifecycle status of the render profile."
+    },
+    "source_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "coach_soul_path": { "type": "string" },
+        "emotional_dna_path": { "type": "string" },
+        "ttt_baseline_path": { "type": "string" },
+        "memory_bank_id": { "type": "string" },
+        "notes": { "type": "string", "maxLength": 2000 }
+      }
+    },
+    "voice_dna_core": {
+      "$ref": "#/definitions/voice_dna_core"
+    },
+    "style_state": {
+      "$ref": "#/definitions/style_state"
+    },
+    "growth_delta": {
+      "$ref": "#/definitions/growth_delta"
+    },
+    "model_strategy": {
+      "$ref": "#/definitions/model_strategy"
+    },
+    "render_guardrails": {
+      "$ref": "#/definitions/render_guardrails"
+    },
+    "evaluation_thresholds": {
+      "$ref": "#/definitions/evaluation_thresholds"
+    },
+    "operator_overrides": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/operator_override" },
+      "default": []
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "scaled_value": {
+      "type": "object",
+      "required": ["value"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": -1.0,
+          "maximum": 1.0,
+          "description": "Normalized primitive magnitude."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "source": {
+          "type": "string",
+          "enum": ["measured", "inferred", "coach_override", "adapter", "human_reviewed"]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    },
+    "range_value": {
+      "type": "object",
+      "required": ["target"],
+      "additionalProperties": false,
+      "properties": {
+        "target": { "type": "number" },
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "unit": { "type": "string", "maxLength": 32 }
+      }
+    },
+    "primitive_family_block": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "family_weight": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "primitives": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/definitions/scaled_value" }
+        }
+      },
+      "required": ["primitives"]
+    },
+    "ttt_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["temperature", "texture", "tone"],
+      "properties": {
+        "temperature": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "texture": {
+          "type": "string",
+          "enum": ["raw", "colloquial", "conversational", "polished", "literary"]
+        },
+        "tone": {
+          "type": "string",
+          "enum": [
+            "reflective",
+            "confrontational",
+            "nurturing",
+            "instructional",
+            "declarative",
+            "questioning",
+            "celebratory",
+            "grieving"
+          ]
+        }
+      }
+    },
+    "voice_dna_core": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_lock_strength",
+        "ttt_baseline",
+        "baseline_metrics",
+        "primitive_families"
+      ],
+      "properties": {
+        "identity_lock_strength": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "How strongly the system should preserve the established voice core."
+        },
+        "ttt_baseline": {
+          "$ref": "#/definitions/ttt_baseline"
+        },
+        "baseline_metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "base_wpm",
+            "base_pause_density",
+            "base_pause_ms",
+            "base_pitch_center_hz",
+            "base_pitch_spread_semitones",
+            "base_energy_mean"
+          ],
+          "properties": {
+            "base_wpm": { "$ref": "#/definitions/range_value" },
+            "base_pause_density": { "$ref": "#/definitions/range_value" },
+            "base_pause_ms": { "$ref": "#/definitions/range_value" },
+            "base_pitch_center_hz": { "$ref": "#/definitions/range_value" },
+            "base_pitch_spread_semitones": { "$ref": "#/definitions/range_value" },
+            "base_energy_mean": { "$ref": "#/definitions/range_value" },
+            "base_jitter": { "$ref": "#/definitions/range_value" },
+            "base_shimmer": { "$ref": "#/definitions/range_value" }
+          }
+        },
+        "primitive_families": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "temporal",
+            "pause",
+            "breath",
+            "pitch_contour",
+            "resonance_timbre",
+            "articulation",
+            "emphasis",
+            "intimacy_contact",
+            "tension_release",
+            "narrative_broadcast"
+          ],
+          "properties": {
+            "temporal": { "$ref": "#/definitions/primitive_family_block" },
+            "pause": { "$ref": "#/definitions/primitive_family_block" },
+            "breath": { "$ref": "#/definitions/primitive_family_block" },
+            "pitch_contour": { "$ref": "#/definitions/primitive_family_block" },
+            "resonance_timbre": { "$ref": "#/definitions/primitive_family_block" },
+            "articulation": { "$ref": "#/definitions/primitive_family_block" },
+            "emphasis": { "$ref": "#/definitions/primitive_family_block" },
+            "intimacy_contact": { "$ref": "#/definitions/primitive_family_block" },
+            "tension_release": { "$ref": "#/definitions/primitive_family_block" },
+            "narrative_broadcast": { "$ref": "#/definitions/primitive_family_block" }
+          }
+        }
+      }
+    },
+    "style_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_id", "season_label", "family_offsets", "validated_at"],
+      "properties": {
+        "state_id": {
+          "type": "string",
+          "pattern": "^VSS-[A-Z0-9_-]{4,64}$"
+        },
+        "season_label": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Human-readable label for the current season of expression."
+        },
+        "descriptors": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 64 },
+          "maxItems": 16,
+          "default": []
+        },
+        "family_offsets": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/definitions/scaled_value" }
+        },
+        "validated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "validated_by": {
+          "type": "string",
+          "enum": ["coach", "operator", "automatic", "mixed"]
+        }
+      }
+    },
+    "growth_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["delta_id", "maturity_score", "target_moves", "family_offsets"],
+      "properties": {
+        "delta_id": {
+          "type": "string",
+          "pattern": "^VGD-[A-Z0-9_-]{4,64}$"
+        },
+        "maturity_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "How stabilized the emerging delivery pattern is."
+        },
+        "target_moves": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "maxLength": 240
+          }
+        },
+        "family_offsets": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/definitions/scaled_value" }
+        },
+        "human_review_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "model_strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_model_family", "allowed_model_families", "routing_policy"],
+      "properties": {
+        "primary_model_family": {
+          "type": "string",
+          "enum": ["moss_tts", "voxtral_tts", "index_tts_2", "f5_tts", "other"]
+        },
+        "allowed_model_families": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": ["moss_tts", "voxtral_tts", "index_tts_2", "f5_tts", "other"]
+          }
+        },
+        "routing_policy": {
+          "type": "string",
+          "enum": ["single_backbone", "evidence_based_routing", "shadow_compare_only"]
+        },
+        "adapter_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    },
+    "render_guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_identity_drift_ratio",
+        "max_ttt_drift_ratio",
+        "max_pause_density_delta",
+        "max_pitch_spread_delta",
+        "allow_non_core_emotional_extrapolation"
+      ],
+      "properties": {
+        "max_identity_drift_ratio": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "max_ttt_drift_ratio": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "max_pause_density_delta": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "max_pitch_spread_delta": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "allow_non_core_emotional_extrapolation": {
+          "type": "boolean"
+        },
+        "forbidden_modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "generic_motivational_voice",
+              "overperformed_authority",
+              "synthetic_broadcast_hype",
+              "forced_grief",
+              "forced_laughter",
+              "centroid_flattening"
+            ]
+          },
+          "default": []
+        }
+      }
+    },
+    "evaluation_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min_identity_similarity",
+        "min_context_alignment",
+        "min_human_truth_score",
+        "min_broadcast_clarity_score"
+      ],
+      "properties": {
+        "min_identity_similarity": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "min_context_alignment": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "min_human_truth_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "min_broadcast_clarity_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "operator_override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_path", "reason", "applied_at", "applied_by"],
+      "properties": {
+        "field_path": { "type": "string", "minLength": 3 },
+        "reason": { "type": "string", "maxLength": 500 },
+        "applied_at": { "type": "string", "format": "date-time" },
+        "applied_by": { "type": "string", "maxLength": 120 }
+      }
+    }
+  }
+}

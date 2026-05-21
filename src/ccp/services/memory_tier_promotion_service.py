@@ -177,7 +177,7 @@ class PatternFlaggingEngine:
             return "imposter_syndrome"
         if any(w in label_lower for w in ("fail", "failure", "loser")):
             return "failure_fear"
-        if any(w in label_lower for w in ("stuck", "stagnant", "not moving")):
+        if any(w in label_lower for w in ("stuck", "stagnat", "not moving")):
             return "stagnation_pattern"
         return label_lower.replace(" ", "_")
 

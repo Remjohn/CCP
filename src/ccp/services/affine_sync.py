@@ -34,12 +34,10 @@ from typing import Any, Optional
 
 from src.ccp.core.receipt_chain import ReceiptChain
 from src.ccp.models.ca11_models import (
-    DEFAULT_DELIVERY_TARGET,
     SYNC_BACKOFF_SCHEDULE,
     SYNC_MAX_RETRIES,
     CanvaApprovePayload,
     ContentPushPayload,
-    DeliveryTarget,
     LearningPathPushPayload,
     SessionPushPayload,
     SyncErrorType,
@@ -372,48 +370,8 @@ class SyncEventLogger:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Unit 7 — Dual Delivery Router
+# Dual Delivery Router Removed (Obsolete Notion integration)
 # ══════════════════════════════════════════════════════════════════════════════
-
-
-class DualDeliveryRouter:
-    """Routes content delivery to AFFiNE, Notion, or both (AC5).
-
-    Reads DELIVERY_TARGET from coach_config. During migration, both
-    pipelines run in parallel (§6 Backward Compatibility).
-    """
-
-    def __init__(
-        self,
-        affine_client: AFFiNEClient,
-        notion_sync: Any = None,
-        config_provider: Any = None,
-    ):
-        self._affine = affine_client
-        self._notion = notion_sync
-        self._config_provider = config_provider
-
-    def resolve_delivery_target(self, coach_id: str) -> DeliveryTarget:
-        """Resolve the delivery target for a coach from coach_config."""
-        if self._config_provider is not None:
-            try:
-                config = self._config_provider.get_coach_config(coach_id)
-                target_str = config.get("delivery_target", DEFAULT_DELIVERY_TARGET.value)
-                return DeliveryTarget(target_str)
-            except Exception:
-                logger.warning(
-                    "Could not resolve delivery_target for coach %s, using default",
-                    coach_id,
-                )
-        return DEFAULT_DELIVERY_TARGET
-
-    def should_push_affine(self, target: DeliveryTarget) -> bool:
-        """Check if AFFiNE push is required for the given target."""
-        return target in (DeliveryTarget.AFFINE_ONLY, DeliveryTarget.BOTH)
-
-    def should_push_notion(self, target: DeliveryTarget) -> bool:
-        """Check if Notion push is required for the given target."""
-        return target in (DeliveryTarget.NOTION_ONLY, DeliveryTarget.BOTH)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -434,7 +392,6 @@ class AFFiNESyncService:
         self,
         coach_acronym: str,
         affine_client: AFFiNEClient,
-        notion_sync: Any = None,
         supabase_client: Any = None,
         config_provider: Any = None,
         receipt_chain: Optional[ReceiptChain] = None,
@@ -444,26 +401,16 @@ class AFFiNESyncService:
         self._affine = affine_client
         self._idempotency = IdempotencyEngine(affine_client)
         self._event_logger = SyncEventLogger(supabase_client)
-        self._router = DualDeliveryRouter(
-            affine_client=affine_client,
-            notion_sync=notion_sync,
-            config_provider=config_provider,
-        )
+        self._config_provider = config_provider
         self._receipt_chain = receipt_chain or ReceiptChain(
             coach_acronym=self.coach_acronym
         )
         self._retry = retry_engine or RetryEngine()
-        self._notion = notion_sync
 
     @property
     def event_logger(self) -> SyncEventLogger:
         """Expose event logger for test inspection."""
         return self._event_logger
-
-    @property
-    def router(self) -> DualDeliveryRouter:
-        """Expose router for test inspection."""
-        return self._router
 
     # ── Receipt Chain Integration (AC6) ──────────────────────────────────
 
@@ -500,8 +447,8 @@ class AFFiNESyncService:
         In production, this queries Supabase coach_config table.
         Here we use the config_provider if available.
         """
-        if self._router._config_provider is not None:
-            config = self._router._config_provider.get_coach_config(coach_id)
+        if self._config_provider is not None:
+            config = self._config_provider.get_coach_config(coach_id)
             ws_id = config.get("affine_workspace_id", "")
             if ws_id:
                 return ws_id
@@ -514,8 +461,8 @@ class AFFiNESyncService:
 
         Spec §10 Safety Tests: Cross-Tenant Push Rejection.
         """
-        if self._router._config_provider is not None:
-            config = self._router._config_provider.get_coach_config(coach_id)
+        if self._config_provider is not None:
+            config = self._config_provider.get_coach_config(coach_id)
             return config.get("affine_workspace_id") == workspace_id
         return True  # No config provider = no validation possible
 
@@ -529,10 +476,9 @@ class AFFiNESyncService:
         """Push content to the coach's AFFiNE Content Calendar.
 
         Implements: AC1 (content push), AC2 (idempotency), AC3 (event logging),
-        AC5 (dual delivery), AC6 (receipt chain).
+        AC6 (receipt chain).
         """
         target_ws = workspace_id or self._resolve_workspace_id(payload.coach_id)
-        delivery_target = self._router.resolve_delivery_target(payload.coach_id)
         payload_hash = SyncEventLogger.compute_payload_hash(payload)
         targets_completed: list[str] = []
 
@@ -552,44 +498,35 @@ class AFFiNESyncService:
             )
 
         # AFFiNE delivery
-        if self._router.should_push_affine(delivery_target):
-            try:
-                entry_data = payload.model_dump(mode="json")
-                result, retry_count = await self._retry.execute_with_retry(
-                    self._idempotency.create_or_update,
-                    target_ws,
-                    "content_calendar",
-                    payload.asset_id,
-                    entry_data,
-                    on_retry=lambda attempt, exc: self._log_retry_event(
-                        SyncEventType.CONTENT_PUSH, target_ws, payload_hash, attempt, str(exc)
-                    ),
+        try:
+            entry_data = payload.model_dump(mode="json")
+            result, retry_count = await self._retry.execute_with_retry(
+                self._idempotency.create_or_update,
+                target_ws,
+                "content_calendar",
+                payload.asset_id,
+                entry_data,
+                on_retry=lambda attempt, exc: self._log_retry_event(
+                    SyncEventType.CONTENT_PUSH, target_ws, payload_hash, attempt, str(exc)
+                ),
+            )
+            affine_entry, was_update = result
+            targets_completed.append("AFFINE")
+        except Exception as exc:
+            event = self._event_logger.log_event(
+                event_type=SyncEventType.CONTENT_PUSH,
+                target_workspace_id=target_ws,
+                payload_hash=payload_hash,
+                status=SyncEventStatus.FAILED,
+                error_detail=str(exc),
+                retry_count=self._retry.max_retries,
                 )
-                affine_entry, was_update = result
-                targets_completed.append("AFFINE")
-            except Exception as exc:
-                event = self._event_logger.log_event(
-                    event_type=SyncEventType.CONTENT_PUSH,
-                    target_workspace_id=target_ws,
-                    payload_hash=payload_hash,
-                    status=SyncEventStatus.FAILED,
-                    error_detail=str(exc),
-                    retry_count=self._retry.max_retries,
-                )
-                return SyncResult(
-                    success=False,
-                    event=event,
-                    error_type=SyncErrorType.MAX_RETRIES_EXCEEDED,
-                    delivery_targets_completed=targets_completed,
-                )
-
-        # Notion delivery (dual-delivery mode)
-        if self._router.should_push_notion(delivery_target) and self._notion is not None:
-            try:
-                await self._push_to_notion(payload)
-                targets_completed.append("NOTION")
-            except Exception as exc:
-                logger.warning("Notion delivery failed (non-fatal): %s", exc)
+            return SyncResult(
+                success=False,
+                event=event,
+                error_type=SyncErrorType.MAX_RETRIES_EXCEEDED,
+                delivery_targets_completed=targets_completed,
+            )
 
         # Log success event
         receipt_id = self._write_receipt(
@@ -610,7 +547,7 @@ class AFFiNESyncService:
         return SyncResult(
             success=True,
             event=event,
-            was_update=was_update if self._router.should_push_affine(delivery_target) else False,
+            was_update=was_update,
             delivery_targets_completed=targets_completed,
         )
 
@@ -810,22 +747,7 @@ class AFFiNESyncService:
         )
         return SyncResult(success=True, event=event, delivery_targets_completed=["AFFINE"])
 
-    # ── Notion Fallback Push ──────────────────────────────────────────────
-
-    async def _push_to_notion(self, payload: ContentPushPayload) -> None:
-        """Push content to Notion via legacy notion_sync.py (§6 Backward Compatibility)."""
-        if self._notion is None:
-            return
-        # Delegate to existing NotionSync pattern
-        properties = {
-            "Asset ID": {"title": [{"text": {"content": payload.asset_id}}]},
-            "Fingerprint ID": {"rich_text": [{"text": {"content": payload.fingerprint_id}}]},
-            "Script": {"rich_text": [{"text": {"content": payload.content.script_markdown[:2000]}}]},
-        }
-        await self._notion.create_page(
-            parent_db_id="content_calendar_db",
-            properties=properties,
-        )
+    # ── Notion Fallback Push Removed ──────────────────────────────────────
 
     # ── Retry Event Logging Helper ────────────────────────────────────────
 

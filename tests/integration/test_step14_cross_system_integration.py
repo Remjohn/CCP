@@ -100,7 +100,6 @@ from src.ccp.services.cross_ecosystem_meeting_service import (
 )
 from src.ccp.services.publer_sync_service import PublerSyncService
 from src.ccp.services.data_analyst_service import DataAnalystService
-from src.ccp.services.notion_export_service import NotionExportService
 from src.ccp.services.forensic_audit_service import ForensicAuditService
 from src.ccp.services.single_tenant_deployment_service import (
     SingleTenantDeploymentService,
@@ -985,65 +984,7 @@ class TestFR43DataAnalyst:
         assert tagged_again == 0
 
 
-# ═════════════════════════════════════════════════════════
-# FR45 — Notion Export Pipeline (DEP-ENG-039)
-# ═════════════════════════════════════════════════════════
-
-class TestFR45NotionExport:
-
-    def test_fr45_ac1_seven_sections(self):
-        """FR45 AC1: Notion page has exactly 7 sections."""
-        svc = NotionExportService(coach_acronym=COACH)
-        payload = svc.build_page_payload(
-            parent_database_id="DB-001",
-            title="Test Post",
-            universal_asset_id="ASSET-001",
-        )
-        assert svc.validate_section_count(payload)
-        assert len(payload.sections) == NOTION_PAGE_SECTIONS
-
-    def test_fr45_ac2_sovereign_image(self):
-        """FR45 AC2: Coach Photo section requires a URL."""
-        svc = NotionExportService(coach_acronym=COACH)
-        payload_with = svc.build_page_payload(
-            parent_database_id="DB-001",
-            title="Test",
-            universal_asset_id="ASSET-001",
-            coach_photo_url="https://example.com/photo.jpg",
-        )
-        assert svc.validate_sovereign_image(payload_with)
-
-        payload_without = svc.build_page_payload(
-            parent_database_id="DB-001",
-            title="Test",
-            universal_asset_id="ASSET-002",
-        )
-        assert not svc.validate_sovereign_image(payload_without)
-
-    def test_fr45_ac3_approval_polling(self):
-        """FR45 AC3: Approval status tracking."""
-        svc = NotionExportService(coach_acronym=COACH)
-        assert svc.check_approval("ASSET-001") == "PENDING"
-        svc.set_approval_status("ASSET-001", "APPROVED")
-        assert svc.check_approval("ASSET-001") == "APPROVED"
-
-    def test_fr45_ac4_backoff(self):
-        """FR45 AC4: Exponential backoff computation."""
-        svc = NotionExportService(coach_acronym=COACH)
-        assert svc.compute_backoff_seconds(0) == 1.0
-        assert svc.compute_backoff_seconds(1) == 2.0
-        assert svc.compute_backoff_seconds(2) == 4.0
-        assert svc.compute_backoff_seconds(10) == 120.0  # capped
-
-    def test_fr45_block_chunking(self):
-        """FR45: Blocks chunked at 100."""
-        svc = NotionExportService(coach_acronym=COACH)
-        blocks = [{"type": "paragraph"} for _ in range(250)]
-        chunks = svc.chunk_blocks(blocks)
-        assert len(chunks) == 3
-        assert len(chunks[0]) == 100
-        assert len(chunks[2]) == 50
-
+# Notion export tests removed (obsolete Notion integrations)
 
 # ═════════════════════════════════════════════════════════
 # FR48 — Forensic Audit Protocol (DEP-ENG-042)
@@ -1350,31 +1291,3 @@ class TestCrossSpecIntegration:
         assert update is not None
         tagged = analyst.tag_rows_as_reviewed(rows)
         assert tagged == 15
-
-    def test_sovereign_image_in_notion_export(self):
-        """FR50 + FR45: Sovereign image flows into Notion export."""
-        sovereign = SovereignImageService(coach_acronym=COACH)
-        notion = NotionExportService(coach_acronym=COACH)
-
-        sovereign.register_photo(
-            notion_page_id="PAGE-001",
-            temporary_s3_url="https://s3.example.com/photo.jpg",
-            mood="confident",
-            format_tag="square_1080",
-        )
-
-        result = sovereign.query_photo_deck(SovereignImageQuery(
-            coach_id=COACH, target_mood="confident", target_format="Square_1080",
-        ))
-
-        photo_url = result.selected_photo.temporary_s3_url if result.selected_photo else ""
-
-        payload = notion.build_page_payload(
-            parent_database_id="DB-001",
-            title="My Post",
-            universal_asset_id="ASSET-001",
-            coach_photo_url=photo_url,
-        )
-
-        assert notion.validate_sovereign_image(payload)
-        assert notion.validate_section_count(payload)

@@ -219,6 +219,27 @@ class TraitHistoryEntry(BaseModel):
     audience_engagement_7d: Optional[float] = Field(default=None)
     coach_average_engagement: Optional[float] = Field(default=None)
 
+    @model_validator(mode="before")
+    @classmethod
+    def preprocess_history_entry(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            # Default previous_score and new_score to 5 if missing or None
+            if "previous_score" not in data or data["previous_score"] is None:
+                data["previous_score"] = 5
+            if "new_score" not in data or data["new_score"] is None:
+                data["new_score"] = 5
+                
+            # Handle boolean to float conversion for chen_detection
+            chen = data.get("chen_detection")
+            if isinstance(chen, bool):
+                data["chen_detection"] = 1.0 if chen else 0.0
+                
+            # Handle boolean to float conversion for sophia_alignment
+            sophia = data.get("sophia_alignment")
+            if isinstance(sophia, bool):
+                data["sophia_alignment"] = 1.0 if sophia else 0.0
+        return data
+
 
 # ──────────────────────────────────────────────────────────────
 # Scored Trait
@@ -239,6 +260,52 @@ class ScoredTrait(BaseModel):
     exercise_archetypes: list[str] = Field(default_factory=list)
     showcase_archetypes: list[str] = Field(default_factory=list)
     history: list[TraitHistoryEntry] = Field(default_factory=list)
+
+    @model_validator(mode="before")
+    @classmethod
+    def resolve_trait_id(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            trait_id = data.get("trait_id")
+            name = data.get("name")
+            
+            # Simple direct name-to-id mapping inside the validator to prevent forward reference issues
+            name_to_id = {
+                "deep_empathy": 1,
+                "authentic_vulnerability": 2,
+                "embodied_confidence": 3,
+                "emotional_depth": 4,
+                "devotional_passion": 5,
+                "mystique_and_aura": 6,
+                "archetypal_storytelling": 7,
+                "transformation_proof": 8,
+                "polarizing_clarity": 9,
+                "expansion_energy": 10,
+                "comic_honesty": 11,
+                "directness": 12,
+            }
+            
+            if trait_id is not None:
+                if isinstance(trait_id, str):
+                    if trait_id.isdigit():
+                        data["trait_id"] = int(trait_id)
+                    else:
+                        val = trait_id.lower()
+                        if val in name_to_id:
+                            data["trait_id"] = name_to_id[val]
+                elif hasattr(trait_id, "value") and isinstance(trait_id.value, str):
+                    val = trait_id.value.lower()
+                    if val in name_to_id:
+                        data["trait_id"] = name_to_id[val]
+            
+            if (data.get("trait_id") is None or not isinstance(data.get("trait_id"), int)) and name is not None:
+                val = None
+                if isinstance(name, str):
+                    val = name.lower()
+                elif hasattr(name, "value") and isinstance(name.value, str):
+                    val = name.value.lower()
+                if val and val in name_to_id:
+                    data["trait_id"] = name_to_id[val]
+        return data
 
     @field_validator("evidence")
     @classmethod
@@ -272,6 +339,36 @@ class CategoryCoverageResult(BaseModel):
         default_factory=dict,
         description="Additional evaluation details (trait scores, CMM layer count, etc.)",
     )
+
+    @model_validator(mode="before")
+    @classmethod
+    def preprocess_coverage_result(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            # 1. Handle traits list containing ScoredTrait or similar objects
+            traits = data.get("traits")
+            if isinstance(traits, list):
+                new_traits = []
+                for t in traits:
+                    if isinstance(t, str):
+                        new_traits.append(t)
+                    elif hasattr(t, "name"):
+                        new_traits.append(t.name)
+                    elif isinstance(t, dict) and "name" in t:
+                        new_traits.append(t["name"])
+                    else:
+                        new_traits.append(t)
+                data["traits"] = new_traits
+            
+            # 2. Handle details field if it is passed as a string or empty/None
+            details = data.get("details")
+            if isinstance(details, str):
+                if details:
+                    data["details"] = {"info": details}
+                else:
+                    data["details"] = {}
+            elif details is None:
+                data["details"] = {}
+        return data
 
 
 # ──────────────────────────────────────────────────────────────
@@ -375,6 +472,10 @@ class LeadershipScorecard(BaseModel):
     last_updated: str = Field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat(),
         description="ISO 8601 timestamp of last update",
+    )
+    created_at: Optional[str] = Field(
+        default=None,
+        description="ISO 8601 timestamp of creation (optional)",
     )
     signal_sources: SignalSourceAvailability = Field(
         default_factory=SignalSourceAvailability,

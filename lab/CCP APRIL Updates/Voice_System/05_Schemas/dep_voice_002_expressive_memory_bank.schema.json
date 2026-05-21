@@ -1,0 +1,374 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DEP-VOICE-002",
+  "title": "Expressive Memory Bank",
+  "description": "Production contract for coach-specific expressive audio memory. Stores anchor clips, metadata, emotional clusters, acoustic measurements, training partitions, and retrieval tags used for voice rendering, adapter training, and evaluation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "bank_id",
+    "coach_id",
+    "status",
+    "cluster_taxonomy_version",
+    "clips",
+    "anchor_sets",
+    "quality_gates",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.0(\\.\\d+)?$"
+    },
+    "bank_id": {
+      "type": "string",
+      "pattern": "^EMB-[A-Z0-9_-]{6,64}$"
+    },
+    "coach_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "status": {
+      "type": "string",
+      "enum": ["bootstrapping", "active", "frozen_for_training", "deprecated", "archived"]
+    },
+    "cluster_taxonomy_version": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 32
+    },
+    "collection_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preferred_sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "interview",
+              "speaking_challenge",
+              "coaching_session",
+              "podcast",
+              "voice_note",
+              "live_event",
+              "custom_capture"
+            ]
+          },
+          "default": []
+        },
+        "min_clean_minutes_target": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "clips": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/clip" }
+    },
+    "anchor_sets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/anchor_set" }
+    },
+    "training_partitions": {
+      "$ref": "#/definitions/training_partitions"
+    },
+    "quality_gates": {
+      "$ref": "#/definitions/quality_gates"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "cluster_label": {
+      "type": "object",
+      "required": ["family", "subcluster", "intensity"],
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "type": "string",
+          "enum": ["authority", "warmth", "vulnerability", "activation", "reflection", "humor_lightness"]
+        },
+        "subcluster": {
+          "type": "string",
+          "enum": [
+            "calm_authority",
+            "sharp_authority",
+            "grounded_authority",
+            "invitational_authority",
+            "reassuring_warmth",
+            "celebratory_warmth",
+            "compassionate_warmth",
+            "playful_warmth",
+            "confessional_vulnerability",
+            "reflective_vulnerability",
+            "relieved_vulnerability",
+            "composed_woundedness",
+            "energizing_challenge",
+            "urgent_intervention",
+            "momentum_coaching",
+            "push_through_resistance",
+            "contemplative_processing",
+            "meaning_making",
+            "philosophical_spaciousness",
+            "slow_truth_delivery",
+            "teasing",
+            "ironic_lift",
+            "amused_disbelief",
+            "playful_reframing"
+          ]
+        },
+        "intensity": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "prosody_measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wpm": { "type": "number", "minimum": 0.0 },
+        "pause_density": { "type": "number", "minimum": 0.0 },
+        "mean_pause_ms": { "type": "number", "minimum": 0.0 },
+        "pitch_center_hz": { "type": "number", "minimum": 0.0 },
+        "pitch_spread_semitones": { "type": "number", "minimum": 0.0 },
+        "energy_mean": { "type": "number", "minimum": 0.0 },
+        "jitter": { "type": "number", "minimum": 0.0 },
+        "shimmer": { "type": "number", "minimum": 0.0 },
+        "arousal": { "type": "number", "minimum": -1.0, "maximum": 1.0 },
+        "valence": { "type": "number", "minimum": -1.0, "maximum": 1.0 }
+      }
+    },
+    "clip": {
+      "type": "object",
+      "required": [
+        "clip_id",
+        "audio_uri",
+        "source_type",
+        "recorded_at",
+        "duration_ms",
+        "cluster_labels",
+        "quality",
+        "authenticity",
+        "transcript"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "clip_id": {
+          "type": "string",
+          "pattern": "^EMC-[A-Z0-9_-]{6,64}$"
+        },
+        "audio_uri": {
+          "type": "string",
+          "minLength": 4
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "interview",
+            "speaking_challenge",
+            "coaching_session",
+            "podcast",
+            "voice_note",
+            "live_event",
+            "custom_capture"
+          ]
+        },
+        "source_session_id": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 500
+        },
+        "cluster_labels": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/cluster_label" }
+        },
+        "quality": {
+          "type": "object",
+          "required": ["audio_quality_score", "noise_floor_ok", "clipping_ok"],
+          "additionalProperties": false,
+          "properties": {
+            "audio_quality_score": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "noise_floor_ok": { "type": "boolean" },
+            "clipping_ok": { "type": "boolean" },
+            "room_tone_ok": { "type": "boolean" },
+            "phone_usable": { "type": "boolean" }
+          }
+        },
+        "authenticity": {
+          "type": "object",
+          "required": ["authenticity_score", "human_truth_score"],
+          "additionalProperties": false,
+          "properties": {
+            "authenticity_score": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "human_truth_score": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "overperformance_risk": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            }
+          }
+        },
+        "transcript": {
+          "type": "object",
+          "required": ["text"],
+          "additionalProperties": false,
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "language": {
+              "type": "string",
+              "maxLength": 16
+            },
+            "word_timestamps_uri": {
+              "type": "string"
+            }
+          }
+        },
+        "prosody_measurements": {
+          "$ref": "#/definitions/prosody_measurement"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 64 },
+          "default": []
+        },
+        "rights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["usable_for_training", "usable_for_render_reference"],
+          "properties": {
+            "usable_for_training": { "type": "boolean" },
+            "usable_for_render_reference": { "type": "boolean" },
+            "contains_third_party_voice": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "anchor_set": {
+      "type": "object",
+      "required": ["anchor_set_id", "purpose", "clip_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "anchor_set_id": {
+          "type": "string",
+          "pattern": "^EMA-[A-Z0-9_-]{6,64}$"
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "identity_bootstrap",
+            "reflective_authority",
+            "challenge_mode",
+            "warm_reassurance",
+            "celebration",
+            "evaluation_reference"
+          ]
+        },
+        "clip_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^EMC-[A-Z0-9_-]{6,64}$"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "training_partitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "train_clip_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^EMC-[A-Z0-9_-]{6,64}$" },
+          "default": []
+        },
+        "validation_clip_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^EMC-[A-Z0-9_-]{6,64}$" },
+          "default": []
+        },
+        "test_clip_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^EMC-[A-Z0-9_-]{6,64}$" },
+          "default": []
+        }
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "required": [
+        "min_audio_quality_score",
+        "min_authenticity_score",
+        "min_human_truth_score"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "min_audio_quality_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "min_authenticity_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "min_human_truth_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    }
+  }
+}

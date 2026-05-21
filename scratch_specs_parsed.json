@@ -1,0 +1,3254 @@
+[
+  {
+    "spec_id": "CCP_Technical_Architecture",
+    "filename": "CCP_Technical_Architecture.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 15072,
+    "impl_files": [
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\standing_trigger_library.py",
+      "src/ccp/services\\irevc_adapter.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\coach_soul_adapter.py",
+      "src/ccp/services\\cmm_extraction.py",
+      "src/ccp/services\\negative_space_loader_adapter.py",
+      "src/ccp/services\\story_archive.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/services\\psych_routing_adapter.py",
+      "src/ccp/services\\cral_finding_router_adapter.py"
+    ],
+    "test_files": [],
+    "build_status": "IMPLEMENTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-CA11-01",
+    "filename": "FR-CA11-01_Coach_Workspace_Provisioning_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-041",
+      "DEP-ENG-071"
+    ],
+    "consumes": [
+      "DEP-ENG-003",
+      "DEP-ENG-050"
+    ],
+    "skills": [],
+    "content_length": 12384,
+    "impl_files": [
+      "src/ccp/services\\affine_sync.py",
+      "src/ccp/services\\affine_client_workspace.py",
+      "src/ccp/services\\affine_workspace_provisioner.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr01_workspace_provisioner.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-02",
+    "filename": "FR-CA11-02_AFFiNE_Sync_Service_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-072",
+      "DEP-ENG-041"
+    ],
+    "consumes": [
+      "DEP-ENG-040",
+      "DEP-ENG-020"
+    ],
+    "skills": [],
+    "content_length": 11089,
+    "impl_files": [
+      "src/ccp/services\\affine_sync.py",
+      "src/ccp/services\\session_recap_generator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr02_affine_sync.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-03",
+    "filename": "FR-CA11-03_Client_Workspace_Provisioning_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-073",
+      "DEP-ENG-041"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11073,
+    "impl_files": [
+      "src/ccp/services\\affine_client_workspace.py",
+      "src/ccp/services\\learning_path_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr03_client_workspace.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-04",
+    "filename": "FR-CA11-04_Learning_Path_Builder_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-074",
+      "DEP-ENG-041"
+    ],
+    "consumes": [
+      "DEP-ENG-017",
+      "DEP-ENG-006",
+      "DEP-ENG-020"
+    ],
+    "skills": [],
+    "content_length": 11313,
+    "impl_files": [
+      "src/ccp/services\\learning_path_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr04_learning_path.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-05",
+    "filename": "FR-CA11-05_AI_Session_Recap_Generator_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-075",
+      "DEP-ENG-041"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13492,
+    "impl_files": [
+      "src/ccp/services\\content_machine.py",
+      "src/ccp/services\\session_to_course.py",
+      "src/ccp/services\\session_recap_generator.py",
+      "src/ccp/services\\learning_path_builder.py",
+      "src/ccp/services\\voice_to_lesson.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr05_session_recap.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-06",
+    "filename": "FR-CA11-06_Voice_Note_Course_Material_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-076"
+    ],
+    "consumes": [
+      "DEP-ENG-003"
+    ],
+    "skills": [],
+    "content_length": 7849,
+    "impl_files": [
+      "src/ccp/services\\voice_to_lesson.py",
+      "src/ccp/services\\learning_path_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr06_voice_lesson.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-07",
+    "filename": "FR-CA11-07_Session_to_Course_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-077"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8398,
+    "impl_files": [
+      "src/ccp/services\\session_to_course.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr07_session_course.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-08",
+    "filename": "FR-CA11-08_Content_Machine_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-078",
+      "DEP-ENG-041"
+    ],
+    "consumes": [
+      "DEP-ENG-020"
+    ],
+    "skills": [],
+    "content_length": 9206,
+    "impl_files": [
+      "src/ccp/services\\content_machine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr08_content_machine.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-09",
+    "filename": "FR-CA11-09_Accountability_Visualization_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-079"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9273,
+    "impl_files": [
+      "src/ccp/services\\accountability_visualizer.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr09_accountability.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-10",
+    "filename": "FR-CA11-10_Excalidraw_Embedded_Workspace_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-080"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8532,
+    "impl_files": [
+      "src/ccp/services\\excalidraw_embed_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr10_excalidraw_embed.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-11",
+    "filename": "FR-CA11-11_CVE_Canva_AFFiNE_Delivery_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-081"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 7382,
+    "impl_files": [
+      "src/ccp/services\\canva_affine_delivery.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr11_canva_delivery.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-12",
+    "filename": "FR-CA11-12_Course_Video_CMF_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-082"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10118,
+    "impl_files": [
+      "src/ccp/services\\course_video_cmf.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr12_course_video.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-13",
+    "filename": "FR-CA11-13_OBS_Recording_Controller_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-083"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10690,
+    "impl_files": [
+      "src/ccp/services\\obs_controller.py",
+      "src/ccp/services\\session_recap_generator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr13_obs_controller.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-14",
+    "filename": "FR-CA11-14_Excalidraw_Live_OBS_Overlay_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-084"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9011,
+    "impl_files": [
+      "src/ccp/services\\excalidraw_overlay.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr14_excalidraw_overlay.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-15",
+    "filename": "FR-CA11-15_Contextual_Branding_Dynamic_PAD_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-085"
+    ],
+    "consumes": [
+      "DEP-ENG-016",
+      "DEP-ENG-018"
+    ],
+    "skills": [],
+    "content_length": 24019,
+    "impl_files": [],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr15_dpa_engine.py"
+    ],
+    "build_status": "NOT STARTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-16",
+    "filename": "FR-CA11-16_CCP_Studio_Block_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-064",
+      "DEP-ENG-041"
+    ],
+    "consumes": [
+      "DEP-ENG-065"
+    ],
+    "skills": [],
+    "content_length": 17487,
+    "impl_files": [
+      "src/ccp/services\\studio_block_service.py",
+      "src/ccp/services\\soundboard_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_frca1116_studio_block.py",
+      "tests\\unit\\test_frca1116_studio_block.py",
+      "tests\\integration\\test_ca11_fr16_studio_block.py",
+      "tests\\integration\\test_ca11_fr17_soundboard.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-17",
+    "filename": "FR-CA11-17_Studio_Soundboard_Audio_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-061"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10702,
+    "impl_files": [
+      "src/ccp/services\\soundboard_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr17_soundboard.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-18",
+    "filename": "FR-CA11-18_Social_Scheduling_Performance_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-076"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12139,
+    "impl_files": [
+      "src/ccp/services\\social_scheduler_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr18_social_scheduler.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-19",
+    "filename": "FR-CA11-19_Interactive_Trivianar_Engine_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 16081,
+    "impl_files": [
+      "src/ccp/services\\trivianar_engine_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr19_trivianar_engine.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-20",
+    "filename": "FR-CA11-20_Trivianar_Lead_Capture_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-092"
+    ],
+    "consumes": [
+      "DEP-ENG-090"
+    ],
+    "skills": [],
+    "content_length": 8570,
+    "impl_files": [
+      "src/ccp/services\\lead_capture_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr20_lead_capture.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-21",
+    "filename": "FR-CA11-21_Studio_Guest_Join_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-096"
+    ],
+    "skills": [],
+    "content_length": 10054,
+    "impl_files": [
+      "src/ccp/services\\guest_join_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr21_guest_join.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CA11-22",
+    "filename": "FR-CA11-22_Stream_Overlay_Trivianar_Display_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11690,
+    "impl_files": [
+      "src/ccp/services\\stream_overlay_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr22_stream_overlay.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-COM-01",
+    "filename": "FR-COM-01_AFFiNE_Billing_Credit_System_Tech_Spec.md",
+    "produces": [
+      "DEP-COM-004",
+      "DEP-COM-001",
+      "DEP-COM-002"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13764,
+    "impl_files": [],
+    "test_files": [
+      "tests\\integration\\test_com01_billing_middleware.py",
+      "tests\\integration\\test_com01_billing_integration.py"
+    ],
+    "build_status": "NOT STARTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-COM-02",
+    "filename": "FR-COM-02_Global_Admin_Dashboard_Tech_Spec.md",
+    "produces": [
+      "DEP-COM-006",
+      "DEP-COM-005"
+    ],
+    "consumes": [
+      "DEP-COM-003"
+    ],
+    "skills": [],
+    "content_length": 12129,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-COM-03",
+    "filename": "FR-COM-03_Telegram_Code_Onboarding_Agent_Tech_Spec.md",
+    "produces": [
+      "DEP-COM-008",
+      "DEP-COM-007"
+    ],
+    "consumes": [
+      "DEP-COM-009",
+      "DEP-COM-001"
+    ],
+    "skills": [],
+    "content_length": 12593,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-COM-04",
+    "filename": "FR-COM-04_Program_Campaign_Manager_Tech_Spec.md",
+    "produces": [
+      "DEP-COM-011",
+      "DEP-COM-010"
+    ],
+    "consumes": [
+      "DEP-COM-009"
+    ],
+    "skills": [],
+    "content_length": 14327,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-VIS-01",
+    "filename": "FR-VIS-01_Visual_Composition_Brief_Tech_Spec.md",
+    "produces": [
+      "DEP-VIS-005"
+    ],
+    "consumes": [
+      "DEP-ENG-016",
+      "DEP-VIS-001",
+      "DEP-ENG-003",
+      "DEP-ENG-011"
+    ],
+    "skills": [],
+    "content_length": 30456,
+    "impl_files": [
+      "src/ccp/services\\abel_vcb_generator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis01_vcb_generator.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-02",
+    "filename": "FR-VIS-02_TIAR_Integration_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-007",
+      "DEP-ENG-011",
+      "DEP-VIS-005",
+      "DEP-VIS-001",
+      "DEP-ENG-023"
+    ],
+    "skills": [],
+    "content_length": 23209,
+    "impl_files": [
+      "src/ccp/services\\tiar_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis02_tiar_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-03",
+    "filename": "FR-VIS-03_PSSL_Prompt_Compilation_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-005",
+      "DEP-VIS-004"
+    ],
+    "skills": [],
+    "content_length": 25560,
+    "impl_files": [
+      "src/ccp/services\\paradoxe_pssl_compiler.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis03_pssl_compiler.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-04",
+    "filename": "FR-VIS-04_Visual_Validation_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 17118,
+    "impl_files": [
+      "src/ccp/services\\visual_validation_agent.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis04_visual_validation.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-05",
+    "filename": "FR-VIS-05_Canvas_Composition_Delivery_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-005"
+    ],
+    "skills": [],
+    "content_length": 18177,
+    "impl_files": [
+      "src/ccp/services\\canvas_composition_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis05_canvas_composition.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-06",
+    "filename": "FR-VIS-06_Notion_Visual_Content_Card_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-039"
+    ],
+    "consumes": [
+      "DEP-VIS-005",
+      "DEP-ENG-041"
+    ],
+    "skills": [],
+    "content_length": 21209,
+    "impl_files": [
+      "src/ccp/services\\notion_visual_content_card.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis06_notion_card.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-07",
+    "filename": "FR-VIS-07_Format_Aspect_Ratio_Enforcement_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-002",
+      "DEP-ENG-011",
+      "DEP-VIS-005"
+    ],
+    "skills": [],
+    "content_length": 22321,
+    "impl_files": [
+      "src/ccp/services\\visual_format_constraint_adapter.py",
+      "src/ccp/services\\style_scope_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis07_format_constraint.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-08",
+    "filename": "FR-VIS-08_Style_Scoping_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-002",
+      "DEP-VIS-005",
+      "DEP-ENG-011"
+    ],
+    "skills": [],
+    "content_length": 27028,
+    "impl_files": [
+      "src/ccp/services\\style_scope_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis08_style_scoping.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-09",
+    "filename": "FR-VIS-09_Image_Sourcing_Hierarchy_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-005",
+      "DEP-VIS-007",
+      "DEP-VIS-006"
+    ],
+    "skills": [],
+    "content_length": 22476,
+    "impl_files": [
+      "src/ccp/services\\aurore_image_sourcing.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis09_image_sourcing.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-10",
+    "filename": "FR-VIS-10_Multi_API_Image_Search_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-004",
+      "DEP-VIS-007",
+      "DEP-VIS-006"
+    ],
+    "skills": [],
+    "content_length": 17860,
+    "impl_files": [
+      "src/ccp/services\\image_search_panel_adapter.py",
+      "src/ccp/services\\multi_api_image_search.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis10_multi_api_search.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-11",
+    "filename": "FR-VIS-11_In_App_Image_Search_Panel_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14470,
+    "impl_files": [
+      "src/ccp/services\\image_search_panel_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis11_search_panel.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-12",
+    "filename": "FR-VIS-12_Known_Persons_Registry_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-005",
+      "DEP-VIS-006"
+    ],
+    "skills": [],
+    "content_length": 24506,
+    "impl_files": [
+      "src/ccp/services\\known_persons_registry_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis12_known_persons.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-13",
+    "filename": "FR-VIS-13_Image_Type_Validity_Gate_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-005"
+    ],
+    "skills": [],
+    "content_length": 28374,
+    "impl_files": [
+      "src/ccp/services\\gate_v00_image_type_validator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis13_gate_v00.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-VIS-14",
+    "filename": "FR-VIS-14_ConsciousSmile_Expression_Adapter_Tech_Spec.md",
+    "produces": [
+      "DEP-VIS-008"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 20822,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-VIS-15",
+    "filename": "FR-VIS-15_ConsciousPose_Body_Language_Library_Tech_Spec.md",
+    "produces": [
+      "DEP-VIS-010"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 20924,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-VIS-16",
+    "filename": "FR-VIS-16_First_Frame_Composer_Tech_Spec.md",
+    "produces": [
+      "DEP-VIS-005"
+    ],
+    "consumes": [
+      "DEP-ENG-016",
+      "DEP-VIS-008",
+      "DEP-VIS-012",
+      "DEP-VIS-010",
+      "DEP-VIS-011"
+    ],
+    "skills": [],
+    "content_length": 16011,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-VIS-17",
+    "filename": "FR-VIS-17_Identity_LoRA_Training_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-VIS-014",
+      "DEP-VIS-011"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 17721,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR-VIS-18",
+    "filename": "FR-VIS-18_Spatial_Composition_Engine_Tech_Spec.md",
+    "produces": [
+      "DEP-VIS-016",
+      "DEP-VIS-018",
+      "DEP-VIS-017",
+      "DEP-ENG-041"
+    ],
+    "consumes": [
+      "DEP-VIS-015",
+      "DEP-VIS-005"
+    ],
+    "skills": [],
+    "content_length": 48267,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "FR0A",
+    "filename": "FR0A_Business_Intelligence_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 7936,
+    "impl_files": [
+      "src/ccp/services\\business_intel_extractor.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/services\\guardian_interview.py",
+      "src/ccp/services\\character_lexicon_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr0e_brand_avatar.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_fr0b_tribe_research.py",
+      "tests\\integration\\test_fr0a_business_intel.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR0B",
+    "filename": "FR0B_Tribe_Soul_Research_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-050"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11316,
+    "impl_files": [
+      "src/ccp/services\\guardian_interview.py",
+      "src/ccp/services\\tribe_profile_extractor.py",
+      "src/ccp/pipelines\\tribe_profile_pipeline.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/services\\character_lexicon_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr0e_brand_avatar.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_fr0b_tribe_research.py",
+      "tests\\integration\\test_fr0a_business_intel.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR0C",
+    "filename": "FR0C_Character_Lexicon_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9280,
+    "impl_files": [
+      "src/ccp/services\\semiotic_intelligence_builder.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/services\\character_lexicon_builder.py",
+      "src/ccp/services\\stewardship_monitor.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr0e_brand_avatar.py",
+      "tests\\integration\\test_fr0b_tribe_research.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_fr0c_character_lexicon.py",
+      "tests\\integration\\test_fr0a_business_intel.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR0D",
+    "filename": "FR0D_Semiotic_Intelligence_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 6735,
+    "impl_files": [
+      "src/ccp/services\\semiotic_intelligence_builder.py",
+      "src/ccp/services\\tribe_soul_researcher.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr0e_brand_avatar.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_fr0d_semiotic_intelligence.py",
+      "tests\\integration\\test_fr0a_business_intel.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR0E",
+    "filename": "FR0E_Brand_Avatar_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 6121,
+    "impl_files": [
+      "src/ccp/services\\brand_avatar_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr0e_brand_avatar.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_fr0a_business_intel.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR10",
+    "filename": "FR10_Four_Axis_Structural_Matching_Engine_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-LIB-002",
+      "DEP-LIB-001",
+      "DEP-ENG-010",
+      "DEP-ENG-006"
+    ],
+    "skills": [],
+    "content_length": 35605,
+    "impl_files": [
+      "src/ccp/services\\activation_seed_builder.py",
+      "src/ccp/services\\failure_prevention_gates.py",
+      "src/ccp/services\\audience_empathy_agent.py",
+      "src/ccp/pipelines\\container_module_pipeline.py",
+      "src/ccp/services\\four_axis_matching_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step6_container_modules.py",
+      "tests\\integration\\test_cbcs14_nurturing_arch.py",
+      "tests\\integration\\test_era3_fr10_registration_after_reveal.py",
+      "tests\\integration\\test_era3_fr10_lead_magnet_offer.py",
+      "tests\\integration\\test_ca11_fr10_excalidraw_embed.py",
+      "tests\\integration\\test_era3_fr10_anonymous_onboarding_flow.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR11",
+    "filename": "FR11_Activation_Event_Seed_Construction_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-011"
+    ],
+    "consumes": [
+      "DEP-LIB-002",
+      "DEP-ENG-010",
+      "DEP-ENG-006"
+    ],
+    "skills": [],
+    "content_length": 20655,
+    "impl_files": [
+      "src/ccp/services\\failure_prevention_gates.py",
+      "src/ccp/pipelines\\container_module_pipeline.py",
+      "src/ccp/services\\activation_seed_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr11_sunday_postcard.py",
+      "tests\\integration\\test_step6_container_modules.py",
+      "tests\\integration\\test_era3_fr11_challenge_arena_progression.py",
+      "tests\\integration\\test_era3_fr11_challenge_arena_api.py",
+      "tests\\integration\\test_ca11_fr11_canva_delivery.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR12",
+    "filename": "FR12_Failure_Prevention_Gates_Tech_Spec.md",
+    "produces": [
+      "DEP-LIB-002",
+      "DEP-ENG-027",
+      "DEP-ENG-006"
+    ],
+    "consumes": [
+      "DEP-ENG-011",
+      "DEP-ENG-010",
+      "DEP-ENG-019"
+    ],
+    "skills": [],
+    "content_length": 19115,
+    "impl_files": [
+      "src/ccp/services\\failure_prevention_gates.py",
+      "src/ccp/pipelines\\container_module_pipeline.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\personal_relevance_trigger.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr12_course_video.py",
+      "tests\\integration\\test_step7_adapter_registry_v2.py",
+      "tests\\integration\\test_step6_container_modules.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR13",
+    "filename": "FR13_Client_Context_Premise_Map_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-028",
+      "DEP-ENG-030",
+      "DEP-ENG-029"
+    ],
+    "consumes": [
+      "DEP-ENG-003",
+      "DEP-ENG-019"
+    ],
+    "skills": [],
+    "content_length": 17309,
+    "impl_files": [
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/services\\context_premise_extraction_service.py",
+      "src/ccp/services\\client_context_premise_pipeline.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_ca11_fr13_obs_controller.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR14",
+    "filename": "FR14_CRAL_Research_Subsystem_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-021"
+    ],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-ENG-016"
+    ],
+    "skills": [],
+    "content_length": 16707,
+    "impl_files": [
+      "src/ccp/services\\moment_executors.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\research_planner.py",
+      "src/ccp/services\\cral_finding_router_adapter.py",
+      "src/ccp/pipelines\\cral_orchestrator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step11_cral_subsystem.py",
+      "tests\\integration\\test_step8_cral_and_synthesis.py",
+      "tests\\integration\\test_ca11_fr14_excalidraw_overlay.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR15",
+    "filename": "FR15_Scheduled_Monitor_Agent_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-005"
+    ],
+    "consumes": [
+      "DEP-ENG-023"
+    ],
+    "skills": [],
+    "content_length": 14691,
+    "impl_files": [
+      "src/ccp/services\\scheduled_monitor_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step11_cral_subsystem.py",
+      "tests\\integration\\test_ca11_fr15_dpa_engine.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR16",
+    "filename": "FR16_Human_Evidence_Bias_Gate_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 1977,
+    "impl_files": [
+      "src/ccp/services\\quality_safety_gates.py",
+      "src/ccp/services\\cral_finding_router_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step11_cral_subsystem.py",
+      "tests\\integration\\test_step7_adapter_registry_v2.py",
+      "tests\\integration\\test_ca11_fr16_studio_block.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR17",
+    "filename": "FR17_Research_Synthesis_Protocol_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-ENG-021",
+      "DEP-ENG-010"
+    ],
+    "skills": [],
+    "content_length": 14154,
+    "impl_files": [
+      "src/ccp/services\\research_synthesis_protocol.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step11_cral_subsystem.py",
+      "tests\\integration\\test_step8_cral_and_synthesis.py",
+      "tests\\integration\\test_ca11_fr17_soundboard.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR18",
+    "filename": "FR18_Psychological_Routing_Brief_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-016"
+    ],
+    "consumes": [
+      "DEP-ENG-018",
+      "DEP-ENG-017"
+    ],
+    "skills": [],
+    "content_length": 13183,
+    "impl_files": [
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/pipelines\\psych_routing_pipeline.py",
+      "src/ccp/services\\payload_masking_library.py",
+      "src/ccp/services\\psych_routing_adapter.py",
+      "src/ccp/services\\psych_routing_engine.py",
+      "src/ccp/services\\change_talk_vault.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr18_cbcs_unit.py",
+      "tests\\integration\\test_ca11_fr18_social_scheduler.py",
+      "tests\\integration\\test_era3_fr18_cbcs_integration.py",
+      "tests\\integration\\test_fr18_psych_routing.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR19",
+    "filename": "FR19_Semantic_Affinity_Guard_Tech_Spec.md",
+    "produces": [
+      "DEP-PROTO-011"
+    ],
+    "consumes": [
+      "DEP-ENG-006"
+    ],
+    "skills": [],
+    "content_length": 13201,
+    "impl_files": [
+      "src/ccp/services\\semantic_affinity_guard.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr19_semantic_affinity.py",
+      "tests\\integration\\test_ca11_fr19_trivianar_engine.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR1",
+    "filename": "FR1_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 24439,
+    "impl_files": [
+      "src/ccp/services\\moment_executors.py",
+      "src/ccp/services\\audience_empathy_agent.py",
+      "src/ccp/services\\cmm_extraction.py",
+      "src/ccp/services\\payload_masking_library.py",
+      "src/ccp/services\\cral_finding_router_adapter.py",
+      "src/ccp/services\\change_talk_vault.py",
+      "src/ccp/services\\activation_seed_builder.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/pipelines\\psych_routing_pipeline.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/pipelines\\container_module_pipeline.py",
+      "src/ccp/services\\standing_trigger_library.py",
+      "src/ccp/services\\semantic_affinity_guard.py",
+      "src/ccp/services\\quality_safety_gates.py",
+      "src/ccp/services\\research_planner.py",
+      "src/ccp/pipelines\\cral_orchestrator.py",
+      "src/ccp/services\\personal_relevance_trigger.py",
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\research_synthesis_protocol.py",
+      "src/ccp/services\\failure_prevention_gates.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\client_context_premise_pipeline.py",
+      "src/ccp/services\\scheduled_monitor_service.py",
+      "src/ccp/services\\story_archive.py",
+      "src/ccp/services\\context_premise_extraction_service.py",
+      "src/ccp/services\\psych_routing_adapter.py",
+      "src/ccp/services\\psych_routing_engine.py",
+      "src/ccp/services\\four_axis_matching_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr12_course_video.py",
+      "tests\\integration\\test_era3_fr10_registration_after_reveal.py",
+      "tests\\integration\\test_ca11_fr16_studio_block.py",
+      "tests\\integration\\test_era3_fr11_challenge_arena_progression.py",
+      "tests\\integration\\test_era3_fr11_challenge_arena_api.py",
+      "tests\\integration\\test_ca11_fr14_excalidraw_overlay.py",
+      "tests\\integration\\test_era3_fr18_cbcs_integration.py",
+      "tests\\integration\\test_step7_adapter_registry_v2.py",
+      "tests\\integration\\test_cpsc_fr51_challenge_funnel.py",
+      "tests\\integration\\test_ca11_fr11_canva_delivery.py",
+      "tests\\integration\\test_fr1_genesis_pipeline.py",
+      "tests\\integration\\test_ca11_fr19_trivianar_engine.py",
+      "tests\\integration\\test_era3_fr11_sunday_postcard.py",
+      "tests\\integration\\test_step6_container_modules.py",
+      "tests\\integration\\test_cbcs14_nurturing_arch.py",
+      "tests\\integration\\test_step11_cral_subsystem.py",
+      "tests\\integration\\test_era3_fr10_lead_magnet_offer.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_era3_fr18_cbcs_unit.py",
+      "tests\\integration\\test_ca11_fr10_excalidraw_embed.py",
+      "tests\\integration\\test_era3_fr10_anonymous_onboarding_flow.py",
+      "tests\\integration\\test_ca11_fr17_soundboard.py",
+      "tests\\integration\\test_ca11_fr15_dpa_engine.py",
+      "tests\\integration\\test_ca11_fr18_social_scheduler.py",
+      "tests\\integration\\test_ca11_fr13_obs_controller.py",
+      "tests\\integration\\test_fr18_psych_routing.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_step8_cral_and_synthesis.py",
+      "tests\\integration\\test_fr19_semantic_affinity.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR1",
+    "filename": "FR1_Genesis_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-004",
+      "DEP-ENG-003",
+      "DEP-LIB-001",
+      "DEP-ENG-001"
+    ],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-ENG-021"
+    ],
+    "skills": [],
+    "content_length": 29284,
+    "impl_files": [
+      "src/ccp/services\\moment_executors.py",
+      "src/ccp/services\\audience_empathy_agent.py",
+      "src/ccp/services\\cmm_extraction.py",
+      "src/ccp/services\\payload_masking_library.py",
+      "src/ccp/services\\cral_finding_router_adapter.py",
+      "src/ccp/services\\change_talk_vault.py",
+      "src/ccp/services\\activation_seed_builder.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/pipelines\\psych_routing_pipeline.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/pipelines\\container_module_pipeline.py",
+      "src/ccp/services\\standing_trigger_library.py",
+      "src/ccp/services\\semantic_affinity_guard.py",
+      "src/ccp/services\\quality_safety_gates.py",
+      "src/ccp/services\\research_planner.py",
+      "src/ccp/pipelines\\cral_orchestrator.py",
+      "src/ccp/services\\personal_relevance_trigger.py",
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\research_synthesis_protocol.py",
+      "src/ccp/services\\failure_prevention_gates.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\client_context_premise_pipeline.py",
+      "src/ccp/services\\scheduled_monitor_service.py",
+      "src/ccp/services\\story_archive.py",
+      "src/ccp/services\\context_premise_extraction_service.py",
+      "src/ccp/services\\psych_routing_adapter.py",
+      "src/ccp/services\\psych_routing_engine.py",
+      "src/ccp/services\\four_axis_matching_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr12_course_video.py",
+      "tests\\integration\\test_era3_fr10_registration_after_reveal.py",
+      "tests\\integration\\test_ca11_fr16_studio_block.py",
+      "tests\\integration\\test_era3_fr11_challenge_arena_progression.py",
+      "tests\\integration\\test_era3_fr11_challenge_arena_api.py",
+      "tests\\integration\\test_ca11_fr14_excalidraw_overlay.py",
+      "tests\\integration\\test_era3_fr18_cbcs_integration.py",
+      "tests\\integration\\test_step7_adapter_registry_v2.py",
+      "tests\\integration\\test_cpsc_fr51_challenge_funnel.py",
+      "tests\\integration\\test_ca11_fr11_canva_delivery.py",
+      "tests\\integration\\test_fr1_genesis_pipeline.py",
+      "tests\\integration\\test_ca11_fr19_trivianar_engine.py",
+      "tests\\integration\\test_era3_fr11_sunday_postcard.py",
+      "tests\\integration\\test_step6_container_modules.py",
+      "tests\\integration\\test_cbcs14_nurturing_arch.py",
+      "tests\\integration\\test_step11_cral_subsystem.py",
+      "tests\\integration\\test_era3_fr10_lead_magnet_offer.py",
+      "tests\\integration\\test_guardian_agent.py",
+      "tests\\integration\\test_era3_fr18_cbcs_unit.py",
+      "tests\\integration\\test_ca11_fr10_excalidraw_embed.py",
+      "tests\\integration\\test_era3_fr10_anonymous_onboarding_flow.py",
+      "tests\\integration\\test_ca11_fr17_soundboard.py",
+      "tests\\integration\\test_ca11_fr15_dpa_engine.py",
+      "tests\\integration\\test_ca11_fr18_social_scheduler.py",
+      "tests\\integration\\test_ca11_fr13_obs_controller.py",
+      "tests\\integration\\test_fr18_psych_routing.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_step8_cral_and_synthesis.py",
+      "tests\\integration\\test_fr19_semantic_affinity.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR20",
+    "filename": "FR20_Audience_Maturity_Lifecycle_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-017"
+    ],
+    "consumes": [
+      "DEP-ENG-042"
+    ],
+    "skills": [],
+    "content_length": 13810,
+    "impl_files": [
+      "src/ccp/pipelines\\audience_maturity_pipeline.py",
+      "src/ccp/services\\audience_maturity_engine.py",
+      "src/ccp/services\\audience_maturity_adapter.py",
+      "src/ccp/services\\learning_path_builder.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr20_audience_maturity.py",
+      "tests\\integration\\test_ca11_fr20_lead_capture.py",
+      "tests\\integration\\test_era3_fr20_sda_registry.py",
+      "tests\\integration\\test_era3_fr20_sda_crosswalks.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR21",
+    "filename": "FR21_Receipt_Chain_Guard_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-041"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14994,
+    "impl_files": [
+      "src/ccp/services\\receipt_chain_guard.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr21_sda_query_service.py",
+      "tests\\integration\\test_step9_jit_assembler.py",
+      "tests\\integration\\test_era3_fr21_sda_query_api.py",
+      "tests\\integration\\test_ca11_fr21_guest_join.py",
+      "tests\\integration\\test_era3_fr21_crosswalk_resolution.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR22",
+    "filename": "FR22_Anti_Draft_Intelligence_Tech_Spec.md",
+    "produces": [
+      "DEP-PROTO-013"
+    ],
+    "consumes": [
+      "DEP-ENG-021",
+      "DEP-ENG-004"
+    ],
+    "skills": [],
+    "content_length": 14941,
+    "impl_files": [
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\anti_draft_calibrator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr22_directional_integrity_engine.py",
+      "tests\\integration\\test_ca11_fr22_stream_overlay.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_interop.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_fallbacks.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_domain_policies.py",
+      "tests\\integration\\test_step10_fingerprint_antidraft.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR23",
+    "filename": "FR23_Skill_Fingerprint_ID_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-016",
+      "DEP-ENG-003",
+      "DEP-ENG-006",
+      "DEP-ENG-020"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13073,
+    "impl_files": [
+      "src/ccp/services\\fingerprint_archive_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step10_fingerprint_antidraft.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR24",
+    "filename": "FR24_Weekly_Pipeline_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-022"
+    ],
+    "skills": [],
+    "content_length": 19135,
+    "impl_files": [
+      "src/ccp/pipelines\\weekly_pipeline.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step9_jit_assembler.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR25",
+    "filename": "FR25_Boredom_Ban_Tech_Spec.md",
+    "produces": [
+      "DEP-PROTO-015"
+    ],
+    "consumes": [
+      "DEP-ENG-020"
+    ],
+    "skills": [],
+    "content_length": 12681,
+    "impl_files": [
+      "src/ccp/services\\boredom_ban_enforcer.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr25_overlay_capture.py",
+      "tests\\unit\\test_era3_fr25_sfl_registry_models.py",
+      "tests\\integration\\test_era3_fr25_sfl_crosswalks.py",
+      "tests\\integration\\test_step10_fingerprint_antidraft.py",
+      "tests\\integration\\test_era3_fr25_sfl_registry.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR26",
+    "filename": "FR26_Validation_Gate_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13559,
+    "impl_files": [
+      "src/ccp/services\\validation_gate.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr26_sfl_query_service.py",
+      "tests\\unit\\test_era3_fr26_sfl_query_models.py",
+      "tests\\integration\\test_era3_fr26_sfl_profile_resolution.py",
+      "tests\\integration\\test_step9_jit_assembler.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR27",
+    "filename": "FR27_Latency_Protocol_Tech_Spec.md",
+    "produces": [
+      "DEP-PROTO-017"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14031,
+    "impl_files": [
+      "src/ccp/services\\cbcs_sfl_adapters.py",
+      "src/ccp/services\\latency_protocol_service.py",
+      "src/ccp/services\\promotional_asset_compiler.py",
+      "src/ccp/services\\affine_client_workspace.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_fr_era3_18_cbcs_sfl_runtime.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR28",
+    "filename": "FR28_Dynamic_Journaling_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-024"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12401,
+    "impl_files": [
+      "src/ccp/services\\dynamic_journaling_engine.py",
+      "src/ccp/services\\perceptual_contrast_harness.py",
+      "src/ccp/services\\crisis_guardian_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_era3_fr28_perceptual_contrast_harness.py",
+      "tests\\integration\\test_era3_fr28_perceptual_failure_corpus.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR29",
+    "filename": "FR29_Context_Premise_Extraction_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-006"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13188,
+    "impl_files": [
+      "src/ccp/services\\session_recap_generator.py",
+      "src/ccp/services\\context_premise_extraction_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step13_onboarding_prerequisites.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR2",
+    "filename": "FR2_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14274,
+    "impl_files": [
+      "src/ccp/services\\boredom_ban_enforcer.py",
+      "src/ccp/services\\thought_unit_segmenter.py",
+      "src/ccp/services\\audience_maturity_engine.py",
+      "src/ccp/services\\fingerprint_archive_engine.py",
+      "src/ccp/services\\cbcs_sfl_adapters.py",
+      "src/ccp/services\\session_recap_generator.py",
+      "src/ccp/services\\ttt_baseline_extractor.py",
+      "src/ccp/services\\corpus_assembler.py",
+      "src/ccp/services\\liwc22_authenticity_gate.py",
+      "src/ccp/pipelines\\sacred_audio_pipeline.py",
+      "src/ccp/services\\anti_draft_calibrator.py",
+      "src/ccp/pipelines\\__init__.py",
+      "src/ccp/services\\validation_gate.py",
+      "src/ccp/services\\receipt_chain_guard.py",
+      "src/ccp/services\\crisis_guardian_service.py",
+      "src/ccp/services\\sophia_ttt_validator.py",
+      "src/ccp/services\\standing_trigger_library.py",
+      "src/ccp/services\\audience_maturity_adapter.py",
+      "src/ccp/services\\affine_client_workspace.py",
+      "src/ccp/services\\re_elicitation_engine.py",
+      "src/ccp/pipelines\\audience_maturity_pipeline.py",
+      "src/ccp/services\\promotional_asset_compiler.py",
+      "src/ccp/services\\latency_protocol_service.py",
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\dynamic_journaling_engine.py",
+      "src/ccp/services\\sacred_audio_transcriber.py",
+      "src/ccp/pipelines\\voice_dna_pipeline.py",
+      "src/ccp/services\\learning_path_builder.py",
+      "src/ccp/pipelines\\weekly_pipeline.py",
+      "src/ccp/services\\context_premise_extraction_service.py",
+      "src/ccp/services\\perceptual_contrast_harness.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr21_guest_join.py",
+      "tests\\integration\\test_ca11_fr20_lead_capture.py",
+      "tests\\integration\\test_era3_fr25_sfl_crosswalks.py",
+      "tests\\integration\\test_step10_fingerprint_antidraft.py",
+      "tests\\integration\\test_era3_fr28_perceptual_failure_corpus.py",
+      "tests\\integration\\test_era3_fr21_sda_query_service.py",
+      "tests\\integration\\test_fr_era3_18_cbcs_sfl_runtime.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_step9_jit_assembler.py",
+      "tests\\integration\\test_era3_fr26_sfl_query_service.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_engine.py",
+      "tests\\integration\\test_ca11_fr22_stream_overlay.py",
+      "tests\\integration\\test_fr2_sacred_audio.py",
+      "tests\\unit\\test_era3_fr25_sfl_registry_models.py",
+      "tests\\unit\\test_era3_fr26_sfl_query_models.py",
+      "tests\\integration\\test_era3_fr28_perceptual_contrast_harness.py",
+      "tests\\integration\\test_era3_fr21_sda_query_api.py",
+      "tests\\integration\\test_era3_fr26_sfl_profile_resolution.py",
+      "tests\\integration\\test_fr20_audience_maturity.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_domain_policies.py",
+      "tests\\integration\\test_era3_fr20_sda_crosswalks.py",
+      "tests\\integration\\test_era3_fr25_overlay_capture.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_interop.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_fallbacks.py",
+      "tests\\integration\\test_cpsc_fr52_webinar_brief.py",
+      "tests\\integration\\test_era3_fr20_sda_registry.py",
+      "tests\\integration\\test_era3_fr25_sfl_registry.py",
+      "tests\\integration\\test_era3_fr21_crosswalk_resolution.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR2",
+    "filename": "FR2_Sacred_Audio_Ingestion_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-019"
+    ],
+    "consumes": [
+      "DEP-ENG-004",
+      "DEP-ENG-003",
+      "DEP-LIB-001",
+      "DEP-PROTO-016"
+    ],
+    "skills": [],
+    "content_length": 20526,
+    "impl_files": [
+      "src/ccp/services\\boredom_ban_enforcer.py",
+      "src/ccp/services\\thought_unit_segmenter.py",
+      "src/ccp/services\\audience_maturity_engine.py",
+      "src/ccp/services\\fingerprint_archive_engine.py",
+      "src/ccp/services\\cbcs_sfl_adapters.py",
+      "src/ccp/services\\session_recap_generator.py",
+      "src/ccp/services\\ttt_baseline_extractor.py",
+      "src/ccp/services\\corpus_assembler.py",
+      "src/ccp/services\\liwc22_authenticity_gate.py",
+      "src/ccp/pipelines\\sacred_audio_pipeline.py",
+      "src/ccp/services\\anti_draft_calibrator.py",
+      "src/ccp/pipelines\\__init__.py",
+      "src/ccp/services\\validation_gate.py",
+      "src/ccp/services\\receipt_chain_guard.py",
+      "src/ccp/services\\crisis_guardian_service.py",
+      "src/ccp/services\\sophia_ttt_validator.py",
+      "src/ccp/services\\standing_trigger_library.py",
+      "src/ccp/services\\audience_maturity_adapter.py",
+      "src/ccp/services\\affine_client_workspace.py",
+      "src/ccp/services\\re_elicitation_engine.py",
+      "src/ccp/pipelines\\audience_maturity_pipeline.py",
+      "src/ccp/services\\promotional_asset_compiler.py",
+      "src/ccp/services\\latency_protocol_service.py",
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\dynamic_journaling_engine.py",
+      "src/ccp/services\\sacred_audio_transcriber.py",
+      "src/ccp/pipelines\\voice_dna_pipeline.py",
+      "src/ccp/services\\learning_path_builder.py",
+      "src/ccp/pipelines\\weekly_pipeline.py",
+      "src/ccp/services\\context_premise_extraction_service.py",
+      "src/ccp/services\\perceptual_contrast_harness.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_ca11_fr21_guest_join.py",
+      "tests\\integration\\test_ca11_fr20_lead_capture.py",
+      "tests\\integration\\test_era3_fr25_sfl_crosswalks.py",
+      "tests\\integration\\test_step10_fingerprint_antidraft.py",
+      "tests\\integration\\test_era3_fr28_perceptual_failure_corpus.py",
+      "tests\\integration\\test_era3_fr21_sda_query_service.py",
+      "tests\\integration\\test_fr_era3_18_cbcs_sfl_runtime.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_step9_jit_assembler.py",
+      "tests\\integration\\test_era3_fr26_sfl_query_service.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_engine.py",
+      "tests\\integration\\test_ca11_fr22_stream_overlay.py",
+      "tests\\integration\\test_fr2_sacred_audio.py",
+      "tests\\unit\\test_era3_fr25_sfl_registry_models.py",
+      "tests\\unit\\test_era3_fr26_sfl_query_models.py",
+      "tests\\integration\\test_era3_fr28_perceptual_contrast_harness.py",
+      "tests\\integration\\test_era3_fr21_sda_query_api.py",
+      "tests\\integration\\test_era3_fr26_sfl_profile_resolution.py",
+      "tests\\integration\\test_fr20_audience_maturity.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_domain_policies.py",
+      "tests\\integration\\test_era3_fr20_sda_crosswalks.py",
+      "tests\\integration\\test_era3_fr25_overlay_capture.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_interop.py",
+      "tests\\integration\\test_era3_fr22_directional_integrity_fallbacks.py",
+      "tests\\integration\\test_cpsc_fr52_webinar_brief.py",
+      "tests\\integration\\test_era3_fr20_sda_registry.py",
+      "tests\\integration\\test_era3_fr25_sfl_registry.py",
+      "tests\\integration\\test_era3_fr21_crosswalk_resolution.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR30",
+    "filename": "FR30_Dormancy_Recovery_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-025"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11714,
+    "impl_files": [
+      "src/ccp/services\\dormancy_recovery_service.py",
+      "src/ccp/services\\crisis_guardian_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR31",
+    "filename": "FR31_Crisis_Guardian_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-026"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12342,
+    "impl_files": [
+      "src/ccp/services\\crisis_guardian_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR32",
+    "filename": "FR32_Atlas_Roadmap_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-027"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13905,
+    "impl_files": [
+      "src/ccp/services\\atlas_roadmap_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR33",
+    "filename": "FR33_YOLO_Webinar_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-028"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12414,
+    "impl_files": [
+      "src/ccp/services\\v2ws_yolo_service.py",
+      "src/ccp/services\\webinar_brief_generator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_era3_fr33_phase0_intake_console.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR34",
+    "filename": "FR34_Interactive_Webinar_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-029"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14453,
+    "impl_files": [
+      "src/ccp/services\\v2ws_interactive_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_era3_fr34_phase0_workspace.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR35",
+    "filename": "FR35_Unified_Excalidraw_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-030"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14548,
+    "impl_files": [
+      "src/ccp/services\\reaction_benchmark_carryover_service.py",
+      "src/ccp/services\\cbcs_sfl_adapters.py",
+      "src/ccp/services\\unified_excalidraw_service.py",
+      "src/ccp/services\\promotional_asset_compiler.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr35c_eval_card_system.py",
+      "tests\\integration\\test_era3_fr35_audit_intelligence_engine.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_era3_fr05_core_reaction_engine_benchmark_carryover.py",
+      "tests\\integration\\test_era3_fr35a_eval_registry.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR36",
+    "filename": "FR36_Transparent_Collage_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-031"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13026,
+    "impl_files": [
+      "src/ccp/services\\transparent_collage_pipeline_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR37",
+    "filename": "FR37_Cross_System_Intelligence_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-032",
+      "DEP-ENG-006"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13726,
+    "impl_files": [
+      "src/ccp/services\\cross_system_intelligence_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr37_commercial_bridge.py",
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR38",
+    "filename": "FR38_Memory_Tier_Promotion_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-033"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13725,
+    "impl_files": [
+      "src/ccp/services\\memory_tier_promotion_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr38_operator_console.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR39",
+    "filename": "FR39_Core_Orchestration_11_Pi_Extensions.md",
+    "produces": [
+      "DEP-ENG-034"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14125,
+    "impl_files": [
+      "src/ccp/services\\pi_extension_harness.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step12_pi_extensions.py",
+      "tests\\integration\\test_era3_fr39_campaign_workspace.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR3",
+    "filename": "FR3_Voice_DNA_Extraction_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-004",
+      "DEP-ENG-003"
+    ],
+    "consumes": [
+      "DEP-ENG-024",
+      "DEP-PROTO-015",
+      "DEP-ENG-023",
+      "DEP-ENG-019"
+    ],
+    "skills": [],
+    "content_length": 25352,
+    "impl_files": [
+      "src/ccp/services\\cbcs_sfl_adapters.py",
+      "src/ccp/services\\coach_soul_adapter.py",
+      "src/ccp/services\\cmm_extraction.py",
+      "src/ccp/services\\cross_system_intelligence_service.py",
+      "src/ccp/services\\corpus_assembler.py",
+      "src/ccp/services\\v2ws_interactive_service.py",
+      "src/ccp/services\\dormancy_recovery_service.py",
+      "src/ccp/pipelines\\trigger_map_pipeline.py",
+      "src/ccp/services\\atlas_roadmap_service.py",
+      "src/ccp/pipelines\\sacred_audio_pipeline.py",
+      "src/ccp/services\\positive_space_extractor.py",
+      "src/ccp/services\\negative_space_loader_adapter.py",
+      "src/ccp/services\\emotional_dna_test.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/services\\crisis_guardian_service.py",
+      "src/ccp/services\\v2ws_yolo_service.py",
+      "src/ccp/services\\discourse_marker_census.py",
+      "src/ccp/services\\standing_trigger_library.py",
+      "src/ccp/services\\pi_extension_harness.py",
+      "src/ccp/services\\sentence_skeleton_extractor.py",
+      "src/ccp/services\\transparent_collage_pipeline_service.py",
+      "src/ccp/services\\promotional_asset_compiler.py",
+      "src/ccp/services\\memory_tier_promotion_service.py",
+      "src/ccp/services\\cross_topic_invariance.py",
+      "src/ccp/services\\adversarial_validator.py",
+      "src/ccp/services\\unified_excalidraw_service.py",
+      "src/ccp/services\\trait_scoring_engine.py",
+      "src/ccp/pipelines\\voice_dna_pipeline.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/pipelines\\emotional_dna_pipeline.py",
+      "src/ccp/services\\webinar_brief_generator.py",
+      "src/ccp/services\\reaction_benchmark_carryover_service.py",
+      "src/ccp/services\\negative_space_excavator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_era3_fr35c_eval_card_system.py",
+      "tests\\integration\\test_era3_fr38_operator_console.py",
+      "tests\\integration\\test_era3_fr35_audit_intelligence_engine.py",
+      "tests\\integration\\test_era3_fr37_commercial_bridge.py",
+      "tests\\integration\\test_cpsc_fr53_conversion_sequence.py",
+      "tests\\integration\\test_era3_fr34_phase0_workspace.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_fr3_voice_dna.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_era3_fr05_core_reaction_engine_benchmark_carryover.py",
+      "tests\\integration\\test_fr2_sacred_audio.py",
+      "tests\\integration\\test_era3_fr39_campaign_workspace.py",
+      "tests\\integration\\test_fr1_genesis_pipeline.py",
+      "tests\\integration\\test_step12_pi_extensions.py",
+      "tests\\integration\\test_era3_fr35a_eval_registry.py",
+      "tests\\integration\\test_era3_fr33_phase0_intake_console.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR40",
+    "filename": "FR40_Intuition_Extensions_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-035"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14443,
+    "impl_files": [
+      "src/ccp/services\\intuition_extension_orchestrator.py",
+      "src/ccp/services\\pi_extension_harness.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step12_pi_extensions.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR41",
+    "filename": "FR41_Cross_Ecosystem_Meeting_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-036"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 13268,
+    "impl_files": [
+      "src/ccp/services\\cross_ecosystem_meeting_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR42",
+    "filename": "FR42_Publer_Automated_Sync_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-037"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11324,
+    "impl_files": [
+      "src/ccp/services\\publer_sync_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR43",
+    "filename": "FR43_Data_Analyst_Agent_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-038"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11807,
+    "impl_files": [
+      "src/ccp/services\\data_analyst_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR44",
+    "filename": "FR44_Context_Performance_Registry_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-045"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 14235,
+    "impl_files": [
+      "src/ccp/services\\cpr_query_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step13_onboarding_prerequisites.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR45",
+    "filename": "FR45_Notion_Export_Pipeline_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-039"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12251,
+    "impl_files": [
+      "src/ccp/services\\affine_sync.py",
+      "src/ccp/services\\notion_export_service.py",
+      "src/ccp/services\\notion_visual_content_card.py",
+      "src/ccp/services\\affine_workspace_provisioner.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR46",
+    "filename": "FR46_Universal_Asset_ID_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-040"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10862,
+    "impl_files": [
+      "src/ccp/services\\universal_id_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR47",
+    "filename": "FR47_Receipt_Chain_Guard_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-041"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12825,
+    "impl_files": [
+      "src/ccp/services\\moment_executors.py",
+      "src/ccp/services\\coach_soul_adapter.py",
+      "src/ccp/services\\social_scheduler_service.py",
+      "src/ccp/services\\receipt_chain_guard_service.py",
+      "src/ccp/services\\visual_format_constraint_adapter.py",
+      "src/ccp/services\\cral_finding_router_adapter.py",
+      "src/ccp/pipelines\\sacred_audio_pipeline.py",
+      "src/ccp/services\\negative_space_loader_adapter.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/pipelines\\psych_routing_pipeline.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/services\\intuition_extension_orchestrator.py",
+      "src/ccp/services\\guest_join_service.py",
+      "src/ccp/services\\stream_overlay_service.py",
+      "src/ccp/services\\tiar_adapter.py",
+      "src/ccp/services\\pi_extension_harness.py",
+      "src/ccp/services\\affine_client_workspace.py",
+      "src/ccp/services\\irevc_adapter.py",
+      "src/ccp/services\\semantic_affinity_guard.py",
+      "src/ccp/services\\affine_sync.py",
+      "src/ccp/services\\research_planner.py",
+      "src/ccp/services\\trivianar_engine_service.py",
+      "src/ccp/services\\style_scope_adapter.py",
+      "src/ccp/pipelines\\cral_orchestrator.py",
+      "src/ccp/pipelines\\leadership_scorecard_pipeline.py",
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\soundboard_service.py",
+      "src/ccp/services\\research_synthesis_protocol.py",
+      "src/ccp/pipelines\\voice_dna_pipeline.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\affine_workspace_provisioner.py",
+      "src/ccp/services\\gate_v00_image_type_validator.py",
+      "src/ccp/services\\lead_capture_service.py",
+      "src/ccp/services\\psych_routing_adapter.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_vis13_gate_v00.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_ca11_fr16_studio_block.py",
+      "tests\\integration\\test_step5_voice_dna_adapters.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR48",
+    "filename": "FR48_Forensic_Audit_Protocol_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-016",
+      "DEP-ENG-020",
+      "DEP-ENG-003",
+      "DEP-ENG-042",
+      "DEP-ENG-006"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11721,
+    "impl_files": [
+      "src/ccp/services\\forensic_audit_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR49",
+    "filename": "FR49_Single_Tenant_Deployment_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-043"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12114,
+    "impl_files": [
+      "src/ccp/services\\single_tenant_deployment_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR4",
+    "filename": "FR4_Emotional_DNA_Extraction_Tech_Spec.md",
+    "produces": [
+      "DEP-LIB-001"
+    ],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-ENG-003",
+      "DEP-ENG-019",
+      "DEP-ENG-004"
+    ],
+    "skills": [],
+    "content_length": 32996,
+    "impl_files": [
+      "src/ccp/services\\moment_executors.py",
+      "src/ccp/services\\notion_export_service.py",
+      "src/ccp/services\\universal_id_service.py",
+      "src/ccp/services\\publer_sync_service.py",
+      "src/ccp/services\\coach_soul_adapter.py",
+      "src/ccp/services\\social_scheduler_service.py",
+      "src/ccp/services\\receipt_chain_guard_service.py",
+      "src/ccp/services\\visual_format_constraint_adapter.py",
+      "src/ccp/services\\cral_finding_router_adapter.py",
+      "src/ccp/pipelines\\trigger_map_pipeline.py",
+      "src/ccp/services\\notion_visual_content_card.py",
+      "src/ccp/pipelines\\sacred_audio_pipeline.py",
+      "src/ccp/services\\negative_space_loader_adapter.py",
+      "src/ccp/services\\emotional_dna_test.py",
+      "src/ccp/pipelines\\psych_routing_pipeline.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/services\\intuition_extension_orchestrator.py",
+      "src/ccp/services\\cross_validator.py",
+      "src/ccp/services\\guest_join_service.py",
+      "src/ccp/services\\stream_overlay_service.py",
+      "src/ccp/services\\tiar_adapter.py",
+      "src/ccp/services\\csip_v3_extractor.py",
+      "src/ccp/services\\pi_extension_harness.py",
+      "src/ccp/services\\affine_client_workspace.py",
+      "src/ccp/services\\irevc_adapter.py",
+      "src/ccp/services\\semantic_affinity_guard.py",
+      "src/ccp/services\\affine_sync.py",
+      "src/ccp/services\\research_planner.py",
+      "src/ccp/services\\trivianar_engine_service.py",
+      "src/ccp/services\\single_tenant_deployment_service.py",
+      "src/ccp/services\\style_scope_adapter.py",
+      "src/ccp/services\\personal_relevance_trigger.py",
+      "src/ccp/pipelines\\cral_orchestrator.py",
+      "src/ccp/pipelines\\leadership_scorecard_pipeline.py",
+      "src/ccp/services\\payload_masking_adapter.py",
+      "src/ccp/services\\soundboard_service.py",
+      "src/ccp/services\\moral_foundation_extractor.py",
+      "src/ccp/services\\research_synthesis_protocol.py",
+      "src/ccp/services\\cpr_query_service.py",
+      "src/ccp/pipelines\\voice_dna_pipeline.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\forensic_audit_service.py",
+      "src/ccp/services\\affine_workspace_provisioner.py",
+      "src/ccp/pipelines\\emotional_dna_pipeline.py",
+      "src/ccp/services\\granularity_triage.py",
+      "src/ccp/services\\gate_v00_image_type_validator.py",
+      "src/ccp/services\\lead_capture_service.py",
+      "src/ccp/services\\data_analyst_service.py",
+      "src/ccp/services\\cross_ecosystem_meeting_service.py",
+      "src/ccp/services\\psych_routing_adapter.py",
+      "src/ccp/services\\appraisal_extractor.py",
+      "src/ccp/services\\four_axis_matching_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr54_promotional_asset.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_step13_onboarding_prerequisites.py",
+      "tests\\integration\\test_fr4_emotional_dna.py",
+      "tests\\integration\\test_ca11_fr16_studio_block.py",
+      "tests\\integration\\test_vis13_gate_v00.py",
+      "tests\\integration\\test_step12_pi_extensions.py",
+      "tests\\integration\\test_step5_voice_dna_adapters.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR50",
+    "filename": "FR50_Sovereign_Image_Rule_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-044",
+      "DEP-ENG-039"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11760,
+    "impl_files": [
+      "src/ccp/services\\sovereign_image_service.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step14_cross_system_integration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR51",
+    "filename": "FR51_Challenge_Funnel_Builder_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-072"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11559,
+    "impl_files": [
+      "src/ccp/services\\challenge_funnel_builder.py",
+      "src/ccp/services\\promotional_asset_compiler.py",
+      "src/ccp/services\\campaign_orchestrator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr51_challenge_funnel.py",
+      "tests\\integration\\test_cpsc_fr54_promotional_asset.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR52",
+    "filename": "FR52_Webinar_Brief_Generator_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-073"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11134,
+    "impl_files": [
+      "src/ccp/services\\webinar_brief_generator.py",
+      "src/ccp/services\\promotional_asset_compiler.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr54_promotional_asset.py",
+      "tests\\integration\\test_cpsc_fr52_webinar_brief.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR53",
+    "filename": "FR53_Conversion_Sequence_Generator_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-074"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11056,
+    "impl_files": [
+      "src/ccp/services\\conversion_sequence_router.py",
+      "src/ccp/services\\delivery_gate_evaluator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr53_conversion_sequence.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR54",
+    "filename": "FR54_Promotional_Asset_Compiler_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-075"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10722,
+    "impl_files": [
+      "src/ccp/services\\challenge_funnel_builder.py",
+      "src/ccp/services\\promotional_asset_compiler.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr54_promotional_asset.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR55",
+    "filename": "FR55_Session_Booking_Intelligence_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-076"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10966,
+    "impl_files": [
+      "src/ccp/services\\session_booking_intelligence.py",
+      "src/ccp/services\\delivery_gate_evaluator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr55_session_booking.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR56",
+    "filename": "FR56_Campaign_Performance_Registry_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-051"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11033,
+    "impl_files": [
+      "src/ccp/services\\loom_report_generator.py",
+      "src/ccp/services\\campaign_performance_logger.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr56_campaign_registry.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR57",
+    "filename": "FR57_Social_Proof_Intelligence_Engine_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-077"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10374,
+    "impl_files": [
+      "src/ccp/services\\social_proof_retriever.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr57_social_proof.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR58",
+    "filename": "FR58_Offer_Tier_Architecture_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-078"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9964,
+    "impl_files": [
+      "src/ccp/services\\offer_tier_governor.py",
+      "src/ccp/services\\campaign_orchestrator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr58_offer_tier.py",
+      "tests\\integration\\test_cpsc_fr58_offer_tier_governor.py",
+      "tests\\unit\\test_offer_tier_governor.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR58",
+    "filename": "FR58_Offer_Tier_Architecture_Tech_Spec_UPDATED.md",
+    "produces": [
+      "DEP-ENG-078"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 24522,
+    "impl_files": [
+      "src/ccp/services\\offer_tier_governor.py",
+      "src/ccp/services\\campaign_orchestrator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr58_offer_tier.py",
+      "tests\\integration\\test_cpsc_fr58_offer_tier_governor.py",
+      "tests\\unit\\test_offer_tier_governor.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR59",
+    "filename": "FR59_Campaign_Orchestration_Agent_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-079"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10134,
+    "impl_files": [
+      "src/ccp/services\\challenge_funnel_builder.py",
+      "src/ccp/services\\campaign_orchestrator.py",
+      "src/ccp/services\\loom_report_generator.py",
+      "src/ccp/services\\campaign_performance_logger.py",
+      "src/ccp/services\\offer_tier_governor.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr59_campaign_orchestrator.py",
+      "tests\\integration\\test_cpsc_fr58_offer_tier_governor.py",
+      "tests\\integration\\test_cpsc_fr60_loom_report.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR5",
+    "filename": "FR5_Trigger_Map_Builder_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-LIB-002",
+      "DEP-ENG-003",
+      "DEP-LIB-001",
+      "DEP-ENG-019",
+      "DEP-ENG-023"
+    ],
+    "skills": [],
+    "content_length": 31876,
+    "impl_files": [
+      "src/ccp/services\\reconsolidation_scorer.py",
+      "src/ccp/services\\sovereign_image_service.py",
+      "src/ccp/services\\challenge_funnel_builder.py",
+      "src/ccp/services\\social_proof_retriever.py",
+      "src/ccp/services\\campaign_orchestrator.py",
+      "src/ccp/services\\offer_tier_governor.py",
+      "src/ccp/pipelines\\trigger_map_pipeline.py",
+      "src/ccp/services\\trigger_feedback_loop.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/services\\session_booking_intelligence.py",
+      "src/ccp/services\\ptg_assessor.py",
+      "src/ccp/services\\darn_cat_fallback.py",
+      "src/ccp/services\\narrative_identity_classifier.py",
+      "src/ccp/services\\irevc_adapter.py",
+      "src/ccp/services\\loom_report_generator.py",
+      "src/ccp/services\\promotional_asset_compiler.py",
+      "src/ccp/services\\trigger_identifier.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\webinar_brief_generator.py",
+      "src/ccp/services\\campaign_performance_logger.py",
+      "src/ccp/services\\delivery_gate_evaluator.py",
+      "src/ccp/services\\trigger_archetype_mapper.py",
+      "src/ccp/services\\conversion_sequence_router.py",
+      "src/ccp/services\\four_axis_matching_engine.py",
+      "src/ccp/services\\akb_origin_classifier.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr56_campaign_registry.py",
+      "tests\\integration\\test_cpsc_fr54_promotional_asset.py",
+      "tests\\integration\\test_cpsc_fr53_conversion_sequence.py",
+      "tests\\integration\\test_cpsc_fr60_loom_report.py",
+      "tests\\integration\\test_cpsc_fr55_session_booking.py",
+      "tests\\integration\\test_cpsc_fr58_offer_tier.py",
+      "tests\\integration\\test_fr5_trigger_map.py",
+      "tests\\integration\\test_step14_cross_system_integration.py",
+      "tests\\integration\\test_cpsc_fr57_social_proof.py",
+      "tests\\integration\\test_cpsc_fr59_campaign_orchestrator.py",
+      "tests\\integration\\test_fr1_genesis_pipeline.py",
+      "tests\\integration\\test_cpsc_fr51_challenge_funnel.py",
+      "tests\\integration\\test_cpsc_fr52_webinar_brief.py",
+      "tests\\integration\\test_cpsc_fr58_offer_tier_governor.py",
+      "tests\\unit\\test_offer_tier_governor.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR60",
+    "filename": "FR60_Loom_Report_Generation_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-080"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11031,
+    "impl_files": [
+      "src/ccp/services\\loom_report_generator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cpsc_fr60_loom_report.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR61",
+    "filename": "FR61_Jim_Rohn_Voice_Coach_Engine_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-019"
+    ],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-LIB-002",
+      "DEP-ENG-003",
+      "DEP-LIB-001",
+      "DEP-ENG-023"
+    ],
+    "skills": [],
+    "content_length": 55089,
+    "impl_files": [
+      "src/ccp/services\\fr61_signal_projection_adapter.py",
+      "src/ccp/services\\cbcs_evidence_engine.py"
+    ],
+    "test_files": [
+      "tests\\unit\\test_score_card_viewer.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR6",
+    "filename": "FR6_Tribe_Profile_Context_Premise_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-006"
+    ],
+    "consumes": [
+      "DEP-LIB-002",
+      "DEP-LIB-001",
+      "DEP-ENG-019"
+    ],
+    "skills": [],
+    "content_length": 40510,
+    "impl_files": [
+      "src/ccp/services\\tribe_profile_distiller.py",
+      "src/ccp/services\\tribe_profile_extractor.py",
+      "src/ccp/services\\visual_language_registry.py",
+      "src/ccp/services\\trait_scoring_engine.py",
+      "src/ccp/services\\fr61_signal_projection_adapter.py",
+      "src/ccp/services\\context_premise_fallback.py",
+      "src/ccp/services\\audience_empathy_agent.py",
+      "src/ccp/services\\cbcs_evidence_engine.py",
+      "src/ccp/services\\depth_stratifier.py",
+      "src/ccp/services\\tribe_soul_researcher.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\emotional_mode_mapper.py",
+      "src/ccp/pipelines\\tribe_profile_pipeline.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/services\\loom_report_generator.py",
+      "src/ccp/services\\neo4j_graph_manager.py",
+      "src/ccp/services\\coach_tribe_resonance.py",
+      "src/ccp/services\\psychometric_extension_mapper.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr6_tribe_profile.py",
+      "tests\\unit\\test_score_card_viewer.py",
+      "tests\\integration\\test_cpsc_fr60_loom_report.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR7",
+    "filename": "FR7_Leadership_Scorecard_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-026"
+    ],
+    "consumes": [
+      "DEP-ENG-005",
+      "DEP-ENG-003",
+      "DEP-LIB-001",
+      "DEP-ENG-004",
+      "DEP-ENG-024",
+      "DEP-ENG-001",
+      "DEP-ENG-023"
+    ],
+    "skills": [],
+    "content_length": 36684,
+    "impl_files": [
+      "src/ccp/pipelines\\leadership_scorecard_pipeline.py",
+      "src/ccp/services\\trait_scoring_engine.py",
+      "src/ccp/services\\quarterly_rescorer.py",
+      "src/ccp/services\\format_governance_engine.py",
+      "src/ccp/services\\category_evaluator.py",
+      "src/ccp/services\\scorecard_emitter.py",
+      "src/ccp/services\\signal_source_loader.py",
+      "src/ccp/services\\weekly_evolution_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr7_leadership_scorecard.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR8",
+    "filename": "FR8_TTT_Enforcement_Rule_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-005"
+    ],
+    "skills": [],
+    "content_length": 31483,
+    "impl_files": [
+      "src/ccp/services\\c08_ttt_enforcement.py",
+      "src/ccp/services\\irevc_adapter.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\ttt_baseline_extractor.py",
+      "src/ccp/pipelines\\voice_dna_adapter_pipeline.py",
+      "src/ccp/services\\ttt_pattern_registry.py",
+      "src/ccp/services\\ttt_affinity_advisor.py",
+      "src/ccp/pipelines\\ttt_enforcement_pipeline.py",
+      "src/ccp/services\\assembly_report_writer.py",
+      "src/ccp/services\\psych_routing_adapter.py",
+      "src/ccp/services\\sophia_ttt_validator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_fr8_ttt_enforcement.py",
+      "tests\\integration\\test_step5_voice_dna_adapters.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR9",
+    "filename": "FR9_Audience_Empathy_Agent_Tech_Spec.md",
+    "produces": [],
+    "consumes": [
+      "DEP-LIB-002",
+      "DEP-LIB-001",
+      "DEP-ENG-006",
+      "DEP-ENG-019"
+    ],
+    "skills": [],
+    "content_length": 39328,
+    "impl_files": [
+      "src/ccp/services\\activation_seed_builder.py",
+      "src/ccp/services\\audience_empathy_agent.py",
+      "src/ccp/pipelines\\adapter_registry_v2_pipeline.py",
+      "src/ccp/services\\context_premise_adapter.py",
+      "src/ccp/pipelines\\container_module_pipeline.py",
+      "src/ccp/services\\four_axis_matching_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_step6_container_modules.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-01",
+    "filename": "FR_CBCS_01_Change_Talk_Vault_Tech_Spec.md",
+    "produces": [
+      "DEP-ENG-054"
+    ],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10143,
+    "impl_files": [
+      "src/ccp/services\\webinar_brief_generator.py",
+      "src/ccp/services\\change_talk_vault.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs01_change_talk_vault.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-02",
+    "filename": "FR_CBCS_02_Social_Penetration_Depth_Gauge_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11029,
+    "impl_files": [
+      "src/ccp/services\\social_proof_retriever.py",
+      "src/ccp/services\\spt_stage_engine.py",
+      "src/ccp/services\\session_booking_intelligence.py",
+      "src/ccp/services\\delivery_gate_evaluator.py",
+      "src/ccp/services\\conversion_sequence_router.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs02_social_penetration.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-03",
+    "filename": "FR_CBCS_03_Personal_Relevance_Trigger_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 11622,
+    "impl_files": [
+      "src/ccp/services\\personal_relevance_trigger.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs03_personal_relevance.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-04",
+    "filename": "FR_CBCS_04_Information_Coping_Trajectory_Mapper_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10214,
+    "impl_files": [
+      "src/ccp/services\\social_proof_retriever.py",
+      "src/ccp/services\\session_booking_intelligence.py",
+      "src/ccp/services\\coping_invitation_engine.py",
+      "src/ccp/services\\delivery_gate_evaluator.py",
+      "src/ccp/services\\ict_mapper.py",
+      "src/ccp/services\\change_talk_vault.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs04_coping_trajectory.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-05",
+    "filename": "FR_CBCS_05_72_Hour_Identity_Anchor_Protocol_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 10574,
+    "impl_files": [
+      "src/ccp/services\\identity_anchor_protocol.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs14_nurturing_arch.py",
+      "tests\\integration\\test_cbcs05_identity_anchor.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-06",
+    "filename": "FR_CBCS_06_SEARCH_Phase_Detection_Engine_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9161,
+    "impl_files": [
+      "src/ccp/services\\conscious_nurturing_orchestrator.py",
+      "src/ccp/services\\session_booking_intelligence.py",
+      "src/ccp/services\\search_phase_detector.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs06_search_phase.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-07",
+    "filename": "FR_CBCS_07_Telegram_Intimacy_Index_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9254,
+    "impl_files": [
+      "src/ccp/services\\tii_calculator.py",
+      "src/ccp/services\\session_booking_intelligence.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs07_telegram_intimacy.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-08",
+    "filename": "FR_CBCS_08_Transportation_Score_Gate_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8753,
+    "impl_files": [
+      "src/ccp/services\\transportation_score_gate.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs08_transportation_gate.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-09",
+    "filename": "FR_CBCS_09_Habit_Architecture_Module_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8747,
+    "impl_files": [
+      "src/ccp/services\\habit_architecture.py",
+      "src/ccp/services\\voice_to_lesson.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs09_habit_architecture.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-10",
+    "filename": "FR_CBCS_10_Deep_Disclosure_Protocol_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9352,
+    "impl_files": [
+      "src/ccp/services\\deep_disclosure_protocol.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs10_deep_disclosure.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-11",
+    "filename": "FR_CBCS_11_Neural_Brand_Bond_Protocol_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9033,
+    "impl_files": [
+      "src/ccp/services\\neural_brand_bond.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs11_neural_brand_bond.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-12",
+    "filename": "FR_CBCS_12_Coping_Diagnostic_Invitation_Engine_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8916,
+    "impl_files": [
+      "src/ccp/services\\coping_invitation_engine.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs12_coping_invitation.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-13",
+    "filename": "FR_CBCS_13_Counterfactual_Activation_Window_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8051,
+    "impl_files": [
+      "src/ccp/services\\counterfactual_activation.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs13_counterfactual_activation.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-CBCS-14",
+    "filename": "FR_CBCS_14_Conscious_Relationship_Nurturing_Architecture_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 8412,
+    "impl_files": [
+      "src/ccp/services\\conscious_nurturing_orchestrator.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_cbcs14_nurturing_arch.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "FR-GA",
+    "filename": "FR_GA_Guardian_Agent_Tech_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9007,
+    "impl_files": [
+      "src/ccp/services\\guardian_interview.py",
+      "src/ccp/services\\stewardship_monitor.py"
+    ],
+    "test_files": [
+      "tests\\integration\\test_guardian_agent.py"
+    ],
+    "build_status": "IMPLEMENTED",
+    "test_status": "TESTS FOUND"
+  },
+  {
+    "spec_id": "Infrastructure_AWS_NIM_Deployment_Spec",
+    "filename": "Infrastructure_AWS_NIM_Deployment_Spec.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 33660,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Jim_Rohn_AI_Voice_Coach_Communication_Framework",
+    "filename": "Jim_Rohn_AI_Voice_Coach_Communication_Framework.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 23151,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "PROMPT_Spec_Build",
+    "filename": "PROMPT_Spec_Build.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 130382,
+    "impl_files": [
+      "src/ccp/services\\phase0_delivery_orchestrator.py"
+    ],
+    "test_files": [],
+    "build_status": "IMPLEMENTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Revision_Instructions_FR-COM-01_to_04",
+    "filename": "Revision_Instructions_FR-COM-01_to_04.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 3543,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Revision_Instructions_FR-VIS-14_to_17",
+    "filename": "Revision_Instructions_FR-VIS-14_to_17.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 3149,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Sovereign_CRAL_Research_Engine_Architecture_Brief",
+    "filename": "Sovereign_CRAL_Research_Engine_Architecture_Brief.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 17830,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Sovereign_CRAL_Research_Engine_TechSpec_V1",
+    "filename": "Sovereign_CRAL_Research_Engine_TechSpec_V1.md",
+    "produces": [],
+    "consumes": [
+      "DEP-ENG-060"
+    ],
+    "skills": [],
+    "content_length": 33083,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Sovereign_Visual_Research_Engine_Architecture_Brief",
+    "filename": "Sovereign_Visual_Research_Engine_Architecture_Brief.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 25058,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "Sovereign_Visual_Research_Engine_TechSpec_V1",
+    "filename": "Sovereign_Visual_Research_Engine_TechSpec_V1.md",
+    "produces": [],
+    "consumes": [
+      "DEP-VIS-019"
+    ],
+    "skills": [],
+    "content_length": 42947,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP10_BUILD_RECEIPT",
+    "filename": "STEP10_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 7213,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP11_BUILD_RECEIPT",
+    "filename": "STEP11_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9776,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP12_BUILD_RECEIPT",
+    "filename": "STEP12_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 12712,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP13_BUILD_RECEIPT",
+    "filename": "STEP13_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 6282,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP6_BUILD_RECEIPT",
+    "filename": "STEP6_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [
+      "DEP-LIB-002",
+      "DEP-ENG-010",
+      "DEP-ENG-019"
+    ],
+    "skills": [],
+    "content_length": 17643,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP7_BUILD_RECEIPT",
+    "filename": "STEP7_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 9069,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP8_BUILD_RECEIPT",
+    "filename": "STEP8_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 7947,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  },
+  {
+    "spec_id": "STEP9_BUILD_RECEIPT",
+    "filename": "STEP9_BUILD_RECEIPT.md",
+    "produces": [],
+    "consumes": [],
+    "skills": [],
+    "content_length": 5437,
+    "impl_files": [],
+    "test_files": [],
+    "build_status": "NOT STARTED",
+    "test_status": "NO TESTS"
+  }
+]

@@ -352,9 +352,12 @@ class StructuredAssetPayloadRow(BaseModel):
 
 class OfferTierCeiling(str, Enum):
     """Maximum eligible offer tier derived from coping position (§4 Stage 1)."""
-    TIER_1_CHALLENGE = "TIER_1_CHALLENGE"
-    TIER_2_CORE = "TIER_2_CORE"
-    TIER_3_PREMIUM = "TIER_3_PREMIUM"
+    TIER_A_PROOF = "TIER_A_PROOF"
+    TIER_B_FIRST_PROOF_UNLOCK = "TIER_B_FIRST_PROOF_UNLOCK"
+    TIER_C_SPEAKING_LEARNING = "TIER_C_SPEAKING_LEARNING"
+    TIER_D_COACH_OS = "TIER_D_COACH_OS"
+    TIER_E_OPERATOR = "TIER_E_OPERATOR"
+
 
 
 class UpwardRoutingVerdict(str, Enum):
@@ -448,3 +451,140 @@ class LoomNarrativeReportRow(BaseModel):
     gate_verdict: str = Field(...)
     loom_sections: LoomSections = Field(...)
     computation_timestamp: str = Field(...)
+
+
+# ══════════════════════════════════════════════════════════════════════
+# FR-ERA3-02 — In-Chat Telegram Payments
+# ══════════════════════════════════════════════════════════════════════
+
+# ── Enums ──────────────────────────────────────────────────────────────
+
+
+class PaymentTier(str, Enum):
+    """Pricing tiers from PRD-09 §3."""
+    SPEAKING_LEARNING = "SPEAKING_LEARNING"     # $39.99/mo
+    COACH_OS = "COACH_OS"                       # $99.99/mo
+
+
+class PaymentStatus(str, Enum):
+    """Payment transaction lifecycle states."""
+    INVOICE_SENT = "INVOICE_SENT"
+    PRE_CHECKOUT_CONFIRMED = "PRE_CHECKOUT_CONFIRMED"
+    REQUIRES_ACTION = "REQUIRES_ACTION"         # SCA/3D Secure
+    PAYMENT_SUCCESSFUL = "PAYMENT_SUCCESSFUL"
+    PAYMENT_FAILED = "PAYMENT_FAILED"
+    REWARD_DISPATCHED = "REWARD_DISPATCHED"
+    PROVISIONING_COMPLETE = "PROVISIONING_COMPLETE"
+
+
+class EligibilityVerdict(str, Enum):
+    """Eligibility check outcomes."""
+    PASS_STANDARD = "PASS_STANDARD"
+    PASS_LOYALTY_UNLOCK = "PASS_LOYALTY_UNLOCK"
+    PROVISIONAL_PENDING_PAYMENT = "PROVISIONAL_PENDING_PAYMENT"
+    FAIL_ALREADY_SUBSCRIBED = "FAIL_ALREADY_SUBSCRIBED"
+    FAIL_TIER_EXCEEDED = "FAIL_TIER_EXCEEDED"
+    FAIL_COOLDOWN_ACTIVE = "FAIL_COOLDOWN_ACTIVE"
+
+
+class PaymentError(str, Enum):
+    """Hard-abort error codes for FR-ERA3-02."""
+    FAIL_ALREADY_SUBSCRIBED = "FAIL_ALREADY_SUBSCRIBED"
+    FAIL_TIER_EXCEEDED = "FAIL_TIER_EXCEEDED"
+    FAIL_STRIPE_ERROR = "FAIL_STRIPE_ERROR"
+    FAIL_SIGNATURE_INVALID = "FAIL_SIGNATURE_INVALID"
+
+
+# ── Constants ──────────────────────────────────────────────────────────
+
+LOYALTY_ASSET_THRESHOLD: int = 50        # cumulative_assets_stored >= 50 triggers Loyalty Unlock
+TIER_PRICE_MAP: dict[str, int] = {
+    "SPEAKING_LEARNING": 3999,           # cents
+    "COACH_OS": 9999,                    # cents
+}
+
+
+# ── Models ─────────────────────────────────────────────────────────────
+
+
+class StoredValueSnapshot(BaseModel):
+    """Snapshot of user's cumulative platform investment."""
+    cumulative_assets_stored: int = Field(..., ge=0)
+    voice_dna_trained: bool = Field(default=False)
+    content_archive_count: int = Field(default=0, ge=0)
+    reaction_count: int = Field(default=0, ge=0)
+
+
+class EligibilityCheckResult(BaseModel):
+    """Primary output — eligibility evaluation (DEP-PAY-001)."""
+    eligibility_id: str = Field(...)
+    telegram_user_id: int = Field(...)
+    coach_id: str = Field(...)
+    target_tier: str = Field(...)
+    current_stripe_status: str = Field(...)
+    stored_value: StoredValueSnapshot = Field(...)
+    verdict: str = Field(...)
+    offer_copy_variant: str = Field(...)    # "standard" | "loyalty_unlock"
+    evaluated_at: str = Field(...)
+
+
+class InvoicePayload(BaseModel):
+    """Telegram sendInvoice payload (DEP-PAY-002)."""
+    invoice_id: str = Field(...)
+    chat_id: int = Field(...)
+    title: str = Field(...)
+    description: str = Field(...)
+    payload: str = Field(...)               # internal tracking payload
+    provider_token: str = Field(...)
+    currency: str = Field(default="USD")
+    prices: list[dict[str, int | str]] = Field(...)
+    tier: str = Field(...)
+    sent_at: str = Field(...)
+
+
+class PaymentTransactionRow(BaseModel):
+    """Payment transaction record (DEP-PAY-003)."""
+    transaction_id: str = Field(...)
+    telegram_user_id: int = Field(...)
+    coach_id: str = Field(...)
+    tier: str = Field(...)
+    amount_cents: int = Field(..., gt=0)
+    status: str = Field(...)
+    stripe_charge_id: str = Field(default="")
+    eligibility_id: str = Field(...)
+    reward_dispatched: bool = Field(default=False)
+    provisioning_complete: bool = Field(default=False)
+    created_at: str = Field(...)
+    updated_at: str = Field(...)
+
+
+class TierSubscriptionRow(BaseModel):
+    """Active subscription tracking record."""
+    subscription_id: str = Field(...)
+    telegram_user_id: int = Field(...)
+    coach_id: str = Field(...)
+    tier: str = Field(...)
+    stripe_subscription_id: str = Field(default="")
+    status: str = Field(default="active")
+    started_at: str = Field(...)
+
+
+class RewardDispatchResult(BaseModel):
+    """Result of experiential reward push (DEP-PAY-004)."""
+    dispatch_id: str = Field(...)
+    chat_id: int = Field(...)
+    tier: str = Field(...)
+    asset_type: str = Field(...)            # "video" | "audio"
+    asset_url: str = Field(...)
+    telegram_message_id: int = Field(default=0)
+    dispatched_at: str = Field(...)
+
+
+class CoachOSProvisioningResult(BaseModel):
+    """Result of background provisioning (DEP-PAY-005)."""
+    provisioning_id: str = Field(...)
+    telegram_user_id: int = Field(...)
+    tier: str = Field(...)
+    vector_namespace_created: bool = Field(...)
+    voice_dna_initialized: bool = Field(...)
+    completed_at: str = Field(...)

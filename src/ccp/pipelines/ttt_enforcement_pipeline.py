@@ -175,12 +175,14 @@ class TTTEnforcementPipeline:
         # ── Phase 1: C-08 Tier 0 Pre-flight Gate ────────────────────────────
         session.c08_result = self._run_c08_phase(brief, session)
         if session.pipeline_halted:
+            self._write_report(brief, session)
             self._finalize(session, brief)
             return session
 
         # ── Phase 2: TTT Baseline Resolution (DEP-ENG-005) ──────────────────
         baseline = self._run_baseline_phase(brief, session)
         if session.pipeline_halted:
+            self._write_report(brief, session)
             self._finalize(session, brief)
             return session
         session.baseline = baseline

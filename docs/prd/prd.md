@@ -31,23 +31,35 @@ date: '2026-03-11T21:35:47+01:00'
 
 ## Executive Summary
 
-The **Conscious Coaching Platform (CCP)** is a unified intelligence infrastructure that transforms a coach’s raw expertise into a sovereign, multi-modal ecosystem. It is an isolated, cloud-native **Trigger-First Operating System**.
+The **Conscious Coaching Platform (CCP)** is a unified intelligence infrastructure that transforms a coach’s raw expertise into a sovereign, multi-modal ecosystem. It is an isolated, cloud-native **Trigger-First Operating System**, functioning structurally across the **Quad-Platform Intelligence Layer** (AFFiNE, Telegram, Excalidraw, and CCP Studio).
 
 For years, coaching and content creation have existed in fragmented silos. Available tools rely on predictive drafting—asking LLMs to guess what a coach would say—resulting in the "statistical centroid failure" (soulless AI slop that strips away identity). Furthermore, disconnected coaching apps fail to learn from content performance, and webinar scripts ignore the emotional cadence of 1-on-1 sessions. Every interaction starts from zero, wasting intelligence.
 
-The CCP solves this by abandoning predictive drafting entirely. Instead, it utilizes a deterministic Just-In-Time (JIT) Compiler—the Conscious Cognitive Skill Builder (CCSB)—to assemble exact execution instructions based on verified human intelligence. The platform unifies the **CCF** (Content Factory), **CBCS** (Invisible Coaching App via Telegram), **V²WS** (Webinar System), and **Tierlist** to ensure that every output shares the same psychological fingerprint.
+The CCP solves this by abandoning predictive drafting entirely. Instead, it utilizes a deterministic Just-In-Time (JIT) Compiler—the Conscious Cognitive Skill Builder (CCSB)—to assemble exact execution instructions based on verified human intelligence. The platform unifies the **CCF** (Content Factory), **CBCS** (Invisible Coaching App via Telegram), **V²WS** (Webinar System), and the **Tierlist Architect**. This integration is governed by the **Sovereign Visual Research Engine (SVRE)** and **Sovereign CRAL Research Engine (SCRE)**, ensuring explicit, sovereign intelligence routing rather than implicit, unstable AI dependencies.
+
+### The Quad-Platform Intelligence Layer
+The Conscious Coaching Platform fundamentally rejects single-platform dependency. Instead, it operates across four deeply integrated platforms, forming a unified cognitive architecture where each platform handles a specific neuro-sensory function:
+- **AFFiNE (The Brain & Memory):** Replaces Notion as the core workspace. It serves as the sovereign knowledge graph and central command interface, holding all 14 Power Integrations, client records, and behavioral telemetry.
+- **Telegram (The Nervous System):** Handles all asynchronous, bidirectional client-coach interactions securely and intuitively via the CBCS.
+- **CCP Studio (The Mouth & Ears):** Replacing external tools like OBS, this AFFiNE-native studio handles recording, streaming, and interactive intelligence directly within the coaching operating system.
+- **Excalidraw (The Visual Cortex):** Powers the unified generation of all visual content, from webinar decks to tierlists, ensuring consistent mathematical brand geometry.
+
+### The Sovereign Intelligence Paradigm
+The platform has officially migrated from implicit, black-box LLM research plugins to deterministic, self-hosted meta-search infrastructure natively spanning the VPC. By routing research through SearXNG:
+- **Sovereign CRAL Research Engine (SCRE):** Maps specific SearXNG search categories to psychological axes, utilizing a 6-agent Epistemic Friction Swarm to resolve contradictions and proactively capturing emerging trends via the Autocomplete Polling Engine.
+- **Sovereign Visual Research Engine (SVRE):** Employs "Flood-All-Score-Best" discovery mechanisms orchestrated by Aurore V2.0 to locate real-world visual assets, verifying them through NIM Vision scoring pipelines against the T-Score (Tribal Emotion) rather than generic aesthetics.
 
 ### What Makes This Special
 
 Seven foundational pillars differentiate the CCP from every existing platform:
 
-1. **Upstream Intelligence (CRAL):** The Conscious Research Alchemy Lab is an agentic research subsystem comprising 9 specialized skills. It pre-addresses all seven content production moments (from RELEVANT to RELATABLE) before compilation begins. By enforcing a strict **Human Evidence Bias**, CRAL guarantees that output is grounded in verifiable, named, culturally proximate evidence rather than hallucinated arguments.
-2. **3-Dimensional Voice DNA:** Moving beyond surface-level tone (TTT), the platform uses Cognitive Appraisal Theory and Computational Stylometry to extract the coach's identity across three irreducible axes: *What* (Soul-Alignment), *How* (Construction Mechanics), and *Path* (Emotional Architecture). Voice DNA is applied symmetrically: the same LIWC-22 markers that authenticate the coach's voice also measure client disclosure depth in the CBCS, enabling the system to gauge genuine psychological intimacy.
+1. **Upstream Intelligence (SCRE & CRAL):** The Conscious Research Alchemy Lab is an agentic research subsystem comprising 9 specialized skills, aggressively powered by the Sovereign CRAL Research Engine (SCRE). It pre-addresses all seven content production moments (from RELEVANT to RELATABLE) before compilation begins. By enforcing a strict **Human Evidence Bias** and routing explicitly through SearXNG categories, CRAL guarantees that output is grounded in verifiable, named, culturally proximate evidence rather than hallucinated arguments.
+2. **3-Dimensional Voice DNA & Contrastive Anti-Drafting:** Moving beyond surface-level tone (TTT), the platform uses Cognitive Appraisal Theory and Computational Stylometry to extract the coach's identity across three irreducible axes: *What* (Soul-Alignment), *How* (Construction Mechanics), and *Path* (Emotional Architecture). We enforce this via a **3-Level Contrastive Prompting Anti-Draft Protocol**, ensuring generation agents actively repel statistical LLM centroids by structurally opposing their specific fallback patterns. Voice DNA is applied symmetrically: the same LIWC-22 markers authenticate the coach's voice and measure client disclosure depth.
 3. **Cross-System Neuro-Coupling & Mood Architecture:** Every output across the CBCS, CCF, and V²WS queries the coach's central Context Premise graph. The system utilizes an advanced Psychological Routing schema based on 4 Mood States (**Processing, Escape, Discovery, Status**), ensuring content mathematically matches the audience's current arousal and valence to create true neural coupling rather than forced engagement.
 4. **Generative Execution over Descriptive Prompting:** The CCP abandons traditional "descriptive" LLM prompting (which invites hallucinated drift). Instead, using the JIT Compiler, the system feeds strict, algorithmic, generative execution instruction sets to the language models. This translates the profound psychological routing directly into deterministic output.
 5. **Pre-Production Intelligence (Guardian Agent):** Before any content production begins, a mandatory Pre-Production Intelligence Layer (Capability Area 0) executes through the Guardian Agent — a sequential orchestrator that extracts business intelligence, tribe soul research, character lexicon, semiotic intelligence, and brand avatars. Each stage receives an AUTHENTICATED / PROVISIONAL / FAILED verdict. Only when all five stages pass does the Guardian Agent issue a **Genesis Clearance Certificate**, unlocking the production pipeline. Post-genesis, the Guardian Agent enters **Stewardship Mode** — monitoring foundational intelligence for drift via weekly signal checks (Lexicon Drift, Cultural Evolution, Campaign Fatigue) and recommending quarterly refreshes with operator approval.
 6. **Conscious Persuasion Sales Cycle (CPSC):** The CCP is not just a production engine — it is a complete commercial intelligence system. The CBCS accumulates the deepest psychological data of any platform (Change Talk, Social Penetration depth, coping trajectory, parasocial bond strength). The CPSC (Capability Area 9) converts this accumulated relationship depth into precisely-timed invitations — not pitches — at the exact moment of peak psychological readiness. Every commercial touchpoint is gated by genuine relationship metrics (SPT stage ≥ Affective, coping position ≥ 3, Telegram Intimacy Index ≥ 0.4). The system replaces manufactured urgency with genuine temporal accuracy.
-7. **Conscious Visual Engine (CVE):** The CCP's visual production layer (Capability Area 10) is a fully automated system that generates psychologically-calibrated visual assets — carousels, single images, polls, 9-grids — downstream of content compilation. The CVE applies 7 immutable design principles (Four-Zone Template Architecture, 25ms Color Temperature Protocol, Gaze Vector Architecture, Six-Word Hook Law, Credibility Proximity Principle, Z-Pattern Flow Architecture, Compression Principle) and enforces a four-tier image sourcing hierarchy (real person photos → stock images → realistic AI characters → Ghibli illustration) through a multi-agent pipeline (Abel → Aurore → Paradoxe → RunningHub → Visual Validation Agent → Conscious Canva App). Every visual asset's color temperature, gaze vectors, and composition are mathematically aligned with the script's emotional arc.
+7. **Conscious Visual Engine (CVE & Geometrics Pipeline):** The CCP's visual production layer (Capability Area 10) is a fully automated system that generates psychologically-calibrated visual assets via the Sovereign Visual Research Engine (SVRE). It discards UI-bound HTML DOM rendering (pixel-pushing templates) in favor of the **Geometrics Pipeline (Spatial Composition Engine)**—utilizing SAM 3 Saliency Analysis, Pretext typography math, Bin Packing collision algorithms, and pure Skia rendering. Real-world assets are curated via a "Flood-All-Score-Best" discovery architecture, sifted by the T-Score (Tribal Reward Function), and composed into visually astonishing outputs ensuring perfect aesthetic geometry and collision-free layouts autonomously.
 
 ## Project Classification
 
@@ -387,6 +399,25 @@ The CCP is custom automation infrastructure deployed per coaching client. Its te
 | **Reason Chosen** | Atomized skills — each with a single mandate — preserve the context window. Output is 100% traceable via the Dependency Registry. Skills are deterministic, version-controlled, and do not drift. |
 | **Trade-off Accepted** | Higher upfront engineering cost per skill. Mitigated by compounding return: once authored, a skill executes perfectly forever without prompt engineering maintenance. |
 
+#### ADR-05: The AFFiNE Platform Migration (Native Quad-Platform Integration)
+
+| | |
+|---|---|
+| **Decision** | AFFiNE replaces Notion as the master command interface |
+| **Alternative Rejected** | Keeping Notion alongside external visual boards |
+| **Reason Rejected** | Notion's lack of native canvas integration and closed-source limitations prevent deeper agentic hooks. |
+| **Reason Chosen** | AFFiNE structurally bridges document, database, and canvas block concepts. By defining 14 custom power integrations, AFFiNE operates as the true CCP interface.\n\n**Category 1: Client Experience & Retention**\n1. **Client Transformation Journey Workspace:** A personalized 30-day challenge board, habit trackers, and gated video playlists provisioned automatically per client upon CBCS onboarding.\n2. **Intelligent Habit Tracker & Pomodoro Block:** Syncs habit completion data directly back to the Neo4j graph, natively feeding the CBCS intelligence loop.\n3. **Meal Plan & Nutrition Database Block:** Algorithmically generates macro-perfect lifestyle interventions directly into the client's AFFiNE workspace.\n4. **CBCS Conversation Viewer:** Renders a client's full Telegram conversation history alongside live Context Premise telemetry (Change Talk %, SPT Depth) inside the coach's workspace.\n\n**Category 2: Coach Operations**\n5. **CPSC Sales Pipeline Board:** A Kanban graph visualizer where cards are auto-dragged based on Neo4j Graph transitions (e.g. crossing a readiness threshold triggers a column shift).\n6. **Coach Program Builder (Template Factory):** An agentic feature that auto-generates massive program infrastructures (check-ins, milestones) based on Voice DNA.\n7. **CCF Content Calendar:** Syncs exact generative triggers and psychological routing briefs to calendar dates so the coach can approve outputs with full strategic context.\n8. **CPSC Campaign Orchestrator:** Allows coaches to launch complex 72-Hour Identity Anchor protocols targeted at specific coping positions directly from an AFFiNE block.\n\n**Category 3: Content Production**\n9. **OBS Recording Studio Block:** Natively controls OBS via WebSocket directly from AFFiNE, turning any page into an instant recording studio that autofeeds the CCP for transcription.\n10. **V²WS Webinar Slide Composer:** Replaces external presentation apps by allowing AI to drop generated webinar scripts straight into AFFiNE's Edgeless Canvas presentation mode.\n11. **CMF Video Review Block:** Wraps the CMF video rendering approval pipeline in an iframe so the coach can approve beats without leaving the platform.\n12. **Tier List Content Block:** Translates UI drag-and-drop actions in AFFiNE into JSON payloads that feed the CMF video engine to generate dynamic ranking videos.\n13. **Excalidraw Deep Integration:** Natively embeds `.excalidrawlib` diagrams into the Edgeless canvas, bridging AFFiNE's CRDT with Excalidraw's geometry.\n\n**Category 4: Data Intelligence**\n14. **Sales Insights Dashboard:** Real-time MRR, engagement scores, and conversion heatmaps driven by Supabase. |\n| **Trade-off Accepted** | Forking and customizing AFFiNE requires massive engineering commitment (syncing OctoBase CRDT with Supabase/Neo4j). Mitigated by the complete sovereignty it offers over the interface. |
+
+#### ADR-06: The Native CCP Studio Integration
+
+| | |
+|---|---|
+| **Decision** | Recording and livestreaming is embedded natively into the workspace as CCP Studio |
+| **Alternative Rejected** | Continuing to manage external dependencies like OBS Studio |
+| **Reason Rejected** | OBS lives completely outside the coaching OS. It requires manual context switching, file handling, and external broadcast management breaking agentic workflows. |
+| **Reason Chosen** | Recording becomes a "workspace action"—a state transition within the coaching OS from planning to production. Because it lives exactly where the client data lives, livestreaming becomes an interactive intelligence event, intrinsically linked to the Telegram system and CRM nodes. |
+| **Trade-off Accepted** | Building WebRTC recording pipelines adds complexity previously outsourced to OBS. Mitigated by zero-configuration recording constraints that save coach time. |
+
 ### The 7-Layer Unified Architecture
 
 The platform operates across a 7-tier hierarchy. Data flows upward from Research to Intuition; execution flows horizontally across all sub-systems (CCF, CBCS, V²WS, Tierlist, CMF).
@@ -435,6 +466,11 @@ The diagonal is the core architectural innovation. Each moment simultaneously go
 *Human Evidence Bias:* Encoded non-negotiably into every Research Planner directive. Priority hierarchy: named human story > statistical confirmation, provided: (1) person is named and publicly findable, (2) culturally positioned within the tribe's recognition radius (someone like me, not a celebrity — celebrity produces admiration + parasocial distance simultaneously), (3) carrier of the mechanism through lived experience, not an external commentator.
 
 *V5 correction to M1:* The Scheduled Monitor Agent runs daily, identifies active cultural tensions in the tribe before the session starts, and presents the coach with a specific, contextually intelligent observation via Telegram. The coach's reactive response (not a blank trigger) becomes the session input — richer and more personally grounded than a formal submission. The intelligence relationship shifts from service provider to creative partner.
+
+*Sovereign CRAL Research Engine (SCRE) Upgrades:* By shifting intelligence gathering to explicit SearXNG routing within the VPC, we remove black-box reliance on generalized LLMs:
+- **Autocomplete Polling Engine:** Proactively queries SearXNG autocomplete endpoints across highly specific categories to capture "zero-to-one" semantic spikes before they reach mainstream culture, alerting the coach via Telegram of emergent tribal interests.
+- **Finding-Linked Source Cache (DEP-ENG-060):** Utilizes a multi-tier Redis infrastructure (DB 2) to deterministically hash and cache convergent research vectors. Tier 0 promotion instantly shortcuts M2/M6 latencies from ~45s down to <5s, validating against pre-authenticated sources.
+- **Epistemic Friction Swarm:** A deterministic 6-agent swarm orchestrates adversarial truth-seeking before any research artifact is committed to the CRAL Finding Index. The **Signal Extractor** gathers raw web data from SearXNG; the **Pattern Builder** formulates an initial hypothesis; the **Contrarian Agent** explicitly scrapes the internet attempting to debunk the pattern; the **Contextualizer** grounds the debate in current cultural temporality; the **Speculator** maps future psychological implications; and the **Synthesizer** formulates the indisputable core truth. This completely replaces standard AI "yes-men" hallucination with hard, dialectically verified facts.
 
 ---
 
@@ -1011,17 +1047,32 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 
 - **FR60 (Loom Report Generation):** The system can transform campaign analytics into actionable, coach-facing intelligence narratives delivered as Loom Reports. After each campaign cycle completes, the system generates a comprehensive narrative document (not a dashboard of numbers) containing: (1) **Campaign Summary** — total eligible clients, total invited, total converted, conversion rate by coping position tier; (2) **Psychological Signal Analysis** — which Change Talk entries most strongly predicted conversion, which SPT transitions preceded booking decisions, which SEARCH phase detections were genuine vs. false positive; (3) **Client-Level Intelligence** — for each converted client, the specific psychological journey that led to booking (anonymized for coach review); (4) **Actionable Recommendations** — specific suggestions for the next campaign cycle based on Campaign Performance Registry patterns (e.g., "Clients at Position 3 who completed the full Identity Anchor Protocol converted at 3× the rate of those who only completed Day 1. Consider extending the protocol to 5 days for Position 3 clients."); (5) **V2 Visual Dashboard** — a visual summary of campaign performance trends over time, generated through the Excalidraw pipeline for brand-consistent presentation in Notion. *(Source: CCP_Sales_Cycle_Documentation_V1, CCP_Architecture_Documentation_V2)*
 
-### Capability Area 10: Conscious Visual Engine (CVE)
+### Capability Area 10: Conscious Visual Engine (CVE & SVRE)
+
+The visual architecture entirely discards UI-bound HTML DOM rendering (like Fabric.js pixel-pushing) in favor of the **Geometrics Pipeline (Spatial Composition Engine)**. This treats all visual elements as mathematical polygons on a Cartesian plane, resolving them algorithmically via Skia.
+
+- **FR-VIS-18 (Spatial Composition Engine / Geometrics Pipeline):** The engine executes in five deterministic stages to guarantee pixel-perfect visual geometry without manual intervention:
+  - **Stage 1 (SAM 3 Saliency Analysis):** Extracts semantic subject masks, text safe zones, and surface quadrilaterals directly from source images, establishing physical no-go boundaries.
+  - **Stage 2 (Pretext Typography Measurement):** Calculates sub-millisecond, DOM-less bounding boxes for all text elements.
+  - **Stage 3 (Layout Resolution):** Applies 2D Bin Packing and collision detection algorithms against the SAM 3 masks to produce absolute `[X, Y, W, H]` coordinates.
+  - **Stage 4 (Skia Headless Rendering):** Renders the layout using GPU-accelerated C++ Skia, deploying native GLSL Fragment Shaders, homography perspective mapping (for in-world text), and Rough.js for organic, algorithmically imperfect hand-drawn aesthetics.
+  - **Stage 5 (NIM Variant Scoring):** The pipeline explores 3-5 parametric layout variants, evaluated by the Visual Validation Agent using Llama-3.2-Vision NIM. The highest-scoring variant on readability, visual balance, and attention flow is seamlessly auto-selected.
+
+- **Constraint Precedence Hierarchy (CPH):** To navigate visual rule conflicts mathematically, a 7-rule CPH governs all rendering collisions. For example, *CPH-1* dictates that the integrity of the SAM 3 subject mask supersedes the Typography minimum scale—meaning if text cannot fit without covering a face, the text is forcefully rewritten shorter; the face is never covered. *CPH-2* dictates that Cinematic Chromatic Bloom arcs override pure color continuity thresholds, ensuring emotional color transitions execute beautifully via Skia edge-bleed gradients.
+
+- **FR-VIS-14 (Sovereign Visual Research Engine Orchestration):** Supervised by Aurore V2.0, the SVRE utilizes a "Flood-All-Score-Best" discovery policy. Instead of settling for the first acceptable image, Aurore floods all 9 APIs (Tier 1 to Tier 4) concurrently. The outputs are routed through the NIM Vision Scoring Pipeline and evaluated.
+
+- **FR-VIS-15 (NIM Vision Scoring Pipeline):** Visual evaluation is split into a Stage 1 Sieve (rapid filtering via Gemma 4) to eliminate low-fidelity artifacts, and a Stage 2 Deep Ranker (Qwen2-VL) which computes the ultimate **T-Score (Tribal Reward Function)**. The T-Score evaluates an image based on its cultural and semiotic resonance to the specific coach's audience, decisively retiring generic baseline K-Scores (beauty heuristics).
 
 - **FR-VIS-01 (Visual Composition Brief Generation):** The system generates complete VCBs (Visual Composition Briefs) for all scripts flagged for visual production. Abel (Visual Composition Planner) processes each script through a 9-step decision process: format determination (carousel, single image, poll, 9-grid), recipe protocol selection from the Visual Recipe Protocol Library (DEP-VIS-002), per-slide PSSL parameter assignment (lighting_grammar with temporal signal and shadow specification, saturation_pct as numeric value, head_rotation_degrees, pupil_position_ratio_pct, PAD environmental_grammar scores, chromatic_bloom_sequence), TIAR query for active tribal nouns (DEP-VIS-001), coach handle bar decision logic per format, semantic conflict specification between visual elements, accumulation prohibition audit (no completion imagery in accumulation slides), semiotic injection positioning (latter-third of sequence for 4+ slide formats), and tribal noun-visual congruent pairing. VCBs must pass Gate C-09 (PSSL Completeness Check) before proceeding to prompt compilation. Gate C-09 validates: all lighting_grammar contains temporal signal, all saturation_pct is numeric, all text slides contain minimum 3 concrete TIAR nouns, all character slides have numeric head_rotation_degrees AND pupil_position_ratio_pct, all slides have PAD scores, all tension slides have non-null incomplete_tribal_artifact, and semiotic injection is not in slide 1 or 2 of 4+ slide sequences. *(Source: CVE_Documentation_V2 §3, §10.4, CVE_Documentation_V3 §3)*
 
 - **FR-VIS-02 (TIAR Integration):** The system queries the Tribal Imagen Activation Registry (DEP-VIS-001) before any script hook generation AND before visual composition text finalization, injecting active tribal nouns as required vocabulary and blocking expired nouns. The TIAR tracks noun lifecycle across 4 decay stages: in_distribution (active, safe for deployment), tribal_potential (emerging, monitored), decay_approaching (overused, warn), expired (blocked from all new compositions). TIAR is sourced from DEP-ENG-007 (Tribe Intelligence) and DEP-ENG-023 (Cultural Memory Map). The `tiar-adapter` fires at two pipeline points: upstream in Script Generation Skills (before hook text assembly) and downstream in Abel's VCB generation (before visual text finalization). TIAR decay status per noun is logged in every VPO record for full audit traceability. *(Source: CVE_Documentation_V2 §4, §10.5)*
 
-- **FR-VIS-03 (PSSL Prompt Compilation):** The system compiles PSSL-compliant prompts via Paradoxe (PSSL Prompt Compiler) and executes RunningHub API workflows for all visual output types. Paradoxe performs: field-to-prompt translation (converting numeric PSSL values into natural language generation directives), anti-generic constraint assembly (specificity constraints drawn from enemy typology), dual-vector gaze geometry prompt directives (head rotation + pupil position for multi-character compositions), cultural color profile incorporation (warm Kelvin ranges for trust-building, cool for authority contexts), reference image parameter assembly (passing DEP-VIS-004 canonical character reference images with identity-preserving strength 0.85), and intentional imperfection specification. For each slide, Paradoxe compiles a complete RunningHub task payload including workflow_id, nodeInfoList with assembled prompt text, reference image base64, and strength parameters. RunningHub task execution must complete within 10 minutes per slide. Polling uses exponential backoff: 5s initial, doubling to 60s maximum. *(Source: CVE_Documentation_V2 §7, §9)*
+- **FR-VIS-03 (Sovereign PSSL Prompt Compilation & Execution):** The system compiles PSSL-compliant prompts via Paradoxe (PSSL Prompt Compiler) and executes generation directly against self-hosted **Nvidia NIM containers on AWS EC2**. Paradoxe performs field-to-prompt translation, constraint assembly, and cultural color profile mapping. For each slide, Paradoxe calculates VRAM bounds and routes the payload: T2I Generation (FLUX.2/FLUX.1-dev) routes to G5 instances (A10G/24GB), while I2V Generation (Wan 2.2/CogVideoX) routes to P4d instances (A100/80GB). Generation executes within 10 minutes per slide via NIM streaming APIs. *(Source: CVE_Documentation_V2 §7, §9)*
 
-- **FR-VIS-04 (Visual Validation):** The system validates all RunningHub outputs through the Visual Validation Agent using `image_analysis_wrapper.py`. Each generated image is scored against three checks: (1) **AGSS (AI-Generated Sincerity Score)** — feature distance from training distribution center, minimum 6.5/10 required; (2) **Authenticity Feature Verification** — three mandatory binary pass/fail checks: expression naturalness (micro-expression coherence), facial proportion (anatomical accuracy), and skin texture (pore-level detail consistency); (3) **Character Drift Detection** — facial feature comparison against DEP-VIS-004 canonical reference images for all slides containing a named cast character. On AGSS failure: Paradoxe automatically revises the prompt with enhanced imperfection specification, one regeneration attempt. On authenticity failure: regeneration with enhanced imperfection spec. On character drift: regeneration with reference_image_strength increased to 0.95. On second failure of any type: slide flagged PENDING_HUMAN_REVIEW, operator alerted, composition delivered with placeholder in flagged slot. *(Source: CVE_Documentation_V2 §9.5, §10.2)*
+- **FR-VIS-04 (Sovereign Visual Validation):** The system validates all NIM outputs through the Visual Validation Agent. Each generated image is scored against three checks: (1) **AGSS** (minimum 6.5/10), (2) **Authenticity Feature Verification**, and (3) **Character Drift Detection** against DEP-VIS-004. On failure, Paradoxe automatically revises the prompt and retriggers the local NIM endpoint. On second failure: slide flagged PENDING_HUMAN_REVIEW, operator alerted, composition delivered with placeholder. *(Source: CVE_Documentation_V2 §9.5, §10.2)*
 
-- **FR-VIS-05 (Canvas Composition & Delivery):** The system loads VCB JSON into the Conscious Canva App (Next.js 14 + Fabric.js) via `POST /api/compositions/create`. Text slots populate immediately from VCB data. Image slots remain as placeholder elements pending RunningHub delivery via webhook (`POST /api/assets/receive`). The Canva App implements 7 customizations to the base canva-clone: (A) Template System Replacement — templates load from VCB JSON by `template_id`, no manual browsing; (B) VCB Intake API; (C) RunningHub Asset Reception webhook; (D) Coach Handle Bar Component (profile picture, coach name, handle, logo — position locked to top, not movable); (E) Seamless Carousel Export — stitches all slides into one horizontal canvas, slices at correct dimensions, edge bleed zones (40px) align across stitch boundaries; (F) Stripped Features — removed: template gallery, font selector for primary zones, color picker for backgrounds, background upload; (G) Approval Controls — Approve (triggers Notion sync), Request Regeneration (returns to RunningHub with revision note), Edit and Approve (manual edits + approval). *(Source: CVE_Documentation_V2 §8)*
+- **FR-VIS-05 (Canvas Composition & Delivery):** The system loads VCB JSON into the Conscious Canva App (Next.js 14 + Skia). Text slots populate immediately. Image slots remain as placeholder elements pending completion of the batch and subsequent S3 Object Put events mapped from the NIM deployments. The App implements 7 customizations: (A) Template replacement via VCB JSON; (B) VCB Intake API; (C) S3 Asset Sync; (D) Coach Handle Bar Component; (E) Seamless Carousel Export; (F) Stripped UI Features; (G) Approval Controls. *(Source: CVE_Documentation_V2 §8)*
 
 - **FR-VIS-06 (Notion Visual Content Card):** The system delivers complete VPO (Visual Production Output) records to the coach's Notion workspace. Each approved composition delivers: **Card Header** — Universal Asset ID, recipe name in plain language, production status, date, visual style; **Preview Section** — carousel: horizontal stitch image + individual numbered slide previews + ZIP download; single image: full preview + PNG download; **Content Ready to Copy** — hook text, full caption, hashtag recommendations, posting day and time recommendation; **Why This Visual Was Built This Way** — plain language rationale written for the coach explaining the arc type, emotional arc mapping, TIAR noun selection, style choice, and tribal function; **Leadership Farming Note** — which leadership trait this visual exercises; **Technical Audit** (collapsed by default) — TIAR decay status per noun, AGSS scores per slide, authenticity check results, Receipt Chain status, Fingerprint ID. *(Source: CVE_Documentation_V2 §12.2)*
 
@@ -1029,11 +1080,11 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 
 - **FR-VIS-08 (Style Scoping):** The system enforces strict style-to-format rules via the `visual-format-constraint-adapter`. **Ghibli and illustrated styles** are available exclusively for Conceptual Contrast and Supervisual single image compositions — never for carousels or multi-slide formats. **Carousel compositions** use cinematic color-graded or semi-realistic digital styles only. **Observational Humor** mandates real images always (stock photos from Tier 1-2) — never illustration or AI generation, regardless of format. **Worst Case Scenario** uses desaturated cinematic style (20-35% saturation maximum). These constraints fire before Abel's recipe protocol selection, preventing invalid style assignments at the earliest possible pipeline stage. *(Source: CVE_Documentation_V2 §8, CVE_Documentation_V3 §4)*
 
-- **FR-VIS-09 (Image Sourcing Hierarchy):** The system enforces a four-tier image sourcing hierarchy: **Tier 1 (Real Person Photo)** — for slides referencing named real individuals, the system queries the Photo Deck (Notion) and Known Persons Registry (DEP-VIS-006) via SERPER lookup. If a matching licensed photo exists, it is used directly. **Tier 2 (Real Stock Image)** — for slides requiring environmental, contextual, or abstract imagery, Aurore searches across Unsplash, Pexels, Pixabay, GIPHY, and SERPER general image search. Results are ranked by relevance, quality, and licensing status. **Tier 3 (Realistic AI Character)** — only when Tier 1-2 produce no adequate match, RunningHub semi-realistic workflows generate character imagery with identity-preserving reference images from DEP-VIS-004. **Tier 4 (Ghibli AI Illustration)** — available exclusively for Conceptual Contrast and Supervisual formats, using RunningHub Ghibli LoRA workflows from DEP-VIS-007. Aurore processes all slides in parallel, outputs an `image_resolution_map` specifying the resolved tier per slide. Only slides that fail stock search proceed to AI generation. *(Source: CVE_Documentation_V3 §2)*
+- **FR-VIS-09 (Image Sourcing Hierarchy):** The system enforces a four-tier image sourcing hierarchy: **Tier 1 (Real Person Photo)** — queries Photo Deck/Known Persons Registry via SERPER. **Tier 2 (Real Stock Image)** — Aurore searches Unsplash, Pexels, Pixabay, GIPHY. **Tier 3 (Realistic AI Character)** — if Tiers 1-2 fail, **FLUX.2/FLUX.1-dev workflows** generate character imagery with identity-preserving reference images via sovereign AWS instances. **Tier 4 (Ghibli AI Illustration)** — for specific formats, using NIM LoRA workflows. Only slides failing stock search proceed to sovereign GPU generation. *(Source: CVE_Documentation_V3 §2)*
 
-- **FR-VIS-10 (Multi-API Image Search):** Aurore orchestrates 9 composable image search skills: **SKILL-IMG-001** (Unsplash Search — query, orientation, color filters), **SKILL-IMG-002** (Pexels Search — query, orientation, size, color), **SKILL-IMG-003** (Pixabay Search — query, image_type, orientation, category), **SKILL-IMG-004** (GIPHY Search — query for animated/reaction images), **SKILL-IMG-005** (SERPER General Image Search — broad web image search with licensing filter), **SKILL-IMG-006** (SERPER Known Persons Lookup — person name → licensed portrait photos), **SKILL-IMG-007** (RunningHub Realistic Generation — PSSL prompt → semi-realistic AI image), **SKILL-IMG-008** (RunningHub Ghibli Generation — PSSL prompt → Ghibli-style illustration via LoRA), **SKILL-IMG-009** (Photo Deck Query — Notion database lookup for coach's branded photo library). Each skill is a full JIT SKILL.md specification with defined inputs, outputs, quality gates, and error handling. The `multi_api_image_search.py` tool provides the unified Python interface for all API calls. Environment variables required: `UNSPLASH_ACCESS_KEY`, `PEXELS_API_KEY`, `PIXABAY_API_KEY`, `GIPHY_API_KEY`, `SERPER_API_KEY`. *(Source: CVE_Documentation_V3 §3)*
+- **FR-VIS-10 (Multi-API Image Search):** Aurore orchestrates composable search skills: **SKILL-IMG-001** (Unsplash), **SKILL-IMG-002** (Pexels), **SKILL-IMG-003** (Pixabay), **SKILL-IMG-004** (GIPHY), **SKILL-IMG-005** (SERPER General), **SKILL-IMG-006** (SERPER Lookup), **SKILL-IMG-007** (FLUX.2 Realistic Generation via NIM), **SKILL-IMG-008** (FLUX.2 Ghibli Generation via NIM), **SKILL-IMG-009** (Photo Deck Query). Environment variables required map to these strict sovereign endpoints. *(Source: CVE_Documentation_V3 §3)*
 
-- **FR-VIS-11 (In-App Image Search Panel):** The Conscious Canva App includes an integrated Image Search Panel allowing operators to search across all five stock APIs (Unsplash, Pexels, Pixabay, GIPHY, SERPER) and trigger RunningHub AI generation (realistic or Ghibli) directly within the composition environment. The panel displays search results as a thumbnail grid with one-click placement into any open canvas image slot. Operators can override Aurore's initial image selections by searching for alternatives and dragging them into slots. The Image Search Panel also provides access to the coach's Photo Deck for branded photography swaps. Every manual swap is logged in the Asset History Table for provenance tracking. *(Source: CVE_Documentation_V3 §6)*
+- **FR-VIS-11 (In-App Image Search Panel):** The Conscious Canva App includes an integrated Image Search Panel allowing operators to search stock APIs and trigger FLUX.2 AI generation directly within the composition environment. Every manual swap is logged in the Asset History Table for provenance tracking. *(Source: CVE_Documentation_V3 §6)*
 
 - **FR-VIS-12 (Known Persons Registry):** The system maintains a Known Persons Registry (DEP-VIS-006) as a Notion database mapping named public figures to their canonical image sources, usage permissions, content-context routing rules, and licensing status. When a script references a named public figure (in the Character Lexicon Heroes, Enemies, Mentors, or Wildcards categories), Aurore queries this registry via SKILL-IMG-006 before any stock search or AI generation. The registry enforces: (1) only licensed, publicly available images are used; (2) context-appropriateness rules prevent misrepresentation (a Hero cannot appear in a negative context visual); (3) the non-repetition window (8-week rolling) applies to person-specific images as well as character references. The registry is human-curated and requires operator approval for additions. *(Source: CVE_Documentation_V3 §8)*
 
@@ -1048,7 +1099,7 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 | Context | Requirement | Rationale |
 |---|---|---|
 | CBCS message response | End-to-end latency from Telegram webhook receipt to message delivery: **<2 seconds** (P95) | A 2s+ delay breaks the "invisible app" experience — clients assign it to poor coaching quality, not technology |
-| LIWC-22 + transcription | Context Premise update after voice note processing: **<5 seconds** including Groq transcription | Clients expect near-instant acknowledgment after submitting a voice note |
+| LIWC-22 + transcription | Context Premise update after voice note processing: **<5 seconds** using Whisper large-v3-turbo via NIM | Clients expect near-instant acknowledgment after submitting a voice note |
 | Circuit Breaker escalation | Crisis keyword detection to halt trigger: **<500ms** | Hard safety requirement — no LLM reasoning latency permitted on this path |
 | CCF weekly pipeline | Full `ccf-weekly` execution (CRAL → JIT → Validation → Notion delivery): **tolerates 10–30 minutes** | Batch processing; no user is waiting. Deterministic completion > speed. |
 | V²WS Excalidraw generation | Branded `.excalidraw` deck generation per webinar: **<5 minutes** | Coach collaboration sessions must not stall waiting for the visual artifact |
@@ -1058,7 +1109,7 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 | LIWC-22 Client Analysis | Client voice note linguistic analysis (SPT, SEARCH, Change Talk): **<3 seconds** | Must complete within the CBCS <5s voice note processing window (FR29). |
 | CPSC Campaign Orchestration | Full campaign segmentation + sequencing for all active clients: **<5 minutes** | Operator-triggered batch; acceptable startup latency before multi-day sequence begins. |
 | Stewardship Signal Check | Weekly Guardian Agent monitoring: **tolerates 5–10 minutes** | Scheduled batch; no user is waiting. Thoroughness > speed. |
-| RunningHub image generation | Per-slide generation: **≤10 minutes**. Exponential backoff starting 5s, doubling to 60s max. | Image generation is batch processing; no user is waiting. Timeout triggers operator notification. |
+| Sovereign NIM GPU Pipeline | Per-slide generation: **≤10 minutes**. Strict execution via EC2 Spot Instance scheduling. | Image generation is batch processing; no user is waiting. Scheduled Pre-Warm eliminates 24/7 costs. |
 | Visual Validation scoring | AGSS + authenticity + drift check per image: **<30 seconds** | Must complete fast enough for regeneration cycle to stay within 10-min slide window. |
 | Multi-API image search | Full 5-API parallel search per slide: **<15 seconds** | Stock search must complete quickly to determine whether AI generation is needed. |
 
@@ -1069,7 +1120,7 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 - **Coach IP Protection:** `coach_soul.json`, all TTT calibration data, the Emotional DNA profile, and all Trigger Maps constitute the coach's intellectual property. If a coach leaves the platform, their Voice DNA and all derived models are purged within 30 days.
 - **Client Data Retention:** Client journal entries, voice transcriptions, and ritual interaction logs are retained for the duration of the coaching engagement + 90 days. Clients can request deletion at any time.
 - **Agent Prompt Security:** System prompts, SKILL.md files, the Intelligence Library, and all DEP IDs are never exposed to end users. The CBCS presents as a natural coaching conversation — internal architecture is invisible.
-- **API Key Management:** All third-party API keys (Publer, Firecrawl, Tavily, Neo4j, Supabase, LLM providers, RunningHub, Unsplash, Pexels, Pixabay, GIPHY, SERPER) are stored as encrypted environment variables in the cloud instance. Never hardcoded in any skill, script, or workflow file.
+- **API Key Management:** All third-party API keys (Publer, Neo4j, Supabase, Unsplash, Pexels, Pixabay, GIPHY, SERPER) are stored as encrypted environment variables in the cloud instance. Proprietary proxy endpoints (ElevenLabs, Groq, RunningHub) are strictly prohibited; their functions are executed by IAM-authorized NIM endpoints.
 - **Single-Tenant Isolation:** Each coach operates in a dedicated repository and cloud instance. There is no shared multi-tenant layer at any level of the stack.
 
 ### Reliability & Governance
@@ -1086,15 +1137,16 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 
 - **Telegram API:** Primary I/O channel for all user-facing interaction. Must handle rate limits gracefully (30 messages/second per bot). Exponential backoff and message queuing required. Webhook failures trigger queue-and-retry; no message is lost.
 - **Neo4j:** Graph database must support concurrent reads (CBCS personalizing rituals) and writes (Aria updating Context Premise) without deadlocks. Connection pooling required.
+- **Redis (Tiered Cache Infrastructure):** Critical state is managed across three Redis databases. DB 0 handles temporary pipeline state. DB 1 captures real-time Autocomplete polling snapshots to power SCRE zero-to-one signal detection. DB 2 runs the Finding-Linked Source Cache (DEP-ENG-060), mapping validated research artifacts to pre-authenticated URLs, dramatically reducing latency and promoting high-confidence Tier 0 convergence.
 - **Publer API:** Single integration point for all social publishing and performance retrieval (Instagram, LinkedIn, TikTok, Facebook, Threads, YouTube, Bluesky, Pinterest). 24-hour auto-sync; on-demand manual sync available. Rate limit: 100 requests per 2 minutes.
-- **LLM Provider Resilience:** ModelRouter must support failover between LLM providers (e.g., if Gemini degrades, Groq is available for fast-inference tasks; if Groq is unavailable, an alternative fast-inference provider handles Aria extraction). No single provider is a single point of failure.
-- **Firecrawl / Tavily:** CRAL research scrapers. Failures are non-blocking for the pipeline — they trigger a retry queue with exponential backoff, and the CRAL Finding Index is flagged as partial pending resolution. Production is not halted for a scraping failure.
-- **Excalidraw:** All visual rendering pipelines must be idempotent — if a render fails, re-running produces identical `.excalidraw` output without side effects. Template integrity is validated before delivery.
-- **Notion Sync:** `notion_sync.py` failures trigger a retry queue. If sync is unrecoverable, the System Operator is notified with full payload for manual recovery. No content is lost; it is queued, not discarded.\r
-- **RunningHub API:** AI image generation provider for all CVE visual production. Task creation, status polling (exponential backoff: 5s → 60s max), and output URL retrieval. 10-minute timeout per slide triggers operator alert. Individual slide failures do not halt the batch — failed slides are flagged PENDING_HUMAN_REVIEW while remaining slides proceed.\r
-- **Stock Image APIs (Unsplash, Pexels, Pixabay, GIPHY, SERPER):** Image research for Tier 1-2 sourcing. Aurore orchestrates parallel searches with staggered API calls to avoid rate limiting. Fallback cascading: primary API fails → next API in hierarchy. Stock API failures are non-blocking — system falls back to Tier 3-4 AI generation.\r
-- **Conscious Canva App:** Next.js 14 + Fabric.js visual composition editor. VCB intake via API, RunningHub asset reception via webhook, template loading, export controls. App failures are non-blocking for content production — compositions can be manually assembled from individual assets if necessary.\r
-- **Cloudflare R2:** Object storage for all visual assets — RunningHub outputs, reference images, template assets, final compositions, exported PNGs. Storage failures trigger retry queue with exponential backoff. Asset URLs are permanent and referenced throughout the Receipt Chain.
+- **Nvidia NIM API:** Essential AI infrastructural backbone for visual tasks. Provides hyper-optimized API endpoints for Llama-3.2-Vision (used for Geometrics variant scoring) and Qwen2-VL/Gemma paths (used for SVRE T-Score evaluation). Requires enterprise compute node stability.
+- **SearXNG (VPC-Bound Data Sovereign):** The explicit meta-search infrastructure used by SCRE and SVRE. By self-hosting SearXNG within the VPC, the system bypasses mainstream search constraints and allows the intelligent routing of queries specific to psychological and temporal profiles without third-party tracking or black-box LLM hallucination.
+- **Cold Start Physics & Scheduled Pre-Warm:** GPU containers take 15-20s to load model weights. To avoid idle $30/hr instances, the system enforces a CRON-based scheduled pre-warm: AWS EC2 instances spin up 5 minutes before scheduled batch operations, process the batch via NIM, and immediately terminate. Only the dashboard (AFFiNE) and databases (Supabase, Neo4j) are 24/7 persistent.
+- **Firecrawl / Tavily:** Legacy CRAL research scrapers. Maintained as fallbacks, but primary heavy-lifting represents a shift over to the SearXNG Explicit Routing engine.
+- **Excalidraw & Sovereign Graphics:** All visual rendering pipelines must be idempotent. External webhooks for graphic reception are prohibited; UI updates natively map from Sovereign S3/R2 internal triggers.
+- **Sovereign Voice Ecosystem:** The Audio/Transcription stack explicitly prohibits proprietary platforms. STT executes exclusively via `Whisper large-v3-turbo` deployed on NIM. TTS utilizes `MOSS-TTS` or `F5-TTS` deployed via local container. Audio track separation relies on local `Demucs`.
+- **Notion Sync:** `notion_sync.py` failures trigger a retry queue. If sync is unrecoverable, the System Operator is notified with full payload for manual recovery. No content is lost; it is queued, not discarded.
+- **AWS S3 / Cloudflare R2:** Object storage for all visual assets — NIM outputs, reference images, template assets, final compositions, exported PNGs. Storage failures trigger retry queue with exponential backoff. Asset URLs are permanent and referenced throughout the Receipt Chain.
 
 ### Scalability
 
@@ -1108,15 +1160,29 @@ Once Phase 1 (Steps 1–14) is verified stable across at least 3 complete produc
 
 - **TTT Drift Limit:** Generated content must maintain TTT alignment >85% against `coach_soul.json` baseline (Sophia validator threshold). Content with drift >15% is automatically rejected and rewritten — never published.
 - **AI Detection Rate:** All published content must pass the Mimicry Validator (Chen) at <5% AI detection rate. This is a measurable, testable quality gate, not a stylistic guideline.
-- **Contrastive Distance Score:** Generated content must maintain a contrastive distance ≥0.5 from its archetype-specific Anti-Draft baseline across all 36 weekly pieces. Content with lower distance triggers TillDone rewrite.
-- **Authenticity Score Gate:** Voice notes used as activation event inputs must score ≥7/10 on the LIWC-22 Authenticity Algorithm. Low-scoring inputs are returned to coach for resubmission before compilation proceeds.
-- **Seasonal Alignment Score:** Content must pass the 4-layer seasonal influence check (Macro 5%, Meso 8%, Micro 12%, Pinnacle 20%) with a timing_score ≥0.3 on at least 80% of ideas per cycle.
+- **3-Level Contrastive Prompting Anti-Draft Protocol:** Generated content must actively repel the statistical centroid of standard LLM writing ("the draft"). We enforce this via a 3-level contrastive anchor test during deliberation: 
+  - *Level 1 (Archetype Failure):* The system generates a known generic AI output for the specific archetype and forces the generative agent to maximize semantic distance away from it.
+  - *Level 2 (Psychological Mode Failure):* The payload masking adapter ensures the content does not accidentally collapse into the wrong psychological mood state.
+  - *Level 3 (Coach-Specific Drift):* The system enforces repulsion against structural shortcuts the specific coach defaults to (from `DEP-ENG-004`). Content with a contrastive distance <0.5 from the anti-draft baseline triggers an immediate `TillDone` rewrite.
+- **Seasonal Validator Architecture:** Content cannot be context-blind to the temporal reality of the audience. Every output must pass the 4-layer seasonal influence check to ensure timing alignment. The context reasoning engine weighs temporal signals hierarchically: Macro (Decade/Year Zeitgeist at 5%), Meso (Season/Quarter at 8%), Micro (Current Week/Month at 12%), and Pinnacle (Immediate active 48-hour pop-culture or tribal event at 20%). Content scoring a `timing_score` <0.3 across its ideation cycle is heavily penalized in archetype weighting.
+- **Leadership Trait Architecture:** The platform scores and governs physical Coach Avatars across 12 distinct vectors (e.g., The Visionary, The Operator, The Contrarian, The Guardian). For any content produced, the routing engine identifies the primary leadership trait the coach must inhabit to effectively land the Context Premise. This trait governs downstream visual asset parameters (like gaze vectors and posture), and dictates the linguistic positioning required to establish authority before the audience.
 
 ---
 
 ## Section 9: Core Architectural Specifications & Build Mechanics
 
 This section transforms the functional requirements of the CCP into a deterministic, buildable engineering specification. It defines the exact components the Conscious Cognitive Skill Builder (CCSB) uses to dynamically compile intelligence at runtime.
+
+### 9.0 Foundation Model Architecture Matrix (Sovereign NIM)
+The platform operates a heterogeneous, self-hosted NIM container pipeline on AWS EC2, discarding the "Wrapper Trap" of single large models. The models execute via deterministic routing rules:
+
+1. **gemma4-31b-Opus-4.6-reasoning (Zero-Idle Watchdog & Builder):** Deployed on a single AWS `g5.xlarge`. Operates continuously to evaluate Telegram webhooks, execute logical gates (DEP compliance), and normalize CRAL data streams in the background when not actively routing.
+2. **Kimi-K2.5 (Emilio / Raw Generator):** Deployed across `g5.12xlarge` for batch generations. Operates strictly as the Pass 1 Draft Generator. Prohibited from final output delivery due to negative instruction following (-1.0); strictly bounded by the Critic.
+3. **Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive (Reality Engine):** Lobotomized safety model specifically for *Escape Mode* and explicit comedy. Acts as the specialized Edge Generator, generating raw truths that break standard AI mean reversion before passing to the Critic for structural sanitization.
+4. **Z.AI GLM 5 Turbo (The Critic Subagent):** The absolute arbiter of the JIT Compile loop. Deployed during the CRON batch window on `P4d` clusters. Operates the structured Anti-Draft evaluation via "Interleaved Thinking" to quarantine positivity bias and enforce structural limits.
+5. **Kimi-K2-Thinking (CRAL Emotional Extraction):** Bridge unit for mapping cold data against emotional DNA templates.
+6. **Qwen 3.5 397B A17B (Deep Batch Engine):** Excluded from Real-time / JIT generation loops due to VRAM limits. Functions solely on ASG-triggered Spot instances for offline visual evaluation and historic parsing.
+
 
 ### 9.1 The V5.0 JIT Master Taxonomy (The Dynamic Roster)
 
@@ -1435,3 +1501,216 @@ The required Notion Dashboard Schema:
 - **The Relationship Intelligence Dashboard:** Client-level SPT stages, Intimacy Index scores, Change Talk Vault summaries, and coping trajectory progressions — anonymized and aggregated for coach review without exposing raw psychological data.\r
 - **The Visual Production Console:** VPO delivery status, visual asset previews (horizontal stitch + numbered individual slides + ZIP download), "Why This Visual Was Built This Way" plain-language rationale, TIAR decay audit per noun, AGSS scores per slide, authenticity check results, Receipt Chain confirmation, and Fingerprint ID linkage. Carousel preview with swipe navigation. Links directly to the Conscious Canva App for post-delivery editing.\r
 - **The Visual Recipe Library:** Template registry with wireframe previews, format/aspect ratio specifications (4:5, 9:16, 1:1), RunningHub workflow IDs, visual style assignments (cinematic, semi-realistic, Ghibli), and production count metrics per template. Enables operator review of which recipes produce the highest AGSS scores.
+
+
+
+
+
+# Conscious Coaching Platform (CCP) — April Updates Master PRD
+**Version:** 4.0 (Launch Architecture)  
+**Status:** Source of Truth  
+**Target Output Length:** 4,400 - 4,800 words  
+
+---
+
+## 1. Executive Summary & Human-First Brand Doctrine
+
+The Conscious Coaching Platform (CCP) is undergoing its most profound strategic transformation. This 48-hour launch update is not merely a collection of features; it is a full pivot away from generic "AI generation" toward **human expression refinement**.
+
+### 1.1 The Anti-Slop Positioning
+The market is oversaturated with synthetic authority, templated prompts, and soulless automation. The CCP explicitly rejects this category. We do not manufacture presence. Our singular mandate is to extract, sharpen, organize, and elevate the real voice, perception, taste, and communication of the coach. 
+
+The front-stage promise of CCP is never "learn AI" or "automate content." The front-stage promise is: **Become a better communicator, become harder to ignore, and turn your real voice into premium content and social proof.** AI remains permanently backstage, serving purely as the refiner, router, benchmarker, and orchestration engine.
+
+### 1.2 Human-First Engineering Principles
+This positioning forces specific structural requirements across the platform:
+- **Reality as Raw Material:** All growth pipelines begin with long-form human expression—interviews, roleplay, voice notes, live speech. Never an empty prompt box.
+- **Human Ascension over Content Scale:** The ultimate success metric is not content volume, but whether the coach handled objections better, spoke with more conviction, and became more memorable. The content is merely the exhaust and the proof of this transformation.
+- **Genuine Connection outranks Synthetic Scale:** The platform operates on the truth that a real relationship with lower volume is commercially and emotionally superior to synthetic mass reach. Better trust yields better referrals, better data, and a stronger intelligence moat.
+
+---
+
+## 2. The Founding Partner JV Program
+
+The growth of CCP will not be driven by generic affiliate links or mass-market paid ads. It will be driven by the **Founding Partner JV Program**, a tightly controlled, high-intimacy operator node system. This is a product-led Joint Venture model where distribution becomes access rather than persuasion.
+
+### 2.1 Cohort Architecture & Scale Limit
+The initial operating target is intentionally constrained to ensure extreme quality, fast feedback loops, and deep founder involvement.
+- **Nodes:** `4` Founding JV Partners.
+- **Expansion:** `12` coaches per partner over time.
+- **Target Audience:** `48` total active coach accounts.
+- **First Ceiling:** `160` coaches (the relational and quality limit before the next strategic shift).
+
+The best first targets are a hybrid cohort: 2 warm past clients with existing trust equity, and 2 high-pain/high-network coaches feeling the immediate pressure of the AI transition who desperately need an operational advantage.
+
+### 2.2 Partner Expectations & Mutual Ascent
+This is not a passive referral system. Free internal use is strictly contingent on operational seriousness.
+Every founding partner must:
+- Complete the 7-day challenge personally.
+- Actively use the system weekly to improve their own communication.
+- Feed the system by hosting interviews (trigger-first protocol).
+- Generate active introductions and test real conversion flows.
+
+In exchange, the partner receives first-mover advantage, free system use, premium content out of their own voice, roleplay mechanics, and a recurring revenue share ($16.95/$39.95/$49.95 end-user payments to the coach, while the coach pays CCP the $3.90 metered backend layer). The partner earns not by asking for favors, but because the platform makes them look generous, smart, and valuable to their network.
+
+### 2.3 The Sovereign Data Boundary (Layer 1 vs. Layer 2)
+The compounding moat of the platform is structured behavioral data. However, trust will instantly collapse if tenant boundaries are fuzzy.
+- **Layer 1 Data:** When a coach uses the Law 28 Challenge or roleplays within CCP directly, their Voice DNA, completion behaviors, and conversion intelligence feed our central marketing and product intelligence.
+- **Layer 2 Data:** When that same coach deploys the system for *their own* clients, absolute tenant isolation applies. Client data strictly serves the coach's service intelligence and cannot leak across the platform.
+
+---
+
+## 3. The Trust-Transfer Acquisition Engine (Interviews & OFAP)
+
+We are permanently shifting how leads enter the ecosystem. We no longer rely on cold pitches. Growth is generated through **Trigger-First Interview Protocols** and the **Offline Field Acceleration Protocol (OFAP)**.
+
+### 3.1 OFAP: The Human Entry Vector
+OFAP is the real-world entry protocol. It is an alternative challenge leads acquisition channel that relies entirely on real-world likability, intrigue, and human presence. 
+`IRL encounter -> social follow / curiosity -> CCP content touches -> ecosystem entry`
+OFAP's purpose is to bring people into the orbit through genuine memory creation. Once they are in orbit, the CCP interview machine takes over.
+
+### 3.2 Trigger-First Interview Protocol
+Interviews are the cornerstone of the acquisition engine. They are not generic podcast events. They are engineered proof-producing human events that do five jobs simultaneously:
+1. **Create Relationship:** Establishes partner authority and guest trust.
+2. **Create Content:** Transforms raw speech into premium CMF assets rapidly.
+3. **Create Proof:** Demonstrates the power of the platform to the guest without a sales pitch.
+4. **Create Insight:** Allows the system to benchmark the guest's communication.
+5. **Create a Challenge Entry Path:** The guest is invited to continue their growth in the 7-Day Challenge.
+
+#### 3.2.1 TRI-Relevance & CRAL Pre-Intelligence
+Every interview must be constructed around a timely, high-tension premise. Before the interview occurs, CRAL (Contextual Research & Analysis Logic) provides a "Primary Signal Packet" containing:
+- The timely angle.
+- The audience tension.
+- The coach/guest overlap point.
+- One emotionally loaded question to provoke an authentic breakthrough.
+
+This prevents the conversation from decaying into polite, generic platitudes. The interview must activate tension to pull living thought rather than rehearsed opinion.
+
+#### 3.2.2 The Post-Interview Conversion Handoff (The Trust-Transfer Ladder)
+The speed and quality of post-interview execution are what make this a growth channel rather than a media channel. Within 24-48 hours, the guest receives a premium, fully branded content package (reels, carousels, quote cards) generated directly from their interview via CMF.
+
+The psychological effect is awe: *Before they even wonder when it will be ready, premium output is already in their hands.* 
+Because the guest has now felt the power of the platform, the handoff is seamless. The invitation is not "buy our service"; it is: *"Continue the momentum. If you want to improve your delivery further, enter the 7-day speaking challenge."* 
+
+This structured progression (`interview -> output -> benchmark -> challenge`) represents the ultimate **Trust-Transfer Ladder**, moving prospects logically from passive observation to active, measured improvement.
+
+---
+
+## 4. The Voice-First Orchestration Layer
+
+Voice notes within CCP are not a support feature—they are the **experience driver layer**. The platform leverages audio not just to deliver information, but to orchestrate the user's emotional state, reduce friction, and increase the premium perceived value.
+
+### 4.1 The Telegram Continuity Law
+To minimize drop-off and maximize the Effortless Experience, the entire voice-first orchestration happens within Telegram. The user is never pushed across disparate surfaces unnecessarily. The continuity flow (`invite -> voice note -> interview prep -> asset delivery -> challenge invitation -> daily progression -> benchmark feedback`) happens within a single relational container.
+
+### 4.2 The Six Emotional Jobs
+Every single voice note inside CCP is engineered to do exactly **one** of six emotional jobs. We strictly avoid overloading notes with multiple goals.
+1. **Orient:** Explain what is happening to reduce uncertainty before a step (e.g., Pre-Interview Orientation Broadcast).
+2. **Relieve:** Lower anxiety and make the user feel safe.
+3. **Validate:** Confirm they are understood and reflect their growth back to them.
+4. **Invite:** Open the next step naturally without pressure.
+5. **Redirect:** Reframe a stuck moment or correct confusion.
+6. **Celebrate:** Mark progress and increase pride.
+
+### 4.3 Anti-Noise Guardrails
+The voice layer must never devolve into chaotic soundboard comedy or overproduced theatrics. It acts as a human-first micro-broadcast system.
+- **Sparse Sonic Identity:** We use 2-4 branded mood beds and very brief contextual SFX. Voice is always the lead instrument; music is strictly a support layer.
+- **Relief Over Performance:** If an audio choice makes the note feel clever but less clear, it is rejected.
+- **Silence is a Feature:** Pauses are deliberately used to increase authority, emotional pacing, and felt intelligence.
+
+---
+
+## 5. Advanced Referral & Proof Engineering
+
+Referrals in the AI era cannot be treated as a side tactic; they must be engineered into the product. We are abandoning vague "affiliate asks" and replacing them with an integrated system built upon the Activator, Challenger, and Giftology doctrines.
+
+### 5.1 Recipient-Centric Relationship Artifact Design (Giftology)
+A referral happens when a user is given something that enhances their own identity. Inside CCP, the premium reels, quote cards, and benchmark scorecards are designed as **Relationship Artifacts**. They are not heavily branded billboards for CCP; they are high-fidelity symbols of the guest's communication excellence. Because the artifacts make the guest look brilliant to their inner circle (spouse, team, audience), the guest naturally shares them, creating organic, high-trust downstream distribution.
+
+### 5.2 Preemptive Value Shaping & Mobilizer Targeting (Activator)
+We do not wait for demand to formalize. By using interviews and early benchmark feedback, we shape how the prospect understands their own problem before they start comparing generic AI tools. 
+- **Mobilizer Targeting:** We prioritize guests and partners who have the authority and agency to move a room, rather than charismatic but passive "talkers."
+- **Metronomic Activation Rhythm:** Referrals die from spoilage. CCP enforces a strict rhythm: interviews booked weekly, assets delivered in 24 hours, challenge invites sent at the peak of emotional heat.
+
+### 5.3 Commercial Reframe Architecture (Challenger)
+An interview or a challenge step must not merely educate—it must reframe. A true CCP interaction introduces a timely problem, proves the prospect's current frame is incomplete, and creates constructive tension. The prospect must feel that AI genericity is a threat, and that human expression refinement (CCP) is the only logical escape route. This reframe travels across roles (partner, guest, audience) through message-to-role resonance mapping.
+
+---
+
+## 6. The Challenge & Continuity Loops
+
+The 7-Day Speaking Challenge is the critical conversion bridge. It moves the user from the "wow" of their interview output into a structured, daily interaction with the platform's core mechanics.
+
+### 6.1 The 7-Day Funnel Architecture
+Over 7 days, the user engages in micro-commitments:
+- **Day 1-2 (Identity Anchoring):** Easy wins, orienting voice notes, baseline benchmark establishment.
+- **Day 3-5 (The Reframe):** Constructive tension is applied. The user sees where their communication leaks force and uses CCP to correct it.
+- **Day 6-7 (The Breakthrough & Handoff):** The user receives a measurable win. They are presented with the continuation offer while emotional heat is at its highest.
+
+### 6.2 B2B2C Metered Billing & The Dual-Pricing Model
+When a coach graduates the challenge and adopts CCP to run their own cohorts, the platform utilizes a dual-pricing model to ensure mutual upside:
+- **End-User to Coach:** The client pays the coach ($16.95 entry / $39.95 weekly / $49.95 upgrade).
+- **Coach to Platform (B2B2C):** The coach pays CCP a metered backend rate ($1.90 trial / $3.90 active user).
+This metered backend will be governed by high-performance Redis hashes (`HINCRBY`) to enforce export limiters and track unique active users for accurate, real-time billing, preventing the latency issues of PostgreSQL row locks.
+
+---
+
+## 7. Architectural Paradigms: Primitives, Coalitions, and Edging
+
+We are entirely abandoning the older concept of "edging" as merely applying a provocative rhetorical angle. The new architecture, rooted in the `Matrix of Edging` and `Perceptual Primitives`, establishes a rigorous, pipeline-driven process to extract tension from reality rather than inventing it from scratch.
+
+### 7.1 The Anti-Centroid Law
+Generic AI content flattens human emotion toward the centroid (the safest, most polite average). Our architecture defends the edge. We extract the sharpest tension boundaries where expectations and reality diverge, and we refuse to dilute them in processing.
+
+### 7.2 The Edging Pipeline
+The transformation from raw reality into a final content asset must strictly follow this sequence:
+1. **Research (Broad Signal):** CRAL identifies the highest-tension pressure in the market. This signal must be broad enough to elicit authentic truth from the coach without over-steering them.
+2. **Coach Reaction:** The coach is provoked using Trigger-First prompts. They speak their raw, authentic reality into the system.
+3. **Primitive Spaces:** The system analyzes the authenticated reaction across established "Primitive Spaces" (e.g., Irony Inversion, What-Is/What-Could-Be, Tribal Reference).
+4. **Candidate Survival:** The system proposes multiple transform candidates. Candidates are scored on evidence fidelity, emotional charge, and tribal density. Only the strongest survive. We aggressively reject unsupported hallucination.
+5. **Coalition Signature:** The surviving primitive candidates form a weighted "Coalition."
+6. **Edge Product Emergence:** The combined force of the coalition creates the final Edge Product (e.g., a "transformation-pressure edge").
+7. **CCF Routing:** The Edge Product is deterministically routed into the official CCF execution lattice (Content Archetypes, Persuasive Angles). 
+
+---
+
+## 8. Core Launch Feature Requirements
+
+The following four technical features form the operational backbone of the April Updates and are prioritized for immediate deployment.
+
+### 8.1 FR-APR-04: Telegram Mini App UI/UX Platform
+We are deprecating brittle, webhook-dependent Telegram bots in favor of a sovereign **Next.js React Mini App** using `@twa-dev/sdk`. 
+- **Purpose:** To host the Challenge, Trivianar, and Roleplay interfaces natively inside Telegram, preserving the Continuity Law.
+- **Protocol:** `wss://` WebSockets to guarantee <50ms interaction latency.
+
+### 8.2 FR-APR-05: WebRTC Roleplay Engine (2-Human + 1-AI)
+- **Purpose:** Provide a live co-practice space where partners and guests can practice objection handling with an active Voice AI agent acting as the prospect.
+- **Mechanics:** WebRTC audio streaming to Nvidia Riva/ElevenLabs for sub-400ms conversational latency. Real-time biometrics capture for post-session benchmarks.
+
+### 8.3 FR-APR-06: Interactive Trivianar Fast-Queue
+- **Purpose:** A high-speed, synchronized trivia and benchmark arena for Challenge participants.
+- **Mechanics:** Relies on atomic Redis queues (`RPUSH`/`BLPOP`) to manage synchronous player events, bypassing PostgreSQL entirely to prevent row-lock slowdowns during peak events.
+
+### 8.4 FR-APR-08: The Orchestration Dichotomy
+- **Purpose:** Protect platform determinism while utilizing high-variance LLM intelligence.
+- **Mechanics:** Unpredictable natural language generation and "Primitive Candidate" scoring must be contained exclusively within **DSPy** and **Pydantic** validation boundaries. If an LLM hallucinates an unsupported candidate, Pydantic throws a strict schema error, and the system reverts to a safe fallback. The main platform loop (FastAPI/Modal) remains entirely deterministic.
+
+---
+
+## 9. The 48-Hour Launch Execution Plan
+
+We have 48 hours to move this Master PRD from doctrine into production.
+
+### 9.1 Sequence of Events
+1. **T-Minus 48h:** Freeze this Master PRD as the sole Source of Truth.
+2. **T-Minus 36h:** Complete all 10 granular technical specifications using the BMAD Paige format (Tracks A and B parallelized).
+3. **T-Minus 24h:** Deploy the Telegram Mini App shell and Redis `HINCRBY` metered billing architecture.
+4. **T-Minus 12h:** Load the 4 Founding Partners into the system. Execute the first Voice-First Orienting broadcasts.
+5. **T-Zero:** Platform goes live for the first 12 invited guests.
+
+### 9.2 Success Metrics
+- **Partner Activation:** 4 Founding Partners successfully onboarded and hosting their first interview within 7 days.
+- **Technical Stability:** Zero PostgreSQL row-lock bottlenecks during peak Trivianar activity. WebSocket latency remains under 50ms.
+- **Output Quality:** Zero Pydantic validation failures during the Primitive Coalition extraction phase.
+
+This document supersedes all prior R&D documentation and serves as the definitive operating manual for the April Updates.

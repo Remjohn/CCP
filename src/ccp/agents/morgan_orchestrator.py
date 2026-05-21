@@ -96,8 +96,22 @@ class ProductionLockGate:
 
         # Gate condition 3: ≥5 of 12 traits must have score > 0
         scores = data.get("scores", {})
+        if not scores and "traits" in data:
+            traits_list = data.get("traits", [])
+            for t in traits_list:
+                if isinstance(t, dict):
+                    t_name = t.get("name")
+                    t_score = t.get("score", 0)
+                    if t_name:
+                        scores[t_name] = t_score
+
+        # Support both quick-scoring and MCDA trait names
+        from src.ccp.models.leadership_scorecard_models import TraitName
+        mcda_traits = [t.value for t in TraitName]
+        all_possible_traits = list(set(self.ALL_TRAITS + mcda_traits))
+
         scored_traits = [
-            trait for trait in self.ALL_TRAITS
+            trait for trait in all_possible_traits
             if scores.get(trait, 0) > 0
         ]
         scored_count = len(scored_traits)
@@ -110,23 +124,26 @@ class ProductionLockGate:
                     "reason": f"Only {scored_count} of 12 traits scored > 0. "
                               f"Minimum required: {self.MINIMUM_SCORED_TRAITS}.",
                     "scored_traits": scored_traits,
-                    "unscored_traits": [t for t in self.ALL_TRAITS if t not in scored_traits],
+                    "unscored_traits": [t for t in all_possible_traits if t not in scored_traits],
                 },
             )
 
         # PASS
+        available_traits = [t for t in all_possible_traits if scores.get(t, 0) > 0]
+        dominant_trait_name = max(
+            [(t, scores.get(t, 0)) for t in available_traits],
+            key=lambda x: x[1]
+        )[0]
+
         return (
             True,
             "",
             {
                 "scored_count": scored_count,
                 "scored_traits": scored_traits,
-                "unscored_traits": [t for t in self.ALL_TRAITS if t not in scored_traits],
-                "ideal_score": scored_count == 12,
-                "dominant_trait": max(
-                    [(t, scores.get(t, 0)) for t in self.ALL_TRAITS],
-                    key=lambda x: x[1]
-                )[0],
+                "unscored_traits": [t for t in all_possible_traits if t not in scored_traits],
+                "ideal_score": scored_count >= 12,
+                "dominant_trait": dominant_trait_name,
             },
         )
 

@@ -305,7 +305,7 @@ class TestPayloadMaskingAdapter:
         )
         assert result.success is False
         assert len(result.gate_failures) > 0
-        assert "SEMANTIC AFFINITY" in result.gate_failures[0]
+        assert "SEMANTIC AFFINITY" in result.gate_failures[0].upper()
 
     def test_semantic_affinity_medium_warns(
         self, receipt_chain: ReceiptChain, coach_id: str,

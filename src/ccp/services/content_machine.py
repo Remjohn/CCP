@@ -195,8 +195,15 @@ class BatchEvaluator:
 class TriplePassValidator:
     """Simulates Sophia/Marcus/Chen validation gate."""
 
-    def __init__(self, voice_dna: VoiceDNAProtocol | None = None) -> None:
+    def __init__(
+        self,
+        voice_dna: VoiceDNAProtocol | None = None,
+        di_engine: Any | None = None,
+        pi_evaluator: Any | None = None,
+    ) -> None:
         self._voice_dna = voice_dna
+        self._di_engine = di_engine
+        self._pi_evaluator = pi_evaluator
 
     def validate(
         self,
@@ -213,6 +220,85 @@ class TriplePassValidator:
             if len(piece.text.strip()) < 10:
                 piece.validation_status = ValidationStatus.failed
                 continue
+
+            # Run Directional Integrity and Perceptual Influence if configured
+            if self._di_engine and self._pi_evaluator:
+                from src.ccp.models.directional_integrity_models import (
+                    DirectionalIntegrityRequest,
+                    InvariantFieldPacket,
+                    ArchetypalGeometryPacket,
+                    RepresentationGeometryPacket,
+                    DirectionalIntegrityDomain,
+                    DirectionalIntegritySurfaceClass,
+                )
+                from src.ccp.models.perceptual_influence_models import (
+                    PerceptualInfluenceRequest,
+                    PerceptualInfluenceDomain,
+                    PerceptualInfluenceSurface,
+                )
+
+                di_req = DirectionalIntegrityRequest(
+                    request_id=f"DIR-{piece.asset_id}",
+                    domain=DirectionalIntegrityDomain.CCF,
+                    surface_class=DirectionalIntegritySurfaceClass.SEMANTIC_PLANNING,
+                    actor_id="system",
+                    coach_id=coach_id,
+                    candidate_text=piece.text,
+                    invariant_field=InvariantFieldPacket(
+                        packet_id="INV-DEFAULT",
+                        primary_invariant_ids=["inv-1"],
+                    ),
+                    archetypal_geometry=ArchetypalGeometryPacket(
+                        packet_id="ARCH-DEFAULT",
+                        geometry_id="geo-1",
+                        confidence=1.0,
+                    ),
+                    representation_geometry=RepresentationGeometryPacket(
+                        packet_id="REP-DEFAULT",
+                        representation_geometry_id="geo-1",
+                        coercion_risk_budget=0.5,
+                    )
+                )
+
+                di_result = self._di_engine.evaluate(di_req)
+
+                pi_req = PerceptualInfluenceRequest(
+                    request_id=f"PIR-{piece.asset_id}",
+                    domain=PerceptualInfluenceDomain.CCF,
+                    surface_class=PerceptualInfluenceSurface.SEMANTIC_PLANNING,
+                    actor_id="system",
+                    coach_id=coach_id,
+                    candidate_text=piece.text,
+                    directional_integrity_report_id=di_result.report.report_id,
+                    directional_integrity_decision=di_result.report.decision_summary.decision.value,
+                )
+
+                pi_result = self._pi_evaluator.evaluate(pi_req)
+
+                # Combined verdict logic per §6.4
+                di_dec = di_result.report.decision_summary.decision.value
+                pi_dec = pi_result.report.decision_summary.decision.value
+
+                verdict = "PASS"
+                if di_dec == "FAIL":
+                    verdict = "FAIL"
+                elif di_dec == "REVIEW":
+                    if pi_dec == "DOWNGRADE":
+                        verdict = "FAIL"
+                    else:
+                        verdict = "REVIEW"
+                else: # di_dec == PASS
+                    if pi_dec == "DOWNGRADE":
+                        verdict = "DOWNGRADE"
+                    elif pi_dec == "REVIEW":
+                        verdict = "REVIEW"
+                    else:
+                        verdict = "PASS"
+
+                if verdict in ("FAIL", "DOWNGRADE", "REVIEW"):
+                    piece.validation_status = ValidationStatus.failed
+                    continue
+
             piece.validation_status = ValidationStatus.passed
             piece.fingerprint_id = self._mint_fingerprint(coach_id, piece)
 
@@ -243,10 +329,12 @@ class ContentMachinePipeline:
         affine_sync: AFFiNESyncProtocol | None = None,
         ccf_batch: CCFBatchProtocol | None = None,
         voice_dna: VoiceDNAProtocol | None = None,
+        di_engine: Any | None = None,
+        pi_evaluator: Any | None = None,
     ) -> None:
         self._extractor = MicroContentExtractor()
         self._evaluator = BatchEvaluator(ccf_batch)
-        self._validator = TriplePassValidator(voice_dna)
+        self._validator = TriplePassValidator(voice_dna, di_engine, pi_evaluator)
         self._affine_sync = affine_sync
 
     async def process_session(

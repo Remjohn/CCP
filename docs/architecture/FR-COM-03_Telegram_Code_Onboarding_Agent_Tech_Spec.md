@@ -30,12 +30,12 @@ FR-COM-03 implements the **Telegram Code Onboarding Agent** — a Telegram bot f
 - Telegram bot `/start` + code validation flow
 - Conversational client intake (name, goal, optional fields)
 - Auto-provisioning: CBCS profile → Stripe usage → AFFiNE workspace → scheduled check-in
-- Code validation against program registry (FR-COM-04)
+- Code validation against program registry (synchronized from AFFiNE workspace database)
 - Error handling (invalid code, duplicate client, expired program)
 
 **Out of scope:**
-- Program creation (FR-COM-04)
-- Campaign/funnel page generation (FR-COM-04)
+- Program creation (managed directly via AFFiNE workspace)
+- Campaign/funnel page generation (deprecated/obsolete)
 - Ongoing CBCS engagement (existing CBCS pipeline)
 - Payment collection from the end-client (coaches handle their own model)
 
@@ -50,7 +50,7 @@ FR-COM-03 implements the **Telegram Code Onboarding Agent** — a Telegram bot f
 | `DEP-COM-007` | Telegram Onboarding Bot | OUTPUT — Telegram bot handling code-based enrollment. |
 | `DEP-COM-008` | Client Onboarding API | OUTPUT — Backend endpoint processing enrollments. |
 | `DEP-COM-001` | Billing Middleware | CONSUMED — $4 usage reported on first bot message. |
-| `DEP-COM-009` | Program Registry | INPUT — Code → coach + program lookup (produced by FR-COM-04). |
+| `DEP-COM-009` | Program Registry | INPUT — Code → coach + program lookup (synchronized from AFFiNE). |
 | `DEP-ENG-041` | Receipt Chain Guard | AUDIT — Enrollment events hashed. |
 
 ### Technical Decisions
@@ -90,7 +90,7 @@ Backend → Bot: VALID. Proceed with intake.
 2. "What's your #1 goal for this program?" → `primary_goal` (required)
 3. "What's the best email to reach you?" → `email` (optional, configurable)
 
-**Configurable per program:** Coaches can define additional intake questions (max 5) in FR-COM-04's program configuration. The bot dynamically adapts its conversational flow based on the program's `intake_fields` configuration.
+**Configurable per program:** Coaches can define additional intake questions (max 5) in their program settings inside the AFFiNE workspace. The bot dynamically adapts its conversational flow based on the program's `intake_fields` configuration synced to Supabase.
 
 ### Stage 3: Auto-Provisioning
 *Inputs:* Completed client intake data + validated program context
@@ -204,9 +204,8 @@ Existing CBCS clients (manually added before the Telegram onboarding agent) rema
 | DEP-COM-007 (Onboarding Bot) | Output | Telegram bot. |
 | DEP-COM-008 (Onboarding API) | Output | Backend enrollment endpoint. |
 | DEP-COM-001 (Billing Middleware) | Consumed | $4 usage report. |
-| DEP-COM-009 (Program Registry) | Input | Code → coach/program lookup (from FR-COM-04). |
+| DEP-COM-009 (Program Registry) | Input | Code → coach/program lookup (synchronized from AFFiNE). |
 | FR-COM-01 (Billing) | Prerequisite | Stripe subscription must exist before usage reporting. |
-| FR-COM-04 (Campaign Manager) | Prerequisite | Programs and codes must exist before onboarding can validate them. |
 | Telegram Bot API | External | Bot messaging. |
 | Supabase | Infrastructure | Client data storage. |
 

@@ -25,13 +25,11 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 
 from src.ccp.models.ca11_models import (
-    DEFAULT_DELIVERY_TARGET,
     SYNC_BACKOFF_SCHEDULE,
     SYNC_MAX_RETRIES,
     CanvaApprovePayload,
     ContentPayloadBody,
     ContentPushPayload,
-    DeliveryTarget,
     LearningPathPushPayload,
     SessionPushPayload,
     SyncErrorType,
@@ -48,7 +46,6 @@ from src.ccp.services.affine_sync import (
     SYNC_EVENTS_TABLE_SQL,
     AFFiNEClient,
     AFFiNESyncService,
-    DualDeliveryRouter,
     IdempotencyEngine,
     RetryEngine,
     SyncEventLogger,
@@ -139,21 +136,7 @@ class MockAFFiNEClient(AFFiNEClient):
         return self._databases.get(db_key, {}).get(asset_id)
 
 
-class MockNotionSync:
-    """Mock NotionSync for dual-delivery testing."""
-
-    def __init__(self):
-        self.pages_created: list[dict] = []
-        self._should_fail = False
-
-    async def create_page(
-        self, parent_db_id: str, properties: dict, children: list = None
-    ) -> dict:
-        if self._should_fail:
-            raise ConnectionError("Notion API unreachable (mock)")
-        page = {"id": str(uuid.uuid4())[:8], "properties": properties}
-        self.pages_created.append(page)
-        return page
+# MockNotionSync Removed (Obsolete)
 
 
 class MockConfigProvider:
@@ -204,9 +187,7 @@ def affine_client():
     return MockAFFiNEClient()
 
 
-@pytest.fixture
-def notion_sync():
-    return MockNotionSync()
+# notion_sync fixture removed
 
 
 @pytest.fixture
@@ -226,11 +207,10 @@ def config_provider():
 
 
 @pytest.fixture
-def sync_service(affine_client, notion_sync, config_provider, tmp_path):
+def sync_service(affine_client, config_provider, tmp_path):
     return AFFiNESyncService(
         coach_acronym="JPR",
         affine_client=affine_client,
-        notion_sync=notion_sync,
         config_provider=config_provider,
         retry_engine=RetryEngine(
             sleep_fn=AsyncMock(),  # no-op sleep for tests
@@ -252,15 +232,7 @@ class TestConstants:
     def test_backoff_schedule(self):
         assert SYNC_BACKOFF_SCHEDULE == (5.0, 10.0, 20.0, 40.0, 80.0)
 
-    def test_default_delivery_target(self):
-        assert DEFAULT_DELIVERY_TARGET == DeliveryTarget.BOTH
-
-    def test_delivery_target_values(self):
-        assert set(DeliveryTarget) == {
-            DeliveryTarget.AFFINE_ONLY,
-            DeliveryTarget.NOTION_ONLY,
-            DeliveryTarget.BOTH,
-        }
+    # test_default_delivery_target, test_delivery_target_values removed (obsolete)
 
     def test_sync_event_types(self):
         assert len(SyncEventType) == 5
@@ -545,94 +517,17 @@ class TestRetryLogic:
 
 
 class TestDualDelivery:
-    """AC5: DELIVERY_TARGET=BOTH → content in both Notion and AFFiNE."""
+    """AC5: Notion delivery is retired. Verify only AFFiNE is delivered."""
 
-    def test_both_targets_delivered(
-        self, sync_service, affine_client, notion_sync
+    def test_only_affine_target_delivered(
+        self, sync_service, affine_client
     ):
         payload = make_content_payload()
         result = _run(sync_service.push_content(payload, workspace_id=WORKSPACE_ID))
 
         assert "AFFINE" in result.delivery_targets_completed
-        assert "NOTION" in result.delivery_targets_completed
+        assert "NOTION" not in result.delivery_targets_completed
         assert affine_client.get_entry_count(WORKSPACE_ID, "content_calendar") == 1
-        assert len(notion_sync.pages_created) == 1
-
-    def test_affine_only_skips_notion(self, affine_client):
-        notion = MockNotionSync()
-        service = AFFiNESyncService(
-            coach_acronym="JPR",
-            affine_client=affine_client,
-            notion_sync=notion,
-            config_provider=MockConfigProvider(
-                configs={
-                    COACH_ID: {
-                        "affine_workspace_id": WORKSPACE_ID,
-                        "delivery_target": "AFFINE_ONLY",
-                    }
-                }
-            ),
-            retry_engine=RetryEngine(sleep_fn=AsyncMock()),
-        )
-        payload = make_content_payload()
-        result = _run(service.push_content(payload, workspace_id=WORKSPACE_ID))
-
-        assert "AFFINE" in result.delivery_targets_completed
-        assert "NOTION" not in result.delivery_targets_completed
-        assert len(notion.pages_created) == 0
-
-    def test_notion_only_skips_affine(self):
-        affine = MockAFFiNEClient()
-        notion = MockNotionSync()
-        service = AFFiNESyncService(
-            coach_acronym="JPR",
-            affine_client=affine,
-            notion_sync=notion,
-            config_provider=MockConfigProvider(
-                configs={
-                    COACH_ID: {
-                        "affine_workspace_id": WORKSPACE_ID,
-                        "delivery_target": "NOTION_ONLY",
-                    }
-                }
-            ),
-            retry_engine=RetryEngine(sleep_fn=AsyncMock()),
-        )
-        payload = make_content_payload()
-        result = _run(service.push_content(payload, workspace_id=WORKSPACE_ID))
-
-        assert result.success is True
-        assert "NOTION" in result.delivery_targets_completed
-        assert "AFFINE" not in result.delivery_targets_completed
-        assert affine.get_entry_count(WORKSPACE_ID, "content_calendar") == 0
-
-    def test_notion_failure_nonfatal_in_both_mode(
-        self, sync_service, affine_client, notion_sync
-    ):
-        notion_sync._should_fail = True
-        payload = make_content_payload()
-        result = _run(sync_service.push_content(payload, workspace_id=WORKSPACE_ID))
-
-        assert result.success is True  # AFFiNE succeeded, Notion failure is non-fatal
-        assert "AFFINE" in result.delivery_targets_completed
-        assert "NOTION" not in result.delivery_targets_completed
-
-    def test_router_resolve_delivery_target(self, affine_client, config_provider):
-        router = DualDeliveryRouter(
-            affine_client=affine_client,
-            config_provider=config_provider,
-        )
-        assert router.resolve_delivery_target(COACH_ID) == DeliveryTarget.BOTH
-        assert router.resolve_delivery_target("uuid-coach-002") == DeliveryTarget.AFFINE_ONLY
-
-    def test_router_should_push_logic(self, affine_client):
-        router = DualDeliveryRouter(affine_client=affine_client)
-        assert router.should_push_affine(DeliveryTarget.BOTH) is True
-        assert router.should_push_notion(DeliveryTarget.BOTH) is True
-        assert router.should_push_affine(DeliveryTarget.AFFINE_ONLY) is True
-        assert router.should_push_notion(DeliveryTarget.AFFINE_ONLY) is False
-        assert router.should_push_affine(DeliveryTarget.NOTION_ONLY) is False
-        assert router.should_push_notion(DeliveryTarget.NOTION_ONLY) is True
 
 
 # ══════════════════════════════════════════════════════════════════════════════

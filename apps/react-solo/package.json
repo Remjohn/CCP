@@ -1,0 +1,22 @@
+{
+  "name": "react-solo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "workspace:*",
+    "react": "workspace:*",
+    "react-dom": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "workspace:*",
+    "@types/react": "workspace:*",
+    "@types/react-dom": "workspace:*",
+    "typescript": "workspace:*"
+  }
+}

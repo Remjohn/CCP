@@ -99,7 +99,7 @@ class TTTBaselineExtractor:
             LIWCAuthenticationError: If LIWC-22 score < 7.0/10 (AC7) and not force_authenticate.
             TTTExtractionError: If TTT components cannot be derived from the analysis.
         """
-        authenticity_score = float(liwc_analysis.get("authenticity_score", 0.0))
+        authenticity_score = float(liwc_analysis.get("authenticity_score", liwc_analysis.get("authentic", 0.0)))
 
         # Authenticity gate (AC7)
         if not force_authenticate and authenticity_score < LIWC_AUTHENTICITY_THRESHOLD:

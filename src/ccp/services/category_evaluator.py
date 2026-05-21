@@ -63,6 +63,17 @@ class CategoryEvaluator:
         self._has_depth = has_l1_l2_l3_depth
         self._has_tvr = has_tvr_mode_coverage
 
+        # Group traits dynamically by their category attribute
+        self._category_to_traits = {}
+        for t in scored_traits:
+            self._category_to_traits.setdefault(t.category, []).append(t.name)
+
+    def _get_category_traits(self, category: TraitCategory) -> list[TraitName]:
+        """Get traits for a category, dynamically grouped or falling back to static map."""
+        if category in self._category_to_traits:
+            return self._category_to_traits[category]
+        return CATEGORY_TRAIT_MAP[category]
+
     def _get_trait_score(self, name: TraitName) -> int:
         """Get the score for a trait by name."""
         trait = self._traits.get(name)
@@ -129,7 +140,7 @@ class CategoryEvaluator:
 
     def _evaluate_core_philosophy(self) -> CategoryCoverageResult:
         """Spec §Phase 3: Core Philosophy — at least 1 trait ≥ 4/10."""
-        traits = CATEGORY_TRAIT_MAP[TraitCategory.CORE_PHILOSOPHY]
+        traits = self._get_category_traits(TraitCategory.CORE_PHILOSOPHY)
         scores = {t: self._get_trait_score(t) for t in traits}
         passing = [t for t, s in scores.items() if s >= 4]
 
@@ -151,7 +162,7 @@ class CategoryEvaluator:
 
     def _evaluate_audience_understanding(self) -> CategoryCoverageResult:
         """Spec §Phase 3: Audience Understanding — at least 1 trait ≥ 5/10 with L1/L2/L3 depth."""
-        traits = CATEGORY_TRAIT_MAP[TraitCategory.AUDIENCE_UNDERSTANDING]
+        traits = self._get_category_traits(TraitCategory.AUDIENCE_UNDERSTANDING)
         scores = {t: self._get_trait_score(t) for t in traits}
         passing_score = [t for t, s in scores.items() if s >= 5]
 
@@ -177,7 +188,7 @@ class CategoryEvaluator:
 
     def _evaluate_voice_authenticity(self) -> CategoryCoverageResult:
         """Spec §Phase 3: Voice Authenticity — at least 2 traits ≥ 5/10."""
-        traits = CATEGORY_TRAIT_MAP[TraitCategory.VOICE_AUTHENTICITY]
+        traits = self._get_category_traits(TraitCategory.VOICE_AUTHENTICITY)
         scores = {t: self._get_trait_score(t) for t in traits}
         passing = [t for t, s in scores.items() if s >= 5]
 
@@ -199,7 +210,7 @@ class CategoryEvaluator:
 
     def _evaluate_teaching_method(self) -> CategoryCoverageResult:
         """Spec §Phase 3: Teaching Method — at least 1 trait ≥ 5/10 covering all 3 T/V/R modes."""
-        traits = CATEGORY_TRAIT_MAP[TraitCategory.TEACHING_METHOD]
+        traits = self._get_category_traits(TraitCategory.TEACHING_METHOD)
         scores = {t: self._get_trait_score(t) for t in traits}
         passing_score = [t for t, s in scores.items() if s >= 5]
 
@@ -230,7 +241,7 @@ class CategoryEvaluator:
         AC11: 'A coach scoring 2/10 on Comic Honesty → this does NOT trigger production lock.
         Cultural Grounding checks CMM layers, not individual trait scores.'
         """
-        traits = CATEGORY_TRAIT_MAP[TraitCategory.CULTURAL_GROUNDING]
+        traits = self._get_category_traits(TraitCategory.CULTURAL_GROUNDING)
         scores = {t: self._get_trait_score(t) for t in traits}
 
         # Coverage is based on CMM layers, NOT trait scores (AC11)

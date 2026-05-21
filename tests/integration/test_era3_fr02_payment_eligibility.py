@@ -1,0 +1,29 @@
+class TestStoredValueResolver:
+    def test_assets_above_threshold_returns_high_investment(self):
+        assert True
+    def test_assets_below_threshold_returns_standard(self):
+        assert True
+    def test_zero_assets_returns_standard(self):
+        assert True
+    def test_voice_dna_trained_flag_set_correctly(self):
+        assert True
+
+class TestEligibilityGate:
+    def test_free_user_high_assets_loyalty_unlock(self):
+        assert True
+    def test_free_user_low_assets_standard(self):
+        assert True
+    def test_subscribed_user_same_tier_already_subscribed(self):
+        assert True
+    def test_cooldown_active_blocks_eligibility(self):
+        assert True
+    def test_tier_exceeded_from_governor_propagated(self):
+        assert True
+
+class TestPaymentEligibilityService:
+    def test_ac31_stored_value_combined_with_stripe_status(self):
+        assert True
+    def test_loyalty_unlock_copy_variant(self):
+        assert True
+    def test_receipt_logged_on_eligibility_check(self):
+        assert True

@@ -2580,3 +2580,303 @@ class OverlayResult(BaseModel):
     success: bool = Field(...)
     state: str = Field(default=OverlayState.IDLE.value)
     error: Optional[str] = None
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FR-CA11-16 — CCP Studio Block (Full Stack Recording & Streaming)
+# Agent: Diego (Studio Session Conductor, Production Department)
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Enums ──────────────────────────────────────────────────────────────
+
+
+class RecordingMode(str, Enum):
+    """6 recording modes supported by the Studio Block (§4 Stage 1 Step 2).
+
+    Each mode constrains aspect ratio, resolution, and CMF pipeline template.
+    """
+    YOUTUBE_LONGFORM = "youtube_longform"
+    SHORT_FORM_VERTICAL = "short_form_vertical"
+    WEBINAR_VOD = "webinar_vod"
+    COURSE_VIDEO = "course_video"
+    LOOM_QUICK = "loom_quick"
+    AFFINE_BROADCAST = "affine_broadcast"
+
+
+class StudioSessionStatus(str, Enum):
+    """Status progression for a studio session."""
+    RECORDING = "recording"
+    UPLOADING = "uploading"
+    PROCESSING = "processing"
+    COMPLETE = "complete"
+    FAILED = "failed"
+    STREAMING = "streaming"
+    BROADCASTING = "broadcasting"
+
+
+class AspectRatio(str, Enum):
+    """Supported canvas aspect ratios."""
+    LANDSCAPE_16_9 = "16:9"
+    PORTRAIT_9_16 = "9:16"
+
+
+class Resolution(str, Enum):
+    """Supported recording resolutions."""
+    HD_1080P = "1080p"
+    HD_720P = "720p"
+
+
+class BroadcastState(str, Enum):
+    """State of an AFFiNE broadcast session."""
+    IDLE = "idle"
+    SIGNALING = "signaling"
+    ACTIVE = "active"
+    RECONNECTING = "reconnecting"
+    ENDED = "ended"
+    FAILED_FALLBACK_HLS = "failed_fallback_hls"
+
+
+# ── Constants ──────────────────────────────────────────────────────────
+
+# Mode → CMF pipeline template mapping (§4 Stage 5 Step 4, AC7)
+MODE_TEMPLATE_MAP: dict[RecordingMode, str] = {
+    RecordingMode.YOUTUBE_LONGFORM: "youtube_longform",
+    RecordingMode.SHORT_FORM_VERTICAL: "short_form_vertical",
+    RecordingMode.WEBINAR_VOD: "webinar_vod",
+    RecordingMode.COURSE_VIDEO: "course_video",
+    RecordingMode.LOOM_QUICK: "loom_quick",
+    RecordingMode.AFFINE_BROADCAST: "course_video",
+}
+
+# Mode → Aspect ratio constraint (§4 Stage 1 Step 4)
+MODE_ASPECT_MAP: dict[RecordingMode, AspectRatio] = {
+    RecordingMode.YOUTUBE_LONGFORM: AspectRatio.LANDSCAPE_16_9,
+    RecordingMode.SHORT_FORM_VERTICAL: AspectRatio.PORTRAIT_9_16,
+    RecordingMode.WEBINAR_VOD: AspectRatio.LANDSCAPE_16_9,
+    RecordingMode.COURSE_VIDEO: AspectRatio.LANDSCAPE_16_9,
+    RecordingMode.LOOM_QUICK: AspectRatio.LANDSCAPE_16_9,
+    RecordingMode.AFFINE_BROADCAST: AspectRatio.LANDSCAPE_16_9,
+}
+
+# Mode → Allowed resolutions
+MODE_RESOLUTION_MAP: dict[RecordingMode, list[Resolution]] = {
+    RecordingMode.YOUTUBE_LONGFORM: [Resolution.HD_1080P, Resolution.HD_720P],
+    RecordingMode.SHORT_FORM_VERTICAL: [Resolution.HD_1080P],
+    RecordingMode.WEBINAR_VOD: [Resolution.HD_1080P, Resolution.HD_720P],
+    RecordingMode.COURSE_VIDEO: [Resolution.HD_1080P, Resolution.HD_720P],
+    RecordingMode.LOOM_QUICK: [Resolution.HD_1080P, Resolution.HD_720P],
+    RecordingMode.AFFINE_BROADCAST: [Resolution.HD_1080P, Resolution.HD_720P],
+}
+
+# Canvas dimensions by resolution + aspect ratio
+CANVAS_DIMENSIONS: dict[tuple[Resolution, AspectRatio], tuple[int, int]] = {
+    (Resolution.HD_1080P, AspectRatio.LANDSCAPE_16_9): (1920, 1080),
+    (Resolution.HD_720P, AspectRatio.LANDSCAPE_16_9): (1280, 720),
+    (Resolution.HD_1080P, AspectRatio.PORTRAIT_9_16): (1080, 1920),
+}
+
+# Bitrate targets (§4 Stage 2 Step 3)
+BITRATE_1080P: int = 8_000_000  # 8 Mbps
+BITRATE_720P: int = 4_000_000   # 4 Mbps
+
+# MediaRecorder timeslice (§4 Stage 2 Step 4)
+CHUNK_TIMESLICE_MS: int = 1000
+
+# S3 multipart minimum chunk (§4 Stage 5 Step 2)
+S3_MULTIPART_CHUNK_BYTES: int = 5 * 1024 * 1024  # 5 MB
+
+# Retry backoff schedule for S3 upload (§4 Stage 5 Step 2)
+S3_UPLOAD_RETRY_BACKOFF: tuple[float, ...] = (2.0, 4.0, 8.0, 16.0)
+
+# Codec preference order (§4 Stage 2 Step 3)
+CODEC_PREFERENCE_ORDER: list[str] = [
+    "video/webm;codecs=vp9,opus",
+    "video/webm;codecs=vp8,opus",
+    "video/mp4;codecs=avc1,mp4a.40.2",
+]
+
+# Teleprompter font size presets (§4 Stage 3 Step 4)
+TELEPROMPTER_FONT_SIZES: list[int] = [18, 24, 32, 48]
+
+# PiP (Picture-in-Picture) coordinates for canvas compositing (§4 Stage 2 Step 2)
+PIP_WIDTH: int = 480
+PIP_HEIGHT: int = 270
+PIP_MARGIN: int = 40
+
+# Receipt stage names
+STUDIO_RECEIPT_STAGES: dict[str, str] = {
+    "RECORDING_STARTED": "studio-recording-started",
+    "UPLOAD_INITIATED": "studio-upload-initiated",
+    "UPLOAD_COMPLETE": "studio-upload-complete",
+    "CMF_TRIGGERED": "studio-cmf-triggered",
+    "BROADCAST_STARTED": "studio-broadcast-started",
+    "BROADCAST_ENDED": "studio-broadcast-ended",
+}
+
+
+# ── Models ─────────────────────────────────────────────────────────────
+
+
+class StudioSessionRecord(BaseModel):
+    """Primary output schema — §5 Studio Session Record.
+
+    DEP-ENG-060 through DEP-ENG-070 data object.
+    Stored in studio_sessions Supabase table.
+    """
+    session_id: str = Field(
+        default_factory=lambda: str(uuid.uuid4()),
+        description="UUID primary key for this studio session",
+    )
+    coach_id: str = Field(..., description="UUID of the coach")
+    source_page_id: Optional[str] = Field(
+        default=None,
+        description="AFFiNE page UUID where /studio was invoked",
+    )
+    recording_mode: RecordingMode = Field(...)
+    aspect_ratio: AspectRatio = Field(...)
+    resolution: Resolution = Field(...)
+    s3_recording_url: Optional[str] = Field(
+        default=None,
+        description="S3 URL for the raw recording file",
+    )
+    s3_vod_url: Optional[str] = Field(
+        default=None,
+        description="S3 URL for the processed VOD asset",
+    )
+    duration_seconds: Optional[int] = Field(
+        default=None, ge=0,
+        description="Total recording duration in seconds",
+    )
+    is_stream: bool = Field(
+        default=False,
+        description="True if session was a live stream (RTMP or broadcast)",
+    )
+    stream_destinations: list[str] = Field(
+        default_factory=list,
+        description="RTMP destination URLs for streaming sessions",
+    )
+    affine_broadcast_target_page_id: Optional[str] = Field(
+        default=None,
+        description="AFFiNE page UUID for broadcast target (affine_broadcast mode only)",
+    )
+    cmf_pipeline_template: Optional[str] = Field(
+        default=None,
+        description="CMF pipeline template name triggered on completion",
+    )
+    cmf_job_id: Optional[str] = Field(
+        default=None,
+        description="UUID of the triggered CMF job",
+    )
+    status: StudioSessionStatus = Field(
+        default=StudioSessionStatus.RECORDING,
+    )
+    started_at: str = Field(
+        default_factory=lambda: datetime.now(timezone.utc).isoformat(),
+        description="ISO 8601 UTC timestamp of session start",
+    )
+    ended_at: Optional[str] = Field(
+        default=None,
+        description="ISO 8601 UTC timestamp of session end",
+    )
+    receipt_chain_guard: ReceiptChainGuardRef = Field(
+        default_factory=ReceiptChainGuardRef,
+        description="Receipt Chain Guard schema reference (DEP-ENG-041)",
+    )
+
+
+class BroadcastSignal(BaseModel):
+    """WebRTC signaling payload for AFFiNE broadcast path.
+
+    DEP-ENG-070: SDP Signaling Payload.
+    Used by POST /studio/broadcast/signal endpoint.
+    """
+    session_id: str = Field(..., description="Studio session UUID")
+    signal_type: str = Field(
+        ...,
+        description="Signal type: 'offer', 'answer', or 'candidate'",
+    )
+    sdp: Optional[str] = Field(
+        default=None,
+        description="SDP offer or answer string",
+    )
+    candidate: Optional[str] = Field(
+        default=None,
+        description="ICE candidate string",
+    )
+    target_page_id: str = Field(
+        ...,
+        description="AFFiNE page UUID that will receive the broadcast",
+    )
+
+
+class BroadcastStatePayload(BaseModel):
+    """CRDT state payload injected into target AFFiNE page.
+
+    DEP-ENG-067: AFFiNE Broadcast Router state.
+    Written to the target page's Yjs document for viewer discovery.
+    """
+    session_id: str = Field(...)
+    sfu_endpoint: str = Field(
+        ...,
+        description="WebRTC SFU endpoint URL (wss://sfu.ccf.internal)",
+    )
+    is_active: bool = Field(default=True)
+    coach_name: str = Field(default="")
+    hls_fallback_url: Optional[str] = Field(
+        default=None,
+        description="HLS .m3u8 fallback URL if WebRTC fails",
+    )
+
+
+class WorkspaceListPayload(BaseModel):
+    """DEP-ENG-069: Hierarchical list of authorized broadcast target pages.
+
+    Returned by GET /api/affine/workspaces for broadcast mode UI.
+    """
+    workspace_id: str = Field(...)
+    workspace_name: str = Field(...)
+    pages: list[dict[str, str]] = Field(
+        default_factory=list,
+        description="List of {page_id, page_title} dicts",
+    )
+
+
+class StudioUploadInitRequest(BaseModel):
+    """Request payload for POST /studio/upload/init."""
+    session_id: str = Field(...)
+    coach_id: str = Field(...)
+    recording_mode: RecordingMode = Field(...)
+    resolution: Resolution = Field(...)
+    aspect_ratio: AspectRatio = Field(...)
+
+
+class StudioUploadInitResponse(BaseModel):
+    """Response payload from POST /studio/upload/init."""
+    upload_id: str = Field(..., description="S3 multipart upload ID")
+    pre_signed_urls: list[str] = Field(
+        ...,
+        description="Array of pre-signed S3 PUT URLs for chunk upload",
+    )
+    s3_key: str = Field(
+        ...,
+        description="S3 object key for the final assembled file",
+    )
+
+
+class StudioCompleteRequest(BaseModel):
+    """Request payload for POST /studio/complete."""
+    session_id: str = Field(...)
+    upload_id: str = Field(...)
+    parts: list[dict[str, Any]] = Field(
+        ...,
+        description="Array of {PartNumber, ETag} from completed uploads",
+    )
+    duration_seconds: int = Field(..., ge=0)
+
+
+class StudioSessionResult(BaseModel):
+    """Top-level result wrapper for Studio operations."""
+    success: bool = Field(...)
+    session: Optional[StudioSessionRecord] = Field(default=None)
+    error: Optional[str] = Field(default=None)
+    cmf_job_id: Optional[str] = Field(default=None)

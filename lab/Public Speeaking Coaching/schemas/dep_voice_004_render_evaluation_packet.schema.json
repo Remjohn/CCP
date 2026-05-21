@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DEP-VOICE-004",
+  "title": "Voice Render Evaluation Packet",
+  "description": "Production contract for post-render validation of voice outputs. Captures automatic metrics, deviations from the intended score, human review, and final pass/fail disposition.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluation_id",
+    "packet_id",
+    "coach_id",
+    "model_family",
+    "audio_uri",
+    "automatic_scores",
+    "measured_metrics",
+    "final_disposition",
+    "evaluated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.0(\\.\\d+)?$"
+    },
+    "evaluation_id": {
+      "type": "string",
+      "pattern": "^VEP-[A-Z0-9_-]{6,64}$"
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^PSP-[A-Z0-9_-]{6,64}$"
+    },
+    "coach_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "model_family": {
+      "type": "string",
+      "enum": ["moss_tts", "voxtral_tts", "index_tts_2", "f5_tts", "other"]
+    },
+    "audio_uri": {
+      "type": "string",
+      "minLength": 4
+    },
+    "automatic_scores": {
+      "$ref": "#/definitions/automatic_scores"
+    },
+    "measured_metrics": {
+      "$ref": "#/definitions/measured_metrics"
+    },
+    "deviations": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/deviation" },
+      "default": []
+    },
+    "human_reviews": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/human_review" },
+      "default": []
+    },
+    "final_disposition": {
+      "$ref": "#/definitions/final_disposition"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "scored_dimension": {
+      "type": "object",
+      "required": ["score"],
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "pass": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    },
+    "automatic_scores": {
+      "type": "object",
+      "required": [
+        "identity_similarity",
+        "context_alignment",
+        "broadcast_clarity",
+        "human_truth_proxy",
+        "overall_score"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "identity_similarity": { "$ref": "#/definitions/scored_dimension" },
+        "context_alignment": { "$ref": "#/definitions/scored_dimension" },
+        "broadcast_clarity": { "$ref": "#/definitions/scored_dimension" },
+        "human_truth_proxy": { "$ref": "#/definitions/scored_dimension" },
+        "overall_score": { "$ref": "#/definitions/scored_dimension" }
+      }
+    },
+    "measured_metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wpm": { "type": "number", "minimum": 0.0 },
+        "pause_density": { "type": "number", "minimum": 0.0 },
+        "mean_pause_ms": { "type": "number", "minimum": 0.0 },
+        "pitch_center_hz": { "type": "number", "minimum": 0.0 },
+        "pitch_spread_semitones": { "type": "number", "minimum": 0.0 },
+        "energy_mean": { "type": "number", "minimum": 0.0 },
+        "jitter": { "type": "number", "minimum": 0.0 },
+        "shimmer": { "type": "number", "minimum": 0.0 },
+        "arousal": { "type": "number", "minimum": -1.0, "maximum": 1.0 },
+        "valence": { "type": "number", "minimum": -1.0, "maximum": 1.0 },
+        "segment_alignment_ratio": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "deviation": {
+      "type": "object",
+      "required": ["dimension", "severity", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "dimension": {
+          "type": "string",
+          "enum": [
+            "identity",
+            "timing",
+            "pause",
+            "pitch",
+            "energy",
+            "arc",
+            "clarity",
+            "human_truth",
+            "overperformance"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "low", "medium", "high", "critical"]
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["reviewer_type", "authenticity_score", "notes"],
+      "additionalProperties": false,
+      "properties": {
+        "reviewer_type": {
+          "type": "string",
+          "enum": ["coach", "operator", "qa_listener", "mixed_panel"]
+        },
+        "authenticity_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "approved": {
+          "type": "boolean"
+        }
+      }
+    },
+    "final_disposition": {
+      "type": "object",
+      "required": ["status", "release_ok"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pass", "pass_with_note", "needs_retry", "needs_human_rewrite", "reject"]
+        },
+        "release_ok": {
+          "type": "boolean"
+        },
+        "recommended_action": {
+          "type": "string",
+          "enum": [
+            "ship",
+            "re_render_same_score",
+            "recompile_score",
+            "swap_reference_anchor",
+            "use_human_recording",
+            "escalate_for_review"
+          ]
+        }
+      }
+    }
+  }
+}

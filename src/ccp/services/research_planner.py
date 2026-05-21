@@ -119,14 +119,15 @@ def _build_directive_prompt(
         f"Target emotional register: {config.emotional_register.value}.",
         f"Find {config.human_evidence_target.value} evidence.",
         "human_evidence_required.",
-        f"Quality gate: {config.quality_gate_description[:80]}.",
+        f"Quality gate: {config.quality_gate_description}.",
+        "You must target high-quality, verified sources and focus on obtaining concrete facts.",
     ]
 
     if archetype_context:
-        parts.append(f"Archetype context: {archetype_context[:40]}.")
+        parts.append(f"Archetype context: {archetype_context}.")
 
     if exclusion_block:
-        parts.append(exclusion_block[:100])
+        parts.append(exclusion_block)
 
     directive = " ".join(parts)
 

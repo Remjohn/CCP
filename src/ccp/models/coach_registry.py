@@ -44,7 +44,7 @@ class CoachRegistry(BaseModel):
         description="Notion workspace ID for this coach",
     )
     notion_token_ref: str = Field(
-        ...,
+        default="",
         description="Environment variable name holding the Notion token",
         examples=["NOTION_TOKEN_NDL"],
     )

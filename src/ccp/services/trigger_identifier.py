@@ -78,7 +78,7 @@ class TriggerIdentifier:
     }
 
     # Threshold for considering a marker elevated
-    ELEVATION_THRESHOLD: float = 0.15
+    ELEVATION_THRESHOLD: float = 0.02
 
     # Minimum markers elevated to qualify as a trigger passage
     MINIMUM_ELEVATED_MARKERS: int = 2

@@ -33,7 +33,7 @@ COACH_DIRECTORIES = [
 ]
 
 TEMPLATE_FILES = {
-    "config/coach_registry.json": lambda name, acronym: json.dumps(
+    "config/coach_registry.json": lambda name, acronym, phase0_source_workspace_id=None: json.dumps(
         {
             "coach_name": name,
             "coach_acronym": acronym,
@@ -42,12 +42,13 @@ TEMPLATE_FILES = {
             "notion_workspace_id": "",
             "notion_token_ref": f"NOTION_TOKEN_{acronym}",
             "supabase_bucket": f"coach-{acronym.lower()}",
+            "phase0_source_workspace_id": phase0_source_workspace_id,
             "created_at": datetime.now(timezone.utc).isoformat(),
             "updated_at": datetime.now(timezone.utc).isoformat(),
         },
         indent=2,
     ),
-    "config/coach_soul.json": lambda name, acronym: json.dumps(
+    "config/coach_soul.json": lambda name, acronym, phase0_source_workspace_id=None: json.dumps(
         {
             "version": 1,
             "coach_name": name,
@@ -97,11 +98,12 @@ TEMPLATE_FILES = {
         },
         indent=2,
     ),
-    "config/.env.template": lambda name, acronym: "\n".join(
+    "config/.env.template": lambda name, acronym, phase0_source_workspace_id=None: "\n".join(
         [
             f"# Environment variables for coach: {name} ({acronym})",
             f"COACH_ACRONYM={acronym}",
             f"COACH_ID={acronym}-0000",
+            f"PHASE0_SOURCE_WORKSPACE_ID={phase0_source_workspace_id or ''}",
             "",
             "# Notion",
             f"NOTION_TOKEN_{acronym}=",
@@ -134,7 +136,12 @@ TEMPLATE_FILES = {
 }
 
 
-def scaffold_coach(coach_name: str, acronym: str, output_dir: str) -> Path:
+def scaffold_coach(
+    coach_name: str,
+    acronym: str,
+    output_dir: str,
+    phase0_source_workspace_id: str | None = None,
+) -> Path:
     """Create the full directory structure and template files for a new coach."""
     base = Path(output_dir)
 
@@ -157,7 +164,7 @@ def scaffold_coach(coach_name: str, acronym: str, output_dir: str) -> Path:
     for filepath, generator in TEMPLATE_FILES.items():
         file_path = base / filepath
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        content = generator(coach_name, acronym)
+        content = generator(coach_name, acronym, phase0_source_workspace_id)
         file_path.write_text(content, encoding="utf-8")
 
     # Create README
@@ -165,6 +172,7 @@ def scaffold_coach(coach_name: str, acronym: str, output_dir: str) -> Path:
 
 **Coach ID:** `{acronym}-0000`  
 **Created:** {datetime.now(timezone.utc).strftime('%Y-%m-%d')}
+**Phase-0 Source Workspace:** `{phase0_source_workspace_id or 'none'}`
 
 ## Directory Structure
 
@@ -210,6 +218,11 @@ def main():
         required=True,
         help="Output directory path (e.g. ./coaches/NDL)",
     )
+    parser.add_argument(
+        "--phase0-source-workspace",
+        required=False,
+        help="Optional Phase-0 workspace ID used as migration source",
+    )
     args = parser.parse_args()
 
     # Validate acronym
@@ -219,7 +232,12 @@ def main():
     acronym = args.acronym.upper()
 
     try:
-        result = scaffold_coach(args.coach_name, acronym, args.output)
+        result = scaffold_coach(
+            args.coach_name,
+            acronym,
+            args.output,
+            phase0_source_workspace_id=args.phase0_source_workspace,
+        )
         print(f"✅ Coach instance scaffolded at: {result}")
         print(f"   Coach ID: {acronym}-0000")
         print(f"   Next steps:")

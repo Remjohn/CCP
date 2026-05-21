@@ -156,3 +156,28 @@ class CircuitBreaker:
             output_summary="Circuit Breaker RESET — automation resumed",
             decision="crisis_cleared",
         )
+
+# FR-ERA3-05e Error Codes
+class MirrorQuizCircuitBreakerCodes:
+    MIRROR_QUIZ_CMM_NOT_READY = "MIRROR_QUIZ_CMM_NOT_READY"
+    MIRROR_QUIZ_NO_APPROVED_TENSIONS = "MIRROR_QUIZ_NO_APPROVED_TENSIONS"
+
+# FR-ERA3-05f Error Codes
+class BlindRankCircuitBreakerCodes:
+    BLIND_RANK_SESSION_EXPIRED = "BLIND_RANK_SESSION_EXPIRED"
+    BLIND_RANK_CORRUPTED_JOURNAL = "BLIND_RANK_CORRUPTED_JOURNAL"
+
+# FR-ERA3-05g Error Codes
+class AlphabetCircuitBreakerCodes:
+    ALPHABET_SESSION_EXPIRED = "ALPHABET_SESSION_EXPIRED"
+    ALPHABET_TIMING_TAMPERING = "ALPHABET_TIMING_TAMPERING"
+
+# FR-ERA3-05h Error Codes
+class EliminationCircuitBreakerCodes:
+    ELIMINATION_SESSION_EXPIRED = "ELIMINATION_SESSION_EXPIRED"
+    ELIMINATION_CORRUPTED_JOURNAL = "ELIMINATION_CORRUPTED_JOURNAL"
+
+# FR-ERA3-05i Error Codes
+class AuthorityQuizCircuitBreakerCodes:
+    AUTHORITY_QUIZ_SESSION_EXPIRED = "AUTHORITY_QUIZ_SESSION_EXPIRED"
+    AUTHORITY_QUIZ_DPA_FAILURE = "AUTHORITY_QUIZ_DPA_FAILURE"

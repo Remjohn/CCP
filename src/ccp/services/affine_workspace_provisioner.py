@@ -383,7 +383,6 @@ class AFFiNEWorkspaceProvisioner:
         supabase_client: Optional[Any] = None,
         telegram_client: Optional[Any] = None,
         affine_client: Optional[Any] = None,
-        notion_fallback_service: Optional[Any] = None,
     ):
         """Initialize the provisioner.
 
@@ -395,7 +394,6 @@ class AFFiNEWorkspaceProvisioner:
             supabase_client: Supabase client for registration.
             telegram_client: Telegram bot client for confirmation.
             affine_client: AFFiNE API client.
-            notion_fallback_service: Notion sync service for fallback (FR45).
         """
         self.coach_id = coach_id
         self.coach_acronym = coach_acronym.upper()
@@ -404,7 +402,6 @@ class AFFiNEWorkspaceProvisioner:
         self.supabase = supabase_client
         self.telegram = telegram_client
         self.affine = affine_client
-        self.notion_fallback = notion_fallback_service
 
         self.receipt_chain = ReceiptChain(coach_acronym=self.coach_acronym)
         self._template_validator = MasterTemplateValidator()
@@ -701,32 +698,17 @@ class AFFiNEWorkspaceProvisioner:
         error: WorkspaceProvisioningError,
         detail: str,
     ) -> ProvisioningResult:
-        """Handle AFFiNE API failure with Notion fallback.
+        """Handle AFFiNE API failure with status update (formerly Notion fallback).
 
-        Spec §6: During migration period, both notion_sync.py and
-        affine_sync.py operate simultaneously. If AFFiNE fails, system
-        falls back to Notion (FR45) with degradation flag.
-        Spec §4 Stage 3 Failure Condition: AFFiNE API unreachable →
-        provisioning queued for retry.
-        AC5: Assert system falls back to Notion and logs degradation flag.
+        Spec §6: Notion fallback is retired. We log a degradation/failure status.
         """
         logger.warning(
-            "AFFiNE provisioning failed for %s — activating Notion fallback",
+            "AFFiNE provisioning failed for %s — logging status (Notion fallback retired)",
             self.coach_acronym,
         )
 
         notion_dashboard_id = None
         fallback_active = False
-
-        if self.notion_fallback is not None:
-            try:
-                result = self.notion_fallback.create_coach_dashboard(
-                    self.coach_id
-                )
-                notion_dashboard_id = result.get("page_id") if result else None
-                fallback_active = True
-            except Exception as e:
-                logger.error("Notion fallback also failed: %s", e)
 
         # Log degradation flag
         self.receipt_chain.log(
@@ -735,12 +717,11 @@ class AFFiNEWorkspaceProvisioner:
             input_summary=f"Coach: {self.coach_acronym}",
             output_summary=(
                 f"AFFiNE failed: {error.value}. "
-                f"Notion fallback: {'active' if fallback_active else 'also failed'}. "
-                f"Notion dashboard: {notion_dashboard_id or 'none'}"
+                f"Notion fallback: retired. "
             ),
             decision="degraded",
             decision_rationale=(
-                "FR-CA11-01 §6 backward compatibility fallback activated. "
+                "FR-CA11-01 §6 Notion fallback retired. "
                 "Degradation flag logged in Supabase."
             ),
             metadata={
@@ -759,7 +740,7 @@ class AFFiNEWorkspaceProvisioner:
                     {
                         "affine_workspace_id": None,
                         "affine_provisioning_status": "FAILED_FALLBACK_NOTION",
-                        "notion_fallback_active": True,
+                        "notion_fallback_active": False,
                     }
                 ).eq("coach_id", self.coach_id).execute()
             except Exception as e:

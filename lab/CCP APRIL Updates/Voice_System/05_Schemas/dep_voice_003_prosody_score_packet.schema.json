@@ -1,0 +1,294 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DEP-VOICE-003",
+  "title": "Prosody Score Packet",
+  "description": "Production contract for render-time prosody compilation. Converts a message, coach profile, and context into a segment-by-segment score packet for one render attempt.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_id",
+    "coach_id",
+    "render_profile_id",
+    "emotional_job",
+    "message_role",
+    "target_model_family",
+    "script",
+    "global_targets",
+    "segments",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.0(\\.\\d+)?$"
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^PSP-[A-Z0-9_-]{6,64}$"
+    },
+    "coach_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "render_profile_id": {
+      "type": "string",
+      "pattern": "^VRP-[A-Z0-9_-]{6,64}$"
+    },
+    "emotional_job": {
+      "type": "string",
+      "enum": ["orient", "relieve", "validate", "invite", "redirect", "celebrate"]
+    },
+    "message_role": {
+      "type": "string",
+      "enum": [
+        "pre_interview_orientation",
+        "post_interview_delivery",
+        "challenge_onboarding",
+        "challenge_accountability",
+        "benchmark_interpretation",
+        "cbcs_reflection",
+        "coach_training_mirror",
+        "continuation_offer",
+        "win_celebration"
+      ]
+    },
+    "target_model_family": {
+      "type": "string",
+      "enum": ["moss_tts", "voxtral_tts", "index_tts_2", "f5_tts", "other"]
+    },
+    "script": {
+      "type": "object",
+      "required": ["text", "language"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "language": { "type": "string", "maxLength": 16 },
+        "target_duration_ms": { "type": "integer", "minimum": 1000 }
+      }
+    },
+    "global_targets": {
+      "$ref": "#/definitions/global_targets"
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/segment" }
+    },
+    "word_events": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/word_event" },
+      "default": []
+    },
+    "sonic_cues": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/sonic_cue" },
+      "default": []
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "scaled_value": {
+      "type": "object",
+      "required": ["value"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": -1.0,
+          "maximum": 1.0
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"]
+        }
+      }
+    },
+    "global_targets": {
+      "type": "object",
+      "required": [
+        "identity_lock_strength",
+        "context_alignment_weight",
+        "broadcast_clarity_weight",
+        "human_truth_weight"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "identity_lock_strength": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "context_alignment_weight": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "broadcast_clarity_weight": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "human_truth_weight": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "style_state_mix": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "growth_delta_mix": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "required": [
+        "segment_id",
+        "start_ms",
+        "end_ms",
+        "text_span",
+        "segment_job",
+        "family_targets"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "segment_id": {
+          "type": "string",
+          "pattern": "^SEG-[A-Z0-9_-]{4,64}$"
+        },
+        "start_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "text_span": {
+          "type": "string",
+          "minLength": 1
+        },
+        "segment_job": {
+          "type": "string",
+          "enum": [
+            "hook",
+            "orient",
+            "escalate",
+            "soften",
+            "name_truth",
+            "reframe",
+            "invite_action",
+            "celebrate",
+            "land"
+          ]
+        },
+        "family_targets": {
+          "type": "object",
+          "required": [
+            "temporal",
+            "pause",
+            "breath",
+            "pitch_contour",
+            "resonance_timbre",
+            "articulation",
+            "emphasis",
+            "intimacy_contact",
+            "tension_release",
+            "narrative_broadcast"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "temporal": { "$ref": "#/definitions/scaled_value" },
+            "pause": { "$ref": "#/definitions/scaled_value" },
+            "breath": { "$ref": "#/definitions/scaled_value" },
+            "pitch_contour": { "$ref": "#/definitions/scaled_value" },
+            "resonance_timbre": { "$ref": "#/definitions/scaled_value" },
+            "articulation": { "$ref": "#/definitions/scaled_value" },
+            "emphasis": { "$ref": "#/definitions/scaled_value" },
+            "intimacy_contact": { "$ref": "#/definitions/scaled_value" },
+            "tension_release": { "$ref": "#/definitions/scaled_value" },
+            "narrative_broadcast": { "$ref": "#/definitions/scaled_value" }
+          }
+        },
+        "breath_markers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["none", "micro_breath", "soft_breath", "recovery_breath", "energized_breath"]
+          },
+          "default": []
+        },
+        "pause_markers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["none", "micro_pause", "reflective_pause", "tension_pause", "relief_pause", "cta_pause"]
+          },
+          "default": []
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      },
+      "allOf": [
+        {
+          "properties": {
+            "end_ms": {
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "word_event": {
+      "type": "object",
+      "required": ["word", "event_type", "approx_ms"],
+      "additionalProperties": false,
+      "properties": {
+        "word": { "type": "string", "minLength": 1 },
+        "event_type": {
+          "type": "string",
+          "enum": ["emphasis", "de_emphasis", "breath_before", "pause_after", "pitch_lift", "pitch_drop"]
+        },
+        "approx_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "sonic_cue": {
+      "type": "object",
+      "required": ["cue_type", "placement", "asset_id"],
+      "additionalProperties": false,
+      "properties": {
+        "cue_type": {
+          "type": "string",
+          "enum": ["music_bed", "sting", "sfx", "silence_hold"]
+        },
+        "placement": {
+          "type": "string",
+          "enum": ["open", "mid_transition", "close", "word_locked"]
+        },
+        "asset_id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "mix_gain_db": {
+          "type": "number",
+          "minimum": -60.0,
+          "maximum": 12.0
+        }
+      }
+    }
+  }
+}

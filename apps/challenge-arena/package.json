@@ -1,0 +1,24 @@
+{
+  "name": "challenge-arena",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "next": "workspace:*",
+    "react": "workspace:*",
+    "react-dom": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "workspace:*",
+    "@types/react": "workspace:*",
+    "@types/react-dom": "workspace:*",
+    "typescript": "workspace:*",
+    "jest": "workspace:*",
+    "@testing-library/react": "workspace:*"
+  }
+}

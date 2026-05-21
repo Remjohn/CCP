@@ -18,6 +18,7 @@ Spec reference: FR26_Validation_Gate_Tech_Spec.md
 """
 
 import hashlib
+import re
 from datetime import datetime, timezone
 from typing import Any, Optional
 
@@ -500,7 +501,7 @@ class ValidationGate:
                 "expose", "uncomfortable truth", "break down", "myth",
             ],
             SeasonMandate.THE_FORGE: [
-                "action", "discipline", "hard step", "forge",
+                "action", "discipline", "hard", "forge",
                 "build", "execute", "commit", "grind", "work",
             ],
             SeasonMandate.THE_MIRROR: [
@@ -513,16 +514,20 @@ class ValidationGate:
             ],
         }
 
+        def _has_keyword(kw: str, txt: str) -> bool:
+            """Word-boundary match to prevent 'we' matching 'were', etc."""
+            return bool(re.search(r"\b" + re.escape(kw) + r"\b", txt))
+
         # Check for the ACTIVE season's keywords
         active_keywords = season_keywords.get(season, [])
-        active_hits = sum(1 for kw in active_keywords if kw in text_lower)
+        active_hits = sum(1 for kw in active_keywords if _has_keyword(kw, text_lower))
         active_coverage = active_hits / max(len(active_keywords), 1)
 
         # Check for WRONG season keywords (violation)
         wrong_season_hits = 0
         for other_season, keywords in season_keywords.items():
             if other_season != season:
-                wrong_season_hits += sum(1 for kw in keywords if kw in text_lower)
+                wrong_season_hits += sum(1 for kw in keywords if _has_keyword(kw, text_lower))
 
         # Compliance: high active coverage + low wrong-season contamination
         contamination_penalty = min(wrong_season_hits * 0.1, 0.5)

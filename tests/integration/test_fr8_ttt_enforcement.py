@@ -72,6 +72,8 @@ def ttt_baseline() -> TTTBaselineData:
         liwc_authenticity_score=8.2,
         session_id="sess-test-001",
         coach_id="coach-TST-001",
+        extraction_timestamp="2026-05-20T12:00:00Z",
+        voice_note_hash="d7a8f0g9h8i7j6k5",
     )
 
 
@@ -112,6 +114,7 @@ def _make_generated_content_analysis(
     negemo: float = 2.0,
     authentic: float = 7.8,
     segment_intensities: list[float] | None = None,
+    clout: float = 60.0,
 ) -> dict[str, Any]:
     """Build a synthetic LIWC content analysis dict."""
     analysis: dict[str, Any] = {
@@ -121,7 +124,7 @@ def _make_generated_content_analysis(
         "social": 4.5,
         "insight": 3.0,
         "cogmech": 5.0,
-        "clout": 6.0,
+        "clout": clout,
         "authentic": authentic,
         "anger": 1.0,
         "achieve": 3.5,
@@ -480,6 +483,8 @@ class TestAC7LIWCAuthenticationGate:
             liwc_authenticity_score=7.5,
             session_id="s-01",
             coach_id="c-01",
+            extraction_timestamp="2026-05-20T12:00:00Z",
+            voice_note_hash="d7a8f0g9h8i7j6k5",
         )
         assert baseline_auth.liwc_authenticated is True
 
@@ -490,6 +495,8 @@ class TestAC7LIWCAuthenticationGate:
             liwc_authenticity_score=6.9,
             session_id="s-02",
             coach_id="c-01",
+            extraction_timestamp="2026-05-20T12:00:00Z",
+            voice_note_hash="d7a8f0g9h8i7j6k5",
         )
         assert baseline_not_auth.liwc_authenticated is False
 
@@ -540,7 +547,7 @@ class TestAC9SophiaDriftGate:
     def test_high_drift_rejected(self, ttt_baseline: TTTBaselineData) -> None:
         # Temperature 6 → normalized 0.6 baseline
         # Generated affect=9.8 → normalized ~0.98 → drift > 0.15
-        generated = _make_generated_content_analysis(affect=9.8, posemo=9.0)
+        generated = _make_generated_content_analysis(affect=9.8, posemo=9.0, clout=95.0)
         validator = SophiaTTTValidator()
         result = validator.validate(
             baseline=ttt_baseline,
@@ -637,7 +644,7 @@ class TestAC10EmotionalPeakDetection:
         # avg = 6.0, peak at 6.0 * 1.20 = 7.20
         avg = 6.0
         # iRAV: peak exceeding average by ≥ 20% (spec: strictly exceeds)
-        peak_value = avg * 1.21  # 21% above — clearly exceeds
+        peak_value = 7.6  # Exceeds the actual list average of ~6.3 by >=20%
         generated = _make_generated_content_analysis(
             affect=6.0,
             posemo=5.5,

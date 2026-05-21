@@ -1124,3 +1124,367 @@ class RelationshipCycleLog(BaseModel):
     cooldown_expiry_timestamp: str = Field(...)
     last_executed_node: str = Field(...)
     computation_timestamp: str = Field(...)
+
+
+# ══════════════════════════════════════════════════════════════════════
+# FR-ERA3-18 — CBCS Four-Engine Runtime
+# ══════════════════════════════════════════════════════════════════════
+
+from datetime import datetime
+
+from src.ccp.models.sda_models import (
+    DirectionalIntegrityReport,
+    EmergentContextualInvariant,
+    FeedbackLoop,
+    InvariantFieldPacket,
+    RecursivePattern,
+    RepresentationGeometryPacket,
+)
+
+
+class CBCSSubmissionKind(str, Enum):
+    VOICE_NOTE = "voice_note"
+    TEXT_REFLECTION = "text_reflection"
+    JOURNAL_RESPONSE = "journal_response"
+
+
+class CapacityTrack(str, Enum):
+    RECOVERY = "recovery"
+    FOUNDATION = "foundation"
+    GROWTH = "growth"
+    MOMENTUM = "momentum"
+    PEAK = "peak"
+
+
+class DiagnosticChangeType(str, Enum):
+    HOLD = "hold"
+    UPGRADE = "upgrade"
+    DOWNGRADE = "downgrade"
+    RITUAL_INTENSITY_REDUCTION = "ritual_intensity_reduction"
+    REFLECTION_SUBSTITUTION = "reflection_substitution"
+
+
+class RelationshipInterceptionReason(str, Enum):
+    NONE = "none"
+    CAPACITY_TRACK_DOWNGRADE = "capacity_track_downgrade"
+    RITUAL_INTENSITY_REDUCTION = "ritual_intensity_reduction"
+    EARLY_JOURNEY_SAFE_FRAMING = "early_journey_safe_framing"
+    CORROSIVE_LOOP_INTERRUPTION = "corrosive_loop_interruption"
+    DIRECTIONAL_INTEGRITY_FAILURE = "directional_integrity_failure"
+
+
+class TrendWindowStatus(str, Enum):
+    POSITIVE = "positive"
+    FLAT = "flat"
+    NEGATIVE = "negative"
+    INSUFFICIENT = "insufficient"
+
+
+class SemanticDynamicsContext(BaseModel):
+    active_recursive_patterns: list[RecursivePattern] = Field(default_factory=list)
+    identified_feedback_loops: list[FeedbackLoop] = Field(default_factory=list)
+    emergent_contextual_invariants: list[EmergentContextualInvariant] = Field(default_factory=list)
+    invariant_field_packet: Optional[InvariantFieldPacket] = Field(default=None)
+    representation_geometry_packet: Optional[RepresentationGeometryPacket] = Field(default=None)
+
+
+class EvidenceMetric(BaseModel):
+    metric_name: str = Field(..., min_length=1)
+    current_value: float = Field(...)
+    previous_value: Optional[float] = Field(default=None)
+    delta_value: Optional[float] = Field(default=None)
+    interpretation: str = Field(..., min_length=1)
+
+
+class EvidenceCitation(BaseModel):
+    source_system: str = Field(..., min_length=1)
+    source_ref: str = Field(..., min_length=1)
+    excerpt: str = Field(..., min_length=1)
+
+
+class CBCSEvidencePacket(BaseModel):
+    """DEP-CBCS-402: Canonical evidence output from FR61 scoring + CBCS sub-engines."""
+    evidence_packet_id: str = Field(...)
+    client_id: str = Field(...)
+    coach_id: str = Field(...)
+    submission_kind: CBCSSubmissionKind = Field(...)
+    generated_at: datetime = Field(...)
+    trait_metrics: list[EvidenceMetric] = Field(default_factory=list)
+    change_talk_summary: list[str] = Field(default_factory=list)
+    spt_stage: Optional[int] = Field(default=None, ge=1, le=4)
+    habit_verified: Optional[bool] = Field(default=None)
+    citations: list[EvidenceCitation] = Field(default_factory=list)
+    semantic_dynamics: SemanticDynamicsContext = Field(default_factory=SemanticDynamicsContext)
+    perceptual_intake: Optional[CbcsPerceptualIntakeEnvelope] = Field(default=None)
+
+
+class DiagnosticCapacityDecision(BaseModel):
+    """DEP-CBCS-403: Internal-only capacity-track and difficulty adjustment decision.
+    NEVER directly serialized to Telegram (Phase4-M07)."""
+    decision_id: str = Field(...)
+    client_id: str = Field(...)
+    coach_id: str = Field(...)
+    previous_track: CapacityTrack = Field(...)
+    new_track: CapacityTrack = Field(...)
+    change_type: DiagnosticChangeType = Field(...)
+    rationale: str = Field(..., min_length=1)
+    weaker_signal_names: list[str] = Field(default_factory=list)
+    stronger_signal_names: list[str] = Field(default_factory=list)
+    requires_relationship_intercept: bool = Field(...)
+    created_at: datetime = Field(...)
+
+
+class RitualAdjustmentPlan(BaseModel):
+    """DEP-CBCS-404: Next ritual/drill mutation plan from diagnostic delta."""
+    plan_id: str = Field(...)
+    client_id: str = Field(...)
+    coach_id: str = Field(...)
+    ritual_type: str = Field(..., min_length=1)
+    intensity_level: int = Field(..., ge=1, le=5)
+    replaced_with_reflection: bool = Field(default=False)
+    learning_path_reason: str = Field(..., min_length=1)
+    draft_prompt: str = Field(..., min_length=1)
+    scheduled_for_iso: Optional[datetime] = Field(default=None)
+
+
+class MacroTrendSnapshot(BaseModel):
+    window_days: int = Field(..., ge=1)
+    status: TrendWindowStatus = Field(...)
+    headline_metric: str = Field(..., min_length=1)
+    positive_delta_label: Optional[str] = Field(default=None)
+    supporting_sentence: str = Field(..., min_length=1)
+
+
+class CumulativeInvestmentStats(BaseModel):
+    total_sessions_completed: int = Field(..., ge=0)
+    total_words_spoken: int = Field(..., ge=0)
+    current_streak_days: int = Field(..., ge=0)
+    strongest_hidden_gain: Optional[str] = Field(default=None)
+
+
+class RelationshipTrendContext(BaseModel):
+    """DEP-CBCS-405: 14/30-day macro-trend snapshot + cumulative investment."""
+    context_id: str = Field(...)
+    client_id: str = Field(...)
+    coach_id: str = Field(...)
+    fourteen_day: MacroTrendSnapshot = Field(...)
+    thirty_day: MacroTrendSnapshot = Field(...)
+    cumulative_stats: CumulativeInvestmentStats = Field(...)
+    resonance_marker_hint: Optional[str] = Field(default=None)
+    dominant_invariant_field: Optional[str] = Field(default=None)
+
+
+class RelationshipFramedNotification(BaseModel):
+    """DEP-CBCS-406: The ONLY user-facing message contract from this runtime."""
+    notification_id: str = Field(...)
+    client_id: str = Field(...)
+    coach_id: str = Field(...)
+    interception_reason: RelationshipInterceptionReason = Field(...)
+    safe_headline: str = Field(..., min_length=1, max_length=180)
+    safe_body: str = Field(..., min_length=1, max_length=1200)
+    visible_macro_metric: Optional[str] = Field(default=None)
+    visible_cumulative_metric: Optional[str] = Field(default=None)
+    dispatch_channel: str = Field(..., min_length=1)
+    integrity_report: Optional[DirectionalIntegrityReport] = Field(default=None)
+    created_at: datetime = Field(...)
+
+
+class CBCSRuntimeSession(BaseModel):
+    """DEP-CBCS-401: Envelope for a single evidence-routing pass."""
+    session_id: str = Field(...)
+    client_id: str = Field(...)
+    coach_id: str = Field(...)
+    submission_kind: CBCSSubmissionKind = Field(...)
+    evidence_packet: CBCSEvidencePacket = Field(...)
+    diagnostic_decision: DiagnosticCapacityDecision = Field(...)
+    ritual_plan: RitualAdjustmentPlan = Field(...)
+    relationship_context: RelationshipTrendContext = Field(...)
+    user_notification: RelationshipFramedNotification = Field(...)
+    perceptual_recommendation: Optional[CbcsPerceptualRecommendation] = Field(default=None)
+
+
+# ══════════════════════════════════════════════════════════════════════
+# FR-ERA3-18 — SFL-Aware CBCS Four-Engine Runtime extension (§5)
+# ══════════════════════════════════════════════════════════════════════
+
+class VisibleScoreName(str, Enum):
+    HUMANITY = "humanity"
+    PRESENCE = "presence"
+    TRUST = "trust"
+    MEMORABILITY = "memorability"
+    RESONANCE = "resonance"
+    SIGNAL = "signal"
+    AI_SLOP_RISK = "ai_slop_risk"
+
+
+class PerceptualSeverity(str, Enum):
+    LOW = "low"
+    MODERATE = "moderate"
+    HIGH = "high"
+    CRITICAL = "critical"
+
+
+class CoachingSurfaceType(str, Enum):
+    VOICE_NOTE = "voice_note"
+    ACCOUNTABILITY_MESSAGE = "accountability_message"
+    LIVE_REACTION_PROMPT = "live_reaction_prompt"
+    JOURNALING_PROMPT = "journaling_prompt"
+    RELATIONSHIP_REFRAME = "relationship_reframe"
+
+
+class RecommendationClass(str, Enum):
+    REINFORCE = "reinforce"
+    REPAIR = "repair"
+    SLOW_DOWN = "slow_down"
+    SHARPEN = "sharpen"
+    HUMANIZE = "humanize"
+    DECOMPRESS = "decompress"
+    PROOF_GROUND = "proof_ground"
+
+
+class SourceSystem(str, Enum):
+    FR27 = "fr_era3_27"
+    FR35 = "fr_era3_35"
+    LEGACY_CBCS = "legacy_cbcs"
+
+
+class PerceptualSourceReference(BaseModel):
+    source_system: SourceSystem = Field(...)
+    source_contract_id: str = Field(..., min_length=1)
+    source_artifact_id: str = Field(..., min_length=1)
+    source_version: str = Field(..., min_length=1)
+    generated_at_utc: str = Field(..., min_length=1)
+
+
+class ScoreBand(BaseModel):
+    score_0_99: int = Field(..., ge=0, le=99)
+    severity: PerceptualSeverity = Field(...)
+    rationale: str = Field(..., min_length=1)
+
+
+class VisibleScoreCarryover(BaseModel):
+    humanity: ScoreBand = Field(...)
+    presence: ScoreBand = Field(...)
+    trust: ScoreBand = Field(...)
+    memorability: ScoreBand = Field(...)
+    resonance: ScoreBand = Field(...)
+    signal: ScoreBand = Field(...)
+    ai_slop_risk: ScoreBand = Field(...)
+
+
+class PerceptualWeaknessSignal(BaseModel):
+    signal_id: str = Field(..., min_length=1)
+    score_name: VisibleScoreName = Field(...)
+    severity: PerceptualSeverity = Field(...)
+    label: str = Field(..., min_length=1)
+    description: str = Field(..., min_length=1)
+    coaching_implication: str = Field(..., min_length=1)
+
+
+class PerceptualStrengthSignal(BaseModel):
+    signal_id: str = Field(..., min_length=1)
+    score_name: VisibleScoreName = Field(...)
+    severity: PerceptualSeverity = Field(...)
+    label: str = Field(..., min_length=1)
+    description: str = Field(..., min_length=1)
+    preservation_note: str = Field(..., min_length=1)
+
+
+class PerceptualEffectSummary(BaseModel):
+    summary_id: str = Field(..., min_length=1)
+    primary_weaknesses: list[PerceptualWeaknessSignal] = Field(default_factory=list)
+    primary_strengths: list[PerceptualStrengthSignal] = Field(default_factory=list)
+    anti_slop_warning_active: bool = Field(...)
+    synthetic_tone_risk_active: bool = Field(...)
+    recommendation_hint: str = Field(..., min_length=1)
+
+
+class CardEvidenceSnapshot(BaseModel):
+    board_id: str = Field(..., min_length=1)
+    card_ids: list[str] = Field(default_factory=list)
+    thumbnail_asset_ids: list[str] = Field(default_factory=list)
+    primary_card_labels: list[str] = Field(default_factory=list)
+    review_url: Optional[str] = Field(default=None)
+
+
+class AuditPrescriptionItem(BaseModel):
+    item_id: str = Field(..., min_length=1)
+    target_score: VisibleScoreName = Field(...)
+    plain_language_problem: str = Field(..., min_length=1)
+    plain_language_fix: str = Field(..., min_length=1)
+    urgency: PerceptualSeverity = Field(...)
+
+
+class AuditIntelligenceSummaryInput(BaseModel):
+    audit_id: str = Field(..., min_length=1)
+    summary_headline: str = Field(..., min_length=1)
+    visible_scores: VisibleScoreCarryover = Field(...)
+    effect_summary: PerceptualEffectSummary = Field(...)
+    prescription_items: list[AuditPrescriptionItem] = Field(default_factory=list)
+    card_snapshot: Optional[CardEvidenceSnapshot] = Field(default=None)
+    source_reference: PerceptualSourceReference = Field(...)
+
+
+class CbcsPerceptualIntakeEnvelope(BaseModel):
+    envelope_id: str = Field(..., min_length=1)
+    coach_id: str = Field(..., min_length=1)
+    client_id: str = Field(..., min_length=1)
+    visible_scores: VisibleScoreCarryover = Field(...)
+    effect_summary: PerceptualEffectSummary = Field(...)
+    source_reference: PerceptualSourceReference = Field(...)
+    card_snapshot: Optional[CardEvidenceSnapshot] = Field(default=None)
+    audit_prescriptions: list[AuditPrescriptionItem] = Field(default_factory=list)
+    relationship_context_note: Optional[str] = Field(default=None)
+
+
+class CbcsPerceptualRecommendation(BaseModel):
+    recommendation_id: str = Field(..., min_length=1)
+    recommendation_class: RecommendationClass = Field(...)
+    target_surface: CoachingSurfaceType = Field(...)
+    primary_score_target: VisibleScoreName = Field(...)
+    plain_language_goal: str = Field(..., min_length=1)
+    recommended_behavior: str = Field(..., min_length=1)
+    prohibited_behavior: str = Field(..., min_length=1)
+    explanation_for_operator: str = Field(..., min_length=1)
+
+
+class VoiceNotePerceptualGuidance(BaseModel):
+    guidance_id: str = Field(..., min_length=1)
+    focus_score: VisibleScoreName = Field(...)
+    target_duration_seconds: int = Field(..., ge=10, le=600)
+    delivery_instruction: str = Field(..., min_length=1)
+    pacing_instruction: str = Field(..., min_length=1)
+    proof_instruction: str = Field(..., min_length=1)
+    anti_slop_instruction: str = Field(..., min_length=1)
+    example_prompt: str = Field(..., min_length=1)
+
+
+class AccountabilityPerceptualPrescription(BaseModel):
+    prescription_id: str = Field(..., min_length=1)
+    focus_scores: list[VisibleScoreName] = Field(default_factory=list)
+    accountability_task: str = Field(..., min_length=1)
+    repetition_window_days: int = Field(..., ge=1, le=30)
+    review_signal: str = Field(..., min_length=1)
+    escalation_condition: str = Field(..., min_length=1)
+    downgrade_sensitive: bool = Field(...)
+
+
+class RelationshipFramedCoachingMessage(BaseModel):
+    message_id: str = Field(..., min_length=1)
+    target_surface: CoachingSurfaceType = Field(...)
+    safe_headline: str = Field(..., min_length=1)
+    safe_body: str = Field(..., min_length=1)
+    long_loop_reference: str = Field(..., min_length=1)
+    score_translation_note: str = Field(..., min_length=1)
+    mentions_cards: bool = Field(...)
+
+
+class CbcsPerceptualRuntimeReceipt(BaseModel):
+    receipt_id: str = Field(..., min_length=1)
+    envelope_id: str = Field(..., min_length=1)
+    recommendation_id: str = Field(..., min_length=1)
+    relationship_message_id: str = Field(..., min_length=1)
+    fallback_mode: Optional[str] = Field(default=None)
+    source_contract_id: str = Field(..., min_length=1)
+
+

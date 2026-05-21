@@ -25,6 +25,8 @@ from typing import Any, Optional
 
 from pydantic import BaseModel, Field
 
+from src.ccp.models.adapter_registry_models import AdapterRunResult
+
 
 # ══════════════════════════════════════════════════════════════
 # CRAL Finding Index Models (DEP-ENG-021)
@@ -328,8 +330,6 @@ class AdapterRegistryV2Result(BaseModel):
     )
 
     # ── Tier 1 Mandatory Results ──────────────────────────────
-    from src.ccp.models.adapter_registry_models import AdapterRunResult
-
     negative_space_result: Optional[AdapterRunResult] = Field(default=None)
     coach_soul_result: Optional[AdapterRunResult] = Field(default=None)
     irevc_result: Optional[AdapterRunResult] = Field(default=None)

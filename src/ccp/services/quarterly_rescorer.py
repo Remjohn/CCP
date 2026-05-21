@@ -74,16 +74,24 @@ class QuarterlyRescorer:
         from datetime import datetime, timezone
 
         last_updated = current_scorecard.last_updated
-        try:
-            last_dt = datetime.fromisoformat(last_updated)
-        except (ValueError, TypeError):
+        created_at = getattr(current_scorecard, "created_at", None)
+
+        dates = []
+        for d_str in [last_updated, created_at]:
+            if d_str:
+                try:
+                    dt = datetime.fromisoformat(d_str)
+                    if dt.tzinfo is None:
+                        dt = dt.replace(tzinfo=timezone.utc)
+                    dates.append(dt)
+                except (ValueError, TypeError):
+                    pass
+
+        if not dates:
             return True, QUARTERLY_RESCORE_WEEKS
 
+        last_dt = min(dates)
         now = datetime.now(timezone.utc)
-        # Ensure both datetimes are timezone-aware for comparison
-        if last_dt.tzinfo is None:
-            last_dt = last_dt.replace(tzinfo=timezone.utc)
-
         elapsed_days = (now - last_dt).days
         weeks_elapsed = elapsed_days // 7
 

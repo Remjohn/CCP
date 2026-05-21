@@ -106,12 +106,14 @@ class GranularityTriageService:
         Returns:
             GranularityTriageResult with tier classification and term inventory.
         """
-        # Extract all words, lowercased
-        words = re.findall(r"\b[a-z][a-z\s'-]+\b", corpus_text.lower())
-        word_set = set(words)
-
         # Find distinct emotional terms present in corpus
-        found_terms = sorted(word_set & self.emotional_terms)
+        corpus_lower = corpus_text.lower()
+        found_terms = []
+        for term in self.emotional_terms:
+            pattern = r"\b" + re.escape(term) + r"\b"
+            if re.search(pattern, corpus_lower):
+                found_terms.append(term)
+        found_terms = sorted(found_terms)
         distinct_count = len(found_terms)
 
         # Classify tier

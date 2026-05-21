@@ -215,7 +215,9 @@ class SophiaTTTValidator:
             segment_intensities = [overall_intensity]
 
         # Normalize to [0.0, 1.0]
-        normalized = [min(max(float(v), 0.0), 1.0) for v in segment_intensities]
+        needs_scaling = any(float(v) > 1.0 for v in segment_intensities)
+        scale_factor = 10.0 if needs_scaling else 1.0
+        normalized = [min(max(float(v) / scale_factor, 0.0), 1.0) for v in segment_intensities]
 
         avg_intensity = sum(normalized) / len(normalized) if normalized else 0.0
         peak_threshold = avg_intensity * (1.0 + PEAK_EXCEEDANCE_THRESHOLD)

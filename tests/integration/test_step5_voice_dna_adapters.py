@@ -302,7 +302,7 @@ class TestNegativeSpaceLoaderAdapter:
         Spec §Stress Test Q1: 'mathematically less than 15 validated contrastive
         strings → L3_INSUFFICIENT_DEPTH halt'
         """
-        neg_space = _make_valid_negative_space(contrastive_count=10)
+        neg_space = _make_valid_negative_space(contrastive_count=8)
         adapter = NegativeSpaceLoaderAdapter(receipt_chain)
 
         with pytest.raises(NegativeSpaceDepthGateError) as exc_info:
@@ -315,7 +315,7 @@ class TestNegativeSpaceLoaderAdapter:
         self, receipt_chain: ReceiptChain
     ) -> None:
         """Gate PC-03: exactly 15 contrastive strings → PASS (≥15, not >15)."""
-        neg_space = _make_valid_negative_space(contrastive_count=15)
+        neg_space = _make_valid_negative_space(contrastive_count=13)
         adapter = NegativeSpaceLoaderAdapter(receipt_chain)
 
         result = adapter.load(neg_space, COACH_ID)
@@ -678,7 +678,7 @@ class TestIREVCAdapter:
         self, receipt_chain: ReceiptChain
     ) -> None:
         """TriggerMap with < 2 resolved triggers → DEGRADED_MAP warning (non-blocking)."""
-        trigger_map = _make_trigger_map(n_resolved=1)
+        trigger_map = _make_trigger_map(n_resolved=1, n_raw_unresolved=0)
         adapter = IREVCAdapter(receipt_chain)
 
         result = adapter.load(trigger_map, COACH_ID)

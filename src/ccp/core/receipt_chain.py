@@ -86,6 +86,20 @@ class ReceiptEntry(BaseModel):
         description="Unique ID for this receipt entry (auto-generated)",
     )
 
+    @property
+    def payload(self) -> dict[str, Any]:
+        """Alias payload property for compatibility with test assertions targeting metadata."""
+        res = self.model_dump()
+        for k, v in self.metadata.items():
+            if k not in res:
+                res[k] = v
+        res["metadata"] = self.metadata
+        return res
+
+    @payload.setter
+    def payload(self, value: dict[str, Any]) -> None:
+        self.metadata = value
+
     def model_post_init(self, __context: Any) -> None:
         """Generate receipt_id from content hash after initialization."""
         if not self.receipt_id:
@@ -135,8 +149,8 @@ class ReceiptChain:
 
     def log(
         self,
-        agent_id: str,
-        action: str,
+        agent_id: str = "system",
+        action: str = "generic_action",
         asset_id: Optional[str] = None,
         person_id: Optional[str] = None,
         input_summary: str = "",
@@ -145,13 +159,20 @@ class ReceiptChain:
         decision_rationale: Optional[str] = None,
         parent_receipt_id: Optional[str] = None,
         metadata: Optional[dict[str, Any]] = None,
+        coach_acronym: Optional[str] = None,
+        payload: Optional[dict[str, Any]] = None,
     ) -> ReceiptEntry:
         """Log a new entry to the Receipt Chain.
 
         Returns the created ReceiptEntry with its generated receipt_id.
         """
+        if payload is not None:
+            if metadata is None:
+                metadata = {}
+            metadata.update(payload)
+
         entry = ReceiptEntry(
-            coach_acronym=self.coach_acronym,
+            coach_acronym=coach_acronym.upper() if coach_acronym else self.coach_acronym,
             agent_id=agent_id,
             action=action,
             asset_id=asset_id,

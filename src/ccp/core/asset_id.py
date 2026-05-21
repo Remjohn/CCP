@@ -27,7 +27,7 @@ from pydantic import BaseModel, Field
 
 
 class AssetType(str, Enum):
-    """All 34 registered asset types across the CCP ecosystem."""
+    """All registered asset types across the CCP ecosystem."""
 
     # CCF — Content Production
     SCRIPT = "SCRP"           # Content script (any format)
@@ -78,6 +78,7 @@ class AssetType(str, Enum):
     RECEIPT = "RCPT"          # Receipt Chain entry reference
     MEMORY_PROMOTION = "MPRO" # Memory promotion record
     VALIDATION_REPORT = "VRPT"  # Validation Team report
+    PHASE0_ARTIFACT = "P0AF"  # Shared Phase-0 workspace artifact
 
 
 class AssetID(BaseModel):

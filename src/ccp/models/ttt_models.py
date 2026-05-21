@@ -21,7 +21,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Any, Optional
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 # ─── Enums ────────────────────────────────────────────────────────────────────
@@ -277,14 +277,15 @@ class TTTBaselineData(BaseModel):
         description="Raw extracted temperature before integer rounding.",
     )
 
-    @field_validator("liwc_authenticated", mode="before")
+    @model_validator(mode="before")
     @classmethod
-    def derive_authenticated_flag(cls, v: bool, info: Any) -> bool:
+    def derive_authenticated_flag(cls, data: Any) -> Any:
         """If not explicitly set, derive from liwc_authenticity_score."""
-        score = info.data.get("liwc_authenticity_score", 0.0)
-        if v is True or score >= 7.0:
-            return score >= 7.0
-        return False
+        if isinstance(data, dict):
+            score = data.get("liwc_authenticity_score", 0.0)
+            if "liwc_authenticated" not in data:
+                data["liwc_authenticated"] = score >= 7.0
+        return data
 
 
 # ─── Affinity Range Models ────────────────────────────────────────────────────
@@ -455,7 +456,7 @@ class AssemblyReport(BaseModel):
         default=None,
         description="Sophia post-generation TTT validation. Only present for accepted compilations.",
     )
-    pipeline_interruption_log: Optional[dict[str, str]] = Field(
+    pipeline_interruption_log: Optional[dict[str, Any]] = Field(
         default=None,
         description=(
             "AC11: When C-08 rejects, records template_id, violated_field, recovery_instruction. "

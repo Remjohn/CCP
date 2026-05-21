@@ -204,6 +204,7 @@ class CourseVideoPipeline:
         command_text: str,
         voice_note_url: str | None = None,
         topics: list[str] | None = None,
+        perceptual_plan: Any | None = None,
     ) -> CourseVideoResult:
         # 1. Parse command
         parsed = CourseVideoCommandHandler.parse_command(command_text)
@@ -230,15 +231,31 @@ class CourseVideoPipeline:
         if len([a for a in aids if a.type == VisualAidType.excalidraw_diagram]) < MIN_DIAGRAMS:
             pass  # AC3 requires ≥2 but we proceed with what we have
 
+        # Check SFL temporal hints
+        low_motion_assembly = False
+        temporal_hints_list = []
+        if perceptual_plan is not None:
+            if not getattr(perceptual_plan, "temporal_hints", None) or not getattr(perceptual_plan.temporal_hints, "hints", None):
+                # Fallback: downgrade to still or low-motion assembly, never fake confident timing
+                low_motion_assembly = True
+            else:
+                temporal_hints_list = [h.model_dump() for h in perceptual_plan.temporal_hints.hints]
+
         # 5. Render video
         video_url: str | None = None
         duration = 0
         if self._render:
             try:
+                render_meta = self._template.model_dump()
+                if low_motion_assembly:
+                    render_meta["low_motion_assembly"] = True
+                if temporal_hints_list:
+                    render_meta["temporal_hints"] = temporal_hints_list
+
                 result = await self._render.render_course_video(
                     narration,
                     [a.model_dump() for a in aids],
-                    self._template.model_dump(),
+                    render_meta,
                     self._template.audio_mood_profiles[0].value,
                 )
                 video_url = result.get("video_url")
@@ -254,6 +271,10 @@ class CourseVideoPipeline:
             # Simulated for testing
             video_url = f"s3://{coach_id}/course-videos/{uuid.uuid4().hex[:8]}.mp4"
             duration = 420
+            if low_motion_assembly:
+                # simulate low-motion assembly by tagging title
+                title += " [Low-Motion Downgraded]"
+
 
         # 6. Build manifest
         asset_id = f"{coach_id[:3].upper()}-CMF-{datetime.now(timezone.utc).strftime('%Y%m%d')}-COURSEVID"

@@ -453,7 +453,6 @@ class TestFullProvisioningPipeline:
         affine_client: Optional[MockAFFiNEClient] = None,
         supabase_client: Optional[MockSupabaseClient] = None,
         telegram_client: Optional[MockTelegramClient] = None,
-        notion_fallback: Optional[MockNotionFallback] = None,
     ) -> AFFiNEWorkspaceProvisioner:
         return AFFiNEWorkspaceProvisioner(
             coach_id=COACH_UUID,
@@ -462,7 +461,6 @@ class TestFullProvisioningPipeline:
             affine_client=affine_client or MockAFFiNEClient(),
             supabase_client=supabase_client or MockSupabaseClient(),
             telegram_client=telegram_client or MockTelegramClient(),
-            notion_fallback_service=notion_fallback,
         )
 
     def test_successful_provisioning(self) -> None:
@@ -695,37 +693,32 @@ class TestReceiptChainIntegration:
 
 
 class TestFallbackDegradation:
-    """Spec §6, §8 AC5 — Fallback to Notion on AFFiNE failure."""
+    """Spec §6, §8 AC5 — Fallback to Notion on AFFiNE failure (Retired/No-op)."""
 
-    def test_affine_failure_triggers_notion_fallback(self) -> None:
-        """AC5: Block AFFiNE → system falls back to Notion with degradation flag."""
-        notion = MockNotionFallback()
+    def test_affine_failure_returns_degradation_status(self) -> None:
+        """AFFiNE failure returns status code FAILED_FALLBACK_NOTION with fallback_active as False."""
         provisioner = AFFiNEWorkspaceProvisioner(
             coach_id=COACH_UUID,
             coach_acronym=CID,
             affine_client=MockAFFiNEClient(fail_create=True),
             supabase_client=MockSupabaseClient(),
-            notion_fallback_service=notion,
         )
         result = provisioner.provision_coach_workspace(
             coach_soul=_make_coach_soul(),
             business_summary=_make_business_summary(),
         )
         assert result.status == ProvisioningStatus.FAILED_FALLBACK_NOTION
-        assert result.fallback_active is True
-        assert notion.called is True
-        assert result.notion_dashboard_id is not None
+        assert result.fallback_active is False
+        assert result.notion_dashboard_id is None
 
     def test_fallback_logs_degradation_flag(self) -> None:
         """AC5: Degradation flag logged in receipt chain."""
         rc, tmp_dir = _make_rc_isolated()
-        notion = MockNotionFallback()
         provisioner = AFFiNEWorkspaceProvisioner(
             coach_id=COACH_UUID,
             coach_acronym=CID,
             affine_client=MockAFFiNEClient(fail_create=True),
             supabase_client=MockSupabaseClient(),
-            notion_fallback_service=notion,
         )
         provisioner.receipt_chain = rc
 
@@ -748,40 +741,6 @@ class TestFallbackDegradation:
         assert len(fallback_entries) >= 1
         assert fallback_entries[0]["decision"] == "degraded"
         assert fallback_entries[0]["metadata"]["degradation_flag"] is True
-
-    def test_both_fallback_and_affine_fail(self) -> None:
-        """Both AFFiNE and Notion fail — fallback_active is False."""
-        notion = MockNotionFallback(fail=True)
-        provisioner = AFFiNEWorkspaceProvisioner(
-            coach_id=COACH_UUID,
-            coach_acronym=CID,
-            affine_client=MockAFFiNEClient(fail_create=True),
-            supabase_client=MockSupabaseClient(),
-            notion_fallback_service=notion,
-        )
-        result = provisioner.provision_coach_workspace(
-            coach_soul=_make_coach_soul(),
-            business_summary=_make_business_summary(),
-        )
-        assert result.status == ProvisioningStatus.FAILED_FALLBACK_NOTION
-        assert result.fallback_active is False
-        assert result.notion_dashboard_id is None
-
-    def test_no_notion_fallback_configured(self) -> None:
-        """Without Notion fallback service, no fallback occurs."""
-        provisioner = AFFiNEWorkspaceProvisioner(
-            coach_id=COACH_UUID,
-            coach_acronym=CID,
-            affine_client=MockAFFiNEClient(fail_create=True),
-            supabase_client=MockSupabaseClient(),
-            notion_fallback_service=None,
-        )
-        result = provisioner.provision_coach_workspace(
-            coach_soul=_make_coach_soul(),
-            business_summary=_make_business_summary(),
-        )
-        assert result.status == ProvisioningStatus.FAILED_FALLBACK_NOTION
-        assert result.fallback_active is False
 
 
 # ══════════════════════════════════════════════════════════════════════
