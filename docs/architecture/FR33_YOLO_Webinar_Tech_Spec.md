@@ -1,9 +1,9 @@
-# Tech-Spec: FR33 — V²WS YOLO Mode Webinar Generation (DEP-ENG-028)
+# Tech-Spec: FR33 — V2WS YOLO Mode Webinar Generation (DEP-ENG-028)
 
 **Created:** 2026-03-13
 **Status:** Ready for Development
 **Version:** 1.0 (Aligned to CCP Architecture v4.0 / Unified PRD v3.1)
-**Architecture Reference:** PRD §V²WS Pipeline
+**Architecture Reference:** PRD §V2WS Pipeline
 **Skill Implementation:** `CCF/commands/ccf-v2ws.md`, `CCF/generators/excalidraw_compiler.py`
 **Role Executing:** Principal CCP Tech-Spec Architect
 
@@ -23,7 +23,7 @@ The following files were mandatory prerequisite reading before the architectural
 Constructing a high-converting webinar typically requires weeks of structural outlining, slide design, and scriptwriting. When a coach identifies an immediate market opportunity or an acute audience pain point (e.g., a relevant cultural event dropping on a Tuesday), they cannot wait 3 weeks to deploy a training. They need a rapid-deployment mechanism that bypasses standard lengthy CCF planning phases but retains the rigorous psychological structure of the Voice DNA and Context Premise.
 
 ### Solution
-FR33 formally defines **YOLO Mode within the V²WS (Visual Vault Webinar System) Pipeline (DEP-ENG-028)**. This protocol collapses the 5-stage webinar creation process into a single, chained, autonomous execution loop. The System Operator inputs exactly 5 structured constraints (Topic, Audience, Offer, Stories, Tone). The system then autonomously executes DEEP/FRESH research to validate the topic, generates the module structures, writes the script, and compiles the final output directly into a branded `.excalidraw` file where slide visuals and speaker notes are embedded as native text layers for instant recording.
+FR33 formally defines **YOLO Mode within the V2WS (Visual Vault Webinar System) Pipeline (DEP-ENG-028)**. This protocol collapses the 5-stage webinar creation process into a single, chained, autonomous execution loop. The System Operator inputs exactly 5 structured constraints (Topic, Audience, Offer, Stories, Tone). The system then autonomously executes DEEP/FRESH research to validate the topic, generates the module structures, writes the script, and compiles the final output directly into a branded `.excalidraw` file where slide visuals and speaker notes are embedded as native text layers for instant recording.
 
 ### Scope
 **In scope:**
@@ -44,7 +44,7 @@ FR33 formally defines **YOLO Mode within the V²WS (Visual Vault Webinar System)
 
 | DEP-ID / Component | Name | Role in This Pipeline |
 |---|---|---|
-| `DEP-ENG-028` | V²WS YOLO Payload | OUTPUT — The final `.excalidraw` structured JSON file containing the presentation and script. |
+| `DEP-ENG-028` | V2WS YOLO Payload | OUTPUT — The final `.excalidraw` structured JSON file containing the presentation and script. |
 | `ccf-v2ws` | CCF Command | INVOCATION — The command-line entry point validating the 5 input parameters. |
 | Emilio | Idea Orchestrator | AGENT — Constructs the structural flow based on the 5 variables + Context Premise. |
 | `excalidraw_compiler.py` | Generator Engine | LOGIC — Translates structured webinar beats into specific Excalidraw JSON canvas coordinates. |

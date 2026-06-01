@@ -117,7 +117,7 @@ ccp_workflow_fit:
 
 trigger_conditions:
   - "When designing any continuous content asset that exceeds 10 minutes in duration"
-  - "During the revision phase of a V²WS webinar script"
+  - "During the revision phase of a V2WS webinar script"
   - "When reviewing analytics that show a consistent audience drop-off at a specific timestamp"
 
 suppression_conditions:

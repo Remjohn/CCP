@@ -1,5 +1,5 @@
 """
-FR33 — V²WS YOLO Mode Webinar (DEP-ENG-028)
+FR33 — V2WS YOLO Mode Webinar (DEP-ENG-028)
 5-variable intake → DEEP/FRESH research → 5-part script → Excalidraw.
 approval_gate bypass = true.
 

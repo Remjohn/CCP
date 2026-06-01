@@ -23,7 +23,7 @@ The following files were mandatory prerequisite reading before the architectural
 ## 2. Overview
 
 ### Problem Statement
-In a multi-agent system spanning the CCF (content generation), CBCS (1-on-1 text coaching), and V²WS (webinar generation), relying on a static Chat UI or naked LLM API calls results in rapid "context collapse" and "voice drift." Without rigid, programmatic control over the agent's internal read-execute-print loop, the LLM will hallucinate missing data, silently fail formatting rules, use the wrong persona for sub-tasks, and lose access to the underlying graph database.
+In a multi-agent system spanning the CCF (content generation), CBCS (1-on-1 text coaching), and V2WS (webinar generation), relying on a static Chat UI or naked LLM API calls results in rapid "context collapse" and "voice drift." Without rigid, programmatic control over the agent's internal read-execute-print loop, the LLM will hallucinate missing data, silently fail formatting rules, use the wrong persona for sub-tasks, and lose access to the underlying graph database.
 
 ### Solution
 FR39 establishes the **11 Pi Extensions (DEP-ENG-034)** built within the Pi Coding Agent harness. These are TypeScript modules that intercept the LLM's cognition *mid-loop*. By providing explicit system hooks, these extensions enforce platform-wide structural integrity. They act as the connective tissue unifying the 3 distinct ecosystems, handling everything from hard ambiguity stops (`InteractComp`) and database writes (`MemoryFolder`) to LLM cost-optimization (`ModelRouter`) and subjective vibe-checking (`SoulResonance`).

@@ -21,7 +21,7 @@
 - Exact quote establishing primitive role:
   - "Primitives are the active conscious faculties that shape how meaning is experienced, directed, and transformed."
 - Exact quote establishing system-wide reuse:
-  - "Every content pipeline — CCF scripts, CMF visuals, CBCS coaching notes, Conscious Reactions scoring, V²WS webinar slides — draws from this registry..."
+  - "Every content pipeline — CCF scripts, CMF visuals, CBCS coaching notes, Conscious Reactions scoring, V2WS webinar slides — draws from this registry..."
 - Exact quote establishing that primitives are not the deepest truth layer:
   - "SDA is a sibling intelligence stack. Primitives are not the deepest ontology; they are the active force layer that shapes experience and directed transformation."
 

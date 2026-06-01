@@ -14,7 +14,7 @@
                       "The Webinar Delivery Pipeline must split the experience into two distinct sovereign surfaces:
                       Coaches broadcast natively from the AFFiNE Studio Block, while the audience consumes and interacts
                       via a Telegram Mini App Webinar Companion."
-3. EPIC LOADED:       "Given I am watching a V²WS webinar replay inside the Mini App, When the webinar hits a predefined
+3. EPIC LOADED:       "Given I am watching a V2WS webinar replay inside the Mini App, When the webinar hits a predefined
                       extraction marker or high-tension moment, Then a timed participation prompt appears as a
                       non-blocking ambient overlay (lower-third bar or slide-in drawer) that never covers the coach's face
                       or primary video focal point..."
@@ -357,7 +357,7 @@ This spec follows the explicit fail-closed posture established by `circuit_break
 
 **CBAR Mandate enforced:** Phase3-M01
 
-**Given** I am watching a V²WS webinar replay inside the Mini App,
+**Given** I am watching a V2WS webinar replay inside the Mini App,
 **When** the webinar hits a predefined extraction marker or high-tension moment,
 **Then** the participation prompt renders only as a lower-third or right-drawer ambient overlay,
 **And** the rendered prompt rectangle has zero intersection area with the session's `protected_focal_region`,

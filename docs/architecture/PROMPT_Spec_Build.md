@@ -320,7 +320,7 @@ Step 14: V²WS + Full Cross-System Integration + Data Intelligence Layer
          Depends on: Steps 11 + 12 + 13
 
 PHASE 2B — CVE VISUAL ENGINE (after Phase 1 stable across 3+ production cycles)
-         Specs: FR-VIS-01 through FR-VIS-13, and FR-VIS-18
+         Specs: FR-VIS-01 through FR-VIS-13
          Build order within Phase 2B:
          FR-VIS-13 → Image Type Validity Gate (Gate V-00) — build first, gates everything else
          FR-VIS-07 → Format & Aspect Ratio Enforcement
@@ -334,7 +334,6 @@ PHASE 2B — CVE VISUAL ENGINE (after Phase 1 stable across 3+ production cycles
          FR-VIS-03 → PSSL Prompt Compilation (Paradoxe, RunningHub payloads)
          FR-VIS-04 → Visual Validation (AGSS scoring, authenticity checks, drift detection)
          FR-VIS-05 → Canvas Composition & Delivery (Conscious Canva App, Next.js + Fabric.js)
-         FR-VIS-18 → Spatial Composition Engine (Geometrics Pipeline) — Upgrades rendering layer of FR-VIS-05
          FR-VIS-06 → Notion Visual Content Card (VPO delivery, Why This Visual rationale)
          Depends on: Phase 1 stable
 
@@ -513,62 +512,6 @@ Step 27: Global Admin Dashboard (Factory Floor)
 - FR-COM-02 is built last — admin dashboard aggregates data from all commercial sources.
 - All Phase 5 specs use DEP-COM-001 through DEP-COM-011. Range is non-overlapping with Phase 4.
 - billing_queue, analytics_events, and mv_campaign_analytics are CBAR stress-test-sourced additions to Migration 005 v1.1. They are NOT in the original spec text — they are mandated by the Architectural Decision Log (Q5, Q9). Build them as first-class citizens.
-
-PHASE 6 — VISUAL CONTROL LAYER
-(after Phase 5 Commercial complete. Delivers expression adapter, pose library, first frame composer, identity LoRA pipeline.)
-
-⚠ DEP-ID RANGE: DEP-VIS-008 through DEP-VIS-014 allocated to Phase 6 specs.
-⚠ SCHEMA: Migration 004_visual_control_layer.sql (10 tables).
-⚠ All specs co-depend on SPEC-INFRA-001 (AWS/EFS) for production deployment — build modules as testable units without infrastructure dependency.
-
-```
-Step 28: ConsciousSmile Expression Adapter (FR-VIS-14)
-         Spec: FR-VIS-14
-         FR-VIS-14 → ConsciousSmile Expression Adapter → DEP-VIS-008, DEP-VIS-013
-                   ⚠ 28-channel FACS-based expression system (continuous 0.0–1.0 per channel)
-                   ⚠ Named emotion presets with mood state affinity mapping
-                   ⚠ LoRA weight budget enforcement: Identity(0.65) + ConsciousSmile(0.80) ≤ 1.50
-                   ⚠ Confusion pair training (8 pairs) for channel separation
-                   ⚠ Legacy VCB fallback: no expression_spec → prompt-only mode
-         Depends on: Phase 5 COMPLETE
-
-Step 29: ConsciousPose Body Language Library (FR-VIS-15)
-         Spec: FR-VIS-15
-         FR-VIS-15 → ConsciousPose Library → DEP-VIS-010
-                   ⚠ 298 composable atoms across 9 layers (body/hands/gaze/scene/mood/props/multi-char)
-                   ⚠ Composition system: atoms from different layers compose into full-body specs
-                   ⚠ ControlNet map resolver: CP-ID → EFS file path
-                   ⚠ Manifest integrity: every path resolves, every file tracked
-                   ⚠ Mood-state + archetype GIN index queries
-         Depends on: Step 28 BUILT (ConsciousSmile co-loads with ControlNet)
-
-Step 30: Identity LoRA Training Pipeline (FR-VIS-17)
-         Spec: FR-VIS-17
-         FR-VIS-17 → Identity LoRA Training Pipeline → DEP-VIS-011, DEP-VIS-014
-                   ⚠ Photo curation pipeline: background removal → auto-captioning → quality filter
-                   ⚠ Trigger token registry: unique per coach (ccp_{name})
-                   ⚠ 5-metric validation: IPS ≥ 0.85, style flexibility, expression neutrality ≤ 0.10
-                   ⚠ Auto-retry: halve LR + 500 steps, max 3 attempts before PENDING_HUMAN_REVIEW
-                   ⚠ Versioning: v2 retraining on appearance change, v1 retirement
-         Depends on: Step 28 BUILT (ConsciousSmile compatibility test is part of LoRA validation)
-
-Step 31: First Frame Composer — Iris (FR-VIS-16)
-         Spec: FR-VIS-16
-         FR-VIS-16 → First Frame Composer (Iris) → DEP-VIS-012
-                   ⚠ 6-step deterministic decision engine (no LLM reasoning)
-                   ⚠ 8-format routing table (video/carousel/thumbnail/flyer/webinar/story/poll/email)
-                   ⚠ 2-level anti-draft constraint system (stock thumbnail + format-specific)
-                   ⚠ CLIP deduplication: reject > 0.92 cosine similarity in 30-day coach window
-                   ⚠ Consumes FR-VIS-14 (expression), FR-VIS-15 (pose), FR-VIS-17 (identity LoRA)
-         Depends on: Steps 28 + 29 + 30 BUILT (FFC composes outputs from all three)
-```
-
-**SEQUENCE ENFORCEMENT RULES (continued for Phase 6):**
-- FR-VIS-14 (ConsciousSmile) is built first — it defines expression channels consumed by all downstream specs.
-- FR-VIS-15 (ConsciousPose) is built second — pose library provides ControlNet atoms consumed by FFC.
-- FR-VIS-17 (Identity LoRA) is built third — its validation requires ConsciousSmile stacking test.
-- FR-VIS-16 (First Frame Composer / Iris) is built last — it composes specs from all three inputs.
-- All Phase 6 specs use DEP-VIS-008 through DEP-VIS-014. Range overlaps with Phase 2B visual specs by design (they share the VIS namespace).
 
 ---
 
@@ -968,23 +911,13 @@ BUILD STATS:
   - Step 21: FR-CA11-16 (66) + FR-CA11-17 (44) = 110 tests
   - Step 22: FR-CA11-18 (34) + FR-CA11-19 (71) + FR-CA11-20 (33) = 138 tests
   - Step 23: FR-CA11-21 (46) + FR-CA11-22 (45) = 91 tests
-- Phase 5 Commercial: COMPLETE ✅ (4/4 specs BUILT, Steps 24-27 BUILT, 140 tests)
-   - Step 24: FR-COM-01 (Billing Middleware) — BUILT ✅ (48 tests)
-   - Step 25: FR-COM-04 (Program & Campaign Manager) — BUILT ✅ (40 tests)
-   - Step 26: FR-COM-03 (Telegram Code Onboarding Agent) — BUILT ✅ (27 tests)
-   - Step 27: FR-COM-02 (Global Admin Dashboard) — BUILT ✅ (25 tests)
-- Phase 6 Visual Control Layer: COMPLETE ✅ (4/4 specs BUILT, Steps 28-31 BUILT, 123 tests)
-   - Step 28: FR-VIS-14 (ConsciousSmile Adapter) — BUILT ✅ (35 tests)
-   - Step 29: FR-VIS-15 (ConsciousPose Library) — BUILT ✅ (28 tests)
-   - Step 30: FR-VIS-17 (Identity LoRA Pipeline) — BUILT ✅ (30 tests)
-   - Step 31: FR-VIS-16 (Iris First Frame Composer) — BUILT ✅ (30 tests)
-- Steps BUILT: 31 (Steps 1–31)
+- Steps BUILT: 23 (Steps 1–23)
 - Steps PENDING: 0
 - Steps BLOCKED: 0
 - Open BUILD_FLAGS: 0
 - Open BUILD_AMBIGUITY flags: 0
 - Open BUILD_BLOCKED flags: 0
-- Total tests passing: 3042 (2440 + 339 Studio + 140 Commercial + 123 Visual Phase 6)
+- Total tests passing: 2779 (2440 + 339 Studio)
 ```
 
 ---

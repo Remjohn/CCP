@@ -1,5 +1,5 @@
 ---
-name: "V²WS TTT × Visual Hook Integration"
+name: "V2WS TTT × Visual Hook Integration"
 description: "Maps TTT levels to visual styles — ensuring slide aesthetics match the emotional temperature"
 agent: Elene (Slide Composer)
 ccp_layer: Expression (L7)
@@ -11,7 +11,7 @@ outputs:
   - v2ws/visual/{webinar_id}_ttt_visual_map.json
 ---
 
-# 🌡️ V²WS TTT × VISUAL HOOK INTEGRATION
+# 🌡️ V2WS TTT × VISUAL HOOK INTEGRATION
 
 Maps the TTT temperature system to visual design parameters. Low-TTT content gets clean, minimal visuals. High-TTT content gets bold, confrontational visuals.
 

@@ -12,7 +12,7 @@ Darian Smith’s *The Psychology Workbook for Writers* represents a unique struc
 
 The core value of this text for the CCP lies in its systematization of the subconscious. It provides a taxonomy for internal conflict (Injunctions vs. Drivers), relationship deterioration (Gottman’s Four Horsemen, Love Language mismatches), conversational ego switching (Parent-Adult-Child dynamics, the Drama Triangle), and conflict escalation (Submit-Logic-Anger sequencing). This allows the CCP's agentic workflows and content engine to move beyond reactive coaching into predictive narrative structuring. By understanding the "script" a client or audience member is unconsciously running, the CCP can generate content and conversational nodes that directly intersect, challenge, or soothe these underlying psychological frameworks. 
 
-In the context of the CCP's Trigger-First architecture, Smith’s primitives provide the exact variables needed to parameterize character (Archetype) depth and audience psychological profiling. We can use these tools to ensure our V²WS webinars push the specific psychological buttons that dictate action, and that our CCF Coach Archetypes contain the precise blend of internal friction and shadow-self awareness to resonate with maximum authenticity.
+In the context of the CCP's Trigger-First architecture, Smith’s primitives provide the exact variables needed to parameterize character (Archetype) depth and audience psychological profiling. We can use these tools to ensure our V2WS webinars push the specific psychological buttons that dictate action, and that our CCF Coach Archetypes contain the precise blend of internal friction and shadow-self awareness to resonate with maximum authenticity.
 
 ---
 
@@ -169,13 +169,13 @@ Below are detailed, practical methodologies for injecting these psychological pr
 The script narrates the tension: "I spent a decade operating under a corrupted line of code. My subconscious believed my existence was a burden, so I developed an armor made entirely of achievement. I became the guy who solved everyone's problems flawlessly (Driver), hoping that if I was perfect enough, I'd finally earn the right to just simply exist. The breaking point wasn't the workload. The workload was just a symptom. The breaking point was sitting in a boardroom realizing that the more perfect I became, the more alienated and lonely the 'Shadow' part of me felt, because nobody loved me—they only loved the machine I had built. I didn't need a vacation. I needed a system reboot."
 **The Result:** The archetype transitions from a standard "success story" into a profound psychological mirror. The audience recognizes their own Driver/Injunction tug-of-war, creating instantaneous, deep-rooted empathy and authority.
 
-### CASE STUDY 2: V²WS WEBINARS SCRIPTS & VISUALS — The Drama Triangle
-**Workflow:** Designing the narrative flow and visual storytelling elements for a 60-minute automated lead-generation V²WS webinar.
+### CASE STUDY 2: V2WS WEBINARS SCRIPTS & VISUALS — The Drama Triangle
+**Workflow:** Designing the narrative flow and visual storytelling elements for a 60-minute automated lead-generation V2WS webinar.
 **Primitive Applied:** The Drama Triangle (Victim, Persecutor, Rescuer).
 
 **The Scenario:** Most webinars structure their hook around a generic "Problem/Solution" binary. The consequence is audience passivity; they wait for the host to "Rescue" them.
 
-**The Application:** The V²WS webinar intentionally maps its first 20 minutes onto the Drama Triangle. 
+**The Application:** The V2WS webinar intentionally maps its first 20 minutes onto the Drama Triangle. 
 *Visual Phase 1:* The screen displays the client's current pain point (e.g., failing to scale an agency). The voiceover maps the client's internal monologue—how they view the Algorithm, their Clients, or the Economy as the **Persecutor**, placing themselves firmly in the **Victim** role. 
 *Visual Phase 2:* The webinar directly calls out the trap. "As long as you view the Market as your Persecutor, you sit in the Victim seat, desperately waiting for a new marketing tactic to **Rescue** you. But marketing tactics can't rescue Victims."
 *Visual Phase 3 (The Shift):* The visuals dramatically shift, physically "breaking" a geometric triangle on screen. The host forces the audience into the Adult ego state. "I am not here to rescue you. A coach who rescues you makes you dependent. I am here to hand you the system mechanics. We step off the triangle today."
@@ -210,7 +210,7 @@ Once the client's nervous system settles (often within minutes), the coach waits
 ### STRENGTHS
 | Core Advantage | CCP Application |
 |---|---|
-| **Provides the Blueprint for Deterministic Conflict.** Treats emotion as a mechanics issue. | Empowers the CCP to algorithmically generate suspense in CMF/V²WS narratives without relying on generic tropes. |
+| **Provides the Blueprint for Deterministic Conflict.** Treats emotion as a mechanics issue. | Empowers the CCP to algorithmically generate suspense in CMF/V2WS narratives without relying on generic tropes. |
 | **Bypasses Surface-Level Coaching.** Directly addresses root systemic causes (Injunctions/Homeostasis). | Elevates the CCP above typical "hustle-culture mindset" advice, entering clinical-grade effectiveness. |
 | **Modular and Combinable.** MBTI, Drama Triangle, and Ego states can be stacked. | Provides a massive matrix of combinations for generating thousands of unique, psychologically consistent characters and client avatars. |
 | **Eliminates the 'Guru' Complex.** Replaces moralizing judgements with systemic analysis. | Trains coaches to remain completely unbothered and sovereign when clients lash out, as all attacks are merely systemic noise. |
@@ -226,7 +226,7 @@ Once the client's nervous system settles (often within minutes), the coach waits
 | Scaling Leverage | CCP Strategy |
 |---|---|
 | **The 'Psychological Dashboard' for Clients.** | Design a CCP onboarding assessment that maps a client's MBTI, dominant Narrative Script, and Conflict Style Escalation. The Coach's dashboard displays this, making interventions hyper-personalized from Day 1. |
-| **V²WS 'Mind-Reading' Conversions.** | Script webinars that explicitly map out the Drama Triangle and the *Until* script. When a prospect hears their inner, secret saboteur described scientifically on a webinar, trust skyrockets instantly. |
+| **V2WS 'Mind-Reading' Conversions.** | Script webinars that explicitly map out the Drama Triangle and the *Until* script. When a prospect hears their inner, secret saboteur described scientifically on a webinar, trust skyrockets instantly. |
 | **Automated Burnout Detection.** | Train the Content Engine to look for language patterns indicating *Be Perfect / Try Hard* Drivers colliding with systemic resistance. Flag these accounts for a fast-tracked "Homeostasis Reset" mini-course pitch. |
 
 ### THREATS

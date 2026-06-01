@@ -1,5 +1,5 @@
 ---
-name: "V²WS Micro-Commitment Builder"
+name: "V2WS Micro-Commitment Builder"
 description: "Gets small 'yes' responses before asking for big commitment — progressive compliance"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

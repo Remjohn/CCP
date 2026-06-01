@@ -60,6 +60,14 @@ Phase 6 (spec updates — can run in parallel with Phase 4-5)
   ├── S32 FR-CA11-16 Update: AFFiNE Broadcast Path
   ├── S33 FR-COM-01 Update: Pricing Tiers
   └── S34 FR58 Update: Offer Tier Governor
+
+Phase 7 (Living Commentary & Coach Communication Stack)
+  ├── Wave A: CMF & Archetype Updates (S58-S59)
+  ├── Wave B: Eval & Scorecard Updates (S60-S61)
+  ├── Wave C: Coach Communication Modules (S62-S65)
+  ├── Wave D: Speaking & Webinar Programs (S66-S69)
+  ├── Wave E: Global Supervisor & Workflow (S70-S74)
+  └── Wave F: Extensions & Intelligence (S75-S79)
 ```
 
 ---
@@ -102,6 +110,28 @@ Phase 6 (spec updates — can run in parallel with Phase 4-5)
 | 32 | P6_S32_FR-CA11-16_Update_AFFiNE_Broadcast_Path.md | FR-CA11-16 | UPDATE: AFFiNE Broadcast Path | 6 | N/A | 🔲 Not Started |
 | 33 | P6_S33_FR-COM-01_Update_Pricing_Tiers.md | FR-COM-01 | UPDATE: Pricing Tiers | 6 | N/A | 🔲 Not Started |
 | 34 | P6_S34_FR58_Update_Offer_Tier_Architecture.md | FR58 | UPDATE: Offer Tier Governor | 6 | N/A | 🔲 Not Started |
+| 35 | P7_S58_Update_FR-ERA3-12_CMF_Arc_Governed_Rendering_for_Living_Commentary.md | FR-ERA3-12 | Update CMF Arc Governed Rendering | 7 | N/A | 🔲 Not Started |
+| 36 | P7_S59_Update_FR-ERA3-16_Archetype_Container_Runtime_for_Living_Commentary_Bundles.md | FR-ERA3-16 | Update Archetype Container Runtime | 7 | N/A | 🔲 Not Started |
+| 37 | P7_S60_Update_FR-ERA3-35B_Content_Benchmark_Profiles_for_Presence_Weighted_Living_Commentary.md | FR-ERA3-35B | Update Content Benchmark Profiles | 7 | N/A | 🔲 Not Started |
+| 38 | P7_S61_Update_FR-ERA3-35C_Eval_Card_System_for_Living_Commentary_And_SSS.md | FR-ERA3-35C | Update Eval Card System for SSS | 7 | N/A | 🔲 Not Started |
+| 39 | P7_S62_FR-ERA3-48_Persuasive_Speaking_Program_Runtime_And_Telemetry.md | FR-ERA3-48 | Persuasive Speaking Program Runtime | 7 | N/A | 🔲 Not Started |
+| 40 | P7_S63_FR-ERA3-50A_Communication_Module_Library_And_Primitive_Crosswalk.md | FR-ERA3-50A | Communication Module Library | 7 | N/A | 🔲 Not Started |
+| 41 | P7_S64_FR-ERA3-50C_Communication_Module_Recipe_Library_And_Delivery_Patterns.md | FR-ERA3-50C | Communication Module Recipe Library | 7 | N/A | 🔲 Not Started |
+| 42 | P7_S65_FR-ERA3-50D_Persuasive_State_Shift_Evaluator_And_Delivery_Scoring.md | FR-ERA3-50D | Persuasive State Shift Evaluator | 7 | N/A | 🔲 Not Started |
+| 43 | P7_S66_FR-ERA3-49A_Seminar_Speaking_Score_Card_And_Badge_Runtime.md | FR-ERA3-49A | Seminar Speaking Score Card Runtime | 7 | N/A | 🔲 Not Started |
+| 44 | P7_S67_FR-ERA3-49_Transformational_Webinar_Program_And_Module_Compiler.md | FR-ERA3-49 | Transformational Webinar Program | 7 | N/A | 🔲 Not Started |
+| 45 | P7_S68_Update_Voice_To_Lesson_Runtime_for_FR-ERA3-50.md | FR-ERA3-50 | Update Voice-To-Lesson Runtime | 7 | N/A | 🔲 Not Started |
+| 46 | P7_S69_Update_FR-ERA3-01_Webinar_Companion_for_Recorded_Distribution_And_Telegram_Discussion.md | FR-ERA3-01 | Update Webinar Companion | 7 | N/A | 🔲 Not Started |
+| 47 | P7_S70_FR-ERA3-45_Telegram_Webinar_Moderator_Bot.md | FR-ERA3-45 | Telegram Webinar Moderator Bot | 7 | N/A | 🔲 Not Started |
+| 48 | P7_S71_FR-ERA3-41_Global_Signal_Telemetry_Constitution.md | FR-ERA3-41 | Global Signal Telemetry Constitution | 7 | N/A | 🔲 Not Started |
+| 49 | P7_S72_FR-ERA3-42_Global_Supervisor_Agent.md | FR-ERA3-42 | Global Supervisor Agent | 7 | N/A | 🔲 Not Started |
+| 50 | P7_S73_FR-ERA3-55_CCP_Workflow_And_Pipeline_Registry.md | FR-ERA3-55 | CCP Workflow And Pipeline Registry | 7 | N/A | 🔲 Not Started |
+| 51 | P7_S74_FR-ERA3-56_Command_Surface_And_Experience_Router.md | FR-ERA3-56 | Command Surface And Experience Router | 7 | N/A | 🔲 Not Started |
+| 52 | P7_S75_Update_FR39_Pi_Extension_Harness_for_ERA3_Execution_Graph.md | FR39 | Update Pi Extension Harness (Graph) | 7 | N/A | 🔲 Not Started |
+| 53 | P7_S76_Update_FR39_Pi_Extension_Harness_for_Semantic_And_Perceptual_Extensions.md | FR39 | Update Pi Harness (Semantic) | 7 | N/A | 🔲 Not Started |
+| 54 | P7_S77_Update_FR39_Pi_Extension_Harness_for_SCRE_And_SVRE_Operations.md | FR39 | Update Pi Harness (SCRE/SVRE) | 7 | N/A | 🔲 Not Started |
+| 55 | P7_S78_FR-ERA3-50E_Expressive_Memory_Bank_And_Proof_Archive.md | FR-ERA3-50E | Expressive Memory Bank | 7 | N/A | 🔲 Not Started |
+| 56 | P7_S79_FR-ERA3-50F_Objection_Intelligence_And_Response_Compiler.md | FR-ERA3-50F | Objection Intelligence Compiler | 7 | N/A | 🔲 Not Started |
 
 ---
 
@@ -116,7 +146,11 @@ Phase 6 (spec updates — can run in parallel with Phase 4-5)
 | Session E | P3_S15 through P3_S20 | 6 Phase 3 specs |
 | Session F | P4_S21 through P4_S27 | 7 Phase 4 specs |
 | Session G | P5_S28 through P6_S34 | 7 Phase 5+6 specs |
-
+| Session H | P7_S58 through P7_S61 | 4 Phase 7 specs (Wave A+B) |
+| Session I | P7_S62 through P7_S65 | 4 Phase 7 specs (Wave C) |
+| Session J | P7_S66 through P7_S69 | 4 Phase 7 specs (Wave D) |
+| Session K | P7_S70 through P7_S74 | 5 Phase 7 specs (Wave E) |
+| Session L | P7_S75 through P7_S79 | 5 Phase 7 specs (Wave F) |
 > [!WARNING]
 > **Session B (CORE) must complete and be reviewed before Sessions C and D begin.** All 10 Mini App specs depend on the CORE engine contracts defined in FR-ERA3-05-CORE.
 

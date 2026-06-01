@@ -73,18 +73,18 @@ Operational laws constraining drift and enforcing depth.
 | `DEP-PROTO-009` | AIP 5-Lens Protocol | `vibe-comments` | Research | ✅ CCF |
 | `DEP-PROTO-010` | I-R-E-V-C Session State Machine | Markdown Skills | All Agents | ✅ CCF |
 
-### Category 4: V²WS Extrapolation Libraries (6 Items)
+### Category 4: V2WS Extrapolation Libraries (6 Items)
 
-The multimodal physics layer specifically driving the "Reaction Paradigm" of the Viral Vertical Webinar System.
+The multimodal physics layer specifically driving the "Reaction Paradigm" of the Voice2WebinarSystem.
 
 | DEP ID | Name | File/Location | Required By | Status |
 |:-------|:-----|:--------------|:------------|:-------|
-| `DEP-WS-001` | TTT System v3.0 (Visual/Timing) | `ttt_system_v3.json` | V²WS Scripting | ✅ V²WS |
-| `DEP-WS-002` | Brand DNA (Functional Color) | `brand_DNA.json` | Visual Director | ✅ V²WS |
-| `DEP-WS-003` | Reaction Timing Framework | `reaction_timing...yaml` | Delivery Engineer | ✅ V²WS |
-| `DEP-WS-004` | 72-Slide Modular Architecture | `framework_72_slides.yaml` | Script Architect | ✅ V²WS |
-| `DEP-WS-005` | Slide Design Physics | `slide_design_physics.yaml`| V²WS Assembly | ✅ V²WS |
-| `DEP-WS-006` | Humor Theory Selector | `meme_orchestrator.yaml` | Visual Director | ✅ V²WS |
+| `DEP-WS-001` | TTT System v3.0 (Visual/Timing) | `ttt_system_v3.json` | V2WS Scripting | ✅ V2WS |
+| `DEP-WS-002` | Brand DNA (Functional Color) | `brand_DNA.json` | Visual Director | ✅ V2WS |
+| `DEP-WS-003` | Reaction Timing Framework | `reaction_timing...yaml` | Delivery Engineer | ✅ V2WS |
+| `DEP-WS-004` | 72-Slide Modular Architecture | `framework_72_slides.yaml` | Script Architect | ✅ V2WS |
+| `DEP-WS-005` | Slide Design Physics | `slide_design_physics.yaml`| V2WS Assembly | ✅ V2WS |
+| `DEP-WS-006` | Humor Theory Selector | `meme_orchestrator.yaml` | Visual Director | ✅ V2WS |
 
 ---
 
@@ -112,7 +112,7 @@ graph TD
         SM["DEP-PROTO-006<br/>Smart Mix Distribution"]
     end
 
-    subgraph "V²WS Reaction Pipeline (Webinars)"
+    subgraph "V2WS Reaction Pipeline (Webinars)"
         T3["DEP-WS-001<br/>TTT v3.0 (Multimodal)"]
         BDNA["DEP-WS-002<br/>Brand DNA"]
         RT["DEP-WS-003<br/>Reaction Timing"]
@@ -133,7 +133,7 @@ graph TD
     GEN --> SM
     CTX --> AD
     
-    %% V²WS Flow
+    %% V2WS Flow
     SOUL --> T3
     CTX --> MO
     T3 --> RT
@@ -161,8 +161,8 @@ The 38 architecture dependencies must conceptually be generated, loaded, or eval
 | `DEP-LIB-005` | Cognitive Distortion Defs | Library |
 | `DEP-LIB-006` | Identity Threat Taxonomy | Library |
 | `DEP-LIB-007` | SDT Markers | Library |
-| `DEP-WS-002` | Brand DNA (Functional Color) | V²WS |
-| `DEP-WS-005` | Slide Design Physics | V²WS |
+| `DEP-WS-002` | Brand DNA (Functional Color) | V2WS |
+| `DEP-WS-005` | Slide Design Physics | V2WS |
 | `DEP-PROTO-*`| All 10 Protocols / Quality Gates | Operational |
 
 ### Tier 1 — Derived Identities

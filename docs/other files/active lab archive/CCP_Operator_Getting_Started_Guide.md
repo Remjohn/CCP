@@ -15,7 +15,7 @@ The system is divided into **six capability pillars:**
 |--------|-------------|----------------|
 | **CCF** (Conscious Content Factory) | Weekly batch production of 36+ psychologically-routed scripts | JIT Skill Compiler (CCSB) |
 | **CVE** (Conscious Visual Engine) | Post-script visual generation using 7 neurological design pillars | Abel → Aurore → Paradoxe → RunningHub → Canva App |
-| **V²WS** (Webinar System) | Modular webinar generation — every slide engineered as a HOOK | YOLO Mode + Interactive Mode → Excalidraw JSON |
+| **V2WS** (Webinar System) | Modular webinar generation — every slide engineered as a HOOK | YOLO Mode + Interactive Mode → Excalidraw JSON |
 | **Tierlist** (Video Generators) | Weekly tier list & rating video ideas sent to coaches via Telegram | Vite+React frontend + Telegram bot + Excalidraw pipeline |
 | **CBCS** (Conscious Bot Coaching System) | Client relationship intelligence via Telegram voice notes | 14 psychological protocols (SPT, DARN-CAT, ELM, CASA) |
 | **CPSC** (Conscious Persuasion Sales Cycle) | Ethical conversion through temporal triggers and identity anchoring | Campaign Orchestrator (Samuel) + 72-Hour Protocol |
@@ -53,7 +53,7 @@ The Conscious Coaching Factory/
 │   │   ├── setup/                    — Genesis & onboarding skills
 │   │   ├── validation/               — Quality gate skills
 │   │   └── visual-recipes/           — Visual composition templates
-│   ├── v2ws/                         ← V²WS WEBINAR SKILLS (9 areas)
+│   ├── v2ws/                         ← V2WS WEBINAR SKILLS (9 areas)
 │   │   ├── close/                    — Webinar closing sequences
 │   │   ├── content/                  — Core webinar content modules
 │   │   ├── intro/                    — Opening hooks
@@ -153,24 +153,24 @@ Your `.env` file already contains keys for 16 services. Here is what each one po
 
 ---
 
-## 4. V²WS, Excalidraw & Tierlist — The Video/Webinar Pipeline
+## 4. V2WS, Excalidraw & Tierlist — The Video/Webinar Pipeline
 
 These are the systems that turn scripts into **visual presentation assets** — webinar decks, tier list videos, and animated Excalidraw canvases.
 
-### 4.1 V²WS — Webinar Generation System
+### 4.1 V2WS — Webinar Generation System
 
-V²WS has **two modes**, both outputting native `.excalidraw` JSON:
+V2WS has **two modes**, both outputting native `.excalidraw` JSON:
 
 | Mode | Service | How It Works |
 |------|---------|-------------|
 | **YOLO Mode** (FR33) | `v2ws_yolo_service.py` | Zero-pause: 5 inputs → 5-part script (Hook → Problem → Paradigm Shift → Method → Offer) → Excalidraw with 1920×1080 slides + speaker notes outside viewport. No approval gates. |
 | **Interactive Mode** (FR34) | `v2ws_interactive_service.py` | Telegram BMAD-style: real-time audience-sentiment adjustments, operator approval between sections. |
 
-V²WS has **9 dedicated skill areas** under `skills/v2ws/`: intro, content, meme, research, transition, close, visual, voice, and orchestration — each containing JIT-compiled micro-prompts for modular webinar assembly (Jason Fladlien method).
+V2WS has **9 dedicated skill areas** under `skills/v2ws/`: intro, content, meme, research, transition, close, visual, voice, and orchestration — each containing JIT-compiled micro-prompts for modular webinar assembly (Jason Fladlien method).
 
 ### 4.2 Excalidraw Pipeline (Benjamin)
 
-The Excalidraw pipeline is the **shared rendering layer** that both V²WS and Tierlist use:
+The Excalidraw pipeline is the **shared rendering layer** that both V2WS and Tierlist use:
 
 | Component | Service | What It Does |
 |-----------|---------|-------------|

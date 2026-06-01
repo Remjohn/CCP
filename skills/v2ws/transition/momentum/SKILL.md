@@ -1,5 +1,5 @@
 ---
-name: "V²WS Momentum Builder"
+name: "V2WS Momentum Builder"
 description: "Stacks evidence of transformation to build unstoppable forward momentum"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

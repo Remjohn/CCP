@@ -1,6 +1,6 @@
 """
 Step 14 Integration Tests
-V²WS + Full Cross-System Integration + Data Intelligence Layer
+V2WS + Full Cross-System Integration + Data Intelligence Layer
 Covers ALL 18 specs: FR27, FR30, FR31, FR32, FR33, FR34, FR35, FR36,
                       FR37, FR41, FR42, FR43, FR45, FR46, FR47, FR48, FR49, FR50
 
@@ -469,7 +469,7 @@ class TestFR32AtlasRoadmap:
 
 
 # ═════════════════════════════════════════════════════════
-# FR33 — V²WS YOLO Mode (DEP-ENG-028)
+# FR33 — V2WS YOLO Mode (DEP-ENG-028)
 # ═════════════════════════════════════════════════════════
 
 class TestFR33YoloMode:
@@ -532,7 +532,7 @@ class TestFR33YoloMode:
 
 
 # ═════════════════════════════════════════════════════════
-# FR34 — V²WS Interactive Mode (DEP-ENG-029)
+# FR34 — V2WS Interactive Mode (DEP-ENG-029)
 # ═════════════════════════════════════════════════════════
 
 class TestFR34InteractiveMode:

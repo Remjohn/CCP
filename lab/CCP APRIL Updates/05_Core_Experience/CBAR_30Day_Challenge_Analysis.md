@@ -58,7 +58,7 @@ This is "Show Before Selling" taken to its absolute logical extreme: **you don't
 
 ### The "Eat Your Own Dog Food" Effect
 
-This is the insight that makes the entire V²WS and CBCS pipeline click:
+This is the insight that makes the entire V2WS and CBCS pipeline click:
 
 **The coach goes through THEIR OWN 30-day challenge before they ever sell a challenge to their clients.**
 

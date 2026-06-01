@@ -1,5 +1,5 @@
 ---
-name: "V²WS Hook"
+name: "V2WS Hook"
 description: "Webinar opening hook — pattern interrupt that breaks the audience's default mental state"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

@@ -133,11 +133,11 @@ Gallo's ninth secret — "Stay in Your Lane" — appears to contradict his first
 
 **Result:** One beat out of six becomes the beat the audience remembers. The dopamine tag from the ECS makes the entire cluster more memorable by association. The audience retells this beat when they describe the cluster to someone else: "She talked about this moment where she just stopped coaching and started witnessing, and the client completely broke open."
 
-### CASE STUDY 3: V²WS Webinar Scripts — Applying the 18-Minute Constraint and Soft Break Architecture to a 90-Minute Conversion Webinar
+### CASE STUDY 3: V2WS Webinar Scripts — Applying the 18-Minute Constraint and Soft Break Architecture to a 90-Minute Conversion Webinar
 
 **Primitives Applied:** 18-Minute Constraint (#3) + Rule of Three (#4) + Pathos Allocation (#1)
 
-**Problem:** A V²WS webinar on "Finding Your Authentic Voice as a Coach" runs 90 minutes and follows a traditional structure: 20-minute introduction + 50-minute core teaching + 20-minute Q&A. Audience engagement data shows a steep drop-off at minute 28, a secondary drop at minute 45, and only 40% of registrants remain at minute 60. Post-webinar surveys report: "Too long, too much content, lost track of the structure."
+**Problem:** A V2WS webinar on "Finding Your Authentic Voice as a Coach" runs 90 minutes and follows a traditional structure: 20-minute introduction + 50-minute core teaching + 20-minute Q&A. Audience engagement data shows a steep drop-off at minute 28, a secondary drop at minute 45, and only 40% of registrants remain at minute 60. Post-webinar surveys report: "Too long, too much content, lost track of the structure."
 
 **Gallo Restructure — Four 18-Minute Blocks + Three Soft Breaks:**
 

@@ -51,7 +51,7 @@ For CCP, this primitive is close to gold. It is one of the easiest to operationa
 
 The book’s story-building method of “narrative stepping stones” is one of its most practical contributions. Instead of jumping straight to prose, it teaches the teller to identify the key beats required for the listener to follow. These stepping stones are then rendered through three tools: scenes, summaries, and reflections. That alternation is especially important. The story cannot be all plot, and it cannot be all commentary. It must move between lived action and interpreted meaning.
 
-This is a superb primitive for CCP. It maps well to content scripting, webinar chaptering, and CMF beat clustering. A strong CCF script can be built from scene-summary-reflection cycles. A V²WS webinar can use them to avoid both lecture sludge and overdramatic theatrics. A Telegram reflection can use a compressed version: one lived scene, one interpreted insight, one next-step invitation. This primitive is also ideal for agent training because it is both teachable and testable.
+This is a superb primitive for CCP. It maps well to content scripting, webinar chaptering, and CMF beat clustering. A strong CCF script can be built from scene-summary-reflection cycles. A V2WS webinar can use them to avoid both lecture sludge and overdramatic theatrics. A Telegram reflection can use a compressed version: one lived scene, one interpreted insight, one next-step invitation. This primitive is also ideal for agent training because it is both teachable and testable.
 
 ### 7. Emotional Magnification Through Vulnerable Specificity
 
@@ -78,7 +78,7 @@ This book is unusually clear that storytelling is relational. The listener is no
 ## Part III - MCDA of the 7 Primitives
 
 **Scoring Logic**
-- `Strategic Fit` with CCP, CCF, CBCS, CMF, V²WS: `0-50`
+- `Strategic Fit` with CCP, CCF, CBCS, CMF, V2WS: `0-50`
 - `Ease of Operationalization` into prompts, validators, and workflows: `0-50`
 - `Cross-Modal Transfer` across text, voice, visual, and conversation: `0-50`
 - `Differentiation Power` against generic AI output: `0-50`
@@ -137,13 +137,13 @@ Using Narrative Stepping Stones, CMF can also assign each image a story job: set
 
 The book’s “Big Little Story” logic is especially useful here. A tiny object or remembered gesture can carry the meaning of the whole piece. That gives CMF a way to choose images that are not just visually attractive but semantically loaded, which is exactly what cinematic short-form content needs.
 
-### Case Study 3. V²WS Webinar Scripts and Visual Composition
+### Case Study 3. V2WS Webinar Scripts and Visual Composition
 
-Webinars often collapse into information piles because they lack a human entry point. This book suggests starting with a lived scene, then widening into meaning. A V²WS webinar could open with a Big Little Story that captures the entire emotional thesis in miniature, then move into the framework. That lets the audience feel the issue before the teaching begins.
+Webinars often collapse into information piles because they lack a human entry point. This book suggests starting with a lived scene, then widening into meaning. A V2WS webinar could open with a Big Little Story that captures the entire emotional thesis in miniature, then move into the framework. That lets the audience feel the issue before the teaching begins.
 
 The One-Sentence Lens would help each webinar module stay honest about what it is proving. Narrative Stepping Stones would stop sections from becoming meandering lectures by forcing a sequence of scene, summary, and reflection. Emotional Magnification would ensure that the presenter is not only informative, but emotionally intelligible. This would make webinars feel closer to guided recognition than to slide-based explanation.
 
-The ending lesson matters as well. The book is excellent on earned endings and warns against neat, fake, or preachy closes. Applied to V²WS, that means the webinar should resolve the same emotional and conceptual question it opened rather than ending with detached motivation or a generic CTA. That would improve both trust and persuasive integrity.
+The ending lesson matters as well. The book is excellent on earned endings and warns against neat, fake, or preachy closes. Applied to V2WS, that means the webinar should resolve the same emotional and conceptual question it opened rather than ending with detached motivation or a generic CTA. That would improve both trust and persuasive integrity.
 
 ### Case Study 4. Agentic Mental Models, Voice Coaching, and Telegram Conversations
 

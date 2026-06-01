@@ -4,7 +4,7 @@ inputDocuments: [
   "C:/Users/Mitano/.gemini/antigravity/brain/d2fa065a-161c-494d-a6d5-b605390c1a7a/CCP_Unified_Architecture_MCDA.md"
 ]
 session_topic: 'Brownfield Asset Audit for CCP'
-session_goals: 'Determine KEEP/UPGRADE/REPLACE/ADD for existing CCF, CBCS, and V²WS assets'
+session_goals: 'Determine KEEP/UPGRADE/REPLACE/ADD for existing CCF, CBCS, and V2WS assets'
 selected_approach: ''
 techniques_used: []
 ideas_generated: []
@@ -15,14 +15,14 @@ context_file: 'd:/Work/The Conscious Coaching Factory/bmad/.bmad/bmm/data/projec
 
 ## Session Overview
 
-**Topic:** Brownfield Asset Audit for CCP (CCF + CBCS + V²WS)
-**Goals:** Determine KEEP/UPGRADE/REPLACE/ADD for existing CCF, CBCS, and V²WS assets to build the unified Pi-native orchestration architecture.
+**Topic:** Brownfield Asset Audit for CCP (CCF + CBCS + V2WS)
+**Goals:** Determine KEEP/UPGRADE/REPLACE/ADD for existing CCF, CBCS, and V2WS assets to build the unified Pi-native orchestration architecture.
 
 ### Context Guidance
 
 This brainstorming session focuses on the CCP infrastructure rebuild, specifically addressing:
 - **Technical Approaches:** How we wire the 12 CBCS Python agents, 28 CCF commands, and 87 skills under the new Pi Coding Agent harness.
-- **Technical Risks:** Avoiding the accidental overwrite of existing, working IP (like the 72-slide V²WS engine or the sacred coach voice notes).
+- **Technical Risks:** Avoiding the accidental overwrite of existing, working IP (like the 72-slide V2WS engine or the sacred coach voice notes).
 
 ### Session Setup
 _User selected AI-Recommended techniques approach and approved the custom sequence._
@@ -30,14 +30,14 @@ _User selected AI-Recommended techniques approach and approved the custom sequen
 ## Technique Selection
 
 **Approach:** AI-Recommended Techniques
-**Analysis Context:** Brownfield Asset Audit for CCP with focus on determining KEEP/UPGRADE/REPLACE/ADD for existing CCF, CBCS, and V²WS assets.
+**Analysis Context:** Brownfield Asset Audit for CCP with focus on determining KEEP/UPGRADE/REPLACE/ADD for existing CCF, CBCS, and V2WS assets.
 
 **Recommended Techniques:**
 - **Constraint Mapping:** Identifies the unchangeable IP boundaries vs. areas ripe for Pi-native upgrade.
 - **Solution Matrix:** The core evaluation grid to definitively categorize every CCP asset into KEEP, UPGRADE, REPLACE, ADD.
 - **Decision Tree Mapping:** Maps architectural paths for UPGRADE/ADD items to define PM and Architect requirements.
 
-**AI Rationale:** The constraint is strict protection of existing operational IP (V²WS + voice notes). A methodical, structured approach ensures thorough analysis before attempting orchestration redesign.
+**AI Rationale:** The constraint is strict protection of existing operational IP (V2WS + voice notes). A methodical, structured approach ensures thorough analysis before attempting orchestration redesign.
 
 ## Technique Execution Results
 
@@ -78,7 +78,7 @@ During the brainstorm, we clarified the exact differences between these core con
 **Focus:** Map architectural paths for how Pi manages the Board, the Library, and the Tools.
 
 **The Orchestration Flow:**
-1. **Pi Coding Agent (The Harness):** Receives the user request (e.g., "Write a V²WS webinar").
+1. **Pi Coding Agent (The Harness):** Receives the user request (e.g., "Write a V2WS webinar").
 2. **The Recruiter (Python Manager):** Pi calls the Python manager, which analyzes the request and dynamically recruits the required Board of Directors (e.g., Aria and Kimya).
 3. **The Library (Memory):** Aria and Kimya immediately fetch their specific `SKILL.md` files and the relevant "Sacred Voice Notes" from the Intelligence Library.
 4. **The Tools (Action):** The agents use Python Tools to execute the creative logic systematically.
@@ -89,10 +89,10 @@ Tools are not just for structured data; they are the *engines* of creativity. A 
 **The 7 Ultimate CCP Tools:**
 1. `fetch_sacred_voice(topic)`: Semantically searches the raw, unfolded coach transcripts and injects pure, unaltered Stream of Consciousness into the agent's context.
 2. `calibrate_ttt(text, ttt_level)`: Takes baseline text and strictly enforces the vocabulary constraints of the 6 Temperature Temperament Tone levels (e.g., converting L1 Diplomatic to L6 Truth Bomb).
-3. `apply_humor_theory(theory_type, concept)`: For V²WS memes. The agent inputs a topic, and the tool forces the output through one of the 4 strict humor structures (Relief, Incongruity, Superiority, Benign Violation).
+3. `apply_humor_theory(theory_type, concept)`: For V2WS memes. The agent inputs a topic, and the tool forces the output through one of the 4 strict humor structures (Relief, Incongruity, Superiority, Benign Violation).
 4. `generate_layered_questions(tension_level)`: Implements the CCF Distillation Funnel. The tool programmatically ensures the 4 Laws (Saturation, Emotion, Compression, Unpredictability) are met.
 5. `generate_v2ws_visual_hook(narrative_arc_stage)`: Takes a script moment and generates the highly complex 150-word Midjourney/DALL-E prompt optimized for 4:3 aspect ratio hooks based on the hero's journey.
-6. `insert_sfx_cues(script, emotion_map)`: Scans an output script and programmatically inserts explicit V²WS sound effect markers (e.g., `[SFX: Inception BWAAA]`, `[SFX: Cash Register]`) at peak emotional moments.
+6. `insert_sfx_cues(script, emotion_map)`: Scans an output script and programmatically inserts explicit V2WS sound effect markers (e.g., `[SFX: Inception BWAAA]`, `[SFX: Cash Register]`) at peak emotional moments.
 7. `verify_alchemy_gates(content)`: An evaluation tool that acts as a quality gate, returning true/false based on whether the generated content successfully hits the 14 Alchemy principles (e.g., `vulnerability_present == true`).
 
 **How Tools are Defined and Executed:**
@@ -176,7 +176,7 @@ The Agent Harness = the operating system. LLM = brain. Pi = body. Extensions = o
 
 | # | Extension | Intuition Layer | Definition |
 |---|-----------|----------------|------------|
-| 8 | **SoulResonance** | Emotional Memory | Searches by emotional signature, not keyword. Cross-system: CBCS coaching + CCF content + V²WS webinars all benefit from spotting emotional patterns |
+| 8 | **SoulResonance** | Emotional Memory | Searches by emotional signature, not keyword. Cross-system: CBCS coaching + CCF content + V2WS webinars all benefit from spotting emotional patterns |
 | 9 | **PatternWeaver** | Cross-Domain Synthesis | Manufactures SURPRISE by connecting unrelated data. Also REMEMBERS which types of surprise and cross-domain connections worked and WHY |
 | 10 | **GhostContext** | Unconscious Processing | Forces deeper Context Premises — surfaces emerging historical patterns that are present but not explicitly discussed. The subconscious of the system |
 | 11 | **AncestralWisdom** | Expressed Intuition | The synthesis of 8+9+10 — takes raw intuition and converts it into words, ideas, and actions. "When intuition becomes naked" — the moment insight is articulated |
@@ -215,7 +215,7 @@ All 4 Intuition Extensions are **relational graph data** (Neo4j HGM):
 
 ---
 
-## Session 3: Unified Memory Layer — CCF ↔ CBCS ↔ V²WS
+## Session 3: Unified Memory Layer — CCF ↔ CBCS ↔ V2WS
 
 **Goal:** Design the shared memory architecture connecting all 3 subsystems + the Intuition Extensions.
 
@@ -494,7 +494,7 @@ Memory Curator (Sunday) writes learnings to Layer 1
 ### The Horizontal Flow: Data Across Subsystems
 
 ```
-CCF (Content)  ←→  CBCS (Coaching)  ←→  V²WS (Webinar)
+CCF (Content)  ←→  CBCS (Coaching)  ←→  V2WS (Webinar)
      ↑                    ↑                    ↑
      └────── SHARED MEMORY (Layer 1) ──────────┘
               Neo4j hyper-edges connect:

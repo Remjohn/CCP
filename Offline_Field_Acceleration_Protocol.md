@@ -22,7 +22,7 @@ The Field Acceleration Protocol gives CCP coaches a **completely uncontested acq
 ```
 THE FIELD (meet people, indirect approach)
   → CONTENT DHV (automated CCP content on social)
-    → WEBINAR (V²WS)
+    → WEBINAR (V2WS)
       → $49/mo TELEGRAM MEMBERSHIP (30-day challenge, then recurring)
         → 1:1 COACHING (upsell, coach's own offer — self-selected)
 ```
@@ -130,8 +130,8 @@ Research confirms that 7-13 touchpoints are needed before a natural conversion. 
 | **3-5** | 📲 Content | **CCP (CCF)** | Prospect sees 3 high-quality posts/stories over the next week. |
 | **6** | 🎤 Voice DM | **Coach** | 15-second voice note: *"Great meeting you at [event]!"* |
 | **7-9** | 📲 Content | **CCP (CCF + CVE)** | More DHV — visual carousels, reels, insight cards. |
-| **10** | 📩 Invite | **CCP (V²WS)** | Webinar invitation: *"I'm hosting a free session on [topic]."* |
-| **11** | 🎥 Webinar | **Coach + CCP** | Coach delivers live. V²WS handles structure/slides. |
+| **10** | 📩 Invite | **CCP (V2WS)** | Webinar invitation: *"I'm hosting a free session on [topic]."* |
+| **11** | 🎥 Webinar | **Coach + CCP** | Coach delivers live. V2WS handles structure/slides. |
 | **12** | 💰 CTA | **Coach** | *"Join the 30-day challenge — $49."* |
 
 ### The Split
@@ -179,7 +179,7 @@ The reason coaches have **never** done systematic offline outreach is because **
 |------------------------|----------------|
 | Content that positions the coach as an expert | **CCF** — 36+ psychologically routed scripts/week |
 | Visuals that demonstrate premium brand | **CVE** — carousel visuals, branded cards |
-| Webinar that converts warm leads | **V²WS** — automated webinar structure |
+| Webinar that converts warm leads | **V2WS** — automated webinar structure |
 | Ongoing member engagement | **CBCS** — Telegram bot with personalized support |
 | Conversion triggers at the right moments | **CPSC** — temporal and behavioral triggers |
 

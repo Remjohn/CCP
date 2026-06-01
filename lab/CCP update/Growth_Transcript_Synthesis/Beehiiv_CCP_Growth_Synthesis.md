@@ -45,7 +45,7 @@ The story of the billion-dollar garage door company ("pet the dog, ask how they 
 This is the most powerful operational insight in the transcript. Beehiiv forced a weekly product update cycle, but with a strict Pareto cutoff: *If you cannot write a hype-inducing tweet about it, do not build it.* 
 
 *   **How CCP Applies This:** 
-    Our PRD is vast. We have Trivianars, V²WS, CMF, CBCS, and FR61. The temptation is to go dark for 6 months and build the monolith. 
+    Our PRD is vast. We have Trivianars, V2WS, CMF, CBCS, and FR61. The temptation is to go dark for 6 months and build the monolith. 
     Instead, we must adopt the weekly "Marketable Feature" forcing function. 
     *   *Week 1:* Launch the Speaker Audit. (Tweet: "We just built an AI that scores your charisma like Jim Rohn.")
     *   *Week 2:* Launch the B-Roll Vault. (Tweet: "Stop using fake stock footage. Text us your weekend photos and we edit it into your content.")

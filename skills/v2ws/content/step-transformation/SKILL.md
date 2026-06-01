@@ -1,5 +1,5 @@
 ---
-name: "V²WS Step Transformation"
+name: "V2WS Step Transformation"
 description: "Teaches each step with 'what to do + why it works + how to do it' structure"
 agent: Elene (Slide Composer)
 ccp_layer: Execution (L4)

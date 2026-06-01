@@ -1,5 +1,5 @@
 ---
-name: "V²WS Intro Objections"
+name: "V2WS Intro Objections"
 description: "Pre-handles the top 3-5 objections before they form — inoculation against resistance"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

@@ -217,7 +217,7 @@ foreach ($f in $files) {
 - Heaviest on §2 (Solo/Debate/Jury/Tier List modes), §5 (viral thresholds), §7 (Trivianar absorption)
 - §4 MUST explicitly document Trivianar absorption — this is the module where the old concept lives as absorbed mechanics
 
-### PRD-07: V²WS Webinar
+### PRD-07: V2WS Webinar
 - Heaviest on §2 (YOLO/Interactive modes), §3 (slide generation schema), §5 (teaching-while-selling theory)
 - Self-Translation: webinar recordings → CMF clips → coaching content
 

@@ -86,7 +86,7 @@ What makes this source uniquely irreplaceable in the CCP library is that it mode
 
 **Operative quote:** *"Love is a creative act. When you love someone you create a new world for them."* — But this line arrives after 50 pages of context about violence, abuse, and resilience. By the time the reader encounters it, it isn't a platitude — it is the conclusion of evidence they've been processing for hours.
 
-**CCP Relevance:** This is the architectural model for all CCP long-form content, particularly CMF Beat Clusters and V²WS narrative arcs. The current content model often states the lesson first and then illustrates it. The Noah Model inverts this: lead with the story (vivid, specific, emotionally engaging), embed the lesson as an emergent property of the narrative, and let the audience feel like they discovered the insight rather than being handed it. Content that the audience discovers is content they defend and share. Content they're handed is content they forget.
+**CCP Relevance:** This is the architectural model for all CCP long-form content, particularly CMF Beat Clusters and V2WS narrative arcs. The current content model often states the lesson first and then illustrates it. The Noah Model inverts this: lead with the story (vivid, specific, emotionally engaging), embed the lesson as an emergent property of the narrative, and let the audience feel like they discovered the insight rather than being handed it. Content that the audience discovers is content they defend and share. Content they're handed is content they forget.
 
 ---
 
@@ -240,12 +240,12 @@ The Layered Narrative Architecture requires restructuring the beat cluster to op
 
 ---
 
-### CASE STUDY 3: V²WS WEBINAR SCRIPT — Empathy Inversion Applied to Audience Reframe
+### CASE STUDY 3: V2WS WEBINAR SCRIPT — Empathy Inversion Applied to Audience Reframe
 
-**Workflow:** V²WS Webinar Script — Audience Perspective Shift Technique
+**Workflow:** V2WS Webinar Script — Audience Perspective Shift Technique
 **Primitive Applied:** Empathy Inversion (#5) + Systemic Subversion Model (#4)
 
-**Scenario:** A V²WS webinar is targeting mid-career professionals who feel stuck in their careers. The standard approach would be motivational: "Here's how to break through your ceiling." Survey data shows this audience has consumed dozens of such webinars and is cynical about the format. Standard motivational content triggers their defenses rather than lowering them.
+**Scenario:** A V2WS webinar is targeting mid-career professionals who feel stuck in their careers. The standard approach would be motivational: "Here's how to break through your ceiling." Survey data shows this audience has consumed dozens of such webinars and is cynical about the format. Standard motivational content triggers their defenses rather than lowering them.
 
 **Noah's Framework Applied:**
 
@@ -257,7 +257,7 @@ This is Noah's Alexandra chapter in miniature: he didn't blame the people in the
 
 The Systemic Subversion Model then follows: "Here's how the system works, and here are the gaps in it that no one talks about."
 
-**CCP Output:** An Empathy Inversion Script Template for all V²WS webinars targeting cynical or defense-heavy audiences. Open by describing the audience's situation from the system's perspective, then shift to the Systemic Subversion: here is how the system works, and here are the navigable gaps.
+**CCP Output:** An Empathy Inversion Script Template for all V2WS webinars targeting cynical or defense-heavy audiences. Open by describing the audience's situation from the system's perspective, then shift to the Systemic Subversion: here is how the system works, and here are the navigable gaps.
 
 ---
 
@@ -292,7 +292,7 @@ The Systemic Subversion Model then follows: "Here's how the system works, and he
 | Comedy-as-cognitive-bypass is a differentiation technology no competitor deploys systematically | Positions CCP content as memorable and shareable at a level earnest content cannot achieve |
 | Resilience Reframe provides the deepest coaching conversation protocol in the library | Directly actionable in Telegram coaching, webinar Q&A, and Witness Arc development |
 | Layered Narrative Architecture solves the "teaching problem" — audiences learn without feeling taught | Redesigns CMF Beat Cluster production from pedagogical to narrative-first |
-| Empathy Inversion provides a tool for reaching cynical, defense-heavy audiences | Unlocks advanced V²WS webinar strategies for sophisticated audience segments |
+| Empathy Inversion provides a tool for reaching cynical, defense-heavy audiences | Unlocks advanced V2WS webinar strategies for sophisticated audience segments |
 | Systemic Subversion Model aligns directly with CCP's constraint-navigation philosophy | Validates and deepens the CCP's agentic approach to platform and market navigation |
 
 ### WEAKNESSES
@@ -353,7 +353,7 @@ The Systemic Subversion Model then follows: "Here's how the system works, and he
 
 ### Near-Term (Phase 2 — Next 60–90 Days)
 4. Develop **Three-Layer Narrative Template** for all CMF Beat Cluster production workflows
-5. Create **Empathy Inversion Script Template** for V²WS webinars targeting sophisticated audiences
+5. Create **Empathy Inversion Script Template** for V2WS webinars targeting sophisticated audiences
 6. Build **Trojan Horse Narrative** training module for content agents — story-first, lesson-embedded
 
 ### Strategic (Phase 3 — Next 6 Months)

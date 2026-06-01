@@ -28,7 +28,7 @@ This document specifies the complete architecture of the Conscious Visual Engine
 
 ### 1.1 The Sixth System
 
-The CCP currently operates five integrated systems: the Content Factory (CCF), the Invisible Coaching App (CBCS), the Webinar System (V²WS), the Tierlist, and the Notion Delivery Layer. The CVE is the sixth system — extending the CCF by adding a complete visual production pipeline downstream of script validation.
+The CCP currently operates five integrated systems: the Content Factory (CCF), the Invisible Coaching App (CBCS), the Webinar System (V2WS), the Tierlist, and the Notion Delivery Layer. The CVE is the sixth system — extending the CCF by adding a complete visual production pipeline downstream of script validation.
 
 ```
 CCF Pipeline → Script Validation (Triple-Pass Gate) → [Visual Production Flag SET]

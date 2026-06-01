@@ -144,11 +144,11 @@ The five concepts are separated. Each becomes its own throughline for a standalo
 
 **Result:** Audrey's delivery moves from Position 2 (mechanical) to Position 3 (internalised). The words are substantially the same, but the music is alive. Her eyes are connected rather than retrieval-focused. Her pauses are responsive rather than programmed. The audience feedback shifts back to "she's talking to me" rather than "she's reciting." The CCP codifies this as a mandatory "Through-the-Valley Protocol" for any coach whose AI-assisted scripts are producing technically correct but emotionally disconnected delivery.
 
-### CASE STUDY 3: V²WS Webinar Scripts — Applying the Five Talk Tools as a Modular Palette to a Conversion Webinar
+### CASE STUDY 3: V2WS Webinar Scripts — Applying the Five Talk Tools as a Modular Palette to a Conversion Webinar
 
 **Primitives Applied:** Five Talk Tools (#6) + Curiosity Ignition (#7) + Throughline (#1)
 
-**Problem:** A V²WS conversion webinar on "Finding Your Authentic Voice as a Coach" defaults to a single Talk Tool: Explanation. The entire 90 minutes is structured as a teaching session — concept → framework → example → next concept. The content is accurate and valuable, but engagement data shows steep drop-offs at minutes 25 and 50. Post-webinar surveys report: "It felt like a lecture rather than an experience."
+**Problem:** A V2WS conversion webinar on "Finding Your Authentic Voice as a Coach" defaults to a single Talk Tool: Explanation. The entire 90 minutes is structured as a teaching session — concept → framework → example → next concept. The content is accurate and valuable, but engagement data shows steep drop-offs at minutes 25 and 50. Post-webinar surveys report: "It felt like a lecture rather than an experience."
 
 **Anderson Restructure — Multi-Tool Palette Design:**
 

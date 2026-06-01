@@ -38,7 +38,7 @@ What makes this source uniquely irreplaceable in the CCP library is its **mechan
 
 **Operative formula:** After a client, partner, or audience member speaks: (1) Ask a clarifying question. (2) Say: "What I hear you saying is [your own words]." (3) Ask: "Did I get that right?" (4) Repeat until they say yes. Only then respond with your own perspective.
 
-**CCP Relevance:** Looping for Understanding should be the mandatory first move in every Telegram coaching interaction, every V²WS webinar Q&A, and every CCF Witness Arc audience engagement sequence. It is the structural mechanism that transforms a coaching "session" into a coaching "conversation" — the client feels heard, the coach demonstrates competence through understanding rather than prescription, and the neural alignment that enables real change becomes possible. Build Looping templates into the agentic harness: after every substantive client message, the system prompts the coach with a suggested Loop response before allowing any prescriptive advice.
+**CCP Relevance:** Looping for Understanding should be the mandatory first move in every Telegram coaching interaction, every V2WS webinar Q&A, and every CCF Witness Arc audience engagement sequence. It is the structural mechanism that transforms a coaching "session" into a coaching "conversation" — the client feels heard, the coach demonstrates competence through understanding rather than prescription, and the neural alignment that enables real change becomes possible. Build Looping templates into the agentic harness: after every substantive client message, the system prompts the coach with a suggested Loop response before allowing any prescriptive advice.
 
 ---
 
@@ -62,7 +62,7 @@ What makes this source uniquely irreplaceable in the CCP library is its **mechan
 
 **Operative formula:** Before asking a question in any coaching or content context, transform it: (1) Replace fact-seeking with experience-seeking. Not "What happened?" but "What was that like for you?" (2) Embed a feeling prompt. Not "What did you do?" but "How did it feel when you did that?" (3) Use the close-friend heuristic: "What question would I ask if this person were already a close friend?"
 
-**CCP Relevance:** Deep Questions are the content engine for every CMF Beat Cluster, every V²WS webinar, and every Telegram coaching interaction. They are the mechanism that transforms the CCP's content from information delivery (practical layer only) to emotional connection (all three layers simultaneously). Every beat cluster should contain at least one deep question that invites the audience to stop consuming and start reflecting. Every coaching check-in should open with a deep question rather than a status update. The agentic harness should be trained to detect when a coach is asking only factual questions and prompt a deep-question alternative.
+**CCP Relevance:** Deep Questions are the content engine for every CMF Beat Cluster, every V2WS webinar, and every Telegram coaching interaction. They are the mechanism that transforms the CCP's content from information delivery (practical layer only) to emotional connection (all three layers simultaneously). Every beat cluster should contain at least one deep question that invites the audience to stop consuming and start reflecting. Every coaching check-in should open with a deep question rather than a status update. The agentic harness should be trained to detect when a coach is asking only factual questions and prompt a deep-question alternative.
 
 ---
 
@@ -86,7 +86,7 @@ What makes this source uniquely irreplaceable in the CCP library is its **mechan
 
 **Operative formula:** In any conversation where identity differences create tension: (1) Draw out the other person's *multiple* identities — ask about their background, hobbies, family, causes, communities. (2) Find a genuine identity you share and make it salient. (3) Ensure equal footing — don't let expertise or status create a power differential. (4) Remember: you also contain multitudes. Remind yourself of your own non-dominant identities before entering the conversation.
 
-**CCP Relevance:** This framework is essential for the CCP's cross-cultural coaching capabilities and for any coach working with audiences whose backgrounds differ from their own. The CCP coach must be trained to detect when a conversation has shifted to the *Who Are We?* layer and to deploy the Identity Navigation Framework: draw out multitudes, find shared ground, ensure equality, and resist the temptation to collapse a client into a single identity category. The V²WS webinar format should include an Identity Mapping exercise (adapted from Gresky) where the audience sketches their own multi-identity self-concept map before engaging with the content — reducing the stereotype threat that often prevents diverse audiences from receiving coaching.
+**CCP Relevance:** This framework is essential for the CCP's cross-cultural coaching capabilities and for any coach working with audiences whose backgrounds differ from their own. The CCP coach must be trained to detect when a conversation has shifted to the *Who Are We?* layer and to deploy the Identity Navigation Framework: draw out multitudes, find shared ground, ensure equality, and resist the temptation to collapse a client into a single identity category. The V2WS webinar format should include an Identity Mapping exercise (adapted from Gresky) where the audience sketches their own multi-identity self-concept map before engaging with the content — reducing the stereotype threat that often prevents diverse audiences from receiving coaching.
 
 ---
 
@@ -98,7 +98,7 @@ What makes this source uniquely irreplaceable in the CCP library is its **mechan
 
 **Operative formula:** Before any significant coaching conversation, content delivery, or difficult discussion, spend 2–5 minutes answering: (1) What do I hope to accomplish? (2) What do I think the other person hopes to accomplish? (3) What obstacles might emerge? (4) When they do, what's my plan? (5) What are the benefits worth the risks? (6) How will the conversation start, and who speaks first?
 
-**CCP Relevance:** The Pre-Conversation Architecture should be built into every CCP workflow as a mandatory preparation step. Before every Telegram coaching session: a 2-minute reflection answering the five questions above. Before every V²WS webinar: a structured pre-delivery checklist that includes not just content review but conversational architecture (what layer will the audience be on? What obstacles will emerge? What is the plan?). Before every CMF Beat Cluster: a narrative architecture check that asks "What conversation is this beat entering the audience's head at?" The agentic harness should generate a Pre-Conversation Briefing for every coaching interaction, populated with data from the client's history, recent messages, and detected emotional indicators.
+**CCP Relevance:** The Pre-Conversation Architecture should be built into every CCP workflow as a mandatory preparation step. Before every Telegram coaching session: a 2-minute reflection answering the five questions above. Before every V2WS webinar: a structured pre-delivery checklist that includes not just content review but conversational architecture (what layer will the audience be on? What obstacles will emerge? What is the plan?). Before every CMF Beat Cluster: a narrative architecture check that asks "What conversation is this beat entering the audience's head at?" The agentic harness should generate a Pre-Conversation Briefing for every coaching interaction, populated with data from the client's history, recent messages, and detected emotional indicators.
 
 ---
 
@@ -186,7 +186,7 @@ The CCP corollary: every coaching interaction should begin with an implicit or e
 **Operationalisation in CCP:**
 - Build a **Looping Template** into every Telegram coaching interaction: after every substantive client message, the system generates a suggested Loop response: "What I'm hearing is [paraphrase]. Am I getting that right?" The coach can modify or use as-is, but a Loop must appear at least once per coaching exchange before any prescriptive advice is offered
 - Develop a **Looping Scorecard** for coaching quality assurance: review coaching transcripts and count the ratio of Loop responses (proof-of-listening) to prescriptive responses (coach-centred advice). Target: minimum 1:1 ratio. Coaches with lower ratios receive Looping refresher training
-- Train the V²WS webinar protocol to include **Audience Loops** at minimum 3 points during any 60-minute webinar: "Let me make sure I'm hearing what some of you are saying in the chat..." followed by a paraphrase and confirmation
+- Train the V2WS webinar protocol to include **Audience Loops** at minimum 3 points during any 60-minute webinar: "Let me make sure I'm hearing what some of you are saying in the chat..." followed by a paraphrase and confirmation
 
 **The 80/20 Filter in Practice:** A coach who can detect the active conversation layer (Matching Principle) and prove they've heard it (Looping for Understanding) has achieved the two foundational preconditions for all connection and change. Every other technique in the CCP's arsenal — Deep Questions, the Control Principle, Identity Navigation, Pre-Conversation Architecture — is an amplifier of the synchronisation that Matching and Looping create. Without that synchronisation, no technique will land. With it, every technique becomes exponentially more effective.
 
@@ -248,12 +248,12 @@ Only now, with the audience emotionally aligned and feeling heard, does the prac
 
 ---
 
-### CASE STUDY 3: V²WS WEBINAR SCRIPT — The Control Principle Applied to Live Audience Resistance
+### CASE STUDY 3: V2WS WEBINAR SCRIPT — The Control Principle Applied to Live Audience Resistance
 
-**Workflow:** V²WS Webinar Delivery — Live Q&A and Audience Pushback Management
+**Workflow:** V2WS Webinar Delivery — Live Q&A and Audience Pushback Management
 **Primitives Applied:** Control Principle (#5) + Pre-Conversation Architecture (#7)
 
-**Scenario:** During a V²WS webinar, Jean-Pierre presents a coaching methodology and opens the Q&A. A participant challenges the framework publicly: "This sounds great in theory, but in my industry, this would never work. You clearly don't understand how [industry] operates." The challenge is delivered with energy and certainty. Other participants are watching. The coach's instinct is to defend the framework — to control the challenger's perspective by providing counter-evidence or reframing their objection.
+**Scenario:** During a V2WS webinar, Jean-Pierre presents a coaching methodology and opens the Q&A. A participant challenges the framework publicly: "This sounds great in theory, but in my industry, this would never work. You clearly don't understand how [industry] operates." The challenge is delivered with energy and certainty. Other participants are watching. The coach's instinct is to defend the framework — to control the challenger's perspective by providing counter-evidence or reframing their objection.
 
 **Duhigg's Framework Applied:**
 
@@ -272,7 +272,7 @@ Jean-Pierre takes 2 seconds before responding. This is not performance — it is
 **Phase 4 — Control the Boundaries:**
 The coach has now redirected the conversation from "your framework is wrong" (unlimited scope, identity-threatening to the coach) to "what has worked in your context?" (bounded scope, identity-affirming for both). The conflict's boundaries have been controlled without the other person's behaviour being controlled.
 
-**CCP Output:** A V²WS Q&A Conflict Protocol: (1) Breath — 2-second pause. (2) Loop — reflect the challenger's concern in your own words and confirm. (3) Shared Identity — find and name a commonality. (4) Boundary Control — redirect to a bounded, specific question. Built into the webinar delivery checklist as a mandatory "When Challenged" protocol.
+**CCP Output:** A V2WS Q&A Conflict Protocol: (1) Breath — 2-second pause. (2) Loop — reflect the challenger's concern in your own words and confirm. (3) Shared Identity — find and name a commonality. (4) Boundary Control — redirect to a bounded, specific question. Built into the webinar delivery checklist as a mandatory "When Challenged" protocol.
 
 ---
 
@@ -374,7 +374,7 @@ The coach resists the expert-client power differential. Instead of prescribing, 
 ### Near-Term (Phase 2 — Next 60–90 Days)
 4. Develop the **CCP Conversation Layer Check** as a branded coaching quality metric — every coaching transcript scored for layer-matching accuracy
 5. Create the **Pre-Conversation Briefing System** for all coaching sessions — auto-populated with client history, recent messages, and predicted layer/obstacles
-6. Build the **V²WS Q&A Conflict Protocol** (Breath → Loop → Shared Identity → Boundary Control) into all webinar delivery checklists
+6. Build the **V2WS Q&A Conflict Protocol** (Breath → Loop → Shared Identity → Boundary Control) into all webinar delivery checklists
 
 ### Strategic (Phase 3 — Next 6 Months)
 7. Design the **CCP Unified Coaching Conversation Architecture** — integrating Hart (self-compassion and nervous system regulation), Noah (layered storytelling and resilience reframing), and Duhigg (conversation engineering and synchronisation protocols) into a single, coherent coaching methodology

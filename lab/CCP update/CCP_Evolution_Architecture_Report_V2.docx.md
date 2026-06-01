@@ -91,7 +91,7 @@ The following SWOT analysis evaluates the CCP architecture as it stands post-tra
 | OPPORTUNITIES | Evidence |
 | :---- | :---- |
 | **O1 — Pi Agent Integration** | The agentic work with Pi Agent provides a production testing environment for the Trigger-First Engine that no purely theoretical architecture could validate. Live integration surfaces edge cases that documents cannot anticipate. |
-| **O2 — CBCS & V²WS Inheritance** | The CBCS and V²WS systems inherit all CCF improvements automatically through the shared dependency registry. A single architectural upgrade at the CCF level propagates platform-wide value. |
+| **O2 — CBCS & V2WS Inheritance** | The CBCS and V2WS systems inherit all CCF improvements automatically through the shared dependency registry. A single architectural upgrade at the CCF level propagates platform-wide value. |
 | **O3 — Academic Formalization Moat** | The synthesis of six peer-reviewed papers into proprietary architecture (SkillNet, PTG, Hasson, MFT, Tulving, Clark) creates a formalization moat that competitors operating on intuition cannot easily replicate. |
 | **O4 — CCSB as Platform Standard** | The CCSB two-phase Skill authoring system, if deployed across all 65+ skills, converts the existing skill library from a collection of inconsistent prompts into a coherent, composable capability architecture. |
 | **O5 — Reasoning Enhancement** | The discovery that deep reasoning improves output quality creates an immediate leverage opportunity: embedding structured reasoning protocols in the Stage 2 Mirror Session and Stage 2.5 Wisdom Forge produces compounding quality gains. |
@@ -143,7 +143,7 @@ Principle 2 — Three-Layer Priming Architecture — preserves aesthetic priming
 
 **Section 11  — Dependency Registry — DAG Rebuild & Ghost Variable Resolution**
 
-The Formal Dependency Registry v3.0 is the structural backbone that makes the architectural improvements operational rather than theoretical. It defines 38 reusable macro-dependencies organized into four categories: Engine Outputs and Raw Data Assets (15), Component Library and Constraints (7), Sacred Protocols and Quality Gates (10), and V²WS Extrapolation Libraries (6). Each dependency carries a DEP-{CATEGORY}-{SEQUENCE} ID, a file location, a status flag, and its upstream dependencies in a topological DAG.
+The Formal Dependency Registry v3.0 is the structural backbone that makes the architectural improvements operational rather than theoretical. It defines 38 reusable macro-dependencies organized into four categories: Engine Outputs and Raw Data Assets (15), Component Library and Constraints (7), Sacred Protocols and Quality Gates (10), and V2WS Extrapolation Libraries (6). Each dependency carries a DEP-{CATEGORY}-{SEQUENCE} ID, a file location, a status flag, and its upstream dependencies in a topological DAG.
 
 The most important contribution of the v3.0 registry is the purge of legacy V2 role-play components — ttt\_matrix, character\_lexicon, generic persuasion\_layers — that were generating ghost variable references and causing downstream LLM hallucinations. A ghost variable is a reference to a file or schema that either does not exist or is only partially populated. The v2 architecture had accumulated these silently, producing outputs that were technically structured but drawing on phantom inputs. The registry formalizes the correction.
 

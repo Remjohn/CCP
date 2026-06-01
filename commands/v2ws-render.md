@@ -29,4 +29,4 @@ skills_invoked: [excalidraw-composer]
 - `decks/{webinar_id}_full_script.md`
 - `decks/{webinar_id}_render_report.json`
 
-## This is the FINAL step of the V²WS pipeline.
+## This is the FINAL step of the V2WS pipeline.

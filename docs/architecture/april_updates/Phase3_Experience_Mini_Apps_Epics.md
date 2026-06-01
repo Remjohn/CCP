@@ -52,7 +52,7 @@ This document provides the complete epic and story breakdown for the **Phase 3 E
 As an Audience Member, I want to respond to specific moments during the webinar (live or replay) using voice notes, polls, or reactions, so that my input is tied to the exact teaching claim — **without my participation UI ever breaking my emotional connection to the speaker.**
 
 **Acceptance Criteria:**
-*   **Given** I am watching a V²WS webinar replay inside the Mini App,
+*   **Given** I am watching a V2WS webinar replay inside the Mini App,
 *   **When** the webinar hits a predefined extraction marker or high-tension moment,
 *   **Then** a timed participation prompt appears as a **non-blocking ambient overlay** (lower-third bar or slide-in drawer) that never covers the coach's face or primary video focal point, allowing me to submit a voice-note reaction or vote while the coach remains fully visible.
 *   **And** all captures are tagged with webinar ID, module/slide range, participant identity, and reaction type to feed the silent referral and content extraction engines.

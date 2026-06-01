@@ -6,7 +6,7 @@ Covers all 5 Acceptance Criteria:
   AC2: Journey Construction — 10 content pieces → DAG graphs with prereq edges
   AC3: Next-Content Recommendation — complete 3 nodes → correct successor
   AC4: Gating Respect — coping=1 → excludes content requiring coping≥2
-  AC5: Cross-Pipeline Integration — CCF + V²WS + OBS → all in registry
+  AC5: Cross-Pipeline Integration — CCF + V2WS + OBS → all in registry
 
 Plus: model validation, DAG validation, coach isolation, SQL schema.
 """
@@ -467,7 +467,7 @@ class TestGatingRespect:
 
 
 class TestCrossPipelineIntegration:
-    """AC5: CCF + V²WS + OBS → all in registry with correct content_type."""
+    """AC5: CCF + V2WS + OBS → all in registry with correct content_type."""
 
     def test_ccf_hook(self):
         builder = _make_builder()

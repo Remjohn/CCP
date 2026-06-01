@@ -249,7 +249,7 @@ When we merge the 14 AFFiNE-native integrations with the 15 cross-platform workf
 | 17 | Meal Plan Database | Client × Retention | 149 | 2 |
 | 18 | Group Coaching Collaborative Board | Community × Engagement | 149 | 2 |
 | 19 | CCF Content Calendar | Operations × Planning | 142 | 2 |
-| 20 | V²WS Slide Composer | Content × Production | 141 | 3 |
+| 20 | V2WS Slide Composer | Content × Production | 141 | 3 |
 | 21 | OBS Recording Studio Block | Production × Ingestion | 135 | 3 |
 | 22 | Excalidraw Live OBS Annotation | Production × Content | 133 | 3 |
 | 23 | CMF Video Review Block | Production × QA | 132 | 3 |

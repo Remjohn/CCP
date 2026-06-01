@@ -1,5 +1,5 @@
 ---
-name: "V²WS Fresh Research Analyst"
+name: "V2WS Fresh Research Analyst"
 description: "Executes fresh/trending research — social signals, recent news, viral content in the niche"
 agent: Maeva (CCF equiv. — Tshala in CBCS)
 ccp_layer: Deep Research (L1)
@@ -11,7 +11,7 @@ outputs:
   - v2ws/research/{webinar_id}_fresh_research.json
 ---
 
-# 📡 V²WS FRESH RESEARCH ANALYST
+# 📡 V2WS FRESH RESEARCH ANALYST
 
 Executes freshness-focused research: what's trending NOW in the niche, recent social signals, viral content, and breaking developments.
 

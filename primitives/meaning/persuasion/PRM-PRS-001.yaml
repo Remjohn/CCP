@@ -73,7 +73,7 @@ examples:
 
 anti_examples:
   - description: >
-      A V²WS webinar titled "An Introduction to Modern Team Dynamics" that spends 20 minutes
+      A V2WS webinar titled "An Introduction to Modern Team Dynamics" that spends 20 minutes
       defining terms before offering any actionable coaching.
     why_it_fails: >
       A descriptive title requires no intellectual discipline from the speaker. Because it
@@ -117,7 +117,7 @@ ccp_workflow_fit:
 trigger_conditions:
   - "Initiating any new CMF Beat Cluster or CCF script arc"
   - "When a drafted hook reads like an encyclopedia entry rather than a coaching intervention"
-  - "During V²WS webinar framing to ensure the event has a clear intellectual center of gravity"
+  - "During V2WS webinar framing to ensure the event has a clear intellectual center of gravity"
 
 suppression_conditions:
   - "When writing pure transitional or connective tissue between already-established strong beats"

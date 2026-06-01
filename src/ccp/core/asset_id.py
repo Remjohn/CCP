@@ -53,7 +53,7 @@ class AssetType(str, Enum):
     TRIBE_EXTRACT = "TRBE"    # Tribe distillation output
     IDEAS_JSON = "IDEA"       # ideas.json output from ccf-analyze
 
-    # V²WS — Webinars
+    # V2WS — Webinars
     WEBINAR_PACKAGE = "WBNR"  # Complete webinar package
     WEBINAR_SLIDE = "WSLD"    # Individual webinar slide
     WEBINAR_MODULE = "WMOD"   # Webinar module script

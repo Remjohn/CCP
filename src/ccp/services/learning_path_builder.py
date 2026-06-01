@@ -4,7 +4,7 @@ DEP-ENG-074 PROPOSED
 
 Agent: Gabrielle (Learning Path Agent, Strategy Department)
 
-Auto-classifies every content piece from CCP pipelines (CCF, V²WS,
+Auto-classifies every content piece from CCP pipelines (CCF, V2WS,
 CBCS, OBS, CMF) by topic cluster, difficulty level, and program tag.
 Content is organized into DAG-based learning journeys. Next-content
 recommendations respect coping/atlas gating.
@@ -488,7 +488,7 @@ class RecommendationEngine:
 class LearningPathBuilder:
     """Gabrielle — orchestrates the full learning path pipeline.
 
-    - Receives content from CCP pipelines (CCF, V²WS, OBS, CBCS, CMF)
+    - Receives content from CCP pipelines (CCF, V2WS, OBS, CBCS, CMF)
     - Classifies content using ContentClassifier
     - Stores in learning_path_registry (Supabase)
     - Constructs journey DAGs (Neo4j)
@@ -694,7 +694,7 @@ class LearningPathBuilder:
     def on_v2ws_complete(
         self, webinar: dict[str, Any]
     ) -> LearningPathEntry:
-        """Hook: V²WS webinar completion → classify (AC5)."""
+        """Hook: V2WS webinar completion → classify (AC5)."""
         return self.classify_content(
             asset_id=webinar["asset_id"],
             fingerprint_id=webinar["fingerprint_id"],

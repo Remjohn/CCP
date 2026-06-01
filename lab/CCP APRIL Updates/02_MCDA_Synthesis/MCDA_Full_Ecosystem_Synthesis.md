@@ -54,7 +54,7 @@ You identified the critical gap: the Voice Coach shouldn't just train speaking f
 |---|---|---|---|
 | **1. Speaking** | Prosody, pauses, sincerity, storytelling structure | Jim Rohn philosophical delivery register | Content that resonates → audience growth → inbound leads |
 | **2. Comedy** | Comedic timing, reversal punches, observational humor, self-deprecation | Jim Rohn + observational comedy structure (Seinfeld method) | Entertainment = differentiation. The coach nobody can look away from. |
-| **3. Sales Objections** | Handling "I can't afford it," "I need to think about it," "I'm not sure this is for me" | V²WS (Webinar Scripts) objection handling frameworks | Direct revenue impact — converts warm leads into paying clients |
+| **3. Sales Objections** | Handling "I can't afford it," "I need to think about it," "I'm not sure this is for me" | V2WS (Webinar Scripts) objection handling frameworks | Direct revenue impact — converts warm leads into paying clients |
 | **4. Networking** | Openers, gambits, peacocking, indirect approach, the "Jesus Principle" | Offline Field Acceleration Protocol (48 Laws of Power) | Offline acquisition channel = zero competition, highest trust conversion |
 
 ### How Each Pillar Works Inside FR61
@@ -67,7 +67,7 @@ You identified the critical gap: the Voice Coach shouldn't just train speaking f
 - Measures `punchline_pause_ratio` — the timing of the setup-to-silence-to-delivery
 - Auto-generates branded memes from the funniest moments
 
-**Pillar 3 (Sales Objections)** — New module. Uses the V²WS objection library as training scenarios:
+**Pillar 3 (Sales Objections)** — New module. Uses the V2WS objection library as training scenarios:
 - The Voice Coach plays a simulated prospect voice note: *"I love what you're doing but I just can't afford it right now."*
 - The coach records their response
 - FR61 analyzes: Did they acknowledge the objection? Did they reframe? Did their voice stay calm (low jitter)? Did they pause before responding (not reactive)?
@@ -146,7 +146,7 @@ The FAP is the most underrated weapon in the stack. Here is how it maps directly
 | **The 7-word frame** ("I run 30-day challenges...") | Voice Coach Pillar 4 drills this exact script | Networking |
 | **Follow on IG** | Coach's branded content (produced by CMF) does the DHV automatically | Content Trinity |
 | **Voice DM follow-up** | Voice Coach Pillar 1 trains the 15-second voice note delivery | Speaking |
-| **Webinar invite** | V²WS handles the structure and slides | Sales Objections |
+| **Webinar invite** | V2WS handles the structure and slides | Sales Objections |
 | **$39.99/mo Speaking & Learning** | Voice Coach Pillar 3 trains the objection handling | Sales Objections |
 | **CBCS automated engagement** | Platform handles everything post-conversion | $1.90 trial / $3.90 paid user |
 

@@ -39,7 +39,7 @@ A complete 3-phase Genesis architecture:
 - Sacred Audio ingestion mechanics (FR2 Tech Spec — prerequisite)
 - Voice DNA extraction mechanics (FR3 Tech Spec — prerequisite)
 - CBCS real-time pipeline (separate spec)
-- V²WS webinar pipeline (separate spec)
+- V2WS webinar pipeline (separate spec)
 
 ---
 

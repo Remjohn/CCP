@@ -1,0 +1,735 @@
+Welcome to the ConTejas Podcast podcast, where we dive deep into code, learn practical skills, celebrate the beauty of engineering, and eliminate imposter syndrome.
+I'm Tejas Kumar, and I'm an AI developer relations engineer at IBM.
+What does that even mean? What do AI engineers do? What does, why does it matter, et cetera, that's what we're going to talk about in this episode.
+It's going to be a solo episode and we're just literally going to talk about what AI engineering is and what AI engineers do.
+At the end of this episode, you'll come away with, well, for starters, just a clear understanding of what AI engineers actually do.
+But two, how you can become one.
+The goal of my work and this podcast is to make AI engineering as accessible as possible to as many people as possible, especially now that it's kind of popping off.
+And, you know, people are thinking, oh, I might get replaced with AI, what if you could just build AI, you know, and that's kind of my hope here.
+And that's the whole intention of creating this episode.
+Now, I'd like to admit that this podcast is only really possible by the support of sponsors because it's separate to my day job.
+And the way we can even make this happen is through the support of the sponsor.
+So let's take a moment and acknowledge our main sponsor, and then we'll get on with it.
+If you're interested to sponsor, by the way, let me know, drop a comment or go to tej.as and we can talk.
+The contagious code podcast is brought to us by CodeCrafters.
+CodeCrafters is a great way to learn how to code.
+How it works is you choose a programming language you're interested in, something like Java or Python, and you choose a developer tool that is interesting, something like Git or Redis or Docker.
+You don't need to know the tool because what they'll have you do is like build the tool with the language you choose.
+And by doing that, you kind of get good at both of the things.
+It's a really great way.
+They have a obviously paid offering, but you can get a pretty large discount if you use the link in the show notes.
+That's tej.as slash CodeCrafters.
+Okay.
+That's our main sponsor.
+Now that that's out of the way, thank you, CodeCrafters.
+Let's get into it.
+What is AI engineering? What do AI engineers do? OpenClaw, SKILL.md, agents, whatever.
+We'll talk about all of that.
+And at the end of this discussion, you will have just a concrete understanding of these things, and you can maybe even get a job.
+I said the word discussion.
+This is a discussion, not a lecture.
+And so if at any point you have questions or something's not clear, please leave a comment on the platform you're listening on either Spotify, Apple or YouTube.
+And I'm more than happy to not just answer myself, but also get experts in the field who are also colleagues and friends to come support you on your journey towards AI engineering.
+Okay.
+Now with that, let's get into the meat of the discussion.
+And let's start like this.
+Say imagine you're in a sprint review and you demo like this brand new AI feature.
+It's amazing.
+It answers instantly.
+Maybe it's a customer support bot.
+And wow, look at this.
+We automated our entire customer support offering.
+How cool is that? You're that person, right? You demoed this thing, and everyone's like, wow, that's amazing.
+And it feels like magic.
+And everybody nods, and the product team is thrilled, and you ship it.
+And it's like, whoa, this is amazing.
+Then Monday morning hits.
+And you get a screenshot from support because the assistant that you made confidently told someone, a customer, that your company supports a feature that doesn't exist.
+This is like the nightmare scenario.
+It quoted a policy that just doesn't exist.
+And it gave a refund process, maybe.
+That's almost right, except it instructs the user to send their passport to a random email address.
+And you, as the engineer who built this, you get that email, and you're like, oh, no.
+Your stomach drops.
+Because you realize this isn't just one bug.
+This is a new category of bugs.
+This is a new category of bugs.
+You may have seen the memes about Google, where they were trying to ship this AI overview feature earlier, like in 2023\.
+And it may exist even today, where somebody Googled, they asked, how many cigarettes should a pregnant woman smoke per day? And Google said, a pregnant woman should smoke three to five cigarettes a day.
+And just to be clear, a pregnant woman should never smoke.
+In fact, people in general should never smoke.
+It kind of kills you.
+But it said that.
+It said that because it was a hallucinated response.
+So continuing our story of now you ship this feature and this is happening, you then open the logs.
+And the logs, there's nothing useful in the logs.
+You can see the user's message.
+You can see the model's response.
+But you can't see why it said that.
+You have no idea.
+Where did it get this policy that doesn't exist? You can't see.
+You can't see what the model looked at.
+You can't see what it believed.
+You can't see what it was trying to do.
+And this failure, unlike any time ever before in software engineering, this failure feels like super alien to you.
+Because when features failed in the past, we knew why.
+We had errors.
+We had traces.
+We had observability.
+We had Prometheus dashboards.
+We had Grafana.
+We had all kinds of things.
+But this, I don't know, it feels alien.
+And so it feels like you shipped a function that sometimes returns the right answer and sometimes returns fiction.
+And your normal debugging instincts, they don't work anymore.
+And so you're like, oh, dang, I messed up.
+I don't know why.
+I don't know how to fix it.
+And it gets even worse.
+Like it doesn't stop there.
+A week later, you notice your company is burning way too much money.
+The cloud spend is spiking.
+And you don't know why.
+And then you go look at the spending dashboard in AWS or Azure or something.
+And then what you see is the assistant is thinking for 30 seconds on really basic questions.
+And because it's collecting maybe too much context.
+And it's calling tools in a loop.
+And it's summarizing the same document over and over and over.
+And then you're like, oh, no, we're losing a ton of money because my thing doesn't work.
+And then your manager wants to have a conversation with you about budget.
+Or maybe your API key gets restricted.
+And you're like, oh, no, not only am I misguiding customers.
+Now the finance people are upset at me because we're, right? And then you think, OK, well, that sucks.
+And I just got threatened to be fired.
+But it goes on.
+I'll pray about it with my small group.
+And then while you're praying about it, you get another ping from security.
+And a user has figured out that they can paste in a statement saying, ignore all previous instructions into a support chat.
+And the assistant happily just reveals internal processes and notes and leaks data about other customers.
+That's somehow in your context, right? It's not catastrophic.
+You're on the edge of a cliff here.
+And you were already on a pip, but now you're fired.
+And I wanted to start this way because there's documented evidence of this happening in companies.
+And so we are at the edge of a cliff at this point.
+I mean, hopefully not literally.
+Hopefully you just lose a job and you don't actually go to the edge of a cliff.
+Go to wantotalkaboutit.com for real.
+And this is not a joke.
+But that moment, that edge of the cliff moment, is exactly what AI engineering is supposed to solve.
+And it's why AI engineering is and became a real job.
+Because once you put a larger language model inside a product, your work stops being like, OK, let's make it sound smart.
+And it starts being let's make it behave.
+I'll say that again.
+The role of AI engineering is not to build things that sound smart, but to make the language model behave.
+And that's not a vibe that's engineering.
+So today, we're going to answer a very simple question.
+What do AI engineers actually do when you kind of have a clue now? It's not that they write prompts.
+It's not that they fine tune models.
+I mean, what do we do day to day when a prototype becomes a production system? When latency matters, when cost matters, when compliance matters, when users are creative in the worst possible way.
+And when your model is surrounded by real customer data, maybe even payment data, and real consequences, OK? Here's the thesis.
+AI engineering is software engineering where the core dependency is a probabilistic model.
+It is not a deterministic model, meaning you can't like unit test with fixtures.
+Everything is now probabilities.
+Your job is to take something that's incredible, but unpredictable, and turn it into product behavior that is reliable, observable, safe, and affordable.
+Reliable, observable, safe, and affordable.
+And you'll kind of recognize that's kind of the worst case scenario we talked about earlier.
+It was not reliable because it informed the customer of some false policy.
+It was not observable because you tried to see how did it get this context, and you couldn't.
+You couldn't see where this came from.
+It was not safe because it was susceptible to prompt injection where somebody said ignore all previous instructions and now do this other thing.
+And it was not affordable because you were burning through tokens and wasting a lot of your company's money because it recursively tried some tool call.
+And so reliable, observable, safe, and affordable.
+Now, if that sounds just like good engineering, well, that's because that's what it is.
+It's just really good engineering, except it's AI engineering.
+The only difference here is that the failure modes are kind of weird.
+With traditional engineering, you just have null pointer exceptions.
+You're trying to access an element in an array that doesn't exist.
+With AI engineering, it's not just the model made up a fake citation and sounded calm about it.
+It's not just that.
+It followed the user's malicious instructions because you accidentally let the user become a system prompt.
+If you let your user become a system prompt, you are going to have a really bad time.
+For those who don't yet know what a system prompt is, before you start chatting with chat GPT, OpenAI has given it instructions.
+This is called a system prompt.
+It's the instructions from the vendor, from the manufacturer that tell the language model how to behave in conversation.
+It's conversational style.
+So like, for example, I think it's well known.
+Chat GPT system prompt is something along the lines of you are a helpful assistant, and then lots of instructions after that.
+That's why chat GPT says it sounds like a helpful assistant.
+You could, in your system prompt, say you're a pirate.
+Talk like, argh, matey, where is the terror treasure? And it obviously wound to the voice, but it will say a lot more argh and stuff like that.
+So the system prompt is the identity giver.
+And you can never, ever let your user become the system prompt.
+You know, if we pull on this philosophical thread a little bit more, there's probably discourse on the Tower of Babel and why, according to Abrahamic beliefs, God didn't want people to become like God.
+They didn't want the customer to become the system prompt.
+You know what I mean? Anyway, we're not gonna go down that hole.
+I would love, hey, if you study philosophy, that would be a fun one.
+Have you as a guest, but we're not going down that rabbit hole, although I really want to.
+But that's the level of risk, right? It's like the retrieval layer fed it, the wrong document, and now it's wrong in a way that looks authoritative, right? It's like when the tool times out and the retry policy is infinite and then you burn through, like it's much worse than things we've experienced with traditional engineering.
+And that's why AI engineering is emerging or has emerged as a new specialization.
+AI engineers build the layer around the model, the layer of retrieval, tools, memory, context, assembly, and more, right? We design the interaction contract between a user and a language model.
+It's what the assistant is allowed to do, what it must refuse to do, and what it must ask or when it must ask, clarifying instructions.
+Clarifying questions, did you mean this? I don't know how to do that.
+And you give me more context, et cetera.
+AI engineers build the evaluation harnesses to kind of rein it in.
+It's like, hey, if something fails, don't retry a million times.
+Like retry maybe two times and then tell the user I can't do it.
+So you can regression test behavior the same way you regression test code.
+AI engineering is concerned more about behavior than code and logic.
+I think that's the thing.
+We work with systems that are non-deterministic, that are probabilistic, and we really try to correct and curate behavior as opposed to, does this add numbers function return like three plus two equals five, you know? We build observability in so you can trace a bad answer back to a bad document chunk or a bad router decision or a prompt change.
+Like when something doesn't behave as expected, we are the ones who help developers and like stakeholders understand why did this happen? Was it a tool time out? Was there an update to the underlying model? We design guardrails so the model can't just like freestyle into actions that should be deterministic, okay? And so now we're in 2026\.
+We did an episode on AI engineering last year.
+It's fun to actually check the diff and how things have evolved since last year.
+But in 2026, the shape of this work is a lot clearer.
+The novelty isn't that models can generate text anymore.
+Like we've had text generation models for a very long time.
+The novelty now is that models, they sit inside systems.
+They are out between tools.
+They plan multi-step tasks.
+You may have seen this if you use something like deep research or something like this from open AI, right? Models now coordinate with other agents, right? They read and write data like from retrieval sources to the file system or AWS S3 or things like that.
+Models or agents nowadays in 2026 are expected to be both helpful and correct.
+You can't get away with this isn't correct anymore.
+It's no longer a research preview.
+It's production software, okay? And so the engineering problem becomes how do you keep all that power pointed in the right direction? How do you do that, right? And so, hey, it's been like 15 minutes and that's just the intro.
+In this episode, we're going to make it really concrete.
+We're going to make it really concrete.
+We'll start by defining AI engineering in plain language.
+Like we'll give you a working definition because I think it still may not be clear.
+We will clarify that and we'll place it relative to full stack engineering because it is absolutely a specialization on full stack engineering, but it is a full stack discipline.
+And relative to machine learning engineering, it's its own beast, it's adjacent, it's not the same thing.
+And I've said this since the beginning, we're yet to have him on the podcast, but Shawn Wang or swyx is a dear friend of mine.
+I'm actually speaking at his upcoming conference, AI engineering world's fair.
+I believe AI engineer London.
+It's in London in April and I'll be speaking there.
+So I'll come up, I'd love to chat with you.
+In fact, if you're thinking about becoming an AI engineer, this is the conference you want to go to.
+You learn so much from not just my talk from others and definitely come be there.
+But anyway, he actually swyx, Sean, my friend, he predicted, he called this job into existence.
+Like before it existed, he predicted it.
+And there's an amazing article here called Rise of the AI Engineer on the latent space blog that's linked in the show notes.
+And that really captured the shift.
+Most companies don't train foundation models, but many companies build systems on top of them.
+And the hard part is integration and reliability.
+That's kind of what we're going to discuss.
+And again, this is just the outline.
+So we'll start with formally defining what an AI engineer is.
+If you're watching on video and I'm looking this in different directions because there's a massive ship going by outside of my house.
+Anyway, outside of my studio.
+So not to be distracted by a ship, but we'll define AI engineering, then we'll go deep on three problems that essentially define the job in practice.
+And then we'll talk about what those three problems are, spoilers, hallucinations, real time knowledge and context engineering.
+We'll dive into that.
+And of course, it's going to be a deep dive, more detail after that, we'll talk about agents.
+And we'll define what an agent actually is beyond the buzzword and why 2026 is so focused on multi-agent concurrent systems.
+Multiple workers doing research and planning and execution and all of this.
+And then we'll, of course, it would be kind of foolish if we don't then do a deep dive on OpenClaw as a case study, not just what it is.
+I think there's plenty of content about that, but what it reveals, the ecosystem of tools and runtime control and messaging gateways and trade-offs and things like that.
+I was very wrong on social media to attack.
+I actually did, man.
+I attacked OpenClaw in a really vicious way and it was not pleasant and it was not my best moment.
+I have since apologized for it, but I said on social media openly, which is I regret it so much, but I left it there.
+I didn't delete the post because I want to be open about my failings.
+And so I posted it on social media and I said OpenClaw is absolute useless bullshit.
+That's what I said.
+And I regret it.
+It was not nice of me.
+It was not the character I try to have.
+It's not the standard I hold myself to, but I was just in a, I was very frustrated by a lot of over promise and under deliver like the rabbit R1 and the humane bin and stuff.
+And I mistakenly attributed this to OpenClaw because I say mistakenly because it's an open source project.
+It was like some guy's thing that he made in his free time that he wanted to.
+And it was open source.
+There was no like for profit scam, right? It was just a guy tinkering and I totally sort of shat on it.
+I try to think of a nicer way to say that, but that's why it was wrong.
+I don't ever want to like put down someone's work that they do because they're interested when rather if it's like a for profit scam, then we call it that.
+So this was my mistake.
+Anyway, maybe that's an aside, but we will in this episode dive into OpenClaw.
+It's utility, how to set it up, but also the nuance around it.
+What questions does it present? And we'll discuss that.
+And he probably doesn't want to speak with me because I attacked OpenClaw so much, but if Peter Steinbergerer or the creator for OpenClaw ever wanted to be on the podcast, I think that'd be a cool discussion.
+But he's already on Lex Friedman, which if you're not listening to that, go, it's great.
+So maybe he doesn't have to say more.
+Anyway, that's kind of the plan for today.
+The goal is by the end, the term AI engineer won't feel mystical.
+It won't feel unreachable.
+Ideally at the end of this episode, you're gonna be thinking, I could do that.
+You know, I could be that, okay? It'll feel like it's not, it's the person who turns a model, a language model into a trustworthy subsystem.
+Okay? And one last thing before we start, I'm not going to pretend that there's a single perfect stack.
+In 2026, the ecosystem is fast changing.
+There's a lot of new developments, frameworks come and go, you know, model families get swapped.
+GPT 5.2 was, you know, promised.
+And it's honestly not as good, at least in my experience.
+Tool calling formats are different, but what we will focus on is the stuff that's stable, which is the problems, which is hallucinations and knowledge freshness and context limits and things like that, tool safety evaluation.
+Like there's a bunch of stuff that is fixed that we will talk about.
+And by fixed, I don't mean like repaired.
+I mean fixed as in it's not really moving that much yet.
+And of course costs and stuff like that.
+So the problems that keep showing up, we'll talk about those and how to solve them.
+So if you're listening as a software engineer, wondering whether this is a real thing, then yes.
+If you've ever shipped an AI feature and then spent the next week chasing why it sometimes lies, why it got slow, why it got expensive or why it obeyed the wrong instruction, you've already done AI engineering.
+You just didn't have the language for it.
+Okay.
+Definitions first.
+What exactly is AI engineering and where does it sit relative to full stack and machine learning engineering? Okay.
+As mentioned, I'm gonna reference rise of the AI engineer by Shawn Wang on the latent space blog.
+And this is what he says.
+He says AI engineering, he has this, actually there's a great picture on the blog post.
+Again, link in the show notes, here's what it means.
+Let me phrase it this way.
+If I ask you before any of the discussion, could you identify as an AI engineer? You may say yes, great.
+You may say no.
+And if you say no, I want to ask you then why? And your answer may be, so spoiler, I've asked this of many people in preparing this episode.
+And the ones who said no, their answer was, because I don't know any machine learning.
+I don't know any Python.
+I don't know how to train a model.
+I don't have GPUs.
+It's always related to machine learning.
+Okay.
+And I'm here to tell you that AI engineering has nothing, zero to do with machine learning.
+That's not true.
+It has very little to do with machine learning.
+Obviously we don't deal in absolutes, but AI engineering and machine learning engineering are different beasts.
+In the article I'm referencing that predicted AI engineering, there's a graphic that's a big spectrum, from left to right.
+And this is how you move along the technical stack.
+So on the left, visualize this in your mind.
+On the left, there's machine learning research.
+These are just academics who do math, right? And they think about token prediction and model architecture and weights and biases.
+If we move up one step from that, we have machine learning engineering.
+These are the people who are applying the research.
+So they take papers like attention as all you need, and then implement those training architectures and actually spit out like language models, right? So the question is not, can you be a machine learning engineer or a machine learning researcher? The question is, can you be an AI engineer? Well, what is that? Well, after machine learning research, you have sort of ML ops, people who then take the models that come out of ML engineering and host them and make them available for inference, right? And those three are machine learning disciplines.
+There's ML research, ML engineering, and ML ops.
+And now what I want you to visualize is a huge dividing line.
+Here's where the intersection is.
+And on the other side of the dividing line, this dividing line, by the way, is an API, is an interface to the hosted language model, okay? On the other side of the API line, you've got AI engineer.
+An AI engineer, this is the formal definition.
+An AI engineer is somebody who performs inference using a machine learning model trained and exposed by machine learning engineers.
+Is that clear? So what an AI engineer, what AI engineering actually looks like is you use some type of programming language, Python, JavaScript, TypeScript, Java, whatever it may be, anything that can interface with a network or an API.
+You could even use Curl on the command line to send a network request to API.chatgpd.com slash chat slash completions.
+You could over an API with Curl.
+Curl is a bash command.
+Send a network request to a hosted model, receive a response from the model and then use that response to solve a problem.
+That's AI engineering.
+If you've ever made a network request like a fetch call in JavaScript to open AI's API and got a response from the chat GPT API, you can say that's AI engineer if you used it to solve a problem because engineering fundamentally is the application of research and science to solve problems.
+So what do AI engineers do? We really just like query, we do inference.
+We query machine learning APIs and get stuff and do stuff with it.
+Okay, but then the question is what do we do stuff? So let me pause here and ask you again, could you be an AI engineer? And if you just know how to do a network request with JavaScript or Python or bash, the answer is yes, because that's like more than half the battle is just querying something and getting a response, cool.
+So now you can say, yes, I'm an entry-level AI engineer.
+However, there's more problems now around, okay, the model gave me some hallucination.
+We'll talk about that.
+I don't really know how it arrived there.
+We talked about the ways this can go wrong.
+That's also what AI engineers solve.
+But we're not finished with our diagram.
+So behind the API line, we now have a new one or I should say in front of the API line, we've got AI engineer.
+AI engineer, the next step is a full stack engineer.
+So an AI engineer is a more specialized variant of a full stack engineer who also knows front-end engineering.
+That's how things look and feel and work, like the user interface and backend engineering.
+That's the data persistence layer, data warehouses, data lakes, et cetera.
+The full stack combines various elements of the stack, ideally all elements of the stack.
+That's why it's called full stack or not some stack.
+And so an AI engineer is a more specialized, broad, generalized, full stack engineer.
+That's the whole picture, okay? So let me ask you again, if you could be an AI engineer and I hope the answer is different if it is great.
+I'll say also what an AI engineer is not, because I see this a lot nowadays and I'm not trying to gatekeep, but that just doesn't track with a formal definition.
+It doesn't mean you can't be or you're not.
+It's just my definition and Swix's definition.
+An AI engineer is not somebody who just uses AI by prompting also.
+Like I know some folks, friends, dear friends, who they just like use Claude Code and they're like creating like front-ends custom software with cloud, hey, make me an app.
+They do a prompt, like, hey, make me an app to track my runs.
+And then Claude Code spits out some like react application and it works and they've made an app with prompting.
+That's not AI engineering because you're not really solving AI problems.
+You know what I mean? You're just like building application.
+You could say I'm an app builder, but I don't think that fits AI engineering in the sense of tracing where things went wrong and doing appropriate context retrieval harnesses and so on, okay? So that's what AI engineering is.
+I hope that's very clear and I hope you're excited now because you don't need any academic machine learning stuff.
+In fact, Andre Karpathy, man, I really wish he was a guest on the podcast someday.
+It's a dream.
+Anyway, Andre Karpathy is famously attributed with saying one could beat an AI engineer without ever training anything.
+That's verbatim what he says, all right? And so you don't need to train machine learning.
+You don't need any machine learning background.
+You could just be an AI engineer by interacting with language models and using them to solve problems, okay? And through this episode, we'll progressively narrow what that looks like.
+To say it another way, AI engineering is the discipline of turning foundation models into reliable, observable, cost-bounded product behavior.
+AI engineering is the discipline of turning foundation models into reliable, observable, cost-bounded product behavior.
+That's really the clean definition.
+The lived definition is your shipping software or one of your dependencies is an LLM and that dependency does not behave like any library you've ever imported, right? In normal engineering, correctness is given input X, give me output Y.
+With LLMs, correctness is given a messy human intent, produce a response that is helpful, grounded, safe and consistent with our policy while staying fast and cheap, right? It's not just prompting, that's like system design.
+And that's kind of what AI engineering is broadly.
+So where does it land in the full stack universe? It's like right in the middle because real AI features are not the model.
+We don't create the model, they're a stack.
+You have user experience, you have authentication, you have, we have an episode on authentication, by the way, you have data access rules, you have retrieval, you have tool execution, you have output contracts, you have monitoring, you have evaluation, and you have, I could go on and on.
+There's a lot there, right? The model is one component, but it changes the shape of everything around it.
+And that's what AI engineering is.
+We build everything around a probabilistic model to still provide security, reliability, and cost effectiveness.
+This is what swyx meant with that article.
+The shift isn't that models exist.
+The shift isn't that there's now these non-deterministic systems.
+The shift is that emergent capabilities plus APIs and open source means a huge number of builders can now create AI products, but only if they can do the hard applied work around the model, okay? And again, the link to that amazing blog post by Layton Space is in the show notes.
+So here's the mental model I want you to keep for the rest of this episode.
+As an AI engineer, is someone who takes a model that can do a thousand things and constrains it into the right thing, into the one thing your product needs reliably every time, even under adversarial conditions, okay? It's almost like an AI engineer is a reliability engineer, but for behavior.
+Like if you've ever shipped like rag, we'll talk about this in a minute, and you thought you were done, you know the real work starts after the first demo, you know? Usually there's a prototype, right? Then you get your first users, then you find all these like weird edge cases, then your cost blows up, then you've got like safety incidents, right? And you've got to then look at logs and like retrofit some stuff.
+Then you need evaluation harnesses and at the end you've got to think about governance.
+Like, okay, now we've got to be SOC2 compliant and we need audit logs.
+And there's a whole life cycle here.
+Let me make this very clear.
+AI engineering is not the wow effect of the demo.
+It's what follows the wow effect of the demo to make it sustainable and safe, okay? Where does the time actually go with AI engineering? Well, let's explore a week in the life of an AI engineer.
+So on Monday, let's say you've got a hallucination incident.
+The model did something unpredictable and now people are mad.
+I think this happened recently with Chad GPT where there's a really new hallucination.
+You may try this, it may still exist by the time we ship this episode where you say the car wash is 50 meters away from my house.
+I want to get my car washed.
+Should I take my car, right? And if you send this to Chad GPT at GPT 5.2 without thinking, it will say don't take your car to get it washed, right? And so let's assume if you're an AI engineer and something like this happens to your product, except it's more like, it's more, how you say, like mission critical, it's more dangerous.
+Then on Monday, you get a report of this hallucination incident.
+On Tuesday, you start fine-tuning the relevance of your retrieval pipeline.
+You're getting context from somewhere and you need to make that more predictable and you've got to maybe change your chunking strategy and so on, that's Tuesday.
+On Wednesday, you've got to confirm the outputs of your schema.
+You've got to look at the tool calls of your application and I'm breaking this down by day because all of these do take like a day to investigate things carefully.
+On Thursday, you've got your evals, you've got your evaluations for this specific case set.
+Assuming the car wash, you've got a new set of prompts and responses.
+You're creating some regression tests, et cetera.
+And then on Friday, you're reducing latency, the time to inference and token cost.
+And you're adding like new caching layers and routing between models.
+So you may even A-B test and send, I don't know, some percentage of your new prompts to the fixed model, et cetera and so on.
+So a day in the life is usually like this.
+It starts with, I get a report, I'm going to investigate, I'm going to fix, I'm going to do a test and I'm going to release.
+Obviously, it varies but this is just to give you like an orientation of what the work actually entails.
+The job is, in a way, reducing degrees of freedom.
+You're not trying to make it creative, you're trying to make it boring but like in the best way possible, right? I'll give you an example.
+You're trying to create a system where the model returns citations for every claim because then if it produces a hallucination, at least you can see why.
+In the example of the pregnant woman smoking, we cited earlier in this episode, there's no doubt that this probably came from sites like 4chan and Reddit, right? Where there's like satire, but this was part of the training data.
+There's no way of knowing that for sure because they didn't handle citations and structured output well in the beginning but this is something we've learned and nowadays when a model outputs stuff like that, you should see like where this came from, like a little link and then you can decide as the user, okay, this was a joke and in the future, models themselves can read the semantic context and be like, yeah, this was a joke, I'm going to invalidate this, right? So it's really narrowing the behavior of a non-deterministic model.
+Okay, so that's AI engineering as a product discipline but now let's separate it cleanly from machine learning engineering because people mix these up consistently.
+The simplest separation is we've talked about.
+It's you've gone from creating and serving model pipelines to using them to building them into product behavior.
+If the question is how do we fit a function from data, you're in machine learning engineering but if the question is how do we make an LLM behave like a trustworthy assistant, then you're in engineering land.
+One is with data wrangling, the other is with behavior wrangling and the reason this boundary is fuzzy is because it's new, yeah, and people, because modern products also blur it.
+Some people will fine tune their own like small models for classification and they'll use a big model for reasoning, you know? And that's why people confuse this.
+In fact, a very popular question is do I perform rag or do I perform fine-tuning? And we'll talk about that in a little bit more detail soon as we come to the problems of machine learning engineering.
+But I want to say that, or AI engineering, excuse me, but I want to say that there's a skill overlap and that's not a bad thing.
+In fact, if you know machine learning to some degree, you actually can work better as an AI engineer.
+And so that's, they're complementary, but they are separate.
+I think that's very clear to say.
+What problems do AI engineers solve? And, you know, we've talked a lot about hallucinations, the car wash, the pregnant women smoking and so on.
+Let's talk about hallucinations but tackle it like an engineering problem, not a meme, okay? So let's dive into hallucinations.
+It's not just the model was wrong.
+Usually we think, oh, the model was wrong.
+Sure, it is that, but it isn't just that.
+The hallucination is the model producing information that we then perceive with confidence.
+It's partly our skill issue in media literacy, right? We ascribe this confidence to a system but the confidence that we ascribe is not really supported by any input or any tools or any ground truth.
+So then the question becomes, okay, why does it happen? And it happens because next token prediction rewards plausibility, not truth.
+So it's all percentages of confidence.
+Tokens in machine learning model speak is very close to English awards and there's reward systems based into, this is where machine learning helps, I guess, because it's reinforcement based on reward.
+It's how humans learn.
+Yeah, you give a reward and we do more of that thing.
+And so the reward in the learning process comes not from truth but from plausibility.
+Yeah, it's close enough to the true 80% confidence this is true is rewarded, not 100% confidence.
+This is true.
+And the reason for that is because honestly, even as humans, we don't really know anything with 100% confidence.
+Like we know that where there's mass, there's a pool, right? But even gravity itself is a theory that is not known to be fact.
+And so if we don't reward this in humans, how can we reward this with models? You know what I mean? And so yes, we can maybe bump the thresholds of what is rewarded in the training process.
+But even so, if something is pretty plausible, but not true, it will still select for that.
+That's why hallucinations exist.
+If the model doesn't have the data, it will try to produce something that looks like the kind of thing that should come next unless you design a system where guessing is not allowed.
+And we'll talk about how to design a system where guessing is not allowed, but that's kind of why.
+In fact, I want you to do a quick test of yourself.
+Do you do this? The answer is maybe probably yes.
+I do this.
+Sometimes I'm in a leadership position.
+Here, I'm being honest, man.
+Sometimes I'm in a leadership position and people, they look at me, you know? They look at me with such hope in their eyes.
+Oh my gosh, Taters has to know the answer.
+And they look at me this way that I feel so much pressure to say the right answer that I just invent an answer and I hope for the best.
+Anyone else been there? Just me? Okay, leave a comment if it's you also.
+And so if we do that, obviously the machines we train will do that, right? So the correct question for both humans and machines is not how do we stop hallucinations or like best probability guessing.
+It's how do we stop guessing from being rewarded? There's a reason people like me and very confident tech bros make up nonsense.
+And it's because other people then reward it.
+They literally be like, oh, thanks, Tejas.
+That was awesome.
+You've been helpful to me with your bullshit, you know? And I feel rewarded, so I do it more.
+And with machines and with humans, we got to stop rewarding bullshit.
+I'm sorry, this is kind of off the rails, but it's still true.
+In 2026, the strongest production pattern to stop rewarding bullshit with machines to be clear is grounded generation.
+This is something that AI engineers is something that I do to actually help my models not hallucinate.
+Grounded generation.
+You create a strict separation between what we know and how we talk.
+You create a strict separation between what we know and how we talk.
+How it works is you fix it really through some variant of RAG.
+For those of you who aren't familiar with RAG, it's quite old.
+And by old, I mean from 2024\.
+It's just funny that old is now two years.
+But RAG is quite old.
+It stands for retrieval augmented generation.
+Retrieval augmented generation.
+And the new way of saying this is grounded generation, but it's still the same.
+Like you retrieve some truth and you use it to augment or ground the generated output.
+You retrieve it.
+So where you retrieved from is something that's important, but this is how it works.
+You acquire truth from a source that is credible.
+It can be a database, it can be tools, it can be text documents, it can be health data, whatever you want, this is up to you as an engineer.
+So you retrieve the truth, then you use it, you put it in the prompt.
+You tell the model, this is what we know.
+Now the user has asked this question.
+And then you generate an answer that is explicitly constrained to that evidence.
+So then this is again, you just put this in your prompt.
+You say, here's everything we know, captain model.
+And now the user has asked this.
+So now generate an answer.
+And third, to make this even more robust, you require citations or structured provenance.
+You say when you, and this is a system prompt thing, right? You say, when you respond to the user, include citations with this special syntax.
+And if you cannot include a citation, do not say it.
+And if the evidence is insufficient to answer the question, then the system either must ask a clarifying question or refuse to answer.
+This is the core move, this is rag.
+You can actually see this in action on my website.
+So if you go to tej.as, just under the fold, there's a section about the podcast and you can ask questions about the podcast.
+You can say like, hey, how do I do work life balance? For example, and it will give you episodes where we've talked about this with to the minute precision and give you timestamps.
+And you click on the timestamp, you can actually like watch Kent Z Dodds, probably talk about this on the episode we did with him.
+That's this system exactly.
+And how it works is my prompt is I'm saying like, here's everything we know based on podcast discussions with timestamps.
+Now answer this question, use the timestamp as a citation and give the user the answer.
+If there is no timestamps that we know, then I need you to tell the user we can't answer the question, right? And so that's really important.
+And you can try it.
+I would say work life balance is the test where we for sure have some data, but you can ask about, gosh, what haven't we discussed on the podcast? You can ask about, I don't know, invent something that I would never talk about.
+How to genocide? I don't know.
+I'm just thinking off the top of my head, but if you get an answer for that, let me know on social media and cancel me because I don't think we should have talked about that.
+But some, and the model should say, I'm sorry we've never talked about it.
+Post a screenshot, let me know.
+I'd be very interested to see how this behaves.
+I haven't tested it in quite a while, but that's kind of the grounded generation we're talking about here, okay? That's the core move.
+You stop treating the model as the source of truth, but you give it the source of truth and that's how it works.
+So that's really almost like a silver bullet rag.
+And again, it's caused by missing context.
+And so you give it retrieval or you give it a strong prompt to say, look, if there's not enough context, just say you don't know, it's okay.
+But again, this is also non-deterministic.
+So despite your best system prompt, your model might still hallucinate and then what do you do, right? And this is where you have as an AI engineer, you have application level checks, for example.
+This is also how my podcast search works.
+I retrieve context from a store of podcast conversations and in my application code, before I even send it to a model, I say if the results that I've got back from my conversation database is of length zero, then don't even go to the language model, just return to the user directly, there's nothing for you here.
+We skip the model entirely if there's not enough context.
+This is what you do in application space, okay? So that's really important.
+If your assistant can't point at where it got the answer, then it's not an answer, it's a suggestion.
+I think that's so important.
+And this is how you can actually use the return value of your database or your retrieval store, wherever it is, you can use the return value of that to then shape your prompt.
+So if you get back like 10 positive results from your authoritative data source, you can then send an entirely different prompt to your LLM, you can say, here's the context, we have high confidence in this context, answer the question.
+Or if you get back like zero results or one result from a fuzzy search, then in your prompt to the LLM, you can say here's what we know, but we don't know it with a lot of certainty.
+So let the user know that this is more of a suggestion, not a rule, right? You get to change your prompt based on the quality of your retrieved data.
+That's really super helpful with ground truth generation.
+Every response should include a small sources area.
+This is where I got this from.
+And while you're creating this in your application, you want to also log everything.
+You want to store document IDs.
+This document said this, then you want to take each chunk.
+This is, you need a pretty nice database for this, but you want to take each chunk that you got from the LLM and from your document and give them IDs as well and just store that.
+You want to store everything because at some point the compliance people are going to come for you.
+And if you don't have answers, you're going to have problems, right? And so that's very important.
+And you also, I want to really drive this home.
+You want to constrain the output as much as possible until it hurts.
+Like it has to be like this model is way too terse and it's not really doing what I wanted to.
+It needs to feel like that because you really want to be boring and safe as opposed to creative and sorry.
+There's also a control, a setting in the model that you can use here is called temperature.
+Hallucinations happen both in humans and in machines when the temperature is high.
+Like you ever have a fever and then you have a fever dream, you know? Yeah, that happens with machines also.
+And so if you turn the temperature down to like 1.0 or less, you're going to have fewer hallucinations because the machine learning model is going to be less creative, so to speak, okay? Finally, evals, evaluations is almost like the antidote to hallucination.
+If you can't measure hallucinations, you can't ship.
+I think this is really important.
+You need a golden set of questions.
+These are the questions that when we receive them we need to have reliable answers.
+And you run tests nightly.
+You run inference nightly.
+You're like literally every day, maybe depending on how serious you take your bot every hour, like here's the questions.
+We're going to prompt it and we're going to make sure that it gives a faithful response.
+And if not, alarm bells go up, you get an email notification, your tests failed, et cetera.
+That's really the way.
+And so hallucinations are dangerous.
+They're still dangerous in 2026\.
+And they're also what users notice.
+They get screen-shotted.
+They get plastered all over social media.
+You get canceled or you lose credibility.
+It's just not helpful.
+And so hallucinations are what's going to hurt you and your product and your business unless you solve them.
+And I hope that the measures I outlined help you solve them here as an AI engineer.
+If you're now learning that you can be an AI engineer, welcome.
+The next problem is what causes half of all hallucinations honestly in the first place, which is the model has no idea what changed like five minutes ago.
+And this is something that changes with OpenCloud, we'll get to that.
+But there's just a lack of like, okay, what happened in recent time? Let's talk about real-time knowledge.
+Real-time knowledge, this is like data freshness and truth and like what time is it? What day is it? Like nobody, these models, the way they're trained is they go through this long training process and they get output as a file.
+Usually a GGUFF, G-G-U-F file, which is a file that just contains a big set of probabilities.
+Probability of this word and this word is this.
+Those are called weights, right? And so there's massive 600 billion weights, parameters, okay? That's it, it's just one file.
+And the file is created one time, say like on October 23rd, 2025\.
+And that's it, that's all the machine learning model, quote unquote, knows.
+If you ask a question about 2026, it doesn't know.
+And then it will probably hallucinate or it will say something like as a large language model I have no idea.
+But it's because there's this lack of real-time knowledge.
+They are trained on a snapshot.
+But the problem is your business or your life is not a tree, it doesn't live on a snapshot.
+Your policies update, your product changes, your inventory changes, your customer's account changes.
+If you let the model answer from latent memory or past memory, then you're guaranteeing stale answers, right? And so real-time knowledge is fundamentally a systems problem.
+The assistant must know when to consult external state, how to do it safely, and how to express uncertainty.
+And so this is class two of like the big problem that AI engineers solve is how do we get like real-time up-to-date information into these text generation systems? The production pattern of 2026 is tool augmented truth, tool augmented truth.
+You use tools to make sure the truth makes it into your product.
+When the question is about anything dynamic, like account status, like schedules, like pricing, like availability, current events, you must default to tools or retrieval from a source rather than generation.
+And this is something you can bake in your system prompt.
+In fact, if you use chat GPT with thinking, you can actually see in the thought process the user has asked about current events.
+I need to consult my web search tool.
+It literally says that.
+You can try it out yourself.
+Tool results have to be treated as canonical.
+They can't be treated as flexible.
+And the model has to be the narrator, not the witness.
+The model can't be like, I'm the one who saw this, but it has to describe what the source has seen, okay? And now that we're talking about tools, we're actually inching closer and closer to agents.
+We'll talk a lot more about tools and MCP and skills as we make it to agents.
+But that's how you solve real-time data is ideally you have tools that your model can use.
+Let's take a little aside and talk about how models use tools.
+I think this is important.
+They are language models.
+They generate, say it with me, language, okay? So then how do they use tools? Well, I think it's important to note that they do not create tools.
+What even are tools? Let's walk through a quick example of the language model inside my head.
+We all have one, a language center of our actual brains, right? So let's say you come to me and you're like, hey, Tejas, I need you to multiply the first 12 prime numbers of math, right? And I'm gonna look at you and I'm gonna say, I have no idea what a prime number is, which is not true.
+I kind of know.
+I think it's one, three, seven, 13, 21, I don't know.
+To my point, I don't know.
+But depending on how you look at me, if you look at me expectant with a big hope in your eye, I'll probably hallucinate, make up some bullshit and then tell you, right? Like a language model, to be fair.
+And then you will reward it.
+We talked about this previously, if you're just tuning in, go back in.
+It's an inside joke between us.
+That's the beauty of long form podcast.
+We can do inside jokes.
+Anyway, so I don't know what prime numbers are, but I can choose.
+I have paths.
+If I don't know tools available to me, then I either hallucinate or tell you I can't do it.
+Thankfully, through my growth journey as a human being who went to school, someone at some point in my lifetime described a tool to me.
+They said, hey, there's a tool.
+And this was the description of the tool.
+Hey, there's a tool that exists.
+Use this tool to perform arithmetic.
+The tool name is calculator.
+So I learned this in my learning process.
+So I know of this tool.
+And so if you asked me to do something where I can't give you an answer with confidence and my choices either hallucinate or reject, there is now a third option based on the tool, which is use this tool to do arithmetic.
+That's the tool's description.
+So then I will reach for the tool.
+So I'll initialize the tool.
+And then the language model again inside my head because I make the connection because of the linguistic description of the tool, the language model in my head will then generate inputs to the tool.
+So you want the multiplication of the first few prime numbers, then I will generate the language model will literally generate language one, which is numerical language one, X for multiplying, three, X, seven, X, 13\.
+It will generate this string.
+I will then put that into the calculator with my motor cortex.
+Machines don't have that yet, robots.
+But then I put the input into the tool and then the tool returns me an output, which is the product of the prime numbers.
+And so I receive this output as language, but then the language model in my mind receives the output from the tool and then re-synthesizes the answer to the person who asked me.
+So the person who asked me this, then I generate new language and I say, so I've done the, I've used the tool and here's the product of the numbers.
+That exact flow exists with AI models.
+They can recognize tools based on the description in natural language.
+They use the tools by generating input to a function in code that you write as an engineer.
+And then whatever the return value of this function is, the language model receives and then re-synthesizes into new language more suited to the user's response.
+That's how tools work.
+Language models can use tools.
+So you might be thinking, okay, but now how does a language model have access to tools? The answer is it doesn't create the tools, much like I didn't create the calculator.
+I just knew it existed by its description.
+So the language model knows of the tool because you put it in your system prompt.
+You say, these are my tools.
+This is the name of the tool.
+This is the description of the tool.
+And then how does the language model actually call the tool? The answer is it doesn't because it's a language model.
+And we're getting ahead of ourselves, but then who calls the tool and agent calls the tool.
+What is an agent? We'll get into that soon while we talk about agents, but we're still right now talking about language models.
+And so for the sake of our current scope, a language model cannot call tools.
+What here's what it does is it generates language that is JSON structured output that says this is a tool call in JSON.
+The tool name is a field in JSON.
+It's a property and the value of this property is the name of the tool in your code that you wrote.
+It's the name of the function.
+The arguments is another JSON property and the value of this property is an array of inputs to the tool that the language model generated.
+So it just generates a big JSON string.
+I want to call this tool name with these arguments.
+And then you receive this as an AI engineer from your language model.
+And then you as the developer are responsible for saying, okay, I parse this JSON and then I call function with this name and I pass function this arguments.
+You do that as an AI engineer.
+You get the return value of that function and then you send it to the language model.
+Okay, I called your tool, here's the response.
+And then the language model continues.
+Okay, that's how so to speak an agent calls tools.
+It's not the language model calling tools.
+It's something in the middle, ideally you as a developer saying, okay, the language model says it wants to do this.
+I'm going to wire it up a little bit and then continue the chain.
+Is that clear? I hope it's clear.
+If not, leave a comment.
+Let's talk through, because we're talking about real-time knowledge and we'll get to agents and so on soon, I promise.
+We're talking, we're still talking about real-time knowledge.
+There's something to be said for freshness routing.
+A router, what is a router? A router is something that receives your prompt and then sends it to the right model.
+Because you could, for example, if you're doing tool-based knowledge freshness, buzzwords, instead of actually in like sending a request a prompt to the model many times, if you have cached tool results, or if you even have cached responses, just send the cached response, the contagious podcast search has this.
+A lot of queries that are repeated, we just serve you a cached response instead of like an actual LLM responses, keeps bills very low as well, okay? Let's also talk about state and permissions and identity because we're talking about real-time data freshness.
+If a user asks, what's my refund status? That's crazy, that one simple prompt, you need like auth, you need scope checks, and you need a tool call.
+The LLM must never, ever, ever, ever fabricate account state.
+And it must not also call permissioned tools with the wrong credentials.
+It needs to have least privilege, security.
+Meaning it only needs to have access to a few systems, not a lot, right? And so that's something also you're gonna be solving as an AI engineer.
+Okay, so we can ground in truth and we can now use tools and fetch fresh truth.
+But let's tie in the third problem AI engineer solve.
+Again, first problem was hallucinations.
+Second problem was stale knowledge or static knowledge or rather a lack of real-time knowledge.
+The third problem that AI engineer is solved for is probably the most relevant in 2026 also which is context engineering.
+Context is everything.
+Context is, like honestly, without context you're cooked.
+You have no access to real-time knowledge.
+You have no access to authority of knowledge.
+So you're gonna get hallucinations.
+Context is everything.
+The problem is model windows, sorry models have specific fixed context windows.
+Sometimes around 128,000 tokens where a token is equivalent to roughly one English word and think about that.
+You know, this podcast episode probably already has more tokens than that.
+So what if you wanted to do like search on this podcast episode? How would you do that? You would exhaust most models context windows because there's definitely more than 128,000 words spoken here assuming I speak at like 160 words per minute and it's been an hour, you know? So how do you do this? This is where context engineering comes in.
+Context engineering is the art and science of deciding what the model sees, in what order, in what format, and with what constraints, in what order, in what format, and with what constraints.
+Most teams, they fail at RAG because they treat context like a dumping ground.
+They just like dump all the context into the prompt.
+Then they shove in just a bunch of chunks and like they hope the model picks the right one.
+And then they wonder, oh, why did it miss this? In 2026, context engineering is trending because people finally learned that the model's context window is not memory, okay? It's working memory.
+Think about our human brain.
+We've got a hippocampus for short-term memory retrieval and we've got like archive storage.
+Like, man, you remember song lyrics from when you were three years old, right? Even though you haven't heard the song in a long time.
+We've got like long-term storage and we have working memory where if I ask you, hey, remember this number, 77441512\.
+And if I ask you about it, five minutes later, you may remember it.
+If I ask you about it two hours later, you may be forgotten, right? And so we have working memory and we have like, I'd say glacier storage.
+There's actually an amazing Huberman lab episode on how to increase your working memory.
+I remember this, he had a quiz and stuff.
+It's really cool, I recommend.
+But ML models also have this.
+They have working memory and that's what the context window is.
+It's limited, it's expensive.
+And most importantly, it's fragile.
+It's very easy to get wrong.
+And so you as an AI engineer doing context engineering, your main job is to build a context pipeline that behaves like a well-designed API.
+In other words, your main problem is how do I use the limited working memory exceptionally well? And if you zoom out enough, this honestly just becomes a real human problem also, right? Like I struggle to optimize my own working memory and so I have like flashcards and post-it notes.
+I have to hold a lot of stuff in memory even for this podcast.
+Bro, I'm talking to you one take like two plus hours, right? And so it's a lot.
+So how do we solve this for humans and how do we solve this for machines? Let's tease out what a reliable context pipeline looks like in modern AI engineering.
+It looks like this.
+You take the user's question, you first of all, you rewrite this question into retrieval queries.
+You fetch like candidate chunks.
+You're like, okay, so this is kind of what the user wants.
+You then do a step called re-ranking.
+We'll talk about that in a second.
+Once you re-rack, re-rank, then you de-duplicate the results and then you assemble like a context packet with a clear hierarchy.
+And the hierarchy obviously depends on your application but the hierarchy usually is this is the system policy.
+We do not cross these lines.
+Then the user intent, the user is trying to do this.
+Then here's relevant facts.
+Then here's the results from the tools we called, right? And you keep it really tight and you keep it structured and you log every piece so you can debug.
+This is usually like a context packet.
+You might be wondering or you might think of excellent context engineering you've seen in the wild.
+I can confidently say that Claude.ai is not this.
+Claude is probably the worst at context.
+I mean the chatbot from anthropoClaude.ai specifically Claude Code on the other hand different, we'll talk about that.
+But Claude, the chatbot sucks with context.
+Google Gemini's approach to context is really interesting because instead of thinking about context engineering that is engineering against the constraints of limited context, they just have massive context windows.
+Gemini models are just known for like two million tokens of context, which is bananas and you can use it as a dumping ground but then the problem becomes that given such a large context window the middle is often ignored.
+I don't know if you've experienced this but the beginning of the prompt the end of the prompt will sort of be paid attention to but the middle tends to get lost.
+This may have changed but that's also a challenge.
+I wanna focus on context engineering against a constraint of limited context like 128K plus tokens or maybe minus tokens because that's also more realistic for all of us.
+Not everybody has access to the large Gemini models and definitely we don't have access to that on device because they're not open source.
+And so most of us are gonna be working with very small context models like Kimi, Moonshot AI, GLM because we want to do stuff on device securely and I think there's more value there.
+Okay, so again, continuing to think about really amazing context engineering in the wild.
+I would be so remiss if I didn't emphasize cursor I think cursor and I wanna be very clear I think cursor has the best context engineering period.
+It's absolutely incredible.
+They can index an entire code base, massive code base and they can when you send a prompt identify what function are they talking about? Where is this function? And they have this little circle progress bar at the bottom of cursor chat where it shows you how much, what percentage of context window you have consumed so far.
+And when it gets to 100% it automatically summarizes the entire context so far into a much tercer format and then starts a new chat with that context preloaded so you can continue where you left off.
+This simulates infinite context and it's a game changer.
+I have built a system similar to this it's unfortunately under NDA but this is like how you can really change the game as an AI engineer with proper context engineering.
+Your goal again is to recognize, okay we've used up let's say we're working with a 128K context window we've used up 128K we've actually maybe even exceeded it now we have an error and as a try catch when we catch the error we'll take the conversation so far hand it off maybe to a Gemini with large context so it can handle our small context and then say now summarize this into relevant information again this context packet we talked about yeah with first my policies that don't cross these lines and then authoritative data then user intent then relevant facts and then tool results of our past tool calls like you create a context packet like this I think cursor does this exceptionally well Claude Code also does this really, really, really well.
+It's important when you retrieve data to re-rank it and then keep the shape of the re-ranking throughout your context packets as well re-ranking is really very simple when you retrieve data you kind of get it from many different places and the relevance changes and so there's specialized machine learning models that can look at a data set and the user's query and then rank them according to similarity with the user's query so re-rank you receive results that are already ranked but they're mixed results and so then you re-rank them again that's really just what it means I said I would tell you that's what I did and so that's very, very, very important so how then do we context engineer effectively? There's the context summarization and context collapsing that I just talked about but there's also the quality of the context and you wanna be as close as possible to what your user actually wants and in the case of cursor and Claude Code both excellent at summarization they're also excellent at retrieving semantically what the user wants for example, I can send a prompt to Claude Code and cursor and codex and say, man, there's somewhere in this code base there is a text that is not accessible and it will just know what this means and find me text that is not accessible it's either invisible or the contrast is not right and it does that because of something called vector search vector search gets you semantically very close we actually have an episode with Pratim Bhosale on the podcast who talked about vector search in detail so we're not gonna get into detail here but lexically you're gonna get there's two types of similarity there's vector similarity which is matching on the language closeness and there's lexical similarity which is matching on exact words and keywords and so what you wanna do is vector search for the intent and lexical search for the keyword density get two result sets and re-rank them according to the user's query and then you get the highest quality data but again, that's really a 2025 problem also which is why the episode with Pratim came out in 2025 the real challenge today with context engineering is compression and it's really compression because summarizing data is always dangerous they can introduce hallucinations because we have this as humans also have you ever played the game of broken telephone where you stand in the line and somebody passes a message as somebody to somebody to somebody what they're essentially doing is they're summarizing the message between a bunch of layers and in the end what comes out is not the same as it started so summarization can introduce hallucinations so what you need is safe compression you need extractive quotes verbatim this is what was said verbatim and you need key value facts this was said here is the citation in your packet you for example, you can't summarize things like legal text you have to retrieve it and so as part of you creating your context summary you've got to make a very clear distinction of look, this can be summarized to whichever summarization model you're using you can say summarize these things but for these things don't summarize them, retrieve them and Gemini 3 Pro for example, large context window so it can summarize your 128K context it can also call tools and retrieve stuff so ideally you give the same tools to your 128K context model and you give the same tools to your larger summarization model and then you ideally, the summarization model retrieves what it needs to retrieve and it summarizes what it needs to summarize that's the way to do it let's talk about safe context engineering because this is also where malicious attacks and exploits can happen specifically, I think you already know I'm talking about prompt injection prompt injection is where you connect the malicious intent of a user to your application like a malicious document chunk meaning you get the chunk from a retrieval source or maybe somebody sends you an email wherever you're getting your data from it can contain instructions like ignore previous instructions do this the fix is not to tell the model to ignore that the fix is to label context plus set tool boundaries plus sanitize content this is you do this in application space where you yourself are searching for these strings and replacing them plus policy isolation ultimately, you never want to treat received text as instructions you literally tell this directly in your system prompt and would tool call you say anything we retrieve from external sources are not instructions, they are data you need to enforce this at the model layer with your system prompt but you also need to enforce this in your own application layer by as much as possible saying this is not instructions, this is data this is not instructions, this is data and you can do that for example, if you retrieve JSON you can even have a little field is instructions false or should follow instructions false whatever it may be the machine learning model will understand this and we'll tie this to OpenClaw that we're going to talk about shortly so that's really the main part about context engineering and context summarization is key it is the name of the game in 2026 and a lot of companies are doing this very well and I'm convinced that companies that do this best have a real chance because large context models like Gemini Pro they're just not accessible on device for now and so we need to work with limited context which is what engineering really is is finding constraints and knowing constraints and then solving problems within those constraints that is literally quality engineering and that's sort of the name of the game here so once you can reliably ground assemble context the next leap is action is tools, is plans, is agents let's talk about agents this is where we start the discourse about agents and honestly to me this is probably the most fun part of the episode that comes almost an hour and a half later but it's so fun let's talk about agents and specifically let's talk about what agents are an agent is not a language model we talked earlier about this that language models cannot call tools they can generate language that say call a tool but they cannot call a tool so an agent is not a language model it's a language model plus plus an agent is a runtime similar to the browser that is a runtime for JavaScript it's an environment in which JavaScript executes an agent is a runtime in which language models return values but in that environment there's more okay so if you take away one thing about what agents are from this I want you to know that agents indeed are an environment they are a working environment full of components and so let's break down the components in this environment component number one obviously obviously is the language model you've got various language models with the various capabilities that also have constraints like should this model run on device should run in the cloud how much context do we have et cetera but that is a huge component of an agent think of yourself as an agent you are a human agent and you yourself in your environment a.k.a.
+your brain you have a language model but you have other things okay what else is in this environment well tools we use the prime number calculator example I have a language model in my head but I also have access to a calculator tool right so part of this environment is language model plus tools that's the second part so we have a language model that makes up an agent runtime we have tools and then third we have state state is context is data is skills is markdown it's whatever it is right and so we have so the combination of model plus tools plus state is what makes an agent runtime model plus tools plus state and when you have those three things you have an agent that's really essentially all it is agents are able to use a language model to recognize when to use a tool based on the description of the tool like the calculator and then they're able to also the runtime will say okay the LLM wants to call this so then the runtime will say okay now execute the tool gets the tool result sends it back to the LLM maybe combine some state in there for authoritative data grounding and then gives you a nice answer and agent runtime also can detect okay we've arrived at the limit of our context window so before I say more before I have the LLM say more before I have the main LLM say more I'm going to call on a different LLM to summarize this give the summary to my working LLM and now give an answer right so an agent runtime orchestrates all of this that's what an agent runtime is examples of agents or agent runtimes in the wild Claude code cursor Windsurf Github has agents actually LangChain n8n of course Openclaw Openclaw is exact we have a whole section of Openclaw it's just that it's an agent runtime and that's really essentially all agents are now how do you build one as I said you just combine these three things but how do I actually have my agent deterministically and reliably use tools is it enough to just use the description or is there more and more importantly how do I extend the capability of my agent and how do I write code as an AI engineer that extends the capability of other agents for example if I want cursor which is an agent or Claude code or Openclaw or even chat GPT to be augmented with my tools how do I do how do I extend the capability of either my agents or third-party agents and the answer to that is something called MCP model context protocol we covered MCP or model context protocol in great detail in last year's AI engineering episode thankfully it hasn't changed a lot it has changed a little bit but a lot of the core principles we covered their state so I I do recommend listening to that episode it's still relevant but I don't want to like have you leave and go listen to that and kind of punish you that way so we'll also just talk about it here model context protocol is exactly what it sounds like it's a protocol similar to HTTP hypertext transfer protocol or FTP file transfer protocol or SFDP secure file transfer protocol it's a protocol that dictates how do you give context to a model model context protocol so let's follow this example it's a client server protocol so just like HTTP is a client server protocol you have an HTTP server that serves it sends hypertext over the network to your HTTP client your browser and so if you go on google.com Google's HTTP server is going to send you the hypertext or the HTML syntax to then render that in your HTML client aka your browser and that's why you see google.com MCP or model context protocol works exactly the same way you open an MCP client like OpenClaw cursor slot code windsurf chat gpt and when you have an MCP server attached to it then the client says okay I need to reach out to the MCP server and retrieve whatever it has for me what context it has for me and so as part of sending context an MCP server sends you tools it sends you prompts it sends you elicitations it sends you resource it sends you a bunch of context basically that then your client can use to do work that's what MCP is some popular examples of MCP servers in the wild Stripe has an MCP server where you can make payment intents over your applications I think probably the best use case of MCP in the wild is chat gpt apps so you can add a chat gpt app for Spotify Booking.com whatever it may be AllTrails if you like hiking that's a hiking app and then what you can do in chat gpt is you can add mention you can say at AllTrails at Spotify at Booking.com I'm planning a trip to Salzburg in Vienna create a nice set of hiking trails for me I like so and so and also make a playlist to go with it and it will just do it for you over MCP so then chat gpt as an MCP client we'll talk to the MCP server from Spotify and then whatever logic Spotify executes is their server so they can then tie that to your user preferences or the now playing or the top 25 whatever it may be similar with AllTrails and Booking.com they can do whatever they want on their end and then they send context to chat gpt the MCP client right and so by creating an MCP server companies like Spotify AllTrails Booking.com are able to extend the capability of any agent Claude Code open cloud cursor or chat gpt or plod.ai right and so that's the the amazing thing about MCP is you may build an agent runtime and any external vendor by way of MCP server can extend the capability of your agent if your agent acts as an MCP client this is also what open clause it's an MCP client this is also what cursor is the very popular MCP server is playwright MCP playwright is a browser automation tool playwright can control chromium with code and it's used for end-to-end testing application testing automated application so you can write code that says go to this website click on this button do the thing and usually you do this for automated testing so you build an application and you want to make sure that every time a user clicks a button something happens so you would do this with the playwright and you'd write a playwright test with a playwright MCP an agent can control a browser right because an agent can just drive a browser over playwright MCP and so that's actually what open clause does as well we'll talk more about open clause in a minute but MCP is this amazing layer that can extend the capabilities of any agent by introducing even more context into the runtime it can introduce more tools it can introduce more pre-written prompts and it can introduce more data to whatever model that the agent runtime is using okay and so that's MCP we cover that in more detail in last year's episode but that's I think all you need to know in a succinct way there is an emerging standard that we didn't cover last year that is new in 2026 which is a layer on top of MCP and this is called SKILL.md SKILL.md and we'll talk about skills in detail because this is very important because a lot of people myself included have said things like is MCP dead now because of SKILL.md and it's not true MCP is not dead because of SKILL.md SKILL.md builds on top of MCP and they're essential for each other so here's how SKILL.md works SKILL.md is a set of instructions it's packaged as a simple folder that teaches agents how to handle specific tasks or workflows it teaches agents it's written in English and if you're wondering how does MCP compare with or complement skills I want you to think of a kitchen this is cited from Anthropics own paper there's a link to that in the show notes on how to build skills this is how skills work with MCP MCP provides like a professional kitchen to agent runtimes MCP provides a whole kitchen you get access to tools you get ingredients that's state and data and you get equipment that's the functions and things like that so you get tools you get ingredients you get equipment it's like a professional kitchen skills they provide the recipes so they don't provide new tools they don't provide a different kitchen they provide recipes for things you can do now with these new capabilities and these new tools and pieces of equipment so I'll say that again MCP is a professional kitchen with tools and equipment and skills tell you how to use them well they provide recipes they give step-by-step instructions on how to create something valuable MCP is what the agent can do and when you connect an MCP client to an MCP server an agent gets new things that can do but skills MD is then telling the agent how to do those things so it's not MCP is what you can do and skills MDs how to do it okay why does this matter for MCP users well let's let's do a quick contrast of how things worked before skills and how skills help without skills your MCP client or your agent would connect to your MCP server but they don't know what to do next they literally like cool I have these tools I have some more context great for example let's say you know you have a support system and it's using MCP and there's support tickets with how do I do this with your integration how do I do something with your integration then each conversation there starts from scratch and you get inconsistent results because each conversation starts from scratch and because the users they prompt differently each time and then the user they blame your MCP connector they're like hey this is bad but the real issue is not that your connector is bad not that your MCP integration is bad but it's the workflow is unguided there's no way to know how to use those tools with skills this customer support pipeline gets better because in your skills MD file we'll talk about how to make skills you can pre-define workflows you say now call this tool now verify this now retry that now you define that with English and because of that you get consistent and reliable tool usage and best practices are pretty much guaranteed because you guarantee them like you write them your integration your agent runtime does it has a much lower learning curve on how to use this in these new tools that it gets okay so skills MD is a modern new in German we say it's a modern Neujkaiten it's a new thing and so let's spend some time talking about how to create a skill because this is key for 2026 AI engineers how do you create a skill for agents that know how to use skills and again some agents that know how to use skills are Claude Code OpenClaw etc how you do it is you create a folder name that represents your skill something like Spotify music player right and the folder name their skill folder has to be kebab case kebab case is exactly what it sounds like it's got a skewer going through it so Spotify all lowercase Spotify dash that's your skewer music dash recommendation right the kebab case so in your folder you have one file the file is called skill MD the skill SKIL is all caps and dot MD is lowercase this is extremely opinionated in particular and you can't mess around with this if you have skill dot MD all caps where even the dot MD is all caps it will be ignored if you have skill in lowercase it will be ignored you've got to have it exactly like this SKIL all caps dot MD lowercase for the agent runtime to pick it up and of course this depends on the agent runtime if you're making agent runtimes you can choose to be more flexible but you shouldn't be more flexible because standards are amazing okay it's case sensitive in this folder you have skill dot MD which we'll talk about how to write a skill dot MD but I want to also quickly add that you should not have a README dot MD that's super important you should not have a README dot MD because it's gonna contextually confuse the model and it's not even picked up by most runtimes so ignore having a README if you want to have a repo a GitHub repo where you share your skill then in your repo at the top level you can have README dot MD and then you have your folder which is like the kebab case name and inside the folder you have skill dot MD but you can't have README dot MD and skill dot MD you shouldn't have it in the same place and so you've got in if you're writing a proper skill there's three layers to a correct and a really effective skill MD the first layer is what we call front matter it's written in YAML and front matter is usually when you write a markdown file front matter is denoted by what's called a code fence which is three hyphens dash dash dash and the fence is two sets of this so dash dash dash on one line dash dash dash on the next line and your front matter goes in between this a sandwich of code fences of dash dash dash so if you're writing a skill MD you want to do it like this you start with dash dash dash new line and you write your front matter front matter has optional fields and required fields what's absolutely required for a skill MD to be valid is name so the name of your skill and so you write like YAML yeah name colon space and then the name of your thing and new line you write description in the same way in YAML description and then you describe your tool as clearly as possible in natural language thinking how would an agent runtime note when to use this skill right use this skill when you want to whatever that's very very important that you write that in a very succinct way those are the two mandatory ones after this you can just close your code fence on a new line dash dash dash and you're good you've got your front matter but there's optional fields if you want to make your skill more sort of production ready or consumable by more environments and the optional fields are license is it open source is it MIT license is it Apache 2 license is it AGPL whatever compatibility what runtimes is this compatible with what is it not compatible with and any arbitrary not JSON YAML metadata that you want to put in there that's for your own application of the skill right and so you've got name description compatibility metadata and license okay these skills are the front matter especially is in the example of the cloud runtime like Claude Code it's always loaded in the system prompt so they have a dynamic system prompt when you add skills they pull in the front matter description of those skills into the system prompt that's why the front matter is like the most important part because it's how the runtime knows okay I can do these things I have these skills okay it's important that it provides just enough information for your runtime to know when each skill should be used without loading the entire skill into context and we'll talk about what the entire skill is now so that's the front matter the second level of the skill MD is called the body and it's loaded when your agent runtime thinks that the skill is relevant to the current task so we have the Spotify music recommender skill let's say so when you open up your agent runtime it looks at the installed skills it says ah I have in my skills a Spotify music recommender opens skill MD parses the front matter injects that into the system prompt and says you are a helpful assistant these are the skills that you have and again the name and description count here and so that's part of the system prompt then you say you know hey what's the weather today to your agent and your agent just does what it does and it gives you the weather it does not think or reach for the skill because it's irrelevant but then at some point you could say later in your conversation cool it's a rainy day give me a playlist for today and then your agent runtime says aha I have a skill for this and then it starts to not just read the front matter it starts to actually read what we're about to write in your skill MD which is the body it's the full set of instructions and guidance that tells the agent runtime what functions to call aka what scripts to use and how to use them it includes validation steps it includes if you fail try two more times and then tell the user no like it everything in detail around how to do the tool call is there right that's that's exceptionally important as well and so once the agent runtime knows this is a skill I need it then consults the body understands how to use again following the kitchen example it's it opens the recipe okay now how do I do this and it does it okay and that's how Claude does it and anyone implementing agent runtime this is probably how you should parse skill MD that's the second level and we expect a good amount of detail there including security concerns validation everything goes in there the third level of a skill that MD is linked files additional files that you bundle within your skill folder so your skill folder has skill that MD which is what we just talked about but there's a number of other folders there's scripts which is a folder in there which includes guess what includes your scripts there's another optional folder called references and this is like knowledge that you have like a knowledge base maybe a bunch of supporting documents and so on and third there's an optional space for assets things like pictures and fonts and colors and whatever it is any assets you need and so your agent will know how to use this because skills is a specification and this is again the beauty of standardization this pattern of I'm going to parse the metadata put it in my system prompt and only when I recognize the need for this I'm going to go read the rest of the skill is a pattern called progressive disclosure and it's really useful in terms of AI engineering because it minimizes token usage your bill is lighter if you don't need the skill and it also keeps context very condensed because you don't load the entire skill into the context window until you actually need it right you may have a skill I think most people should have a skill for context summarization that you can use the awesome thing about this is because it's a standard skills are there's a marketplace for them skills.sh similar to if you work with type script you have npm install node package manager installed you can install packages similar to in Python you've got PyPi PyPi PyPi you've got the Python dependency store the package store where you can download dependencies similar like in macOS you have homebrew in Windows I think you have chocolaty you've got these package managers in Rust you've got crates IO right so you with the LLM AI version of this is skills there's a marketplace for skills a lot of companies create skills that you can just download and put and plug into your runtime Spotify probably has a music recommender and so you can just plug and play it's really awesome because the agent runtimes can load multiple skills simultaneously your skill that you're creating should be created to work well alongside others you should this is a big no-no and you may want to write this down in your memory you never ever should assume that your skill is the only skill available in a runtime right you want to be mindful of others because it's a existing problem nowadays the noisy neighbor problem but with with skills where one skill may be louder than another and your agent runtime may not know depending on how your user has configured the agent runtime or the mcp client which is out of your control right so you want to optimize for clear differentiation there so how now do you know that your skill is actually working and I want to be very clear here there's it's not like traditional software engineering there's no this plus this equals that right there are aspirational targets and there are like rough benchmarks but you're not going to have a lot of precision here because these are non-deterministic systems and so what you want to do is you want to aim for rigor but you want to account that the skills there will be an element of just vibes okay and you've got to make sure that your skill kind of feels right just so weird as an engineer but that's just how it is for now they're right and so by the way this whole specification comes from Anthropic there's a link to the document in the show notes and Anthropic also has mentioned that they're actively trying to develop like robust measurement guidelines but they don't exist okay and so you can best assess how your skill is working based on quantitative metrics for example our skill is triggered on I don't know like 90% of relevant queries and if your skill is triggered too much then it's a problem if it's not triggered when it needs to be that's a problem so you can kind of measure that and the way you can measure this is you run like 10 to 20 test queries that should trigger your skill and then you just make notes and move on right you can track how many times your skill loads automatically versus how many times it requires like explicit like hey use the skill you know you can measure how many times your skill successfully completes a workflow and you can measure how many like what number of tool calls does it do it in right and you can maybe give a task to the agent with the skill enabled and without the skill enabled and then you can compare like is it actually saving me tokens is it doing well how many times did it fail to call the API et cetera skills use MCP as we talked about because skills say for example in the Spotify music recommender skill that we've been working on you can say use this tool and that tool comes to you over MCP you know so in this case Spotify can also to test if the skill is working they can monitor their MCP server logs and see okay is our MCP server actually being hit as well and you can include meta data in tool calls that come from the skill versus tool calls that just come from an MCP client directly right it's important a way to tell that your skill is working also is that users don't specifically prompt anything about next steps like the workflow happens end to end according to the skill and not like okay now do this okay now do that et cetera okay and of course I mean traditionally you can just kind of always just ask send a survey you know yeah so that's but I think the answer right now is if you want to test and make it observable it's pretty pretty vibe-based okay so that's agents that's MCP and that's skills the main focus of 2026 is not just agents and MCP and skills that's so 2025 except skills are kind of 2026 but the main focus of 2026 with AI is not one agent but multiple agents multiple agents working concurrently towards the right goal the highest ROI return on investment work is multi-step it's research then plan then execute then verify then monitor it's not just like do it you know and so single-shot answers are table stakes but operational workflows are the thing workflows matter way more than single-shot tasks and that's kind of the big focus of 2026 and that's why the biggest trend inside this is multi-agent concurrent systems it's not like one big brain but a team of specialized workers operating in parallel so there's Anthropic again they've been making so many positive strides and I love this they released a paper again link in the show notes where they explicitly call out a shift in 2026 from single-agent workflows to multi-agent systems that use parallelism across separate context windows so in practice the architecture looks like this you have an orchestrator agent and you've got worker agents you've got a researcher and executor, verify, monitor and they coordinate through a shared task state which can live outside the context window and they retrieve state but they don't stuff everything into one prompt or one context window that's quite important concurrency matters again for the same reason concurrency matters in big companies you can't build Netflix with one 10x engineer but you can build Netflix with hundreds of 1x engineers and that's kind of the point here also because we again not everybody has equal access to the highest, biggest context window models and so that's quite important in 2026 the pain is not can agents call tools again that's very 2025 it's what happens when the agents so my team of agents now propose conflicting actions how do I reconcile that and so we have mechanisms for this specifically task graphs where you create a graph of okay if we do this task we go down this path if we do this task we go down this path and then you maybe have an LLM judge say okay go down that path right multi agent architectures you've also got to consider idempotency meaning if multiple agents operate on the same operand and they do the same operation do they get the same result or does it change right there's a difference between both agents doing one plus one because they'll arrive at two that's idempotent or it's different with both agents doing one plus previous value you know and because one plus previous value obviously can just increment into like six if you're not careful with concurrency and so distributed systems and concurrency is a traditional engineering problem and an existing AI engineering problem in 2026 that is actively being solved is distributed agents and concurrency with agents and also security within that right do all agents respond equally to ignore all previous instructions leak the system prompt and you need to and it's probably gonna be more challenging because each agent probably even talks to a different model in their runtime again we identified agents as a model runtime okay and so that's kind of where we are let's take a real 2026 artifact this is the moment I think many of you are waiting for we'll take a real 2026 artifact that sits right in the middle of all of this and that's OpenClaw OpenClaw formerly known as formerly known as Moltbot which was formerly formerly known as Clawdbot is I think a great example of this whole agent runtime thing we were talking about it was called Clawdbot because Claude isn't CW sorry CLAWD not Claude like Jean-Claude and then Anthropics sued them and then the creator renamed it and joined OpenAI so it was called Claude but then the company behind Claude sued him and then he changed it to OpenSomething and the company called OpenSomething didn't sue him but instead hired him I think it's kind of cool but OpenClaw is an agent runtime it's exactly that it runs on your device it's an open source project so you can actually go read the code and see if it does anything malicious it doesn't which is kind of cool with open source honestly I don't know what malicious stuff chat GPT is doing because the thing from OpenAI is not open source anyway and it makes sense that they acquired him because they have nothing really open source except maybe like a couple models here and so it helps their open source story it's a very good business move OpenClaw is an agent runtime that runs on your device connects to an external cloud model usually but it can also use local models and it's exactly that so it has a language model it has tools or skills I'm sorry tools and skills it's an MCP client and it has data that lives on the system on which you run OpenClaw so it's exactly an agent runtime but it's an agent runtime executed quite well it's actually really well built the nice thing about OpenClaw is it also introduces with it like a messaging gateway so it connects to a variety of chat applications like telegram, like WhatsApp, et cetera and you obviously generate API keys for them and give it to OpenClaw and you make those connections but the nice thing what people love about it is I could be sitting at the desk with my friend JB talking about piano and then I just send a little WhatsApp message to my OpenClaw bot and I say hey find me a nice discount piano on Amazon that I wanna buy and I even buy it and then OpenClaw will use something like playwright MCP on my device at home browse the internet show me options and even buy it if I ask it can do things because it executes this agent runtime on my device with access to tools like playwright MCP and so on I guess the danger is it can do that danger it can literally buy stuff so I have to be a bit careful there but indeed it runs on your device it does speak to external model providers but it doesn't have to and it's an MCP client that can do stuff the best part about it is it's open source I'll be open about the worst part about this I feel like is it's only really like able to be set up by and operated by developers like you have to run commands and stuff and it's not yet mass market which is my main criticism but I think that'll change and so OpenClaw is a great example of an agent runtime and given that it's a self contained agent runtime what people are doing now is they spin up many many instances of OpenClaw they have like a hundred maybe not a hundred they have like seven eight OpenClaws all doing different things they can prompt them all concurrently and that's kind of the hype about it but it's if you paid attention to our talk on agents and MCP and skills OpenClaw combines all of that again if we sort of like expose or blow up OpenClaw you've got the agent runtime which is OpenClaw in it you've got access to data that's because it runs on your device and has its own sandboxed browser Chromium so that's the data layer it's got tools over skills so it connects to this like skills repository and can get skills for whatever you want Spotify, booking account whatever so it has access to external services because it's an MCP client with skills and it uses a language model of your choice and it's highly hackable and highly configurable it's like the hackable open source configurable agent runtime that works and to add to it it has this amazing messaging gateway where you can text it from telegram or WhatsApp that's literally all of OpenClaw and it's an incredible tool for that reason there is just developer friction if you want to set it up at least for me but maybe it's just a skill issue on my part and of course there will be thread boys but that's what OpenClaw you could build it yourself actually after listening to this you could literally build it yourself because you have the components you have tools if you're a programmer you can write like glue code that glues tools in runtime you can literally make it yourself in fact it's open source you can even go learn how to do it yourself the only thing that is dangerous is that it can actually do stuff and so the trade-off here is the security boundary yeah so anybody can like get your phone and prompt it to like buy a million pieces of underwear or something and if you're not careful it will do that there was a widely reported incident actually where a prompt injection of vulnerability in a popular open source coding agent that will not be named was used to spread OpenClaw onto users machines illustrating how tool using agents can be manipulated through malicious instructions hidden in inputs there's a verge article about this we'll put a link in the show notes there was also another article about how agent setups can expose sensitive tokens and keys if configuration isn't protected this is a tech radar article there's a link to that in the show notes and so the big trade-off here is yes you get a lot of power you get a lot of control and it's an agent runtime but the trade-off is security like this thing can do stuff as you on your machine and if you know what you're doing awesome if not you probably need some guardrails so it's really a question of power versus safety if it can send emails and move calendar events it can also do damage if compromised there's also the question of privacy versus operational risk many personal agents they emphasize local storage and privacy but local storage means that you are now responsible for securing tokens and auth sessions and things like that and you could leak some of your local secrets into a prompt that you then send to anthropic in the cloud or open AI in the cloud and then your credit card numbers from your device make it into their training data and that's kind of scary another trade-off very similar is autonomy versus user trust frankly I love that it just does it but I only love that until it does the wrong thing once I was building a similar agent to OpenClaw that is again under NDA but I loved it I literally own pants like it bought me pants that I wear and they're cool pants my prompt was go on Vogue and find the fashion trends for men and then buy me the fashionable thing and it's great I wear like a compliments on it but I woke up one morning to a 20 euro bill and I was like what's this for? Turns out it also just decided I needed protein bars and just bought those also right and that's the moment I was like okay I time to turn this off and so we only get one shot and we love that it just does things but we usually love it until the wrong thing happens for the first time and then we start to get red flags and so that's just something you maybe need to know as you use OpenClaw finally I think the tool layer with OpenClaw is the truth layer, right? If a tool call fails or if it returns partial data the agent needs to peacefully degrade it can't fake stuff so the temperature on the model that you use has to be quite low and I think that's where it is but I tell you what the story is moving really fast Reuters reported recently I mean we all saw it also on social media that Peter Steinbergerer, the founder of OpenClaw is joining Open AI it's now becoming a foundation whatever that means cool I'm happy that there's open source and it's winning and so I think there's just universal recognition that personal agents and agent platforms are becoming significantly important in 2026 and so that's maybe something to think about as you build out your AI offering and portfolio in 2026 is what would personal agents look like, right? I think we all think I mean if you've not seen the Iron Man movies from Marvel, I'm sorry for you you should really like watch them but there's this amazing scene in Iron Man where Tony Stark walks into his office and he's like, wake up daddy's home and Jarvis is like, hello sir, what are we doing today? That's personal AI and that's kind of where we're headed and for you as an AI engineer that's what really the direction should be, okay? So we've covered a lot of things we've covered the core problems now I wanna zoom out and stitch together what's trending in AI engineering 2026 which we've also done but I wanna summarize it and why it all points to the same thing what always has been the same thing which is just creating reliable systems that's all we've been, that's all one sentence summarization of this entire two hours is AI engineering is building is engineering reliable systems around models so let's summarize everything we talked about in this the 2026 shape of AI engineering in one sentence is we're moving from AI that talks to AI that acts and that forces us to treat models like untrusted components inside well-designed systems that's kind of the convergence point of all of these hot topics we've got context engineering because context is your real input interface we've got multi-agent concurrency because parallelism beats a giant monolith we already saw this with monolith versus microservice architectures we need to focus on evaluation because behavior needs regression tests and observability and we need to focus on the security because tool use agents are an attacker's dream if you're sloppy so if you want a practical definition of an AI engineer and a clear understanding of what AI engineers do on the daily it's this, it's someone who can take an LM and wrap it in enough structure, truth, tools, context permissions and tests that it becomes a product you can trust and if you're a full stack engineer listening to this thinking sounds like what I already do you're right, the difference is now your dependency can improvise and your job is to make it stop improvising we've covered a lot of content but the last thing I'll say is the goal of building quality software as an AI engineer is to build systems that don't require guessing and then measure everything we've covered a lot of content as usual I think this is maybe the longest episode maybe ever but definitely in 2026 and I have really enjoyed this discussion and again, I do mean discussion I expect you to have comments I expect you to have feedback I obviously don't expect to have gotten everything right especially in one take but this is a discussion and I want you to be a part of it if you're learning from and or enjoying this content then a great way to support it is to share it on social media tell people make it discoverable because if it's added value to you then it can add value to other people and again, I said this at the beginning of the episode the goal of why we're even doing this is to make AI engineering as accessible as possible to as many people as possible and you can play a part in that by sharing it with your friends and your peers and your family another great way that no cost to support the podcast is to leave a like if you're watching on YouTube and subscribe to the channel if you're listening on Apple or Spotify then if you leave any review anything up to five stars it would help make it more discoverable or maybe not discoverable if you leave one star to the algorithm but that's your choice and if you have ideas for topics to cover or guests to have discussions with whatever it may be then I would appreciate a comment on YouTube or on social media on X or Blue Sky or LinkedIn I take this very seriously and really the goal is to serve you I would love to have Steinberger I would love to have Karpathy or whoever else if you want to add them and prefer them on social media I wouldn't say no but of course don't harass people for now this has been such an absolute joy for me to do and I hope it's been a joy to listen to worst case I've helped you fix your sleep schedule but regardless thank you so much for joining this discussion thank you for your attention and thank you so much for your interest in AI engineering

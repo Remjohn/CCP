@@ -10,7 +10,7 @@
 
 *Bird by Bird* is not mainly a book about literary polish. It is a book about how human beings regain access to truthful perception, workable courage, and emotionally resonant communication. Lamott teaches writing as a psychological practice: reduce overwhelm, suspend self-judgment, observe with reverence, trust intuition, ground expression in an actual moral position, and speak in the one voice that cannot be faked. That makes this book highly compatible with the CCP PRD, especially its commitments to Voice DNA fidelity, anti-draft resistance, humane trigger-first creation, and content that feels sovereign rather than statistically averaged.
 
-For CCP, the biggest value is not “how to write like Anne Lamott.” The value is that she offers upstream primitives that help coaches produce better raw material before any CCF, CMF, V²WS, or Telegram system begins shaping it. Her method is a practical antidote to both creative paralysis and AI slop. It helps coaches find a truthful starting point, turn lived experience into compelling narrative atoms, and preserve emotional humanity while still making content operationally teachable. In short: Lamott gives us a stronger pre-compilation layer for content truth, voice honesty, and story discovery.
+For CCP, the biggest value is not “how to write like Anne Lamott.” The value is that she offers upstream primitives that help coaches produce better raw material before any CCF, CMF, V2WS, or Telegram system begins shaping it. Her method is a practical antidote to both creative paralysis and AI slop. It helps coaches find a truthful starting point, turn lived experience into compelling narrative atoms, and preserve emotional humanity while still making content operationally teachable. In short: Lamott gives us a stronger pre-compilation layer for content truth, voice honesty, and story discovery.
 
 ---
 
@@ -32,7 +32,7 @@ For CCP this is a serious implementation asset. The system already fights statis
 
 Lamott repeatedly teaches that meaning often appears after attention has been given time to develop. You point the camera at what compels you, then wait for the image to clarify. The original subject may not even be the true center; a detail in the lower corner may turn out to carry the deepest meaning. This is a sophisticated model of emergence: clarity is discovered through patient noticing, not imposed through premature certainty.
 
-This is powerful for CCP because many content systems fail by over-deciding too early. Lamott suggests a better path: let initial observations surface secondary symbols, props, tensions, and emotional anchors before locking the content arc. In practice, this could improve CMF beat clusters, CCF story mining, and V²WS module ordering. Her Polaroid model teaches us to treat early content capture as a discovery field where the strongest hook may emerge from a side detail, not the initial thesis.
+This is powerful for CCP because many content systems fail by over-deciding too early. Lamott suggests a better path: let initial observations surface secondary symbols, props, tensions, and emotional anchors before locking the content arc. In practice, this could improve CMF beat clusters, CCF story mining, and V2WS module ordering. Her Polaroid model teaches us to treat early content capture as a discovery field where the strongest hook may emerge from a side detail, not the initial thesis.
 
 ### Primitive 4 - Broccoli vs. KFKD
 
@@ -44,7 +44,7 @@ For CCP, this can become a reasoning and coaching asset. The PRD already disting
 
 Lamott insists that writing needs a center of actual caring. Not a slogan, not a “message,” but a lived moral position strong enough to sustain attention and choice. If a piece dies halfway through, she suggests it may be because nothing meaningful is at stake. This is one of her most valuable teachings because it reframes writing as ethical orientation. What do you believe is true? What human value are you trying to protect, reveal, or defend?
 
-This matters enormously for CCP. The PRD wants content that is psychologically precise, culturally aware, and voice-authentic. Lamott adds another necessary filter: moral coherence. A coach’s content should not just sound like them; it should reveal what they stand for under pressure. This primitive can sharpen CCF archetypes, V²WS persuasion, and even the Conscious Voice Speaking Coach Engine by ensuring that outputs do not merely describe insight but embody conviction.
+This matters enormously for CCP. The PRD wants content that is psychologically precise, culturally aware, and voice-authentic. Lamott adds another necessary filter: moral coherence. A coach’s content should not just sound like them; it should reveal what they stand for under pressure. This primitive can sharpen CCF archetypes, V2WS persuasion, and even the Conscious Voice Speaking Coach Engine by ensuring that outputs do not merely describe insight but embody conviction.
 
 ### Primitive 6 - Unsilenced Voice Over Borrowed Style
 
@@ -56,7 +56,7 @@ This is arguably the single strongest Lamott primitive for CCP because it aligns
 
 Lamott’s final major primitive is that writing is best understood as an act of giving. She rejects publication as the true payoff and reframes the work as a present for someone: a dying parent, a friend, a child, a stranger who needs a map. This changes the psychology of communication. The writer stops performing for status and starts serving for recognition, relief, and human companionship.
 
-For CCP, this is strategically valuable because it can rebalance the entire Content Engine away from self-display and toward service. The PRD already prioritizes resonance, intimacy, and transformation. Lamott supplies the inner stance that makes those outcomes feel human rather than engineered. A piece built as a gift will usually be clearer, kinder, more specific, and less ego-distorted than a piece built as a performance. That makes it stronger for CCF, V²WS, Telegram, and voice-based coaching surfaces alike.
+For CCP, this is strategically valuable because it can rebalance the entire Content Engine away from self-display and toward service. The PRD already prioritizes resonance, intimacy, and transformation. Lamott supplies the inner stance that makes those outcomes feel human rather than engineered. A piece built as a gift will usually be clearer, kinder, more specific, and less ego-distorted than a piece built as a performance. That makes it stronger for CCF, V2WS, Telegram, and voice-based coaching surfaces alike.
 
 ---
 
@@ -81,7 +81,7 @@ The deepest writing in Lamott is built for recognition, relief, and companionshi
 **Scoring criteria**
 - `Strategic Fit` (0-50): alignment with PRD, Voice DNA, anti-draft, and Trigger-First logic
 - `Ease of Operationalization` (0-35): how cleanly the primitive can become a workflow or validator
-- `Compounding Cross-System Impact` (0-45): usefulness across CCF, CMF, V²WS, CBCS, and voice systems
+- `Compounding Cross-System Impact` (0-45): usefulness across CCF, CMF, V2WS, CBCS, and voice systems
 - `Authenticity Lift` (0-35): ability to improve truthfulness and reduce synthetic output
 - `Coach Teachability` (0-35): how easily coaches can understand and use it
 
@@ -113,7 +113,7 @@ If CCP strengthens nothing else, it should strengthen the coach’s access to un
 
 The second high-leverage move is reducing all ideation into small, emotionally loaded units. This would improve coach compliance, lower capture resistance, increase specificity, and make downstream generation better because the upstream material would be cleaner. In Pareto terms, this primitive solves execution friction while Unsilenced Voice solves authenticity friction. Together they attack the two biggest losses in the current content economy: paralysis and genericness.
 
-**Practical 80/20 implication for CCP:** before any major content job begins, the system should ask two mandatory upstream questions. First: “What is the sentence you were almost afraid to say?” Second: “What is the smallest real scene that proves it?” If a coach can answer those two questions, CCF, CMF, V²WS, and Telegram all receive materially better source intelligence. If the coach cannot answer them, more downstream sophistication will not compensate.
+**Practical 80/20 implication for CCP:** before any major content job begins, the system should ask two mandatory upstream questions. First: “What is the sentence you were almost afraid to say?” Second: “What is the smallest real scene that proves it?” If a coach can answer those two questions, CCF, CMF, V2WS, and Telegram all receive materially better source intelligence. If the coach cannot answer them, more downstream sophistication will not compensate.
 
 ---
 
@@ -131,9 +131,9 @@ Lamott’s Polaroid model improves visual ideation because it teaches us not to 
 
 This also improves cross-modal coherence. Instead of writing a script first and decorating it later, the system can preserve one shared emotional artifact across text, still image, motion, and voice. That makes the asset feel more sovereign and less assembled. The visual is no longer a generic support layer; it becomes the same truth compressed into a different sensory channel, which is exactly the kind of reinforcement CMF should seek.
 
-### Case Study 3 - V²WS Webinar Scripts and Visual Composition
+### Case Study 3 - V2WS Webinar Scripts and Visual Composition
 
-V²WS already values modularity. Lamott improves it by forcing each module to answer three questions: what tiny frame are we in, what truth is actually being protected here, and what sentence is the speaker almost afraid to say? A webinar on high performance can open not with a category statement but with a one-inch scene: a founder deleting a voice note three times before sending it. That scene becomes the hook, the moral axis, and the first visual. Each subsequent module can then expand bird-by-bird rather than dumping full doctrine too early. This creates a webinar that feels intimate, paced, and trustworthy instead of bloated and professionally dead.
+V2WS already values modularity. Lamott improves it by forcing each module to answer three questions: what tiny frame are we in, what truth is actually being protected here, and what sentence is the speaker almost afraid to say? A webinar on high performance can open not with a category statement but with a one-inch scene: a founder deleting a voice note three times before sending it. That scene becomes the hook, the moral axis, and the first visual. Each subsequent module can then expand bird-by-bird rather than dumping full doctrine too early. This creates a webinar that feels intimate, paced, and trustworthy instead of bloated and professionally dead.
 
 The benefit to composition is enormous. Each slide can inherit a single emotional job instead of carrying five ideas at once. Each story beat can arise from character, tension, and recognition rather than from outline obligation. This would likely improve audience retention because Lamott’s method naturally sequences revelation: first the scene, then the feeling, then the meaning, then the framework. That is a far more human learning arc than “Point 1, Point 2, Point 3.”
 
@@ -157,7 +157,7 @@ These ideas are psychologically rich but not automatically operational. If imple
 
 ### Opportunities
 
-There is a major opportunity to turn Lamott into upstream CCP infrastructure: coach capture prompts, Sacred Audio exercises, anti-KFKD reasoning cards, one-inch frame validators, and “gift orientation” checks before publication. This could improve CCF scripts, CMF visual briefs, V²WS openings, voice roleplaying, and content recording quality with relatively low technical complexity. It is also a strong antidote to generic AI output because it increases ownership density at the source.
+There is a major opportunity to turn Lamott into upstream CCP infrastructure: coach capture prompts, Sacred Audio exercises, anti-KFKD reasoning cards, one-inch frame validators, and “gift orientation” checks before publication. This could improve CCF scripts, CMF visual briefs, V2WS openings, voice roleplaying, and content recording quality with relatively low technical complexity. It is also a strong antidote to generic AI output because it increases ownership density at the source.
 
 ### Threats
 

@@ -1,5 +1,5 @@
 ---
-name: "V²WS Offer"
+name: "V2WS Offer"
 description: "Presents the offer clearly: what they get, what it costs, what happens after they join"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Expression (L7)

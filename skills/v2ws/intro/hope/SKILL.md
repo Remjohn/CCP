@@ -1,5 +1,5 @@
 ---
-name: "V²WS Hope Creation"
+name: "V2WS Hope Creation"
 description: "Paints the possibility — what becomes possible when the audience applies the teaching"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

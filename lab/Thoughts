@@ -1,0 +1,210 @@
+So My issue is that I 
+
+This is how I see the system right now 
+
+We have our intelligence Layer Registries with like primitives, ttt, SDA, SFL etc
+Then we have functions and archetypes containers, templates, schemas
+
+But then the main Goal of the CCP is Conscious Human Transformation through identification and behavioural change. 
+To do that create 2 programs and enagle coaches as well to creat 1-2 programs
+
+Programs are run with the specific goal to produce assets 
+For CCP programs the assets are also content assets... Video content only = Short videos and Long-form videos
+
+So we have LW28 Persuasive Speaking Program AND The Transformational Webinar Program
+through these programs we create content consistently everyday every week
+
+But it's important to understand that the main structure is pretty simple 
+
+We have intelligence
+We have modules
+We have templates
+
+And basically the CCP has 2 goals prepare the ingredients for the coach to Create content and them Assemble the everything together. 
+
+We have the intelligence for the programs and the is a self-evolving because the more we create and research and track audience feedback the better we get we producing the ingredients... the more the coach train the more they also improve their communication skills and the better they will convert their clients into their own Challenge Programs. Also the more the coach Create content the more we know about him and more we are able to find their similar angle or angles that are going to make their Style of communication improving and more Persuasive and Powerful. This should help the CCP to understand and identify specific Coach Persuasion Archetypes. 
+
+What's important here is to have Trigger First Event 
+
+We call the first Step of creating content for our Persuasive Speaking Program a Trigger First Event
+
+First we start with CONTEXT
+Understanding the Coach Context about them their business and their audience
+Then we use that initial content to do daily or weekly research about what their audience are feeling right now, lately or just in general
+We take the research and organize the daily lesson arouund that research for them to react 
+So the lesson is presented with PROOF Meaning we bring at least 4 images and create the Voice Notes about that Lesson and they listen to the lesson and they React on the lesson + Plus not only that but we bring the Static Content Creation Visual Prototype 
+Now they need to react so since they need to react our goal is not write 
+Something specifically because content is going to be about whatever they SPIT OUT 
+So we should create Voice notes or Carousels BUT INTERNALLY 
+So it's like Lessons are presented in a VOICE NOTES + Simple carousel format for them to consume and engage on... 
+
+AND THEN VOICE is basically just asking questions 
+
+They Respond with the Questions asked first basically in the process of exchanging with voice notes 
+
+They have the time TO THINK about the answers and basically think with the agent before Delivering them get the Correction, in tonality pacing and Final Voice is the VOICE NOTE To GUIDE the final video RECORDING 
+
+tHE final voice notes should really BRING THE FEELING the Emotions so the VOICE should REALLY TRIGGER Now the Reaction before RECORDING
+
+aND THE SESSION Is over after the Coach Upload the Recorded Video
+
+So in like 16 minutes this should get done for daily content creation
+
+After the recorded video is uploaded then THE ASSEMBLING and editing PIPELINE begins 
+
+Based on the type of Archetype an editing mode should be activated by the Agent and the Composition based on the editing format should be applied and the intelligence helping on building the editing scene by scene should be applied here 
+
+Where scene by scene animations pacing sound design and sound effects are composed to get the final product
+
+So essentially we need to have 
+
+4 Editing Format 
+
+THE CINEMATIC Format which currently used in the CMF which is great for storytelling, testimonials and all the arcs of the CMF
+THE 2D avatar explainer format in which we use the Avatar that we build specifically for the Coach and the animation studio to animate them using JSON templates various poses and Compositions
+LIVING COMMENTARY REACTIONS where we use this format to comment all the previous images or static based content archetypes like 
+
+| Script Archetype | Visual Output Type | Aspect Ratio | Recipe Protocol |
+|---|---|---|---|
+| Relief Peak | Carousel | 4:5 | `relief_peak_carousel_recipe` |
+| Dopamine Cliff | Carousel | 4:5 | `dopamine_cliff_recipe` |
+| Curiosity/Funny/Nostalgia/Fear/Hope/Outrageous Listicle | Carousel | 4:5 | `listicle_visual_recipe` |
+| Visual Timeline | Carousel | 4:5 | `visual_timeline_recipe` |
+| Comparison (single contrast) | Single Image | 4:5 or 1:1 | `comparison_archetypes_recipe` |
+| Comparison (multiple contrasts) | Carousel | 4:5 | `comparison_archetypes_recipe` |
+| Conceptual Contrast (simultaneous) | Single Image | 1:1 | `conceptual_contrast_recipe` |
+| Conceptual Contrast (transformational) | Carousel | 4:5 | `conceptual_contrast_recipe` |
+| Observational Humor | Single Image | 1:1 or 4:5 | `observational_humor_recipe` |
+| Worst Case Scenario | Single Image | 4:5 | `worst_case_scenario_recipe` |
+| Tweet-Style Quote | Single Image | 1:1 | `tweet_quote_recipe` |
+| Supervisual | Single Image | 1:1 | `supervisual_recipe` |
+| Stereotypical Poll | Single Image | 9:16 | `poll_visual_recipe` |
+| Archetypical Poll | Single Image | 9:16 | `archetypical_poll_recipe` |
+| Controversial Dilemma / Would You Rather | Single Image | 9:16 | `controversial_dilemma_poll_recipe` |
+| 9-Grid Accumulation | Single Image (grid) | 4:5 | `nine_grid_recipe` |
+| Case Study | Visual Brief Export | — | Video-only |
+| Myth Debunking | Visual Brief Export | — | Video-only |
+| Recognition Story Reel | Visual Brief Export | — | Video-only |
+| Tier List Hybrid | Visual Brief Export | — | Video-only |
+
+
+
+------ this is important 
+
+So the Persuasive Speaking Program need to make sure to work this way 
+
+COACH DNA CONTEXT >> RESEARCH CRAL etc >>>
+
+Actually for better understanding I recommend reading this documentation = lab\CCP APRIL Updates\01_Architecture_PRDs\CCP_System_Documentation.md (which also need partially to be updated)
+
+What I would like to point out is the use of Carousels to build Each Daily Lesson Material + Voice Note to guide execution 
+
+That's how I see a unique use of Carousels not for content outside that is GENERIC but for PERSONALIZED LEARNING that truly based on the understanding of the User that's way more powerful
+
+
+
+
+CONTEXT: We have a feeling that our Codebase which has more than 4000 files is just getting larger and larger and We are trying to understand what we can do To launch as fast as we can after building so much inside our CCP Project. For Context PLease read our PDR Modules docs\prd\modules\PRD_INDEX.md this our CCP System documentation lab\CCP APRIL Updates\01_Architecture_PRDs\CCP_System_Documentation.md    I need you to read this video Transcript and write a documentation Listing The First Principles and actionnable advices that we should implement to FIX our codebase and understand it better VIDEO TRANSCRIPT: lab\Ai Engineering books\Video about Ai Engineering\The Friction is Your Judgment — Armin Ronacher & Cristina Poncela Cubeiro, Earendil.md THE TASK: I NEED YOU TO Write a Documentation of 2200-2400 words that basically is going to help us fix our current situation but before writing I want you to go and ask me 24 Clarifying questions using the Grillme method Grill-me.md After I answer the Question than we can try to find a solution ALSO Read this Transcript as well lab\Ai Engineering books\Video about Ai Engineering\_Software Fundamentals Matter More Than Ever_ — Matt Pocock.md ALSO CONSIDER READING OUR Recent updates in May that did not yet made it to the PRD yet docs\architecture\May 2026 UPDATES docs\architecture\HANDOVER_CONSOLIDATION_BLUEPRINTS.mddocs\architecture\May 2026 UPDATES\AUDIT_Visual_Intelligence_Retention.md docs\architecture\May 2026 UPDATES\CCP_System_Architecture_Consolidation_V5.md
+
+
+
+
+
+My intuition with all of these Pipelines is that they essentially need to be built as tools that can then used and combined for renderings 
+
+They should be asset building tools because at the end of the day the rendering pipeline need to have COMPOSITIONS to render 
+
+The CMF and VIE have pipelines to build assets based on the script and raw source material
+
+I honestly think that inside our Production engine we have two cases 
+
+ONE Production case or layer is one where we KNOW what the archetype is because it came from a Lesson Material - so the foundation is there
+
+BUT From the CMF usually we just have Raw source and our agent transcribe it and later try to put everything together building around the right (Arc) 
+
+Then after the arc is defined then it starts from there and build the composition
+
+THESE APPROACH are very different 
+
+Also the other Approach is the one from Our Conscious Reactions Engines where we have MiniApps with Already the UI defined there for people to react and on based on the Reaction Style and then everything is recorded and edited adding sound and other effects this is actually YET another Aproach to the final editing 
+
+Also maybe another difference is that every Video Format actually need its own pipeline for editing 
+
+2D Explainer Animation also is a completely different and could both come from PREDEFINED Source or FROM Speaking Lesson 
+
+And also honestly speaking the CMF method which create FROM a raw source with no assigned archetype SHOULD and COULD also produce the other video formats not only Cinematic and 2D Explainer but also the Living Commentary 
+
+
+So to Recap we have 
+
+RAW SOURCE - ORCHESTRATED SOURCE
+
+4 FORMATS
+
+Cinematic Storytelling Arcs 
+Living Commentary Reactions
+2d Coach Avatar Explainer
+Conscious Gamifications Reactions 
+
+All these formats have different compositions logic and requirements
+
+RAW SOURCE typical ones
+Cinematic Storytelling Arcs 
+Living Commentary Reactions
+2d Coach Avatar Explainer
+
+
+ORCHESTRATED SOURCE
+Cinematic Storytelling Arcs 
+Living Commentary Reactions
+2d Coach Avatar Explainer
+Conscious Gamifications Reactions
+
++ LONG FORM EDITING 
+Webinar Editing 
+
+
+Currently we have 
+The CMF
+Animation Studio
+VIE
+Scene Composition Pipelines 
+Intelligence Registries, primitives, SDA, SFL 
+Pi Coding Agent Harness
+etc... 
+
+But how the hell are they to be working together and also how orchestrate them so that we actually use our intelligence layers the right way
+
+
+
+vibe --resume 5a279986 
+
+
+
+Please RUN 
+
+
+docs\architecture\May 2026 UPDATES\spec_prompts\P7_S62_FR-ERA3-48_Persuasive_Speaking_Program_Runtime_And_Telemetry.md
+
+
+most Follow 
+
+1. Protocol: `docs/architecture/april_updates/ERA3_Tech_Spec_Writing_Protocol.md`
+
+
+
+PLEASE DO THIS IN 2 STEPS 
+
+FIRST Gather the Sub-agents for research THEN STOP and ask me before Start Writing the SPEC
+
+
+I think it's better now for us to use these Questions to do a FULL Audit together
+FIRST YOU GO and research thourougly inside the codebase to find the answers AND give detailed answers AND If you find that something is missing we can fix it together 
+
+GREAT QUESTION NUMBER ONE
+
+Grounding & Provenance: What authoritative data sources will serve as the "ground truth" for our agents, and how will our application layer structurally prevent the model from answering if that data is missing?
+
+SINCE WE ARE looking for Clarity I would like you to also write a Detailed TRIZ Reasoning Section where we try to find if there any contradiction into the system that need to be solved ESPECIALLY looking our PRDs
+
+Make sure you Read all the References documentation you can and LIST THEM before writing this Grounding & Provenance documentation that you should save inside the AI Engineering & Grounding folder inside May 2026 Updates 

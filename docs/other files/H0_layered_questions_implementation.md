@@ -302,4 +302,18 @@ VERDICT: ✅ H0 DISTILLATION COMPLETE — CLEARED FOR CCF DOWNSTREAM
 
 ---
 
+## V2WS (Voice2WebinarSystem) Integration
+
+The 3-5 provocation questions compiled in `provocation_questions.json` are not just for written content. They serve as the modular voice intake questions for the V2WS (Voice2WebinarSystem) pipeline:
+
+1. **Trigger:** The coach executes a slash command to launch V2WS mode.
+2. **Voice Intake:** The system presents the provocation questions, and the coach uses voice input to respond, capturing raw, authentic emotion.
+3. **Script Compilation:** The system compiles the voice inputs into the structured Webinar Script.
+4. **Webinar Pipeline:** This initiates the delivery loop:
+   - **Delivery Training:** Rehearsing delivery metrics.
+   - **Recording Session:** Executing the full session once ready.
+   - **Final Editing:** Rendering and editing the recorded webinar as the closing loop event.
+
+---
+
 *Next Document: [H1 — Blueprint Orchestrator: 4 Laws of Content Distillation — CCF Pipeline]*

@@ -169,7 +169,7 @@
 
 ---
 
-## Sprint 5: Intelligence Loops & V²WS
+## Sprint 5: Intelligence Loops & V2WS
 
 *Goal: Data flows between CCF and CBCS, making both smarter. Webinar pipeline works.*
 
@@ -183,7 +183,7 @@
 | 5.02 | **Build engagement feedback ingestion** — Captures content engagement metrics (saves, shares, comments) per content piece. Tags high-performing themes as "resonance markers" in the coach profile. Feeds into next content cycle. | `services/engagement_feedback.py` | 5.3 | |
 | 5.03 | **Build Azaria memory promoter** — Evaluates patterns by frequency, consistency, and impact. Flags promotion candidates for Operator review with evidence and confidence scores. Handles approve/reject/defer workflow. | `agents/azaria/memory_promoter.py` | 5.5, 6.4 | |
 
-### V²WS Webinar Pipeline
+### V2WS Webinar Pipeline
 
 | # | Task | Target | Story | Blocker |
 |---|---|---|---|---|
@@ -236,7 +236,7 @@ Sprint 1 (Genesis) ────────┬──→ Sprint 2 (CCF Pipeline)
                            │         │
                            │         ├──→ Sprint 4 (Notion Delivery)
                            │         │         │
-                           ├──→ Sprint 3 (CBCS) ──→ Sprint 5 (Intelligence + V²WS)
+                           ├──→ Sprint 3 (CBCS) ──→ Sprint 5 (Intelligence + V2WS)
                            │                              │
                            └──────────────────────────────→ Sprint 6 (Polish + Integration)
 ```
@@ -249,7 +249,7 @@ Sprint 1 (Genesis) ────────┬──→ Sprint 2 (CCF Pipeline)
 | Sprint 2 | 14 | 2 weeks | CCF Production Pipeline |
 | Sprint 3 | 10 | 2 weeks | CBCS Coaching Engine |
 | Sprint 4 | 12 | 2 weeks | Notion Delivery Layer |
-| Sprint 5 | 9 | 2 weeks | Intelligence + V²WS |
+| Sprint 5 | 9 | 2 weeks | Intelligence + V2WS |
 | Sprint 6 | 6 | 2 weeks | Polish + Integration |
 | **Total** | **65** | **12 weeks** | **Full CCP v1.0** |
 

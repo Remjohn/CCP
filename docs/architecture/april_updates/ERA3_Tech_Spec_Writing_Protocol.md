@@ -133,7 +133,7 @@ All 4 specs written without proper PRD module loading have been deleted. **Zero 
 | Tierlist App | `tools/tierlist-app/` | **EXISTING** Vite+React tierlist frontend |
 | Tierlist Bot | `tools/telegram-tierlist-bot/` | **EXISTING** Telegram bot for tierlist |
 
-#### PRD-07: V²WS Webinar
+#### PRD-07: V2WS Webinar
 | Service | File | What It Does |
 |---|---|---|
 | `v2ws_interactive_service.py` | services/ | Interactive webinar logic |
@@ -321,7 +321,7 @@ Every Mini App spec MUST declare which families govern its experience design. Th
 
 | Mini App | `startapp` ID | Source PRD | Spec | User Experience |
 |---|---|---|---|---|
-| Webinar Companion | `webinar` | PRD-07 | FR-ERA3-01 | Audience-facing webinar viewer: consumes assembled V²WS modules, syncs with coach's live/recorded presentation |
+| Webinar Companion | `webinar` | PRD-07 | FR-ERA3-01 | Audience-facing webinar viewer: consumes assembled V2WS modules, syncs with coach's live/recorded presentation |
 | Payment Sheet | `pay` | PRD-09 | FR-ERA3-02 | In-chat payment surface: checks tier eligibility via `offer_tier_governor`, processes Telegram/Stripe payments |
 | Challenge Arena | `challenge` | PRD-05 | FR-ERA3-11 | 30-day challenge progression: streak tracking, daily prompts, XP, leaderboards, habit verification |
 | Conscious Editor | `editor` | PRD-02/03 | FR-ERA3-09 | Coach reviews/edits micro-content extracted by ContentMachinePipeline before publishing |
@@ -395,7 +395,7 @@ Every Mini App uses the **existing** `dpa_engine.py` (FR-CA11-15):
 
 | # | Spec | Source PRD | Pre-Flight | Backend Relationship |
 |---|---|---|---|---|
-| 15 | FR-ERA3-01 — Webinar Companion | PRD-07 | Load full PRD-07 + FR-CA11-16 (AFFiNE) + FR33 (V²WS session) | **NEW** audience-facing Mini App. **READS** data produced by `v2ws_interactive_service.py`. The V²WS is the coach's creation tool; this is the audience's consumption surface. |
+| 15 | FR-ERA3-01 — Webinar Companion | PRD-07 | Load full PRD-07 + FR-CA11-16 (AFFiNE) + FR33 (V2WS session) | **NEW** audience-facing Mini App. **READS** data produced by `v2ws_interactive_service.py`. The V2WS is the coach's creation tool; this is the audience's consumption surface. |
 | 16 | FR-ERA3-11 — Challenge Arena | PRD-05 | Load full PRD-05 + PRG/SFR/FBK primitives | **NEW** Mini App. **CONSUMES** `learning_path_builder.py` `recommend_next()`. **CONSUMES** `habit_architecture.py` `parse_and_verify()`. Streak tracking + gamification are net new. |
 | 17 | FR-ERA3-09 — Conscious Editor | PRD-02, PRD-03 | Load both + OmniShotCut paper | **NEW** Mini App. **CONSUMES** `content_machine.py` output. Editor UI is net new. |
 | 18 | FR-ERA3-19 — Testimonial Builder & User Cards | PRD-05, PRD-09 | Load both + Silent Referral Source of Truth | **NEW** Mini App. Entirely new — voice/video recording of client transformation stories. `scorecard_emitter.py` is NOT relevant. |

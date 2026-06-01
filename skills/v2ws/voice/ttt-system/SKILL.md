@@ -1,6 +1,6 @@
 ---
-name: "V²WS TTT System"
-description: "V²WS edition of the Temperament/Temperature/Tone calibration system for webinar voice"
+name: "V2WS TTT System"
+description: "V2WS edition of the Temperament/Temperature/Tone calibration system for webinar voice"
 agent: Voice Agent (CCF equiv.)
 ccp_layer: Expression (L7)
 pi_extensions: [ModelRouter, SystemSelect]
@@ -12,7 +12,7 @@ outputs:
   - v2ws/voice/{webinar_id}_ttt_calibration.json
 ---
 
-# 🎙️ V²WS TTT SYSTEM (WEBINAR EDITION)
+# 🎙️ V2WS TTT SYSTEM (WEBINAR EDITION)
 
 Calibrates the Temperament/Temperature/Tone system for webinar delivery. Unlike social content (which uses a single TTT level), webinars modulate TTT across segments.
 

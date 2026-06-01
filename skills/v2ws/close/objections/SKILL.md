@@ -1,5 +1,5 @@
 ---
-name: "V²WS Close Objections"
+name: "V2WS Close Objections"
 description: "Handles the final objections that prevent purchase — price, timing, spouse, complexity"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Expression (L7)

@@ -1,5 +1,5 @@
 ---
-name: "V²WS Old Habits Close"
+name: "V2WS Old Habits Close"
 description: "Confronts the gravitational pull of old habits and comfortable patterns"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Expression (L7)

@@ -42,7 +42,7 @@ CCP content becomes non-generic not through better prompts but through better in
 
 Primitives are that language. They are not decorative labels, prompt tips, or content categories. They are **conscious faculties** — stable transformation operators that can be activated, measured, combined, suppressed, and validated in context. A primitive like "Irony Inversion" does not describe a writing trick. It describes a repeatable perceptual operation: detect where stated position and lived behavior diverge, invert the expectation, and produce recognition through surprise.
 
-This module defines how primitives are structured, how they form coalitions, how they survive candidate selection, and how they govern content generation across all CCP execution environments. Every content pipeline — CCF scripts, CMF visuals, CBCS coaching notes, Conscious Reactions scoring, V²WS webinar slides — draws from this registry as its meaning and experience intelligence layer.
+This module defines how primitives are structured, how they form coalitions, how they survive candidate selection, and how they govern content generation across all CCP execution environments. Every content pipeline — CCF scripts, CMF visuals, CBCS coaching notes, Conscious Reactions scoring, V2WS webinar slides — draws from this registry as its meaning and experience intelligence layer.
 
 ---
 
@@ -63,7 +63,7 @@ A primitive like "Superobjective" (meaning: the character's deepest want driving
 | Plane | Code | Family Name | Count | Primary Environment |
 |---|---|---|---|---|
 | Meaning | **STR** | Narrative Structure | 27 | CCF, CMF |
-| Meaning | **PRS** | Persuasion | 35 | CCF, V²WS |
+| Meaning | **PRS** | Persuasion | 35 | CCF, V2WS |
 | Meaning | **HUM** | Humor & Distortion | 12 | Conscious Reactions, CCF |
 | Meaning | **CON** | Contrast & Juxtaposition | 8 | CCF, CMF |
 | Meaning | **PSY** | Psychological Diagnostics | 12 | CBCS, Law28 |
@@ -71,7 +71,7 @@ A primitive like "Superobjective" (meaning: the character's deepest want driving
 | Meaning | **VSG** | Visual & Sonic Guidance | 12 | CMF, CVE |
 | Meaning | **ACT** | Performance & Delivery | 10 | Law28, Conscious Reactions |
 | Meaning | **REF** | Referral & Trust-Transfer | 9 | CPSC, Silent Referral |
-| Meaning | **BUS** | Design & Business | 14 | Dashboard, V²WS |
+| Meaning | **BUS** | Design & Business | 14 | Dashboard, V2WS |
 | Experience | **TRG** | Trigger & Hook Design | — | All surfaces |
 | Experience | **FRC** | Friction & Flow Management | — | Telegram UX |
 | Experience | **FBK** | Feedback & Scoring | — | Law28, Conscious Reactions |
@@ -558,7 +558,7 @@ A strong skill therefore specifies: task goal, eligible primitive families, cand
 | CMF Sonic Phase | VOC, VSG | Projected to sonic behavior — prosody, silence, motif |
 | CBCS Coaching Notes | PSY, VOC, ACT | Projected to voice — one emotional job per note |
 | Conscious Reactions Scoring | HUM, ACT, PRS | Projected to performance benchmark — delivery metrics |
-| V²WS Webinar Slides | PRS, BUS, STR | Projected to teaching-while-selling — CTA architecture |
+| V2WS Webinar Slides | PRS, BUS, STR | Projected to teaching-while-selling — CTA architecture |
 
 ### 8.3 YAML Codification Protocol
 

@@ -1,5 +1,5 @@
 ---
-name: "V²WS Information Close"
+name: "V2WS Information Close"
 description: "Handles the belief that more information alone will solve the problem"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Expression (L7)

@@ -1,6 +1,6 @@
 ---
-name: "V²WS Standard Operating Procedure"
-description: "Master orchestration SOP for the complete V²WS webinar pipeline"
+name: "V2WS Standard Operating Procedure"
+description: "Master orchestration SOP for the complete V2WS webinar pipeline"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Orchestration (L5)
 pi_extensions: [TeamOrchestrator, SoulResonance]
@@ -12,7 +12,7 @@ outputs:
   - Complete webinar package (.excalidraw deck + scripts + speaker notes)
 ---
 
-# 📋 V²WS STANDARD OPERATING PROCEDURE
+# 📋 V2WS STANDARD OPERATING PROCEDURE
 
 > Full pipeline: `v2ws-init → v2ws-research → v2ws-structure → v2ws-slides → v2ws-close → v2ws-render`
 

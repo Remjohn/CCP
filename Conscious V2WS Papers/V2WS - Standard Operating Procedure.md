@@ -1,17 +1,17 @@
-Listen up. This is the official Standard Operating Procedure for executing the Viral Vertical Webinar System (V²WS). Your objective is to generate a complete 72-slide webinar script and all corresponding strategic asset prompts.
+Listen up. This is the official Standard Operating Procedure for executing the Voice2WebinarSystem (V2WS). Your objective is to generate a complete 72-slide webinar script and all corresponding strategic asset prompts.
 This is not a creative writing exercise. It is a precise, high-stakes manufacturing process. Every step must be executed in the exact sequence specified, using the exact documents listed. Any deviation, assumption, or "creative" shortcut will compromise the psychological architecture of the webinar and result in project failure.
 Read, plan carefully and execute.
 
 Phase 1: Foundation & Strategic Calibration
 You do not write, design, or even think about content until this phase is complete.
 Internalize the Master Blueprint:
-Action: Fetch and meticulously read Conscious Webinar Papers/🤖 README.md (V²WS) 🤖 Complete Documentation_.docx.
+Action: Fetch and meticulously read Conscious Webinar Papers/🤖 README.md (V2WS) 🤖 Complete Documentation_.docx.
 Objective: You must internalize the complete 72-slide framework. This includes the 4-module structure, the slide counts (12/36/8/16), and the exact asset mix: 12 Visual Hooks, 6 Memes, 12 Real Images, and 2 Reaction Videos. This document is your map. Do not get lost.
 Determine TTT (Temperament Temperature Tone):
 Action: Fetch Conscious Webinar Papers/🌡️ TEMPERAMENT TEMPERATURE TONE (TTT) SYSTEM.docx.
 Objective: Analyze the client's target_audience.md and backstory.md (which you must have) to select a Base TTT Level (1-6). This TTT Level is the single most important calibration in the system. It dictates the "rawness" of all on-screen slide text and the emotional mood of all visual assets.
 Execute Research & Intelligence Gathering:
-Action (Plan): Fetch Conscious Webinar Papers/# RESEARCH PLANNING ENGINE_ V²WS WEBINAR INTELLIGENCE BLUEPRINT.docx. Use this template to formulate your research plan.
+Action (Plan): Fetch Conscious Webinar Papers/# RESEARCH PLANNING ENGINE_ V2WS WEBINAR INTELLIGENCE BLUEPRINT.docx. Use this template to formulate your research plan.
 Action (Execute): Fetch and execute the plan using the Conscious Webinar Papers/🎯 DEEP RESEARCH ANALYST_ Webinar Intelligence Extraction.docx for foundational data. You must also fetch Conscious Webinar Papers/FRESH RESEARCH ANALYST_ INTRODUCTION MODULE INTELLIGENCE HUNTER.docx to gather the real-time, "happening NOW" intelligence required for the Introduction module. Do not proceed without this raw material.
 
 Phase 2: Strategic Asset Prompt Generation

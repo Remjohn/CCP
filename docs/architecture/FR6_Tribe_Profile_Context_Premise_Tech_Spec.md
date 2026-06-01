@@ -51,7 +51,7 @@ A two-stage extraction pipeline:
 - Activation Event seed construction (Stage 3 of Trigger-First Engine — downstream)
 - CBCS client-side Context Premise extraction via Aria (FR29 — separate pipeline)
 - Context Premise Engine Mode A/B/C adaptive architecture (Phase 2+ implementation)
-- V²WS webinar-specific context mapping (CBCS feature)
+- V2WS webinar-specific context mapping (CBCS feature)
 
 ---
 

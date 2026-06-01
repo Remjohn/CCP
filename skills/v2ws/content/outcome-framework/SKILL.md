@@ -1,5 +1,5 @@
 ---
-name: "V²WS Clearly Defined Outcome"
+name: "V2WS Clearly Defined Outcome"
 description: "Framework for presenting each content step's transformation outcome with before/after clarity"
 agent: Elene (Slide Composer)
 ccp_layer: Execution (L4)

@@ -1,5 +1,5 @@
 ---
-name: "V²WS Research Planning Engine"
+name: "V2WS Research Planning Engine"
 description: "Plans the research agenda for a webinar topic — what to search, what to validate, what gaps to fill"
 agent: Lionel (CCF Research Library Architect)
 ccp_layer: Deep Research (L1)
@@ -12,7 +12,7 @@ outputs:
   - v2ws/research/{webinar_id}_research_plan.json
 ---
 
-# 🔬 V²WS RESEARCH PLANNING ENGINE
+# 🔬 V2WS RESEARCH PLANNING ENGINE
 
 Plans the research agenda: what sources to query, what data to validate, and what knowledge gaps need filling before webinar content generation.
 

@@ -67,7 +67,7 @@ FR35 defines the **Unified Excalidraw Pipeline (DEP-ENG-030)**, orchestrated by 
 
 ### Stage 1: Generative Layout Parsing
 *Script:* `skills/visual/excalidraw-composer/SKILL.md` (Benjamin)
-*Inputs:* Approved JSON Script (e.g., from V²WS or Tierlist pipeline).
+*Inputs:* Approved JSON Script (e.g., from V2WS or Tierlist pipeline).
 *Outputs:* `Spatial_Layout_Map` (Coordinate arrays).
 *Failure Condition:* Benjamin assigns X/Y coordinates that overlap text blocks over each other.
 *Receipt Write:* Write Receipt Block per FR47 `Receipt_Block_N.json` schema: `{ receipt_id, previous_receipt_hash, input_payload_hash, output_payload_hash, stage_name, timestamp, agent_name }` # REVISED: Standardizing receipt format across all specs per FR47 cryptographic schema.

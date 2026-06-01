@@ -52,7 +52,7 @@ CCP is organized into 9 modules, defining system capabilities, boundaries, and q
 | **PRD-04** | CVE Experience Design | Telegram Intimacy Index tracking, habit loops, and voice-to-lesson compilation. | `FR-ERA3-13`, `FR-ERA3-17` |
 | **PRD-05** | CBCS Law28 | Biometric scorecards, social penetration escalation, and learning paths. | `FR-ERA3-11`, `FR-ERA3-18`, `FR-ERA3-19` |
 | **PRD-06** | Conscious Reactions | Async reaction modes, co-creation quizzes, and tournament matchmaking. | `FR-ERA3-05-CORE`, `05a` to `05j` |
-| **PRD-07** | V²WS Webinar | Programmatic webinar compilation, interactive replays, and companion app. | `FR-ERA3-01`, `FR-ERA3-07` |
+| **PRD-07** | V2WS Webinar | Programmatic webinar compilation, interactive replays, and companion app. | `FR-ERA3-01`, `FR-ERA3-07` |
 | **PRD-08** | Conscious Primitives | YAML primitive registry query engine and experience-design family locks. | `FR-ERA3-06` |
 | **PRD-09** | CPSC Silent Referral | In-chat paywall sheets, dynamic trial gates, and silent social referral loops. | `FR-ERA3-02`, `FR-ERA3-03`, `FR-ERA3-04` |
 

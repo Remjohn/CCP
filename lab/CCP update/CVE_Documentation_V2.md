@@ -20,7 +20,7 @@ This is not a design theory document. Every section resolves to a buildable syst
 
 ### 1.1 The Sixth System
 
-The CCP currently operates five integrated systems: the Content Factory (CCF), the Invisible Coaching App (CBCS), the Webinar System (V²WS), the Tierlist, and the Notion Delivery Layer. The CVE is the sixth system — it does not replace any existing system. It extends the CCF by adding a complete visual production pipeline downstream of script validation.
+The CCP currently operates five integrated systems: the Content Factory (CCF), the Invisible Coaching App (CBCS), the Webinar System (V2WS), the Tierlist, and the Notion Delivery Layer. The CVE is the sixth system — it does not replace any existing system. It extends the CCF by adding a complete visual production pipeline downstream of script validation.
 
 The architectural position is precise:
 

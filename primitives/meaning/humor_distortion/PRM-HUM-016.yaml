@@ -38,7 +38,7 @@ summary: >
   consecutive punchlines without intervening setups. In CCP, this architecture
   is enforced by the JIT Compiler's `syntax_audit_pass`, transforming
   wandering AI-generated paragraphs into dense, emotionally explosive
-  communication blocks optimized for V²WS webinars and CCF carousels.
+  communication blocks optimized for V2WS webinars and CCF carousels.
 
 core_move: >
   Strip the setup down to a single subject and a clear attitude, place
@@ -172,7 +172,7 @@ crosswalk_note: null
 
 notes: >
   This primitive provides the exact mathematical constraints for CCF hook
-  generation and V²WS transitions. Its MCDA (176) reflects high algorithmic
+  generation and V2WS transitions. Its MCDA (176) reflects high algorithmic
   determinism — NLP models excel at parsing sentence dependency trees to
   verify single subjects and terminal node placement. Float note:
   goal_bias.tension is ceiling (0.9) because the entire architecture exists

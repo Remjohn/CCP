@@ -2,7 +2,7 @@
 
 **Version:** 1.0 (Integration Phase)  
 **Status:** DRAFT  
-**Scope:** Integration of CCF, CBCS, V²WS, and Tierlist.  
+**Scope:** Integration of CCF, CBCS, V2WS, and Tierlist.  
 **Author:** Mitano  
 **Date:** 2026-02-27  
 
@@ -14,7 +14,7 @@ The **Conscious Coaching Platform (CCP)** is a unified intelligence infrastructu
 
 **The problem:** For years, coaching and content creation have existed in fragmented silos. The tools available are either monolithic prompts that strip away the coach's identity (resulting in soulless "AI slop") or disconnected apps where the coaching bot doesn't learn from content performance, and webinar scripts ignore the emotional cadence of 1-on-1 sessions. Every interaction starts from zero, wasting intelligence and breaking the coach's authentic voice.
 
-**The vision:** The CCP solves this through absolute unification. It operates as a deterministic, **Trigger-First Engine** where nothing is generated in a vacuum. A user's emotional state triggers a real-time coaching ritual; a coaching insight triggers a webinar module; audience sentiment triggers a 14-format content batch. The entire ecosystem—spanning real-time interaction (CBCS), content production (CCF), visual strategy (Tierlist), and deep-dive education (V²WS)—is sustained by a single, shared intelligence loop.
+**The vision:** The CCP solves this through absolute unification. It operates as a deterministic, **Trigger-First Engine** where nothing is generated in a vacuum. A user's emotional state triggers a real-time coaching ritual; a coaching insight triggers a webinar module; audience sentiment triggers a 14-format content batch. The entire ecosystem—spanning real-time interaction (CBCS), content production (CCF), visual strategy (Tierlist), and deep-dive education (V2WS)—is sustained by a single, shared intelligence loop.
 
 **The outcome:** Output across every touchpoint that is structurally identical to master-level human craftsmanship, at scale, with zero hallucination.
 
@@ -34,8 +34,8 @@ The **Conscious Coaching Platform (CCP)** is a unified intelligence infrastructu
 
 - **65 named agents** across 6 departments (Perception, Strategy, Expression, Management, Safety, Setup)
 - **147 skills/tools** across 10 families + 4 Python wrappers + 2 apps
-- **49 pipeline elements** (28 CCF commands + 12 CBCS modules + 6 V²WS + 3 Tierlist)
-- **4 distinct pipeline architectures** (command-based CCF, event-driven CBCS, sequential V²WS, hybrid Tierlist)
+- **49 pipeline elements** (28 CCF commands + 12 CBCS modules + 6 V2WS + 3 Tierlist)
+- **4 distinct pipeline architectures** (command-based CCF, event-driven CBCS, sequential V2WS, hybrid Tierlist)
 - **3-tier memory** with weekly evolution cycle
 - **Real-time + batch** processing (CBCS <2s latency; CCF weekly production cycles)
 
@@ -85,11 +85,11 @@ The coach's client follows their program, gets measurable results, and develops 
 
 ### Full Product — Not MVP
 
-The CCP is **not** an MVP. All four sub-systems (CCF, CBCS, V²WS, Tierlist) have been tested and validated independently. The integration phase builds on proven components:
+The CCP is **not** an MVP. All four sub-systems (CCF, CBCS, V2WS, Tierlist) have been tested and validated independently. The integration phase builds on proven components:
 
 - **CCF** — 85 skills across 10 families, 28 commands, 26+ agents, battle-tested production pipeline
 - **CBCS** — 12 agents, real-time Telegram bot, crisis detection, multi-ritual engine, live with users
-- **V²WS** — 31 design papers defining the complete webinar architecture + Excalidraw-native visual pipeline
+- **V2WS** — 31 design papers defining the complete webinar architecture + Excalidraw-native visual pipeline
 - **Tierlist** — Excalidraw-native rendering templates, functional prototype
 
 ### Integration Scope (What CCP Adds)
@@ -255,7 +255,7 @@ He DMs Nadia: "Do you take new clients?" She does. Kévin becomes client #13. Th
 
 10. **Notion Delivery Layer (Never Outshine the Master)** — All coach-facing deliverables are delivered autonomously through Notion — not a custom app. Four databases (Content Calendar, Client Intelligence, Webinar & Tierlist Assets, Personal Branding Photo Deck) surface clean output with zero system visibility. Every content piece includes the coach's original voice note, a "Why This Post" section tracing the idea to their own words, and Leadership Farming notes. The Universal Asset ID (`AAAA-CCC-MM-YY-XXXX`) and Person ID (`CCC-NNNN`) systems provide full lifecycle traceability across all platforms. The Sovereign Image Rule ensures the coach's face is always real photographs — AI imagery represents client scenarios only. The [Notion Coach Dashboard Design Spec](file:///d:/Work/The%20Conscious%20Coaching%20Factory/docs/architecture/Notion_Coach_Dashboard_Design_Spec.md) defines 24 UX techniques across 7 layers — conditional color, layout builder, tabbed layouts, automations with webhooks, smart formulas, database buttons, and structural polish — to ensure the workspace feels like the coach's own, not a tool's output. (See CCP Technical Architecture §8.3-8.4)
 
-### V²WS — Webinar Engineering Breakthroughs
+### V2WS — Webinar Engineering Breakthroughs
 
 **Modular Webinar Architecture (Jason Fladlien Method)** — Webinar scripts are not written as monolithic outlines. They are constructed module-by-module, based on intensive study of Jason Fladlien's methodology, rebuilt as individual prompt modules with real examples. Each module applies its own TTT calibration (voice engineering for presentations). Every slide is engineered as a **HOOK** — not a presentation slide, a hook.
 
@@ -323,7 +323,7 @@ An agentic ecosystem requires mastering two distinctly different processing para
    - **Trigger:** Discord/Telegram webhook payloads from client voice notes.
    - **Execution:** Synchronous routing by ModelRouter, fast entity extraction by Aria, immediate hook generation.
 
-2. **Asynchronous Batch (CCF/V²WS):**
+2. **Asynchronous Batch (CCF/V2WS):**
    - **Requirement:** Uninterrupted long-running workflows.
    - **Trigger:** Scheduled Cron jobs (`ccf-weekly` via GitHub Actions or cloud scheduler) or manual operator trigger.
    - **Execution:** Parallelized multi-agent drafting, complex MCDA loops, sequential validation protocols (Marcus → Sophia → Chen). Can take 10+ minutes per batch.
@@ -348,7 +348,7 @@ In an autonomous agent ecosystem, logging is not for debugging — it is for gov
 
 ### Scope Philosophy: The "Integration MVP"
 
-As defined in the Success Criteria, the CCP is **not a traditional MVP**. The core value engines — CCF (content), CBCS (coaching), V²WS (webinars), and Tierlist (visuals) — have already been built, tested, and validated over 3 years of iteration. 
+As defined in the Success Criteria, the CCP is **not a traditional MVP**. The core value engines — CCF (content), CBCS (coaching), V2WS (webinars), and Tierlist (visuals) — have already been built, tested, and validated over 3 years of iteration. 
 
 Therefore, the "MVP" for the CCP is an **Integration MVP**. The goal of Phase 1 is not to build new generative features, but to build the *connective tissue* (the 11 Pi Extensions) that allows these 5 systems to share memory, voice, and data autonomously.
 
@@ -358,7 +358,7 @@ The immediate development focus is wiring the existing systems together into a s
 
 - **Core Capability:** Deploying the 11 Pi Extensions (ModelRouter, SystemSelect, MemoryFolder, InteractComp, etc.).
 - **Data Unification:** Implementing the Neo4j graph database for Context Premise storage and ensuring all 5 systems read/write to the same user map.
-- **Voice Unification:** Implementing `coach_soul.json` (Voice DNA extracted from Sacred Audio) across CCF, CBCS, and V²WS so the coach sounds identical everywhere.
+- **Voice Unification:** Implementing `coach_soul.json` (Voice DNA extracted from Sacred Audio) across CCF, CBCS, and V2WS so the coach sounds identical everywhere.
 - **Governance:** Deploying Receipt Chain Guard for auditability and Circuit Breaker for crisis management.
 - **Goal:** 24 coaches successfully onboarded and running the integrated system.
 
@@ -417,7 +417,7 @@ Once the systems share a brain, Phase 2 expands what the brain can do:
 - FR15: The System Manager reviews, edits, and approves generated content prior to publication. Coaches do not review content — the System Manager has the expertise to judge what will perform.
 - FR16: Coaches publish approved content manually to their own social media platforms. This is intentional: publishing is the coach's primary touchpoint for audience connection (**Vibe-Baiting** strategy). There is no auto-publish.
 
-### Webinar & Visual Asset Automation (V²WS & Tierlist)
+### Webinar & Visual Asset Automation (V2WS & Tierlist)
 
 - FR17: Coaches can participate in webinar script creation via two modes:
   - **YOLO Mode (5 Questions → Full Delivery):** The coach answers 5 focused questions about (1) what actionable thing they want to teach, (2) who the audience is, (3) what the offer at the end is, (4) key stories/examples they want included, (5) tone/energy level. The system runs the full pipeline — DEEP/FRESH research, module construction, script writing — and delivers a **branded `.excalidraw` file** with module scripts embedded as text layers. The coach opens the file, reviews it, and records live. Exports to PDF/PPTX natively if needed.
@@ -450,7 +450,7 @@ Once the systems share a brain, Phase 2 expands what the brain can do:
 
 - FR30: The system autonomously delivers all validated content (scripts, visuals, posting notes, voice clips, Leadership Farming notes) to the coach's Notion workspace via `notion_sync.py`, with zero manual intervention after pipeline completion.
 - FR30a: Each content page delivered to Notion includes 7 structured sections: Coach Voice Note (audio block), Why This Post (origin trace), Leadership Farming (trait development), Script, Coach Photo (real, from Branding Deck), Visual Assets (AI-generated client scenarios), and Posting Notes.
-- FR31: Every artifact produced by the CCP carries a Universal Asset ID (`AAAA-CCC-MM-YY-XXXX`) — 34 asset type codes spanning CCF, V²WS, Tierlist, CBCS, coach identity, and governance. IDs are unique, human-readable, and traceable across Notion, Supabase, Receipt Chain, and file storage.
+- FR31: Every artifact produced by the CCP carries a Universal Asset ID (`AAAA-CCC-MM-YY-XXXX`) — 34 asset type codes spanning CCF, V2WS, Tierlist, CBCS, coach identity, and governance. IDs are unique, human-readable, and traceable across Notion, Supabase, Receipt Chain, and file storage.
 - FR31a: Every person in the CCP carries a Person ID (`CCC-NNNN`) — coach = `CCC-0000`, clients numbered sequentially. Person IDs are assigned during Genesis (coach) or CBCS onboarding (client) and stored in `coach_registry.json`.
 - FR32: The coach's Notion workspace applies conditional color rules (overdue alerts, client engagement heat, sentiment flags, seasonal alignment, photo freshness) and smart formulas (countdown pulse, progress bars, engagement heat, resonance hits) to surface intelligence visually without charts or external tools.
 - FR32a: Content pages use tabbed layouts (Script/Visuals/Metrics) and client pages use tabbed layouts (Profile/Sessions/Voice Journal) to provide multiple perspectives without scrolling.
@@ -468,7 +468,7 @@ Once the systems share a brain, Phase 2 expands what the brain can do:
 | CBCS message response | End-to-end latency from webhook receive to Telegram delivery | **<2 seconds** (P95) |
 | Aria entity extraction | Context Premise update after voice note processing | **<5 seconds** including Groq transcription |
 | CCF batch pipeline | Full `ccf-weekly` execution (research → generation → validation → approval queue) | **Tolerates 10-30 minutes** per batch — no user is waiting |
-| V²WS Excalidraw generation | Excalidraw Composer generates branded `.excalidraw` slide deck per webinar | **<5 minutes** per complete deck |
+| V2WS Excalidraw generation | Excalidraw Composer generates branded `.excalidraw` slide deck per webinar | **<5 minutes** per complete deck |
 | ModelRouter decision | Model selection and routing per request | **<100ms** overhead |
 | Memory query | Neo4j Context Premise graph read for personalization | **<500ms** per query |
 
@@ -486,7 +486,7 @@ Once the systems share a brain, Phase 2 expands what the brain can do:
 - **Circuit Breaker Latency:** Crisis detection fires within **<500ms** of keyword detection. This is a hard-coded, non-negotiable priority — no LLM reasoning delay is acceptable for safety escalation.
 - **Zero Silent Failures:** If an agent fails (LLM timeout, malformed output, validation rejection), the system logs the failure with full context AND notifies the System Operator. No failure is silently swallowed.
 - **Backup & Recovery:** Coach ecosystems are backed up daily. Full system recovery from backup must be achievable within **<4 hours**.
-- **Uptime Target:** CBCS (real-time coaching) targets **99.5% uptime**. CCF/V²WS (batch processing) can tolerate scheduled maintenance windows.
+- **Uptime Target:** CBCS (real-time coaching) targets **99.5% uptime**. CCF/V2WS (batch processing) can tolerate scheduled maintenance windows.
 
 ### Integration Resilience
 
@@ -509,7 +509,7 @@ Once the systems share a brain, Phase 2 expands what the brain can do:
 The Conscious Coaching Platform (CCP) is not a collection of scripts; it is a unified, agentic operating system designed to merge five previously distinct entities:
 1. **CCF (Conscious Content Factory):** The content generation engine.
 2. **CBCS (Conscious Business Coaching System):** The coaching intelligence and strategy engine.
-3. **V²WS (Viral Virtual Webinar System):** The webinar generation and distribution engine.
+3. **V2WS (Viral Virtual Webinar System):** The webinar generation and distribution engine.
 4. **Unified Excalidraw Visual Engine:** The single visual pipeline for all coach-facing content — Tierlists, Webinar slides, Ratings, and Reaction Explainers. Branded templates with a hand-drawn aesthetic that feels natively coach-made.
 
 The mandate of the CCP is to unify these systems across a shared memory layer so that coaching insights naturally birth webinars, webinars feedback into content, and content data informs coaching strategy. The goal is to build a system that produces output indistinguishable from a master coach working at peak intuition.
@@ -573,7 +573,7 @@ To achieve the CCP Mandate and avoid the Cardinal Sin, the platform operates acr
 - **Executive Prompts:** The final compiled instructions sent to the LLM context window.
 
 **Why this matters:** Monolithic prompts cause "Brevity Bias" and context collapse. By atomizing the workforce into specific skills, tools, sub-agents, and tight prompts, we protect the context window and ensure agents stay focused on one specific job.  
-**Baseline Components:** The current state includes 12 CBCS expert agents and 72 CCF skills/tools. *However*, this PRD will explicitly define the net-new Agents, Skills, Tools, and Extensions required to fully execute CCF, V²WS, and the Tierlist generator.
+**Baseline Components:** The current state includes 12 CBCS expert agents and 72 CCF skills/tools. *However*, this PRD will explicitly define the net-new Agents, Skills, Tools, and Extensions required to fully execute CCF, V2WS, and the Tierlist generator.
 
 ### Layer 5: Orchestration (The Harness)
 *Definition: The TypeScript-based Pi Coding Agent framework that manages the execution layer. It orchestrates "Agent Teams" (parallel execution) and "Agent Chains" (sequential execution).*  
@@ -628,10 +628,10 @@ The Coaching System currently defines 12 expert agent personas across 5 departme
 3. Expression Dept: *The Storyteller, The Voice, The Visual Director*
 4. Validation Dept: *The Critic, The Fact Checker, The Alignment Guard*
 
-### 3.3 The V²WS Inventory
+### 3.3 The V2WS Inventory
 Currently, the Viral Virtual Webinar System exists **purely as conceptual documentation** (31 architectural docs). 
 - **Current State:** Zero execution code. Zero designated agents.
-- **Action Required:** The PRD must write explicit mandates to CREATE the pipeline, tools, sub-agents, and skills required to bring V²WS into the Execution Layer, powered by the PPTX-native WebinarComposer.
+- **Action Required:** The PRD must write explicit mandates to CREATE the pipeline, tools, sub-agents, and skills required to bring V2WS into the Execution Layer, powered by the PPTX-native WebinarComposer.
 
 ### 3.4 Governance & Prompts
 - **Archetype Prompts:** 92 raw prompts stored in `intelligence/`.
@@ -681,7 +681,7 @@ These extensions manage control flow, memory, and error recovery.
   - **Gemini 3.1 Pro High** → Deep Reasoning tasks (MCDA synthesis, Collapse Tests, Draft Protocol evaluations)
   - **Gemini 3.1 Pro Low** → Thinking tasks (Blueprint generation, Script Composition, Strategy drafting)
   - **Gemini 3 Flash** → Fast procedural tasks (formatting, schema validation, receipt checks)
-- **Touches Components:** Integrates with all CCF skills, CBCS agents, and future V²WS agents.
+- **Touches Components:** Integrates with all CCF skills, CBCS agents, and future V2WS agents.
 
 #### 5. `TillDone` (The Assurance Engine)
 - **Status:** `[CREATE]`
@@ -870,7 +870,7 @@ These agents do not yet exist in the codebase. Each requires a Python class, a S
 | **Adele** (The Radar Operator) | Pulse Check | Perception | `[CREATE]` | Runs continuous background radar sweeps (Firecrawl + Google Trends) and flags significant shifts in Real Time Tribe Relevance. Feeds the `InteractComp` extension with freshness data. | Reads/writes Layer 1 |
 | **Grâce** (The Draft Tester) | Micro-Lab | Reasoning | `[CREATE]` | Executes the Draft Protocol's 3-phase micro-testing. Receives a micro-draft, runs the Collapse Test, 7-words extraction, and Boredom Ban checks before passing to full generation. | Reads Layer 2/3; writes Layer 3 |
 
-#### V²WS New Agents
+#### V2WS New Agents
 | Agent | Code Name | Department | Mandate | CCP Role | Memory Access |
 |---|---|---|---|---|---|
 | **Alessandro** (The Webinar Architect) | Stage Builder | Strategy | `[CREATE]` | Designs the full webinar structure (hook sequence, transition points, CTA placement) from the coach's content blueprints. Maps to the Excalidraw module-by-module template. | Reads Layer 2/3 |
@@ -908,7 +908,7 @@ These YAML/JSON files in `CBCS/backend/intelligence_library/` serve as the brain
 | `persuasion_layers.yaml` | YAML | `[EDIT]` | Persuasion strategy configs. Map to T/V/R mode system. |
 | `story_formulas.yaml` | YAML | `[EDIT]` | Story template library. Add `deployment_count` and `staleness_flag` per H10 fix. |
 | `ttt_matrix.yaml` | YAML | `[EDIT]` | Text/Tone/Temperature calibration matrix. Connect to `ModelRouter` for dynamic selection. |
-| `context_premise_map.json` | JSON | `[EDIT]` | Context-to-premise mapping. Extend for V²WS webinar contexts. |
+| `context_premise_map.json` | JSON | `[EDIT]` | Context-to-premise mapping. Extend for V2WS webinar contexts. |
 
 ### 5.6 Naming Conflict Resolution Summary
 
@@ -930,7 +930,7 @@ These YAML/JSON files in `CBCS/backend/intelligence_library/` serve as the brain
 | CBCS Primary Agents | 12 | 0 | 12 |
 | CCF Agents (from Master Manual) | 26 | 0 | 26 |
 | CCP New Agents | 0 | 4 | 4 |
-| V²WS New Agents | 0 | 3 | 3 |
+| V2WS New Agents | 0 | 3 | 3 |
 | Tierlist New Agents | 0 | 2 | 2 |
 | Sub-Agents | 0 | 6 | 6 |
 | **TOTAL** | **38** | **15** | **53** |
@@ -1130,9 +1130,9 @@ Summary view of how all skills distribute across the 7-layer architecture:
 | **L1: Deep Research** | ~94 | Research (deep-analysts ×45, fresh-analysts ×45, raw-research ×2, smart-query, vibe-comments) |
 | **Cross-Layer Tools** | 6 | Python wrappers (4) + Apps (2) |
 
-### 6.5 V²WS Skills & Assets (31 Design Papers — All `[CREATE]` as SKILL.md)
+### 6.5 V2WS Skills & Assets (31 Design Papers — All `[CREATE]` as SKILL.md)
 
-The V²WS (Visual² Webinar System) assets live in `Conscious V²WS Papers/`. These are detailed design documents — NOT yet converted to SKILL.md format. Each must be transformed into a Pi-harness-compatible skill owned by a V²WS agent.
+The V2WS (Visual² Webinar System) assets live in `Conscious V2WS Papers/`. These are detailed design documents — NOT yet converted to SKILL.md format. Each must be transformed into a Pi-harness-compatible skill owned by a V2WS agent.
 
 #### 6.5.1 Webinar Module Papers (17 — Structural Blueprints)
 
@@ -1165,16 +1165,16 @@ The V²WS (Visual² Webinar System) assets live in `Conscious V²WS Papers/`. Th
 | **Fresh Research Analyst** | `FRESH RESEARCH ANALYST_.md` | `v2ws/research/fresh-analyst` | Maeva (CCF) | Deep Research | `[CREATE]` |
 | **Visual Hook Architect** | `VISUAL HOOK ARCHITECT.md` | `v2ws/visual/hook-architect` | Elene (Slide Composer) | Expression | `[CREATE]` |
 | **TTT × Visual Hook Integration** | `TTT × VISUAL HOOK.md` | `v2ws/visual/ttt-hook-integration` | Elene (Slide Composer) | Expression | `[CREATE]` |
-| **TTT System (V²WS Edition)** | `TEMPERAMENT TEMPERATURE TONE.md` | `v2ws/voice/ttt-system` | Voice Agent (CCF equiv.) | Expression | `[CREATE]` |
+| **TTT System (V2WS Edition)** | `TEMPERAMENT TEMPERATURE TONE.md` | `v2ws/voice/ttt-system` | Voice Agent (CCF equiv.) | Expression | `[CREATE]` |
 | **Meme Orchestrator** | `MEME ORCHESTRATOR.md` | `v2ws/meme/orchestrator` | Meme Engine (CCF) | Expression | `[CREATE]` |
-| **V²WS SOP** | `V²WS - Standard Operating Procedure.md` | `v2ws/orchestration/sop` | Alessandro (Webinar Architect) | Orchestration | `[CREATE]` |
-| **V²WS README** | `README.md (V²WS).md` | Reference doc (not a skill) | — | — | `[KEEP]` as documentation |
+| **V2WS SOP** | `V2WS - Standard Operating Procedure.md` | `v2ws/orchestration/sop` | Alessandro (Webinar Architect) | Orchestration | `[CREATE]` |
+| **V2WS README** | `README.md (V2WS).md` | Reference doc (not a skill) | — | — | `[KEEP]` as documentation |
 
-#### 6.5.3 V²WS Data Files (2)
+#### 6.5.3 V2WS Data Files (2)
 
 | File | Type | Purpose | Mandate |
 |---|---|---|---|
-| `V²WS HOOKS Workflow.json` | JSON | Workflow state machine for hook generation pipeline | `[EDIT]` — Convert to Pi-harness-compatible pipeline config. |
+| `V2WS HOOKS Workflow.json` | JSON | Workflow state machine for hook generation pipeline | `[EDIT]` — Convert to Pi-harness-compatible pipeline config. |
 | **4 Meme Theory Papers** | MD | Benign Violation, Incongruity, Relief, Superiority theory templates for webinar memes | `[CREATE]` — Convert to `v2ws/meme/` skill family (4 skills). |
 
 ### 6.6 Tierlist & Excalidraw Skills & Tools (All `[EDIT]` or `[CREATE]`)
@@ -1219,11 +1219,11 @@ The V²WS (Visual² Webinar System) assets live in `Conscious V²WS Papers/`. Th
 | **L1: Perception** | 1 | `transcribe_voice.py` |
 | **L2: Memory** | 8 | Setup (6), tribe-distiller, voice-distiller |
 | **L3: Deep Reasoning** | 15 | Content (7), Distillation (6), wisdom-forge, script-architect |
-| **L4: Execution** | 39 | E-Roll (14), Production (3), atlas, assembler, V²WS modules (17), research analysts |
-| **L5: Orchestration** | 7 | Orchestration (4), blueprint-orchestrator, distribution/orchestrator, V²WS SOP |
+| **L4: Execution** | 39 | E-Roll (14), Production (3), atlas, assembler, V2WS modules (17), research analysts |
+| **L5: Orchestration** | 7 | Orchestration (4), blueprint-orchestrator, distribution/orchestrator, V2WS SOP |
 | **L6: Governance** | 1 | research/critic |
-| **L7: Expression** | 28 | Visual Recipes (14), V²WS visual/close (10), soc-generator, art-director, smart-mix, recording-director |
-| **L1: Deep Research** | ~97 | Research (deep-analysts ×45, fresh-analysts ×45, raw-research ×2, V²WS research ×3, smart-query, vibe-comments) |
+| **L7: Expression** | 28 | Visual Recipes (14), V2WS visual/close (10), soc-generator, art-director, smart-mix, recording-director |
+| **L1: Deep Research** | ~97 | Research (deep-analysts ×45, fresh-analysts ×45, raw-research ×2, V2WS research ×3, smart-query, vibe-comments) |
 | **Cross-Layer Tools** | 14 | Python wrappers (4), Tierlist App (4 components), Telegram Bot (4 scripts), Excalidraw workflows (4) |
 
 ### 6.8 Skill Count Summary (Final)
@@ -1232,7 +1232,7 @@ The V²WS (Visual² Webinar System) assets live in `Conscious V²WS Papers/`. Th
 |---|---|---|
 | CCF Skills (10 families) | 85 | 60 `[KEEP]`, 24 `[EDIT]`, 1 `[CREATE]` |
 | CBCS Protocols | 12 | 2 `[KEEP]`, 4 `[EDIT]`, 6 `[RENAME + EDIT]` |
-| V²WS Papers → Skills | 31 | 1 `[KEEP]` (README), 1 `[EDIT]`, 29 `[CREATE]` |
+| V2WS Papers → Skills | 31 | 1 `[KEEP]` (README), 1 `[EDIT]`, 29 `[CREATE]` |
 | Tierlist/Excalidraw | 12 | 6 `[KEEP]`, 6 `[EDIT]` |
 | Excalidraw Composer | 1 | 1 `[CREATE]` |
 | Tools (Python) | 6 | 0 `[KEEP]`, 6 `[EDIT]` |
@@ -1309,9 +1309,9 @@ Run weekly/bi-weekly. Alex (Content Orchestrator) coordinates production. Phoeni
 | 27 | `ccf-memory` | `commands/ccf-memory.md` | Azaria (Memory Curator) | `memory-engine` → `MemoryFolder` | `MemoryFolder` | → Memory promotion log |
 | 28 | `ccf-tierlist` | `commands/ccf-tierlist.md` | Gerard (Rating Engine) | Tierlist App + Telegram Bot | `SystemSelect` | → Tierlist visual output |
 
-### 7.3 V²WS Pipeline (To Be Created — 6 New Commands)
+### 7.3 V2WS Pipeline (To Be Created — 6 New Commands)
 
-These commands do not yet exist. Alessandro (Webinar Architect) coordinates. Based on the 31 V²WS design papers.
+These commands do not yet exist. Alessandro (Webinar Architect) coordinates. Based on the 31 V2WS design papers.
 
 | # | Command | File | Owning Agent | Skills to Create | Extensions | Receipt Gate |
 |---|---|---|---|---|---|---|
@@ -1428,7 +1428,7 @@ CBCS (real-time, per-message):
       ↓ (if coach)
   Coach Listening → Content Ideation | Pipeline Trigger | User Monitor
 
-V²WS (to create):
+V2WS (to create):
   v2ws-init → v2ws-research → v2ws-structure → v2ws-slides → v2ws-close → v2ws-render
 
 TIERLIST:
@@ -1443,7 +1443,7 @@ TIERLIST:
 | CCF Weekly Production | Command-based | 16 | 0 | 16 |
 | CCF Orchestration | Command-based | 5 | 0 | 5 |
 | CBCS | Event-driven (real-time) | 12 modules | 0 | 12 |
-| V²WS | Command-based | 0 | 6 | 6 |
+| V2WS | Command-based | 0 | 6 | 6 |
 | Tierlist | Command-based | 1 | 2 | 3 |
 | **TOTAL** | | **41** | **8** | **49** |
 

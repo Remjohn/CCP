@@ -1,5 +1,5 @@
 ---
-name: "V²WS Visual Hook Architect"
+name: "V2WS Visual Hook Architect"
 description: "Designs visual hooks for slides — the image/diagram that makes the audience stop scrolling"
 agent: Elene (Slide Composer)
 ccp_layer: Expression (L7)
@@ -11,7 +11,7 @@ outputs:
   - v2ws/visual/{webinar_id}_visual_hooks.json
 ---
 
-# 🎨 V²WS VISUAL HOOK ARCHITECT
+# 🎨 V2WS VISUAL HOOK ARCHITECT
 
 Designs the visual elements that make slides memorable. Each visual hook is a standalone attention device — if someone screenshots the slide, the visual alone should convey the insight.
 

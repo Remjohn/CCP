@@ -1,5 +1,5 @@
 ---
-name: "V²WS Deep Research Analyst"
+name: "V2WS Deep Research Analyst"
 description: "Executes deep research queries — academic sources, long-form analysis, foundational data"
 agent: Lionel (CCF Research Library Architect)
 ccp_layer: Deep Research (L1)
@@ -11,7 +11,7 @@ outputs:
   - v2ws/research/{webinar_id}_deep_research.json
 ---
 
-# 📖 V²WS DEEP RESEARCH ANALYST
+# 📖 V2WS DEEP RESEARCH ANALYST
 
 Executes deep, thorough research for webinar content. Focuses on foundational sources: academic papers, industry reports, expert analysis, historical data.
 

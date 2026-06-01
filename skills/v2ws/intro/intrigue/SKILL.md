@@ -1,5 +1,5 @@
 ---
-name: "V²WS Intrigue Creation"
+name: "V2WS Intrigue Creation"
 description: "Creates open loops that make leaving the webinar feel like a loss"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

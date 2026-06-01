@@ -75,7 +75,7 @@ examples:
 
 anti_examples:
   - description: >
-      A V²WS webinar where the speaker spends the first five minutes detailing their
+      A V2WS webinar where the speaker spends the first five minutes detailing their
       academic background, consulting history, and proprietary methodologies before ever
       speaking directly to the audience's experience.
     why_it_fails: >

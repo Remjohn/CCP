@@ -34,7 +34,7 @@ The following ten criteria have been selected to evaluate the integration. Each 
 | C3 | **Unified Creative Toolchain** | 9 | Eliminating tool fragmentation (Excalidraw, calendars, dashboards) directly impacts coach adoption. |
 | C4 | **Self-Hosting & Data Sovereignty** | 8 | Single-tenant isolation (ADR-01) and AWS deployment compatibility are non-negotiable. |
 | C5 | **Integration Surface Area** | 8 | The platform must expose APIs or extension points for CCP backend systems (CCF, CBCS, CPSC, CMF). |
-| C6 | **Real-Time Collaboration** | 7 | Coaches and their teams need simultaneous editing, especially for V²WS webinar preparation. |
+| C6 | **Real-Time Collaboration** | 7 | Coaches and their teams need simultaneous editing, especially for V2WS webinar preparation. |
 | C7 | **Deployment & Maintenance Burden** | 7 | With $0.51 in the bank and startup credits, operational overhead must be minimal. |
 | C8 | **Learning Curve & Coach Adoption** | 6 | Coaches are not developers. The interface must be immediately intuitive. |
 | C9 | **Long-Term Ecosystem Viability** | 6 | The upstream project must be actively maintained with a credible long-term trajectory. |
@@ -58,9 +58,9 @@ The following ten criteria have been selected to evaluate the integration. Each 
 
 ### C3: Unified Creative Toolchain (Weight: 9)
 
-**Notion: 2/5.** Notion has no native whiteboard or diagramming tool. Excalidraw must be used separately for V²WS slide composition. Content calendars require database views that lack visual timeline sophistication. There is no native slide presentation mode.
+**Notion: 2/5.** Notion has no native whiteboard or diagramming tool. Excalidraw must be used separately for V2WS slide composition. Content calendars require database views that lack visual timeline sophistication. There is no native slide presentation mode.
 
-**AFFiNE (Self-Hosted): 5/5.** This is AFFiNE's strongest structural advantage. The Edgeless Canvas mode provides a full infinite whiteboard that directly competes with Miro and Excalidraw. Documents can toggle between Page Mode and Edgeless Mode, meaning a V²WS webinar script can simultaneously exist as a structured document and a visual slide deck. Multi-view databases support Kanban boards (for CCF Content Calendars), tables (for CPSC campaign tracking), and linked documents. AFFiNE natively replaces Notion, Excalidraw, and potentially even the separate content calendar interface in a single environment. This consolidation alone is a category-defining advantage for coach adoption.
+**AFFiNE (Self-Hosted): 5/5.** This is AFFiNE's strongest structural advantage. The Edgeless Canvas mode provides a full infinite whiteboard that directly competes with Miro and Excalidraw. Documents can toggle between Page Mode and Edgeless Mode, meaning a V2WS webinar script can simultaneously exist as a structured document and a visual slide deck. Multi-view databases support Kanban boards (for CCF Content Calendars), tables (for CPSC campaign tracking), and linked documents. AFFiNE natively replaces Notion, Excalidraw, and potentially even the separate content calendar interface in a single environment. This consolidation alone is a category-defining advantage for coach adoption.
 
 ### C4: Self-Hosting & Data Sovereignty (Weight: 8)
 
@@ -156,7 +156,7 @@ The integration transforms CCP from a backend intelligence layer that happens to
 We recommend **forking AFFiNE and deploying it as a branded, self-hosted instance** on the existing AWS infrastructure via Dockploy. The fork follows a "thin fork" discipline:
 
 1. **Theme Layer:** Replace all visual branding (logo, color palette, favicon, login screen, domain) via a CSS/asset overlay.
-2. **Custom Blocks (Phase 1):** Build 4-6 CCP-native blocks (CBCS Conversation Viewer, CPSC Pipeline Board, CCF Content Calendar, CMF Video Preview, V²WS Slide Editor integration).
+2. **Custom Blocks (Phase 1):** Build 4-6 CCP-native blocks (CBCS Conversation Viewer, CPSC Pipeline Board, CCF Content Calendar, CMF Video Preview, V2WS Slide Editor integration).
 3. **Authentication Layer:** Implement custom SSO that ties into CCP's existing user management, enabling both coach and client login.
 4. **Template Library:** Pre-populate every new coach workspace with CCP-branded templates for all operational modules.
 

@@ -182,10 +182,10 @@
       "GhostContext",
       "SoulResonance"
     ],
-    "description": "Context-to-premise mapping. Extended for V²WS webinar contexts."
+    "description": "Context-to-premise mapping. Extended for V2WS webinar contexts."
   },
   "v2ws_contexts": {
-    "_description": "V²WS Webinar-specific context mapping — used by Alessandro (Webinar Architect) to map webinar segments to emotional premises",
+    "_description": "V2WS Webinar-specific context mapping — used by Alessandro (Webinar Architect) to map webinar segments to emotional premises",
     "intro_hook": {
       "mode": "TENSION",
       "premise_type": "pattern_interrupt",

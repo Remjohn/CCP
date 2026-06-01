@@ -242,7 +242,7 @@ Is it backed by truth?
 [ ] Is this a verifiable claim?
 [ ] Are we attacking problem, not person's worth?
 
-TTT Integration with V²WS Modules
+TTT Integration with V2WS Modules
 Module 1: Introduction (TTT Base Level)
 Slide 1: Hook (TTT level)
 Slide 2: Why Now (TTT +1 for urgency)

@@ -56,7 +56,7 @@ Execute the modules in the following order:
 
 ### Batch C: Engagement & Conversion
 - **PRD-06: Conscious Reactions** (Focus: Async modes, viral thresholds, Trivianar absorption)
-- **PRD-07: V²WS Webinar** (Focus: Teaching-while-selling, YOLO/Interactive modes)
+- **PRD-07: V2WS Webinar** (Focus: Teaching-while-selling, YOLO/Interactive modes)
 
 ### Batch D: Commercialization
 - **PRD-09: CPSC Silent Referral** (Focus: $29/$99 ladder, participation-driven loops)

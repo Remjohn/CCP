@@ -14,7 +14,7 @@ The Conscious Composable Skill Builder (CCSB) addresses these failures through a
 
 ## 2. The Problem: Why Monolithic Skill Authoring Fails at Scale
 
-The CCP operates 65+ specialized skills across five sub-systems (CCF, CMF, CBCS, V²WS, Excalidraw), serving a multi-agent pipeline where each skill's output becomes the next skill's input. At this scale, monolithic authoring — writing complete SKILL.md files from scratch — introduces three compounding failure modes that empirical research independently confirms.
+The CCP operates 65+ specialized skills across five sub-systems (CCF, CMF, CBCS, V2WS, Excalidraw), serving a multi-agent pipeline where each skill's output becomes the next skill's input. At this scale, monolithic authoring — writing complete SKILL.md files from scratch — introduces three compounding failure modes that empirical research independently confirms.
 
 **Failure Mode 1: The Reinvention Tax.** SkillNet's analysis of 200,000+ skills reveals that agents "frequently reinvent the wheel, rediscovering solutions in isolated contexts without leveraging prior strategies" (Liang et al., 2025). In the CCP, this manifests when a new Hunter skill re-derives the Distillation Funnel logic instead of composing from a standardized module. Each re-derivation introduces subtle variance — slightly different scoring thresholds, incompatible compression definitions — that compounds across the pipeline. SkillNet demonstrates that formalizing skills as "evolving, composable assets" improves agent performance by 40% and reduces execution steps by 30%, directly attributable to eliminating redundant discovery.
 

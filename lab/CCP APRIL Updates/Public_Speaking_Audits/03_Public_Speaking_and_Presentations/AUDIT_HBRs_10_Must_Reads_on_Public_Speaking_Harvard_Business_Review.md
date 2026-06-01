@@ -85,7 +85,7 @@ The critical insight: these steps are sequential and dependent. Presenting vivid
 
 **Most underused element — Framing for Common Ground:** Conger's research shows that the most common persuasion failure among otherwise competent presenters is framing arguments from their *own* value system rather than the audience's. The Ruffo case is definitive: she did not argue for the head office's pricing strategy using head office logic. She reframed the identical strategy in terms of franchisee profit improvement — and won unanimous support.
 
-**CCP Relevance:** This four-step architecture is the structural quality gate for all V²WS webinar scripts and all CCF archetype content pitching new ideas to clients. Each step has a direct counterpart in the CCP production chain: Credibility Establishment (coach backstory + track record), Common Ground Frame (audience avatar's specific value hierarchy), Vivid Evidence (story-first, data-second), Emotional Connection (audience mood pre-calibration).
+**CCP Relevance:** This four-step architecture is the structural quality gate for all V2WS webinar scripts and all CCF archetype content pitching new ideas to clients. Each step has a direct counterpart in the CCP production chain: Credibility Establishment (coach backstory + track record), Common Ground Frame (audience avatar's specific value hierarchy), Vivid Evidence (story-first, data-second), Emotional Connection (audience mood pre-calibration).
 
 ---
 
@@ -145,7 +145,7 @@ This produces four visualization types:
 
 **The highest-impact insight:** Most business presentations over-use Type 2 (data-driven charts) for content that is actually Type 1 (conceptual frameworks). The result is that audiences see precision where they need clarity. A framework explaining how a coaching methodology works should not be a bar chart — it should be a diagram. A framework explaining the emotional journey of a client should not be a data table — it should be a narrative arc visualisation.
 
-**CCP Relevance:** The Berinato Matrix is the visual production quality gate for all CMF visual assets and V²WS slide decks. Every visual element in every CCP production should be classified by its quadrant before its format is chosen. Applied to beat cluster visual design: conceptual beats (explaining a framework or model) require diagrams and process flows; data beats (demonstrating results, statistics, or evidence) require clean, single-message data charts. Mixing these produces visual incoherence that undermines the content's authority.
+**CCP Relevance:** The Berinato Matrix is the visual production quality gate for all CMF visual assets and V2WS slide decks. Every visual element in every CCP production should be classified by its quadrant before its format is chosen. Applied to beat cluster visual design: conceptual beats (explaining a framework or model) require diagrams and process flows; data beats (demonstrating results, statistics, or evidence) require clean, single-message data charts. Mixing these produces visual incoherence that undermines the content's authority.
 
 ---
 
@@ -293,12 +293,12 @@ This is the inciting incident. The audience (senior executives) immediately reco
 
 ---
 
-### CASE STUDY 3: V²WS WEBINAR SCRIPTS AND VISUALS — The MLT Triad Applied to High-Stakes Group Coaching Sessions
+### CASE STUDY 3: V2WS WEBINAR SCRIPTS AND VISUALS — The MLT Triad Applied to High-Stakes Group Coaching Sessions
 
-**Workflow:** V²WS Group Coaching Webinars — Script Architecture and Energy Management
+**Workflow:** V2WS Group Coaching Webinars — Script Architecture and Energy Management
 **Primitive Applied:** MLT Triad (Direction/Empathy/Meaning) (#5) + Warmth-Before-Competence (#1)
 
-**Scenario:** A 90-minute V²WS webinar on "Navigating professional reinvention" receives strong content ratings (4.3/5) but poor engagement-to-outcome scores: only 22% of attendees take any action from the session within 7 days. Session recording analysis shows: 70% of script is Direction Giving (frameworks, exercises, and step-by-step tools). 20% is Empathetic (acknowledgment of difficulty). 10% is Meaning-Making. The session is technically strong and compassionately delivered. But it is heavily front-loaded with competence signals and chronically under-invested in the Meaning channel.
+**Scenario:** A 90-minute V2WS webinar on "Navigating professional reinvention" receives strong content ratings (4.3/5) but poor engagement-to-outcome scores: only 22% of attendees take any action from the session within 7 days. Session recording analysis shows: 70% of script is Direction Giving (frameworks, exercises, and step-by-step tools). 20% is Empathetic (acknowledgment of difficulty). 10% is Meaning-Making. The session is technically strong and compassionately delivered. But it is heavily front-loaded with competence signals and chronically under-invested in the Meaning channel.
 
 **MLT Triad Diagnosis:**
 
@@ -316,7 +316,7 @@ This is the inciting incident. The audience (senior executives) immediately reco
 
 **Empathy specificity upgrade:** Replace generic empathy ("I know this is a big question") with audience-specific empathy that demonstrates the coach knows *exactly* what this audience is experiencing ("For those of you whose identity has been deeply merged with a professional role for a decade or more, the question I'm about to ask will feel slightly dangerous. That's the signal you're in the right place.")
 
-**CCP Output:** A V²WS Script MLT Audit Protocol: all webinar scripts are mapped against the three MLT channels, with a minimum word-count allocation for each channel. Flagging format: Direction ≥30%, Empathy ≥20%, Meaning ≥20%, with the remaining 30% devoted to content transitions and interaction design. Scripts that are under-invested in Meaning are revised before recording.
+**CCP Output:** A V2WS Script MLT Audit Protocol: all webinar scripts are mapped against the three MLT channels, with a minimum word-count allocation for each channel. Flagging format: Direction ≥30%, Empathy ≥20%, Meaning ≥20%, with the remaining 30% devoted to content transitions and interaction design. Scripts that are under-invested in Meaning are revised before recording.
 
 ---
 
@@ -362,7 +362,7 @@ Audrey's backstory script is rewritten using the continuity and causality repair
 | Warmth-before-competence is immediately actionable and costs nothing to implement | Can be embedded as a mandatory opening protocol across all CCP content formats in the next production cycle |
 | McKee's Inciting Incident is the single most powerful structural diagnostic for weak content | Applied as a pre-production script audit step, it identifies fundamentally story-less content before it enters expensive production |
 | MLT Triad gives coaches a three-channel diagnostic for any motivational communication failure | Converts "this coaching session didn't land" from a feeling into a diagnosable, correctable system failure |
-| Conger's Persuasion Architecture is a complete, sequential, research-backed persuasion protocol | Directly applicable as the structural backbone of all V²WS webinar scripts and all CCP pitch content |
+| Conger's Persuasion Architecture is a complete, sequential, research-backed persuasion protocol | Directly applicable as the structural backbone of all V2WS webinar scripts and all CCP pitch content |
 | Morgan's Four Intents replace gesture coaching with intent coaching | Produces more authentic delivery not by drilling performance but by cultivating internal states |
 | Ibarra/Lineback's Coherence Architecture provides a narrative quality gate for identity stories | Directly applicable to Voice DNA development and Witness Arc backstory engineering |
 
@@ -425,7 +425,7 @@ Audrey's backstory script is rewritten using the continuity and causality repair
 3. Embed **Morgan's Four Intents** as the standard pre-recording preparation protocol for all Voice DNA sessions
 
 ### Near-Term (Phase 2 — Next 60–90 Days)
-4. Build the **MLT Triad Audit** into all V²WS webinar script review and all Telegram conversation design
+4. Build the **MLT Triad Audit** into all V2WS webinar script review and all Telegram conversation design
 5. Apply the **Berinato Visual Matrix** as the mandatory format-selection step for all CMF beat cluster visual assets
 6. Develop the **Ibarra/Lineback Coherence Protocol** for all Voice DNA bio-story onboarding sessions
 
@@ -437,5 +437,5 @@ Audrey's backstory script is rewritten using the continuity and causality repair
 ---
 
 *Audit completed: HBR's 10 Must Reads on Public Speaking and Presenting*
-*Classification: CCP Strategic Asset — Content Engine, Voice DNA, V²WS Webinar Architecture, CMF Visual Production, Agentic Coaching Communication*
+*Classification: CCP Strategic Asset — Content Engine, Voice DNA, V2WS Webinar Architecture, CMF Visual Production, Agentic Coaching Communication*
 *Next audit: Remaining titles in `lab/Public Speeaking Coaching/03_Public_Speaking_and_Presentations`*

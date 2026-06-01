@@ -33,9 +33,9 @@ A dedicated AFFiNE database in Calendar View that visualizes the entire CCF cont
 **Category:** Content Production  
 An embedded iframe block that renders the CMF Pipeline Commander's Review UI directly inside AFFiNE. The coach (or operator) can play video previews, approve or reject individual beats (with revision notes), and trigger regeneration—all from within their workspace. The block communicates with the CMF `pipeline_commander.py` via REST API. Beat-level approval cards show quality scores, fingerprint status, and rendering tier (preview/review/final). This integration eliminates the need for a separate CMF review interface and places video production inside the same environment where the coach manages everything else.
 
-### 5. V²WS Webinar Slide Composer (Edgeless Canvas Integration)
+### 5. V2WS Webinar Slide Composer (Edgeless Canvas Integration)
 **Category:** Content Production  
-AFFiNE's Edgeless Canvas mode natively supports frame-based presentation slides that can be presented in a focused presentation mode. This is a direct replacement for the current V²WS slide creation process, which currently relies on external tools. The CCP system generates the webinar script (via V²WS skills); the coach opens the corresponding AFFiNE page in Edgeless Mode and sees the slides already populated. They can visually rearrange, annotate, add sticky notes, and embed rich media. The presentation can then be delivered directly from AFFiNE's built-in presentation mode, or exported. This fully replaces Excalidraw for V²WS slide design.
+AFFiNE's Edgeless Canvas mode natively supports frame-based presentation slides that can be presented in a focused presentation mode. This is a direct replacement for the current V2WS slide creation process, which currently relies on external tools. The CCP system generates the webinar script (via V2WS skills); the coach opens the corresponding AFFiNE page in Edgeless Mode and sees the slides already populated. They can visually rearrange, annotate, add sticky notes, and embed rich media. The presentation can then be delivered directly from AFFiNE's built-in presentation mode, or exported. This fully replaces Excalidraw for V2WS slide design.
 
 ### 6. Excalidraw Deep Integration (Edgeless Canvas Extension)
 **Category:** Content Production  
@@ -43,7 +43,7 @@ While AFFiNE's Edgeless Canvas handles most whiteboarding needs, Excalidraw offe
 
 ### 7. OBS Recording Studio Block (WebSocket-Controlled Recording)
 **Category:** Content Production / Data Intelligence  
-A custom block that acts as a **one-click recording studio** directly inside AFFiNE. Via the OBS WebSocket API (built into OBS Studio 28+, controlled via `obs-websocket-js`), the block can: (a) launch a recording session with pre-configured scenes (webcam + screen share + presentation overlay), (b) start/stop recording, (c) monitor recording status in real-time, and (d) upon completion, automatically ingest the recorded file into the CCP pipeline for Whisper STT transcription, Voice DNA enrichment, and CMF processing. The coach opens their V²WS presentation, clicks "Record Session," and OBS starts capturing. When they finish, the system automatically processes the footage into transcript data and content assets. This closes the loop between content creation and content ingestion—every recording becomes raw material for the 76-agent swarm.
+A custom block that acts as a **one-click recording studio** directly inside AFFiNE. Via the OBS WebSocket API (built into OBS Studio 28+, controlled via `obs-websocket-js`), the block can: (a) launch a recording session with pre-configured scenes (webcam + screen share + presentation overlay), (b) start/stop recording, (c) monitor recording status in real-time, and (d) upon completion, automatically ingest the recorded file into the CCP pipeline for Whisper STT transcription, Voice DNA enrichment, and CMF processing. The coach opens their V2WS presentation, clicks "Record Session," and OBS starts capturing. When they finish, the system automatically processes the footage into transcript data and content assets. This closes the loop between content creation and content ingestion—every recording becomes raw material for the 76-agent swarm.
 
 ### 8. Client Transformation Journey Workspace
 **Category:** Client Experience  
@@ -97,7 +97,7 @@ Each integration is scored on 5 criteria (1-5 scale), weighted by strategic impo
 | 2 | CPSC Sales Pipeline Board | 5/50 | 5/45 | 2/16 | 4/28 | 5/30 | **169** |
 | 3 | CCF Content Calendar | 3/30 | 5/45 | 1/8 | 5/35 | 4/24 | **142** |
 | 4 | CMF Video Review Block | 3/30 | 4/36 | 1/8 | 4/28 | 5/30 | **132** |
-| 5 | V²WS Slide Composer | 3/30 | 4/36 | 2/16 | 5/35 | 4/24 | **141** |
+| 5 | V2WS Slide Composer | 3/30 | 4/36 | 2/16 | 5/35 | 4/24 | **141** |
 | 6 | Excalidraw Integration | 1/10 | 3/27 | 1/8 | 4/28 | 3/18 | **91** |
 | 7 | OBS Recording Studio | 4/40 | 4/36 | 1/8 | 3/21 | 5/30 | **135** |
 | 8 | Client Journey Workspace | 5/50 | 4/36 | 5/40 | 3/21 | 5/30 | **177** |
@@ -123,7 +123,7 @@ Each integration is scored on 5 criteria (1-5 scale), weighted by strategic impo
 | **7** | Sales Insights Dashboard | **155** | Data Intelligence | Phase 2 |
 | **8** | Meal Plan Database | **149** | Client Experience | Phase 2 |
 | **9** | CCF Content Calendar | **142** | Coach Operations | Phase 2 |
-| **10** | V²WS Slide Composer | **141** | Content Production | Phase 3 |
+| **10** | V2WS Slide Composer | **141** | Content Production | Phase 3 |
 | **11** | OBS Recording Studio | **135** | Content + Data | Phase 3 |
 | **12** | CMF Video Review Block | **132** | Content Production | Phase 3 |
 | **13** | Tier List Content Block | **107** | Content Production | Phase 3 |
@@ -178,7 +178,7 @@ Each coach instance runs an isolated AFFiNE deployment (honoring ADR-01, single-
 |-------|-------------|----------|-------|
 | **Phase 1** | #1 Client Journey, #2 CPSC Pipeline, #3 Program Builder, #4 CBCS Viewer | Weeks 1-6 | Core platform value—coach and client can live inside the OS |
 | **Phase 2** | #5 Campaign Orchestrator, #6 Habits, #7 Dashboard, #8 Meals, #9 Calendar | Weeks 7-12 | Revenue engine and client retention deepening |
-| **Phase 3** | #10 V²WS Slides, #11 OBS, #12 CMF Review, #13 Tier Lists, #14 Excalidraw | Weeks 13-18 | Content production and power-user features |
+| **Phase 3** | #10 V2WS Slides, #11 OBS, #12 CMF Review, #13 Tier Lists, #14 Excalidraw | Weeks 13-18 | Content production and power-user features |
 
 ---
 

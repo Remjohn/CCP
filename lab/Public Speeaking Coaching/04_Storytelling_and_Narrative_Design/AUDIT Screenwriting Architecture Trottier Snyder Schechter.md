@@ -129,7 +129,7 @@ This improves not only story clarity but also prompt quality. When each visual i
 
 For example, instead of prompting five slides that all "show burnout," the system could assign distinct scene jobs: `slide 1 recognition image`, `slide 2 friction escalation`, `slide 3 false solution or pressure peak`, `slide 4 reframing threshold`, `slide 5 embodied resolution`. That would directly improve CMF's beat-cluster extraction and visual authorization process because each shot would have a structural reason to exist. It also aligns with the PRD's demand for cinematic, non-generic visuals: dramatic sequencing gives the image engine something stronger to compose than abstract mood words alone.
 
-### Case Study 3. V²WS Webinar Scripts and Visual Composition
+### Case Study 3. V2WS Webinar Scripts and Visual Composition
 
 Webinars often fail because they are information-dense but narratively empty. Applying Beat Architecture turns the webinar into a progression: opening image, theme stated, setup, catalyst, debate, demonstration, midpoint reframe, rising stakes, all-is-lost recognition, synthesis, and action. Trottier's scene discipline then improves each module so it has its own micro-conflict and turnaround rather than becoming a lecture block.
 

@@ -1,6 +1,6 @@
 ---
 name: v2ws-init
-description: "Initialize V²WS webinar workspace with directory structure and configuration"
+description: "Initialize V2WS webinar workspace with directory structure and configuration"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Orchestration (L5)
 skills_invoked: [v2ws/orchestration/sop]
@@ -8,7 +8,7 @@ skills_invoked: [v2ws/orchestration/sop]
 
 # v2ws-init
 
-> Initialize a new V²WS webinar production workspace.
+> Initialize a new V2WS webinar production workspace.
 
 ## Usage
 ```

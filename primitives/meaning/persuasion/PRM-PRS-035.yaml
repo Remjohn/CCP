@@ -121,7 +121,7 @@ ccp_workflow_fit:
   premium_differentiation: 0.9
 
 trigger_conditions:
-  - "When writing the hook or opening 60 seconds for any CCF, CMF, or V²WS content asset"
+  - "When writing the hook or opening 60 seconds for any CCF, CMF, or V2WS content asset"
   - "When auditing webinar metrics that show a massive drop-off in the first 5 minutes"
   - "When a coach relies on 'TED Clichés' (e.g., 'Webster's dictionary defines...')"
 

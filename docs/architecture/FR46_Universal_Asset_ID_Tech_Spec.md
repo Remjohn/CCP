@@ -21,7 +21,7 @@ The following files were mandatory prerequisite reading before the architectural
 ## 2. Overview
 
 ### Problem Statement
-An AI ecosystem consisting of 65 distinct agents across multiple pipelines (CCF, CBCS, V²WS) generates thousands of intermediate variables, script drafts, visual files, and performance logs. If an asset is named `final_script_v2.md` and stored in Supabase, and a performance report in Notion references "The Sunday Burnout Post," there is zero programmatic traceability. When the Data Analyst Agent attempts to map engagement back to the original psychological premise, the chain is broken. Similarly, if a client interacts on Telegram as `@user123` but is logged in Notion as "John Doe," the memory graphs collapse.
+An AI ecosystem consisting of 65 distinct agents across multiple pipelines (CCF, CBCS, V2WS) generates thousands of intermediate variables, script drafts, visual files, and performance logs. If an asset is named `final_script_v2.md` and stored in Supabase, and a performance report in Notion references "The Sunday Burnout Post," there is zero programmatic traceability. When the Data Analyst Agent attempts to map engagement back to the original psychological premise, the chain is broken. Similarly, if a client interacts on Telegram as `@user123` but is logged in Notion as "John Doe," the memory graphs collapse.
 
 ### Solution
 FR46 establishes the **Universal Asset & Person ID System (DEP-ENG-040)**. It enforces a strict, deterministic, human-readable identifier for *every* artifact and *every* human in the CCP. All storage layers (Notion, Supabase, Neo4j, Receipt Chain, Amazon S3) must index data using these keys.
@@ -139,7 +139,7 @@ If the central Supabase `id_sequences` table fails to respond (preventing atomic
 - [ ] **Task 1:** Create the Supabase `id_sequences` table to track independent `client_count` per coach, and `daily_asset_count` per coach/date. Must use Postgres atomic increments.
 - [ ] **Task 2:** Write `id_generator.py` to handle the `generate_person_id(coach_id)` function.
 - [ ] **Task 3:** Write `id_generator.py` to handle the `generate_asset_id(coach_id, pipeline, format)` function.
-- [ ] **Task 4:** Refactor the Orchestrator kickoff sequence (in all pipelines: CCF, V²WS, CBCS) to instantly call `id_generator.py` and mount the returned value to the global session state object.
+- [ ] **Task 4:** Refactor the Orchestrator kickoff sequence (in all pipelines: CCF, V2WS, CBCS) to instantly call `id_generator.py` and mount the returned value to the global session state object.
 - [ ] **Task 5:** Refactor `notion_sync.py` (FR45) to ensure it pulls this ID from the session state and injects it into the Notion API property block.
 
 ---

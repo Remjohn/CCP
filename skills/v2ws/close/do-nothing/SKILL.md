@@ -1,5 +1,5 @@
 ---
-name: "V²WS Do Nothing Close"
+name: "V2WS Do Nothing Close"
 description: "Projects the exact outcome of choosing to do nothing — the uncomfortable truth"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Expression (L7)

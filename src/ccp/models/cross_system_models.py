@@ -1,5 +1,5 @@
 """
-Step 14 — V²WS + Full Cross-System Integration + Data Intelligence Layer
+Step 14 — V2WS + Full Cross-System Integration + Data Intelligence Layer
 Models for: FR27, FR30, FR31, FR32, FR33, FR34, FR35, FR36, FR37,
             FR41, FR42, FR43, FR45, FR46, FR47, FR48, FR49, FR50
 
@@ -59,7 +59,7 @@ MOMENTUM_AGENCY_MIN: float = 0.65
 PEAK_FEAR_MAX: float = 0.2
 PEAK_AGENCY_MIN: float = 0.8
 
-# FR33 — V²WS YOLO Mode
+# FR33 — V2WS YOLO Mode
 YOLO_REQUIRED_INPUTS: int = 5
 YOLO_SLIDE_WIDTH: int = 1920
 YOLO_SLIDE_HEIGHT: int = 1080
@@ -67,7 +67,7 @@ YOLO_SPEAKER_NOTE_OFFSET_X: int = 2000
 YOLO_SLIDE_SPACING: int = 500
 YOLO_MAX_WORDS_PER_SLIDE: int = 150
 
-# FR34 — V²WS Interactive Mode
+# FR34 — V2WS Interactive Mode
 INTERACTIVE_STALE_TIMEOUT_HOURS: int = 12
 
 # FR36 — Transparent Collage
@@ -441,7 +441,7 @@ class AtlasRoadmap(BaseModel):
 
 
 # ─────────────────────────────────────────────────────
-# FR33 MODELS — V²WS YOLO Mode (DEP-ENG-028)
+# FR33 MODELS — V2WS YOLO Mode (DEP-ENG-028)
 # ─────────────────────────────────────────────────────
 
 class YoloIntake(BaseModel):
@@ -474,7 +474,7 @@ class V2WSExcalidrawPayload(BaseModel):
 
 
 # ─────────────────────────────────────────────────────
-# FR34 MODELS — V²WS Interactive Mode (DEP-ENG-029)
+# FR34 MODELS — V2WS Interactive Mode (DEP-ENG-029)
 # ─────────────────────────────────────────────────────
 
 class InteractiveModuleState(BaseModel):

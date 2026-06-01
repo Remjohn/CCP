@@ -63,7 +63,7 @@ This matters because several March and early-April documents still define active
 | **PRD-04** | `PRD_04_CVE_Experience_Design.md` | 4,800–5,400 | Experience Design: Voice-First doctrine, Communication Skill Ladder, Experience Primitive orchestration, async-first surfaces, Telegram continuity |
 | **PRD-05** | `PRD_05_CBCS_Law28.md` | 4,800–5,400 | CBCS Law28: 4-Engine coaching system, biometric-gated progression, 28-Command suite, accountability architecture, Sunday Postcard |
 | **PRD-06** | `PRD_06_Conscious_Reactions.md` | 4,800–5,400 | Conscious Reactions: Solo/Debate/Jury/Tier List modes, topic intelligence, viral thresholds, acquisition-through-reaction, co-created clips |
-| **PRD-07** | `PRD_07_V2WS_Webinar.md` | 4,800–5,400 | Webinar System: V²WS pipeline, YOLO/Interactive modes, slide generation, teaching-while-selling, CTA architecture |
+| **PRD-07** | `PRD_07_V2WS_Webinar.md` | 4,800–5,400 | Webinar System: V2WS pipeline, YOLO/Interactive modes, slide generation, teaching-while-selling, CTA architecture |
 | **PRD-08** | `PRD_08_Conscious_Primitives.md` | 4,800–5,400 | Primitive Registry: Meaning vs Experience planes, registry schema, coalition formation, edging pipeline, orchestration dichotomy, YAML codification |
 | **PRD-09** | `PRD_09_CPSC_Silent_Referral.md` | 4,800–5,400 | Commercial Layer: Pricing architecture, Silent Referral viral loops, OFO, Trust-Transfer Ladder, Church vertical, B2B2C metering |
 
@@ -309,7 +309,7 @@ graph TD
     P04 --> P05[PRD-05 CBCS Law28]
     P04 --> P06[PRD-06 Conscious Reactions]
     P02 --> P03
-    P02 --> P07[PRD-07 V²WS Webinar]
+    P02 --> P07[PRD-07 V2WS Webinar]
     P05 --> P09
     P06 --> P09
 ```

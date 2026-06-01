@@ -66,7 +66,7 @@ FR-CA11-02 implements `affine_sync.py` — a **FastAPI-based webhook-driven sync
 
 **Steps:**
 1. Create FastAPI application with the following endpoints:
-   - `POST /push/content` — Push compiled CCF/V²WS scripts + visual assets to Content Calendar.
+   - `POST /push/content` — Push compiled CCF/V2WS scripts + visual assets to Content Calendar.
    - `POST /push/telemetry` — Push CBCS aggregations (SPT distribution, ICT, Intimacy averages) to Client Intelligence Hub.
    - `POST /push/session` — Push session intelligence reports to Session Archive.
    - `POST /push/learning-path` — Push categorized content to Program Content Library.

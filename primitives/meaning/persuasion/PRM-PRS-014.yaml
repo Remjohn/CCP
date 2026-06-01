@@ -119,7 +119,7 @@ ccp_workflow_fit:
   premium_differentiation: 0.9
 
 trigger_conditions:
-  - "When initiating the visual design phase for a CMF beat cluster or V²WS webinar"
+  - "When initiating the visual design phase for a CMF beat cluster or V2WS webinar"
   - "When auditing a slide deck that feels 'cluttered' or confusing"
   - "When attempting to visually represent a highly abstract psychological framework"
 

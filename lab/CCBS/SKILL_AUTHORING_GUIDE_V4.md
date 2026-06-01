@@ -1,6 +1,6 @@
 # 💜 Skill Authoring Guide V4 — How to Write CCP Skills (ID Enforcement)
 
-> **Purpose:** This guide documents the established patterns and conventions for writing SKILL.md files across the **Conscious Coaching Platform (CCP)** — the unified system encompassing CCF (content), CMF (video), CBCS (coaching bot), V²WS (webinars), and the Excalidraw Visual Engine. It incorporates research-backed principles from Agentic Context Engineering, Contrastive Chain-of-Thought, Chain-of-Draft Reasoning, CCF Bible Critique v2, and the CCP Skill Architecture Paper (12 Directives). Use it as a blueprint when creating new skills.
+> **Purpose:** This guide documents the established patterns and conventions for writing SKILL.md files across the **Conscious Coaching Platform (CCP)** — the unified system encompassing CCF (content), CMF (video), CBCS (coaching bot), V2WS (webinars), and the Excalidraw Visual Engine. It incorporates research-backed principles from Agentic Context Engineering, Contrastive Chain-of-Thought, Chain-of-Draft Reasoning, CCF Bible Critique v2, and the CCP Skill Architecture Paper (12 Directives). Use it as a blueprint when creating new skills.
 
 ---
 

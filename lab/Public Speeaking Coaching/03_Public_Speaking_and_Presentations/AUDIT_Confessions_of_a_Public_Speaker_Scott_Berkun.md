@@ -58,7 +58,7 @@ For the CCP, this book is a **cognitive architecture manual.** Its primitives ar
 
 **Operative quote:** *"Even the most attentive audiences drift in and out of focus, and I have to make sure it's easy for them to rejoin my talk when their daydreams end."*
 
-**CCP Relevance:** This directly governs the pacing architecture of V²WS webinar scripts, beat cluster sequencing, and Telegram conversation flows. The 10-Minute Rule should be a structural constraint on all long-form CCP content — every segment must have a clear entry point that allows an audience to re-engage without losing meaning.
+**CCP Relevance:** This directly governs the pacing architecture of V2WS webinar scripts, beat cluster sequencing, and Telegram conversation flows. The 10-Minute Rule should be a structural constraint on all long-form CCP content — every segment must have a clear entry point that allows an audience to re-engage without losing meaning.
 
 ---
 
@@ -232,12 +232,12 @@ The 10-Minute Attention Architecture reframes the diagnosis: the drops are not p
 
 ---
 
-### CASE STUDY 3: V²WS WEBINAR SCRIPTS AND VISUALS — Logos-Ethos-Pathos Composition Audit
+### CASE STUDY 3: V2WS WEBINAR SCRIPTS AND VISUALS — Logos-Ethos-Pathos Composition Audit
 
-**Workflow:** V²WS Webinar Script and Visual Composition
+**Workflow:** V2WS Webinar Script and Visual Composition
 **Primitive Applied:** Logos-Ethos-Pathos Persuasion Triad (#5)
 
-**Scenario:** The CCP is producing a live V²WS webinar on "Navigating leadership transitions without losing your team." The initial script draft is heavily Logos-dominant — 80% of the content is case studies, frameworks, and research-backed data. Post-webinar survey scores show high "substantive content" ratings but low "inspired to act" and "felt personally understood" scores.
+**Scenario:** The CCP is producing a live V2WS webinar on "Navigating leadership transitions without losing your team." The initial script draft is heavily Logos-dominant — 80% of the content is case studies, frameworks, and research-backed data. Post-webinar survey scores show high "substantive content" ratings but low "inspired to act" and "felt personally understood" scores.
 
 **Berkun's Framework Applied:**
 
@@ -252,7 +252,7 @@ The 10-Minute Attention Architecture reframes the diagnosis: the drops are not p
 - **Pathos insertion:** At the midpoint of each Logos section, a single-sentence audience-mirror: *"If you have ever walked into a board room knowing that 30% of the people in that room have already decided you're the wrong choice for this role — this framework was built for that exact moment."*
 - **Vocal emphasis coaching:** Apply Berkun's sentence-emphasis technique to the three most important claims in the script. Identify the operative word in each claim and mark it in the Voice Coaching brief.
 
-**CCP Output:** A Logos-Ethos-Pathos Composition Audit checklist for all V²WS webinar scripts, with minimum required word counts for each channel and specific prompt questions for Ethos and Pathos insertion.
+**CCP Output:** A Logos-Ethos-Pathos Composition Audit checklist for all V2WS webinar scripts, with minimum required word counts for each channel and specific prompt questions for Ethos and Pathos insertion.
 
 ---
 
@@ -359,7 +359,7 @@ The problem is architectural, not content-related. Long Telegram messages violat
 | The "Eating the Microphone" taxonomy becomes a pre-publication content audit | Create a Content Clarity Audit that flags moments where content drifts from its declared audience relevance |
 | The Dr. Fox Experiment insight can be inverted for the CCP | Coaches who are genuinely substantive AND engaging create a differentiated experience that survives analytical scrutiny — the CCP's bar should be to pass the Dr. Fox test *and* deliver real depth |
 | "Honesty is the most scalable communication technology" aligns with CCP's Witness Arc | The Honesty Audit Protocol deepens the Witness Arc narrative methodology by giving coaches a structured discovery process for their convictions |
-| 10-Minute architecture redesigns V²WS webinar pacing | A structural audit of all webinar content against the attention curve model would immediately improve engagement retention |
+| 10-Minute architecture redesigns V2WS webinar pacing | A structural audit of all webinar content against the attention curve model would immediately improve engagement retention |
 
 ### THREATS
 
@@ -376,7 +376,7 @@ The problem is architectural, not content-related. Long Telegram messages violat
 
 1. **The Strawman Technique** — Write a rough-draft list of everything you know about a topic, including the half-baked ideas. Walk away. Return and edit with the eyes of your toughest audience member. The distance creates editorial clarity. Applied to CCP: all Beat Cluster brainstorms should have a mandated dormancy period before editorial selection.
 
-2. **"Never Plan to Use the Full Time Given"** — Always plan for 80% of the allotted time. The 20% buffer manages unexpected variables and creates the gift of ending early. Applied to CCP: all V²WS webinar scripts should be written to 80% of planned duration; the final 20% is audience Q&A buffer.
+2. **"Never Plan to Use the Full Time Given"** — Always plan for 80% of the allotted time. The 20% buffer manages unexpected variables and creates the gift of ending early. Applied to CCP: all V2WS webinar scripts should be written to 80% of planned duration; the final 20% is audience Q&A buffer.
 
 3. **The Three-Part Credibility Test** — Berkun's framework for speaker selection: Famous/Credible + Good at Speaking + Available. Two out of three is the typical ceiling. Applied to CCP: coach positioning should lock down all three, with Speaking Quality as the non-negotiable differentiator against famous-but-boring competitors.
 
@@ -395,7 +395,7 @@ The problem is architectural, not content-related. Long Telegram messages violat
 ### Immediate (Phase 1 — Next 30 Days)
 1. Implement **Title Architecture Audit** as mandatory first step in all Beat Cluster ideation workflows
 2. Add **Tension-Open / Release-Close** as required structural fields in all content templates
-3. Build **Logos-Ethos-Pathos Composition Checklist** into V²WS webinar script review process
+3. Build **Logos-Ethos-Pathos Composition Checklist** into V2WS webinar script review process
 
 ### Near-Term (Phase 2 — Next 60–90 Days)
 4. Develop **10-Minute Attention Architecture** re-engagement template for all CMF visual productions

@@ -5,6 +5,7 @@
 **Date:** 2026-05-09
 **Version:** 2.0 (Includes Phase 1 Infrastructure CBAR Audit)
 **Status:** Reference Document & Active Audit Manifest — Applicable to all CMF and CCP workflow pipelines
+**Related:** [RSCS](file:///d:/Work/The%20Conscious%20Coaching%20Factory/docs/RSCS_Recursive_Signal_Compression_Systems.md), [CCV](file:///d:/Work/The%20Conscious%20Coaching%20Factory/docs/CCV_Combinatorial_Controlled_Variation.md)
 
 ---
 
@@ -118,6 +119,24 @@ CBAR is not universally applicable. It requires specific conditions:
 *   **Audit-Level Integration:** The Spec Audit prompt uses CBAR to verify gates are implementable.
 *   **Stress Test Integration:** Applied at the system level to resolve cross-module tensions.
 *   **Build Prompt Integration:** Requires Constraint Gate questions be implemented as executable validation functions.
+
+---
+
+## 6.5 Integration into the Cognitive Ecology Triad
+
+CBAR does not operate as an isolated logic gate. It functions as **Engine C: The Adaptive Behavioral Engine** within the broader Cognitive Ecology of the Conscious Coaching Platform, acting in constant negotiation with RSCS and CCV.
+
+| Engine | Role | Objective Function | Danger if Dominant |
+|:---|:---|:---|:---|
+| **RSCS (Engine A)** | Truth Density Engine | `max(Signal Density)` | Over-compression, rigidity, detachment |
+| **CCV (Engine B)** | Meaning Expansion Engine | `max(Meaningful Recombinatory Emergence)` | Incoherence, symbolic drift, chaos |
+| **CBAR (Engine C)** | Adaptive Behavioral Engine | `max(Adaptive Behavioral Progression)` | Optimization prisons, manipulative loops |
+
+### The Arbitration Role
+
+While RSCS extracts dense truth and CCV generates existentially alive variations of that truth, CBAR is responsible for **executive regulation**. It ensures that the emergent variations produced by CCV do not violate the user's progression boundaries or the core architectural rules.
+
+It evaluates the combined output for adherence, transformation velocity, and progression metrics, recursively forcing self-correction before the content is delivered to the user. This ensures the intelligence system remains an engine of behavioral adaptation rather than just a meaning-generator.
 
 ---
 ---

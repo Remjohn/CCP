@@ -17,7 +17,7 @@ This document serves as the master engineering blueprint for the Conscious Coach
 
 ## 1. Architectural Principles & Architecture Decision Records (ADRs)
 
-The following ADRs mandate the foundational technical decisions across all sub-systems (CCF, CBCS, V²WS, Tierlist). **No component may be designed in violation of these ADRs.**
+The following ADRs mandate the foundational technical decisions across all sub-systems (CCF, CBCS, V2WS, Tierlist). **No component may be designed in violation of these ADRs.**
 
 *   **ADR-01: Single-Tenant Isolated Cloud-Native Instances.**
     *   *Constraint:* No shared databases or agent environments across coaches. Every coach receives a dedicated code repository and cloud instance.
@@ -137,9 +137,9 @@ The Guardian Agent securely dictates the pipeline's initialization parameters.
 *   **Verdict Logic:** Each stage must return `AUTHENTICATED`. If `PROVISIONAL`, human operator approves. If `FAILED`, Genesis halts.
 *   **Stewardship Mode:** Ongoing weekly drift checks against the Lexicon and Campaign fatigue.
 
-### 5.2. CCF (Conscious Content Factory) & V²WS (Webinar System)
+### 5.2. CCF (Conscious Content Factory) & V2WS (Webinar System)
 *   **CCF Execution:** Cron-job batch production leveraging the full CRAL 9-skill diagonal. Uses the **Semantic Affinity Guard (DEP-PROTO-011)** to block combinations of HIGH affinity subjects with an audience currently in ESCAPE mode to prevent psychological harm.
-*   **V²WS Execution:** Modular assembly (Jason Fladlien method) where every slide is engineered as a "HOOK". Transitions from sequential builds to real-time agentic audience-sentiment adjustments.
+*   **V2WS Execution:** Modular assembly (Jason Fladlien method) where every slide is engineered as a "HOOK". Transitions from sequential builds to real-time agentic audience-sentiment adjustments.
 
 ### 5.3. Capability Area 9: Conscious Persuasion Sales Cycle (CPSC)
 Transforms relationship accumulation into temporal conversion triggers.
@@ -193,7 +193,7 @@ To construct or rebuild instances of the CCP, the following dependency sequence 
 11. **CRAL 9-Skill Subsystem** (Code the Python/Firecrawl logic for M1-M7).
 12. **11 Pi Extensions (TypeScript)** (Deploy the execution harness).
 13. **V5 Per-Coach Gates** (Initialize Neo4j CMM, Story Archive, Humor Registry, and Performance Registry).
-14. **V²WS + Data Integration** (Final integrations with Excalidraw, Publer, and Notion APIs).
+14. **V2WS + Data Integration** (Final integrations with Excalidraw, Publer, and Notion APIs).
 
 ---
 

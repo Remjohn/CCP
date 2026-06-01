@@ -78,7 +78,7 @@ Two new Tier 0 constants must be added to the build order. These are static libr
 
 The current Adapter Registry contains 5 adapters that govern execution structure and reasoning depth. None of them know anything about psychological state, mood routing, arousal calibration, or semantic affinity risk. This is the gap that makes the current system psychologically blind — it can produce structurally excellent skills that serve the wrong psychological mode to the wrong audience state and damage the relationship it was designed to build.
 
-Three new adapters are required. They join the existing 5 as Tier 2 (Deep Reasoning Injection) conditional adapters — invoked only for CCF script-generating skills, not for CMF, CBCS, or V²WS skills where psychological routing is not the primary concern.
+Three new adapters are required. They join the existing 5 as Tier 2 (Deep Reasoning Injection) conditional adapters — invoked only for CCF script-generating skills, not for CMF, CBCS, or V2WS skills where psychological routing is not the primary concern.
 
 **Adapter 6: Psychological Routing Adapter (psych-routing-adapter)**
 

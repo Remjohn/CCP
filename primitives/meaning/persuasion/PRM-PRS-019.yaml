@@ -123,7 +123,7 @@ ccp_workflow_fit:
 
 trigger_conditions:
   - "When auditing the final storyboard of a CMF visual beat cluster"
-  - "When a V²WS webinar rehearsal feels 'flat' or 'monotonous'"
+  - "When a V2WS webinar rehearsal feels 'flat' or 'monotonous'"
   - "When reviewing audience analytics that show a steady, continuous drop-off in attention"
 
 suppression_conditions:

@@ -1,5 +1,5 @@
 ---
-name: "V²WS Bridge to Selling"
+name: "V2WS Bridge to Selling"
 description: "Transitions from teaching to selling without a jarring tonal shift"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

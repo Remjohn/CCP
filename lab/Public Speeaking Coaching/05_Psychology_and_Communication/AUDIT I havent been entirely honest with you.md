@@ -245,12 +245,12 @@ The beat cluster opens not with the problem but with the **prescription's absurd
 
 ---
 
-### CASE STUDY 3: V²WS WEBINAR SCRIPT — Stress Pot Regulator Applied to Audience Self-Diagnosis
+### CASE STUDY 3: V2WS WEBINAR SCRIPT — Stress Pot Regulator Applied to Audience Self-Diagnosis
 
-**Workflow:** V²WS Webinar Script — Audience Engagement Through Self-Diagnostic
+**Workflow:** V2WS Webinar Script — Audience Engagement Through Self-Diagnostic
 **Primitive Applied:** Stress Pot Regulator (#1) + Identity-Before-Achievement Inversion (#5)
 
-**Scenario:** A V²WS webinar targets high-achieving professionals experiencing chronic fatigue and declining performance. Standard approach: present symptoms, offer solutions, sell the coaching programme. Problem: this audience is expert at intellectualising their problems while never changing behaviour. They will nod along, take notes, and return to the same overflowing pot.
+**Scenario:** A V2WS webinar targets high-achieving professionals experiencing chronic fatigue and declining performance. Standard approach: present symptoms, offer solutions, sell the coaching programme. Problem: this audience is expert at intellectualising their problems while never changing behaviour. They will nod along, take notes, and return to the same overflowing pot.
 
 **Hart's Framework Applied:**
 
@@ -266,7 +266,7 @@ The list: commute over 30 minutes, more than 3 hours of screen time daily, fewer
 
 The Identity-Before-Achievement Inversion arrives as a diagnostic revelation, not a lecture. The audience discovers it through their own pot.
 
-**CCP Output:** A V²WS Stress Pot Audit Webinar Module — a participatory diagnostic that replaces passive consumption with active self-confrontation. Deployable as a webinar opener, a standalone lead-generation event, or a Telegram coaching onboarding exercise.
+**CCP Output:** A V2WS Stress Pot Audit Webinar Module — a participatory diagnostic that replaces passive consumption with active self-confrontation. Deployable as a webinar opener, a standalone lead-generation event, or a Telegram coaching onboarding exercise.
 
 ---
 

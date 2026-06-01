@@ -1,9 +1,9 @@
-# Tech-Spec: FR34 — V²WS Interactive Mode & Excalidraw Compilation (DEP-ENG-029)
+# Tech-Spec: FR34 — V2WS Interactive Mode & Excalidraw Compilation (DEP-ENG-029)
 
 **Created:** 2026-03-13
 **Status:** Ready for Development
 **Version:** 1.0 (Aligned to CCP Architecture v4.0 / Unified PRD v3.1)
-**Architecture Reference:** PRD §V²WS Pipeline
+**Architecture Reference:** PRD §V2WS Pipeline
 **Skill Implementation:** `CBCS/backend/core/coach_graph.py`, `tools/excalidraw_compiler.py`
 **Role Executing:** Principal CCP Tech-Spec Architect
 
@@ -44,7 +44,7 @@ FR34 defines the **Interactive Mode BMAD Workflow (DEP-ENG-029)** natively execu
 
 | DEP-ID / Component | Name | Role in This Pipeline |
 |---|---|---|
-| `DEP-ENG-029` | Interactive V²WS Assembly | OUTPUT — The incremental module drafts and the final `.excalidraw` presentation file. |
+| `DEP-ENG-029` | Interactive V2WS Assembly | OUTPUT — The incremental module drafts and the final `.excalidraw` presentation file. |
 | Emilio | Idea Orchestrator | AGENT — Organizes the Stream of Consciousness into a logical webinar 5-part structure. |
 | Artisan | Script Copywriter | AGENT — Expands the outline into the spoken script, one module at a time. |
 | `coach_graph.py` | State Graph | LOGIC — The LangGraph node architecture that enforces the `interrupt_before=["approval"]` blocking mechanism. |

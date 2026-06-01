@@ -122,7 +122,7 @@ ccp_workflow_fit:
 
 trigger_conditions:
   - "When outlining the agenda for any live or recorded session exceeding 15 minutes"
-  - "When reviewing audience drop-off metrics for V²WS webinars or long-form video content"
+  - "When reviewing audience drop-off metrics for V2WS webinars or long-form video content"
   - "When a coach insists their topic is 'too complex' to be condensed"
 
 suppression_conditions:

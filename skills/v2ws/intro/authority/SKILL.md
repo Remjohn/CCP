@@ -1,5 +1,5 @@
 ---
-name: "V²WS Positioning & Authority"
+name: "V2WS Positioning & Authority"
 description: "Establishes coach credibility without bragging — proof through transformation stories"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

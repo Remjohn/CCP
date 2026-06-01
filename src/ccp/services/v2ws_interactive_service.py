@@ -1,5 +1,5 @@
 """
-FR34 — V²WS Interactive Mode Service (DEP-ENG-029)
+FR34 — V2WS Interactive Mode Service (DEP-ENG-029)
 Step-and-Lock loop with Telegram-native approval gates.
 
 AC1: Algorithmic stop (interrupt_before) after each module.
@@ -52,7 +52,7 @@ class V2WSInteractiveService:
 
     def create_session(self) -> InteractiveV2WSState:
         """
-        FR34 §4.1: Initialize a new interactive V²WS session.
+        FR34 §4.1: Initialize a new interactive V2WS session.
         """
         modules = [
             InteractiveModuleState(

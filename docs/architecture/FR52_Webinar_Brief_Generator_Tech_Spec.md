@@ -28,7 +28,7 @@ The Webinar Brief Generator (FR52) cross-references the CBCS client intelligence
 - The `Structural Coping Alignment Gate` validating phrase injections.
 
 **Out of scope:**
-- Rendering the final `.excalidraw` webinar deck (handled by the down-stream FR33-FR34 V²WS pipeline processing this brief).
+- Rendering the final `.excalidraw` webinar deck (handled by the down-stream FR33-FR34 V2WS pipeline processing this brief).
 
 ---
 

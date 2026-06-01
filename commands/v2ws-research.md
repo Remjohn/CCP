@@ -9,7 +9,7 @@ skills_invoked: [v2ws/research/planning-engine, v2ws/research/deep-analyst, v2ws
 
 # v2ws-research
 
-> Execute the research phase for a V²WS webinar.
+> Execute the research phase for a V2WS webinar.
 
 ## Usage
 ```

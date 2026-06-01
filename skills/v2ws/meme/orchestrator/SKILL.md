@@ -1,5 +1,5 @@
 ---
-name: "V²WS Meme Orchestrator"
+name: "V2WS Meme Orchestrator"
 description: "Orchestrates meme generation for webinar slides using formal humor theory"
 agent: Adam (Meme Engine)
 ccp_layer: Expression (L7)
@@ -12,7 +12,7 @@ outputs:
   - v2ws/meme/{webinar_id}_meme_concepts.json
 ---
 
-# 😂 V²WS MEME ORCHESTRATOR
+# 😂 V2WS MEME ORCHESTRATOR
 
 Generates contextual meme concepts for webinar slides. Each meme is designed to reinforce a teaching point through humor — not just for laughs, but for memory anchoring.
 

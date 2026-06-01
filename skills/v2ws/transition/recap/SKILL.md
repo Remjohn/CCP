@@ -1,5 +1,5 @@
 ---
-name: "V²WS Recap Reinforcer"
+name: "V2WS Recap Reinforcer"
 description: "Crystallizes the teaching into 3-5 memorable takeaways before the close"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Execution (L4)

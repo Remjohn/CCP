@@ -1,5 +1,5 @@
 ---
-name: "V²WS Pain Relief Close"
+name: "V2WS Pain Relief Close"
 description: "Amplifies the cost of inaction — what staying the same really costs"
 agent: Alessandro (Webinar Architect)
 ccp_layer: Expression (L7)

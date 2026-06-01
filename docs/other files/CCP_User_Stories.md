@@ -398,7 +398,7 @@
 
 ---
 
-## Epic 4: Webinar & Visual Asset Automation (V²WS & Tierlist)
+## Epic 4: Webinar & Visual Asset Automation (V2WS & Tierlist)
 
 *Webinar scripts + visual slides delivered as coach-ready Excalidraw files. FR17–FR20.*
 
@@ -675,7 +675,7 @@
 
 **Acceptance Criteria:**
 1. Format: `AAAA-CCC-MM-YY-XXXX` — Asset Type (4 chars), Coach Acronym (3 chars), Month (2 digits), Year (2 digits), Random Suffix (4 alphanumeric).
-2. 34 asset type codes are registered across CCF, V²WS, Tierlist, CBCS, Coach Identity, and Governance.
+2. 34 asset type codes are registered across CCF, V2WS, Tierlist, CBCS, Coach Identity, and Governance.
 3. IDs are generated at creation time and never change.
 4. Zero collisions across 1000 IDs per type/coach/month (verified by uniqueness check).
 5. Asset ID is stored as a property on every Notion page and in the Receipt Chain.
@@ -756,7 +756,7 @@
 Epic 1 (Genesis) ──────────┐
                            ├──→ Epic 3 (CCF) ──→ Epic 7 (Notion Delivery)
 Epic 2 (CBCS) ─────────────┤
-                           ├──→ Epic 4 (V²WS/Tierlist)
+                           ├──→ Epic 4 (V2WS/Tierlist)
 Epic 5 (Intelligence) ◄────┤
                            │
 Epic 6 (Operations) ◄──────┘
@@ -773,7 +773,7 @@ Epic 6 (Operations) ◄──────┘
 | 1. Coach Genesis | 7 | 7 | 0 | 0 | 0 |
 | 2. CBCS | 5 | 3 | 2 | 0 | 0 |
 | 3. CCF | 9 | 5 | 3 | 1 | 0 |
-| 4. V²WS & Tierlist | 5 | 0 | 3 | 2 | 0 |
+| 4. V2WS & Tierlist | 5 | 0 | 3 | 2 | 0 |
 | 5. Intelligence & Memory | 5 | 1 | 2 | 1 | 1 |
 | 6. Operations | 5 | 2 | 2 | 0 | 0 |* 
 | 7. Notion Delivery | 6 | 2 | 4 | 0 | 0 |
