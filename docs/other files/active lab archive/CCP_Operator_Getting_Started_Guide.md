@@ -5,6 +5,14 @@
 
 ---
 
+> **Do I need to complete the Conscious Architect University (CAU) before launching?**
+>
+> **No.** The CAU is an advanced educational curriculum for deepening role-specific technical mastery. It is optional enrichment and is **not a prerequisite gate** for launching CCP. Follow the four phases in §7 of this guide to go live.
+>
+> **Recommended but not required:** [Course 10 — Gemini-CLI Operator Certification](../../../Conscious%20Architect%20University/Gemini-CLI%20Operator/Course_10_Gemini_CLI_Operator_Certification/Syllabus_Outline.md) is the CAU course most directly relevant to day-to-day CCP operations. Complete it at any time to strengthen your terminal-native orchestration skills.
+
+---
+
 ## 1. What You Just Built — The 30-Second Overview
 
 The Conscious Coaching Platform (CCP) is a **multi-agent, single-tenant, cloud-native Trigger-First Operating System** that automates premium content creation, client relationship intelligence, and conversion systems for professional coaches. It is **not** a generic SaaS — every coach gets a fully isolated instance with their own code repository, databases, and agent environment.
